@@ -26,6 +26,10 @@ body{
   color: #fff;
 }
 
+.sidebar-links {
+  padding-top: 50px;
+}
+
 a.nav-link {
   padding-bottom: 5px;
   padding-top: 7px;
@@ -83,7 +87,7 @@ article .share .gplus:hover {
 
 .page-header {
   color: #e74c3c;
-  text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
+  /* text-shadow: 1px 1px 1px rgba(150, 150, 150, 1); */
 }
 
 article{
