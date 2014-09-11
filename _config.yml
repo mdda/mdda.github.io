@@ -21,7 +21,9 @@ author :
   #bio: This appears under the logo
   linkedin : martinandrews
   #feedburner : feedname
-
+  #resume: http://mdda.net/resume
+  #email_md5: 726351295ec82e145928582f595aa3aa
+  
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt
 # Most places will/should use BASE_PATH to make the urls
@@ -136,3 +138,7 @@ JB :
   #   ./_includes/custom/[HELPER]
   # where [HELPER] is the name of the helper you are overriding.
   
+
+paginate: 10 #pagination based on number of posts
+paginate_path: "page:num"
+
