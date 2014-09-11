@@ -6,6 +6,7 @@ sudo yum install ruby-devel
 gem install jekyll
 gem install rake
 
+### http://jekyllbootstrap3.tk/preview/#/theme/Dbyll
 ## rake theme:install git="https://github.com/jekyll-bs3/dbyll"
 
 
