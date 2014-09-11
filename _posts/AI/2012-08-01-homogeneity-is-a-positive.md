@@ -11,8 +11,8 @@ from_mdda_blog: true
 
 
 The brain is an amazing machine, capable of many different types of 
-processing, learning, thinking and creativity.  
-And it does all this using one basic substrate : A huge collection of interconnected neurons.
+processing, learning, thinking and creativity.  And it does all this 
+using one basic substrate : A huge collection of interconnected neurons.
 
 
 How is this good news?
@@ -23,10 +23,9 @@ brains between the various classes of animal was something that depended not onl
 quantity of brain matter, but also on the delicate arrangement of the hierarchy of neural pathways.
 
 However, it appears now that the interconnectedness is less like an intricate 3-dimensional puzzle, 
-and more like a folded 2-dimensional matting.  
-Pure quantity of neurons may be more significant than it first appeared.  
-Higher-order brain functions may simply be a result of more layers of processing power being available to 
-act on the results of lower-order brain functions.
+and more like a folded 2-dimensional matting.  Pure quantity of neurons may be more significant 
+than it first appeared.  Higher-order brain functions may simply be a result of more 
+layers of processing power being available to act on the results of lower-order brain functions.
 
 
 Nature is very efficient

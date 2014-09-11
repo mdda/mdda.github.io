@@ -26,8 +26,8 @@ Not just computers...
 
 The pace of sequencing grew enormously during the lifespan of the genome project.
 The methods used didn't just get incrementally better, 
-there was an entire paradigm shift in the technologies used for sequencing.
-A strategic outsider might have realised that the most efficient way to get the project done 
+there was an entire paradigm shift in the technologies used for sequencing.  A strategic outsider 
+might have realised that the most efficient way to get the project done 
 was to wait until the paradigm shift occurred, 
 and then (only after that point) spend wildly to get to the finish line first.
 
@@ -41,10 +41,10 @@ found to present a large number of computational hurdles.
 
 For one, as a gradient descent method, BP proved slow to converge.
 For another, networks tend to over-learn, 
-becoming brittle when presented with unseen data.
-A large number of techniques have been devised to circumvent these problems - 
-by adding momentum terms, scaling / clamping weights, or 'early stopping'.
-But at some point, these 'tricks of the trade' become more of a hinderance 
+becoming brittle when presented with unseen data.  A large number of techniques 
+have been devised to circumvent these problems - 
+by adding momentum terms, scaling / clamping weights, or 'early stopping'.   But at some point, 
+these 'tricks of the trade' become more of a hinderance 
 to understanding - despite the fact that they seem to help with the problem at hand.
 
 To some extent, the proliferation of new techniques to solve a give problem, 
@@ -53,9 +53,8 @@ information about how to change weights), should act as a signal that
 we're busily exploring a cul-de-sac.
 
 Knowing that the brain has actually solved the problem of consciousness
-is a very encouraging piece of data.
-It tells us that there must almost certainly be a few paradigm shifts ahead,
-since we can make a decent guess at whether the sum of the current 
+is a very encouraging piece of data.  It tells us that there must almost 
+certainly be a few paradigm shifts ahead, since we can make a decent guess at whether the sum of the current 
 (and prospective) set of 'hacks' could possibly get us to our goal - 
 and it seems that we're going to fall short (since we're likely entering into 
 a new plateau phase).
@@ -68,13 +67,11 @@ New paradigms
 
 The current resurgence of neural network research has been spurred by
 the application of ever larger amounts of CPU/GPU power on problems 
-that had previously been 'stuck'.
-Not only has computer power grown rapidly, but there has been a reassessment
+that had previously been 'stuck'.  Not only has computer power grown rapidly, but there has been a reassessment
 of the overall tactics the brain uses to solve problems.
 
 Previously, people were interested in solving problems using minimal
-representations and efficient networks.  
-Now, a new take on the brain's use of simple neurons is that 
+representations and efficient networks.  Now, a new take on the brain's use of simple neurons is that 
 nature has chosen a mechanism that is inherently wasteful of computing resources,
 but very efficient in terms of power and robustness.
 
@@ -88,8 +85,8 @@ New ruts
 ---------------------------------------------
 
 But let's not imagine that blindly throwing computer resources at these
-problems is going to be the last innovation that will start to be required.
-Soon (if it has not already started), these methods will evolve principally 
+problems is going to be the last innovation that will start to be required.  Soon 
+(if it has not already started), these methods will evolve principally 
 through the accumulation of 'fixes', each of which increases efficiency 
 marginally, but at the expense of clarity of purpose.
 

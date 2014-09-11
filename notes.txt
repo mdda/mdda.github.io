@@ -47,4 +47,6 @@ mv *.md ../../AI/
 mv *.md ../../OSS/
 
 
+### Fix up pages
+https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 

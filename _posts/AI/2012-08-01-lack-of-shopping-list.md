@@ -78,8 +78,9 @@ The problem with AI is that we don't even know what the right kinds of question 
 The Practice of Artificial Intelligence
 ------------------------------------------
 
-Naturally, I admire every advance that's being made in creating smarter and smarter computers.
-Machine translation and voice recognition are both now producing results thoroughly out of reach twenty years ago.
+Naturally, I admire every advance that's being made in creating smarter 
+and smarter computers.  Machine translation and voice recognition are both now producing results 
+thoroughly out of reach twenty years ago.
 
 And, just like chess, as these problems are broken down into their component parts, the "magic trick" in each case is revealed to 
 be something quite tangible.  A huge achievement, though somehow an anti-climax.  

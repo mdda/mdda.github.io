@@ -15,8 +15,7 @@ And it's not clear that it will be easy to declare a 'winner' amongst those in t
 
 (
 Particularly since researchers are now creating Turing-Test candidates 
-that plainly violate the spirit of the test.
-Perhaps there should be an additional requirement that the 
+that plainly violate the spirit of the test.  Perhaps there should be an additional requirement that the 
 computer 'testee' should make an earnest effort to participate :
 being indistinguishable from a participant in a gaming chat-room 
 doesn't seem to be an appropriate hurdle, somehow.

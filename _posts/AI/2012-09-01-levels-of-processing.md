@@ -11,8 +11,7 @@ from_mdda_blog: true
 
 
 The brain is an amazing machine, capable of many different types of 
-processing, learning, thinking and creativity.  
-Computers are also very flexible - let's not be discouraged.
+processing, learning, thinking and creativity.   Computers are also very flexible - let's not be discouraged.
 
 
 Computers Simulating Neurons
@@ -21,8 +20,8 @@ Computers Simulating Neurons
 At the moment, in order for a computer to simulate neural processes, 
 transistors are combined into gates that build processing cores that manipulate 
 floating point numbers that model equations that act on arrays held 
-in memory to map their current states to the next states.  
-Simulating learning requires a whole set of other mathematical processes layered on top.
+in memory to map their current states to the next states.  Simulating learning requires 
+a whole set of other mathematical processes layered on top.
 
 This is a 'scenic route' to getting where we want to go (implementing intelligence inside a machine).  
 Unfortunately, we don't really have a map that would tell us about the direct route.
@@ -36,8 +35,8 @@ further education can lead to the ability to handle mathematical concepts within
 The processing and manipulation of these concepts takes place using the same underlying 
 infrastructure as is utilized in the nervous system of (say) a worm.
 
-Here, the brain seems to be taking a 'scenic route' to processing mathematical concepts.
-And it seems like its somewhat pot-luck whether individual humans have any aptitude for it.
+Here, the brain seems to be taking a 'scenic route' to processing mathematical concepts.  And it seems 
+like its somewhat pot-luck whether individual humans have any aptitude for it.
 
 
 Better Adaptation through Design

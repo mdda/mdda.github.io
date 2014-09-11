@@ -13,8 +13,7 @@ from_mdda_blog: true
 
 When thinking about how to explore a new continent, it's sometimes
 worthwhile examining the neighborhood one block over : 
-There's great data already at your fingertips.
-One of the reasons that New York City is a fascinating place 
+There's great data already at your fingertips.  One of the reasons that New York City is a fascinating place 
 is that it is a (rather condensed) microcosm of the entire globe.
 
 In digging deeper into the structure of the brain, 
@@ -26,8 +25,7 @@ between special 'internal concepts' that have no direct
 correspondence to what humans understand in the outside world?
 
 But let's not be too quick to resign ourselves to only superficially
-understanding how the brain is organized internally.  
-We already have a map of suitable concepts at hand : 
+understanding how the brain is organized internally.  We already have a map of suitable concepts at hand : 
 The map created by the set of words in our own language.
 
 

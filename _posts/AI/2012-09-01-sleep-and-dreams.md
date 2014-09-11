@@ -16,9 +16,8 @@ For a moment, let's consider what is revealed by waking up suddenly
 and recounting your most recent dream.
 
 Typically, the most recent 'scene' is described as a little perplexing, 
-requiring a bit of explanation about how the dream got to that point.  
-And each scene remembered (going backwards) gets less certain, 
-more wispy, more 'just-out-of-reach'.
+requiring a bit of explanation about how the dream got to that point.   And each scene 
+remembered (going backwards) gets less certain, more wispy, more 'just-out-of-reach'.
 
 This tends to contradict the notion that dreams consist of a single 
 narrative that runs through the night.  And since there's no way to 
@@ -49,9 +48,9 @@ after they wake from trance).
 
 These people will then spontaneously rationalize ideas and situations that 
 their brains don't readily understand when asked for the reasons behind their 
-actions caused by Post-hypnotic suggestions.  
-These particular behaviours will apparently be out of character - 
-until, of course, they give a perfectly formed, reasonable explanation:
+actions caused by Post-hypnotic suggestions.   These particular behaviours will 
+apparently be out of character - until, of course, they give a perfectly formed, 
+reasonable explanation :
 
    Q. Why did you turn on the light once I clapped my hands?
    A. ??  Because I thought that you had assumed we had a 'clap hands' light.
