@@ -75,13 +75,11 @@ Another (more mathematically appealing) approach is
 to try and guess at the important features now -
 and simplify everything else away.
 
-In some respects, this approach is more research-friendly.  
-Each different research team can pick a different set of features 
-to incorporate into a model, do lots of experiments, and make 
-recommendations about next steps.  
-A selection of papers can be generated from each iteration of the process.
-However, if there are twenty embeddable features, and each researcher chooses ten,
-it's a method that comes with a lifetime employment guarantee...
+In some respects, this approach is more research-friendly.  Each different research 
+team can pick a different set of features to incorporate into a model, do lots of experiments, and make 
+recommendations about next steps.  A selection of papers can be generated 
+from each iteration of the process.  However, if there are twenty embeddable features, 
+and each researcher chooses ten, it's a method that comes with a lifetime employment guarantee...
 
 
 The right abstractions will be obvious (in hind-sight)

@@ -10,8 +10,8 @@ from_mdda_blog: true
 {% include JB/setup %}
 
 
-Compare the search for Artificial Intelligence to going to the moon.  
-Or rather, since we know that the moon is within our grasp, a human expedition to Mars.
+Compare the search for Artificial Intelligence to going to the moon.  Or rather, 
+since we know that the moon is within our grasp, a human expedition to Mars.
 
 
 Going to Mars is an enormous endeavour
@@ -69,8 +69,8 @@ But it's very difficult to say for sure how long it would take to even come up w
 Philosophy Required
 ---------------------
 
-So, as Dennett says (roughly) : If you have a specific question, the sciences are fantastic for providing the answer.  
-Philosophy is required when we don't even know what question to ask.
+So, as Dennett says (roughly) : If you have a specific question, the sciences are fantastic 
+for providing the answer.  Philosophy is required when we don't even know what question to ask.
 
 The problem with AI is that we don't even know what the right kinds of question are : We need philosophers to help us get our bearings.
 

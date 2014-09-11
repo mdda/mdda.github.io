@@ -11,15 +11,15 @@ from_mdda_blog: true
 
 
 The traditional way of building a neural network to learn a specific mapping
-from input vectors to output lables is to build a pyramid comprising layers of neurons.  
-Each successive layer is notionally distilling the outputs of the previous one, 
+from input vectors to output lables is to build a pyramid comprising 
+layers of neurons.  Each successive layer is notionally distilling the outputs of the previous one, 
 funnelling the learnings towards the end answer - each layer being smaller than its inputs.
 
 The new intuition is that it may be more effective to throw
 uniform sized learning layers on top of the inputs, like blankets piled on a bed, 
 and giving a the assembled heap a significant learning period to digest 
-the input in an undirected (labeless) manner.  
-The final stage (to produce a 'correct' labeling) then consists 
+the input in an undirected (labeless) manner.  The final stage 
+(to produce a 'correct' labeling) then consists 
 of connecting up a single layer of 'observer' neurons 
 that can pluck out the desired results from the mass of neurons that 
 have smartened themselves up organically.

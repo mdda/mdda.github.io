@@ -56,8 +56,7 @@ If individual components cannot be relied upon, in order to be robust,
 the overall system must be 'designed' so that dropout rates
 match the additional investment in duplication of effort.  There's a natural balancing act 
 between the reliability of individual neurons, and the extent to which the brain 
-would be larger to account for the mistakes.  
-Very reliable neurons would imply rather small redundancy, 
+would be larger to account for the mistakes.  Very reliable neurons would imply rather small redundancy, 
 and conversely for very 'flaky' neurons.
 
 

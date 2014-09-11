@@ -51,8 +51,7 @@ Hierarchy and Homogeneity
 So, the idea of a clean funnel, with each stage distilling the essential information
 out of the previous one, is likely to be mistaken.  What should look like an 
 efficient hierarchical process (from a computer science design point of view) is 
-more likely to be rather ad-hoc.  
-That is to say, everything may instead be connected to everything else, and 
+more likely to be rather ad-hoc.  That is to say, everything may instead be connected to everything else, and 
 subtle concept refinements are due to there being 50 neurons that respond to all 
 50 shades of grandmother, rather that one really smart neuron.  
 
@@ -73,9 +72,8 @@ Localization and Bandwidth
 ---------------------------------
 
 A separate strand of thought concerns the 
-way in which the brain can implement 'bandwidth pinch-points' 
-via the localization of brain functions within specific areas in the brain.
-For instance, the language centers are distinct from the visual cortex - 
+way in which the brain can implement 'bandwidth pinch-points' via the localization of brain 
+functions within specific areas in the brain.  For instance, the language centers are distinct from the visual cortex - 
 and the highway in between them is transmitting data that has been pre-processed.
 
 But brain topology isn't fixed absolutely : Studies with brain-damaged patients has 
@@ -86,9 +84,8 @@ to repurposing areas of the brain when necessary to take over damaged areas.
 Brain Cost Functions
 ---------------------------------
 
-Combining these two ideas : 
-A lot of the 'top-down' thinking about how the brain operates is wishful thinking.
-The brain can afford to process in a way that is wasteful of neural resources - 
+Combining these two ideas :  A lot of the 'top-down' thinking about how the brain 
+operates is wishful thinking.  The brain can afford to process in a way that is wasteful of neural resources - 
 one of its primary constraints is reaction time, and AI researchers should think about
 efficiency of representations in terms of the brain's actual 'cost function', rather than
 in terms of the cost function that determines how computers are constructed.

@@ -27,10 +27,10 @@ Ideas as Music
 ----------------------------
 
 Another way of picturing how the brain's parts may not map 1-to-1 with 
-concepts on a neural level is to think of an orchestra playing a specific chord.
-A specific note from a specific instrument may rule out a great many 
-different potential chords, however that one note doesn't predetermine the overall effect, 
-nor is it the only way to acheive a given outcome.  The chord produced emerges from the orchestra, 
+concepts on a neural level is to think of an orchestra playing a specific chord.  A specific note from 
+a specific instrument may rule out a great many different potential chords, however that one note 
+doesn't predetermine the overall effect, nor is it the only way to acheive a 
+given outcome.  The chord produced emerges from the orchestra, 
 the product of all the performers playing their part.
 
 As far as the operations of the brain are concerned, embodying 'grandmother' as an ensemble effort

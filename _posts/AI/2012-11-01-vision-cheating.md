@@ -11,21 +11,21 @@ from_mdda_blog: true
 
 
 It's reassuring to see that there are 
-`authors of papers <http://www.cs.toronto.edu/~hinton/absps/fastnc.pdf>`_ 
+[authors of papers](http://www.cs.toronto.edu/~hinton/absps/fastnc.pdf) 
 that are careful to avoid biases that they might
 introduce into their models :
 
-  For the “basic” version of the MNIST learning task, 
-  no knowledge of geometry is provided and there is 
-  no special pre-processing or enhancement
-  of the training set, so an unknown but ﬁxed random permutation 
-  of the pixels would not affect the learning algorithm.
+>  For the “basic” version of the MNIST learning task, 
+>  no knowledge of geometry is provided and there is 
+>  no special pre-processing or enhancement
+>  of the training set, so an unknown but ﬁxed random permutation 
+>  of the pixels would not affect the learning algorithm.
  
-  ...
+>  ...
 
-  Substantial reductions in the error-rate can be achieved by 
-  supplementing the data set with slightly transformed versions 
-  of the training data.
+>  Substantial reductions in the error-rate can be achieved by 
+>  supplementing the data set with slightly transformed versions 
+>  of the training data.
 
 So when is it 'permissible' to add in a little domain knowledge 
 to help a neural network?
@@ -83,8 +83,8 @@ as the same kinds of 'fuzziness' is used when it comes to usage in 'real life' s
 
 .. note:: An Aside...
   The same researchers that were given the thumbs up for honesty at the start of 
-  this piece were also enthusiastic about 'dropouts' during training in later papers. 
-  But somehow they were less committed to the 'dropouts' idea during 'real life' testing - 
+  this piece were also enthusiastic about 'dropouts' during training in later papers. But somehow they were 
+  less committed to the 'dropouts' idea during 'real life' testing - 
   preferring the trained network to operate in some kind of voting mode.
   
   I guess it's difficult to maintain a purist stance all the time...

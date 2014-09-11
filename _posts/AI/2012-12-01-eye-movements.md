@@ -33,9 +33,8 @@ conscious mind watches the external scene.  However, we know for sure that the i
 on this screen (if the screen exists at all) can only be being built up in successive patches.
 
 Indeed, there is no need to actually have such an image if all that is required is to 
-produce the correct scene at each position that the mind directs its attention to.
-It is sufficient to continually convince the higher levels in the brain's hierarchy 
-that they are correct is their claims of what is being seen.  
+produce the correct scene at each position that the mind directs its attention to.  It is sufficient 
+to convince the higher levels in the brain's hierarchy that they are correct in their claims of what is being seen.  
 From a practical point of view, the storage for the current scene needs 
 only to be of the most significant features - 
 pixel data can be discarded as soon as the relevant information is extracted.

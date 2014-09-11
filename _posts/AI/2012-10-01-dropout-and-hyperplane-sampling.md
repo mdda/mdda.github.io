@@ -13,7 +13,7 @@ from_mdda_blog: true
 As noted previously,
 Hinton has recently shown interesting results concerning the benefits of adding 
 'dropouts' in neural networks during learning
-(see : `Improving neural networks by preventing co-adaptation of feature detectors <http://arxiv.org/pdf/1207.0580.pdf>`_).
+(see : [Improving neural networks by preventing co-adaptation of feature detectors](http://arxiv.org/pdf/1207.0580.pdf)).
 
 Again, one of the claimed benefits of using an explicit dropout rate of 50% is that 
 for a doubling of required processing (since only approximately half the neurons are
@@ -35,7 +35,7 @@ estimates of fitness from all of the 'hyperplanes' that had the particular indiv
 in common.  i.e. 1 measurement of an N-bit individual would provide 
 data relevant to the fitness of all 2^N hyperplanes.
 
-As a concrete example, computing the fitness of a single point - ``fitness('010101')`` - 
+As a concrete example, computing the fitness of a single point - ``fitness('010101')``- 
 implictly gives data for estimates of the fitness of many other hyperplanes : 
 ``E{fitness('*10101')}``, ``E{fitness('0*0101')}``, ``E{fitness('010***')}``, etc.
 (where '*' stands for a wild-card set along any particular axis).
@@ -44,8 +44,8 @@ implictly gives data for estimates of the fitness of many other hyperplanes :
 But...
 -----------------
 
-On its face, the hyper-planes argument always sounded a little too-good-to-be-true.
-And the fact that GA people are not beating the drum even more loudly now than two 
+On its face, the hyper-planes argument always sounded a little too-good-to-be-true.  And the fact that 
+GA people are not beating the drum even more loudly now than two 
 decades ago suggests that there may be less mileage in this line of 
 reasoning than it first appeared.
 
