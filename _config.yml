@@ -90,7 +90,7 @@ JB :
   comments :
     provider : disqus
     disqus :
-      short_name : mdda123
+      short_name : mdda-githubpages
     #livefyre :
     #  site_id : 123
     #intensedebate :
