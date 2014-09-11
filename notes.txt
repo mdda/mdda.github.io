@@ -1,6 +1,8 @@
+
+## https://github.com/dbtek/jekyll-bootstrap-3/
+
 sudo yum install ruby-devel
 gem install jekyll
 gem install rake
 
 ## See : http://jekyllrb.com/docs/templates/
-
