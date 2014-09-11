@@ -1,3 +1,4 @@
+## See for helpful jekyll stuff : http://jekyllrb.com/docs/templates/
 
 ## https://github.com/dbtek/jekyll-bootstrap-3/
 
@@ -5,4 +6,6 @@ sudo yum install ruby-devel
 gem install jekyll
 gem install rake
 
-## See : http://jekyllrb.com/docs/templates/
+## rake theme:install git="https://github.com/jekyll-bs3/dbyll"
+
+
