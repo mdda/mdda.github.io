@@ -37,11 +37,14 @@ find . -name "20*.md" -exec perl -0777 -i -p -e 's{\npublic: yes\n}{\n}' '{}' \;
 find . -name "20*.md" -exec perl -0777 -i -p -e 's{\ndraft: true\n}{\npublished: false\n}i' '{}' \;
 find . -name "20*.md" -exec perl -0777 -i -p -e 's{\nauthor: admin\n}{\n}' '{}' \;
 
-## Fix up the syntax highlighting
+## Fix up the syntax highlighting - for those without a language
 find . -name "20*.md" -exec perl -0777 -i -p -e 's{\n\`\`\`\s*(.*?)\n\`\`\`\n}{\n\{\% highlight bash \%\}\n$1\n\{\% endhighlight \%\}\n}gs' '{}' \;
+## Fix up the syntax highlighting - for those with a language specified
 find . -name "20*.md" -exec perl -0777 -i -p -e 's{\n\`\`\`(.*?)\n(.*?)\n\`\`\`\n}{\n\{\% highlight $1 \%\}\n$2\n\{\% endhighlight \%\}\n}gs' '{}' \;
 
-
-
+# Move to the appropriate directory
 mv *.md ../../AI/
 mv *.md ../../OSS/
+
+
+

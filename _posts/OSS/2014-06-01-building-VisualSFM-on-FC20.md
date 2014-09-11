@@ -329,7 +329,7 @@ cp cmvs/program/main/genOption vsfm/bin
 {% endhighlight %}
 
 
-### Running Whole Enchilada
+### Running the Whole Enchilada
 
 {% highlight bash %}
 cd vsfm/bin
