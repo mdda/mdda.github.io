@@ -10,3 +10,8 @@ gem install rake
 ## rake theme:install git="https://github.com/jekyll-bs3/dbyll"
 
 
+git add assets/themes/dbyll
+git add _includes/themes/dbyll
+git add _layouts/*
+
+git commit -a -m "Gravatar MD5 included"
