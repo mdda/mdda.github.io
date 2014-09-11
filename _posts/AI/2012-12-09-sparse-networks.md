@@ -2,6 +2,7 @@
 layout: post
 category: AI
 title: Sparse Networks
+date: 2012-12-09
 tagline: Are Neural Networks over-connected?
 tags: [NeuralNetworks]
 published : true
