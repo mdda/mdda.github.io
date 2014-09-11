@@ -22,7 +22,8 @@ author :
   linkedin : martinandrews
   #feedburner : feedname
   #resume: http://mdda.net/resume
-  #email_md5: 726351295ec82e145928582f595aa3aa
+  ## This is to do with the gravatar...
+  email_md5: c2e5523956cfa2db30b3e8ecbaf8f8f6
   
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt
