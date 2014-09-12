@@ -9,9 +9,9 @@ group: navigation
 <div class="col-sm-3">
     <ul class="nav nav-tabs tabs-left">
       {% assign tags_list = site.tags %}
-       {% if tags_list.first[0] == null %}
+      {% if tags_list.first[0] == null %}
         {% for tag in tags_list %}
-            <li>
+            <li> <!-- NOT DOING THIS ONE !--> 
                 <a href="#{{ tag }}-ref" data-toggle="tab">
                   {{ tag }} <span class="badge pull-right">{{ site.tags[tag].size }}</span>
                </a>
