@@ -9,7 +9,6 @@ published: false
 ---
 {% include JB/setup %}
 
-
-asd
+{% include custom/paper_review %}
 
 [Do Deep Nets Really Need to be Deep?](http://arxiv.org/pdf/1312.6184.pdf)
