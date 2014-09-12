@@ -10,7 +10,7 @@ group: navigation
       {% assign categories_list = site.categories %}
       {% if categories_list.first[0] == null %}
         {% for category in categories_list %}
-            <li>
+            <li> <!-- Not using this one, apparently !-->
                 <a href="#{{ category }}-ref" data-toggle="tab">
                   {{ category | upcase }} <span class="badge pull-right">{{ site.categories[category].size }}</span>
                </a>

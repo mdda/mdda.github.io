@@ -1,0 +1,15 @@
+---
+layout: page
+title : Archive - AI
+header : AI Post Archive
+group: navigation
+---
+{% include JB/setup %}
+
+{% for category in site.categories %}
+  {% if category[0] == 'ai' %}
+    {% assign posts_collate = category[1] %}
+  {% endif %}
+{% endfor %}
+
+{% include JB/posts_collate %}
