@@ -11,7 +11,7 @@ sudo yum install ruby-devel
 gem install bundler
 bundle install 
 
-bundle exec jekyll serve --watch
+bundle exec jekyll serve --watch --unpublished
 
 
 ### http://jekyllbootstrap3.tk/preview/#/theme/Dbyll

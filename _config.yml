@@ -5,6 +5,12 @@ permalink: /:categories/:year/:month/:day/:title
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 highlighter: pygments
 
+gems:
+- jekyll-mentions
+- jemoji
+- jekyll-redirect-from
+- jekyll-sitemap
+
 # https://help.github.com/articles/migrating-your-pages-site-from-maruku
 markdown: kramdown
 
@@ -33,7 +39,8 @@ author :
 # Else if you are pushing to username.github.io, replace with your username.
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
-production_url : http://mdda.github.io
+#production_url : http://mdda.github.io
+production_url : http://blog.mdda.net
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
