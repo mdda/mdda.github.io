@@ -13,7 +13,7 @@ group: navigation
         {% for tag in tags_list %}
             <li>
                 <a href="#{{ tag }}-ref" data-toggle="tab">
-                  {{ tag | capitalize }} <span class="badge pull-right">{{ site.tags[tag].size }}</span>
+                  {{ tag }} <span class="badge pull-right">{{ site.tags[tag].size }}</span>
                </a>
             </li>
         {% endfor %}
@@ -21,7 +21,7 @@ group: navigation
         {% for tag in tags_list %}
             <li>
                 <a href="#{{ tag[0] }}-ref" data-toggle="tab">
-                    {{ tag[0] | capitalize }} <span class="badge pull-right">{{ tag[1].size }}</span>
+                    {{ tag[0] }} <span class="badge pull-right">{{ tag[1].size }}</span>
                 </a>
             </li>
         {% endfor %}
