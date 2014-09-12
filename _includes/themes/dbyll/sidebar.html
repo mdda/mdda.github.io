@@ -64,8 +64,9 @@
 <div class="sidebar-links text-center">
   <ul class="nav nav-pills nav-stacked">
     <li><a href="{% if BASE_PATH %}{{ BASE_PATH }}{% else %}/{% endif %}">Home</a></li>
-    <li><a href="{{ BASE_PATH}}{{ site.JB.categories_path }}">Categories</a></li>
+    <li><a href="{{ BASE_PATH}}{{ site.JB.archive_path }}">Archives</a></li>
     <li><a href="{{ BASE_PATH}}{{ site.JB.tags_path }}">Tags</a></li>
+    <li><a href="{{ BASE_PATH}}{{ site.JB.categories_path }}">Categories</a></li>
   </ul>
 </div>
 

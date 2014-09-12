@@ -78,8 +78,9 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="{% if BASE_PATH %}{{ BASE_PATH }}{% else %}/{% endif %}">Home</a></li>
-        <li><a href="{{ BASE_PATH}}{{ site.JB.categories_path }}">Categories</a></li>
+        <li><a href="{{ BASE_PATH}}{{ site.JB.archive_path }}">Archives</a></li>
         <li><a href="{{ BASE_PATH}}{{ site.JB.tags_path }}">Tags</a></li>
+        <li><a href="{{ BASE_PATH}}{{ site.JB.categories_path }}">Categories</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </nav>
