@@ -66,3 +66,5 @@ http://stackoverflow.com/questions/1408824/an-easy-way-to-support-tags-in-a-jeky
 
 ## Todo : GitHub Follow Button
 http://ghbtns.com/
+https://help.github.com/articles/repository-metadata-on-github-pages
+
