@@ -56,10 +56,13 @@ mv *.md ../../OSS/
 
 
 ### Fix up pages
-https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+# https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 
+## Move over images
+# Can't find any (??)
 
-
-## Todo : 
+## Todo : Nicer TAG pages
 http://stackoverflow.com/questions/1408824/an-easy-way-to-support-tags-in-a-jekyll-blog
 
+## Todo : GitHub Follow Button
+http://ghbtns.com/
