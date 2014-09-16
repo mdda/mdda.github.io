@@ -30,12 +30,13 @@ This write-up contains my first impressions of the paper :
 ### Question Marks 
 
 The intuition is tempting : 
-*  deep networks better for learning than shallow networks
-*  deep networks are better at discovering useful features
-*  (particularly since the shallow nets are taught to behave as intermediary layers, rather than just mimic the end result)
-*  shallow networks may be more compressible?
-*  1000->1 reduction (talked about, though not demonstrated)
-*  what is advantage here of the shallow network?
+
+  *  deep networks better for learning than shallow networks
+  *  deep networks are better at discovering useful features
+  *  (particularly since the shallow nets are taught to behave as intermediary layers, rather than just mimic the end result)
+  *  shallow networks may be more compressible?
+  *  1000->1 reduction (talked about, though not demonstrated)
+  *  what is advantage here of the shallow network?
 
 
 ### Simple model - Factorization
