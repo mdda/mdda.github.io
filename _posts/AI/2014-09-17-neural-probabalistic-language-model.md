@@ -3,7 +3,7 @@ layout: post
 category: AI
 title: Neural Probabilistic Language Model
 tagline: Paper Takeaway
-date: 2014-09-17
+date: 2014-09-19
 tags: [NeuralNetworks,PaperTakeaway]
 published: false
 ---
