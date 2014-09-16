@@ -44,20 +44,30 @@ No doubt, the authors of the
 paper tried hard to optimise the number of weights that the single layer model used,
 and are reporting the best outcome they found.
 
-The benefit of the model being H*K factorizable at little cost in terms of fit (maybe a benefit in
-terms of generalization) and a definite win in terms of fit per parameter.
+The benefit of the model being H*K factorizable ('bottleneck linear layer') 
+at little cost in terms of fit (maybe a benefit in terms of generalization) 
+and a definite win in terms of fit per parameter.
 
-### Training on the Test Data
-Problem with training on test data : Not really valid (test data is still 'valid input')
+Isn't the bottleneck linear layer a bit like a convolution?
+
+Intermediate layer being trained on is on log(p) rather than just 'p' - 
+another interesting optimisation that is probably the result of experimentation (with 
+an attractive post-hoc explanation).
+
+NONONO ### Training on the Test Data
+NONONO Problem with training on test data : Not really valid (test data is still 'valid input')
 
 ### Deep Nets embed an implicit human model of data
 
 Perhaps deep-convolutional network embeds a human-created regularisation on the 
 form of the model that is difficult to capture with the same # of parameters 
-in a single layer - but, when enhanced with more data (as is done in the paper,
-where test data is allowed to be trained on), the model becomes well-specified 
+in a single layer - but, when enhanced with more data, the model becomes well-specified 
 enough to be learnable, and the given 'parameter budget'.
 
 Isn't the larger model (which learns from the training set well) simply being 
 used to generate more learning cases for the simple model?
+
+### Also interesting
+
+Drop-out was 'critical' for deep net learning.  Not used for shallow net.
 
