@@ -14,14 +14,29 @@ published: false
 This write-up contains my first impressions of the paper :
 [Do Deep Nets Really Need to be Deep?](http://arxiv.org/pdf/1312.6184.pdf)
 
+> ### Abstract
+> Currently, deep neural networks are the state of the art on problems such as speech
+> recognition and computer vision. In this extended abstract, we show that shallow 
+> feed-forward networks can learn the complex functions previously learned by
+> deep nets and achieve accuracies previously only achievable with deep models.  Moreover, 
+> in some cases the shallow neural nets can learn these deep functions
+> using a total number of parameters similar to the original deep model. We evaluate our
+> method on the TIMIT phoneme recognition task and are able to train
+> shallow fully-connected nets that perform similarly to complex, well-engineered,
+> deep convolutional architectures. Our success in training shallow neural nets to
+> mimic deeper models suggests that there probably exist better algorithms for training shallow 
+> feed-forward nets than those currently available.
 
-Intuition is tempting : 
-  deep networks better for learning than shallow networks
-  deep networks are better at discovering useful features
-  (particularly since the shallow nets are taught to behave as intermediary layers, rather than just mimic the end result)
-  shallow networks may be more compressible?
-  1000->1 reduction (talked about, though not demonstrated)
-  what is advantage here of the shallow network?
+### Question Marks 
+
+The intuition is tempting : 
+*  deep networks better for learning than shallow networks
+*  deep networks are better at discovering useful features
+*  (particularly since the shallow nets are taught to behave as intermediary layers, rather than just mimic the end result)
+*  shallow networks may be more compressible?
+*  1000->1 reduction (talked about, though not demonstrated)
+*  what is advantage here of the shallow network?
+
 
 ### Simple model - Factorization
 
@@ -42,4 +57,7 @@ form of the model that is difficult to capture with the same # of parameters
 in a single layer - but, when enhanced with more data (as is done in the paper,
 where test data is allowed to be trained on), the model becomes well-specified 
 enough to be learnable, and the given 'parameter budget'.
+
+Isn't the larger model (which learns from the training set well) simply being 
+used to generate more learning cases for the simple model?
 
