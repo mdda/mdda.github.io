@@ -5,7 +5,7 @@ title: Combatting overfitting in Trading
 tagline: Hyperparameters
 date: 2014-09-16
 tags: [AlgorithmicTrading,MachineLearning]
-published: false
+published: true
 ---
 {% include JB/setup %}
 
