@@ -68,3 +68,7 @@ http://stackoverflow.com/questions/1408824/an-easy-way-to-support-tags-in-a-jeky
 http://ghbtns.com/
 https://help.github.com/articles/repository-metadata-on-github-pages
 
+
+
+Want to do in-depth look at :
+  JPEG originators' keynote / paper / talk

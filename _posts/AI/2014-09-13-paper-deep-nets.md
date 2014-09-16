@@ -11,16 +11,35 @@ published: false
 
 {% include custom/paper_review %}
 
-
+This write-up contains my first impressions of the paper :
 [Do Deep Nets Really Need to be Deep?](http://arxiv.org/pdf/1312.6184.pdf)
 
 
 Intuition is tempting : 
+  deep networks better for learning than shallow networks
+  deep networks are better at discovering useful features
+  (particularly since the shallow nets are taught to behave as intermediary layers, rather than just mimic the end result)
+  shallow networks may be more compressible?
   1000->1 reduction (talked about, though not demonstrated)
-  deep networks better for learning than shallow
   what is advantage here of the shallow network?
 
-What is point of H * K factorization?  
+### Simple model - Factorization
 
+No doubt, the authors of the 
+paper tried hard to optimise the number of weights that the single layer model used,
+and are reporting the best outcome they found.
+
+The benefit of the model being H*K factorizable at little cost in terms of fit (maybe a benefit in
+terms of generalization) and a definite win in terms of fit per parameter.
+
+### Training on the Test Data
 Problem with training on test data : Not really valid (test data is still 'valid input')
+
+### Deep Nets embed an implicit human model of data
+
+Perhaps deep-convolutional network embeds a human-created regularisation on the 
+form of the model that is difficult to capture with the same # of parameters 
+in a single layer - but, when enhanced with more data (as is done in the paper,
+where test data is allowed to be trained on), the model becomes well-specified 
+enough to be learnable, and the given 'parameter budget'.
 
