@@ -12,6 +12,7 @@ gems:
 - jekyll-sitemap
 
 # https://help.github.com/articles/migrating-your-pages-site-from-maruku
+# http://christopherpoole.github.io/using-mathjax-on-github-pages/
 markdown: kramdown
 
 # Themes are encouraged to use these universal variables

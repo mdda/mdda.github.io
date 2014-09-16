@@ -3,9 +3,9 @@ layout: post
 category: AI
 title: Do Deep Nets Really Need to be Deep?
 tagline: Paper Takeaway
-date: 2014-09-13
+date: 2014-09-17
 tags: [NeuralNetworks,PaperTakeaway]
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -31,7 +31,7 @@ This write-up contains first impressions of the paper :
 
 The intuitions given in the <del>paper</del> extended abstract are tempting : 
 
-  *  deep networks better for learning than shallow networks
+  *  deep networks are better for learning than shallow networks
   *  shallow networks don't actually need more parameters than deep ones
   *  shallow networks may be more compressible (?)
   
@@ -50,33 +50,36 @@ No doubt, the authors of the
 paper tried hard to optimise the number of weights that the single layer 
 model used, and are reporting the best outcome they found.
 
-One of the key wins was showing that the 'O(H*D)' model could be 'O(k*(H+D))' factorizable, 
-with a 'bottleneck linear layer' of size 'k'.  This factorization had little cost in 
+One of the key wins was showing that the `O(H*D)` model could be `O(k*(H+D))` factorizable, 
+with a 'bottleneck linear layer' of size `k`.  This factorization had little cost in 
 terms of fit (maybe a benefit in terms of generalization) 
 and a definite win in terms of fit per parameter.
-
-_Isn't a bottleneck linear layer a bit like a convolution?_
 
 
 ### Simple model : Learning from pre-output stage
 
 The intermediate layer that the shallow network is trained on is pre-processed : 
-log(p) is used rather than just 'p'.  This is another interesting optimisation 
+`log(p)` is used rather than just `p`.  This is another interesting optimisation 
 that is probably the result of experimentation (with an attractive post-hoc explanation).
 
 
 ### Idea : Deep Nets embed an implicit human model of data
 
 Deep-convolutional networks implicitly embed a human-crafted regularisation on the 
-form of the model that is difficult to capture with the same # of parameters 
+form of the model that is difficult to capture with the same number of parameters 
 in a single layer - but, when enhanced with more data, the model becomes well-specified 
 enough to be learnable, for the given 'parameter budget'.
 
 Can't the larger model (which learns from the training set well) simply be 
 used to generate more learning cases for the simple model?
 
-
 ### Also interesting
 
-Drop-out was 'critical' for deep net learning.  Not used for shallow net.
+The feature generation aspect of deep learning is also interesting.  A deeper network
+may be able to identify 'hidden features' because its hieirarchical structure
+more directly maps to the nature of the problem space.  But, once fitted,
+the key take-aways can be distilled out for a simpler network to learn.  Interesting
+to think of short-term learning vs long-term memory here too.
+
+Drop-out was 'critical' for deep net learning.  Drop-out was not used for the shallow net.
 
