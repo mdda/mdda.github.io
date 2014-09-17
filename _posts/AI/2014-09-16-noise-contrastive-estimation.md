@@ -12,5 +12,9 @@ published: false
 {% include custom/paper_review %}
 
 This write-up contains my first impressions of the paper :
-[Learning word embeddings efficiently with noise-contrastive estimation](XXXX_wordreps.pdf)
+[Learning word embeddings efficiently with noise-contrastive estimation](https://www.cs.toronto.edu/~amnih/papers/wordreps.pdf)
+
+Fancy model
+deconstructed setp-by-step
+leaving inner kernel of truth
 
