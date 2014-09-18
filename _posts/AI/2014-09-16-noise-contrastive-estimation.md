@@ -18,6 +18,6 @@ This write-up contains my first impressions of the paper :
 
 > Previous models                <br/>
 > deconstructed step-by-step     <br />
-> leaves kernel of truth          
+> leave kernels of truth          
 
 
