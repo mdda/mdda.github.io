@@ -1,7 +1,7 @@
 ---
 layout: post
 category: AI
-title: Neural Probabilistic Language Model
+title: Neural Probabilistic Language Model - Bengio 2003
 tagline: Paper Takeaway
 date: 2014-09-19
 tags: [NeuralNetworks,PaperTakeaway]
