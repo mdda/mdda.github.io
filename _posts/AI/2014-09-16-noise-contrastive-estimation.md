@@ -14,6 +14,13 @@ published: false
 This write-up contains my first impressions of the paper :
 [Learning word embeddings efficiently with noise-contrastive estimation](https://www.cs.toronto.edu/~amnih/papers/wordreps.pdf)
 
+Thinned out words, by rejecting any with <10 occurrences
+
+
+
+### Interesting
+
+Multiple representations for words
 
 
 > Previous models                <br/>
