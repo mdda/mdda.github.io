@@ -11,7 +11,7 @@ published: false
 
 {% include custom/paper_review %}
 
-This write-up contains my first impressions of the paper :
+This write-up contains a few takeaways that I had from the paper :
 [A Neural Probabilistic Language Model](http://machinelearning.wustl.edu/mlpapers/paper_files/BengioDVJ03.pdf)
 
 Convolution works with images, because we know that JPEG is an encoding that degrades with minimum impact for images when the encoding length is restricted.  i.e.  That kind of down-sampling results in low information loss.  (The same cannot be said for Run Length Encoding, for instance).
