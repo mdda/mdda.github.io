@@ -20,5 +20,15 @@ Amazingly, simple vector embedding works for natural language.  This flies in th
 
 It seems like the vector embedding is only a small, first step towards something more 'meaningful'.
 
+ -  Is this what the Huffman-style coding idea mentioned in Mikolov is getting at?
 
+State-of-the-art results in 2003 involved trigrams and 'tricks'.
+
+Paccanaro and Hinton 2000 had a less 'statistical' and more symbolically meaningful approach
+
+Apparently, sloppy asychronous updates of the model work pretty well (not detrimental).
+
+WordNet is human-curated synonym sets with definitions and usage examples.  BSD license, 12Mb compressed.  Also have semantic linkages between synonym sets.
+
+Fight the curse of dimensionality with its own weapons : each training sentence informs the model about a combinatorial number of other sentences.
 
