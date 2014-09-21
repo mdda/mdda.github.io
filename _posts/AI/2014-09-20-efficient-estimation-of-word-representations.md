@@ -20,53 +20,20 @@ Good links to other word representation data sets (which probably took a lot lon
 Linear representations (and regularities) emphasised, so that vector algebra works semantically ( Man:King == Woman:Queen, because v(King)-v(Man)=v(Queen)-v(Woman) )
 Almost unbelievable that this can pick up the relationships shown : 
 
-Relationship
-France - Paris
-big - bigger
-Miami - Florida
-Einstein - scientist
-Sarkozy - France
-copper - Cu
-Berlusconi - Silvio
-Microsoft - Windows
-Microsoft - Ballmer
-Japan - sushi
+| Relationship |  | | Example 1 | | | Example 2 |  | | Example 3 | | |
+| --------------:|---|:-------------- |  --------------:|---|:-------------- | --------------:|---|:-------------- | --------------:|---|:-------------- | 
+| France | : | Paris | Italy | : | Rome | Japan | : | Tokyo | Florida | : | Tallahassee |
+| big | : | bigger | small | : | larger | cold | : | colder | quick | : | quicker |
+| Miami | : | Florida | Baltimore | : | Maryland | Dallas | : | Texas | Kona | : | Hawaii |
+| Einstein | : | scientist | Messi | : | midfielder | Mozart | : | violinist | Picasso | : | painter |
+| Sarkozy | : | France | Berlusconi | : | Italy | Merkel | : | Germany | Koizumi | : | Japan |
+| copper | : | Cu | zinc | : | Zn | gold | : | Au | uranium | : | plutonium |
+| Berlusconi | : | Silvio | Sarkozy | : | Nicolas | Putin | : | Medvedev | Obama | : | Barack |
+| Microsoft | : | Windows | Google | : | Android | IBM | : | Linux | Apple | : | iPhone |
+| Microsoft | : | Ballmer | Google | : | Yahoo | IBM | : | McNealy | Apple | : | Jobs |
+| Japan | : | sushi | Germany | : | bratwurst | France | : | tapas | USA | : | pizza |
 
-Example 1
-Italy: Rome
-small: larger
-Baltimore: Maryland
-Messi: midfielder
-Berlusconi: Italy
-zinc: Zn
-Sarkozy: Nicolas
-Google: Android
-Google: Yahoo
-Germany: bratwurst
 
-Example 2
-Japan: Tokyo
-cold: colder
-Dallas: Texas
-Mozart: violinist
-Merkel: Germany
-gold: Au
-Putin: Medvedev
-IBM: Linux
-IBM: McNealy
-France: tapas
-
-Example 3
-Florida: Tallahassee
-quick: quicker
-Kona: Hawaii
-Picasso: painter
-Koizumi: Japan
-uranium: plutonium
-Obama: Barack
-Apple: iPhone
-Apple: Jobs
-USA: pizza
 
 Convolution works with images, because we know that JPEG is an encoding that degrades with minimum impact for images when the encoding length is restricted.  i.e.  That kind of down-sampling results in low information loss.  (The same cannot be said for Run Length Encoding, for instance).
 
