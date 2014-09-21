@@ -68,6 +68,16 @@ Apple: iPhone
 Apple: Jobs
 USA: pizza
 
+Convolution works with images, because we know that JPEG is an encoding that degrades with minimum impact for images when the encoding length is restricted.  i.e.  That kind of down-sampling results in low information loss.  (The same cannot be said for Run Length Encoding, for instance).
+
+Amazingly, simple vector embedding works for natural language.  This flies in the face of the beautiful, thorough work that linguists do.  For instance, translations take account of the hierarchy of concepts, etc, in the text to create effective mappings between languages (which are likely to attempt to minimise description length, without losing information).  Surely there must be better embeddings available?  
+
+It seems like the vector embedding is only a small, first step towards something more 'meaningful'.
+
+ -  Is this what the Huffman-style coding idea mentioned in Mikolov is getting at?
+
+
+
 Used Google News corpus (6B words, only look at 1 million most common words)
 Initial model sizing/checking done with just 30k most common words
 
