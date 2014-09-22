@@ -17,8 +17,15 @@ This write-up contains my first impressions of the paper :
 Key initial work was Bengio 2003.
 Good links to other word representation data sets (which probably took a lot longer to train).
 
-Linear representations (and regularities) emphasised, so that vector algebra works semantically ( Man:King == Woman:Queen, because v(King)-v(Man)=v(Queen)-v(Woman) )
-Almost unbelievable that this can pick up the relationships shown : 
+Linear representations (and regularities) emphasised, so that vector algebra works semantically :
+
+```
+ Man:King == Woman:Queen```, because ```v(King)-v(Man)=v(Queen)-v(Woman)
+```
+ 
+It is almost  unbelievable that this technique can pick up the following relationships (from the paper, which are 
+representative of the actual test set used - on a task where the training data
+is purely oriented to word-prediction, not the learning of the vector-embedded task at all) : 
 
 | Relationship |  | | Example 1 | | | Example 2 |  | | Example 3 | | |
 | --------------:|---|:-------------- |  --------------:|---|:-------------- | --------------:|---|:-------------- | --------------:|---|:-------------- | 
@@ -33,7 +40,7 @@ Almost unbelievable that this can pick up the relationships shown :
 | Microsoft | : | Ballmer | Google | : | Yahoo | IBM | : | McNealy | Apple | : | Jobs |
 | Japan | : | sushi | Germany | : | bratwurst | France | : | tapas | USA | : | pizza |
 
-
+<br />
 
 Convolution works with images, because we know that JPEG is an encoding that degrades with minimum impact for images when the encoding length is restricted.  i.e.  That kind of down-sampling results in low information loss.  (The same cannot be said for Run Length Encoding, for instance).
 
