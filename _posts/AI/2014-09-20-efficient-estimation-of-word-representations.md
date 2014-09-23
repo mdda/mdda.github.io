@@ -11,7 +11,7 @@ published: false
 
 {% include custom/paper_review %}
 
-This write-up contains my first impressions of the paper :
+This write-up contains a few takeaways that I had from the paper :
 [Efficient Estimation of Word Representations in Vector Space - (Mikolov et al, 2013)](http://arxiv.org/pdf/1301.3781.pdf)
 
 Key initial work was Bengio 2003.
@@ -51,6 +51,7 @@ It seems like the vector embedding is only a small, first step towards something
  -  Is this what the Huffman-style coding idea mentioned in Mikolov is getting at?
 
 
+### Training Regime Summary
 
 Used Google News corpus (6B words, only look at 1 million most common words)
 Initial model sizing/checking done with just 30k most common words
