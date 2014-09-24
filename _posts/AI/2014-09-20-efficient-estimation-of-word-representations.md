@@ -1,7 +1,7 @@
 ---
 layout: post
 category: AI
-title: Efficient Estimation of Word Representations in Vector Space - Mikolov 2013
+title: Word Representations in Vector Space - Mikolov 2013
 tagline: Paper Takeaway
 date: 2014-09-20
 tags: [NeuralNetworks,PaperTakeaway]
@@ -11,8 +11,9 @@ published: false
 
 {% include custom/paper_review %}
 
-This write-up contains a few takeaways that I had from the paper :
-[Efficient Estimation of Word Representations in Vector Space - (Mikolov et al, 2013)](http://arxiv.org/pdf/1301.3781.pdf)
+This write-up contains a few takeaways that I had from the papers :
+[Linguistic Regularities in Continuous Space Word Representations - (Mikolov et al, 2013)](http://research.microsoft.com/apps/pubs/default.aspx?id=189726) and 
+[Efficient Estimation of Word Representations in Vector Space - (Mikolov et al, 2013)](http://arxiv.org/abs/1301.3781).
 
 Key initial work was Bengio 2003.
 Good links to other word representation data sets (which probably took a lot longer to train).
