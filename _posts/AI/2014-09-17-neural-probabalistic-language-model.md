@@ -4,7 +4,7 @@ category: AI
 title: Neural Probabilistic Language Model - Bengio 2003
 tagline: Paper Takeaway
 date: 2014-09-19
-tags: [NeuralNetworks,PaperTakeaway]
+tags: [NeuralNetworks,NLP,WordEmbedding,PaperTakeaway]
 published: false
 ---
 {% include JB/setup %}

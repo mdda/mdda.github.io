@@ -4,7 +4,7 @@ category: AI
 title: Word Representations in Vector Space - Mikolov 2013
 tagline: Paper Takeaway
 date: 2014-09-20
-tags: [NeuralNetworks,PaperTakeaway]
+tags: [NeuralNetworks,NLP,WordEmbedding,PaperTakeaway]
 published: false
 ---
 {% include JB/setup %}
