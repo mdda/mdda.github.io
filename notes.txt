@@ -63,6 +63,8 @@ mv *.md ../../OSS/
 
 ## Todo : Nicer TAG pages
 http://stackoverflow.com/questions/1408824/an-easy-way-to-support-tags-in-a-jekyll-blog
+http://christianspecht.de/tags/#reporting-services
+http://docs.shopify.com/themes/liquid-documentation/filters/additional-filters
 
 ## Todo : GitHub Follow Button
 http://ghbtns.com/
@@ -76,4 +78,11 @@ Want to do in-depth look at :
 
 Is RELU same as hinge?
 Make MathJax work (??)
+
+
+http://jekyllrb.com/docs/pages/
+https://github.com/dbtek/jekyll-bootstrap-3/
+https://github.com/jekyll-bootstrap-3/dbyll
+http://getbootstrap.com/css/#overview-container
+http://fortawesome.github.io/Font-Awesome/icons/
 
