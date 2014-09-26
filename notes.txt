@@ -86,3 +86,5 @@ https://github.com/jekyll-bootstrap-3/dbyll
 http://getbootstrap.com/css/#overview-container
 http://fortawesome.github.io/Font-Awesome/icons/
 
+
+Idea : Put up LibreOffice Python plugin notes
