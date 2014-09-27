@@ -12,7 +12,7 @@ published: true
 {% include custom/paper_review %}
 
 This write-up contains a few takeaways that I had from the paper :
-[A Neural Probabilistic Language Model - Bengio et al 2003 ](http://machinelearning.wustl.edu/mlpapers/paper_files/BengioDVJ03.pdf)
+[A Neural Probabilistic Language Model - (Bengio et al 2003) ](http://machinelearning.wustl.edu/mlpapers/paper_files/BengioDVJ03.pdf)
 
 ### Paper Background
 
