@@ -88,3 +88,4 @@ http://fortawesome.github.io/Font-Awesome/icons/
 
 
 Idea : Put up LibreOffice Python plugin notes
+
