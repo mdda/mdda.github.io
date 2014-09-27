@@ -58,6 +58,10 @@ is purely oriented to word-prediction, not the learning of the vector-embedded t
 
 ### Huffman tree based hierarchical softmax
 
+x [25, 23, 18], or avoiding normalized
+models completely by using models that are not normalized during training [4, 9].
+e models [16]. Huffma
+
 
 It seems like the vector embedding is only a small, first step towards something more 'meaningful'.
 

@@ -74,7 +74,11 @@ https://help.github.com/articles/repository-metadata-on-github-pages
 
 Want to do in-depth look at :
   JPEG originators' keynote / paper / talk
-
+  Socher-Manning video presentation again :: http://techtalks.tv/talks/deep-learning-for-nlp-without-magic-part-1/58414/
+  http://nlp.stanford.edu/courses/NAACL2013/NAACL2013-Socher-Manning-DeepLearning.pdf  (downloaded)
+  http://www.socher.org/index.php/Main/ParsingWithCompositionalVectorGrammars
+  
+  NN for NER :: http://nlp.stanford.edu/~socherr/pa4_ner.pdf
 
 Is RELU same as hinge?
 Make MathJax work (??)
