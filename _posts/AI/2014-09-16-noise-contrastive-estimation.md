@@ -24,7 +24,10 @@ This used a two-stage tree construction method : stage 1 involved a random tree,
 
   * If words were allowed to appear multiple times in the tree, the training didn't seem to pick up multiple senses : The duplicate entries favoured rare words, in similar settings, rather than common, multi-sense words
   
-  * ...
+  * The issues addressed in building trees (eg: how to reasonably divide up the samples at the node between left and right children) were those common in the tree recursive methods community - and it seemed like a less-than-in-depth treatment of an area that is actively researched
+  
+  
+  
   
    
 
