@@ -26,6 +26,8 @@ This used a two-stage tree construction method : stage 1 involved a random tree,
   
   * The issues addressed in building trees (eg: how to reasonably divide up the samples at the node between left and right children) were those common in the tree recursive methods community - and it seemed like a less-than-in-depth treatment of an area that is actively researched
   
+  * Generous attribution of other people's ideas, and a clear exposition of the reasoning behind each choice at each decision point
+  
   
   
   
