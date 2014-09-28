@@ -16,6 +16,10 @@ This write-up contains my first impressions of the paper :
 
 Thinned out words, by rejecting any with <10 occurrences
 
+See also : 
+Bengio, Y. and Sen ́ecal, J.-S. (2003). Quick training of
+probabilistic neural nets by importance sampling.
+http://www.iro.umontreal.ca/~lisa/pointeurs/senecal_aistats2003.pdf
 
 
 ### Interesting
