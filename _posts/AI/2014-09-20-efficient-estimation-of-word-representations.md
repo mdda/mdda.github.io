@@ -58,9 +58,8 @@ is purely oriented to word-prediction, not the learning of the vector-embedded t
 
 ### Huffman tree based hierarchical softmax
 
-x [25, 23, 18], or avoiding normalized
-models completely by using models that are not normalized during training [4, 9].
-e models [16]. Huffma
+This seems to be 'cheating', in that a 'binary heirachialized' WordNet embedded is used as the NN target - which implicitly embedding knowledge of the English language into the net : 
+[Hierarchical Probabilistic Neural Network Language Model - (Frederic Morin & Yoshua Bengio 2005)](http://www.iro.umontreal.ca/~lisa/pointeurs/hierarchical-nnlm-aistats05.pdf).  On the other hand, it's not clear how/whether this information is leaking back to the vector space representation for the original word embedding, since Morin & Bengio are primarily treating it as a speed-up, and get worse results for generalisation than the direct 'vocab-sized' output vector they originally used.
 
 
 It seems like the vector embedding is only a small, first step towards something more 'meaningful'.
