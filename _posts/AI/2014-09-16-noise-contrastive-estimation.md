@@ -16,8 +16,10 @@ This write-up contains my first impressions of the paper :
 
 Thinned out words, by rejecting any with <10 occurrences
 
-For an earlier exposition of speeding up the embedded via contrastive estimation, see : [Quick training of probabilistic neural nets by importance sampling - (Bengio and Sen ́ecal 2003)](http://www.iro.umontreal.ca/~lisa/pointeurs/senecal_aistats2003.pdf)
+For an earlier exposition of speeding up the embedded via contrastive estimation, see : [Quick training of probabilistic neural nets by importance sampling - (Bengio and Sen&eacute;cal 2003)](http://www.iro.umontreal.ca/~lisa/pointeurs/senecal_aistats2003.pdf)
 
+Also of interest :
+[A Scalable Hierarchical Distributed Language Model - (Mnih and Hinton 2009)](https://www.cs.toronto.edu/~amnih/papers/hlbl_final.pdf)
 
 ### Ideas to Follow-Up
 

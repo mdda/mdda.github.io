@@ -62,6 +62,7 @@ The Huffman tree coding used in the paper appears to be a direct (Unigram perple
 
 The method used in [Hierarchical Probabilistic Neural Network Language Model - (Frederic Morin & Yoshua Bengio 2005)](http://www.iro.umontreal.ca/~lisa/pointeurs/hierarchical-nnlm-aistats05.pdf) seems to be 'cheating', in that a 'binary hierachialized' WordNet is used as the basis for the NN target representation - which implicitly embedding knowledge of the English language into the net (On the other hand, it's not clear how/whether this information is leaking back to the vector space representation for the original word embedding, since Morin & Bengio are primarily treating it as a speed-up, and get worse results for generalisation than the direct 'vocab-sized' output vector they originally used).
 
+Why doesn't this paper make more than a passing reference to [A Scalable Hierarchical Distributed Language Model - (Mnih and Hinton 2009)](https://www.cs.toronto.edu/~amnih/papers/hlbl_final.pdf)?
 
 ### Ideas to Follow-Up
 
