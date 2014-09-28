@@ -20,6 +20,8 @@ For an earlier exposition of speeding up the embedded via contrastive estimation
 
 Also of interest :
 [A Scalable Hierarchical Distributed Language Model - (Mnih and Hinton 2009)](https://www.cs.toronto.edu/~amnih/papers/hlbl_final.pdf)
+This used a two-stage tree construction method : stage 1 involved a random tree, so that some vector embedding could be performed, then stage 2 produced a tree based on the word vectors found in stage 1, and then produced the final word embeddings from there.
+
 
 ### Ideas to Follow-Up
 
