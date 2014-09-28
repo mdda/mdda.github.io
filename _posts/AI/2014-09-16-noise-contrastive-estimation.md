@@ -30,7 +30,7 @@ This used a two-stage tree construction method : stage 1 involved a random tree,
   
   * Hierarchical methods were plainly a computational win over the 'full-V' LBL model.  However, it seemed like the authors had to 'pull out all the stops' to get perplexity performance to beat the complexity-competitive KN5 model.
   
-  * Also interesting, for using Restricted Boltzman Machines (though not explained here why they've "moved on") : [Three new graphical models for statistical language modelling - (Mnih and Hinton 2007)](https://www.cs.toronto.edu/~amnih/papers/threenew.pdf)
+  * Also interesting, for using Restricted Boltzman Machines (though not explained here why they've "moved on", nor even mentioned, but to refer to previous benchmark results) : [Three new graphical models for statistical language modelling - (Mnih and Hinton 2007)](https://www.cs.toronto.edu/~amnih/papers/threenew.pdf)
   
   
    
