@@ -27,7 +27,17 @@ But it should be pointed out that showing that biological networks can be made t
 * To show that backpropagation in deeper networks with nonlinearities could be taught using only local data, one would need to build up, showing, for instance, what class of non-linear single-layers would give rise to an near-equivalent Hebbian learning update rule.  For a start, check out references in "3.8.3 Nonlinear PCA"
 
 
-### 4.8 Novelty Detection
+### 4.8 Introduction of REC networks and Novelty Detection
 
 * Kohonen apparently had an interesting approach (and also mentioned earlier for his work on localisation and inhibition)
+
+### 4.10 Minimum reconstruction error as maximum likelihood
+
+* It feels like a fast one has been pulled here.  What if 2 'x's are close enough for 'v' to blur over the two of them?  Not clear that the argument justifies the MLE claim as it stands.
+
+### Chapter 4 overall
+
+* Maybe it's because we're now spoilt by riches, but the toy problems the linear REC are demonstrated on (in 1997) are *really* small
+
+
 
