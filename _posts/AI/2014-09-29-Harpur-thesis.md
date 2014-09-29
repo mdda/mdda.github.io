@@ -20,4 +20,8 @@ This write-up contains a few takeaways that I had from the thesis :
 
 But it should be pointed out that showing that biological networks can be made to perform PCA using only local interactions validates the idea that using SVD in a more typical computer setting should not be dismissed as being biologically implausible.
 
+* Could backpropagation be justified simply by putting the training target as an extension of the training data, and letting it self-reinforce?
+
+* Isn't that 'just' a Restricted Boltzman Machine (modulo binary vs reals)?
+
 
