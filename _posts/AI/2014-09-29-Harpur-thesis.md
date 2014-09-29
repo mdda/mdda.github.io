@@ -24,4 +24,10 @@ But it should be pointed out that showing that biological networks can be made t
 
 * Isn't that 'just' a Restricted Boltzman Machine (modulo binary vs reals)?
 
+* To show that backpropagation in deeper networks with nonlinearities could be taught using only local data, one would need to build up, showing, for instance, what class of non-linear single-layers would give rise to an near-equivalent Hebbian learning update rule.  For a start, check out references in "3.8.3 Nonlinear PCA"
+
+
+### 4.8 Novelty Detection
+
+* Kohonen apparently had an interesting approach (and also mentioned earlier for his work on localisation and inhibition)
 
