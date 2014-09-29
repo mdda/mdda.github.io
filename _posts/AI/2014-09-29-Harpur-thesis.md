@@ -14,7 +14,13 @@ published: false
 This write-up contains a few takeaways that I had from the thesis :
 [Low Entropy Coding with Unsupervised Neural Networks - (Harpur 1997)](http://mi.eng.cam.ac.uk/reports/svr-ftp/auto-pdf/harpur_thesis.pdf).
 
-### 3.2.5 Do PCA neural networks have a role?
+
+### Chapter 3 : Background
+
+* Very nice, coherent overview of different approaches to unsupervised learning
+
+
+#### 3.2.5 Do PCA neural networks have a role?
 
 > While interesting from a biological perspective, neural PCA models in their simplest form have little practical use since they will almost always be outperformed by the method of singular value decomposition.
 
@@ -27,17 +33,19 @@ But it should be pointed out that showing that biological networks can be made t
 * To show that backpropagation in deeper networks with nonlinearities could be taught using only local data, one would need to build up, showing, for instance, what class of non-linear single-layers would give rise to an near-equivalent Hebbian learning update rule.  For a start, check out references in "3.8.3 Nonlinear PCA"
 
 
-### 4.8 Introduction of REC networks and Novelty Detection
-
-* Kohonen apparently had an interesting approach (and also mentioned earlier for his work on localisation and inhibition)
-
-### 4.10 Minimum reconstruction error as maximum likelihood
-
-* It feels like a fast one has been pulled here.  What if 2 'x's are close enough for 'v' to blur over the two of them?  Not clear that the argument justifies the MLE claim as it stands.
-
-### Chapter 4 overall
+### Chapter 4 : Introduction of Recurrent Error Correction (REC) networks
 
 * Maybe it's because we're now spoilt by riches, but the toy problems the linear REC are demonstrated on (in 1997) are *really* small
 
 
+#### 4.8 Novelty Detection
+
+* Kohonen apparently had an interesting approach (and also mentioned earlier for his work on localisation and inhibition)
+
+#### 4.10 Minimum reconstruction error as maximum likelihood
+
+* It feels like a fast one has been pulled here.  What if 2 'x's are close enough for 'v' to blur over the two of them?  Not clear that the argument justifies the MLE claim as it stands.
+
+
+### Chapter 5 : Constraints
 
