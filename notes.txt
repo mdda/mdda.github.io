@@ -71,23 +71,30 @@ http://ghbtns.com/
 https://help.github.com/articles/repository-metadata-on-github-pages
 
 
-
-Want to do in-depth look at :
-  JPEG originators' keynote / paper / talk
-  Socher-Manning video presentation again :: http://techtalks.tv/talks/deep-learning-for-nlp-without-magic-part-1/58414/
-  http://nlp.stanford.edu/courses/NAACL2013/NAACL2013-Socher-Manning-DeepLearning.pdf  (downloaded)
-  http://www.socher.org/index.php/Main/ParsingWithCompositionalVectorGrammars
-  
-  NN for NER :: http://nlp.stanford.edu/~socherr/pa4_ner.pdf
-
 Make MathJax work (??)
 
+## Useful pages while writing :
+  http://jekyllrb.com/docs/pages/
+  https://github.com/dbtek/jekyll-bootstrap-3/
+  https://github.com/jekyll-bootstrap-3/dbyll
+  http://getbootstrap.com/css/#overview-container
+  http://fortawesome.github.io/Font-Awesome/icons/
 
-http://jekyllrb.com/docs/pages/
-https://github.com/dbtek/jekyll-bootstrap-3/
-https://github.com/jekyll-bootstrap-3/dbyll
-http://getbootstrap.com/css/#overview-container
-http://fortawesome.github.io/Font-Awesome/icons/
+
+
+Want to do in-depth look at :
+  Harpur (finish)
+  Hinton Tree from bootstrap
+  Noise contrastive estimation
+  Google KV
+  Socher-Manning video presentation again :: 
+    http://techtalks.tv/talks/deep-learning-for-nlp-without-magic-part-1/58414/
+    http://nlp.stanford.edu/courses/NAACL2013/NAACL2013-Socher-Manning-DeepLearning.pdf  (downloaded)
+    http://www.socher.org/index.php/Main/ParsingWithCompositionalVectorGrammars
+    NN for NER :: http://nlp.stanford.edu/~socherr/pa4_ner.pdf
+  Dropout
+  ?One Wierd Trick
+  JPEG originators' keynote / paper / talk
 
 
 Idea : Put up LibreOffice Python plugin notes

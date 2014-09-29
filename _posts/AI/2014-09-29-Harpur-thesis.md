@@ -3,7 +3,7 @@ layout: post
 category: AI
 title: Low Entropy Coding with Unsupervised Neural Networks - Harpur 1997
 tagline: Thesis Takeaway
-date: 2014-09-29
+date: 2014-10-01
 tags: [NeuralNetworks,PaperTakeaway]
 published: false
 ---
