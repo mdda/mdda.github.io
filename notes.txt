@@ -80,7 +80,6 @@ Want to do in-depth look at :
   
   NN for NER :: http://nlp.stanford.edu/~socherr/pa4_ner.pdf
 
-Is RELU same as hinge?
 Make MathJax work (??)
 
 

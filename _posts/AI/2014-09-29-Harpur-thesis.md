@@ -49,3 +49,5 @@ But it should be pointed out that showing that biological networks can be made t
 
 ### Chapter 5 : Constraints
 
+* Rectified Linear Units are the first constraint considered (which is refreshing).  BUT the basic REC networks don't have a bias term (left for "future work"), however this could just be implemented as a constant ```ONE``` input (unless I'm thinking about it wrong).
+
