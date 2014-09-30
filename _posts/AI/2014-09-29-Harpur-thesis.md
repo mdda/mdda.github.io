@@ -93,4 +93,13 @@ But it should be pointed out that showing that biological networks can be made t
 
 * Very interesting biological comparison, connecting the feedback idea embedded in the REC network with the early visual system in mammals (apparently there are 10-100 times more feedback connections than forward directed ones in the visual system)
 
+* Wasn't clustering meant to be a topic?  The topographic mapping idea is outlined, but doesn't appear to have been explored
+
+
+Overall, the REC network described seems to be 'well founded' on a theoretical (and biological) basis.  The applications of Chapter 7 are surprisingly prescient of the applications that would become practicable (with deeper networks, built on convolutional input layers) a decade later.
+
+But I get the feeling that there's another step or two of 'principled development' that would have been a win instead of the ad-hoc application to toy problems in Chapter 6.
+
+
+
 
