@@ -82,10 +82,15 @@ But it should be pointed out that showing that biological networks can be made t
 
 ### Chapter 7 : Applications
 
-* Ad-hoc fixes to make examples work don't appear to have much motivation - couldn't the whitening problem for the images (for the wavelets examples) be acheived with bias terms, etc, rather than additional factors?
+* Many of the ad-hoc fixes to make examples work don't appear to have much motivation - couldn't the whitening problem for the images (for the wavelets examples) be acheived with bias terms, etc, rather than additional factors?
 
 * Each of the image examples seems to discover reasonable 'convolutional network' first layer kernels in an unsupervised manner.  Not familiar with the state-of-the-art at the time, though.  No indication (yet) that there's a concrete plan to stack these detectors, nor use them 'convolution style'
 
+* Overall, this chapter contained a more impressive (from a 2014 perspective) selection of applications
+
 
 ### Conclusions (and Further Work)
+
+* Very interesting biological comparison, connecting the feedback idea embedded in the REC network with the early visual system in mammals (apparently there are 10-100 times more feedback connections than forward directed ones in the visual system)
+
 
