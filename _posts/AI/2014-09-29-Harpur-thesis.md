@@ -55,6 +55,14 @@ But it should be pointed out that showing that biological networks can be made t
 
 * In 5.4, the assumption that the ```a```s are independent is mentioned only briefly - but leads to a fruitful correspondence of terms
 
-* The (loose) correspondence with the steps of the EM algorithm are suggestive.  On the other hand, it's interesting to consider the tradeoff of the (local) REC training steps, with the (global) EM optimisation.  If the REC does well, perhaps the EM could be justified as 'biologically plausible', in the same way that SVD is just a more efficient way of computing PCA by local networks.  Whether or not the EM correspondence holds, its interesting to think what 'global and efficient' methods can be supported by 'local but inefficient' implementations on biological networks.
+* The (loose) correspondence with the steps of the EM algorithm are a bit tenuous.  On the other hand, it's interesting to consider the tradeoff of the (local) REC training steps, with the (global) EM optimisation.  If the REC does well, perhaps the EM could be justified as 'biologically plausible', in the same way that SVD is just a more efficient way of computing PCA by local networks.  Whether or not the EM correspondence holds, its interesting to think what 'global and efficient' methods can be supported by 'local but inefficient' implementations on biological networks.
 
+* Kurtosis measure section seems like a side-track
 
+* 5.6 : Entropy of Sparse Codes 
+  > This gives us a feel for why finding minimum entropy codes is a combinatorially hard problem: for each element in isolation we do not know whether we should be attempting to increase or decrease the entropy in order to work towards the global minimum. It also suggests that algorithms that claim to perform general-purpose ICA by gradient descent are likely to be making strong hidden assumptions, or be beset by problems of local minima.
+
+* In the case of the crosses and squares toy problem, the author suggests that "The linear model of the REC network has no means of generating such a code, however, so we have to be content with a solution that has higher entropy, and greater sparseness, than the optimum, and perhaps argue that the extraction of
+position is a job for a higher-level process. "  In modern terms, one would think of this in terms of a deep-learning style hierarchy.  However, the sparse coding in the REC's first layer would effectively scrub away the potential for learning about the underlying tasks, since the coding reduces the image identification to 'winner takes all' indicators.
+
+### Chapter 6 : Mixture Models
