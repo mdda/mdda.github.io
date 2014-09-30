@@ -83,6 +83,10 @@ But it should be pointed out that showing that biological networks can be made t
 
 * Ad-hoc fixes to make examples work don't appear to have much motivation - couldn't the whitening problem for the images (for the wavelets examples) be acheived with bias terms, etc, rather than additional factors?
 
+* Each of the image examples seems to discover reasonable 'convolutional network' first layer kernels in an unsupervised manner.  Not familiar with the state-of-the-art at the time, though.  No indication (yet) that there's a plan to stack these detectors, nor use them 'convolution style'
+
+
+
 
 
 
