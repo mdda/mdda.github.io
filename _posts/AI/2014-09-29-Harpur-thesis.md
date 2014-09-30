@@ -62,7 +62,16 @@ But it should be pointed out that showing that biological networks can be made t
 * 5.6 : Entropy of Sparse Codes 
   > This gives us a feel for why finding minimum entropy codes is a combinatorially hard problem: for each element in isolation we do not know whether we should be attempting to increase or decrease the entropy in order to work towards the global minimum. It also suggests that algorithms that claim to perform general-purpose ICA by gradient descent are likely to be making strong hidden assumptions, or be beset by problems of local minima.
 
-* In the case of the crosses and squares toy problem, the author suggests that "The linear model of the REC network has no means of generating such a code, however, so we have to be content with a solution that has higher entropy, and greater sparseness, than the optimum, and perhaps argue that the extraction of
-position is a job for a higher-level process. "  In modern terms, one would think of this in terms of a deep-learning style hierarchy.  However, the sparse coding in the REC's first layer would effectively scrub away the potential for learning about the underlying tasks, since the coding reduces the image identification to 'winner takes all' indicators.
+* In the case of the crosses and squares toy problem, the author suggests that "The linear model of the REC network has no means of generating such a code, however, so we have to be content with a solution that has higher entropy, and greater sparseness, than the optimum, and perhaps argue that the extraction of position is a job for a higher-level process. "  In modern terms, one would think of this in terms of a deep-learning style hierarchy.  However, the sparse coding in the REC's first layer would effectively scrub away the potential for learning about the underlying tasks, since the coding reduces the image identification to 'winner takes all' indicators.  
+
+* Some of the examples talk of the 'correct' output construction being a single ```1``` in an array of ```0```s.  But that definitely not a minimum description length encoding of the data (it could easily be shortened to a binary coding, plus a 'valid' bit, for instance) 
+
 
 ### Chapter 6 : Mixture Models
+
+* Other non-linearity functions introduced, still allowing for local-based updating
+
+* A form of linearized-OR is shown to be efficiently computable within the confines of Hebbian learning 
+
+
+
