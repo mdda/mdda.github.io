@@ -79,6 +79,12 @@ But it should be pointed out that showing that biological networks can be made t
 
 * Whole chapter seems like a meander off the core theme
 
+### Chapter 7 : Applications
+
+* Ad-hoc fixes to make examples work don't appear to have much motivation - couldn't the whitening problem for the images (for the wavelets examples) be acheived with bias terms, etc, rather than additional factors?
+
+
+
 
 
 
