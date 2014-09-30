@@ -73,5 +73,13 @@ But it should be pointed out that showing that biological networks can be made t
 
 * A form of linearized-OR is shown to be efficiently computable within the confines of Hebbian learning 
 
+* The 'Modelling Occlusion' problem seems like a 'flavour of the day' kind of thing, and not particularly well suited to the elegant framework built so far
+
+* Saturated-OR seems like a winner for the lines problem set, but it's probably more a function of saturated or being prior-friendly
+
+* Whole chapter seems like a meander off the core theme
+
+
+
 
 
