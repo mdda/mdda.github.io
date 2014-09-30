@@ -51,3 +51,10 @@ But it should be pointed out that showing that biological networks can be made t
 
 * Rectified Linear Units are the first constraint considered (which is refreshing).  BUT the basic REC networks don't have a bias term (left for "future work"), however this could just be implemented as a constant ```ONE``` input (unless I'm thinking about it wrong).
 
+* Local penalties per output unit maintain the biologically plausible theme
+
+* In 5.4, the assumption that the ```a```s are independent is mentioned only briefly - but leads to a fruitful correspondence of terms
+
+* The (loose) correspondence with the steps of the EM algorithm are suggestive.  On the other hand, it's interesting to consider the tradeoff of the (local) REC training steps, with the (global) EM optimisation.  If the REC does well, perhaps the EM could be justified as 'biologically plausible', in the same way that SVD is just a more efficient way of computing PCA by local networks.  Whether or not the EM correspondence holds, its interesting to think what 'global and efficient' methods can be supported by 'local but inefficient' implementations on biological networks.
+
+
