@@ -84,9 +84,9 @@ Make MathJax work (??)
 
 Want to do in-depth look at :
   Harpur (finish)
+  Google KV : Check refs 16 and 18 and (distance training) 29
   Hinton Tree from bootstrap
   Noise contrastive estimation
-  Google KV
   Socher-Manning video presentation again :: 
     http://techtalks.tv/talks/deep-learning-for-nlp-without-magic-part-1/58414/
     http://nlp.stanford.edu/courses/NAACL2013/NAACL2013-Socher-Manning-DeepLearning.pdf  (downloaded)

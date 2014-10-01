@@ -3,7 +3,7 @@ layout: post
 category: AI
 title: Scalable Hierarchical Distributed Language Model - Mnih and Hinton 2009
 tagline: Paper Takeaway
-date: 2014-09-30
+date: 2014-10-03
 tags: [NeuralNetworks,NLP,WordEmbedding,PaperTakeaway]
 published: false
 ---
