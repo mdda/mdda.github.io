@@ -84,7 +84,16 @@ Make MathJax work (??)
 
 Want to do in-depth look at :
   Harpur (finish)
-  Google KV : Check refs 16 and 18 and (distance training) 29
+  
+  Google KV : Check refs :
+    NER 
+      16
+      18 
+    Distance Training : 
+      29
+    Clustering of entities 
+      27
+      
   Hinton Tree from bootstrap
   Noise contrastive estimation
   Socher-Manning video presentation again :: 
