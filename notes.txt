@@ -87,12 +87,12 @@ Want to do in-depth look at :
   
   Google KV : Check refs :
     NER 
-      16  R. Grishman. Information extraction: Capabilities and challenges. Technical report, NYU Dept. CS, 2012.
-      18  B. Hachey, W. Radford, J. Nothman, M. Honnibal, and J. Curran. Evaluating entity linking with wikipedia. Artificial Intelligence, 194:130–150, 2013.
+      [16]  R. Grishman. Information extraction: Capabilities and challenges. Technical report, NYU Dept. CS, 2012. (http://cs.nyu.edu/grishman/tarragona.pdf)
+      [18]  B. Hachey, W. Radford, J. Nothman, M. Honnibal, and J. Curran. Evaluating entity linking with wikipedia. Artificial Intelligence, 194:130–150, 2013.  (http://benhachey.info/pubs/hachey-aij12-evaluating.pdf)
     Distance Training : 
-      29  M. Mintz, S. Bills, R. Snow, and D. Jurafksy. Distant supervision for relation extraction without labeled data. In Prof. Conf. Recent Advances in NLP, 2009.
+      [29]  M. Mintz, S. Bills, R. Snow, and D. Jurafksy. Distant supervision for relation extraction without labeled data. In Prof. Conf. Recent Advances in NLP, 2009.  (http://web.stanford.edu/~jurafsky/mintz.pdf)
     Clustering of entities 
-      27  T. Mikolov, K. Chen, G. Corrado, and J. Dean.  Efficient estimation of word representations in vector space. In ICLR, 2013.
+      [27] DONE T. Mikolov, K. Chen, G. Corrado, and J. Dean.  Efficient estimation of word representations in vector space. In ICLR, 2013. (http://arxiv.org/abs/1301.3781)
       
   Hinton Tree from bootstrap
   
