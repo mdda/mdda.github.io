@@ -95,14 +95,19 @@ Want to do in-depth look at :
       27  T. Mikolov, K. Chen, G. Corrado, and J. Dean.  Efficient estimation of word representations in vector space. In ICLR, 2013.
       
   Hinton Tree from bootstrap
+  
   Noise contrastive estimation
+  
   Socher-Manning video presentation again :: 
     http://techtalks.tv/talks/deep-learning-for-nlp-without-magic-part-1/58414/
     http://nlp.stanford.edu/courses/NAACL2013/NAACL2013-Socher-Manning-DeepLearning.pdf  (downloaded)
     http://www.socher.org/index.php/Main/ParsingWithCompositionalVectorGrammars
     NN for NER :: http://nlp.stanford.edu/~socherr/pa4_ner.pdf
+    
   Dropout
+  
   ?One Wierd Trick
+  
   JPEG originators' keynote / paper / talk
 
 
