@@ -77,14 +77,14 @@ This write-up contains a few takeaways that I had from the thesis :
 
   * Saturated-OR seems like a winner for the lines problem set, but it's probably more a function of saturated or being prior-friendly
 
-* Unfortunately, this whole chapter seems like a meander off the core theme (YMMV)
+* While it's inevitable that application examples would be required, the ones used in this chapter seem to be less significant than those of chapter 7
 
 
 ### Chapter 7 : Applications
 
-* Many of the ad-hoc fixes to make examples work don't appear to have much motivation - couldn't the whitening problem for the images (for the wavelets examples) be achieved with bias terms, etc, rather than additional factors?
+* Many of the ad-hoc fixes to make examples work don't appear to have much motivation - for instance, couldn't the whitening problem for the images (for the wavelets examples) be achieved with bias terms, etc, rather than additional factors?
 
-* Each of the image examples seems to discover reasonable 'convolutional network' first layer kernels in an unsupervised manner.  Not familiar with the state-of-the-art at the time, though.  No indication (in the thesis) that there's a concrete plan to stack these detectors, nor use them 'convolution style' (which is probably me just projecting, anyhow)
+* Each of the image examples seems to discover reasonable 'convolutional network' first layer kernels in an unsupervised manner.  Which is impressive, and prescient, given the state-of-the-art at the time.  No indication (in the thesis) that there's a concrete plan to stack these detectors, nor use them 'convolution style' (which is probably me just projecting, anyhow)
 
 * Overall, this chapter contained a more impressive (from a 2014 perspective) selection of applications
 
