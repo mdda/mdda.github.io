@@ -84,6 +84,7 @@ Make MathJax work (??)
 
 Want to do in-depth look at :
   Harpur (finish)
+    Embed Commentary (via email) from GH himself!
   
   Google KV : Check refs :
     NER 
