@@ -39,20 +39,20 @@ This write-up contains a few takeaways that I had from the thesis :
 
 * In 4.8 Novelty Detection, Kohonen apparently had an interesting approach (and also mentioned earlier for his work on localisation and inhibition)
 
-* 4.10 "Minimum reconstruction error as maximum likelihood" : It feels like a mathematical _fast one_ has been pulled here.  What if 2 'x's are close enough for 'v' to blur over the two of them?  Not clear that the argument justifies the MLE claim as it stands.
+* 4.10 "Minimum reconstruction error as maximum likelihood" : It feels like a mathematical _fast one_ has been pulled here, since the one page doesn't appear to actually prove the correspondence (for instance, what if 2 'x's are close enough for 'v' to blur over the two of them?  Not clear that the argument justifies the MLE claim as it stands).  While it seems like a plausible result, the lack of mathematical detail seems to be in contrast to the previous thorough analyses.
 
 
 ### Chapter 5 : Constraints
 
 * Rectified Linear Units are the first constraint considered in this chapter (which is refreshing, given that sigmoids would be much more conventional, but much *nastier*).  
 
-  * BUT : the basic REC networks don't have a bias term (left for "future work"), however this could just be implemented as a constant ```ONE``` input (unless I'm thinking about it wrong)
+  * BUT : the basic REC networks don't have a bias term (left for "future work"), however this could just be implemented as a constant ```ONE``` input.  According to emails from the author, this was intentionally done, because a bias term would be more difficult to impose (weight) sparseness constraints on (since it would probably be desirable to have the bias term non-zero on most paths)
 
 * Local penalties per output unit maintain the biologically plausible theme
 
 * In 5.4, the assumption that the ```a```s are independent is mentioned only briefly - but leads to a fruitful correspondence of terms
 
-* The (loose) correspondence with the steps of the EM algorithm are a bit tenuous.  On the other hand, it's interesting to consider the tradeoff of the (local) REC training steps, with the (global) EM optimisation.  If the REC does well, perhaps the EM could be justified as 'biologically plausible', in the same way that SVD is just a more efficient way of computing PCA by local networks.  Whether or not the EM correspondence holds, its interesting to think what 'global and efficient' methods can be supported by 'local but inefficient' implementations on biological networks.
+* The (loose) correspondence with the steps of the EM algorithm are an interesting aside.  On the other hand, it could form the start of considering the tradeoff of the (local) REC training steps, with the (global) EM optimisation.  If the REC does well, perhaps then EM could be justified as 'biologically plausible', in the same way that SVD is just a more efficient way of computing PCA by local networks.  Whether or not the EM correspondence holds, it's interesting to think what 'global and efficient' methods can be supported by 'local but inefficient' implementations on biological networks.
 
 * The 'kurtosis measure' section seems like a side-track
 
@@ -62,7 +62,7 @@ This write-up contains a few takeaways that I had from the thesis :
 
 * In the case of the crosses and squares toy problem, the author suggests that "The linear model of the REC network has no means of generating such a code, however, so we have to be content with a solution that has higher entropy, and greater sparseness, than the optimum, and perhaps argue that the extraction of position is a job for a higher-level process. "  In modern terms, one would think of this in terms of a deep-learning style hierarchy.  However, the sparse coding in the REC's first layer would effectively scrub away the potential for learning about the underlying tasks, since the coding reduces the image identification to 'winner takes all' indicators.  
 
-* Some of the examples talk of the 'correct' output construction being a single ```1``` in an array of ```0```s.  But that definitely not a minimum description length encoding of the data (it could easily be shortened to a binary coding, plus a 'valid' bit, for instance).  The author mentions this elsewhere, but the goals in many of the examples have diverged from the original 'clean' information-theoretic foundations
+* Some of the examples talk of the 'correct' output construction being a single ```1``` in an array of ```0```s.  What wasn't clear to me initially is that multiple rows switched on (or columns switched on) are valid, so that these output bits are independent (and make the most desirable basis for the coding of the input array).  That being said, the output-vector sparseness 'encouragement' may also be a heavy hint as to what form the solution should take, rather than being a simply neutral way to choose between the different basis sets 
 
 
 ### Chapter 6 : Mixture Models
