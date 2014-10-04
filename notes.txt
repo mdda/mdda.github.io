@@ -110,7 +110,10 @@ Want to do in-depth look at :
   
   JPEG originators' keynote / paper / talk
   
-  Collobert deeper dive
+  Collobert deeper dive (http://ronan.collobert.com/pub/matos/2011_nlp_jmlr.pdf)
+    This seems to be 'outsider' work, but state-of-the-art and as uncoloured by linguistic knowledge as possible
+    Klein and Manning (2002) realistic hierarchical unsupervised grammar
+    Has good appendix with layer descriptions in it
 
 
 Idea : Put up LibreOffice Python plugin notes
