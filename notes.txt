@@ -86,8 +86,19 @@ Want to do in-depth look at :
   Harpur (publishable now)
   
   Hinton Tree from bootstrap
+    Does later Mikolov paper really just do frequency-based tree (and word2vec ?)
   
+  Collobert deeper dive (http://ronan.collobert.com/pub/matos/2011_nlp_jmlr.pdf)
+    This seems to be 'outsider' work, but state-of-the-art and as uncoloured by linguistic knowledge as possible
+    Klein and Manning (2002) realistic hierarchical unsupervised grammar
+    Has good appendix with layer descriptions in it
+    Later paper : http://ronan.collobert.com/pub/matos/2011_parsing_aistats.pdf
+
   Dropout
+
+  JPEG originators' keynote / paper / talk
+    Contractive AutoEncoders : Rafai
+
   
   Google KV : Check refs :
     NER 
@@ -108,14 +119,6 @@ Want to do in-depth look at :
     
   ?One Wierd Trick
   
-  JPEG originators' keynote / paper / talk
-  
-  Collobert deeper dive (http://ronan.collobert.com/pub/matos/2011_nlp_jmlr.pdf)
-    This seems to be 'outsider' work, but state-of-the-art and as uncoloured by linguistic knowledge as possible
-    Klein and Manning (2002) realistic hierarchical unsupervised grammar
-    Has good appendix with layer descriptions in it
-    Later paper : http://ronan.collobert.com/pub/matos/2011_parsing_aistats.pdf
-
 
 Idea : Put up LibreOffice Python plugin notes
 
