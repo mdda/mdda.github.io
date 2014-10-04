@@ -101,7 +101,10 @@ Want to do in-depth look at :
       Standard RBMs (Hinton 2006) use transpose of Weights to project back, is this opposite of Harpur?
         http://stackoverflow.com/questions/20534237/deep-autoencoder-using-rbm
         http://www.cs.toronto.edu/~hinton/
-        Isn't 3.16 the same as RBM learning (9) with contractive thingy added on?
+        RBMs are different in that the feedback is biniarized (last step uses raw probability)
+          But doesn't he do dropout later on to 'add back noise'?
+        Isn't SEC 3.16 (p38 of PDF) the same as RBM learningTR (9) with contractive thingy added on?  (Hmmm- it's a suggestive link...)
+        Isn't Harpur 4.15 (p63 of PDF) the same as ... (has minimised reconstruction built-in)?  (Hmmm- it's a suggestive link...)
 
   
   Google KV : Check refs :
