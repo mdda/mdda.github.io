@@ -83,8 +83,11 @@ Make MathJax work (??)
 
 
 Want to do in-depth look at :
-  Harpur (finish)
-    Embed Commentary (via email) from GH himself!
+  Harpur (publishable now)
+  
+  Hinton Tree from bootstrap
+  
+  Dropout
   
   Google KV : Check refs :
     NER 
@@ -95,8 +98,6 @@ Want to do in-depth look at :
     Clustering of entities 
       [27] DONE T. Mikolov, K. Chen, G. Corrado, and J. Dean.  Efficient estimation of word representations in vector space. In ICLR, 2013. (http://arxiv.org/abs/1301.3781)
       
-  Hinton Tree from bootstrap
-  
   Noise contrastive estimation
   
   Socher-Manning video presentation again :: 
@@ -105,11 +106,11 @@ Want to do in-depth look at :
     http://www.socher.org/index.php/Main/ParsingWithCompositionalVectorGrammars
     NN for NER :: http://nlp.stanford.edu/~socherr/pa4_ner.pdf
     
-  Dropout
-  
   ?One Wierd Trick
   
   JPEG originators' keynote / paper / talk
+  
+  Collobert deeper dive
 
 
 Idea : Put up LibreOffice Python plugin notes
