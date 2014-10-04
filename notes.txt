@@ -114,6 +114,7 @@ Want to do in-depth look at :
     This seems to be 'outsider' work, but state-of-the-art and as uncoloured by linguistic knowledge as possible
     Klein and Manning (2002) realistic hierarchical unsupervised grammar
     Has good appendix with layer descriptions in it
+    Later paper : http://ronan.collobert.com/pub/matos/2011_parsing_aistats.pdf
 
 
 Idea : Put up LibreOffice Python plugin notes
