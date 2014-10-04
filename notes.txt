@@ -98,6 +98,10 @@ Want to do in-depth look at :
 
   JPEG originators' keynote / paper / talk
     Contractive AutoEncoders : Rafai
+      Standard RBMs (Hinton 2006) use transpose of Weights to project back, is this opposite of Harpur?
+        http://stackoverflow.com/questions/20534237/deep-autoencoder-using-rbm
+        http://www.cs.toronto.edu/~hinton/
+        Isn't 3.16 the same as RBM learning (9) with contractive thingy added on?
 
   
   Google KV : Check refs :
