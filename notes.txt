@@ -88,6 +88,8 @@ Want to do in-depth look at :
   Hinton Tree from bootstrap
     Does later Mikolov paper really just do frequency-based tree (and word2vec ?)
     word2vec code (plain) : https://github.com/piskvorky/gensim/blob/develop/gensim/models/word2vec.py
+
+  Noise contrastive estimation
   
   Collobert deeper dive (http://ronan.collobert.com/pub/matos/2011_nlp_jmlr.pdf)
     This seems to be 'outsider' work, but state-of-the-art and as uncoloured by linguistic knowledge as possible
@@ -117,8 +119,6 @@ Want to do in-depth look at :
     Clustering of entities 
       [27] DONE T. Mikolov, K. Chen, G. Corrado, and J. Dean.  Efficient estimation of word representations in vector space. In ICLR, 2013. (http://arxiv.org/abs/1301.3781)
       
-  Noise contrastive estimation
-  
   Socher-Manning video presentation again :: 
     http://techtalks.tv/talks/deep-learning-for-nlp-without-magic-part-1/58414/
     http://nlp.stanford.edu/courses/NAACL2013/NAACL2013-Socher-Manning-DeepLearning.pdf  (downloaded)
