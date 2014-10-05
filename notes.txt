@@ -87,6 +87,7 @@ Want to do in-depth look at :
   
   Hinton Tree from bootstrap
     Does later Mikolov paper really just do frequency-based tree (and word2vec ?)
+    word2vec code (plain) : https://github.com/piskvorky/gensim/blob/develop/gensim/models/word2vec.py
   
   Collobert deeper dive (http://ronan.collobert.com/pub/matos/2011_nlp_jmlr.pdf)
     This seems to be 'outsider' work, but state-of-the-art and as uncoloured by linguistic knowledge as possible
