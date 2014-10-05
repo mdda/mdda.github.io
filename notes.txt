@@ -96,6 +96,7 @@ Want to do in-depth look at :
     Klein and Manning (2002) realistic hierarchical unsupervised grammar
     Has good appendix with layer descriptions in it
     Later paper : http://ronan.collobert.com/pub/matos/2011_parsing_aistats.pdf
+      Code for 2008 version : https://github.com/turian/neural-language-model
 
   Dropout
 
