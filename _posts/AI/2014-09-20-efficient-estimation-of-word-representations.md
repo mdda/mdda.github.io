@@ -72,4 +72,4 @@ Convolution works with images, because we know that JPEG is an encoding that deg
 
 The Huffman encoding seems to be just one (arbitrary) method of clustering together words.  Elsewhere, the hierarchy was derived from WordNet, for instance.  It's interesting to think about having multi-rooted 'patches' that cluster up words, and map (somehow) onto the sparse representations (qv: Jeff Hawkins) that seem so appealing.
 
-To look at the algorithms in more depth, the code was published in C by the authors as ```word2vec```.  There's also a subsequent implementation in Python (with Cython and BLAS optimizations that take it beyond pure C execution speeds) in [gensim](https://github.com/piskvorky/gensim).
+To look at the algorithms in more depth, the code was published in C by the authors as ```word2vec```.  There's also a subsequent implementation in Python (with Cython and BLAS optimizations that take it beyond pure C execution speeds) in [gensim](http://radimrehurek.com/project/gensim/).
