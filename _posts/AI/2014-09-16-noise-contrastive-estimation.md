@@ -22,6 +22,10 @@ For an earlier exposition of speeding up the embedded via contrastive estimation
 Just a moment : Picking ```k``` weighted noise samples (each from a vocabulary of size ```V```) is an ```O(log(V))``` operation, isn't it?
 
 
+Slightly horrific NCE source : https://github.com/vaswani/WORD_OBSERVATION_RBM_NCE
+
+
+
 ### Ideas to Follow-Up
 
 Multiple representations for different senses of words.
