@@ -24,8 +24,6 @@ For an earlier exposition of speeding up the embedded via contrastive estimation
 Multiple representations for different senses of words.
 
 
-> Previous models                <br/>
-> deconstructed step-by-step     <br />
-> leave kernels of truth          
-
-
+> Word embedding task        <br />
+> Simplified beyond belief   <br />
+> Reveals true essence.     
