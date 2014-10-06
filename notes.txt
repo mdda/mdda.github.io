@@ -86,6 +86,14 @@ Want to do in-depth look at :
   Noise contrastive estimation
     Also Bengio Senecal 2003
     
+  Socher-Manning video presentation again :: 
+    http://techtalks.tv/talks/deep-learning-for-nlp-without-magic-part-1/58414/
+    http://nlp.stanford.edu/courses/NAACL2013/NAACL2013-Socher-Manning-DeepLearning.pdf  (downloaded)
+    http://www.socher.org/index.php/Main/ParsingWithCompositionalVectorGrammars
+    NN for NER :: http://nlp.stanford.edu/~socherr/pa4_ner.pdf
+    GloVe paper
+
+
   Harpur (publishable now)
   
   Collobert deeper dive (http://ronan.collobert.com/pub/matos/2011_nlp_jmlr.pdf)
@@ -117,12 +125,6 @@ Want to do in-depth look at :
     Clustering of entities 
       [27] DONE T. Mikolov, K. Chen, G. Corrado, and J. Dean.  Efficient estimation of word representations in vector space. In ICLR, 2013. (http://arxiv.org/abs/1301.3781)
       
-  Socher-Manning video presentation again :: 
-    http://techtalks.tv/talks/deep-learning-for-nlp-without-magic-part-1/58414/
-    http://nlp.stanford.edu/courses/NAACL2013/NAACL2013-Socher-Manning-DeepLearning.pdf  (downloaded)
-    http://www.socher.org/index.php/Main/ParsingWithCompositionalVectorGrammars
-    NN for NER :: http://nlp.stanford.edu/~socherr/pa4_ner.pdf
-    
   ?One Wierd Trick
   
 
