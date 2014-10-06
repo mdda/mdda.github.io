@@ -5,7 +5,7 @@ title: Scalable Hierarchical Distributed Language Model - Mnih and Hinton 2009
 tagline: Paper Takeaway
 date: 2014-10-07
 tags: [NeuralNetworks,NLP,WordEmbedding,PaperTakeaway]
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -35,5 +35,5 @@ This tree creation algorithm was a two-stage method : stage 1 involved operating
 
 ### Ideas to Follow-Up
 
-The paper [Learning word embeddings efficiently with noise-contrastive estimation - (Mhih 2013)](https://www.cs.toronto.edu/~amnih/papers/wordreps.pdf) seems to supercede this approach (the tree-element of which is also taken up in [Efficient Estimation of Word Representations in Vector Space - (Mikolov et al, 2013)](http://arxiv.org/abs/1301.3781)).  Will look at the former next.
+The paper [Learning word embeddings efficiently with noise-contrastive estimation - (Mnih 2013)](https://www.cs.toronto.edu/~amnih/papers/wordreps.pdf) seems to supercede this approach (the tree-element of which is also taken up in [Efficient Estimation of Word Representations in Vector Space - (Mikolov et al, 2013)](http://arxiv.org/abs/1301.3781)).  Will look at the former next.
 
