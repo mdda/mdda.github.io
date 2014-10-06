@@ -16,9 +16,9 @@ This write-up contains my first impressions of the paper :
 
 This used a two-stage tree construction method : stage 1 involved a random tree, so that some vector embedding could be performed, then stage 2 produced a tree based on the word vectors found in stage 1, and then produced the final word embeddings from there.  To note :
 
-  * If words were allowed to appear multiple times in the tree, the training didn't seem to pick up multiple senses : The duplicate entries favoured rare words, in similar settings, rather than common, multi-sense words
+  * The paper reported that if words were allowed to appear multiple times in the tree, the training didn't seem to pick up multiple senses : The duplicate entries favoured rare words, in similar settings, rather than common, multi-sense words
   
-  * The issues addressed in building trees (eg: how to reasonably divide up the samples at the node between left and right children) were those common in the tree recursive methods community - and it seemed like a less-than-in-depth treatment of an area that is actively researched
+  * The issues addressed in building trees (eg: how to reasonably divide up the samples at the node between left and right children) were those common in the tree recursive methods (e.g. CART) community - and it seemed like a less-than-in-depth treatment of an area that is actively researched
   
   * Generous attribution of other people's ideas, and a clear exposition of the reasoning behind each choice at each decision point
   
@@ -26,6 +26,9 @@ This used a two-stage tree construction method : stage 1 involved a random tree,
   
   * Also interesting, for using Restricted Boltzman Machines (though not explained here why they've "moved on", nor even mentioned, but to refer to previous benchmark results) : [Three new graphical models for statistical language modelling - (Mnih and Hinton 2007)](https://www.cs.toronto.edu/~amnih/papers/threenew.pdf)
   
-  
+
 ### Ideas to Follow-Up
+
+The paper [Learning word embeddings efficiently with noise-contrastive estimation - (Mhih 2013)](https://www.cs.toronto.edu/~amnih/papers/wordreps.pdf) seems to supercede this approach (the tree-element of which is also taken up in [Efficient Estimation of Word Representations in Vector Space - (Mikolov et al, 2013)](http://arxiv.org/abs/1301.3781)).  Will look at the former next.
+
 

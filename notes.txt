@@ -86,7 +86,7 @@ Want to do in-depth look at :
   Harpur (publishable now)
   
   Hinton Tree from bootstrap
-    Does later Mikolov paper really just do frequency-based tree (and word2vec ?)
+    Does later Mikolov paper really just do frequency-based tree (and word2vec)?  Seems like YES
     word2vec code (plain) : https://github.com/piskvorky/gensim/blob/develop/gensim/models/word2vec.py
 
   Noise contrastive estimation
