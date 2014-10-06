@@ -3,7 +3,7 @@ layout: post
 category: AI
 title: Learning word embeddings efficiently with noise-contrastive estimation - Mnih 2013
 tagline: Paper Takeaway
-date: 2014-10-05
+date: 2014-10-08
 tags: [NeuralNetworks,NLP,WordEmbedding,PaperTakeaway]
 published: false
 ---
