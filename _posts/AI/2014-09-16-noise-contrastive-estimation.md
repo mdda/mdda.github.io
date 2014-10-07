@@ -11,7 +11,7 @@ published: false
 
 {% include custom/paper_review %}
 
-This write-up contains my first impressions of the paper :
+This write-up contains my first impressions of the paper : 
 [Learning word embeddings efficiently with noise-contrastive estimation - (Mnih 2013)](https://www.cs.toronto.edu/~amnih/papers/wordreps.pdf)
 
 Thinned out words, by rejecting any with <10 occurrences
@@ -21,9 +21,7 @@ For an earlier exposition of speeding up the embedded via contrastive estimation
 
 Just a moment : Picking ```k``` weighted noise samples (each from a vocabulary of size ```V```) is an ```O(log(V))``` operation, isn't it?
 
-
-Slightly horrific NCE source : https://github.com/vaswani/WORD_OBSERVATION_RBM_NCE
-
+NB: The basis of this work is analysed and recostructed within a more general setting in the GloVe paper : Essentially the same thing can computed more generally, faster, and with OSS code.
 
 
 ### Ideas to Follow-Up
