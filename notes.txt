@@ -138,3 +138,10 @@ Want to do in-depth look at :
 
 Idea : Put up LibreOffice Python plugin notes
 
+GPU stuff
+  https://github.com/BIDData/BIDMach/wiki
+  http://nlp.cs.berkeley.edu/pubs/Hall-BergKirkpatrick-Canny-Klein_2014_GPUParser_paper.pdf
+  http://on-demand.gputechconf.com/gtc/2014/presentations/S4811-extreme-machine-learning-with-gpus.pdf
+  Theano scan : http://nbviewer.ipython.org/gist/triangleinequality/1350873eebea33973e41
+  
+  
