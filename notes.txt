@@ -94,10 +94,10 @@ Want to do in-depth look at :
     GloVe paper
       Source : http://www-nlp.stanford.edu/projects/glove/  (Apache 2)
       
-    Follow up:
-      Lebret and Collobert 2014 : HPCA?  :: Remi Lebret and Ronan Collobert. 2014. Word embeddings through Hellinger PCA. In EACL.
-      
-      Levy et al 2014 : PPMI (also alternative to cosine similarity) :: Omer Levy, Yoav Goldberg, and Israel Ramat-Gan. 2014. Linguistic regularities in sparse andexplicit word representations. CoNLL-2014.
+      Follow up:
+        Lebret and Collobert 2014 : HPCA?  :: Remi Lebret and Ronan Collobert. 2014. Word embeddings through Hellinger PCA. In EACL.
+        
+        Levy et al 2014 : PPMI (also alternative to cosine similarity) :: Omer Levy, Yoav Goldberg, and Israel Ramat-Gan. 2014. Linguistic regularities in sparse and explicit word representations. CoNLL-2014.
 
 
   Harpur (publishable now)
