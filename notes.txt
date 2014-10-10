@@ -95,8 +95,9 @@ Want to do in-depth look at :
       
       Levy et al 2014 : PPMI (also alternative to cosine similarity) :: Omer Levy, Yoav Goldberg, and Israel Ramat-Gan. 2014. Linguistic regularities in sparse and explicit word representations. CoNLL-2014.
 
-
-    
+  Harpur (publishable now)
+  
+      
   Socher-Manning video presentation again :: 
     http://techtalks.tv/talks/deep-learning-for-nlp-without-magic-part-1/58414/
     http://nlp.stanford.edu/courses/NAACL2013/NAACL2013-Socher-Manning-DeepLearning.pdf  (downloaded)
@@ -104,8 +105,6 @@ Want to do in-depth look at :
     NN for NER :: http://nlp.stanford.edu/~socherr/pa4_ner.pdf
     
 
-  Harpur (publishable now)
-  
   Collobert deeper dive (http://ronan.collobert.com/pub/matos/2011_nlp_jmlr.pdf)
     This seems to be 'outsider' work, but state-of-the-art and as uncoloured by linguistic knowledge as possible
     Klein and Manning (2002) realistic hierarchical unsupervised grammar
@@ -148,4 +147,9 @@ GPU stuff
   http://on-demand.gputechconf.com/gtc/2014/presentations/S4811-extreme-machine-learning-with-gpus.pdf
   Theano scan : http://nbviewer.ipython.org/gist/triangleinequality/1350873eebea33973e41
   
-  
+http://www.scipy.org/install.html
+http://nbviewer.ipython.org/github/craffel/theano-tutorial/blob/master/Theano%20Tutorial.ipynb
+http://ipython.org/ipython-doc/stable/notebook/notebook.html
+
+(env) ... pip install ipython
+(env) ... ipython notebook
