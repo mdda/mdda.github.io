@@ -71,28 +71,29 @@ and then inspect the public key, so that it can be uploaded to the server's ```.
 more orsa.key.pub 
 {% endhighlight %}
 
+### Now test the sync command works
+
+Here, you'll need to choose suitable entries for : 
+
+* a (writeable) local directory for the sync'd folder
+
+* the server's sync'd folder
+
+* the server's port (here '23456')
+
+* the server's domain (here 'unison.example')
+
+* the user running unison on the server (here 'unison')
+
 {% highlight bash %}
 ./unison-2.40.102 -auto -fat -sshargs "-i orsa.key -p 23456" -sshcmd ./ssh /storage/sdcard0/ToRead ssh://unison@unison.example.com/ToRead
 {% endhighlight %}
 
+## Running the script on the phone
 
+Having checked all that works, the final script (with comments) can be assembled on the local 'real' machine.  Mine looks like : 
 
 {% highlight bash %}
-## adb -d push ~/.unison/android/ToRead.sh /storage/sdcard0/ToRead.sh
-{% endhighlight %}
-
-
-
-
-
-
-
-
-
-
-
-
-$ more ~/.unison/android/ToRead.sh 
 ## Execute this using 'sh', when root
 
 export HOME=/data/data/net.danielroggen.unison/files/
@@ -110,4 +111,26 @@ cd $HOME
 ./unison-2.40.102 -auto -fat -sshargs "-i orsa.key -p 23456" -sshcmd ./ssh /storage/sdcard0/ToRead ssh://unison@unison.example.com/ToRead
 
 ## adb -d push ~/.unison/android/ToRead.sh /storage/sdcard0/ToRead.sh
+{% endhighlight %}
 
+
+### Load the script onto the phone
+
+Choose a suitable place for the script to live, and execute on the local 'real' machine  : 
+
+{% highlight bash %}
+adb -d push ~/.unison/android/ToRead.sh /storage/sdcard0/ToRead.sh
+{% endhighlight %}
+
+
+
+
+
+
+
+
+
+
+
+
+$ more ~/.unison/android/ToRead.sh 
