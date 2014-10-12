@@ -7,15 +7,15 @@ tags:
 - unison
 - android
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
-While Daniel Roggen has done a great job in porting ```unison``` and associated utilities to Android in a [simple, free package](https://play.google.com/store/apps/details?id=net.danielroggen.unison&hl=en), the actual synchronization step is left to either (a) the user, at the command line, or (b) using his for-pay sync App.
+While Daniel Roggen has done a great job in porting ```unison``` and associated utilities to Android in a [simple, free Android App](https://play.google.com/store/apps/details?id=net.danielroggen.unison&hl=en), the actual synchronization step is left to either (a) the user, at the command line, or (b) using his [for-pay sync App](https://play.google.com/store/apps/details?id=net.danielroggen.unisonsync&hl=en).
 
-Not that I object to earning money by selling apps, but 'just because', here are steps that worked for me on my Android phone (which can be 'rooted' simply by changing the settings in 'Settings-Security-Superuser').
+Not that I object to earning money by selling apps, but 'just because', here are steps that worked for me on my Android phone (which was 'rooted' simply by changing the settings in 'Settings-Security-Superuser').
 
-## Enabling Android Debugging
+### Enabling Android Debugging
 
 This makes development of scripts much easier, and uploading/downloading files while doing so. 
 
@@ -37,7 +37,7 @@ Thereafter, ```adb``` commands will work :
 adb -d shell
 {% endhighlight %}
 
-## Dry run through
+### Dry run through
 
 These instructions were also helpfully given in the Unison App (but having them here makes them much easier to implement).  
 
@@ -50,7 +50,7 @@ export HOME=/data/data/net.danielroggen.unison/files/
 cd $HOME
 {% endhighlight %}
 
-### Check that unison runs 
+#### Check that unison runs 
 
 One should also check out what version is running on the server, so that they can be matched :
 
@@ -59,7 +59,7 @@ One should also check out what version is running on the server, so that they ca
 ./unison-2.40.102 -version
 {% endhighlight %}
 
-### Generate key pair
+#### Generate key pair
 
 {% highlight bash %}
 ./ssh-keygen -t rsa -f orsa.key -P ""
@@ -71,7 +71,7 @@ and then inspect the public key, so that it can be uploaded to the server's ```.
 more orsa.key.pub 
 {% endhighlight %}
 
-### Now test the sync command works
+#### Now test the sync command works
 
 Here, you'll need to choose suitable entries for : 
 
@@ -79,19 +79,20 @@ Here, you'll need to choose suitable entries for :
 
 * the server's sync'd folder
 
-* the server's port (here '23456')
-
-* the server's domain (here 'unison.example')
+* the server's domain (here 'unison.example.com')
 
 * the user running unison on the server (here 'unison')
+
+* the server's port (here '23456')
+
 
 {% highlight bash %}
 ./unison-2.40.102 -auto -fat -sshargs "-i orsa.key -p 23456" -sshcmd ./ssh /storage/sdcard0/ToRead ssh://unison@unison.example.com/ToRead
 {% endhighlight %}
 
-## Running the script on the phone
+### Running the script on the phone
 
-Having checked all that works, the final script (with comments) can be assembled on the local 'real' machine.  Mine looks like : 
+Having checked all that works, the final script (with comments) can be assembled on the local 'real' machine.  Mine (stored in ```!/.unison/android/ToRead.sh```) looks like : 
 
 {% highlight bash %}
 ## Execute this using 'sh', when root
