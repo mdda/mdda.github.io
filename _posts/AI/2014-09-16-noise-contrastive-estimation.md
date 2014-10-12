@@ -14,14 +14,17 @@ published: false
 This write-up contains my first impressions of the paper : 
 [Learning word embeddings efficiently with noise-contrastive estimation - (Mnih 2013)](https://www.cs.toronto.edu/~amnih/papers/wordreps.pdf)
 
-Thinned out words, by rejecting any with <10 occurrences
+### Paper Background
 
 For an earlier exposition of speeding up the embedded via contrastive estimation, see : [Quick training of probabilistic neural nets by importance sampling - (Bengio and Sen&eacute;cal 2003)](http://www.iro.umontreal.ca/~lisa/pointeurs/senecal_aistats2003.pdf)
 
+### Surprising stuff
+
+Thinned out words, by rejecting any with <10 occurrences
 
 Just a moment : Picking ```k``` weighted noise samples (each from a vocabulary of size ```V```) is an ```O(log(V))``` operation, isn't it?
 
-NB: The basis of this work is analysed and recostructed within a more general setting in the GloVe paper : Essentially the same thing can computed more generally, faster, and with OSS code.
+NB: The basis of this work is analysed and recostructed within a more general setting in the [GloVe paper](/ai/2014/10/13/GloVe/) : Essentially the same thing can computed more generally, faster, and with OSS code.
 
 
 ### Ideas to Follow-Up
@@ -29,6 +32,6 @@ NB: The basis of this work is analysed and recostructed within a more general se
 Multiple representations for different senses of words.
 
 
-> Word embedding task        <br />
-> Simplified beyond belief   <br />
+> Word embedding task         <br />
+> Simplified stochastically   <br />
 > Reveals true essence.     
