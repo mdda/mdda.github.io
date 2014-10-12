@@ -122,15 +122,13 @@ Choose a suitable place for the script to live, and execute on the local 'real' 
 adb -d push ~/.unison/android/ToRead.sh /storage/sdcard0/ToRead.sh
 {% endhighlight %}
 
+Finally, the script can be run using a terminal program on the Android device :
 
+{% highlight bash %}
+su
+cd /storage/sdcard0
+sh ToRead.sh
+{% endhighlight %}
 
+All done!
 
-
-
-
-
-
-
-
-
-$ more ~/.unison/android/ToRead.sh 
