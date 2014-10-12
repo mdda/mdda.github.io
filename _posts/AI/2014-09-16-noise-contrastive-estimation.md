@@ -29,6 +29,8 @@ Instead of going for the full distribution, however, a number of simplifying ste
 
 *  The major surprise here is that the method works so well
 
+*  Particularly since the 'sophisticated structure' approaches (such as trees) were thrown out in favour of just processing larger quantities of data more efficiently
+
 *  The NCE idea had already been explored in a slightly different context in : [Quick training of probabilistic neural nets by importance sampling - (Bengio and Sen&eacute;cal 2003)](http://www.iro.umontreal.ca/~lisa/pointeurs/senecal_aistats2003.pdf).
 
 *  Although the NCE is claimed to be constant time, there is a twist.  The simple act of picking ```k``` weighted noise samples (each from a vocabulary of size ```V```) could easily be an ```O(log(V))``` operation.  One way around this is to pick words sequentially (or with a stride, etc), from the corpus itself (since that would have the right statistics, by construction).
