@@ -19,10 +19,9 @@ Not that I object to earning money by selling apps, but 'just because', here are
 
 This makes development of scripts much easier, and uploading/downloading files while doing so. 
 
-On a local 'real' machine, plug in the device, and find the ```idVendor``` from watching ```tail -f /var/log/messages```.  Then create a new ```udev``` rules file :
+On a local 'real' machine, plug in the device, and find the ```idVendor``` from watching ```tail -f /var/log/messages```.  Then create a new ```udev``` rules file in (for instance)```/etc/udev/rules.d/51-android.rules``` :
 
 {% highlight bash %}
-more /etc/udev/rules.d/51-android.rules
 # /etc/udev/rules.d/51-android.rules
 SUBSYSTEM=="usb", ATTRS{idVendor}=="0bb4", MODE="0666"
 {% endhighlight %}
@@ -52,7 +51,7 @@ cd $HOME
 
 #### Check that unison runs 
 
-One should also check out what version is running on the server, so that they can be matched :
+(one should also check out what version is running on the server, so that they can be matched)
 
 {% highlight bash %}
 ./unison-2.45.28 -version
@@ -70,6 +69,8 @@ and then inspect the public key, so that it can be uploaded to the server's ```.
 {% highlight bash %}
 more orsa.key.pub 
 {% endhighlight %}
+
+(remember to pop the orsa.key.pub into the right place on the server...)
 
 #### Now test the sync command works
 
@@ -92,7 +93,7 @@ Here, you'll need to choose suitable entries for :
 
 ### Running the script on the phone
 
-Having checked all that works, the final script (with comments) can be assembled on the local 'real' machine.  Mine (stored in ```!/.unison/android/ToRead.sh```) looks like : 
+Having checked all that works, the final script (with comments) can be assembled on the local 'real' machine.  Mine (stored in ```~/.unison/android/ToRead.sh```) looks like : 
 
 {% highlight bash %}
 ## Execute this using 'sh', when root
