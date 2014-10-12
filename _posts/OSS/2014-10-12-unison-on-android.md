@@ -13,7 +13,7 @@ published: true
 
 While Daniel Roggen has done a great job in porting ```unison``` and associated utilities to Android in a [simple, free Android App](https://play.google.com/store/apps/details?id=net.danielroggen.unison&hl=en), the actual synchronization step is left to either (a) the user, at the command line, or (b) using his [for-pay sync App](https://play.google.com/store/apps/details?id=net.danielroggen.unisonsync&hl=en).
 
-Not that I object to earning money by selling apps, but 'just because', here are steps that worked for me on my Android phone (which was 'rooted' simply by changing the settings in 'Settings-Security-Superuser').
+Not that I object to earning money by selling apps, but 'just because', here are steps that worked for me on my Android phone (which was 'rooted' simply by changing the settings in ```Settings-Security-Superuser```).
 
 ### Enabling Android Debugging
 
