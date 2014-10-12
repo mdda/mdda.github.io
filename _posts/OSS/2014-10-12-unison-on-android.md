@@ -48,7 +48,7 @@ cd $HOME
 #more orsa.key.pub 
 ## Upload public key into server's ".ssh/authorized_keys"
 
-./unison-2.40.102 -auto -fat -sshargs "-i orsa.key -p 22321" -sshcmd ./ssh /storage/sdcard0/ToRead ssh://unison@unison.platformedia.com/ToRead
+./unison-2.40.102 -auto -fat -sshargs "-i orsa.key -p 23456" -sshcmd ./ssh /storage/sdcard0/ToRead ssh://unison@unison.example.com/ToRead
 
 ## adb -d push ~/.unison/android/ToRead.sh /storage/sdcard0/ToRead.sh
 
