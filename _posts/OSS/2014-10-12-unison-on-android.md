@@ -134,3 +134,4 @@ sh ToRead.sh
 
 All done!
 
+Of course, the file 'ToRead.sh' can easily be adapted to other sync'd folders, so that you can have multiple sync'd folders being independently updated (or even put into a combined file).
