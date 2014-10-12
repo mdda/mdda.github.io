@@ -83,18 +83,6 @@ Make MathJax work (??)
 
 
 Want to do in-depth look at :
-  Noise contrastive estimation
-    Also Bengio Senecal 2003
-
-  GloVe paper
-    Source : http://www-nlp.stanford.edu/projects/glove/  (Apache 2)
-    https://news.ycombinator.com/item?id=8432072
-    
-    Follow up:
-      Lebret and Collobert 2014 : HPCA?  :: Remi Lebret and Ronan Collobert. 2014. Word embeddings through Hellinger PCA. In EACL.
-      
-      Levy et al 2014 : PPMI (also alternative to cosine similarity) :: Omer Levy, Yoav Goldberg, and Israel Ramat-Gan. 2014. Linguistic regularities in sparse and explicit word representations. CoNLL-2014.
-
   Harpur (publishable now)
   
       
@@ -138,6 +126,12 @@ Want to do in-depth look at :
       
   ?One Wierd Trick
   
+  GloVe paper
+    Follow up:
+      Lebret and Collobert 2014 : HPCA?  :: Remi Lebret and Ronan Collobert. 2014. Word embeddings through Hellinger PCA. In EACL.
+      
+      Levy et al 2014 : PPMI (also alternative to cosine similarity) :: Omer Levy, Yoav Goldberg, and Israel Ramat-Gan. 2014. Linguistic regularities in sparse and explicit word representations. CoNLL-2014.
+
 
 Idea : Put up LibreOffice Python plugin notes
 
