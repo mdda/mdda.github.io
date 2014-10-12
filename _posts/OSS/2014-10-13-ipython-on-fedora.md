@@ -4,7 +4,7 @@ title: IPython and Theano in Fedora with virtualenv
 category: OSS
 tags: [linux, fedora, theano, python, ipython]
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
