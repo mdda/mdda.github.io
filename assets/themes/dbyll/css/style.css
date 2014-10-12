@@ -4,6 +4,10 @@ body{
   color: #2c3e50;
 }
 
+blockquote p {
+  font-size: inherit;
+}
+
 .sidebar {
   position: fixed;
   top: 0px;
