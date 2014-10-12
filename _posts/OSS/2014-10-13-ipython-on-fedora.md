@@ -1,12 +1,18 @@
 ---
 date: 2014-10-13
-title: iPython and Theano in Fedora with virtualenv
+title: IPython and Theano in Fedora with virtualenv
 category: OSS
 tags: [linux, fedora, theano, python, ipython]
 layout: post
 published: false
 ---
 {% include JB/setup %}
+
+IPython notebook makes for a very productive print-ready advanced ```REPL```.  When combined with Theano, and other python datascience tools, it's almost unbeatable.
+
+However, the installation instructions for each component are a little scattered, and this is an end-to-end explanation of what worked for me.
+
+### First steps (RPMs)
 
 First, update the system so that the basics are there :
 
@@ -15,7 +21,7 @@ sudo yum update bash
 sudo yum install python-virtualenv 
 {% endhighlight %}
 
-### Install RPMs required
+### Install interop and numerical RPMs
 
 For 'pylearn2' and 'ipython notebook' :
 
@@ -81,3 +87,5 @@ The 'magic' required to enable inline plotting by ```matplotlib``` with the IPyt
 {% highlight bash %}
 %matplotlib inline
 {% endhighlight %}
+
+Have fun!
