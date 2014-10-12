@@ -37,6 +37,60 @@ Thereafter, ```adb``` commands will work :
 adb -d shell
 {% endhighlight %}
 
+## Dry run through
+
+These instructions were also helpfully given in the Unison App (but having them here makes them much easier to implement).  
+
+Go into the right directory :
+
+{% highlight bash %}
+adb -d shell
+su
+export HOME=/data/data/net.danielroggen.unison/files/
+cd $HOME
+{% endhighlight %}
+
+### Check that unison runs 
+
+One should also check out what version is running on the server, so that they can be matched :
+
+{% highlight bash %}
+./unison-2.45.28 -version
+./unison-2.40.102 -version
+{% endhighlight %}
+
+### Generate key pair
+
+{% highlight bash %}
+./ssh-keygen -t rsa -f orsa.key -P ""
+{% endhighlight %}
+
+and then inspect the public key, so that it can be uploaded to the server's ```.ssh/authorized_keys```  :
+
+{% highlight bash %}
+more orsa.key.pub 
+{% endhighlight %}
+
+{% highlight bash %}
+./unison-2.40.102 -auto -fat -sshargs "-i orsa.key -p 23456" -sshcmd ./ssh /storage/sdcard0/ToRead ssh://unison@unison.example.com/ToRead
+{% endhighlight %}
+
+
+
+{% highlight bash %}
+## adb -d push ~/.unison/android/ToRead.sh /storage/sdcard0/ToRead.sh
+{% endhighlight %}
+
+
+
+
+
+
+
+
+
+
+
 
 $ more ~/.unison/android/ToRead.sh 
 ## Execute this using 'sh', when root
