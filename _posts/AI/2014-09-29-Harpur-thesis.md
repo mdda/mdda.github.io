@@ -3,9 +3,9 @@ layout: post
 category: AI
 title: Low Entropy Coding with Unsupervised Neural Networks - Harpur 1997
 tagline: Thesis Takeaway
-date: 2014-10-15
+date: 2014-10-14
 tags: [NeuralNetworks,PaperTakeaway]
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -19,12 +19,19 @@ This write-up contains a few takeaways that I had from the thesis :
 
 * Very nice, coherent overview of different approaches to unsupervised learning
 
+* Worth reading for this alone, IMHO
+
+<br />
 
 #### 3.2.5 Do PCA neural networks have a role?
 
+The author says:
+
 > While interesting from a biological perspective, neural PCA models in their simplest form have little practical use since they will almost always be outperformed by the method of singular value decomposition.
 
-* Coming at the same statement from a different direction, showing that biological networks can be made to perform PCA using only local interactions validates the idea that using SVD in a more typical computer setting should not be dismissed as being biologically implausible.
+Coming at the same statement from a different direction :
+
+* Showing that biological networks can be made to perform PCA using only local interactions validates the idea that using SVD in a more typical computer setting should not be dismissed as being biologically implausible.
 
 * Could backpropagation be justified simply by putting the training target as an extension of the training data, and letting it self-reinforce?
 
