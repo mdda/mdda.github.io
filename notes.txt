@@ -83,9 +83,6 @@ Make MathJax work (??)
 
 
 Want to do in-depth look at :
-  Harpur (publishable now)
-  
-      
   Socher-Manning video presentation again :: 
     http://techtalks.tv/talks/deep-learning-for-nlp-without-magic-part-1/58414/
     http://nlp.stanford.edu/courses/NAACL2013/NAACL2013-Socher-Manning-DeepLearning.pdf  (downloaded)
