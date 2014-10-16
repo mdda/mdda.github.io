@@ -89,16 +89,6 @@ Want to do in-depth look at :
     http://www.socher.org/index.php/Main/ParsingWithCompositionalVectorGrammars
     NN for NER :: http://nlp.stanford.edu/~socherr/pa4_ner.pdf
     
-
-  Collobert deeper dive (http://ronan.collobert.com/pub/matos/2011_nlp_jmlr.pdf)
-    This seems to be 'outsider' work, but state-of-the-art and as uncoloured by linguistic knowledge as possible
-    Klein and Manning (2002) realistic hierarchical unsupervised grammar
-    Has good appendix with layer descriptions in it
-    Later paper : http://ronan.collobert.com/pub/matos/2011_parsing_aistats.pdf
-      Code for 2008 version : https://github.com/turian/neural-language-model
-  
-  
-    
   Dropout
 
   JPEG originators' keynote / paper / talk
@@ -119,7 +109,7 @@ Want to do in-depth look at :
     Distance Training : 
       [29]  M. Mintz, S. Bills, R. Snow, and D. Jurafksy. Distant supervision for relation extraction without labeled data. In Prof. Conf. Recent Advances in NLP, 2009.  (http://web.stanford.edu/~jurafsky/mintz.pdf)
     Clustering of entities 
-      [27] DONE T. Mikolov, K. Chen, G. Corrado, and J. Dean.  Efficient estimation of word representations in vector space. In ICLR, 2013. (http://arxiv.org/abs/1301.3781)
+      [27] READ T. Mikolov, K. Chen, G. Corrado, and J. Dean.  Efficient estimation of word representations in vector space. In ICLR, 2013. (http://arxiv.org/abs/1301.3781)
       
   ?One Wierd Trick
   
@@ -128,6 +118,15 @@ Want to do in-depth look at :
       Lebret and Collobert 2014 : HPCA?  :: Remi Lebret and Ronan Collobert. 2014. Word embeddings through Hellinger PCA. In EACL.
       
       Levy et al 2014 : PPMI (also alternative to cosine similarity) :: Omer Levy, Yoav Goldberg, and Israel Ramat-Gan. 2014. Linguistic regularities in sparse and explicit word representations. CoNLL-2014.
+
+
+  Collobert deeper dive (http://ronan.collobert.com/pub/matos/2011_nlp_jmlr.pdf)
+    This seems to be 'outsider' work, but state-of-the-art and as uncoloured by linguistic knowledge as possible
+    Klein and Manning (2002) realistic hierarchical unsupervised grammar
+    Has good appendix with layer descriptions in it
+    Later paper : http://ronan.collobert.com/pub/matos/2011_parsing_aistats.pdf
+      Code for 2008 version : https://github.com/turian/neural-language-model
+  
 
 
 Idea : Put up LibreOffice Python plugin notes
