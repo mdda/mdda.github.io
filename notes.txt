@@ -83,6 +83,20 @@ Make MathJax work (??)
 
 
 Want to do in-depth look at :
+  NER : 
+    B. Hachey, W. Radford, J. Nothman, M. Honnibal, and J. Curran. Evaluating entity linking with wikipedia. Artificial Intelligence, 194:130–150, 2013.  (http://benhachey.info/pubs/hachey-aij12-evaluating.pdf)
+  
+    R. Grishman. Information extraction: Capabilities and challenges. Technical report, NYU Dept. CS, 2012. (http://cs.nyu.edu/grishman/tarragona.pdf)
+  
+  Google KV : Check refs :
+    NER 
+      [16]  R. Grishman. Information extraction: Capabilities and challenges. Technical report, NYU Dept. CS, 2012. (http://cs.nyu.edu/grishman/tarragona.pdf)
+      [18]  B. Hachey, W. Radford, J. Nothman, M. Honnibal, and J. Curran. Evaluating entity linking with wikipedia. Artificial Intelligence, 194:130–150, 2013.  (http://benhachey.info/pubs/hachey-aij12-evaluating.pdf)
+    Distance Training : 
+      [29]  M. Mintz, S. Bills, R. Snow, and D. Jurafksy. Distant supervision for relation extraction without labeled data. In Prof. Conf. Recent Advances in NLP, 2009.  (http://web.stanford.edu/~jurafsky/mintz.pdf)
+    Clustering of entities 
+      [27] READ T. Mikolov, K. Chen, G. Corrado, and J. Dean.  Efficient estimation of word representations in vector space. In ICLR, 2013. (http://arxiv.org/abs/1301.3781)
+      
   Socher-Manning video presentation again :: 
     http://techtalks.tv/talks/deep-learning-for-nlp-without-magic-part-1/58414/
     http://nlp.stanford.edu/courses/NAACL2013/NAACL2013-Socher-Manning-DeepLearning.pdf  (downloaded)
@@ -101,16 +115,6 @@ Want to do in-depth look at :
         Isn't SEC 3.16 (p38 of PDF) the same as RBM learningTR (9) with contractive thingy added on?  (Hmmm- it's a suggestive link...)
         Isn't Harpur 4.15 (p63 of PDF) the same as ... (has minimised reconstruction built-in)?  (Hmmm- it's a suggestive link...)
 
-  
-  Google KV : Check refs :
-    NER 
-      [16]  R. Grishman. Information extraction: Capabilities and challenges. Technical report, NYU Dept. CS, 2012. (http://cs.nyu.edu/grishman/tarragona.pdf)
-      [18]  B. Hachey, W. Radford, J. Nothman, M. Honnibal, and J. Curran. Evaluating entity linking with wikipedia. Artificial Intelligence, 194:130–150, 2013.  (http://benhachey.info/pubs/hachey-aij12-evaluating.pdf)
-    Distance Training : 
-      [29]  M. Mintz, S. Bills, R. Snow, and D. Jurafksy. Distant supervision for relation extraction without labeled data. In Prof. Conf. Recent Advances in NLP, 2009.  (http://web.stanford.edu/~jurafsky/mintz.pdf)
-    Clustering of entities 
-      [27] READ T. Mikolov, K. Chen, G. Corrado, and J. Dean.  Efficient estimation of word representations in vector space. In ICLR, 2013. (http://arxiv.org/abs/1301.3781)
-      
   ?One Wierd Trick
   
   GloVe paper
