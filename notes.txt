@@ -137,6 +137,7 @@ Want to do in-depth look at :
     Has good appendix with layer descriptions in it
     Later paper : http://ronan.collobert.com/pub/matos/2011_parsing_aistats.pdf
       Code for 2008 version : https://github.com/turian/neural-language-model
+    SOURCE :: http://ronan.collobert.com/senna/
   
 
 
