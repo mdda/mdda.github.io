@@ -88,12 +88,11 @@ Want to do in-depth look at :
   
     Comment on role of competitions?
     
-    
-
-  NER : 
-    B. Hachey, W. Radford, J. Nothman, M. Honnibal, and J. Curran. Evaluating entity linking with wikipedia. Artificial Intelligence, 194:130–150, 2013.  (http://benhachey.info/pubs/hachey-aij12-evaluating.pdf)
-  
+  NER :     
     R. Grishman. Information extraction: Capabilities and challenges. Technical report, NYU Dept. CS, 2012. (http://cs.nyu.edu/grishman/tarragona.pdf)
+  
+    Useful from a literature review point of view.
+    
   
   Google KV : Check refs :
     NER 
