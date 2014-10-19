@@ -31,14 +31,14 @@ And standard scripts (for instance ```src/xyz.py```) can be run in ```{BASE}``` 
 python src/xyz.py
 {% endhighlight %}
 
-These scripts can ```import``` the internal modules straightforwardly, and the base directory for accessing the data will be 'data/'.
+Such scripts can import the internal modules straightforwardly (eg:  ```import Module1```), and the base directory for accessing the data will be ```data/```.
 
-At the same time, the IPython notebooks are kept in a separate 'notebooks/' directory, which messes up all the paths.
+At the same time, the IPython notebooks are kept in a separate ```notebooks/``` directory, which is what messes up all the paths.
 
 
 ### IPython notebook preamble
 
-Open up an IPython notebook in 'notebooks/', and have the following cell at the start to pull in the modules, and data with the correct relative paths :
+Open up a new IPython notebook in ```notebooks/```, and have the following cell at the start to pull in the modules, and data with the correct relative paths :
 
 {% highlight python %}
 %pushd
@@ -58,4 +58,3 @@ import matplotlib.pyplot as plt
 plt.rcParams['figure.figsize'] = (16.0, 8.0)
 import numpy as np
 {% endhighlight %}
-
