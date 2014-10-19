@@ -1,5 +1,5 @@
 ---
-date: 2014-10-20
+date: 2014-10-19
 title: PyGtk in Fedora virtualenv (for matplotlib)
 category: OSS
 tags: [linux, fedora, matplotlib, python]
