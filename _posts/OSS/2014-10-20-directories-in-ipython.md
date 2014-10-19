@@ -1,8 +1,8 @@
 ---
 date: 2014-10-20
-title: PyGtk in Fedora virtualenv (for matplotlib)
+title: IPython with 'project-style' directories
 category: OSS
-tags: [linux, fedora, matplotlib, ipython, python]
+tags: [linux, ipython, python, matplotlib]
 layout: post
 published: false
 ---
@@ -16,11 +16,11 @@ When coding up a larger project, it's helpful to have everything in the familiar
 
 {% highlight bash %}
 {BASE}
---- src/*.py
---- src/Module1/__init__.py ...(etc)
---- src/Module2/__init__.py ...(etc)
---- data/*.csv
---- notebooks/*.ipynb
+./src/*.py
+./src/Module1/__init__.py ...(etc)
+./src/Module2/__init__.py ...(etc)
+./data/*.csv
+./notebooks/*.ipynb
 {% endhighlight %}
 
 And standard scripts (in src/xyz.py) can be run in ```{BASE}``` by simply :
@@ -33,9 +33,9 @@ These scripts can ```import``` the internal modules straightforwardly, and the b
 At the same time, the IPython notebooks are kept in a separate 'notebooks/' directory, which messes up all the paths.
 
 
-### IPython notebook entries
+### IPython notebook preamble
 
-Open up an IPython notebook in 'notebooks/', and have the following preamble :
+Open up an IPython notebook in 'notebooks/', and have the following cell at the start to pull in the modules, and data with the correct relative paths :
 
 {% highlight python %}
 %pushd
@@ -50,5 +50,9 @@ p.normalize_channels()
 Running matplotlib thereafter :
 
 {% highlight python %}
+%matplotlib inline
+import matplotlib.pyplot as plt
+plt.rcParams['figure.figsize'] = (16.0, 8.0)
+import numpy as np
 {% endhighlight %}
 
