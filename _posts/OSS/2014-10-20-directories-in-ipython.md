@@ -4,7 +4,7 @@ title: IPython with 'project-style' directories
 category: OSS
 tags: [linux, ipython, python, matplotlib]
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -43,10 +43,9 @@ Open up a new IPython notebook in ```notebooks/```, and have the following cell 
 {% highlight python %}
 %pushd
 %cd ../src
-import EEG
+import Module1
 %cd ..
-p = EEG.EEG('Dog_2', 'interictal', 17)
-p.normalize_channels()
+p = Module1.Obj('Something', 'datafile', 17)
 %popd
 {% endhighlight %}
 
