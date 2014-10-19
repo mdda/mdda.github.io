@@ -10,93 +10,58 @@ published: false
 
 A previous post explained how to set up a Python virtualenv with a great tool suite : IPython, NumPy, SciPy, Theano, PyLearn2 and matplotlib.  However, when 'systematising' an application out of IPython research it's helpful to have a working matplotlib outside of IPython.
 
-The following assumes you've set up a virtualenv for Python already, and are 'in' it.
+The following assumes you've set up a virtualenv for Python already.
 
 It's a little bit of a hack, since it relies on the system-wide installation of ```PyGtk``` : Doing it truely within a virtualmin proved extremely tricky (ditto for ```Tkinter```).
 
-### First steps - undo the current matplotlib
+### Update the current virtualenv with ```--system-site-packages```
 
-If you haven't installed matplotlib yet, then skip this step.
-
-First, update the system so that the basics are there :
+If you're currently 'in' the virtualenv, leave it :
 
 {% highlight bash %}
-sudo yum install python-virtualenv 
+deactivate
 {% endhighlight %}
 
-### First steps (RPMs)
-
-First, update the system so that the basics are there :
+This update is a bit naughty - but it appears to leave currently installed extra modules alone (and then enters the virtualenv) :
 
 {% highlight bash %}
-sudo yum install python-virtualenv 
-{% endhighlight %}
-
-### Install interop and numerical RPMs
-
-For 'pylearn2' and 'ipython notebook' :
-
-{% highlight bash %}
-sudo yum install libyaml-devel zeromq-devel
-{% endhighlight %}
-
-For SciPy :
-
-{% highlight bash %}
-sudo yum install openblas-devel atlas-devel gcc-gfortran
-{% endhighlight %}
-
-Later, I'll be experimenting with ```OpenCL``` - and hope that Theano will be able to make use of ```CLBLAS```, etc.  (Fingers-crossed).
-
-### VirtualEnv setup
-
-{% highlight bash %}
-virtualenv env
+virtualenv env --system-site-packages
 . env/bin/activate
 {% endhighlight %}
 
-Python environment installation within the ```virtualenv```, with bleeding-edge Theano and PyLearn2 :
+### Uninstall the current matplotlib
+
+If you haven't installed matplotlib yet, then skip this step.
+
+Remove the current ```matplotlib```, while in the correct ```(env) $``` :
 
 {% highlight bash %}
-pip install cython numpy
+pip uninstall matplotlib
+{% endhighlight %}
 
-# This directory chosen as 'neutral'
-cd env
+### Install system-wide RPMs
 
-  git clone git://github.com/Theano/Theano.git
-  cd Theano
-    # By setting up 'develop', this directory becomes live in-place
-    python setup.py develop
-  cd ..
-
-  git clone git://github.com/lisa-lab/pylearn2.git
-  cd pylearn2
-    # By setting up 'develop', this directory becomes live in-place
-    python setup.py develop
-  cd ..
-
-cd ..
+{% highlight bash %}
+sudo yum install pygtk2 pygtk2-devel
 {% endhighlight %}
 
 
-### IPython notebook installation
+### Redo the matplotlib setup
 
-Python environment installation within the ```virtualenv``` (apparently ```ipython``` installation on its own doesn't pull in the dependencies) :
-
-{% highlight bash %}
-pip install ipython pyzmq jinja2 tornado matplotlib
-{% endhighlight %}
-
-### IPython notebook running
+Early on in the installation, there will be a read-out of the currently detected modules available - it should now include all the Gtk options.
 
 {% highlight bash %}
-ipython notebook
-# and open a browser to http://localhost:8888/
+pip install matplotlib
 {% endhighlight %}
 
-The 'magic' required to enable inline plotting by ```matplotlib``` with the IPython notebook is : 
-{% highlight bash %}
-%matplotlib inline
+
+### Check installation in the REPL
+
+Make sure you're in the right virtualenv, and then enter the Python REPL  :
+
+{% highlight python %}
+>>> 
 {% endhighlight %}
+
 
 Have fun!
