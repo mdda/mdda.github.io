@@ -60,8 +60,13 @@ pip install matplotlib
 Make sure you're in the right virtualenv, and then enter the Python REPL  :
 
 {% highlight python %}
->>> 
+>>> import matplotlib.pyplot as plt
+>>> fig = plt.figure()
+>>> ax = fig.add_subplot(111)
+>>> ax.plot([5,3,7,6,2,5])
+>>> plt.show()
 {% endhighlight %}
 
+... and (if everything is working) a fairly ugly GTK window will appear with a simple line chart in it.
 
 Have fun!
