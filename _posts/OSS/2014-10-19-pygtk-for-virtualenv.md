@@ -4,7 +4,7 @@ title: PyGtk in Fedora virtualenv (for matplotlib)
 category: OSS
 tags: [linux, fedora, matplotlib, python]
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -48,7 +48,7 @@ sudo yum install pygtk2 pygtk2-devel
 
 ### Redo the matplotlib setup
 
-Early on in the installation, there will be a read-out of the currently detected modules available - it should now include all the Gtk options.
+Early on in the installation 'configuration debug', there will be a summary of the currently detected modules available - it should now include all the Gtk options.
 
 {% highlight bash %}
 pip install matplotlib
@@ -57,7 +57,7 @@ pip install matplotlib
 
 ### Check installation in the REPL
 
-Make sure you're in the right virtualenv, and then enter the Python REPL  :
+Make sure you're in the right virtualenv, and then enter at the Python REPL (without the ```>>>```, of course) :
 
 {% highlight python %}
 >>> import matplotlib.pyplot as plt
