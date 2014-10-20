@@ -3,7 +3,7 @@ layout: post
 category: AI
 title: Evaluating entity linking with wikipedia - 2013
 tagline: Paper Takeaway
-date: 2014-10-13
+date: 2014-10-22
 tags: [NLP,NER,PaperTakeaway]
 published: false
 ---
@@ -16,7 +16,19 @@ This write-up contains my first impressions of the paper :
 
 ### Paper Background
 
+In this paper, the authors set out to recreate some of the key different methodologies in the NER space, only to find that benchmark results were difficult to reproduce - often for reasons extraneous to what the original authors claimed to have been demonstrating in their papers.  At the margin, experimental details dominated new breakthroughs.
+
+
 ### Surprising stuff
+
+*  The authors found that 'simple stuff' made a difference at least as large as the reported algorithmic advances between the different sophisticated techniques
+
+*  This 'simple stuff' were usually hand-crafted features that were found to work well
+
+*  The competition format that has arisen recently (cite ...) gives rise to a 'beat the state-of-the-art to publish' mentality that is often detrimental to clear methodologies, and repeatable results
+
+
+
 
 ### Ideas to Follow-Up
 
