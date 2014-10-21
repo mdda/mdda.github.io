@@ -4,7 +4,7 @@ category: AI
 title: Evaluating entity linking with wikipedia - 2013
 tagline: Paper Takeaway
 date: 2014-10-22
-tags: [NLP,NER,PaperTakeaway]
+tags: [NLP,NER,NEL,PaperTakeaway]
 published: false
 ---
 {% include JB/setup %}
@@ -23,7 +23,7 @@ In this paper, the authors set out to recreate some of the key different methodo
 
 *  The authors found that 'simple stuff' made a difference at least as large as the reported algorithmic advances between the different sophisticated techniques
 
-*  This 'simple stuff' were usually hand-crafted features that were found to work well
+*  This 'simple stuff' were usually hand-crafted features that were found to work well, such as acronym expansion.  Or the way in which an exact indentification 'falls back' to other types of resolution
 
 *  The competition format that has arisen recently (cite ...) gives rise to a 'beat the state-of-the-art to publish' mentality that is often detrimental to clear methodologies, and repeatable results
 
@@ -32,3 +32,4 @@ In this paper, the authors set out to recreate some of the key different methodo
 
 ### Ideas to Follow-Up
 
+NEL = Named Entity Linking
