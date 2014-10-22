@@ -33,3 +33,4 @@ In this paper, the authors set out to recreate some of the key different methodo
 ### Ideas to Follow-Up
 
 NEL = Named Entity Linking
+IE  = Information Extraction (what is really required for Financial Task)
