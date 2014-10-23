@@ -95,6 +95,7 @@ Want to do in-depth look at :
     R. Grishman. Information extraction: Capabilities and challenges. Technical report, NYU Dept. CS, 2012. (http://cs.nyu.edu/grishman/tarragona.pdf)
   
     Useful from a literature review point of view - and goes through all the steps of IE nicely.
+    But seems to run out of steam abruptly, rather than give nice "Further Work" ideas, for instance
     
   
   Google KV : Check refs :
