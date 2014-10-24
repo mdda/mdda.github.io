@@ -143,6 +143,16 @@ Want to do in-depth look at :
     SOURCE :: http://ronan.collobert.com/senna/
   
 
+  GoogleLeNet (http://arxiv.org/abs/1409.4842)
+    Follow up :
+      Lin-2014 "Network in Network" (http://arxiv.org/abs/1312.4400)
+      
+  Rafai Papers :
+    Rafai 2011 "Manifold Tangent Classifier" (http://machinelearning.wustl.edu/mlpapers/paper_files/NIPS2011_1240.pdf)
+    Rafai 2011 "Contractive AutoEncoders - Explicit Invariance" (http://www.icml-2011.org/papers/455_icmlpaper.pdf)
+    
+  PCAnet (http://arxiv.org/abs/1404.3606)
+  
 
 Idea : Put up LibreOffice Python plugin notes
 
