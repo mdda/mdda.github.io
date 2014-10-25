@@ -150,6 +150,7 @@ Want to do in-depth look at :
   Rafai Papers :
     #1 Rafai 2011 "Contractive AutoEncoders - Explicit Invariance" (http://www.icml-2011.org/papers/455_icmlpaper.pdf)
     #2 Rafai 2011 "Manifold Tangent Classifier" (http://machinelearning.wustl.edu/mlpapers/paper_files/NIPS2011_1240.pdf)
+    
     Homepage (includes links to Theano code) : 
       http://www-etud.iro.umontreal.ca/~rifaisal/
       
