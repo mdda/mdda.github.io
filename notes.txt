@@ -149,6 +149,9 @@ Want to do in-depth look at :
       
   Rafai Papers :
     #1 Rafai 2011 "Contractive AutoEncoders - Explicit Invariance" (http://www.icml-2011.org/papers/455_icmlpaper.pdf)
+      Need to look at code to judge changes required for non-normalized inputs (but range-bound outputs)
+      Not clear whether sigmoid needs to be 'top-and-tailed' or could be one-sided (Relu)
+      
     #2 Rafai 2011 "Manifold Tangent Classifier" (http://machinelearning.wustl.edu/mlpapers/paper_files/NIPS2011_1240.pdf)
     
     Homepage (includes links to Theano code) : 
