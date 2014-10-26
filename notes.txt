@@ -153,9 +153,11 @@ Want to do in-depth look at :
       Not clear whether sigmoid needs to be 'top-and-tailed' or could be one-sided (Relu)
       
     #2 Rafai 2011 "Manifold Tangent Classifier" (http://machinelearning.wustl.edu/mlpapers/paper_files/NIPS2011_1240.pdf)
-    
+      This appears less applicable to pure step-wise unsupervised learning, since it requires accumulation of various bundles of tangents, and then 'hind-sight'
+      
     Homepage (includes links to Theano code) : 
       http://www-etud.iro.umontreal.ca/~rifaisal/
+      
       
   PCAnet (http://arxiv.org/abs/1404.3606)
     Definitely need to contact authors in SG!
