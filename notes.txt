@@ -155,6 +155,9 @@ Want to do in-depth look at :
     #2 Rafai 2011 "Manifold Tangent Classifier" (http://machinelearning.wustl.edu/mlpapers/paper_files/NIPS2011_1240.pdf)
       This appears less applicable to pure step-wise unsupervised learning, since it requires accumulation of various bundles of tangents, and then 'hind-sight'
       
+    #3 Bengio 2012 "Better Mixing via Deep Representations" ()
+      
+      
     Homepage (includes links to Theano code) : 
       http://www-etud.iro.umontreal.ca/~rifaisal/
         The cA.py code looks useful for the EEG task - having a go!
