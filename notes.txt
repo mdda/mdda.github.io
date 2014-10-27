@@ -156,6 +156,7 @@ Want to do in-depth look at :
       This appears less applicable to pure step-wise unsupervised learning, since it requires accumulation of various bundles of tangents, and then 'hind-sight'
       
     #3 Bengio 2012 "Better Mixing via Deep Representations" ()
+      Interesting : This is much more of a hypothesis/discussion paper
       
       
     Homepage (includes links to Theano code) : 
