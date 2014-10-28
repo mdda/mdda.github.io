@@ -157,7 +157,7 @@ Want to do in-depth look at :
       
     #3 Bengio 2012 "Better Mixing via Deep Representations" ()
       Interesting : This is much more of a hypothesis/discussion paper
-      
+      It's not clear that some of their hypotheses are alternatives (as appears to be suggested once or twice).  So the lack of proof for (a) doesn't imply evidence for (b), etc
       
     Homepage (includes links to Theano code) : 
       http://www-etud.iro.umontreal.ca/~rifaisal/
