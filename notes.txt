@@ -118,7 +118,10 @@ Want to do in-depth look at :
       Minor point : TIMIT shares some features with EEG task
     Several things being tested, besides drop-out :
       Weight constraints (/rebalancing) instead of penalties
-      Dropping 20% of input pixels for MNIST (no other 'tricks' used)  
+      Dropping 20% of input pixels for MNIST (no other 'tricks' used)
+    Similarity to random forest in terms of feature sampling  
+    Excellent level of detail in describing model set-ups in the appendix
+    
 
   JPEG originators' keynote / paper / talk
     Contractive AutoEncoders : Rafai
