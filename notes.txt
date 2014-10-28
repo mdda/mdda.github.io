@@ -114,6 +114,11 @@ Want to do in-depth look at :
     NN for NER :: http://nlp.stanford.edu/~socherr/pa4_ner.pdf
     
   Dropout
+    Hinton, Srivastava, Krizhevsky, Sutskever &amp; Salakhutdinov - 2012 (http://arxiv.org/abs/1207.0580)
+      Minor point : TIMIT shares some features with EEG task
+    Several things being tested, besides drop-out :
+      Weight constraints (/rebalancing) instead of penalties
+      Dropping 20% of input pixels for MNIST (no other 'tricks' used)  
 
   JPEG originators' keynote / paper / talk
     Contractive AutoEncoders : Rafai
