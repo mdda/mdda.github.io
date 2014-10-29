@@ -1,7 +1,7 @@
 ---
 comments: true
 date: 2014-06-05
-title: Install Radeon OpenCL drivers on Fedora FC20
+title: Install Radeon OpenCL bindings on Fedora FC20
 category: OSS
 tags:
 - AMD
