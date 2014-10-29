@@ -17,6 +17,7 @@ from_mdda_blog: true
 ---
 {% include JB/setup %}
 
+* NB: There is a [newer version of this post](/oss/2014/10/29/install-AMD-radeon-drivers-on-FC20/) *
 
 Basic steps : 
 
@@ -29,21 +30,11 @@ Basic steps :
 
 Have a look at the [AMD Linux download page](http://support.amd.com/en-us/download/desktop?os=Linux+x86).  The direct (CLI) download below may not work due to cookies, etc, so you may have to resort to downloading through the browser...
 
-*OLD*
 {% highlight bash %}
 wget http://www2.ati.com/drivers/beta/linux-amd-catalyst-14.6-beta-v1.0-may23.zip
 unzip linux-amd-catalyst-14.6-beta-v1.0-may23.zip 
 rm linux-amd-catalyst-14.6-beta-v1.0-may23.zip 
 cd fglrx-14.20/
-./check.sh 
-{% endhighlight %}
-
-{% highlight bash %}
-wget http://www2.ati.com/drivers/linux/amd-catalyst-14-9-linux-x86-x86-64.zip
-unzip amd-catalyst-14-9-linux-x86-x86-64.zip 
-# Leave a hint as to where the drivers came from (but still free up the disk space)
-echo "" > amd-catalyst-14-9-linux-x86-x86-64.zip 
-cd fglrx-14.301.1001/
 ./check.sh 
 {% endhighlight %}
 
