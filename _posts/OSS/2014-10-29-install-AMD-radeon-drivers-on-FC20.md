@@ -70,68 +70,9 @@ lsmod | grep fgl
 more /usr/share/ati/fglrx-install.log
 {% endhighlight %}
 
-### Fixing the bugs...
+### Fixing the bugs... (if any)
 
-Probably have to fix up the source (this was particularly true for fglrx-14.20, whereas the fglrx-14.301... worked first time).
-
-The best way to do this is to run two terminals : 
-
-  * First terminal runs the installers (as above), until it reaches the 'all extracted' phase
-  
-  * Second terminal dives into the extracted source, and modifies it so that the first terminal can run to completion.
-  
-So, having run through the uncompress stage in the installer, leave it mid-operation, and find the extracted directory (called fglrx-install.1KZ6NX here, but the final digits/letters see random).
-  
-{% highlight bash %}
-cd fglrx-install.1KZ6NX/install/lib/modules/fglrx/ 
-joe 2.6.x/firegl_public.c
-{% endhighlight %}
-
-This is the 'source' source file (and will later be copied into `/usr/src/fglrx-14.20/firegl_public.c`, for subsequent kernels updates, presumably).
-
-It needs a modification as follows (this is a kludge-fix, the key thing is that it returns the `__kuid_val(current_euid());`, which somehow, the `#define`s seem to route around): 
-
-{% highlight bash %}
-/** /brief Return the effective user ID
- *  /return OS dependent value of the effective user ID
- */
-KCL_TYPE_Uid ATI_API_CALL KCL_GetEffectiveUid(void)
-{
-#ifdef CONFIG_UIDGID_STRICT_TYPE_CHECKS
-    return __kuid_val(current_euid());
-#else
-    return __kuid_val(current_euid());
-
-#ifdef current_euid
-//    return current_euid();
-#else
-    return current->euid;
-#endif
-
-#endif
-}
-
-{% endhighlight %}
-
-Then, rebuild the module : 
-
-{% highlight bash %}
-cd build_mod/
-./make.sh
-cd ..
-./make_install.sh
-lsmod
-{% endhighlight %}
-
-From there, one can let the installer (first terminal) run to completion.
-
-{% highlight bash %}
-lsmod
-reboot
-lsmod
-dmesg 
-{% endhighlight %}
-
+If you have to fix up the source (this was true for fglrx-14.20, whereas the fglrx-14.301... worked first time), have a look at this same section in [the previous post](/oss/2014/05/30/install-AMD-radeon-drivers-on-FC20/) for pointers.
 
 ### Check that the module is installed properly 
 
