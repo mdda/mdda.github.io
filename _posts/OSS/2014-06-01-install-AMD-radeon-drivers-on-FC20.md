@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2014-05-30 
+date: 2014-10-29
 title: Install Official Radeon Catalyst drivers on Fedora FC20
 category: OSS
 tags:
