@@ -132,12 +132,16 @@ lsmod
 dmesg 
 {% endhighlight %}
 
+
 ### Check that the module is installed properly 
-  
+
+This has to be done once X is available (really needs to be done on the local machine, rather than on an SSH terminal, since the "-display :0.0" option doesn't appear to work) :  
+
 {% highlight bash %}
 fglrxinfo 
 fglrxinfo -v
 {% endhighlight %}
+
 
 ### Make sure that the X11/xorg.conf has been updated appropriately
 
@@ -193,6 +197,7 @@ aticonfig --resolution=0,1680x1050
 aticonfig --enable-monitor=dfp3
 {% endhighlight %}
 
+
 ### Fix up the initial gdm interface (replace with lightdm)
 
 {% highlight bash %}
@@ -214,6 +219,7 @@ systemctl enable lightdm
 
 reboot
 {% endhighlight %}
+
 
 ### Test the new card out 
 
