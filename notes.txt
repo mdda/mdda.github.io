@@ -170,6 +170,9 @@ Want to do in-depth look at :
     Homepage (includes links to Theano code) : 
       http://www-etud.iro.umontreal.ca/~rifaisal/
         The cA.py code looks useful for the EEG task - having a go!
+          Need to investigate meaning of "Reconstruction Cost" (should it be negative?)
+          And whether Jacobian should ever be NaN...
+          
       
   PCAnet (http://arxiv.org/abs/1404.3606)
     Definitely need to contact authors in SG!
