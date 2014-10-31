@@ -13,7 +13,6 @@ tags:
 - opencl
 - fc20
 layout: post
-from_mdda_blog: true
 ---
 {% include JB/setup %}
 
