@@ -1,15 +1,10 @@
 ---
-comments: true
-date: 2014-10-29
-title: Install Official Radeon Catalyst drivers on Fedora FC20 (updated)
+date: 2014-11-02
+title: Building libgpuarray on Fedora 20
 category: OSS
 tags:
-- AMD
-- radeon
-- HD5570
 - fedora
 - linux
-- drivers
 - opencl
 - fc20
 layout: post
@@ -36,23 +31,4 @@ cd ..
 ## DIFFERENT RESULTS ::
 optirun cmake .. -DCMAKE_BUILD_TYPE=Release
 
-??
-https://github.com/clMathLibraries/clBLAS
-No RPM available...
-
-
-
-git clone https://github.com/clMathLibraries/clBLAS.git
-mkdir Build
-cmake ../src
-
-
-boost
-boost_program_options
-
-sudo yum install boost boost-devel boost-static
-:-)
-
-
-acml.h libacml
-
+Dependency : CLBLAS :: See ()
