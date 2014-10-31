@@ -37,7 +37,8 @@ sudo yum install boost boost-devel boost-static
 
 ## Requirement : ACML
 
-This is the [AMD Core Math library](http://en.wikipedia.org/wiki/AMD_Core_Math_Library), should be downloaded from [the (AMD) ACML download page](http://developer.amd.com/tools-and-sdks/cpu-development/amd-core-math-library-acml/acml-downloads-resources/).
+This is the [AMD Core Math library](http://en.wikipedia.org/wiki/AMD_Core_Math_Library), should be downloaded from [the (AMD) ACML download page](http://developer.amd.com/tools-and-sdks/cpu-development/amd-core-math-library-acml/acml-downloads-resources/) - though it's not at all clear which is the appropriate one...
+
 
 acml.h libacml
 
