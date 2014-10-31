@@ -32,3 +32,27 @@ make
 sudo make install
 cd ..
 {% endhighlight %}
+
+## DIFFERENT RESULTS ::
+optirun cmake .. -DCMAKE_BUILD_TYPE=Release
+
+??
+https://github.com/clMathLibraries/clBLAS
+No RPM available...
+
+
+
+git clone https://github.com/clMathLibraries/clBLAS.git
+mkdir Build
+cmake ../src
+
+
+boost
+boost_program_options
+
+sudo yum install boost boost-devel boost-static
+:-)
+
+
+acml.h libacml
+
