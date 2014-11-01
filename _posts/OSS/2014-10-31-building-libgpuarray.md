@@ -37,30 +37,8 @@ optirun cmake .. -DCMAKE_BUILD_TYPE=Release
 
 Dependency : CLBLAS :: See ()
 
-https://github.com/clMathLibraries/clBLAS/releases/download/v2.2/clBLAS-2.2.0-Linux-x64.tar.gz
-
-## Good idea, but not necessary once clBLAS installed correctly
-cmake .. -DCMAKE_BUILD_TYPE=Release -DCLBLAS_LIBRARIES=../../clBLAS/Binaries/clBLAS-2.2.0-Linux-x64/lib64/ -DCLBLAS_INCLUDE_DIRS=../../clBLAS/Binaries/clBLAS-2.2.0-Linux-x64/include/
-
-"-- Found clBLAS: "
-
-Except get library directory messages...
-""" Targets may link only to libraries.  CMake is dropping the item. """
-
 
 rm CMakeCache.txt
-
-## Better : Install the clBLAS in a system-wide location
-NB: ```cmake``` requires ```optirun``` to find OpenCL libraries.
-
-{% highlight bash %}
-cd /home/andrewsm/sketchpad/kaggle/AES-SPC/env/clBLAS/Binaries/clBLAS-2.2.0-Linux-x64
-cd lib64
-cp -R * /usr/lib64/nvidia-bumblebee/
-ls -l /usr/lib64/nvidia-bumblebee/
-cd ../include
-cp -R * /usr/include/
-{% endhighlight %}
 
 
 {% highlight bash %}
