@@ -20,6 +20,10 @@ yum install cmake
 
 {% highlight bash %}
 
+NO NEED TO DO THIS : There are binaries available
+
+
+
 ??
 https://github.com/clMathLibraries/clBLAS
 No RPM available...

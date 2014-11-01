@@ -32,3 +32,8 @@ cd ..
 optirun cmake .. -DCMAKE_BUILD_TYPE=Release
 
 Dependency : CLBLAS :: See ()
+
+https://github.com/clMathLibraries/clBLAS/releases/download/v2.2/clBLAS-2.2.0-Linux-x64.tar.gz
+
+cmake .. -DCMAKE_BUILD_TYPE=Release -DCLBLAS_LIBRARIES=../../clBLAS/Binaries/clBLAS-2.2.0-Linux-x64/lib64/ -DCLBLAS_INCLUDE_DIRS=../../clBLAS/Binaries/clBLAS-2.2.0-Linux-x64/include/
+
