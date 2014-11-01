@@ -47,3 +47,11 @@ rm CMakeCache.txt
 
 ```cmake``` requires ```optirun``` to find OpenCL libraries.
 
+{% highlight bash %}
+cd /home/andrewsm/sketchpad/kaggle/AES-SPC/env/clBLAS/Binaries/clBLAS-2.2.0-Linux-x64
+cd lib64
+cp -R * /usr/lib64/nvidia-bumblebee/
+ls -l /usr/lib64/nvidia-bumblebee/
+cd ../include
+cp -R * /usr/include/
+{% endhighlight %}
