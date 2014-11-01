@@ -37,3 +37,13 @@ https://github.com/clMathLibraries/clBLAS/releases/download/v2.2/clBLAS-2.2.0-Li
 
 cmake .. -DCMAKE_BUILD_TYPE=Release -DCLBLAS_LIBRARIES=../../clBLAS/Binaries/clBLAS-2.2.0-Linux-x64/lib64/ -DCLBLAS_INCLUDE_DIRS=../../clBLAS/Binaries/clBLAS-2.2.0-Linux-x64/include/
 
+"-- Found clBLAS: "
+Except get library directory messages...
+""" Targets may link only to libraries.  CMake is dropping the item. """
+
+
+rm CMakeCache.txt
+
+
+```cmake``` requires ```optirun``` to find OpenCL libraries.
+
