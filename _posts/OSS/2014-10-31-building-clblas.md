@@ -21,10 +21,18 @@ Anyhow, even the binaries for clBLAS have some ins-and-outs, when installing - p
 
 ## Getting the binary release
 
+Go to the [clBLAS GitHub page](https://github.com/clMathLibraries/clBLAS), and hunt for the appropriate release - which in my case was the [64-bit Linux one](https://github.com/clMathLibraries/clBLAS/releases/download/v2.2/clBLAS-2.2.0-Linux-x64.tar.gz).
 
-https://github.com/clMathLibraries/clBLAS
+Download this into a suitable directory, and expand :
 
-https://github.com/clMathLibraries/clBLAS/releases/download/v2.2/clBLAS-2.2.0-Linux-x64.tar.gz
+{% highlight bash %}
+cd <dir>
+wget https://github.com/clMathLibraries/clBLAS/releases/download/v2.2/clBLAS-2.2.0-Linux-x64.tar.gz
+tar -xzf clBLAS-2.2.0-Linux-x64.tar.gz
+cd clBLAS-2.2.0-Linux-x64
+{% endhighlight %}
+
+
 
 ## Good idea, but not necessary once clBLAS installed correctly
 cmake .. -DCMAKE_BUILD_TYPE=Release -DCLBLAS_LIBRARIES=../../clBLAS/Binaries/clBLAS-2.2.0-Linux-x64/lib64/ -DCLBLAS_INCLUDE_DIRS=../../clBLAS/Binaries/clBLAS-2.2.0-Linux-x64/include/
