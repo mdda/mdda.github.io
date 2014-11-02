@@ -15,42 +15,14 @@ published: false
 ---
 {% include JB/setup %}
 
-{% highlight bash %}
-yum install cmake
-{% endhighlight %}
+Initially, this was to be a post about building clBLAS.  However, that proved to be a bit of a trial-by-fire, particularly since it has the [AMD Core Math library](http://en.wikipedia.org/wiki/AMD_Core_Math_Library) as a requirement, and there are multiple different versions available on [the (AMD) ACML download page](http://developer.amd.com/tools-and-sdks/cpu-development/amd-core-math-library-acml/acml-downloads-resources/).  A big pity, since I like to 'do things by hand' in order to understand them...
 
-{% highlight bash %}
+Anyhow, even the binaries for clBLAS have some ins-and-outs, when installing - particularly since Bumblebee is envolved (since the GPU being used is an Nvidia mobile 750m).
 
-NO NEED TO DO THIS : There are binaries available
+## Getting the binary release
 
 
-
-??
 https://github.com/clMathLibraries/clBLAS
-No RPM available...
-
-
-git clone https://github.com/clMathLibraries/clBLAS.git
-mkdir Build
-cmake ../src
-
-## Requirement : Boost (and boost_program_options)
-
-{% highlight bash %}
-sudo yum install boost boost-devel boost-static
-{% endhighlight %}
-
-## Requirement : ACML
-
-This is the [AMD Core Math library](http://en.wikipedia.org/wiki/AMD_Core_Math_Library), should be downloaded from [the (AMD) ACML download page](http://developer.amd.com/tools-and-sdks/cpu-development/amd-core-math-library-acml/acml-downloads-resources/) - though it's not at all clear which is the appropriate one...
-
-
-acml.h libacml
-
-{% highlight bash %}
-sudo yum install 
-{% endhighlight %}
-
 
 https://github.com/clMathLibraries/clBLAS/releases/download/v2.2/clBLAS-2.2.0-Linux-x64.tar.gz
 

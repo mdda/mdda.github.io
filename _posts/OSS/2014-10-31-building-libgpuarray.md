@@ -63,12 +63,15 @@ Install the project...
 -- Installing: /usr/local/lib/libgpuarray-static.a
 {% endhighlight %}
 
-Hmm - but this /usr/local thing isn't great...
-
- optirun cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
+Avoid installing into ```/usr/local``` (since that doesn't get found by Python without further command-line options).
 
 {% highlight bash %}
-[root@changi Build]# make install
+optirun cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
+{% endhighlight %}
+
+{% highlight bash %}
+make
+sudo make install
 [ 50%] Built target gpuarray
 [100%] Built target gpuarray-static
 Install the project...
@@ -88,8 +91,6 @@ Install the project...
 -- Installing: /usr/lib/libgpuarray-static.a
 [root@changi Build]# 
 {% endhighlight %}
-
-
 
 NB: Set 'env' !
 
