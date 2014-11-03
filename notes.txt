@@ -83,6 +83,15 @@ Make MathJax work (??)
 
 
 Want to do in-depth look at :
+
+  Perhaps have a page about 'simplistic methods' that actually work, after ground-breaking ideas succeed with a complex set-up
+    PCAnet vs cA, etc
+    single layer nets (trained from deeper nets)
+    GloVE vs hinton tree training
+    incidence-based 'PCA' embedding vs GloVE
+    ...
+
+
   NER : 
     B. Hachey, W. Radford, J. Nothman, M. Honnibal, and J. Curran. Evaluating entity linking with wikipedia. Artificial Intelligence, 194:130–150, 2013.  (http://benhachey.info/pubs/hachey-aij12-evaluating.pdf)
   
