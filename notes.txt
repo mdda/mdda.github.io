@@ -178,6 +178,7 @@ Want to do in-depth look at :
       
     Homepage (includes links to Theano code) : 
       http://www-etud.iro.umontreal.ca/~rifaisal/
+        https://github.com/lisa-lab/DeepLearningTutorials/blob/master/code/cA.py
         The cA.py code looks useful for the EEG task - having a go!
           Investigate ::
             Meaning of "Reconstruction Cost" (should it be negative?)
