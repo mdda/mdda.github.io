@@ -184,8 +184,9 @@ Want to do in-depth look at :
             Meaning of "Reconstruction Cost" (should it be negative?)
             And whether Jacobian should ever be NaN...
             :: NEED TO NORMALIZE INPUTS to [0,1] ...
+            :: Actually log(z) doesn't produce useful im(z) scaling-wise,
+                 likely to be better to use polar( log(|z|), theta(z) ).{re, im}
           
-      
   PCAnet (http://arxiv.org/abs/1404.3606)
     Definitely need to contact authors in SG!
     
