@@ -11,7 +11,13 @@ published: false
 
 [PCANet: A Simple Deep Learning Baseline for Image Classification?](http://arxiv.org/abs/1404.3606)
 
-    Definitely need to contact authors in SG!
+    Definitely need to contact authors in SG!  
+      http://mx.nthu.edu.tw/~tsunghan/index.html
+        http://scholar.google.com/citations?user=WDJ7tY0AAAAJ
+        (now at SunPlus.com)
+      Jiwen.Lu@adsc.com.sg  << Only one on ADSC page...
+
+    
 
 
 [Do Deep Nets Really Need to be Deep?](http://arxiv.org/pdf/1312.6184.pdf)
