@@ -196,3 +196,8 @@ http://ipython.org/ipython-doc/stable/notebook/notebook.html
 
 Gelphi : Graph theory...
 
+CloudFoundry :: github.com/cf-platform-eng/cf-community-workshop
+  Neo4j
+  Redis
+  Postgres MySQL
+  Jenkins
