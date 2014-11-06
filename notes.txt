@@ -83,15 +83,36 @@ Make MathJax work (??)
 
 
 Want to do in-depth look at :
+  PCAnet (http://arxiv.org/abs/1404.3606)
+    Definitely need to contact authors in SG!
+    
+  GoogleLeNet (http://arxiv.org/abs/1409.4842)
+    Follow up :
+      Lin-2014 "Network in Network" (http://arxiv.org/abs/1312.4400)
 
-  Perhaps have a page about 'simplistic methods' that actually work, after ground-breaking ideas succeed with a complex set-up
-    PCAnet vs cA, etc
-    single layer nets (trained from deeper nets)
-    GloVE vs hinton tree training
-    incidence-based 'PCA' embedding vs GloVE
-    ...
-
-
+  Rafai Papers :
+    #1 Rafai 2011 "Contractive AutoEncoders - Explicit Invariance" (http://www.icml-2011.org/papers/455_icmlpaper.pdf)
+      Need to look at code to judge changes required for non-normalized inputs (but range-bound outputs)
+      Not clear whether sigmoid needs to be 'top-and-tailed' or could be one-sided (Relu)
+      
+    #2 Rafai 2011 "Manifold Tangent Classifier" (http://machinelearning.wustl.edu/mlpapers/paper_files/NIPS2011_1240.pdf)
+      This appears less applicable to pure step-wise unsupervised learning, since it requires accumulation of various bundles of tangents, and then 'hind-sight'
+      
+    #3 Bengio 2012 "Better Mixing via Deep Representations" ()
+      Interesting : This is much more of a hypothesis/discussion paper
+      It's not clear that some of their hypotheses are alternatives (as appears to be suggested once or twice).  So the lack of proof for (a) doesn't imply evidence for (b), etc
+      
+    Homepage (includes links to Theano code) : 
+      http://www-etud.iro.umontreal.ca/~rifaisal/
+        https://github.com/lisa-lab/DeepLearningTutorials/blob/master/code/cA.py
+        The cA.py code looks useful for the EEG task - having a go!
+          Investigate ::
+            Meaning of "Reconstruction Cost" (should it be negative?)
+            And whether Jacobian should ever be NaN...
+            :: NEED TO NORMALIZE INPUTS to [0,1] ...
+            :: Actually log(z) doesn't produce useful im(z) scaling-wise,
+                 likely to be better to use polar( log(|z|), theta(z) ).{re, im}
+          
   NER : 
     B. Hachey, W. Radford, J. Nothman, M. Honnibal, and J. Curran. Evaluating entity linking with wikipedia. Artificial Intelligence, 194:130–150, 2013.  (http://benhachey.info/pubs/hachey-aij12-evaluating.pdf)
   
@@ -160,36 +181,6 @@ Want to do in-depth look at :
     SOURCE :: http://ronan.collobert.com/senna/
   
 
-  GoogleLeNet (http://arxiv.org/abs/1409.4842)
-    Follow up :
-      Lin-2014 "Network in Network" (http://arxiv.org/abs/1312.4400)
-      
-  Rafai Papers :
-    #1 Rafai 2011 "Contractive AutoEncoders - Explicit Invariance" (http://www.icml-2011.org/papers/455_icmlpaper.pdf)
-      Need to look at code to judge changes required for non-normalized inputs (but range-bound outputs)
-      Not clear whether sigmoid needs to be 'top-and-tailed' or could be one-sided (Relu)
-      
-    #2 Rafai 2011 "Manifold Tangent Classifier" (http://machinelearning.wustl.edu/mlpapers/paper_files/NIPS2011_1240.pdf)
-      This appears less applicable to pure step-wise unsupervised learning, since it requires accumulation of various bundles of tangents, and then 'hind-sight'
-      
-    #3 Bengio 2012 "Better Mixing via Deep Representations" ()
-      Interesting : This is much more of a hypothesis/discussion paper
-      It's not clear that some of their hypotheses are alternatives (as appears to be suggested once or twice).  So the lack of proof for (a) doesn't imply evidence for (b), etc
-      
-    Homepage (includes links to Theano code) : 
-      http://www-etud.iro.umontreal.ca/~rifaisal/
-        https://github.com/lisa-lab/DeepLearningTutorials/blob/master/code/cA.py
-        The cA.py code looks useful for the EEG task - having a go!
-          Investigate ::
-            Meaning of "Reconstruction Cost" (should it be negative?)
-            And whether Jacobian should ever be NaN...
-            :: NEED TO NORMALIZE INPUTS to [0,1] ...
-            :: Actually log(z) doesn't produce useful im(z) scaling-wise,
-                 likely to be better to use polar( log(|z|), theta(z) ).{re, im}
-          
-  PCAnet (http://arxiv.org/abs/1404.3606)
-    Definitely need to contact authors in SG!
-    
 
 Idea : Put up LibreOffice Python plugin notes
 
