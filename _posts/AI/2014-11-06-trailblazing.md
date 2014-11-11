@@ -17,6 +17,7 @@ Recently, I've notice a pattern of papers that show that 'simplistic methods' ac
 <!--
     Definitely need to contact authors in SG!  
       http://mx.nthu.edu.tw/~tsunghan/index.html
+        SENT MAIL TO :: Tsung-Han Chan <thchan@ieee.org>
         http://scholar.google.com/citations?user=WDJ7tY0AAAAJ
         (now at SunPlus.com)
       Jiwen.Lu@adsc.com.sg  << Only one on ADSC page...
