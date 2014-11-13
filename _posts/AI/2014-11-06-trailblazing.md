@@ -20,7 +20,7 @@ Recently, I've notice a pattern of papers that show that 'simplistic methods' ac
         SENT MAIL TO :: Tsung-Han Chan <thchan@ieee.org>
         http://scholar.google.com/citations?user=WDJ7tY0AAAAJ
         (now at SunPlus.com)
-      Jiwen.Lu@adsc.com.sg  << Only one on ADSC page...
+      SENT MAIL TO :: Jiwen.Lu@adsc.com.sg  << Only one on ADSC page...
 !-->
 
 *  single layer nets (trained from deeper nets)  [Do Deep Nets Really Need to be Deep?](http://arxiv.org/pdf/1312.6184.pdf)
