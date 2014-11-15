@@ -35,6 +35,12 @@ For SciPy :
 sudo yum install openblas-devel atlas-devel gcc-gfortran
 {% endhighlight %}
 
+For matplotlib:
+
+{% highlight bash %}
+sudo yum install libpng-devel freetype-devel
+{% endhighlight %}
+
 Later, I'll be experimenting with ```OpenCL``` - and hope that Theano will be able to make use of ```CLBLAS```, etc.  (Fingers-crossed).
 
 ### VirtualEnv setup
