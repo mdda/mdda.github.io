@@ -34,11 +34,10 @@ as Implicit Matrix Factorization - Levy &amp; Goldberg (2014)](https://levyomer.
 
 ### The Need for Trailblazers
 
-To stereotype the implementers of the 'new simple' methods : They are practicing 'white magic' : Tried and true methods, that almost self-evidently work (except that no-one had thought to try them).
+To stereotype the implementers of the 'new simple' methods : They are practicing 'white magic', using tried and true methods, that almost self-evidently work (except that no-one had thought to try them before).
 
-Conversely, the methods now shown to have over-complicated the problem, are 'black magic'.  And the wizards who create these methods are (essentially) willing to try anything that will give interesting results.  Typically, this role has fallen on Neural Network researchers, who were accustomed to searching in the wilderness, and have recently been emboldened by the sudden computational tractability of their work.  
+Conversely, the methods now shown to have over-complicated the problem, are 'black magic'.  And the wizards who create these methods are (essentially) willing to try anything that will give interesting results.  Typically, the people performing 'black magic' are Neural Network researchers, who are accustomed to searching in the wilderness, trying to defend a field that seemed a little hopeless.  
 
-Before the mid-2000s, stochastic gradient descent was an almost thankless optimisation method.  But now, suddenly, having any kind of differentiable system (even Neural Turing Machines...) means that they can be tackled by a sufficient number of CPUs (or, more likely) GPUs.
+Recently, though, people who had previously been out on the bold frontier of research have recently been emboldened by the sudden computational tractability of their work (before the early-2000s, stochastic gradient descent was an almost thankless optimisation method).  But now, suddenly, having any kind of differentiable system (even Neural Turing Machines...) means that a problem can be tackled by a sufficient number of CPUs (or, more likely) GPUs.  It almost seems like a reasonable approach...
 
-Back to the "Trailblazers" : These are the 'have-a-go' black magic wizards.  Once the problems have been shown to be tractable *at all*, then the white magic wizards can come along and demonstrate that it was 'simple' all along.  But one needs the Trailblazers, the 'dreamers', otherwise others will fear to venture into the unknown.
-
+Back to the "Trailblazers" : These are the 'have-a-go' black magic wizards.  Once the problems have been shown to be tractable *at all*, then the white magic wizards can come along and demonstrate that it was 'simple' all along.  But one needs the Trailblazers, the 'dreamers' - for otherwise others will fear to venture into the unknown.
