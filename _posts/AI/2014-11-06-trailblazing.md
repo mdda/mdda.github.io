@@ -3,9 +3,9 @@ layout: post
 category: AI
 title: Trailblazing
 tagline: Mavericks Required
-date: 2014-11-06
+date: 2014-11-17
 tags: [NLP,NeuralNetworks,PCA]
-published: false
+published: true
 ---
 {% include JB/setup %}
 
