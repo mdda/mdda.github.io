@@ -87,6 +87,12 @@ python setup.py install
 optirun python -c "import pygpu;pygpu.test()"
 {% endhighlight %}
 
+### Building PyGPU (for developing it)
+
+{% highlight bash %}
+python setup.py develop
+{% endhighlight %}
+
 ### Building PyGPU - but tests fail (after a while)
 
 Apparently, this is to-be-expected behaviour at the moment...
