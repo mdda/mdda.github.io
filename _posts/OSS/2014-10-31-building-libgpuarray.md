@@ -87,11 +87,11 @@ python setup.py install
 optirun python -c "import pygpu;pygpu.test()"
 {% endhighlight %}
 
+
 ### Building PyGPU (for developing it)
 
-{% highlight bash %}
-python setup.py develop
-{% endhighlight %}
+Apparently, this is just done by repeatedly doing ```build``` and ```install``` above (there's no ```python setup.py develop```).
+
 
 ### Building PyGPU - but tests fail (after a while)
 
