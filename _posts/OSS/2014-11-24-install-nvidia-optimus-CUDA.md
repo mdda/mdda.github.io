@@ -22,11 +22,17 @@ Surprisingly, the proprietary Nvidia driver doesn't bring in the compiling SDK (
 
 [Linux install document from Nvidia](http://developer.download.nvidia.com/compute/cuda/6_5/rel/docs/CUDA_Getting_Started_Linux.pdf)
 
+
 # uninstall previous cuda-repo-fedoraXX rpms - Nvidia hasn't figured out Fedora numbering yet
 yum localinstall <download-directory>/cuda-repo-fedora20-6.5-14.x86_64.rpm
 
+BUT : Doesn't respect installed bumblebee, so need to install manually (without new nvidia card drivers from rpm directly) :
 
+Download the ['Run' version rather than the 'RPM' one](https://developer.nvidia.com/cuda-downloads?sid=655255) :
 
+# NB: It's large! ::  972,320,904 Nov 24 16:48 cuda_6.5.14_linux_64.run
+cd <download-directory>
+./cuda_6.5.14_linux_64.run
 
 
 
