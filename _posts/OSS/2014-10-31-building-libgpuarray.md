@@ -29,8 +29,11 @@ git clone https://github.com/Theano/libgpuarray.git
 cd libgpuarray
 mkdir Build
 cd Build
-# you can pass -DCMAKE_INSTALL_PREFIX=/path/to/somewhere to install to an alternate location
-cmake .. -DCMAKE_BUILD_TYPE=Release # or Debug if you are investigating a crash
+## you can pass -DCMAKE_INSTALL_PREFIX=/path/to/somewhere to install to an alternate location
+## Use Debug instead of Release if you are investigating a crash
+cmake .. -DCMAKE_BUILD_TYPE=Release 
+## if the nvidia drivers were installed under bumblebee :
+#cmake .. -DCMAKE_BUILD_TYPE=Release -DCUDA_CUDA_LIBRARY=/lib64/nvidia-bumblebee/libcuda.so -DCUDA_TOOLKIT_INCLUDE=/usr/local/cuda-6.5/include
 make
 sudo make install
 cd ..
