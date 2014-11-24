@@ -98,8 +98,9 @@ Apparently, this is just done by repeatedly doing ```build``` and ```install``` 
 Apparently, this is to-be-expected behaviour at the moment...
 
 {% highlight bash %}
+optirun python -c "import pygpu;pygpu.test()"
 GpuArrayException: Out of resources
-```opencl0:0```
+"""opencl0:0"""
 {% endhighlight %}
 
 But at least it highlights the correct name for the GPU device.
