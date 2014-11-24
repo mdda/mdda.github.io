@@ -31,7 +31,7 @@ mkdir Build
 cd Build
 ## you can pass -DCMAKE_INSTALL_PREFIX=/path/to/somewhere to install to an alternate location
 ## Use Debug instead of Release if you are investigating a crash
-cmake .. -DCMAKE_BUILD_TYPE=Release 
+optirun cmake .. -DCMAKE_BUILD_TYPE=Release 
 ## if the nvidia drivers were installed under bumblebee :
 #cmake .. -DCMAKE_BUILD_TYPE=Release -DCUDA_CUDA_LIBRARY=/lib64/nvidia-bumblebee/libcuda.so -DCUDA_TOOLKIT_INCLUDE=/usr/local/cuda-6.5/include
 make
@@ -49,6 +49,8 @@ The key ```cmake``` line for building under a ```bumblebee``` set-up was :
 
 {% highlight bash %}
 optirun cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
+# And to include the CUDA install too :
+optirun cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DCUDA_CUDA_LIBRARY=/lib64/nvidia-bumblebee/libcuda.so -DCUDA_TOOLKIT_INCLUDE=/usr/local/cuda-6.5/include
 {% endhighlight %}
 
 And finally, install system-wide :

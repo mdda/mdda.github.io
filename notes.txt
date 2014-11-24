@@ -80,6 +80,8 @@ Make MathJax work (??)
   http://getbootstrap.com/css/#overview-container
   http://fortawesome.github.io/Font-Awesome/icons/
 
+  http://getbootstrap.com/css/
+  https://github.com/Shopify/liquid/wiki/Liquid-for-Designers
 
 
 Want to do in-depth look at :
