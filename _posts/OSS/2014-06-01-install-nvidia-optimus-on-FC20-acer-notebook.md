@@ -132,3 +132,4 @@ Then the laptop can be safely suspended, and just using an ```optirun``` will re
 
 NB: It's a good idea (if you're just using the GPU for 'compute') to use ```optirun --no-xorg``` since that simplifies the number of different processes with their fingers clutching at your GPU.
 
+Soon: Add pre-suspend hook to do this automatically.   However, with Fedora 21 out soon, may wait...
