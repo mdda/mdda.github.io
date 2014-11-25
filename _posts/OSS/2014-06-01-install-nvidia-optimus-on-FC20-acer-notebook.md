@@ -10,6 +10,7 @@ tags:
 - opencl
 - fc20
 - acer
+- bumblebee
 - GT 750M
 layout: post
 from_mdda_blog: true
@@ -38,6 +39,7 @@ To get the device driver installed for the NVidia card, here are the basic steps
    * Cave in and do it the best way : `bumblebee-nvidia`
 
 Cutting a long story short, the hard way uncovered the fact that the new kernel driver needs signing to work with `UEFI`.  But that's tricky.  
+
 
 ### Disable Secure Boot (on Acer) 
 
@@ -81,7 +83,6 @@ yum -y install bbswitch bumblebee
 
 yum -y --nogpgcheck install http://install.linux.ncsu.edu/pub/yum/itecs/public/bumblebee-nonfree/fedora20/noarch/bumblebee-nonfree-release-1.1-1.noarch.rpm
 yum -y install bumblebee-nvidia
-
 {% endhighlight %}
 
 To force a recompilation on the next reboot : 
@@ -90,6 +91,7 @@ To force a recompilation on the next reboot :
 touch /etc/sysconfig/nvidia/compile-nvidia-driver
 reboot
 {% endhighlight %}
+
 
 ### But where is the driver ?
 
@@ -102,5 +104,31 @@ When you require the NVidia Graphics card (specifically, when you run an `optiru
 
 ### Can this run OpenCL graphics coprocessor jobs?
 
-Remains to be seen...
+Yes : Definitely.  It can also run CUDA stuff too, if you install the CUDA SDK (not necessary for plain OpenCL).
+
+
+### Suspend/resume
+
+There's a problem getting the Nvidia card to wake up after a suspend, apparently.  I discovered this during development of some Theano / libgpuarray stuff (where the programming environment was tiresome to keep rebuilding).  Until I found the fix, the only way to regain the Nvidia card was to reboot the machine.
+
+So : Before suspending, execute the following commands as root :
+
+{% highlight bash %}
+# Check whether Nvidia card is 'live' :
+cat /proc/acpi/bbswitch 
+
+# If that shows ON, then try :
+tee /proc/acpi/bbswitch <<<OFF
+cat /proc/acpi/bbswitch 
+
+# If it still shows ON, then :
+optirun --no-xorg modprobe -r nvidia
+cat /proc/acpi/bbswitch 
+
+# Should definitely show OFF by now...
+{% endhighlight %}
+
+Then the laptop can be safely suspended, and just using an ```optirun``` will resurrect the GPU.
+
+NB: It's a good idea (if you're just using the GPU for 'compute') to use ```optirun --no-xorg``` since that simplifies the number of different processes with their fingers clutching at your GPU.
 
