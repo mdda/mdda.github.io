@@ -1,8 +1,8 @@
 ---
-published: false
+published: true
 comments: true
-date: 2014-11-24
-title: Install OpenCL drivers for nvidia Optimus on Fedora FC20
+date: 2014-11-01
+title: Install OpenCL drivers for Nvidia Optimus on Fedora FC20
 category: OSS
 tags:
 - fedora
@@ -12,7 +12,6 @@ tags:
 - optimus
 - fc20
 layout: post
-from_mdda_blog: true
 ---
 {% include JB/setup %}
 

@@ -109,27 +109,4 @@ Yes : Definitely.  It can also run CUDA stuff too, if you install the CUDA SDK (
 
 ### Suspend/resume
 
-There's a problem getting the Nvidia card to wake up after a suspend, apparently.  I discovered this during development of some Theano / libgpuarray stuff (where the programming environment was tiresome to keep rebuilding).  Until I found the fix, the only way to regain the Nvidia card was to reboot the machine.
-
-So : Before suspending, execute the following commands as root :
-
-{% highlight bash %}
-# Check whether Nvidia card is 'live' :
-cat /proc/acpi/bbswitch 
-
-# If that shows ON, then try :
-tee /proc/acpi/bbswitch <<<OFF
-cat /proc/acpi/bbswitch 
-
-# If it still shows ON, then :
-optirun --no-xorg modprobe -r nvidia
-cat /proc/acpi/bbswitch 
-
-# Should definitely show OFF by now...
-{% endhighlight %}
-
-Then the laptop can be safely suspended, and just using an ```optirun``` will resurrect the GPU.
-
-NB: It's a good idea (if you're just using the GPU for 'compute') to use ```optirun --no-xorg``` since that simplifies the number of different processes with their fingers clutching at your GPU.
-
-Soon: Add pre-suspend hook to do this automatically.   However, with Fedora 21 out soon, may wait...
+There's a problem getting the Nvidia card to wake up after a suspend, apparently.  See [my update post](/oss/2014/11/26/FC20-acer-notebook-suspend-gpu/) to resolve it with a suspend-hook workaround.

@@ -1,8 +1,8 @@
 ---
-published: false
+published: true
 comments: true
-date: 2014-11-24
-title: Install CUDA SDK for nvidia Optimus on Fedora FC20
+date: 2014-11-21
+title: Install CUDA SDK for Nvidia Optimus on Fedora FC20
 category: OSS
 tags:
 - fedora
@@ -12,24 +12,26 @@ tags:
 - optimus
 - fc20
 layout: post
-from_mdda_blog: true
 ---
 {% include JB/setup %}
 
-Surprisingly, the proprietary Nvidia driver doesn't bring in the compiling SDK (unlike the OpenCL stuff, which is apparently something Nvidia does, but doesn't like to speak about).
+Surprisingly, the proprietary Nvidia driver doesn't bring in the SDK required for compiling modules (unlike the OpenCL stuff, which is apparently something Nvidia does, but doesn't like to speak about).
 
 
+### Installing on Linux :: RPM 
 
-[Linux install document from Nvidia](http://developer.download.nvidia.com/compute/cuda/6_5/rel/docs/CUDA_Getting_Started_Linux.pdf)
-
-
+First steps from the [Linux install document from Nvidia](http://developer.download.nvidia.com/compute/cuda/6_5/rel/docs/CUDA_Getting_Started_Linux.pdf)
+would be :
 
 {% highlight bash %}
 # uninstall previous cuda-repo-fedoraXX rpms - Nvidia hasn't figured out Fedora numbering yet
 yum localinstall <download-directory>/cuda-repo-fedora20-6.5-14.x86_64.rpm
 {% endhighlight %}
 
-BUT : Doesn't respect installed bumblebee, so need to install manually (without new nvidia card drivers from rpm directly) :
+Unfortunately, the RPM method doesn't 'respect' ```bumblebee```, so need to install manually (without new Nvidia card drivers from RPM directly).
+
+
+### Installing on Linux :: RUN
 
 Download the ['Run' version rather than the 'RPM' one](https://developer.nvidia.com/cuda-downloads?sid=655255) :
 
@@ -81,12 +83,17 @@ To install the driver using this installer, run the following command, replacing
 Logfile is /tmp/cuda_install_2542.log
 {% endhighlight %}
 
+### Finishing up
 
-Better ld.conf idea : 
+Better ```ld.conf``` approach for Fedora, as root : 
 
 {% highlight bash %}
 echo "/usr/local/cuda-6.5/lib64" > /etc/ld.so.conf.d/cuda.conf && ldconfig
-scite ~/.bash_profile 
-# and add (before the export PATH): 
-# PATH=$PATH:/usr/local/cuda-6.5/bin
+{% endhighlight %}
+
+And for the user that needs to use the compiler & other tools, edit ```~/.bash_profile``` :
+
+{% highlight bash %}
+# add (before the export PATH): 
+PATH=$PATH:/usr/local/cuda-6.5/bin
 {% endhighlight %}
