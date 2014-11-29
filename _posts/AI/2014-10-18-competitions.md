@@ -3,9 +3,9 @@ layout: post
 category: AI
 title: Evaluating entity linking with wikipedia - 2013
 tagline: Paper Takeaway
-date: 2014-10-22
+date: 2014-10-30
 tags: [NLP,NER,NEL,PaperTakeaway]
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -25,12 +25,14 @@ In this paper, the authors set out to recreate some of the key different methodo
 
 *  This 'simple stuff' were usually hand-crafted features that were found to work well, such as acronym expansion.  Or the way in which an exact indentification 'falls back' to other types of resolution
 
-*  The competition format that has arisen recently (cite ...) gives rise to a 'beat the state-of-the-art to publish' mentality that is often detrimental to clear methodologies, and repeatable results
+*  The competition format that has arisen recently (cite ...) gives rise to a 'beat the state-of-the-art in order to get published' mentality that is often detrimental to clear methodologies, and repeatable results
 
 
+### Takeaway
 
+In many ways, this is a meta-analysis paper.  In the process of evaluating the methodologies in several other papers, its main conclusions stem from the commonalities concerning 'minor' issues.  This, in itself, may be a more revealing : It's more important for pracititioners in the field to have the 'tricks of the trade' distilled out than just to hear on how each research group's own methodology incrementally pushes the frontier forward.
 
-### Ideas to Follow-Up
-
+<!--
 NEL = Named Entity Linking
 IE  = Information Extraction (what is really required for Financial Task)
+!-->
