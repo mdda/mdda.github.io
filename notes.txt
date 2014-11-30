@@ -85,12 +85,16 @@ Make MathJax work (??)
 
 
 Want to do in-depth look at :
+  2014 NIPS:
+    -- Looking through papers for something interesting to write about
+
   PCAnet (http://arxiv.org/abs/1404.3606)
-    Definitely need to contact authors in SG!
+    Definitely need to contact authors in SG! :: DEAD END - sigh!
     
   GoogleLeNet (http://arxiv.org/abs/1409.4842)
     Follow up :
       Lin-2014 "Network in Network" (http://arxiv.org/abs/1312.4400)
+        Hmpf
 
   Rafai Papers :
     #1 Rafai 2011 "Contractive AutoEncoders - Explicit Invariance" (http://www.icml-2011.org/papers/455_icmlpaper.pdf)
@@ -114,14 +118,6 @@ Want to do in-depth look at :
             :: NEED TO NORMALIZE INPUTS to [0,1] ...
             :: Actually log(z) doesn't produce useful im(z) scaling-wise,
                  likely to be better to use polar( log(1+|z|), theta(z) ).{re, im}
-          
-  NER : 
-    B. Hachey, W. Radford, J. Nothman, M. Honnibal, and J. Curran. Evaluating entity linking with wikipedia. Artificial Intelligence, 194:130–150, 2013.  (http://benhachey.info/pubs/hachey-aij12-evaluating.pdf)
-  
-    Comment on role of competitions?  Though, on second reading this is more about reproduceability and consistency.
-    
-    Also points out how people are concentrating on the 'sexy' topic of disambiguation, whereas search was a bigger determinant of total score.
-    
     
   NER :     
     R. Grishman. Information extraction: Capabilities and challenges. Technical report, NYU Dept. CS, 2012. (http://cs.nyu.edu/grishman/tarragona.pdf)
@@ -132,8 +128,8 @@ Want to do in-depth look at :
   
   Google KV : Check refs :
     NER 
-      [16]  R. Grishman. Information extraction: Capabilities and challenges. Technical report, NYU Dept. CS, 2012. (http://cs.nyu.edu/grishman/tarragona.pdf)
-      [18]  B. Hachey, W. Radford, J. Nothman, M. Honnibal, and J. Curran. Evaluating entity linking with wikipedia. Artificial Intelligence, 194:130–150, 2013.  (http://benhachey.info/pubs/hachey-aij12-evaluating.pdf)
+      [16] R. Grishman. Information extraction: Capabilities and challenges. Technical report, NYU Dept. CS, 2012. (http://cs.nyu.edu/grishman/tarragona.pdf)
+      [18] READ B. Hachey, W. Radford, J. Nothman, M. Honnibal, and J. Curran. Evaluating entity linking with wikipedia. Artificial Intelligence, 194:130–150, 2013.  (http://benhachey.info/pubs/hachey-aij12-evaluating.pdf)
     Distance Training : 
       [29]  M. Mintz, S. Bills, R. Snow, and D. Jurafksy. Distant supervision for relation extraction without labeled data. In Prof. Conf. Recent Advances in NLP, 2009.  (http://web.stanford.edu/~jurafsky/mintz.pdf)
     Clustering of entities 
