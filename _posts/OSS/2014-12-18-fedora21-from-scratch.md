@@ -7,7 +7,7 @@ tags:
 - linux
 - fc21
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -24,7 +24,7 @@ yum update
 reboot
 {% endhighlight %}
 
-### Install tool essentials
+### Install essential tools
 
 {% highlight bash %}
 yum install firefox geany joe scite git libreoffice unison keepassx 
@@ -200,7 +200,7 @@ First, get the download from the [the Google Download site](https://www.google.c
 yum install Downloads/google-chrome-stable_current_x86_64.rpm 
 {% endhighlight %}
 
-### Mount an SMB drive to copy some 'media' files
+### Mount an SMB drive to copy some media files
 
 {% highlight bash %}
 # As a local user, create a suitable SMB credentials file : 
@@ -217,7 +217,7 @@ mount -t cifs //viewqwest.herald/2tb /mnt/media -o rw,user,noauto,credentials=/h
 
 First, install Skype from [http://www.skype.com/en/download-skype/skype-for-linux/](the Skype Linux download page) (the 32-bit Fedora one works).
 
-Then : Check that there are no pre-64-bit RPMs installed on the machine.  
+Then, check that there are no pre-64-bit RPMs installed on the machine.  
 That will (likely) prove that the Linux install is pure 64-bit native, meaning 
 that (helpfully) Skype is the only reason that 32-bit packages are installed.
 This in turn means that when it comes time to replace Skype with something
