@@ -153,6 +153,11 @@ geany -i
 # Test the installation (on the plugin's own setup, sample config provided)
 cd geany-project-tree/
 geany -i
+
+# Just for convenience, enable git password caching (15 mins is default timeout)
+git config --global credential.helper cache
+# Set the cache to timeout after 1 hour (setting is in seconds)
+git config --global credential.helper 'cache --timeout=3600'
 {% endhighlight %}
 
 ### Remove superfluous RPMs
@@ -226,3 +231,4 @@ rpm -qa | grep i486
 
 yum install Downloads/skype-4.3.0.37-fedora.i586.rpm 
 {% endhighlight %}
+
