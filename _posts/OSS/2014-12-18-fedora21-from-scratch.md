@@ -1,5 +1,5 @@
 ---
-date: 2014-12-18
+date: 2014-12-17
 title: Fedora 21 machine setup
 category: OSS
 tags:
@@ -166,6 +166,14 @@ yum remove transmission* claws-mail* midori* pidgin* remmina* liferea* abiword* 
 {% highlight bash %}
 yum install ruby-devel rubygem-bundler
 yum install nodejs
+{% endhighlight %}
+
+Now, going into the project folder, do a ```bundle install``` to bring in the Ruby dependencies,
+and this should allow local serving/testing of the content as follows :
+
+{% highlight bash %}
+bundle install 
+bundle exec jekyll serve --watch --unpublished
 {% endhighlight %}
 
 ### Install ```vlc```
