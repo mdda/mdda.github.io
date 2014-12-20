@@ -187,9 +187,17 @@ First, get the download from the [the Google Download site](https://www.google.c
 yum install Downloads/google-chrome-stable_current_x86_64.rpm 
 {% endhighlight %}
 
-###
+### Mount an SMB drive to copy some 'media' files
 
 {% highlight bash %}
+# As a local user, create a suitable SMB credentials file : 
+mkdir -i ~/.cifs
+echo "user=username" >> ~/.cifs/viewqwest 
+echo "password=password" >> ~/.cifs/viewqwest 
+
+# and as root :
+mkdir -p /mnt/media
+mount -t cifs //viewqwest.herald/2tb /mnt/media -o rw,user,noauto,credentials=/home/andrewsm/.cifs/viewqwest,uid=andrewsm,gid=nobody
 {% endhighlight %}
 
 ###
