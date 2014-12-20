@@ -200,7 +200,21 @@ mkdir -p /mnt/media
 mount -t cifs //viewqwest.herald/2tb /mnt/media -o rw,user,noauto,credentials=/home/andrewsm/.cifs/viewqwest,uid=andrewsm,gid=nobody
 {% endhighlight %}
 
-###
+### Install Skype
+
+First, install Skype from [http://www.skype.com/en/download-skype/skype-for-linux/](the Skype Linux download page) (the 32-bit Fedora one works).
+
+Then : Check that there are no pre-64-bit RPMs installed on the machine.  
+That will (likely) prove that the Linux install is pure 64-bit native, meaning 
+that (helpfully) Skype is the only reason that 32-bit packages are installed.
+This in turn means that when it comes time to replace Skype with something
+more Linux-friendly, it will be easier to remove it cleanly.
 
 {% highlight bash %}
+rpm -qa | grep i586
+rpm -qa | grep i686
+rpm -qa | grep i486
+# NO 32-bit RPMs before Skype
+
+yum install Downloads/skype-4.3.0.37-fedora.i586.rpm 
 {% endhighlight %}
