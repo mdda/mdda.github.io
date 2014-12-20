@@ -9,6 +9,10 @@ published: false
 ---
 {% include JB/setup %}
 
+### Presentation Link
 
-Reference to the materials goes here...
+I recently gave a <strong><a href="http://redcatlabs.com/2014-12-18_DeepLearning.js/" target="_blank">presentation about Deep Learning</a></strong> 
+to the [Singapore Talk.js MeetUp Group](http://www.meetup.com/Singapore-JS/events/219129996/).
+
+If there are any questions about the presentation, please ask below, or via the MeetUp group.
 
