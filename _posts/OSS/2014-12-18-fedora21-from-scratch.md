@@ -133,29 +133,58 @@ echo "/usr/local/cuda-6.5/lib64" > /etc/ld.so.conf.d/cuda.conf && ldconfig
 joe /home/andrewsm/.bash_profile 
 {% endhighlight %}
 
-###
+### Install ```geany-project-tree``` plugin
 
 {% highlight bash %}
+yum install geany-plugins-geanypy
+
+# launch geany and enable the GeanyPy plug (Tools Plugin Manager)
+geany -i
+
+# Download the geany-project-tree plugin, and install
+mkdir tools
+cd tools/
+git clone https://github.com/mdda/geany-project-tree.git
+cd geany-project-tree/
+ln -s `pwd`/project-tree ~/.config/geany/plugins/geanypy/plugins/
+# Load the plugin via Tools Python Plugin Manager
+geany -i
+
+# Test the installation (on the plugin's own setup, sample config provided)
+cd geany-project-tree/
+geany -i
 {% endhighlight %}
 
-###
+### Remove superfluous RPMs
 
 {% highlight bash %}
+yum remove transmission* claws-mail* midori* pidgin* remmina* liferea* abiword* orage* parole*
 {% endhighlight %}
 
-###
+### RPMs required for 'ruby bundler' (for Jekyll - i.e. this blog)
 
 {% highlight bash %}
+yum install ruby-devel rubygem-bundler
+yum install nodejs
 {% endhighlight %}
 
-###
+### Install ```vlc```
+
+(First checking which repositories worked best on previous machine) :
 
 {% highlight bash %}
+ls -l /mnt/hd/etc/yum.repos.d/
+yum install http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-21.noarch.rpm
+yum install http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-21.noarch.rpm
+yum install vlc
 {% endhighlight %}
 
-###
+### Install Google Chrome
+
+First, get the download from the [the Google Download site](https://www.google.com/chrome/browser/desktop/index.html), then :
 
 {% highlight bash %}
+yum install Downloads/google-chrome-stable_current_x86_64.rpm 
 {% endhighlight %}
 
 ###
