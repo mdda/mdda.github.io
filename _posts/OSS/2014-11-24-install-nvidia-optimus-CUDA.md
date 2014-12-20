@@ -10,6 +10,7 @@ tags:
 - cuda
 - nvidia
 - optimus
+- bumblebee
 - fc20
 layout: post
 ---
