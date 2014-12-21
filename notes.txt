@@ -192,7 +192,9 @@ http://www.scipy.org/install.html
 http://nbviewer.ipython.org/github/craffel/theano-tutorial/blob/master/Theano%20Tutorial.ipynb
 http://ipython.org/ipython-doc/stable/notebook/notebook.html
 
-Gelphi : Graph theory...
+
+
+Gelphi : Graph Data Visualization
 
 CloudFoundry :: github.com/cf-platform-eng/cf-community-workshop
   Neo4j
