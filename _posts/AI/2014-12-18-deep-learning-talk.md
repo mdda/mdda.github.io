@@ -9,6 +9,17 @@ published: false
 ---
 {% include JB/setup %}
 
+Seeing a recent presentation from Google on 
+["Large Scale Deep Learning" (Jeff Dean, Google)](http://static.googleusercontent.com/media/research.google.com/en/us/people/jeff/CIKM-keynote-Nov2014.pdf), 
+I realized that it may be something interesting for one of the Singapore meetup groups to hear about.
+
+Since I had also made a small contribution to 
+[the ConvnetJS project](https://github.com/karpathy/convnetjs) 
+by Andrej Karpathy at Stanford, 
+which has [a beautiful website](http://cs.stanford.edu/people/karpathy/convnetjs/), 
+I thought these two pieces could be elegantly combined...
+
+
 ### Presentation Link
 
 I recently gave a <strong><a href="http://redcatlabs.com/2014-12-18_DeepLearning.js/" target="_blank">presentation about Deep Learning</a></strong> 
