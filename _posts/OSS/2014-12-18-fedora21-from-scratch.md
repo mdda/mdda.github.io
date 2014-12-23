@@ -69,7 +69,7 @@ pull in more heavy-weight packages :
 
 {% highlight bash %}
 yum install gcc python cmake make 
-yum install gimp inkscape
+yum install gimp inkscape gthumb
 {% endhighlight %}
 
 ### Bumblebee install (for Nvidia card)
@@ -163,7 +163,8 @@ git config --global credential.helper 'cache --timeout=3600'
 ### Remove superfluous RPMs
 
 {% highlight bash %}
-yum remove transmission* claws-mail* midori* pidgin* remmina* liferea* abiword* orage* parole*
+yum remove transmission* claws-mail* midori* 
+yum remove pidgin* remmina* liferea* abiword* orage* parole* ristretto*
 {% endhighlight %}
 
 ### RPMs required for 'ruby bundler' (for Jekyll - i.e. this blog)
@@ -212,6 +213,40 @@ echo "password=password" >> ~/.cifs/viewqwest
 mkdir -p /mnt/media
 mount -t cifs //viewqwest.herald/2tb /mnt/media -o rw,user,noauto,credentials=/home/andrewsm/.cifs/viewqwest,uid=andrewsm,gid=nobody
 {% endhighlight %}
+
+### Install EncFS (for sync-able encrypted folders)
+
+This is for regular (sync-able) file-system files that can be 
+encrypted/decrypted on the fly.  Very usefull in conjunction with ```Unison``` :
+
+{% highlight bash %}
+yum install fuse-encfs
+
+# remove '#' before user_allow_other
+joe /etc/fuse.conf
+{% endhighlight %}
+
+The following script mounts an encrypted folder simply :
+{% highlight bash %}
+#!/bin/bash
+
+#Capture the full path (required for mounting)
+p=`pwd`
+fusermount -u ${p}/Finance
+
+DIALOGTEXT="Enter the Personal-Finance EncFS Password"
+encfs \
+ -o allow_other \
+ --extpass="zenity --title 'EncFS Password' --entry --hide-text --text '$DIALOGTEXT'" \
+ ${p}/.Finance-encfs/ ${p}/Finance/
+{% endhighlight %}
+
+And the following script un-mounts it/them :
+{% highlight bash %}
+#!/bin/bash
+fusermount -u Finance
+{% endhighlight %}
+
 
 ### Install Skype
 

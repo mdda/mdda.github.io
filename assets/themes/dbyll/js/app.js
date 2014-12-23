@@ -27,6 +27,17 @@ $( document ).ready(function() {
 		"shape" : "square"
 	}
 	$("#wordCloud").awesomeCloud( settings );
+	
+	$('#wordCloud canvas').click(function (e) {
+		console.log("Clicked ", e);
+		if($(this).parent('li').hasClass('active')){
+			$( $(this).attr('href') ).hide();
+		}
+		else {
+			e.preventDefault();
+			$(this).tab('show');
+		}
+	});
 
 });
 
