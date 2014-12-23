@@ -4,33 +4,26 @@ title: Tags
 header:
 group: navigation
 ---
-
-
-<div class="col-sm-3">
-    <ul class="nav nav-tabs tabs-left">
-      {% assign tags_list = site.tags %}
-      {% if tags_list.first[0] == null %}
-        {% for tag in tags_list %}
-            <li> <!-- NOT DOING THIS ONE !--> 
-                <a href="#{{ tag }}-ref" data-toggle="tab">
-                  {{ tag }} <span class="badge pull-right">{{ site.tags[tag].size }}</span>
-               </a>
-            </li>
-        {% endfor %}
-      {% else %}
-        {% for tag in tags_list %}
-            <li>
-                <a href="#{{ tag[0] }}-ref" data-toggle="tab">
-                    {{ tag[0] }} <span class="badge pull-right">{{ tag[1].size }}</span>
-                </a>
-            </li>
-        {% endfor %}
-      {% endif %}
-      {% assign tags_list = nil %}
-    </ul>
+<div class="col-sm-12">
+  <div id="wordCloud" style="border:1px solid #f00;height:350px;xwidth:150px;">
+    {% assign tags_list = site.tags %}
+    {% for tag in tags_list %}
+	  <span data-weight="{{ tag[1].size }}"><a href="#{{ tag[0] }}-ref" data-toggle="tab">{{ tag[0] }}</a></span>{% endfor %}
+    {% assign tags_list = nil %}
+  </div>
+<!--
+  <div id="tagCloud">
+    {% assign tags_list = site.tags %}
+    <ul class="nav nav-tabs">
+    {% for tag in tags_list %}
+	  <li><a href="#{{ tag[0] }}-ref" data-toggle="tab">{{ tag[0] }}</a></li>{% endfor %}
+	</ul>
+    {% assign tags_list = nil %}
+  </div>
+!-->
 </div>
-<!-- Tab panes -->
-<div class="tab-content col-sm-9">
+<div class="clearfix"></div>
+<div class="tab-content col-sm-12">
   {% for tag in site.tags %}
     <div class="tab-pane" id="{{ tag[0] }}-ref">
       <h2 style="margin-top: 0px">Posts tagged  with {{ tag[0] }}</h2>
@@ -50,3 +43,6 @@ group: navigation
 </div>
 
 <div class="clearfix"></div>
+<script type="text/javascript">
+// $("#wordCloud").awesomeCloud( settings );
+</script>
