@@ -241,7 +241,7 @@ encfs \
  ${p}/.Finance-encfs/ ${p}/Finance/
 {% endhighlight %}
 
-And the following script un-mounts it/them :
+And the following script un-mounts it :
 {% highlight bash %}
 #!/bin/bash
 fusermount -u Finance
