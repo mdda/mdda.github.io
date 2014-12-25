@@ -5,13 +5,14 @@ header:
 group: navigation
 ---
 <div class="col-sm-12" xclass="nav nav-tabs" xdata-tabs="tabs">
+<!--
   <div id="wordCloud" style="border:1px solid #f00;height:350px;xwidth:150px;">
     {% assign tags_list = site.tags %}
     {% for tag in tags_list %}
 	  <span data-weight="{{ tag[1].size }}"><a href="#{{ tag[0] }}-ref" data-toggle="tab">{{ tag[0] }}</a></span>{% endfor %}
     {% assign tags_list = nil %}
   </div>
-<!--
+!-->
   <div id="tagCloud">
     {% assign tags_list = site.tags %}
     <ul class="nav nav-tabs">
@@ -20,7 +21,6 @@ group: navigation
 	</ul>
     {% assign tags_list = nil %}
   </div>
-!-->
 </div>
 <div class="clearfix"></div>
 <div class="tab-content col-sm-12">

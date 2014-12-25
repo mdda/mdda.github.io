@@ -217,7 +217,7 @@ mount -t cifs //viewqwest.herald/2tb /mnt/media -o rw,user,noauto,credentials=/h
 ### Install EncFS (for sync-able encrypted folders)
 
 This is for regular (sync-able) file-system files that can be 
-encrypted/decrypted on the fly.  Very usefull in conjunction with ```Unison``` :
+encrypted/decrypted on the fly.  Very usefull in conjunction with ```unison``` :
 
 {% highlight bash %}
 yum install fuse-encfs
