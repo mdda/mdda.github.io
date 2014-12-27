@@ -195,7 +195,8 @@ http://ipython.org/ipython-doc/stable/notebook/notebook.html
 Theano : 
   Theano implementation of SENNA NER network
     https://github.com/Fematich/nn_ner
-
+  Deep Learning Tutorial : NLP/word-embedding
+    http://deeplearning.net/tutorial/rnnslu.html
 
 
 Gelphi : Graph Data Visualization
