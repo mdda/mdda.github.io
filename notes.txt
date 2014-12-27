@@ -192,6 +192,10 @@ http://www.scipy.org/install.html
 http://nbviewer.ipython.org/github/craffel/theano-tutorial/blob/master/Theano%20Tutorial.ipynb
 http://ipython.org/ipython-doc/stable/notebook/notebook.html
 
+Theano : 
+  Theano implementation of SENNA NER network
+    https://github.com/Fematich/nn_ner
+
 
 
 Gelphi : Graph Data Visualization
@@ -205,3 +209,4 @@ CloudFoundry :: github.com/cf-platform-eng/cf-community-workshop
 
 https://help.github.com/articles/syncing-a-fork/
 https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches
+
