@@ -197,7 +197,15 @@ Theano :
     https://github.com/Fematich/nn_ner
   Deep Learning Tutorial : NLP/word-embedding
     http://deeplearning.net/tutorial/rnnslu.html
-
+    
+  (Multi-layer Hidden&ReLu + LogisticOutput) with ADAgrad 
+	http://nbviewer.ipython.org/github/dawenl/deep_tagging/blob/master/code/deep_tagging.ipynb
+	https://github.com/dawenl/deep_tagging
+	
+  nntools (now Lasagne?)
+    https://github.com/benanne/Lasagne
+    
+  http://nbviewer.ipython.org/github/lisa-lab/pylearn2/blob/master/pylearn2/scripts/tutorials/multilayer_perceptron/multilayer_perceptron.ipynb
 
 Gelphi : Graph Data Visualization
 
@@ -210,4 +218,5 @@ CloudFoundry :: github.com/cf-platform-eng/cf-community-workshop
 
 https://help.github.com/articles/syncing-a-fork/
 https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches
+
 
