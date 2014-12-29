@@ -38,7 +38,8 @@ git filter-branch --subdirectory-filter android-edutiger -- -- all
 git remote rm origin
 {% endhighlight %}
 
-Now, create a new directory, and move all the relevant files into it :
+Now, tidying up the 'source' of the code prior to pulling it into the other repo, 
+create a new directory, and move all the relevant files into it :
 
 {% highlight bash %}
 mkdir android-native
@@ -50,7 +51,11 @@ git mv src android-native/
 git commit -a -m "Moved into directory prior to moving repo"
 {% endhighlight %}
 
-Now go into the new repo 'separated-out' and pull the stuff over from the local remote (which we'll temporarily name "SKETCHPAD") :
+Using a (potentially) new repo (potentially on GitHub) and cloning it
+down to the local directory (let's call it ```separated-out```).
+
+Now go into the repo ```separated-out``` and pull the stuff over from 
+the local remote (which we'll temporarily name ```SKETCHPAD```) :
 
 {% highlight bash %}
 cd ..
