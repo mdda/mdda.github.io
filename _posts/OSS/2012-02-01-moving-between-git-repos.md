@@ -20,10 +20,9 @@ from_mdda_blog: true
 
 Huge props to the following :
 
-  * (http://gbayer.com/development/moving-files-from-one-git-repository-to-another-preserving-history/)
+  * [Greg Bayer's Blog Post](http://gbayer.com/development/moving-files-from-one-git-repository-to-another-preserving-history/)
 
-	
-  * (http://st-on-it.blogspot.com/2010/01/how-to-move-folders-between-git.html) 
+  * [Nikolay V. Nemshilov's Blog Post](http://st-on-it.blogspot.com/2010/01/how-to-move-folders-between-git.html) 
 
 Initially : Create a fresh clone of the source repo (this will be removed later : don't do this on a working copy, just in case everything goes awry): 
 
