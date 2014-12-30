@@ -218,13 +218,5 @@ CloudFoundry :: github.com/cf-platform-eng/cf-community-workshop
   Postgres MySQL
   Jenkins
 
-
 https://help.github.com/articles/syncing-a-fork/
 https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches
-
-
-Start to plan separation of Kaggle-Billion
-  Rename project when ready?  = Yes
-  Check subtree for useless files
-  
-  
