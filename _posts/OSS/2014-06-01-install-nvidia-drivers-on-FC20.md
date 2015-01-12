@@ -28,13 +28,13 @@ Basic steps :
 
 For the official links, see : 
 
-  * https://developer.nvidia.com/opencl
-  * http://www.nvidia.com/Download/index.aspx?lang=en-us
+  * [Nvidia OpenCL information (limited)](https://developer.nvidia.com/opencl)
+  * [Nvidia driver download links](http://www.nvidia.com/Download/index.aspx?lang=en-us)
 
 
 The 64-bit linux driver takes me to :
 
-  * http://www.nvidia.com/download/driverResults.aspx/75019/en-us
+  * [64-bit linux driver download page](http://www.nvidia.com/download/driverResults.aspx/75019/en-us)
 
 
 So that I can download : 
@@ -94,7 +94,7 @@ During the running of the script :
   * "No" to modify XF86Config or xorg.conf
 
 
-### Rewrite the initramfs to prevent nouveau being loaded
+### Rewrite the initramfs to prevent ```nouveau``` being loaded
 
 {% highlight bash %}
 bash
@@ -123,12 +123,12 @@ The SDK includes the OpenCL interface stuff, though it doesn't advertise it much
 
 Go to : 
 
-  * https://developer.nvidia.com/gpu-computing-sdk
+  * [Nvidia's GPU computing SDK page](https://developer.nvidia.com/gpu-computing-sdk)
   
   
 The latest versions of the GPU Computing SDK and the CUDA Toolkit (which is required to compile the SDK code samples) are available on the CUDA Downloads Page.
 
-  * https://developer.nvidia.com/cuda-downloads
+  * [NVidia's CUDA downloads page](https://developer.nvidia.com/cuda-downloads)
 
 
 {% highlight bash %}
