@@ -1,7 +1,7 @@
 ---
 comments: true
 date: 2014-06-15
-title: Install Nvidia Optimus drivers on Fedora FC20 Acer Notebook - BumbleBee
+title: Install Nvidia Optimus drivers on Fedora FC20+ Acer Notebook - BumbleBee
 category: OSS
 tags:
 - nvidia
@@ -9,6 +9,7 @@ tags:
 - linux
 - opencl
 - fc20
+- fc21
 - acer
 - optimus
 - bumblebee
@@ -47,6 +48,18 @@ Cutting a long story short, the hard way uncovered the fact that the new kernel 
 So I disabled Secure Boot (no matter, at least for now : I don't feel too insecure, being on a laptop with few internet-facing services).
 
 See : http://acer--uk.custhelp.com/app/answers/detail/a_id/27071/~/how-to-enable-or-disable-secure-boot
+
+
+### Disable SELINUX
+
+This is apparently due to [this bug](https://github.com/Bumblebee-Project/Bumblebee/issues/153) in ```Bumblebee``` ([source](https://ask.fedoraproject.org/en/question/59949/bumblebee-not-working-fedora-21/)).
+
+To fix this (so that it survives reboot), edit ```/etc/selinux/config``` :
+
+{% highlight bash %}
+#SELINUX=enforcing
+SELINUX=permissive
+{% endhighlight %}
 
 
 ### Doing the NVidia install the Bumblebee way 
@@ -91,6 +104,42 @@ To force a recompilation on the next reboot :
 {% highlight bash %}
 touch /etc/sysconfig/nvidia/compile-nvidia-driver
 reboot
+{% endhighlight %}
+
+Once it's correctly installed, ```modinfo nvidia``` will produce something like (notice that the same instructions also work for Fedora 21...) :
+
+{% highlight bash %}
+filename:       /lib/modules/3.17.8-300.fc21.x86_64/kernel/drivers/video/nvidia.ko
+alias:          char-major-195-*
+version:        340.46
+supported:      external
+license:        NVIDIA
+alias:          pci:v000010DEd00000E00sv*sd*bc04sc80i00*
+alias:          pci:v000010DEd00000AA3sv*sd*bc0Bsc40i00*
+alias:          pci:v000010DEd*sv*sd*bc03sc02i00*
+alias:          pci:v000010DEd*sv*sd*bc03sc00i00*
+depends:        drm
+vermagic:       3.17.8-300.fc21.x86_64 SMP mod_unload 
+parm:           NVreg_Mobile:int
+parm:           NVreg_ResmanDebugLevel:int
+parm:           NVreg_RmLogonRC:int
+parm:           NVreg_ModifyDeviceFiles:int
+parm:           NVreg_DeviceFileUID:int
+parm:           NVreg_DeviceFileGID:int
+parm:           NVreg_DeviceFileMode:int
+parm:           NVreg_RemapLimit:int
+parm:           NVreg_UpdateMemoryTypes:int
+parm:           NVreg_InitializeSystemMemoryAllocations:int
+parm:           NVreg_UsePageAttributeTable:int
+parm:           NVreg_MapRegistersEarly:int
+parm:           NVreg_RegisterForACPIEvents:int
+parm:           NVreg_CheckPCIConfigSpace:int
+parm:           NVreg_EnablePCIeGen3:int
+parm:           NVreg_EnableMSI:int
+parm:           NVreg_MemoryPoolSize:int
+parm:           NVreg_RegistryDwords:charp
+parm:           NVreg_RmMsg:charp
+parm:           NVreg_AssignGpus:charp
 {% endhighlight %}
 
 
