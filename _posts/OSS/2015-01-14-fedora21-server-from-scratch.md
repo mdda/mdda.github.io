@@ -93,34 +93,35 @@ yum install git
 
 ### Copy lots of stuff from previous HD
 
-This was stored on the HD using full-disk encryption - which I expected to 
-make mounting/reading it painfull.  However, Fedora appears to detect
-what's going on when the HD is plugged in (now using a USB-to-SATA interface)
-and the mounting goes through flawlessly (after the password is entered).
-the ```ln -s``` is done for command-line convenience.
+This was simple enough (once the appropriate entry was added to ```/etc/fstab``` to mount the old disk) :
 
 {% highlight bash %}
-ls -l /mnt/
-ln -s /run/media/andrewsm/8f8d7243-4319-4e55-897e-76e53e16b43b /mnt/hd
-ls -l /mnt/hd/home/andrewsm/
+#
+# /etc/fstab
+# Created by anaconda on Tue Jan 13 23:26:30 2015
+#
+# Accessible filesystems, by reference, are maintained under '/dev/disk'
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
+#
 
-mkdir install-old-hd
-cp  /mnt/hd/home/andrewsm/install.* install-old-hd/
+## This are the mounts created by the Fedora 21 installer
+/dev/mapper/fedora--server-root /                       ext4    defaults        1 1
+UUID=e03e963b-fcfc-44fe-a777-a7f3647858d7 /boot                   ext4    defaults        1 2
+/dev/mapper/fedora--server-swap swap                    swap    defaults        0 0
 
-# All OSS projects (but includes some data directories)
-rsync -avz --progress  /mnt/hd/home/andrewsm/OpenSource .    
+# This is the new entry, with the 'device location' found by
+# inspecting the contents of /dev/mapper (and contrasting with above)
+/dev/mapper/fedora-root /mnt/data                       ext4    defaults        1 1
+{% endhighlight %}
 
+On to the copying :
+
+{% highlight bash %}
 # Internal 'sketchpad' for miscellaneous works-in-progree
-rsync -avz --progress  /mnt/hd/home/andrewsm/sketchpad .
+rsync -avz --progress  /mnt/data/home/andrewsm/sketchpad .
 
 # Bring over settings so that logins work elsewhere (clone old HD's settings)
-rsync -avz --progress  /mnt/hd/home/andrewsm/.ssh .
-
-# Bring over old unison file-sync settings to make it seamless
-rsync -avz --progress  /mnt/hd/home/andrewsm/.unison .
-
-# Bring over a file-sync directory directly to avoid needless network sync
-rsync -avz --progress  /mnt/hd/home/andrewsm/Personal .
+rsync -avz --progress  /mnt/data/home/andrewsm/.ssh .
 {% endhighlight %}
 
 ### More tools
@@ -130,12 +131,15 @@ pull in more heavy-weight packages :
 
 {% highlight bash %}
 yum install gcc python cmake make 
-yum install gimp inkscape gthumb
 {% endhighlight %}
 
-### Bumblebee install (for Nvidia card)
 
-As per <a href="/oss/2014/06/15/install-nvidia-optimus-on-FC20-acer-notebook/" target="_blank">instructions on this blog</a> :
+
+
+
+### Nvidia Proprietary Driver install (for Nvidia card)
+
+:
 
 {% highlight bash %}
 yum install -y libbsd-devel libbsd glibc-devel libX11-devel help2man autoconf git tar glib2 glib2-devel kernel-devel kernel-headers automake gcc gtk2-devel
