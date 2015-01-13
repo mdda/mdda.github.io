@@ -140,8 +140,33 @@ yum install gcc python cmake make
 
 ### Nvidia Proprietary Driver install (for Nvidia card)
 
+http://www.if-not-true-then-false.com/2014/fedora-20-nvidia-guide/
+
+{% highlight bash %}
+yum localinstall --nogpgcheck http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+lspci | grep -i nvidia
+gcc --version
+yum install akmod-nvidia "kernel-devel-uname-r == $(uname -r)"
+
+## Backup old initramfs nouveau image ##
+mv /boot/initramfs-$(uname -r).img /boot/initramfs-$(uname -r)-nouveau.img
+## Create new initramfs image ##
+dracut /boot/initramfs-$(uname -r).img $(uname -r)
+{% endhighlight %}
+
+
 As detailed in [Nvidia's instructions](http://docs.nvidia.com/cuda/cuda-getting-started-guide-for-linux/#axzz3OjOTroL4), 
-get the CUDA driver from [Nvidia's CUDA download page](https://developer.nvidia.com/cuda-downloads) :
+get the CUDA repo RPM from [Nvidia's CUDA download page](https://developer.nvidia.com/cuda-downloads) :
+
+{% highlight bash %}
+wget http://developer.download.nvidia.com/compute/cuda/repos/fedora20/x86_64/cuda-repo-fedora20-6.5-14.x86_64.rpm
+yum install cuda-repo-fedora*
+yum install cuda
+# This installs the JDK, mesa-libGL, lots of libX...
+{% endhighlight %}
+
+
+
 
 {% highlight bash %}
 # NB: This is a 927Mb download...
@@ -149,29 +174,7 @@ wget http://developer.download.nvidia.com/compute/cuda/6_5/rel/installers/cuda_6
 {% endhighlight %}
 
 
-   31  yum install gcc python cmake make 
-   32  yum install akmod-nvidia "kernel-devel-uname-r == $(uname -r)"
-   33  yum localinstall --nogpgcheck http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-   34  yum install akmod-nvidia "kernel-devel-uname-r == $(uname -r)"
-   35  lsmod
-   36  yum install akmod-nvidia "kernel-devel-uname-r == $(uname -r)"
-   37  lspci | grep -i nvidia
-   38  gcc --version
-   39  # http://developer.download.nvidia.com/compute/cuda/6_5/rel/installers/cuda_6.5.14_linux_64.run
-   40  cd ~
-   41  wget http://developer.download.nvidia.com/compute/cuda/6_5/rel/installers/cuda_6.5.14_linux_64.run
-   42  ls -l 
-   43  chmod +x cuda_6.5.14_linux_64.run 
-   44  ./cuda_6.5.14_linux_64.run 
-   45  ls -l
-   46  yum install cuda
-   47  yum install akmod-nvidia "kernel-devel-uname-r == $(uname -r)"
-   48  ## Backup old initramfs nouveau image ##
-   49  mv /boot/initramfs-$(uname -r).img /boot/initramfs-$(uname -r)-nouveau.img
-   50  ## Create new initramfs image ##
-   51  dracut /boot/initramfs-$(uname -r).img $(uname -r)
-   52  more /etc/modprobe.d/lockd.conf 
-   53  history
+   
 
 
 
