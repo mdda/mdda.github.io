@@ -140,7 +140,17 @@ yum install gcc python cmake make
 
 ### Nvidia Proprietary Driver install (for Nvidia card)
 
-:
+As detailed in [Nvidia's instructions](http://docs.nvidia.com/cuda/cuda-getting-started-guide-for-linux/#axzz3OjOTroL4), 
+get the CUDA driver from [Nvidia's CUDA download page](https://developer.nvidia.com/cuda-downloads) :
+
+{% highlight bash %}
+# NB: This is a 927Mb download...
+wget http://developer.download.nvidia.com/compute/cuda/6_5/rel/installers/cuda_6.5.14_linux_64.run
+{% endhighlight %}
+
+
+
+
 
 {% highlight bash %}
 yum install -y libbsd-devel libbsd glibc-devel libX11-devel help2man autoconf git tar glib2 glib2-devel kernel-devel kernel-headers automake gcc gtk2-devel
