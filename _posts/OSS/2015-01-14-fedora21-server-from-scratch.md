@@ -88,7 +88,7 @@ shutdown -h now
 ### Install essential tools
 
 {% highlight bash %}
-yum install firefox geany joe scite git libreoffice unison keepassx 
+yum install git 
 {% endhighlight %}
 
 ### Copy lots of stuff from previous HD
