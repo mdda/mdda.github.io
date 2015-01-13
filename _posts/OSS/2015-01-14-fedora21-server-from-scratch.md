@@ -149,6 +149,29 @@ wget http://developer.download.nvidia.com/compute/cuda/6_5/rel/installers/cuda_6
 {% endhighlight %}
 
 
+   31  yum install gcc python cmake make 
+   32  yum install akmod-nvidia "kernel-devel-uname-r == $(uname -r)"
+   33  yum localinstall --nogpgcheck http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+   34  yum install akmod-nvidia "kernel-devel-uname-r == $(uname -r)"
+   35  lsmod
+   36  yum install akmod-nvidia "kernel-devel-uname-r == $(uname -r)"
+   37  lspci | grep -i nvidia
+   38  gcc --version
+   39  # http://developer.download.nvidia.com/compute/cuda/6_5/rel/installers/cuda_6.5.14_linux_64.run
+   40  cd ~
+   41  wget http://developer.download.nvidia.com/compute/cuda/6_5/rel/installers/cuda_6.5.14_linux_64.run
+   42  ls -l 
+   43  chmod +x cuda_6.5.14_linux_64.run 
+   44  ./cuda_6.5.14_linux_64.run 
+   45  ls -l
+   46  yum install cuda
+   47  yum install akmod-nvidia "kernel-devel-uname-r == $(uname -r)"
+   48  ## Backup old initramfs nouveau image ##
+   49  mv /boot/initramfs-$(uname -r).img /boot/initramfs-$(uname -r)-nouveau.img
+   50  ## Create new initramfs image ##
+   51  dracut /boot/initramfs-$(uname -r).img $(uname -r)
+   52  more /etc/modprobe.d/lockd.conf 
+   53  history
 
 
 
