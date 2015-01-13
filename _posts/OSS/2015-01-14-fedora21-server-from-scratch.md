@@ -29,7 +29,8 @@ reboot
 
 ### Configure machine for static IP
 
-Again, using the machines actual console (so that remainder can be done via SSH) : 
+Using [this helpful page](http://stackoverflow.com/questions/21432620/how-to-setup-static-ip-in-fedora-19) 
+and again using the machine's actual console (so that remainder can be done via SSH) : 
 
 {% highlight bash %}
 ifconfig
