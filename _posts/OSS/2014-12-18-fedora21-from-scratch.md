@@ -112,7 +112,7 @@ chmod 755 /usr/lib/systemd/system-sleep/turn-off-gpu.sh
 more sleep.log 
 {% endhighlight %}
 
-### Install numpy / theano / ipython Prerequisits
+### Install numpy / theano / ipython Prerequisites
 
 {% highlight bash %}
 yum install libyaml-devel zeromq-devel

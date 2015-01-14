@@ -224,34 +224,8 @@ Result = PASS
 {% endhighlight %}
 
 
-   
 
-
-
-
-### Make the Suspend of the NVidia GPU work
-
-As per <a href="/oss/2014/11/26/FC20-acer-notebook-suspend-gpu/" target="_blank">instructions on this blog</a> :
-
-{% highlight bash %}
-# Check whether noveau or nvidia are currently running 
-# (Should be '' for both)
-lsmod | grep no
-lsmod | grep nv
-
-# This should give back results
-optirun lsmod | grep nv
-optirun --no-xorg modprobe -r nvidia
-more /proc/acpi/bbswitch 
-
-# Get the script from the blog post...
-scite /usr/lib/systemd/system-sleep/turn-off-gpu.sh &
-chmod 755 /usr/lib/systemd/system-sleep/turn-off-gpu.sh
-/usr/lib/systemd/system-sleep/turn-off-gpu.sh pre suspend-test
-more sleep.log 
-{% endhighlight %}
-
-### Install numpy / theano / ipython Prerequisits
+### Install numpy / theano / ipython Prerequisites
 
 {% highlight bash %}
 yum install libyaml-devel zeromq-devel
