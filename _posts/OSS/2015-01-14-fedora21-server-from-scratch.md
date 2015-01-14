@@ -225,6 +225,8 @@ Result = PASS
 
 
 
+
+
 ### Install numpy / theano / ipython Prerequisites
 
 {% highlight bash %}
@@ -235,43 +237,6 @@ yum install libpng-devel freetype-devel
 yum install hdf5-devel
 {% endhighlight %}
 
-### Install the CUDA toolkit
-
-As per <a href="/oss/2014/11/21/install-nvidia-optimus-CUDA/" target="_blank">instructions on this blog</a> :
-
-{% highlight bash %}
-chmod 744 /home/andrewsm/Downloads/cuda_6.5.14_linux_64.run 
-/home/andrewsm/Downloads/cuda_6.5.14_linux_64.run --override
-echo "/usr/local/cuda-6.5/lib64" > /etc/ld.so.conf.d/cuda.conf && ldconfig
-joe /home/andrewsm/.bash_profile 
-{% endhighlight %}
-
-### Install ```geany-project-tree``` plugin
-
-{% highlight bash %}
-yum install geany-plugins-geanypy
-
-# launch geany and enable the GeanyPy plug (Tools Plugin Manager)
-geany -i
-
-# Download the geany-project-tree plugin, and install
-mkdir tools
-cd tools/
-git clone https://github.com/mdda/geany-project-tree.git
-cd geany-project-tree/
-ln -s `pwd`/project-tree ~/.config/geany/plugins/geanypy/plugins/
-# Load the plugin via Tools Python Plugin Manager
-geany -i
-
-# Test the installation (on the plugin's own setup, sample config provided)
-cd geany-project-tree/
-geany -i
-
-# Just for convenience, enable git password caching (15 mins is default timeout)
-git config --global credential.helper cache
-# Set the cache to timeout after 1 hour (setting is in seconds)
-git config --global credential.helper 'cache --timeout=3600'
-{% endhighlight %}
 
 ### Remove superfluous RPMs
 
@@ -280,39 +245,6 @@ yum remove transmission* claws-mail* midori*
 yum remove pidgin* remmina* liferea* abiword* orage* parole* ristretto*
 {% endhighlight %}
 
-### RPMs required for 'ruby bundler' (for Jekyll - i.e. this blog)
-
-{% highlight bash %}
-yum install ruby-devel rubygem-bundler
-yum install nodejs
-{% endhighlight %}
-
-Now, going into the project folder, do a ```bundle install``` to bring in the Ruby dependencies,
-and this should allow local serving/testing of the content as follows :
-
-{% highlight bash %}
-bundle install 
-bundle exec jekyll serve --watch --unpublished
-{% endhighlight %}
-
-### Install ```vlc```
-
-(First checking which repositories worked best on previous machine) :
-
-{% highlight bash %}
-ls -l /mnt/hd/etc/yum.repos.d/
-yum install http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-21.noarch.rpm
-yum install http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-21.noarch.rpm
-yum install vlc
-{% endhighlight %}
-
-### Install Google Chrome
-
-First, get the download from the [the Google Download site](https://www.google.com/chrome/browser/desktop/index.html), then :
-
-{% highlight bash %}
-yum install Downloads/google-chrome-stable_current_x86_64.rpm 
-{% endhighlight %}
 
 ### Mount an SMB drive to copy some media files
 
@@ -326,6 +258,7 @@ echo "password=password" >> ~/.cifs/viewqwest
 mkdir -p /mnt/media
 mount -t cifs //viewqwest.herald/2tb /mnt/media -o rw,user,noauto,credentials=/home/andrewsm/.cifs/viewqwest,uid=andrewsm,gid=nobody
 {% endhighlight %}
+
 
 ### Install EncFS (for sync-able encrypted folders)
 
@@ -360,23 +293,4 @@ And the following script un-mounts it :
 fusermount -u Finance
 {% endhighlight %}
 
-
-### Install Skype
-
-First, install Skype from [http://www.skype.com/en/download-skype/skype-for-linux/](the Skype Linux download page) (the 32-bit Fedora one works).
-
-Then, check that there are no pre-64-bit RPMs installed on the machine.  
-That will (likely) prove that the Linux install is pure 64-bit native, meaning 
-that (helpfully) Skype is the only reason that 32-bit packages are installed.
-This in turn means that when it comes time to replace Skype with something
-more Linux-friendly, it will be easier to remove it cleanly.
-
-{% highlight bash %}
-rpm -qa | grep i586
-rpm -qa | grep i686
-rpm -qa | grep i486
-# NO 32-bit RPMs before Skype
-
-yum install Downloads/skype-4.3.0.37-fedora.i586.rpm 
-{% endhighlight %}
 
