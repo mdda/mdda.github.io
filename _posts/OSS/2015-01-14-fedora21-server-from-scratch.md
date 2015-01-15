@@ -223,6 +223,14 @@ deviceQuery, CUDA Driver = CUDART, CUDA Driver Version = 6.5, CUDA Runtime Versi
 Result = PASS
 {% endhighlight %}
 
+To enable compilation, etc, of CUDA and access to OpenCL libraries, etc, add to ```~/.bash_profile``` : 
+
+{% highlight bash %}
+export PATH=$PATH:/usr/local/cuda-6.5/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-6.5/lib64
+export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/cuda-6.5/lib64
+{% endhighlight %}
+
 ### Install numpy / theano / ipython Prerequisites
 
 {% highlight bash %}
@@ -231,6 +239,24 @@ yum install openblas-devel atlas-devel gcc-gfortran
 yum install python-virtualenv
 yum install libpng-devel freetype-devel
 yum install hdf5-devel
+{% endhighlight %}
+
+
+### Rebuilding libgpuarray, etc : Hints 
+
+Check that this now builds both ```CUDA``` and ```OpenCL``` (still complains about ```CLBLAS``` for the moment):
+
+{% highlight bash %}
+. env/bin/activate
+cd env/libgpuarray
+rm -rf Build
+mkdir Build
+cd Build
+cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
+make
+sudo make install
+cd ..
+python setup.py develop
 {% endhighlight %}
 
 
