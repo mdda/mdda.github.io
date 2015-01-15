@@ -249,6 +249,7 @@ Check that this now builds both ```CUDA``` and ```OpenCL``` (still complains abo
 {% highlight bash %}
 . env/bin/activate
 cd env/libgpuarray
+git pull
 rm -rf Build
 mkdir Build
 cd Build
