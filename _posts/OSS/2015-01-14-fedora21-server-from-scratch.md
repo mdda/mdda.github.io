@@ -223,10 +223,6 @@ deviceQuery, CUDA Driver = CUDART, CUDA Driver Version = 6.5, CUDA Runtime Versi
 Result = PASS
 {% endhighlight %}
 
-
-
-
-
 ### Install numpy / theano / ipython Prerequisites
 
 {% highlight bash %}
@@ -240,10 +236,13 @@ yum install hdf5-devel
 
 ### Remove superfluous RPMs
 
+Actually, this is unnessary, since the server install doesn't include these anyway (doesn't hurt to try, though) :
+
 {% highlight bash %}
 yum remove transmission* claws-mail* midori* 
 yum remove pidgin* remmina* liferea* abiword* orage* parole* ristretto*
 {% endhighlight %}
+
 
 
 ### Mount an SMB drive to copy some media files
