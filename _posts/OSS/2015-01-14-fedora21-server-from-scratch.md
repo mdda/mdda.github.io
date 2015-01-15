@@ -1,5 +1,5 @@
 ---
-date: 2015-01-12
+date: 2015-01-15
 title: Fedora 21 Server setup
 category: OSS
 tags:
@@ -7,7 +7,7 @@ tags:
 - linux
 - fc21
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -244,21 +244,6 @@ yum remove pidgin* remmina* liferea* abiword* orage* parole* ristretto*
 {% endhighlight %}
 
 
-
-### Mount an SMB drive to copy some media files
-
-{% highlight bash %}
-# As a local user, create a suitable SMB credentials file : 
-mkdir -i ~/.cifs
-echo "user=username" >> ~/.cifs/viewqwest 
-echo "password=password" >> ~/.cifs/viewqwest 
-
-# and as root :
-mkdir -p /mnt/media
-mount -t cifs //viewqwest.herald/2tb /mnt/media -o rw,user,noauto,credentials=/home/andrewsm/.cifs/viewqwest,uid=andrewsm,gid=nobody
-{% endhighlight %}
-
-
 ### Install EncFS (for sync-able encrypted folders)
 
 This is for regular (sync-able) file-system files that can be 
@@ -291,5 +276,3 @@ And the following script un-mounts it :
 #!/bin/bash
 fusermount -u Finance
 {% endhighlight %}
-
-
