@@ -258,6 +258,7 @@ make
 sudo make install
 cd ..
 python setup.py develop
+cd ../..
 {% endhighlight %}
 
 
