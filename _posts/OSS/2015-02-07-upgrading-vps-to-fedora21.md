@@ -8,14 +8,14 @@ tags:
 - fc21
 - fedup
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
 Because of the 'GHOST' scare, and the apparent lack of patched RPMs available for ```glibc``` for Fedora 19, 
 I decided to bite the bullet and upgrade some VPSs to Fedora 21.  However, instead of doing the 
 sane thing (creating a fresh VPS and copying everything over) I decided to throw caution to the
-wind and upgrade the VPS in-situ.
+wind and upgrade the VPS *in situ*.
 
 ## Digital Ocean Control Panel = SCORE!
 
@@ -121,9 +121,10 @@ and going to the ```3.18.3-201.fc21``` page.  There snag the three required RPMs
 
 {% highlight bash %}
 k=https://kojipkgs.fedoraproject.org//packages/kernel/3.18.3/201.fc21/x86_64
-yum install ${k}/kernel-3.18.3-201.fc21.x86_64.rpm \
-            ${k}/kernel-core-3.18.3-201.fc21.x86_64.rpm \
-            ${k}/kernel-modules-3.18.3-201.fc21.x86_64.rpm
+v=3.18.3-201.fc21.x86_64
+yum install ${k}/kernel-${v}.rpm \
+            ${k}/kernel-core-${v}.rpm \
+            ${k}/kernel-modules-${v}.rpm
 {% endhighlight %}
 
 Fortunately, that works.
