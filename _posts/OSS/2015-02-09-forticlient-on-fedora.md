@@ -35,3 +35,8 @@ Feb 09 14:54:58 Installed: glibc-devel-2.20-7.fc21.i686
 {% highlight bash %}
 yum install xterm
 {% endhighlight %}
+
+{% highlight bash %}
+./forticlientsslvpn_cli --server SERVERNAME.fortiddns.com:10443 --vpnuser USERNAME
+{% endhighlight %}
+
