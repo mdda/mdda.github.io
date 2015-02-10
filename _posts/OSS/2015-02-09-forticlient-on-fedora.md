@@ -13,6 +13,11 @@ published: false
 ---
 {% include JB/setup %}
 
+Trying to look at ```openswan```, ```libreswan```, ```strongswan```.  None have hit the jackpot yet...
+
+
+
+
 http://kb.arubacloud.com/en/computing/recovery-console/installing-and-connecting-forticlient-ssl-vpn-in-linux.aspx
 http://portal.modeldriven.org/sites/default/files/SSL_VPN_Client_User_Guide.pdf
 http://www.homecomputerlab.com/fortinet-fortigate-linux-ssl-vpn-client
