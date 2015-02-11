@@ -41,7 +41,18 @@ Feb 09 14:54:58 Installed: glibc-devel-2.20-7.fc21.i686
 yum install xterm
 {% endhighlight %}
 
+
 {% highlight bash %}
+https://aur.archlinux.org/packages/forticlientsslvpn/
+http://support.safe-t.com/forticlients/
+tar -xzf forticlientsslvpn_linux_4.4.2307.tar.gz
+cd forticlientsslvpn/64bit/
+##As root - accept the license :
+./helper/setup.sh
+{% endhighlight %}
+
+{% highlight bash %}
+cd 64-bit
 ./forticlientsslvpn_cli --server SERVERNAME.fortiddns.com:10443 --vpnuser USERNAME
 {% endhighlight %}
 
