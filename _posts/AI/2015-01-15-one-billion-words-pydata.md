@@ -38,6 +38,6 @@ to the [Singapore PyData MeetUp Group](https://www.facebook.com/events/994351117
 
 ![Presentation Screenshot]({{ site.url }}/assets/img/2015-01-15_Presentation-PyDataSG_600x390.png)
 
-If there are any questions about the presentation, please ask below, or via the MeetUp group.
+If there are any questions about the presentation, please ask below, or via the Facebook group.
 
 ![Presentation Content Example]({{ site.url }}/assets/img/2015-01-15_Presentation-PyDataSG_2_600x390.png)

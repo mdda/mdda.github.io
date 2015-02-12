@@ -226,12 +226,12 @@ https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-man
 
 
 ## location ~ ^/2014-06-05_Reverse-GoL/ {
+## location ~ ^/2014-10-14_Reverse-GoL/ {
 ## location ~ ^/2014-06-15_SentenceDependencies-D3.js/ {
 ## location ~ ^/2014-08-25_OCR-v0.01/ {
 ## location ~ ^/2014-08-27_shader-school/ {                 
-## location ~ ^/2014-10-14_Reverse-GoL/ {
-## location ~ ^/2015-01-15_Presentation-PyDataSG/ {
 
 DONE : 
 ## location ~ ^/2014-12-10_ParsingEnglish.scala/ {
 ## location ~ ^/2014-12-18_DeepLearning.js/ {
+## location ~ ^/2015-01-15_Presentation-PyDataSG/ {
