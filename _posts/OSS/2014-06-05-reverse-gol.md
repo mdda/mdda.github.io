@@ -15,7 +15,7 @@ that seemed approachable, and launched into it.
 
 The presentation was at the first of the Singapore GoLang meet-up,
 and was (I have to say) a bit of a mish-mash.  I gave the same basic
-content, in a much 'tighter' form in [October 2014]().
+content, in a much 'tighter' form in [October 2014](/oss/2014/10/14/reverse-gol-2/).
 
 ### Presentation Link
 

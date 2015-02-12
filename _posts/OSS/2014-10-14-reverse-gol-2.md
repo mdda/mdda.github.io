@@ -5,7 +5,7 @@ title: Golang and the Reverse Game-of-Life (2)
 tagline: Presentation link
 date: 2014-10-14
 tags: [Presentation,golang]
-published: false
+published: true
 ---
 {% include JB/setup %}
 
