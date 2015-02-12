@@ -227,9 +227,11 @@ https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-man
 
 ## location ~ ^/2014-06-15_SentenceDependencies-D3.js/ {
 ## location ~ ^/2014-08-25_OCR-v0.01/ {
+  2014-08-25_OCR-v0.01_600x390.png
+  2014-08-25_OCR-v0.01_6_600x390.png
+
+
 ## location ~ ^/2014-08-27_shader-school/ {                 
-
-
 
 DONE : 
 ## location ~ ^/2014-06-05_Reverse-GoL/ {
