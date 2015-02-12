@@ -231,12 +231,10 @@ https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-man
   2014-08-25_OCR-v0.01_600x390.png
   2014-08-25_OCR-v0.01_6_600x390.png
 
-## location ~ ^/2014-08-27_shader-school/ {                 
-  2014-08-27_shader-school_600x390.png
-  2014-08-27_shader-school_5-5_600x390.png
 
 DONE : 
 ## location ~ ^/2014-06-05_Reverse-GoL/ {
+## location ~ ^/2014-08-27_shader-school/ {                 
 ## location ~ ^/2014-10-14_Reverse-GoL/ {
 ## location ~ ^/2014-12-10_ParsingEnglish.scala/ {
 ## location ~ ^/2014-12-18_DeepLearning.js/ {
