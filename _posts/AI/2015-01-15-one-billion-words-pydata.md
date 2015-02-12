@@ -1,20 +1,34 @@
 ---
 layout: post
 category: AI
-title: Understanding English - In 600 lines of Scala
+title: 1 Billion Words for NLP
 tagline: Presentation link
 date: 2015-01-15
 tags: [NLP,NeuralNetworks,Presentation]
-published: false
+published: true
 ---
 {% include JB/setup %}
 
-billion-placeholder
+This talk was a preview of the Theano code (and the ideas behind 
+word-embedding) that I plan to release soon (i.e. so that people can
+play around with it before May-2015).
 
-Placeholder while working on Kaggle HowTo
-
-A working solution to the Billion Word Imputation challenge will appear on [my GitHub account](http://github.com/mdda) 
+A working solution to the Billion Word Imputation challenge will *hopefully*
+appear on [my GitHub account](http://github.com/mdda) 
 shortly (was planned for 15-Jan-2015, still in process).
+
+### Research Links
+
+Key papers to have a look at :
+
+  * [GloVe - Global Vectors for Word Representation - (Pennington, Socher, Manning 2014)](http://nlp.stanford.edu/pubs/glove.pdf), 
+    which I wrote up [here](/ai/2014/10/13/GloVe/).
+    
+  * [Mikolov 2012](http://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf) and 
+    the [Word2Vec code](https://code.google.com/p/word2vec/), and 
+    also [a nice Python version, with interesting optimization talk](http://radimrehurek.com/gensim/index.html).
+
+  * [Mnih approach](/ai/2014/10/12/noise-contrastive-estimation/)
 
 
 ### Presentation Link
