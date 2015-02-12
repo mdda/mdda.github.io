@@ -31,3 +31,5 @@ to the [Singapore Scala MeetUp Group](http://www.meetup.com/Singapore-Sala-Progr
 ![Presentation Screenshot]({{ site.url }}/assets/img/2014-12-10_ParsingEnglish.scala_600x390.png)
 
 If there are any questions about the presentation, please ask below, or via the MeetUp group.
+
+![Presentation Content Example]({{ site.url }}/assets/img/2014-12-10_ParsingEnglish.scala_5_600x390.png)
