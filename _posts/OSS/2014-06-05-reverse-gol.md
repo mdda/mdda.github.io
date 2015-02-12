@@ -19,7 +19,7 @@ content, in a much 'tighter' form in [October 2014](/oss/2014/10/14/reverse-gol-
 
 ### Presentation Link
 
-I recently gave a <strong><a href="http://redcatlabs.com//" target="_blank">presentation about this project</a></strong> 
+I recently gave a <strong><a href="http://redcatlabs.com/2014-06-05_Reverse-GoL/" target="_blank">presentation about this project</a></strong> 
 to the [GoSG MeetUp Group](http://www.meetup.com/golangsg/events/185174372/).
 
 ![Presentation Screenshot]({{ site.url }}/assets/img/2014-06-05_Reverse-GoL_600x390.png)

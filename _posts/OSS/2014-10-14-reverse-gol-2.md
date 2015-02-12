@@ -19,7 +19,7 @@ the I wasn't heckled too badly by the half of the audience who had already heard
 
 ### Presentation Link
 
-I recently gave a <strong><a href="http://redcatlabs.com//" target="_blank">presentation about this project</a></strong> 
+I recently gave a <strong><a href="http://redcatlabs.com/2014-10-14_Reverse-GoL/" target="_blank">presentation about this project</a></strong> 
 to the combined GoSG Groups [the Facebook-oriented Singapore Gophers](https://www.facebook.com/events/322218307949631/)
 and [the original GoSG MeetUp Group](http://www.meetup.com/golangsg/events/212375352/).
 
