@@ -4,7 +4,7 @@ category: AI
 title: Deep Learning with a little Javascript
 tagline: Presentation Link
 date: 2014-12-18
-tags: [NLP,NeuralNetworks]
+tags: [NLP,NeuralNetworks,Presentation]
 published: true
 ---
 {% include JB/setup %}

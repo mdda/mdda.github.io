@@ -2,9 +2,9 @@
 layout: post
 category: AI
 title: Understanding English - In 600 lines of Scala
-tagline: Presentation linkk
+tagline: Presentation link
 date: 2014-12-10
-tags: [NLP,NeuralNetworks]
+tags: [NLP,NeuralNetworks,Presentation]
 published: true
 ---
 {% include JB/setup %}
