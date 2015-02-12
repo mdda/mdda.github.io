@@ -9,9 +9,13 @@ published: false
 ---
 {% include JB/setup %}
 
-For various other reasons, the project scope expanded slightly to include
-a ZeroMQ-based server component, so that the Dependency Parser could
-be used as a micro-service.
+billion-placeholder
+
+Placeholder while working on Kaggle HowTo
+
+A working solution to the Billion Word Imputation challenge will appear on [my GitHub account](http://github.com/mdda) 
+shortly (was planned for 15-Jan-2015, still in process).
+
 
 ### Presentation Link
 
@@ -22,3 +26,4 @@ to the [Singapore PyData MeetUp Group](https://www.facebook.com/events/994351117
 
 If there are any questions about the presentation, please ask below, or via the MeetUp group.
 
+![Presentation Content Example]({{ site.url }}/assets/img/2015-01-15_Presentation-PyDataSG_2_600x390.png)
