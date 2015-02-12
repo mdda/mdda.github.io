@@ -5,12 +5,13 @@ title: Golang and the Reverse Game-of-Life
 tagline: Presentation link
 date: 2014-06-05
 tags: [Presentation,golang]
-published: false
+published: true
 ---
 {% include JB/setup %}
 
 Wanting to get acquainted with the Go language, I found a Kaggle competition
-(the Reverse Game-of-Life) that seemed approachable, and launched into it.
+(the [Reverse Game-of-Life](http://www.kaggle.com/c/conway-s-reverse-game-of-life)) 
+that seemed approachable, and launched into it.
 
 The presentation was at the first of the Singapore GoLang meet-up,
 and was (I have to say) a bit of a mish-mash.  I gave the same basic
