@@ -30,3 +30,4 @@ to the [Singapore Talk.js MeetUp Group](http://www.meetup.com/Singapore-JS/event
 
 If there are any questions about the presentation, please ask below, or via the [SingaporeJS MeetUp](http://www.meetup.com/Singapore-JS/) group.
 
+![Presentation Content Example]({{ site.url }}/assets/img/2014-12-18_DeepLearning.js_5_600x390.png)
