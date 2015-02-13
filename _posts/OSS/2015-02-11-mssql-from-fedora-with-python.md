@@ -7,7 +7,7 @@ tags:
 - linux
 - mssql
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
