@@ -5,7 +5,7 @@ title: Sentence Dependencies - d3 Visualization
 tagline: Presentation link
 date: 2014-06-15
 tags: [Presentation,javascript,d3js]
-published: false
+published: true
 ---
 {% include JB/setup %}
 
