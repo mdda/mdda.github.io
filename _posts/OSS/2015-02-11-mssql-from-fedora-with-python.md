@@ -35,7 +35,7 @@ yum install freetds freetds-devel unixODBC unixODBC-devel
 In order to connect to the database, add it as an entry into ```/etc/freetds.conf``` :
 
 {% highlight bash %}
-[arbitrary-server-title]
+[arbitrary-tds-server-title]
 	host = hostname.of.the.server
 	port = 1433
 	tds version = 7.0
@@ -54,7 +54,7 @@ tsql -H hostname.of.the.server -p portnumber -U username-for-db -P
 or, alternatively : 
 
 {% highlight bash %}
-tsql -S arbitrary-server-title -U username-for-db -P
+tsql -S arbitrary-tds-server-title -U username-for-db -P
 #(enter password, not-in-history)
 {% endhighlight %}
 
@@ -72,54 +72,63 @@ select count(*) from TABLENAME
 SELECT * FROM information_schema.tables where TABLE_TYPE = 'BASE TABLE'
 {% endhighlight %}
 
+### Step 4 : Set up ODBC configurations
 
-
+Firstly, find the driver locations (on disk!) to put into ```/etc/odbcinst.ini``` :
 
 {% highlight bash %}
-## Find drivers to put into /etc/odbcinst.ini :
 find / -iname 'libtds*'
 {% endhighlight %}
 
+Then, create a suitable entry in ```/etc/odbcinst.ini```, so that ODBC know to talk to the FreeTDS drivers :
+
 {% highlight bash %}
-## Add to /etc/odbcinst.ini :
 [FreeTDS]
-Description    	= MS SQL database access with Free TDS
+Description = MS SQL database access with Free TDS
 Driver64		= /usr/lib64/libtdsodbc.so
-Setup64		= /usr/lib64/libtdsS.so
+Setup64		  = /usr/lib64/libtdsS.so
 FileUsage	= 1
 {% endhighlight %}
 
+Then, create an entry in ```/etc/odbc.ini``` (which may have to be created) :
+
 {% highlight bash %}
-## Add/Create /etc/odbc.ini :
-[sqlserverdatasource]
+[sqlserverdatasource-name-is-arbitrary]
 Driver = FreeTDS
 Description = ODBC connection via FreeTDS
 Trace = No
-Servername = seer-dev-server
+Servername = arbitrary-tds-server-title
 #Database = <name of your database>
 {% endhighlight %}
+
+### Step 5 : Set up Python connection to ODBC
 
 {% highlight bash %}
 yum install pyodbc
 {% endhighlight %}
 
+And then one can use it in the Python shell :
+
 {% highlight bash %}
-python interactive :
+python
 >>> import pyodbc
->>> dsn='sqlserverdatasource'
->>> user='seer-dev'
+>>> dsn='sqlserverdatasource-name-is-arbitrary'
+>>> user='username-for-db'
 >>> password='XXXXXXXX'
->>> database='Cinnamon_Testing'
+>>> database='DATABASENAME'
 >>> con_string = 'DSN=%s;UID=%s;PWD=%s;DATABASE=%s;' % (dsn, user, password, database)
 >>> cnxn = pyodbc.connect(con_string)
 >>> cursor = cnxn.cursor()
->>> cursor.execute("select count(*) from ENTITY")
+>>> cursor.execute("select count(*) from TABLENAME")
 <pyodbc.Cursor object at 0x7fe4fd2a0b10>
 >>> row=cursor.fetchone()
 >>> row
 (249619, )
 {% endhighlight %}
 
-# For more, see : https://code.google.com/p/pyodbc/wiki/GettingStarted
+
+### Step 6 : Read up on ODBC databases in Python
+
+For more, see the [PyODBC getting started guide](https://code.google.com/p/pyodbc/wiki/GettingStarted).
 
 
