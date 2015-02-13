@@ -22,11 +22,15 @@ For the following write-up (which are really just notes to myself), these links 
 
 ### Step 1 : Check there's no firewall in the way
 
-```telnet 192.168.x.y 1433``` into the port to check that the response differs from one with no server sitting on it.
+Try the port to check that the response differs from one with no server sitting on it : 
+
+{% highlight bash %}
+telnet 192.168.x.y 1433
+{% endhighlight %}
 
 ### Step 2 : Install FreeTDS
 
-This is the one that Fedora supports :
+The FreeTDS package is the one that Fedora uses :
 
 {% highlight bash %}
 yum install freetds freetds-devel unixODBC unixODBC-devel 
@@ -36,9 +40,9 @@ In order to connect to the database, add it as an entry into ```/etc/freetds.con
 
 {% highlight bash %}
 [arbitrary-tds-server-title]
-	host = hostname.of.the.server
-	port = 1433
-	tds version = 7.0
+  host = hostname.of.the.server
+  port = 1433
+  tds version = 7.0
 {% endhighlight %}
 
 ### Step 3 : Check that simple queries run (command line)
@@ -47,7 +51,7 @@ Using the ```tsql``` utility (from FreeTDS), test that the basic connection work
 (each SQL command needs to be followed by 'go' on a separate line to get it to execute) :
 
 {% highlight bash %}
-tsql -H hostname.of.the.server -p portnumber -U username-for-db -P
+tsql -H hostname.of.the.server -p 1433 -U username-for-db -P
 #(enter password, not-in-history)
 {% endhighlight %}
 
@@ -85,20 +89,20 @@ Then, create a suitable entry in ```/etc/odbcinst.ini```, so that ODBC know to t
 {% highlight bash %}
 [FreeTDS]
 Description = MS SQL database access with Free TDS
-Driver64		= /usr/lib64/libtdsodbc.so
-Setup64		  = /usr/lib64/libtdsS.so
-FileUsage	= 1
+Driver64    = /usr/lib64/libtdsodbc.so
+Setup64     = /usr/lib64/libtdsS.so
+FileUsage   = 1
 {% endhighlight %}
 
 Then, create an entry in ```/etc/odbc.ini``` (which may have to be created) :
 
 {% highlight bash %}
 [sqlserverdatasource-name-is-arbitrary]
-Driver = FreeTDS
+Driver      = FreeTDS
 Description = ODBC connection via FreeTDS
-Trace = No
-Servername = arbitrary-tds-server-title
-#Database = <name of your database>
+Trace       = No
+Servername  = arbitrary-tds-server-title
+#Database    = <name of your database - may be useful to restrict usage>
 {% endhighlight %}
 
 ### Step 5 : Set up Python connection to ODBC
@@ -116,7 +120,7 @@ python
 >>> user='username-for-db'
 >>> password='XXXXXXXX'
 >>> database='DATABASENAME'
->>> con_string = 'DSN=%s;UID=%s;PWD=%s;DATABASE=%s;' % (dsn, user, password, database)
+>>> con_string='DSN=%s;UID=%s;PWD=%s;DATABASE=%s;' % (dsn, user, password, database)
 >>> cnxn = pyodbc.connect(con_string)
 >>> cursor = cnxn.cursor()
 >>> cursor.execute("select count(*) from TABLENAME")
