@@ -149,7 +149,8 @@ Want to do in-depth look at :
       Dropping 20% of input pixels for MNIST (no other 'tricks' used)
     Similarity to random forest in terms of feature sampling  
     Excellent level of detail in describing model set-ups in the appendix
-    
+    Efficient batchwise dropout training using submatrices (2015)
+      http://arxiv.org/pdf/1502.02478v1.pdf
 
   JPEG originators' keynote / paper / talk
     Contractive AutoEncoders : Rafai
@@ -161,8 +162,6 @@ Want to do in-depth look at :
         Isn't SEC 3.16 (p38 of PDF) the same as RBM learningTR (9) with contractive thingy added on?  (Hmmm- it's a suggestive link...)
         Isn't Harpur 4.15 (p63 of PDF) the same as ... (has minimised reconstruction built-in)?  (Hmmm- it's a suggestive link...)
 
-  ?One Wierd Trick
-  
   GloVe paper
     Follow up:
       Lebret and Collobert 2014 : HPCA?  :: Remi Lebret and Ronan Collobert. 2014. Word embeddings through Hellinger PCA. In EACL.
