@@ -4,38 +4,45 @@ title: Tags
 header:
 group: navigation
 ---
-<div class="col-sm-12" xclass="nav nav-tabs" xdata-tabs="tabs">
-<!--
-  <div id="wordCloud" style="border:1px solid #f00;height:350px;xwidth:150px;">
-    {% assign tags_list = site.tags %}
-    {% for tag in tags_list %}
-	  <span data-weight="{{ tag[1].size }}"><a href="#{{ tag[0] }}-ref" data-toggle="tab">{{ tag[0] }}</a></span>{% endfor %}
-    {% assign tags_list = nil %}
-  </div>
-!-->
-  <div id="tagCloud">
-    {% assign tags_list = site.tags %}
-    <ul class="nav nav-tabs">
-    {% for tag in tags_list %}
-	  <li><a href="#{{ tag[0] }}-ref" data-toggle="tab">{{ tag[0] }}</a></li>{% endfor %}
-	</ul>
-    {% assign tags_list = nil %}
-  </div>
+<style type="text/css" media="all">
+.scroll-tabs {
+  xheight:300px;
+  height:600px;
+  overflow-y:scroll;
+  overflow-x:hidden
+  xwidth:100%;
+  xmargin-right:-20px;
+}
+</style>
+<div class="col-sm-3 scroll-tabs">
+  <ul class="nav nav-tabs tabs-left" id="nav-tab-top">
+    {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+    {% assign tag_list = site_tags | split:',' | sort %}    
+    {% for item in (0..site.tags.size) %}{% unless forloop.last %}
+      {% capture tag %}{{ tag_list[item] | strip_newlines }}{% endcapture %}
+      <li>
+        <a href="#{{ tag | cgi_escape }}-ref" data-toggle="tab">
+          {{ tag }} <span class="badge pull-right">{{ site.tags[tag].size }}</span>
+        </a>
+      </li>
+    {% endunless %}{% endfor %}    
+    {% assign tag = nil %}
+    {% assign tag_list = nil %}
+  </ul>
 </div>
-<div class="clearfix"></div>
-<div class="tab-content col-sm-12">
+<!-- Tab panes -->
+<div class="tab-content col-sm-9">
   {% for tag in site.tags %}
     <div class="tab-pane" id="{{ tag[0] }}-ref">
       <h2 style="margin-top: 0px">Posts tagged  with {{ tag[0] }}</h2>
       <ul class="list-unstyled">
         {% assign pages_list = tag[1] %}
-        {% for node in pages_list %}
-          {% if node.title != null %}
-            {% if group == null or group == node.group %}
-              <li style="line-height: 35px;"><a href="{{ BASE_PATH }}{{node.url}}">{{node.title}}</a> <span class="text-muted">- {{ node.date | date: "%B %d, %Y" }}</span></li>
-            {% endif %}
-          {% endif %}
-        {% endfor %}
+        {% for node in pages_list %}{% if node.title != null %}{% if group == null or group == node.group %}
+          <li style="line-height: 35px;"><a href="{{ BASE_PATH }}{{node.url}}">{{node.title}}</a>
+            {% for tag in node.tags %}<a href="#{{ tag | cgi_escape }}-ref" onclick="scrolltab('{{tag | cgi_escape }}');"><span class="label label-info">{{ tag }}</span></a>&nbsp; {% endfor %}
+            <span class="text-muted">- {{ node.date | date: "%B %d, %Y" }}</span>
+          </li>
+        {% endif %}{% endif %}{% endfor %}
         {% assign pages_list = nil %}
       </ul>
     </div>
@@ -43,6 +50,7 @@ group: navigation
 </div>
 
 <div class="clearfix"></div>
+
 <script type="text/javascript">
-// $("#wordCloud").awesomeCloud( settings );
+var redirect_hrefs_within_page=true;
 </script>
