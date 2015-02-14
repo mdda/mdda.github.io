@@ -10,6 +10,8 @@ sudo yum install ruby-devel
 ## Instead : Add a Gemfile... and ::
 gem install bundler
 bundle install 
+#bundle update #if Ruby upgraded
+## Problems : nokogiri, posix_spawn_ext
 
 bundle exec jekyll serve --watch --unpublished
 
