@@ -7,9 +7,8 @@ wordpress_id: 130
 wp_parent: '0'
 wp_slug: air-h-edge-card-h407p-setup
 tags:
-- 600m
+- Dell-600m
 - AirH
-- dell
 - f7
 - fedora
 - H407P

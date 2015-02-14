@@ -7,9 +7,8 @@ wordpress_id: 170
 wp_parent: '0'
 wp_slug: cisco-4000-series-back-from-the-dead
 tags:
-- '4000'
+- Cisco-4000
 - catalyst
-- cisco
 - promupgrade
 - rommon
 layout: post

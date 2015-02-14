@@ -10,7 +10,7 @@ tags:
 - fc20
 - acer
 - bumblebee
-- GT 750M
+- GT-750M
 layout: post
 published: true
 ---

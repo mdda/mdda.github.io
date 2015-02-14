@@ -7,8 +7,7 @@ wordpress_id: 103
 wp_parent: '0'
 wp_slug: fedora-core-6-on-dell-600m
 tags:
-- 600m
-- dell
+- Dell-600m
 - fedora
 layout: post
 from_mdda_blog: true
