@@ -48,6 +48,16 @@ For me, the application to MNIST is attention-grabbing enough.
 While I appreciate that playing with Inception (etc) sexes-up the paper a lot, 
 it raises the hurdle for others who may not have that quantity of hardware 
 to contribute to the (more interesting) project of improving the 
-learning rates of all projects (which is quite possible to do on the MNIST dataset, 
-except that it's pretty much 'solved' with the error cases 
-being pretty questionable for humans too).
+learning rates of all projects.
+
+For instance, working on the mechanisms of learning is quite possible 
+to do on the MNIST dataset, except that MNIST is pretty much 'solved' (see (a) below) 
+with the error cases being pretty questionable for humans too.
+
+
+(a) According to [Efficient batchwise dropout training using submatrices](http://arxiv.org/abs/1502.02478), 
+a fully connected network with two hidden layers of 80 units each can learn to
+classify the MNIST training set perfectly in about 20 training epochs - 
+unfortunately the test error is quite high, about 2%. 
+Increasing the number of hidden units by a factor
+of 10 and using dropout results in a lower test error, about 1.1%.
