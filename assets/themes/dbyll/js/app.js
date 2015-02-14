@@ -88,7 +88,7 @@ $( document ).ready(function() {
 function scrolltab(href) {
   var tab=$('.scroll-tabs a[href="#'+href+'-ref"]');
   var tt =$('#nav-tab-top');
-  console.log("scrolltab("+href+") - offset="+tab.offset().top+", tt="+tt.offset().top);
+  //console.log("scrolltab("+href+") - offset="+tab.offset().top+", tt="+tt.offset().top);
   $('.scroll-tabs').animate({
     scrollTop: tab.offset().top-tt.offset().top-300
   }, 500, function () {
