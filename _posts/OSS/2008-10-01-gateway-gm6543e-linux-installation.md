@@ -8,7 +8,7 @@ wp_parent: '0'
 wp_slug: gateway-gm6543e-linux-installation
 tags:
 - fedora
-- Gateway GM6543E
+- Gateway-GM6543E
 - linux
 layout: post
 from_mdda_blog: true

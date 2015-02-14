@@ -9,7 +9,7 @@ tags:
 - opencl
 - fc20
 - visualsfm
-- structure from motion
+- structure-from-motion
 layout: post
 from_mdda_blog: true
 ---

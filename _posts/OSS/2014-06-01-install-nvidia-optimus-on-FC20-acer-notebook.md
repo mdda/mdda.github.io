@@ -13,7 +13,7 @@ tags:
 - acer
 - optimus
 - bumblebee
-- GT 750M
+- GT-750M
 layout: post
 from_mdda_blog: true
 ---

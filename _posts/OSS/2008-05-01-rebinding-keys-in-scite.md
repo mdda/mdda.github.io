@@ -7,7 +7,7 @@ wordpress_id: 143
 wp_parent: '0'
 wp_slug: rebinding-keys-in-scite
 tags:
-- key bindings
+- key-bindings
 - scite
 layout: post
 from_mdda_blog: true
