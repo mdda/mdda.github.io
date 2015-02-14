@@ -4,18 +4,18 @@ title: Categories
 header:
 group: navigation
 ---
-<div class="col-sm-3">
-    <ul class="nav nav-tabs tabs-left">
-      {% assign categories_list = site.categories %}
-      {% for category in categories_list %}
-        <li>
-          <a href="#{{ category[0] }}-ref" data-toggle="tab">
-            {{ category[0] | upcase }} <span class="badge pull-right">{{ category[1].size }}</span>
-          </a>
-        </li>
-      {% endfor %}
-      {% assign categories_list = nil %}
-    </ul>
+<div class="col-sm-3 scroll-tabs">
+  <ul class="nav nav-tabs tabs-left" id="nav-tab-top">
+    {% assign categories_list = site.categories %}
+    {% for category in categories_list %}
+      <li>
+        <a href="#{{ category[0] | cgi_escape }}-ref" data-toggle="tab">
+          {{ category[0] | upcase }} <span class="badge pull-right">{{ category[1].size }}</span>
+        </a>
+      </li>
+    {% endfor %}
+    {% assign categories_list = nil %}
+  </ul>
 </div>
 <!-- Tab panes -->
 <div class="tab-content col-sm-9">
@@ -34,3 +34,8 @@ group: navigation
 </div>
 
 <div class="clearfix"></div>
+
+<script type="text/javascript">
+// This is really just to open up the correct tab when visited with an anchor address
+var redirect_hrefs_within_page=true;
+</script>

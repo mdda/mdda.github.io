@@ -10,10 +10,18 @@ $( document ).ready(function() {
   
   contact_list.mouseenter(function(){ scontacts.fadeIn(); });
   contact_list.mouseleave(function(){ scontacts.fadeOut(); });
-  
+
+  if( typeof redirect_hrefs_within_page !== 'undefined' ) {
+    if(window.location.hash) {
+      console.log("Got a redirect to : "+window.location.hash);
+      var href=window.location.hash.replace("#","").replace("-ref", "");
+      console.log("effective href = "+href);
+      scrolltab(href);
+    }
+  }
+/*    
   if( typeof redirect_hrefs_within_page !== 'undefined' ) {
     //alert("redirect_hrefs_within_page");
-/*    
     var $root = $('html, body');
     $('a').click(function() {
       var href = $.attr(this, 'href');
@@ -24,8 +32,8 @@ $( document ).ready(function() {
       });
       return false;
     });
-*/    
   }
+*/    
 
   if(false) {
     var settings = {
@@ -90,7 +98,7 @@ function scrolltab(href) {
   var tt =$('#nav-tab-top');
   //console.log("scrolltab("+href+") - offset="+tab.offset().top+", tt="+tt.offset().top);
   $('.scroll-tabs').animate({
-    scrollTop: tab.offset().top-tt.offset().top-300
+    scrollTop: tab.offset().top-tt.offset().top-200
   }, 500, function () {
     //window.location.hash = href;
     tab.click();
