@@ -5,9 +5,9 @@ category: OSS
 tags:
 - fedora
 - linux
-- fortinet
+- Fortinet
 - forticlient
-- VPN
+- vpn
 layout: post
 published: false
 ---

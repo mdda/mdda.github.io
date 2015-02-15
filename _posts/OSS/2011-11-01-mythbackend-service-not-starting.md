@@ -10,7 +10,7 @@ tags:
 - fc16
 - fedora
 - linux
-- MythTV
+- mythtv
 layout: post
 from_mdda_blog: true
 ---

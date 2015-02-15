@@ -9,7 +9,7 @@ wp_slug: openvz-and-packet-sniffing
 tags:
 - fedora
 - firewall
-- OpenVZ
+- openvz
 - security
 layout: post
 from_mdda_blog: true

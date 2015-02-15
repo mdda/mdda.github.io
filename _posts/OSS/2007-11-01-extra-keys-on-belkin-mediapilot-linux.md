@@ -7,11 +7,10 @@ wordpress_id: 138
 wp_parent: '0'
 wp_slug: extra-keys-on-belkin-mediapilot-linux
 tags:
-- Belkin
-- DualScreen
-- f7
-- linux
-- MediaPilot
+- Belkin-MediaPilot
+- dual-screen
+- fc7
+- linux 
 layout: post
 from_mdda_blog: true
 ---

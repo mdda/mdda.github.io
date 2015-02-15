@@ -10,9 +10,8 @@ tags:
 - adb
 - android
 - fedora
-- G2X
+- TMobile-G2X
 - linux
-- USB
 layout: post
 from_mdda_blog: true
 ---

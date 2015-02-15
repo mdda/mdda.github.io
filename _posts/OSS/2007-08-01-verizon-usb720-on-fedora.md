@@ -10,8 +10,7 @@ tags:
 - fedora
 - laptop
 - linux
-- USB720
-- Verizon
+- Verizon-USB720
 layout: post
 from_mdda_blog: true
 ---

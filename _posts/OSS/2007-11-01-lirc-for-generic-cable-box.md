@@ -7,11 +7,11 @@ wordpress_id: 135
 wp_parent: '0'
 wp_slug: lirc-for-generic-cable-box
 tags:
-- f7
+- fc7
 - fedora
-- Hauppauge
-- LIRC
-- MythTV
+- Hauppauge-PVR350
+- lirc
+- mythtv
 layout: post
 from_mdda_blog: true
 ---

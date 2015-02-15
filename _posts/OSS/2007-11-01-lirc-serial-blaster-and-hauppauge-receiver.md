@@ -8,10 +8,9 @@ wp_parent: '0'
 wp_slug: lirc-serial-blaster-and-hauppauge-receiver
 tags:
 - blaster
-- f7
-- Hauppauge
-- LIRC
-- PVR350
+- fc7
+- Hauppauge-PVR350
+- lirc
 - receiver
 layout: post
 from_mdda_blog: true

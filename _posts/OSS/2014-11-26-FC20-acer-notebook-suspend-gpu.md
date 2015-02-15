@@ -4,11 +4,11 @@ date: 2014-11-26
 title: Getting an Nvidia GT 750M to suspend properly with BumbleBee
 category: OSS
 tags:
-- nvidia
+- Nvidia
 - fedora
 - linux
 - fc20
-- acer
+- Acer
 - bumblebee
 - GT-750M
 layout: post

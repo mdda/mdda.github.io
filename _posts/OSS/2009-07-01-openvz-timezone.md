@@ -7,7 +7,7 @@ wordpress_id: 169
 wp_parent: '0'
 wp_slug: openvz-timezone
 tags:
-- OpenVZ
+- openvz
 layout: post
 from_mdda_blog: true
 ---

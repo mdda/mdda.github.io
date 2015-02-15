@@ -7,7 +7,7 @@ wordpress_id: 125
 wp_parent: '0'
 wp_slug: fedora-core-7-upgrade-problems
 tags:
-- f7
+- fc7
 - fc6
 - fedora
 layout: post

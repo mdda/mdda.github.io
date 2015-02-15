@@ -9,7 +9,7 @@ wp_slug: mythweb-with-lighttpd-for-fedora
 tags:
 - fedora
 - lighttpd
-- MythTV
+- mythtv
 layout: post
 from_mdda_blog: true
 ---

@@ -7,7 +7,7 @@ wordpress_id: 124
 wp_parent: '0'
 wp_slug: samba-on-fedora-core-7
 tags:
-- f7
+- fc7
 - fc6
 - fedora
 - samba

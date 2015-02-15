@@ -9,7 +9,7 @@ wp_slug: enabling-imaps-with-ssl-for-dovecot
 tags:
 - certificates
 - dovecot
-- IMAPS
+- imaps
 layout: post
 from_mdda_blog: true
 ---

@@ -7,12 +7,11 @@ wordpress_id: 131
 wp_parent: '0'
 wp_slug: mythtv-on-fedora-7-pvr-350-dual-screen
 tags:
-- DualScreen
-- f7
+- dual-screen
+- fc7
 - fedora
-- Hauppauge
-- MythTV
-- PVR350
+- Hauppauge-PVR350
+- mythtv
 layout: post
 from_mdda_blog: true
 ---

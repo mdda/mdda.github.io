@@ -7,12 +7,11 @@ wordpress_id: 133
 wp_parent: '0'
 wp_slug: ivtv-on-fedora-with-2-6-22-kernel
 tags:
-- f7
+- fc7
 - fedora
-- Hauppauge
+- Hauppauge-PVR350
 - ivtv
-- MythTV
-- PVR350
+- mythtv
 layout: post
 from_mdda_blog: true
 ---

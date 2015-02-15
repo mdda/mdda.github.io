@@ -8,7 +8,7 @@ wp_parent: '0'
 wp_slug: funambol-with-mysql-on-fedora-10
 tags:
 - fedora
-- Funambol
+- funambol
 - mysql
 layout: post
 from_mdda_blog: true

@@ -9,7 +9,7 @@ wp_slug: reset-mythtv-music-database
 tags:
 - music
 - mysql
-- MythTV
+- mythtv
 layout: post
 from_mdda_blog: true
 ---

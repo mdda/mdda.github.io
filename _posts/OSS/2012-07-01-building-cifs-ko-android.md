@@ -11,7 +11,7 @@ tags:
 - cifs
 - kernel
 - linux
-- MythTV
+- mythtv
 - samba
 layout: post
 from_mdda_blog: true

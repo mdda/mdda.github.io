@@ -7,7 +7,7 @@ wordpress_id: 128
 wp_parent: '0'
 wp_slug: truecrypt-4-3-on-fedora-7-build-from-zero
 tags:
-- f7
+- fc7
 - fedora
 - truecrypt
 layout: post

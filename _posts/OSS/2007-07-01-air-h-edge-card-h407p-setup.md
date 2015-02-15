@@ -8,10 +8,9 @@ wp_parent: '0'
 wp_slug: air-h-edge-card-h407p-setup
 tags:
 - Dell-600m
-- AirH
-- f7
+- AirH-H407P
+- fc7
 - fedora
-- H407P
 - linux
 layout: post
 from_mdda_blog: true

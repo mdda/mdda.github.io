@@ -4,7 +4,7 @@ date: 2014-05-28
 title: Install nvidia drivers on Fedora FC20
 category: OSS
 tags:
-- nvidia
+- Nvidia
 - fedora
 - linux
 - opencl

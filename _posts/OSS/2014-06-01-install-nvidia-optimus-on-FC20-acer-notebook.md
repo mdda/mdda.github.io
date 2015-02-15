@@ -4,14 +4,14 @@ date: 2014-06-15
 title: Install Nvidia Optimus drivers on Fedora FC20+ Acer Notebook - BumbleBee
 category: OSS
 tags:
-- nvidia
+- Nvidia
 - fedora
 - linux
 - opencl
 - fc20
 - fc21
-- acer
-- optimus
+- Acer
+- Optimus
 - bumblebee
 - GT-750M
 layout: post

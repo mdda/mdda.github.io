@@ -8,8 +8,8 @@ tags:
 - linux
 - opencl
 - fc20
-- BLAS
-- clBLAS
+- blas
+- clblas
 - bumblebee
 layout: post
 published: true

@@ -10,7 +10,7 @@ tags:
 - nginx
 - paste
 - pylons
-- Pyramid
+- pyramid
 - python
 - wsgi
 layout: post

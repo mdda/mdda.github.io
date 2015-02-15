@@ -9,9 +9,9 @@ wp_slug: lirc_serial-stopped-working
 tags:
 - fc9
 - fedora
-- LIRC
-- MythTV
-- PVR350
+- lirc
+- mythtv
+- Hauppauge-PVR350
 layout: post
 from_mdda_blog: true
 ---

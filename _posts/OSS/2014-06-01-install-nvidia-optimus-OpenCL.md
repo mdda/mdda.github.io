@@ -8,8 +8,8 @@ tags:
 - fedora
 - linux
 - opencl
-- nvidia
-- optimus
+- Nvidia
+- Optimus
 - fc20
 layout: post
 ---

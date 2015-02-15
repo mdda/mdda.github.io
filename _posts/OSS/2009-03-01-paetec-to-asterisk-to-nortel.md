@@ -7,10 +7,10 @@ wordpress_id: 163
 wp_parent: '0'
 wp_slug: paetec-to-asterisk-to-nortel
 tags:
-- Asterisk
-- EandM
+- asterisk
+- e-and-m
 - fedora
-- Loopstart
+- loopstart
 - Paetec
 - T1
 - TecPath

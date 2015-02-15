@@ -8,8 +8,8 @@ tags:
 - fedora
 - linux
 - cuda
-- nvidia
-- optimus
+- Nvidia
+- Optimus
 - bumblebee
 - fc20
 layout: post

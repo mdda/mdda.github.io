@@ -9,7 +9,7 @@ wp_slug: magento-install-on-openvz
 tags:
 - fedora
 - Magento
-- OpenVZ
+- openvz
 layout: post
 from_mdda_blog: true
 ---

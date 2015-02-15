@@ -6,7 +6,7 @@ category: OSS
 tags:
 - AMD
 - radeon
-- HD5570
+- Radeon-HD5570
 - fedora
 - linux
 - drivers

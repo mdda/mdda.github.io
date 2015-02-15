@@ -8,7 +8,7 @@ wp_parent: '0'
 wp_slug: fedora-7-upgrade-for-dell-dimension-2400
 tags:
 - dell
-- f7
+- fc7
 - fedora
 layout: post
 from_mdda_blog: true

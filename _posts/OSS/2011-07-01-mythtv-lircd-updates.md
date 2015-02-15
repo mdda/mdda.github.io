@@ -8,9 +8,8 @@ wp_parent: '0'
 wp_slug: mythtv-lircd-updates
 tags:
 - fedora
-- Hauppauge
-- MythTV
-- PVR350
+- Hauppauge-PVR350
+- mythtv
 layout: post
 from_mdda_blog: true
 ---
