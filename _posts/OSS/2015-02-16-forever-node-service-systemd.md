@@ -21,14 +21,19 @@ Put into (for example) ```/etc/systemd/system/node-webserver.service``` :
 {% highlight bash %}
 [Service]
 ExecStart=[node binary] [main file.js]
+## Example
+#ExecStart=/usr/bin/node app.js
 Restart=always
 StandardOutput=syslog
 StandardError=syslog
 SyslogIdentifier=node-webserver
 User=srv-node-sample
 Group=srv-node-sample
+## Could also be :
+#User=nginx
+#Group=nginx
 Environment=NODE_ENV=production
-WorkingDirectory=<FULL-PATH-TO-WORKING-DIRECTORY>/
+WorkingDirectory=<FULL-PATH-TO-WORKING-DIRECTORY>
 
 [Install]
 WantedBy=multi-user.target
@@ -37,8 +42,11 @@ WantedBy=multi-user.target
 Then control this new service with  :
 
 {% highlight bash %}
+# Do these for simple testing
 systemctl start node-webserver
+systemctl status node-webserver
 systemctl stop node-webserver
+
 # and, for across-reboot operations :
 systemctl enable node-webserver
 systemctl disable node-webserver
@@ -51,7 +59,7 @@ systemctl daemon-reload
 {% endhighlight %}
 
 Also, remember to set permissions for the configured User/Group to access the 
-WorkingDirectory.
+```WorkingDirectory```.
 
 Also, note that to make a webserver (```nginx```, say) talk to your  
 backend server (```node```, say), SELINUX needs :
