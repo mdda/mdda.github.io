@@ -44,7 +44,7 @@ Using the ```tsql``` utility (from FreeTDS), test that the basic connection work
 
 {% highlight bash %}
 tsql -H hostname.of.the.server -p 1433 -U username-for-db
-#(enter password, not-in-history)
+#(enter password here not on command line to avoid it appearing in history, or in process list)
 {% endhighlight %}
 
 When the ```tsql``` prompt comes up, 
@@ -73,7 +73,7 @@ In order to connect to the database by 'name', add it as an entry into ```/etc/f
   tds version = 7.0
 {% endhighlight %}
 
-Then queries can be run using the given name : 
+Then queries can be run using the given name (which will then be able to pick out the appropriate hostname and port from the configuration file) : 
 
 {% highlight bash %}
 tsql -S arbitrary-tds-server-title -U username-for-db
