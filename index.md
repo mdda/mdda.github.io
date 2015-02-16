@@ -21,16 +21,14 @@ Please forgive me if the posts aren't crystal clear : Many of the ideas aren't f
 ### Recent Posts
 
 <ul class="posts">
-  {% for post in site.posts limit:10 %}
-    {% if post.categories contains 'ai' %}
-      <li>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">
-        {% unless post.published == false %}
-         {{ post.title }}
-        {% else %}
-         <s>{{ post.title }}</s>
-        {% endunless %}
-      </a></li>
-    {% endif %}
+  {% for post in site.categories['ai'] limit:10 %}
+    <li>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">
+      {% unless post.published == false %}
+       {{ post.title }}
+      {% else %}
+       <s>{{ post.title }}</s>
+      {% endunless %}
+    </a></li>
   {% endfor %}
 </ul>
 
@@ -44,16 +42,14 @@ As well as trying to be generally supportive of the various excellent OSS projec
 ### Recent Posts
 
 <ul class="posts">
-  {% for post in site.posts limit:10 %}
-    {% if post.categories contains 'oss' %}
-      <li>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">
-        {% unless post.published == false %}
-         {{ post.title }}
-        {% else %}
-         <s>{{ post.title }}</s>
-        {% endunless %}
-      </a></li>
-    {% endif %}
+  {% for post in site.categories['oss'] limit:10 %}
+    <li>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">
+      {% unless post.published == false %}
+       {{ post.title }}
+      {% else %}
+       <s>{{ post.title }}</s>
+      {% endunless %}
+    </a></li>
   {% endfor %}
 </ul>
 
