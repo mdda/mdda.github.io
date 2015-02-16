@@ -10,7 +10,7 @@ tags:
 - android
 - fedora
 - mobile
-- titanium
+- Titanium
 layout: post
 from_mdda_blog: true
 ---

@@ -7,7 +7,7 @@ wordpress_id: 122
 wp_parent: '0'
 wp_slug: fedora-7-upgrade-for-dell-dimension-2400
 tags:
-- dell
+- Dell-Dimension2400
 - fc7
 - fedora
 layout: post

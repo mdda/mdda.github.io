@@ -7,8 +7,9 @@ wordpress_id: 162
 wp_parent: '0'
 wp_slug: asterisk-sounds-on-fedora
 tags:
-- Asterisk
+- asterisk
 - fedora
+- fc6
 layout: post
 from_mdda_blog: true
 ---

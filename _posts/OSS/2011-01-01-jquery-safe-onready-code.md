@@ -8,7 +8,7 @@ wp_parent: '0'
 wp_slug: jquery-safe-onready-code
 tags:
 - javascript
-- jQuery
+- jquery
 layout: post
 from_mdda_blog: true
 ---
@@ -18,11 +18,10 @@ from_mdda_blog: true
 Just a quickie that combines the _$(fn)_ method of calling a function when the DOM is ready, with an anonymous function that ensures that _$_ refers to jQuery :
 
 
-{% highlight bash %}
-javascript
-    (function($) {
-      $(function () {
-        // your code to fire when the DOM is ready
-      });
-    })(jQuery);
+{% highlight javascript %}
+(function($) {
+  $(function () {
+    // your code to fire when the DOM is ready
+  });
+})(jQuery);
 {% endhighlight %}

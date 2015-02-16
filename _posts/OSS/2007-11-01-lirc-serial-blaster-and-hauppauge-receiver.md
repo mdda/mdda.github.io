@@ -7,11 +7,11 @@ wordpress_id: 136
 wp_parent: '0'
 wp_slug: lirc-serial-blaster-and-hauppauge-receiver
 tags:
-- blaster
-- fc7
 - Hauppauge-PVR350
+- serial-blaster
+- infrared-receiver
 - lirc
-- receiver
+- fc7
 layout: post
 from_mdda_blog: true
 ---

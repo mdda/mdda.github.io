@@ -4,12 +4,11 @@ date: 2014-05-30
 title: Install Official Radeon Catalyst drivers on Fedora FC20
 category: OSS
 tags:
-- AMD
-- radeon
+- AMD-Catalyst
 - Radeon-HD5570
+- radeon
 - fedora
 - linux
-- drivers
 - opencl
 - fc20
 layout: post

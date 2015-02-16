@@ -10,7 +10,7 @@ tags:
 - backup
 - encfs
 - reverse
-- secure
+- security
 layout: post
 from_mdda_blog: true
 ---
