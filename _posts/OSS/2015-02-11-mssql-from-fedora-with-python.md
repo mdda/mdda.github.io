@@ -36,29 +36,14 @@ The FreeTDS package is the one that Fedora uses :
 yum install freetds freetds-devel unixODBC unixODBC-devel 
 {% endhighlight %}
 
-In order to connect to the database, add it as an entry into ```/etc/freetds.conf``` :
 
-{% highlight bash %}
-[arbitrary-tds-server-title]
-  host = hostname.of.the.server
-  port = 1433
-  tds version = 7.0
-{% endhighlight %}
-
-### Step 3 : Check that simple queries run (command line)
+### Step 3 : Check that simple queries run (command line - direct)
 
 Using the ```tsql``` utility (from FreeTDS), test that the basic connection works 
 (each SQL command needs to be followed by 'go' on a separate line to get it to execute) :
 
 {% highlight bash %}
-tsql -H hostname.of.the.server -p 1433 -U username-for-db -P
-#(enter password, not-in-history)
-{% endhighlight %}
-
-or, alternatively : 
-
-{% highlight bash %}
-tsql -S arbitrary-tds-server-title -U username-for-db -P
+tsql -H hostname.of.the.server -p 1433 -U username-for-db
 #(enter password, not-in-history)
 {% endhighlight %}
 
@@ -76,12 +61,32 @@ select count(*) from TABLENAME
 SELECT * FROM information_schema.tables where TABLE_TYPE = 'BASE TABLE'
 {% endhighlight %}
 
-### Step 4 : Set up ODBC configurations
+
+### Step 4 : Check that simple queries run (command line - named server)
+
+In order to connect to the database by 'name', add it as an entry into ```/etc/freetds.conf``` :
+
+{% highlight bash %}
+[arbitrary-tds-server-title]
+  host = hostname.of.the.server
+  port = 1433
+  tds version = 7.0
+{% endhighlight %}
+
+Then queries can be run using the given name : 
+
+{% highlight bash %}
+tsql -S arbitrary-tds-server-title -U username-for-db
+#(enter password, not-in-history)
+{% endhighlight %}
+
+
+### Step 5 : Set up ODBC configurations
 
 Firstly, find the driver locations (on disk!) to put into ```/etc/odbcinst.ini``` :
 
 {% highlight bash %}
-find / -iname 'libtds*'
+find / -iname 'libtds*.so'
 {% endhighlight %}
 
 Then, create a suitable entry in ```/etc/odbcinst.ini```, so that ODBC know to talk to the FreeTDS drivers :
@@ -105,7 +110,7 @@ Servername  = arbitrary-tds-server-title
 #Database    = <name of your database - may be useful to restrict usage>
 {% endhighlight %}
 
-### Step 5 : Set up Python connection to ODBC
+### Step 6 : Set up Python connection to ODBC
 
 {% highlight bash %}
 yum install pyodbc
@@ -131,7 +136,7 @@ python
 {% endhighlight %}
 
 
-### Step 6 : Read up on ODBC databases in Python
+### Step 7 : Read up on ODBC databases in Python
 
 For more, see the [PyODBC getting started guide](https://code.google.com/p/pyodbc/wiki/GettingStarted).
 
