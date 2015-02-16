@@ -40,7 +40,7 @@ group: navigation
         {% for node in pages_list %}{% if node.title != null %}{% if group == null or group == node.group %}
           <li style="padding-bottom:10px;"><a href="{{ BASE_PATH }}{{node.url}}">{{node.title}}</a><span class="text-muted"> - {{ node.date | date: "%B %d, %Y" }}</span><br />
             <span style="margin-left:30px;">
-              <a href="/categories.html#{{ node.category }}-ref"><span class="label label-success">{{ node.category }}</span></a>
+              <a href="/categories.html#{{ node.category | downcase }}-ref"><span class="label label-success">{{ node.category | upcase }}</span></a>
               {% for t in node.tags %}<a href="#{{ t | cgi_escape }}-ref" onclick="scrolltab('{{t | cgi_escape }}');"><span class="label label-info">{{ t }}</span></a>&nbsp; {% endfor %}
             </span>
           </li>
