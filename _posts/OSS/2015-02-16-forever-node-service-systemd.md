@@ -1,6 +1,6 @@
 ---
 date: 2015-02-16
-title: Running a node (or other) service under systemd
+title: Running node.js (or other) services under systemd
 category: OSS
 tags:
 - fedora
@@ -12,9 +12,13 @@ published: true
 ---
 {% include JB/setup %}
 
-https://www.digitalocean.com/community/tutorials/how-to-deploy-node-js-applications-using-systemd-and-nginx
+This is largely drawn from the [excellent Digital Ocean guide](https://www.digitalocean.com/community/tutorials/how-to-deploy-node-js-applications-using-systemd-and-nginx),
+but with a little more detail around the ```systemd``` specifics.
 
-No need for ```forever``` since ```systemd``` will do the restarting automatically.
+Using this method, there's no longer any need for ```forever``` since ```systemd``` 
+will do the restarting automatically.
+
+### ```systemd``` setup
 
 Put into (for example) ```/etc/systemd/system/node-webserver.service``` :
 
@@ -39,7 +43,17 @@ WorkingDirectory=<FULL-PATH-TO-WORKING-DIRECTORY>
 WantedBy=multi-user.target
 {% endhighlight %}
 
-Then control this new service with  :
+
+If you make changes to the .service file, you should to execute : 
+
+{% highlight bash %}
+systemctl daemon-reload
+{% endhighlight %}
+
+
+### ```systemd``` control
+
+If everything is set up properly, the service can be controlled with  :
 
 {% highlight bash %}
 # Do these for simple testing
@@ -52,11 +66,8 @@ systemctl enable node-webserver
 systemctl disable node-webserver
 {% endhighlight %}
 
-If you make changes to the .service file, you may have to execute : 
 
-{% highlight bash %}
-systemctl daemon-reload
-{% endhighlight %}
+### Other things to watch out for...
 
 Also, remember to set permissions for the configured User/Group to access the 
 ```WorkingDirectory```.
@@ -69,4 +80,3 @@ backend server (```node```, say), SELINUX needs :
 {% endhighlight %}
 
 where the '-P' option makes this work across reboots.
-
