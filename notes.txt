@@ -233,3 +233,44 @@ DONE :
 ## location ~ ^/2015-01-15_Presentation-PyDataSG/ {
 
 TODO :  Add reference to all of these on RedCatLabs.com
+
+
+
+Ideas for AGI conf
+  Needs to be done and written-up by 15-March
+    Basics implemented this weekend
+    Project finished next weekend
+    Submitted on time
+    
+  Dropout as random ensembles
+    Structured vs unstructured dropout
+      Risky, since not clear what the aim is
+      
+  Teacher / Student networks
+    Slightly sexier topic, since so current
+    Reframe as being auto-improver
+      Parasitic side network 
+    Understand claims about Curriculum Learning in Teacher/Student paper
+    Does teaching student aim at :
+      improving generalization
+      higher speed to learn
+      greater efficiency of representation (valid biological goal)
+    Strange that student networks can be so much smaller and as effective
+
+  Why did earlier NNs fail?  
+    Repeat old experiments?
+      Earliest MNIST experiments ?
+        But error rate was pretty low then anyway
+  
+  Genetic Algorithms for training NNs
+    Unclear whether it would work
+    
+  Whitening layers
+  
+  Weight initialization
+  
+  Word Embedding
+  
+  Sparse representations
+  
+  List of 100 problems
