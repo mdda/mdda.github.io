@@ -263,15 +263,25 @@ Ideas for AGI conf
       Earliest MNIST experiments ?
         But error rate was pretty low then anyway
   
-  Genetic Algorithms for training NNs
-    Unclear whether it would work
-    
-  Whitening layers
+  Sparse representations
+    This seems more effective - a special lesson from nature
+    Perhaps real-world situations are particularly amenable to sparse representations
+      Multiple labels rather than single folders
+      ~ Photos are compressible via (designed) JPEG
   
-  Weight initialization
+  Normalization  
+    Whitening layers
+    Weight initialization
+    ReLu with LHS hard zero (and zero gradient)
+    Vanishing gradient problem should be less material with floating point numbers
+      But does seem to be an issue worth publishing about
+
+  ReLu+ vs sigmoidal
+    Is it effective just because of lower computational cost?
   
   Word Embedding
   
-  Sparse representations
+  Genetic Algorithms for training NNs
+    Unclear whether it would work
   
   List of 100 problems
