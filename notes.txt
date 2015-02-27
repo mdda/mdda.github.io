@@ -239,6 +239,7 @@ TODO :  Add reference to all of these on RedCatLabs.com
 Ideas for AGI conf
   Needs to be done and written-up by 15-March
     Basics implemented this weekend
+      i.e. decide on project by Saturday night...
     Project finished next weekend
     Submitted on time
     
