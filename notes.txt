@@ -236,16 +236,23 @@ TODO :  Add reference to all of these on RedCatLabs.com
 
 
 
-Ideas for AGI conf
+Ideas for AGI conf : http://agi-conf.org/2015/call-for-papers/
   Needs to be done and written-up by 15-March
     Basics implemented this weekend
       i.e. decide on project by Saturday night...
     Project finished next weekend
     Submitted on time
+    Check 2014 submissions for technical content expectation :
+      <=4page  : Short technical communications summarizing results and ideas of interest to the AGI audience, 
+                 including reports about recent publications, position papers, and preliminary results.
+      <=10page : Regular papers, presenting new research results or rigorously describing new research ideas
+    Needs to be related to Artificial General Intelligence 'specifically'
     
   Dropout as random ensembles
     Structured vs unstructured dropout
       Risky, since not clear what the aim is
+      But still likely to be illuminating in some direction
+        Suitable for optimisation in terms of GEMB(?) operations
       
   Teacher / Student networks
     Slightly sexier topic, since so current
