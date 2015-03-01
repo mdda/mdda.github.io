@@ -307,6 +307,10 @@ Ideas for AGI conf : http://agi-conf.org/2015/call-for-papers/
     dvipdf llncs.dvi llncs.dvi-to.pdf
     evince llncs.dvi-to.pdf 
     # pages 5-16 are relevant for conf submission
+    
+    latex AGI-2015_v1.tex && dvipdf cdvi 
+    evince AGI-2015_v1.pdf &
+
 
 
 http://www.wikicfp.com/cfp/servlet/event.showcfp?eventid=42780&copyownerid=54896
