@@ -298,10 +298,15 @@ Ideas for AGI conf : http://agi-conf.org/2015/call-for-papers/
   List of 100 problems
 
   Generating PDF using downloaded LaTeX template : 
-    latex llncs.doc 
+    mkdir ~/mftex/tex/latex/llncs
+    cd  ~/mftex/tex/latex/llncs
+    wget ftp://ftp.springer.de/pub/tex/latex/llncs/latex2e/llncs2e.zip
+    unzip llncs2e.zip
+    cd <PAPER-PREP-DIRECTORY>
+    latex llncs.dem 
     dvipdf llncs.dvi llncs.dvi-to.pdf
     evince llncs.dvi-to.pdf 
-
+    # pages 5-16 are relevant for conf submission
 
 
 http://www.wikicfp.com/cfp/servlet/event.showcfp?eventid=42780&copyownerid=54896
