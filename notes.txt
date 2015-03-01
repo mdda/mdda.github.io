@@ -248,6 +248,10 @@ Ideas for AGI conf : http://agi-conf.org/2015/call-for-papers/
       <=10page : Regular papers, presenting new research results or rigorously describing new research ideas
     Needs to be related to Artificial General Intelligence 'specifically'
     
+    Looking at technical content of other PDFs ...
+      Lots of 10 page documents, pushing 'write-only' local models
+      Seems likely that a 4-page review could be compelling too
+    
   Dropout as random ensembles
     Structured vs unstructured dropout
       Risky, since not clear what the aim is
@@ -292,3 +296,30 @@ Ideas for AGI conf : http://agi-conf.org/2015/call-for-papers/
     Unclear whether it would work
   
   List of 100 problems
+
+
+
+
+http://www.wikicfp.com/cfp/servlet/event.showcfp?eventid=42780&copyownerid=54896
+ICMLC 2015 : 2015 International Conference on Machine Learning and Cybernetnics
+Conference Series : International Conference on Machine Learning and Cybernetics
+Link: http://www.icmlc.com
+When	Jul 12, 2015 - Jul 15, 2015
+Where	Guangzhou, China
+Submission Deadline	Apr 1, 2015
+
+
+http://www.wikicfp.com/cfp/servlet/event.showcfp?eventid=42412&copyownerid=62781
+ACML 2015 : 7th Asian Conference on Machine Learning
+Conference Series : Asian Conference on Machine Learning
+Link: http://acml-conf.org/2015/
+When	Nov 20, 2015 - Nov 22, 2015
+Where	Hong Kong
+Submission Deadline	May 11, 2015
+
+
+NIPS 2015
+Palais des Congrès de Montréal/Convention and Exhibition Center, Montreal, Quebec, Canada
+Tutorials – December 7, 2015
+Conference Sessions – December 7–10, 2015
+Workshops – December 11–12, 2015
