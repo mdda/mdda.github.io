@@ -297,6 +297,10 @@ Ideas for AGI conf : http://agi-conf.org/2015/call-for-papers/
   
   List of 100 problems
 
+  Generating PDF using downloaded LaTeX template : 
+    latex llncs.doc 
+    dvipdf llncs.dvi llncs.dvi-to.pdf
+    evince llncs.dvi-to.pdf 
 
 
 
