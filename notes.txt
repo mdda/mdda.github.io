@@ -298,8 +298,10 @@ Ideas for AGI conf : http://agi-conf.org/2015/call-for-papers/
   List of 100 problems
 
   Generating PDF using downloaded LaTeX template : 
-    mkdir ~/mftex/tex/latex/llncs
-    cd  ~/mftex/tex/latex/llncs
+    # See : https://ask.fedoraproject.org/en/question/44989/how-to-install-latex-for-fedora-19/
+    sudo yum install texlive-scheme-basic
+    mkdir ~/texmf/tex/latex/llncs
+    cd  ~/texmf/tex/latex/llncs
     wget ftp://ftp.springer.de/pub/tex/latex/llncs/latex2e/llncs2e.zip
     unzip llncs2e.zip
     cd <PAPER-PREP-DIRECTORY>
@@ -308,8 +310,11 @@ Ideas for AGI conf : http://agi-conf.org/2015/call-for-papers/
     evince llncs.dvi-to.pdf 
     # pages 5-16 are relevant for conf submission
     
-    latex AGI-2015_v1.tex && dvipdf cdvi 
+    latex AGI-2015_v1.tex && dvipdf AGI-2015_v1.dvi 
     evince AGI-2015_v1.pdf &
+    
+    sudo yum install inotify-tools
+    while true; do inotifywait -qe close_write AGI-2015_v1.tex && latex AGI-2015_v1.tex && dvipdf AGI-2015_v1.dvi ; done
 
 
 
