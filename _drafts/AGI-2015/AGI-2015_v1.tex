@@ -95,10 +95,56 @@ that backpropagation itself might be considered to be several related pieces of 
 and that current Machine Learning research, while exciting, may not be
 discovering new blocks systematically.
 
-\subsection{Autonomous Systems}
+\subsection{Overview}
 
 Deep Learning : 
   New crop of low-hanging fruit
+
+back-propagation : what it is, and what it isn't
+  gradient descent is just a method for energy minimisation
+    there are lots of interesting speed-ups (momentum, AGAgrad, etc)
+    but the actual goal here is finding lower-energy states
+  many other methods exist for minimisation
+  looking at, for instance, whitening : this is a bigger win than fancier gradient descent methods
+    shows that engineering for efficiency may be missing bigger picture
+  
+drop-out is an interesting technique that deserves to be investigated in itself
+  
+ensemble methods
+  this has a direct mathematical underpinning
+  
+sparse encodings
+  relatively unexplored, compared to the use that the brain appears to make of it
+    may be an artifact of brain's components
+    but, looking at word-embedded (whether as float-vectors, or as coincidence matrices)
+      sparse pattern matching is more 'unfairly' powerful 
+
+Evolution
+  Works 'unfairly well'
+  Distance from computation
+    GAs operate directly (parameters for a given substrate)
+    GPs operate (parameters that directly create a substrate)
+    DNA : code that creates stuff that self-organizes to create conditions where 
+      other parts of DNA interact, to produce...   
+        final result is third / forth hand from inital representation
+
+
+higher level human understanding of :
+  mathematics
+    energy minimisation
+    minimum description length
+  
+  systems thinking
+    hierarchies of concepts
+
+  symbolic reasoning
+    brain has a single substrate, organized 'third hand' by DNA
+    AGI designers operate more hands-on
+      constrained by iteration speed (new structures)
+      constrained by local search (new ideas)
+
+
+
 
 
 \paragraph{Notes and Comments.}
