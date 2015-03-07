@@ -106,14 +106,20 @@ back-propagation : what it is, and what it isn't
     there are lots of interesting speed-ups (momentum, AGAgrad, etc)
     but the actual goal here is finding lower-energy states
   many other methods exist for minimisation
-    eg: WTF-propagation : random matrix error propagation
+    eg: WTF-propagation : random matrix error propagation (Lillicrap 2014)
+      possible to use 'structured' random matrices that are compute-friendly?
+      suggests that brute-force computation beats elegant mathematics
+      
   looking at, for instance, whitening : this is a bigger win than fancier gradient descent methods
     shows that engineering for efficiency may be missing bigger picture
+    could whitening applied to old-generation models actually work?
   
 drop-out is an interesting technique that deserves to be investigated in itself
+  possible to use 'structured' dropout that is more compute-friendly?
   
 ensemble methods
   this has a direct mathematical underpinning
+  can't ensemble with single learned core - no diversity created
   
 sparse encodings
   relatively unexplored, compared to the use that the brain appears to make of it
@@ -160,6 +166,9 @@ system goals of brain/neurons not necessarily optimal for conciousness
   brain 
     robustness
     lower power
+    requirements of modern society (much higher reasoning ability) too recent for evolution
+    3d structure
+    approximate replicability
     
   machine
     repeatability
@@ -168,16 +177,32 @@ system goals of brain/neurons not necessarily optimal for conciousness
     
 
 conciousness
-  difference between making a dog and making a person
   still no idea where to start
+  difference between making a dog and making a person
+    capability for sophisticated language model
+      markov state + RNN + beam search -> plausible linguistic output
+  
   stories that we tell ourselves
     narrative that we are aware of is highly edited version of sub
       'top of mind' is what floats to the surface
       deep sea of unconcious though seething away beneath
   introspection necessarily can't get beneath the surface
 
+unsupervised learning is actually weakly supervised 
+  all training examples are positive (compared to non-training examples)
+  JPEG is good compression of visual images
+    suggests that we might train on that, since it's already semi-optimised for visual field
+
+organisation of interesting test cases is biased
+  humans perceive objects that have relationships and labels on different levels
+    these tasks are implicitly also human-learnable
+    properties that are useful to neural network learning (priors, causality, shared factors) are embedded already
+  
 
 
+fertle / toofer / turst exercise in common features biological botanical
+  where did I see this?
+  
 
 
 
