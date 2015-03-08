@@ -112,6 +112,7 @@ back-propagation : what it is, and what it isn't
     eg: WTF-propagation : random matrix error propagation (Lillicrap 2014)
       possible to use 'structured' random matrices that are compute-friendly?
       suggests that brute-force computation beats elegant mathematics
+        brain doesn't need to implement best strategy - just one that works
       
   looking at, for instance, whitening : this is a bigger win than fancier gradient descent methods
     shows that engineering for efficiency may be missing bigger picture
@@ -149,6 +150,8 @@ higher level human understanding of :
   mathematics
     energy minimisation
     minimum description length
+    mutual information
+    
   
   systems thinking
     hierarchies of concepts
@@ -159,11 +162,13 @@ higher level human understanding of :
       mass experimentation (at forefront of Deep Learning, for instance) beneficial
         things that work unfairly well can be systematised/rationalised later
 
+
   symbolic reasoning
     brain has a single substrate, organized 'third hand' by DNA
     AGI designers operate more hands-on
       constrained by iteration speed (new structures)
       constrained by local search (new ideas)
+
 
 system goals of brain/neurons not necessarily optimal for conciousness
   brain 
@@ -174,6 +179,7 @@ system goals of brain/neurons not necessarily optimal for conciousness
     approximate replicability
     wasteful approaches to computation may still be a 'win' in other aspects 
       (power, speed, robustness, style of convergence, communicability, etc)
+    limited capacity for 'front of mind' ideas : 6 things
     
   machine
     repeatability
@@ -202,7 +208,7 @@ organisation of interesting test cases is biased
   humans perceive objects that have relationships and labels on different levels
     these tasks are implicitly also human-learnable
     properties that are useful to neural network learning (priors, causality, shared factors) are embedded already
-  no interest in classifying (for instance) different 'random' images
+  no interest in classifying (for instance) different 'random noise' images
 
 PCA is a 'high level' concept
   but can be implemented using simple circulation of error terms
