@@ -1,4 +1,11 @@
 
+
+
+
+
+
+
+
 Deep Learning : 
   New crop of low-hanging fruit 
     ref: previous AI hype that lead to winters after picking the low-hanging fruit
