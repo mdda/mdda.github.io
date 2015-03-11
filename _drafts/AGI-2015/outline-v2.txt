@@ -1,15 +1,5 @@
 
 
-
-
-
-
-
-
-Deep Learning : 
-  New crop of low-hanging fruit 
-    ref: previous AI hype that lead to winters after picking the low-hanging fruit
-
 back-propagation : what it is, and what it isn't
   gradient descent is just a method for energy minimisation
     there are lots of interesting speed-ups (momentum, AGAgrad, etc)
@@ -26,10 +16,14 @@ back-propagation : what it is, and what it isn't
   looking at, for instance, whitening : this is a bigger win than fancier gradient descent methods
     shows that engineering for efficiency may be missing bigger picture
     could whitening applied to old-generation models actually work?
-  
-drop-out is an interesting technique that deserves to be investigated in itself
-  possible to use 'structured' dropout that is more compute-friendly?
-  
+
+  drop-out is an interesting technique that deserves to be investigated in itself
+    possible to use 'structured' dropout that is more compute-friendly?
+    
+Deep Learning : 
+  New crop of low-hanging fruit 
+    ref: previous AI hype that lead to winters after picking the low-hanging fruit
+
 ensemble methods
   this has a direct mathematical underpinning
   can't ensemble with single learned core - no diversity created

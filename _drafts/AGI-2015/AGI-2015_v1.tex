@@ -64,24 +64,23 @@ In order to set the current wave in context, Joscha Bach
 %we don't know how the software should be written - 
 %we have some good pointers though.
 
-I think that 
-eventually it will boil down to a few hundred organisational principals
+I think that eventually it will boil down to a few hundred organisational principals
 \dots
-
+%
 %that can be encoded in the genome
 %and the upper complexity boundary for 
 %this is probably the information content of the genome
 %which, famously, fits on a CDROM.
-
+%
 %So actually our blueprint for our body is simpler than
 %the blueprint for a current edition of Microsoft Windows.  
 %But it has not been built to be re-engineered.  
+%
+(However) it is very difficult to find the organising principles.
 
-It is very difficult to find the organising principles.
-
-And it's often very easy to see them in hind-sight : 
+And it's often very easy to see them in hindsight : 
 Backpropagation learning, with hindsight, is a very, very simple phenomenon, 
-but it took mankind a  very long time to hit upon the principle of Backpropagation learning. 
+but it took mankind a very long time to hit upon the principle of Backpropagation learning. 
 
 I guess we have a few hundred problems on the difficulty level of Backpropagation learning to solve before we get to AGI. 
 
@@ -95,30 +94,119 @@ that backpropagation itself might be considered to be several related pieces of 
 and that current Machine Learning research, while exciting, may not be
 discovering new blocks systematically.
 
-\subsection{Overview}
+%\section{Overview}
+%
+%Short "technical communications", with a limit of 4 pages, 
+%summarizing results and ideas of interest to the AGI audience, 
+%including : 
+%  reports about recent publications, 
+%  position papers, and 
+%  preliminary results.
+%
+%Appropriate topics for contributed papers include, but are not restricted to:
+%  Creativity
+%  Knowledge Representation for General Intelligence
+%  Learning, and Learning Theory
+%  Natural Language Understanding
+%  Neural-Symbolic Processing
+%  Philosophy of AGI
+%  Reinforcement Learning
 
-Short "technical communications", with a limit of 4 pages, 
-summarizing results and ideas of interest to the AGI audience, 
-including : 
-  reports about recent publications, 
-  position papers, and 
-  preliminary results.
+\section{Organisational Principles}
+
+Here are some of the key organisational principles that seem appropriate to label 'foundational' :
+
+\subsubsection*{Ensemble Methods.}
+  this has a direct mathematical underpinning
+  can't ensemble with single learned core - no diversity created
+
+drop-out is an interesting technique that deserves to be investigated in itself
+  possible to use 'structured' dropout that is more compute-friendly?
 
 
-Appropriate topics for contributed papers include, but are not restricted to:
-  Creativity
-  Knowledge Representation for General Intelligence
-  Learning, and Learning Theory
-  Natural Language Understanding
-  Neural-Symbolic Processing
-  Philosophy of AGI
-  Reinforcement Learning
+\subsubsection*{Sparse Encodings.}
+  relatively unexplored, compared to the use that the brain appears to make of it
+    may be an artifact of brain's components
+    
+\subsubsection*{Word Embeddings.}
+    but, looking at word-embedded (whether as float-vectors, or as coincidence matrices)
+      sparse pattern matching is more 'unfairly' powerful 
+      random projection
 
-\subsubsection*{Back-Propagation.}
-sdfksdkfldf asf asdf asdf asdf asdf 
+\subsubsection*{Convolutions.}
+don't seem foundational, but for the fact that it exposes a useful representational property
 
-\subsubsection*{Back-Propagation Again.}
-sdfksdkfldf asf asdf asdf asdf asdf 
+also interesting that convolutional layers seem to map (loosely) on the 
+different levels of processing within the brain.
+
+\subsubsection*{Evolution.}
+  Works 'unfairly well'
+  Distance from computation
+    GAs operate directly (parameters for a given substrate)
+    GPs operate (parameters that directly create a substrate)
+    DNA : code that creates stuff that self-organizes to create conditions where 
+      other parts of DNA interact, to produce...   
+        final result is third / forth hand from inital representation
+
+\subsubsection*{Internal Representations.}
+  cross-domain knowledge
+    already demonstrated that internal representations can be re-used effectively
+    another 'unfair advantage'
+  Also a potential unit for an 'idea'
+    need to work on transitions between ideas : Stories
+      ... and then we'd really be getting somewhere
+
+\subsubsection*{energy minimisation}
+PCA is a 'high level' concept
+  but can be implemented using simple circulation of error terms
+  efficient compute implementation uses features of silicon unavailable to biological neurons
+
+\subsubsection*{Minimum Description Length.}
+
+
+\subsubsection*{Stories.}
+
+
+\subsubsection*{Implicit Priors.}
+unsupervised learning is actually weakly supervised 
+  humans perceive objects that have relationships and labels on different levels
+    these tasks are implicitly also human-learnable
+    properties that are useful to neural network learning (priors, causality, shared factors) are embedded already
+  no interest in classifying (for instance) different 'random noise' images
+  features that are interesting to humans seem to be either fairly independent or subsetting
+    unlikely to have interesting features that are complicated vectors of properties
+    this is an interesting prior that can be imposed on a network
+      "Priors Regarding The Underlying Factors" : Section 14.5 of Bengio deep learning book (in preview) 
+        \cite{Bengio-et-al-2014-Book} 
+
+
+
+
+\section{BackPropagation Thoughts}
+  gradient descent is just a method for energy minimisation
+    there are lots of interesting speed-ups (momentum, AGAgrad, etc)
+      but biological plausibility already left the building
+      
+    actual goal is finding lower-energy states
+      update methods and enhancements are techniques, not essential elements
+
+\subsubsection*{Network Whitening.}
+    shows that engineering for efficiency may be missing bigger picture
+    could whitening applied to old-generation models actually work?
+
+\subsubsection*{Random Propagation.}
+    eg: WTF-propagation : random matrix error propagation (Lillicrap 2014)
+      possible to use 'structured' random matrices that are compute-friendly?
+      suggests that brute-force computation beats elegant mathematics
+        brain doesn't need to implement best strategy - just one that works
+
+\subsubsection*{Drop-out.}
+    something is going on here that is not really understood
+    
+\subsubsection*{Deep Learning.}
+  New crop of low-hanging fruit 
+    ref: previous AI hype that lead to winters after picking the low-hanging fruit
+
 
 \paragraph{Notes and Comments.}
 
