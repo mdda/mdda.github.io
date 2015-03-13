@@ -11,3 +11,18 @@ published: false
 
 {% include custom/paper_review %}
 
+Dropout
+------------
+
+
+According to 'lore', dropout:
+  Forces the network to search over multiple ensembles
+  Stops neurons becoming reliant on the answer that another is giving
+  
+
+ReLU have one-sided function, meaning that gradients cannot propagate if unit not overall 'on'
+
+ABS units would accomplish manifold folding
+
+Two ReLUs can make an ABS, but two ABS can only make a ReLU if one centre offset a lot
+
