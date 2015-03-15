@@ -18,7 +18,8 @@ Dropout
 According to 'lore', dropout:
   Forces the network to search over multiple ensembles
   Stops neurons becoming reliant on the answer that another is giving
-  
+
+  Is like 'altitude training' : Wager et al, Altitude Training: Strong Bounds for Single-Layer Dropout, NIPS 2014
 
 ReLU vs alternatives 
   ReLU have one-sided function, meaning that gradients cannot propagate if unit not overall 'on'
@@ -35,6 +36,7 @@ Doesn't appear to allow for inhibition
 If a neuron doesn't fire in any interesting way, its weight should drop to zero
   And then be taken out of the pool, and replaced with something different (/complimentary?) to what remains
   
+
 
 
 Whitening is a solution to a problem that shouldn't occur
