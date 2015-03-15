@@ -1,17 +1,17 @@
 ---
 layout: post
 category: AI
-title: The Dropout Puzzle
-tagline: What does dropout really do?
-date: 2015-03-13
-tags: [NeuralNetworks,Dropout]
+title: PCA and Friends
+tagline: Quasi-PCA may be interesting
+date: 2015-03-17
+tags: [NeuralNetworks,PCA]
 published: false
 ---
 {% include JB/setup %}
 
 {% include custom/paper_review %}
 
-Dropout
+PCA and Friends
 ------------
 
 
