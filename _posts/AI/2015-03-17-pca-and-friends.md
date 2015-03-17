@@ -22,3 +22,11 @@ CorEx
     Code: https://github.com/gregversteeg/CorEx
 
 
+Provable Non-convex Robust PCA *
+  Microsoft
+  NIPS 2014
+  Robust PCA, matrix decomposition, non-convex methods, alternating projections
+
+Sparse PCA via Covariance Thresholding
+  NIPS 2014
+
