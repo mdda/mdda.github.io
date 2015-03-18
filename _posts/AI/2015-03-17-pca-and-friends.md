@@ -20,7 +20,15 @@ CorEx
     Greg Ver Steeg
     Aram Galstyan
     Code: https://github.com/gregversteeg/CorEx
-
+      Seems that update process is intrinsically rather simple 
+        So the magic is in the formulation
+        All variables in same layer generated at once (?)
+        Initialization of weights is (as usual) random
+  and CorEx 2 paper
+  
+  Extension to continuous variables?
+    Whiteness of the inputs is typically assumed for statistical work
+  
 
 Provable Non-convex Robust PCA *
   Microsoft

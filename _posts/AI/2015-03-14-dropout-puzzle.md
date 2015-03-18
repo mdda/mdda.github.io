@@ -23,6 +23,10 @@ According to 'lore', dropout:
     "Training logistic regression with dropout rates from the range 2 (0, 1) thus gives a family of classifiers between unregularized logistic regression and naive Bayes, allowing us to tune the bias-variance tradeoff."
     "It is also possible to analyze dropout as an adaptive regularizer [6, 9, 13]: in comparison with L 2 regularization, dropout favors the use of rare features and encourages confident predictions."
 
+Also :
+  https://hips.seas.harvard.edu/blog/2013/08/01/icml-highlight-fast-dropout-training/
+
+
 ReLU vs alternatives 
   ReLU have one-sided function, meaning that gradients cannot propagate if unit not overall 'on'
   ABS units would accomplish manifold folding
