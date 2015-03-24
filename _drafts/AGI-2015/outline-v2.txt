@@ -147,6 +147,9 @@ One thing that causes "blow up" is near colinearity
 ReLU is like a one-sided operation
   What does one-sided PCA look like?
     since ReLU(b=b) +/- makes a linear unit
+      But this is poor for learning since ReLU(x<0, b=b)+ReLU(x>0, b=b) doesn't have any gradient in b
+    How about two bent stick PReLU with common b?
+      Shouldn't suffer from gradient issues, only adds "b" and "alpha" as parameters
 
 Sparse PCA tries to fill eigenvectors with many zeroes
   OTOH, we're interested in represetnations that are sparse too
