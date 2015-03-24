@@ -128,3 +128,32 @@ fertle / toofer / turst exercise in common features biological botanical
   
 
 
+max-pooling is odd, since it encourages "competition"
+  but all weights in Conv layer preceeding are linked
+  so it's mostly reducing size/adding location independence
+  
+PCAnet : Why is removing average important?
+  shouldn't all 1s be one of the first components to be removed
+    :: Actually no, eigenvectors don't work with an offset like that
+
+Initial CNN layers search out image-centric juice
+  "Meaning" is in later, non-Conv layers
+  Reality is that Conv stages are "narrow" learning-wise
+    Even though they are wide data-wise
+    
+One thing that causes "blow up" is near colinearity
+  Does PCA embed fixed nroms for eigenvectors?
+  
+ReLU is like a one-sided operation
+  What does one-sided PCA look like?
+    since ReLU(b=b) +/- makes a linear unit
+
+Sparse PCA tries to fill eigenvectors with many zeroes
+  OTOH, we're interested in represetnations that are sparse too
+    (i.e. identity matrix is poor basis set)
+
+Approaches to PCA
+  Vector power
+  Sparse Eigenvectors
+  SVD
+  
