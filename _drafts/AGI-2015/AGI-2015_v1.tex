@@ -108,28 +108,69 @@ Potentially :
 
 \section{Deep Learning Lessons}
 
+  New crop of low-hanging fruit 
+    ref: previous AI hype that lead to winters after picking the low-hanging fruit
 
 \subsubsection*{Exploding gradients are a problem.}
 
 \subsubsection*{More Data.}
 
 \subsubsection*{Whitening of Data.}
+    shows that engineering for efficiency may be missing bigger picture
+    could whitening applied to old-generation models actually work?
+
 
 \subsubsection*{PCA and Friends.}
+PCA is a 'high level' concept
+  but can be implemented using simple circulation of error terms
+  efficient compute implementation uses features of silicon unavailable to biological neurons
 
 \subsubsection*{Natural priors aren't antagonistic.}
+unsupervised learning is actually weakly supervised 
+  humans perceive objects that have relationships and labels on different levels
+    these tasks are implicitly also human-learnable
+    properties that are useful to neural network learning (priors, causality, shared factors) are embedded already
+  no interest in classifying (for instance) different 'random noise' images
+  features that are interesting to humans seem to be either fairly independent or subsetting
+    unlikely to have interesting features that are complicated vectors of properties
+    this is an interesting prior that can be imposed on a network
+      "Priors Regarding The Underlying Factors" : Section 14.5 of Bengio deep learning book (in preview) 
+        \cite{Bengio-et-al-2014-Book} 
 
 \subsubsection*{Convolutional Nets (human-assisted representation).}
+don't seem foundational, but for the fact that it exposes a useful representational property
+
+also interesting that convolutional layers seem to map (loosely) on the 
+different levels of processing within the brain.
 
 \subsubsection*{Did we give up too early?}
  
+\subsubsection*{Random Propagation.}
+    eg: WTF-propagation : random matrix error propagation (Lillicrap 2014)
+      possible to use 'structured' random matrices that are compute-friendly?
+      suggests that brute-force computation beats elegant mathematics
+        brain doesn't need to implement best strategy - just one that works
+
  
 \section{Deep Learning New Stuff}
 
 
 \subsubsection*{Word Vector Embedding works = New Insight.}
+    but, looking at word-embedded (whether as float-vectors, or as coincidence matrices)
+      sparse pattern matching is more 'unfairly' powerful 
+      random projection
 
-\subsubsection*{Transfer Learning.}
+\subsubsection*{Transfer Learning / Internal Representations.}
+  cross-domain knowledge
+    already demonstrated that internal representations can be re-used effectively
+    another 'unfair advantage'
+  Also a potential unit for an 'idea'
+    need to work on transitions between ideas : Stories
+      ... and then we'd really be getting somewhere
+
+
+\subsubsection*{Drop-out.}
+    something is going on here that is not really understood
 
 \subsubsection*{Trailblazing.}
 
@@ -152,17 +193,6 @@ drop-out is an interesting technique that deserves to be investigated in itself
   relatively unexplored, compared to the use that the brain appears to make of it
     may be an artifact of brain's components
     
-\subsubsection*{Word Embeddings.}
-    but, looking at word-embedded (whether as float-vectors, or as coincidence matrices)
-      sparse pattern matching is more 'unfairly' powerful 
-      random projection
-
-\subsubsection*{Convolutions.}
-don't seem foundational, but for the fact that it exposes a useful representational property
-
-also interesting that convolutional layers seem to map (loosely) on the 
-different levels of processing within the brain.
-
 \subsubsection*{Evolution.}
   Works 'unfairly well'
   Distance from computation
@@ -172,40 +202,13 @@ different levels of processing within the brain.
       other parts of DNA interact, to produce...   
         final result is third / forth hand from inital representation
 
-\subsubsection*{Internal Representations.}
-  cross-domain knowledge
-    already demonstrated that internal representations can be re-used effectively
-    another 'unfair advantage'
-  Also a potential unit for an 'idea'
-    need to work on transitions between ideas : Stories
-      ... and then we'd really be getting somewhere
-
-\subsubsection*{energy minimisation}
-PCA is a 'high level' concept
-  but can be implemented using simple circulation of error terms
-  efficient compute implementation uses features of silicon unavailable to biological neurons
-
 \subsubsection*{Minimum Description Length.}
 This concept-cluster is another mathematical one : extending from compression, to information theory,
 encompassing Occam's razor along the way.
 
 \subsubsection*{Stories.}
-
-
-\subsubsection*{Implicit Priors.}
-unsupervised learning is actually weakly supervised 
-  humans perceive objects that have relationships and labels on different levels
-    these tasks are implicitly also human-learnable
-    properties that are useful to neural network learning (priors, causality, shared factors) are embedded already
-  no interest in classifying (for instance) different 'random noise' images
-  features that are interesting to humans seem to be either fairly independent or subsetting
-    unlikely to have interesting features that are complicated vectors of properties
-    this is an interesting prior that can be imposed on a network
-      "Priors Regarding The Underlying Factors" : Section 14.5 of Bengio deep learning book (in preview) 
-        \cite{Bengio-et-al-2014-Book} 
-
-
-
+  ???
+  
 
 \section{BackPropagation Thoughts}
   gradient descent is just a method for energy minimisation
@@ -214,23 +217,6 @@ unsupervised learning is actually weakly supervised
       
     actual goal is finding lower-energy states
       update methods and enhancements are techniques, not essential elements
-
-\subsubsection*{Network Whitening.}
-    shows that engineering for efficiency may be missing bigger picture
-    could whitening applied to old-generation models actually work?
-
-\subsubsection*{Random Propagation.}
-    eg: WTF-propagation : random matrix error propagation (Lillicrap 2014)
-      possible to use 'structured' random matrices that are compute-friendly?
-      suggests that brute-force computation beats elegant mathematics
-        brain doesn't need to implement best strategy - just one that works
-
-\subsubsection*{Drop-out.}
-    something is going on here that is not really understood
-    
-\subsubsection*{Deep Learning.}
-  New crop of low-hanging fruit 
-    ref: previous AI hype that lead to winters after picking the low-hanging fruit
 
 
 \section{The Known Unknown}
