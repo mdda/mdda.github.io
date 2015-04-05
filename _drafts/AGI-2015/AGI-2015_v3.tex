@@ -54,15 +54,9 @@ made an interesting comment that the process of achieving
 AGI will likely require the discovery of `100 organizational principles' - 
 using Backpropagation learning as an example of the scale of each one of those principles.  
 
-This short communication argues that the lessons to be learned from 
-the successes of Deep Learning research are not as clear-cut as they might first appear,
-because the field is still in a rapid exploration phase, and the `conventional wisdom' is
-being rewritten regularly.  
-
-In addition, away from the lime-light surrounding 
-the production of headline results for competitive benchmarks, 
-there may still be much to be gained from examining some of 
-the field's basic questions.
+This short paper reflects on the lessons to be learned from 
+the recent successes of Deep Learning research and its relevance in terms 
+of `the list' of AGI principles.
 
 \keywords{deep learning, backpropagation, AGI organisational principles}
 \end{abstract}
@@ -70,20 +64,19 @@ the field's basic questions.
 \section{Background}
 % **  What deep learning can tell us about finding organizational principles ** 
 
-The history of AI research shows that the discovery of new techniques allows new areas 
-of `intelligent behaviour' to be rapidly brought into the domain of 
-problems that are tractable by computer methods.  
-However, AI has been repeatedly 
-cursed by hype, whereby each of these problems are soon discovered to 
-be `low-hanging fruit' compared to subsequent hurdles discovered in the 
-overall AGI endeavour.
+The history of AI research shows that the discovery of new techniques 
+oftne appears to deamatically expand the boundaries of what is 
+tractable by computer methods.  
+However, AI has been repeatedly cursed by hype, whereby the problems 
+solved are soon discovered to be `low-hanging fruit' compared to subsequent 
+hurdles in the overall AGI endeavour.
 
 Within the Neural Network (NN) field, 
 recent advances in Deep Learning are beginning to show better-than-human 
-levels of perfomance in image classification.  
-It is tempting to believe that other hurdles will be quickly overcome.  
+levels of perfomance in image classification, and 
+it is tempting to believe that other domains will be quickly conquered.  
 This short paper reflects on the lessons that can be learned 
-from the Deep Learning AI sub-genre, which has had its own `winters' 
+from the Deep Learning AI sub-genre, which has had its own `winter' 
 since NNs were first fashionable in the 1980s.  
 
 %\section{Overview}
@@ -109,28 +102,32 @@ since NNs were first fashionable in the 1980s.
 
 \section{Deep Learning Lessons}
 
-For simplicity here, the `early days' will refer to the 1980s/early-1990s,
+For a comprehensive review of the NN and Deep Learning literature, see Schmidhuber (\cite{SchmidhuberOverview}).
+Here, for simplicity, the `early days' will refer to the 1980s/early-1990s,
 the `new phase' as 2006 onwards, and `recently' to 2011 to the present day
 (with much respect to those who founded the field earlier, and also 
-those who soldiered on during the in-between times).  For a comprehensive 
-review, see Schmidhuber (\cite{SchmidhuberOverview}).
-
+those who soldiered on during the in-between times).  
+ 
 
 \subsubsection*{Did we give up too early?}
  
 The reasons being given for the success of the new phase of Deep Learning 
-(compared to the early days) is the combination of increased model size, 
-with vast amounts of training data on machines that are orders of magnitude faster than 
-were available in the early days.  Considering each of these factors :
+(compared to the early days) is the combination of increased model size and 
+vast amounts of training data, using machines that are orders of magnitude faster.  
+Considering each of these factors :
 
 \begin{description}
 
 \item[Model size] - in the early days, it was known (see Harpur (\cite{harpur-thesis})) 
 that tractable techniques such as Principal Component Analysis (PCA) could be implemented 
-in a biologically realistic setting , as well as via more efficient (for silicon) numerical implementations.  
+in a biologically realistic setting, as well as via more efficient (for silicon) numerical implementations.  
 Those linear-based models would have been tractable then, 
-and could have served as a realistic baseline against which to compare 
+and could serve (even now) as a realistic baseline against which to compare 
 more elaborate neural network models (Chan et al (\cite{PCAnet})).
+
+\item[Data] - simply having more data available during the `new phase' 
+is also a factor (The Unreasonable Effectiveness of Data (Halevy, Norvig \& Pereira, \cite{norvig-UnreasonableEffectivenessOfData})
+- as is the bravado actually to push it through a network to see what happens.
 
 \item[Processing Speed] - this factor would be more convincing if it had been reported at the time 
 that the experiments were working, but much too slowly.  
@@ -141,10 +138,6 @@ been run to convergence in the past.
 So maybe the reasoning is more nuanced : It is not just the raw learning speed 
 for a given experiment that is important, but 
 (from a researcher's point of view) the iteration / experiment cycle time.
-
-\item[Data] - simply having more data available during the `new phase' 
-is also a factor (The Unreasonable Effectiveness of Data (Halevy, Norvig \& Pereira, \cite{norvig-UnreasonableEffectivenessOfData})
-- as is the bravado actually to push it through a network to see what happens.
 
 \end{description}
 
@@ -159,7 +152,8 @@ are almost a requirement for reasonable training times.
 While some of these methods have their roots in previous optimisation theory, 
 others have been developed by `seeing what works' - and have shown that 
 learning occurs even with random matrix error propagation 
-(Lillicrap \cite{Lillicrap-random-matrix}).
+(Lillicrap \cite{Lillicrap-random-matrix}).  
+This robustness is a characteristic of `unfair advantage'.
 
 
 \subsubsection*{Exploding gradients.}
@@ -188,6 +182,7 @@ In retrospect, the fact that simple Genetic Algorithms (GAs) could train
 NNs roughly as quickly as gradient descent during the early days, 
 should have been telling : With exact gradients, local search should have 
 been much more effective than any global search method.
+
 
 \subsubsection*{Natural Problems aren't Antagonistic.}
 
@@ -222,36 +217,11 @@ compared to the discovery of radical ideas and subsequent model refinement.
 The following can all be characterized as `unfairly effective', and have 
 arisen as part of the rapid exploration that characterises Deep Learning research.
 
-
 \subsubsection*{Trailblazing.}
 The Deep Learning field appears wide open to new ideas.  
-Practitioners are free to blaze a new trail, and this is sometimes 
-reincorporated into the existing frameworks once researchers in those 
+Practitioners seem to feel free attempt the impossible.  
+This is sometimes reincorporated into the mainstream once researchers in those 
 fields realize that something previously unthinkable actually works.
-
-
-\subsubsection*{Drop-out.}
-This training enhancement (Hinton et al, (\cite{hinton-dropout})) 
-can be rationalised as allowing multiple competitive ensembles to self-organize.  
-However, despite the essence of its operation not being fully understood, 
-many researches are using it as part of the standard toolkit without 
-exploring why it works.
-
-
-\subsubsection*{Convolutional NNs.}
-This formulation of NNs started as a trick to usefully capture 
-the structural properties of input images.  
-However, it was then found that the network layers map (loosely) 
-to the different levels of processing within the brain in a way that is highly suggestive 
-of having explanatory power.
-
-
-\subsubsection*{Word Vector Embedding.}
-Originally almost a by-product of learning a word-prediction task, a vector 
-space can be automatically learned to describe words (given a sufficient
-quantity of well-formed sentences in a given langauge, and \emph{zero} linguistic knowledge).
-This is both surprising and encouraging for AGI.
-
 
 \subsubsection*{Transfer Learning / Internal Representations.}
 Taking a cross-section through a trained network to see its internal representation
@@ -264,12 +234,30 @@ has powerful implications regarding the power of networks trained by
 different modalities to enhance each other's effectiveness without the 
 brittleness associated with building a single 'monolithic' system.
 
+\subsubsection*{Word Vector Embedding.}
+Originally almost a by-product of learning a word-prediction task, a vector 
+space can be automatically learned to describe words (given a sufficient
+quantity of well-formed sentences in a given langauge, and \emph{zero} linguistic knowledge).
+This is both surprising and encouraging for AGI.
 
+\subsubsection*{Convolutional NNs.}
+This formulation of NNs started as a trick to usefully capture 
+the structural properties of input images.  
+However, it was then found that the network layers map (loosely) 
+to the different levels of processing within the brain in a way that is highly suggestive 
+of having explanatory power.
+
+\subsubsection*{Drop-out.}
+This training enhancement (Hinton et al, (\cite{hinton-dropout})) 
+can be rationalised as allowing multiple competitive ensembles to self-organize.  
+However, despite the essence of its operation not being fully understood, 
+many researches are using it as part of the standard toolkit without 
+exploring why it works.
 
 
 \section{Other Organisational Principles}
 
-Here are some of the key organisational principles that seem appropriate 
+As a side-note, there are a few more organisational principles that seem appropriate 
 to label `foundational' to the cause of AGI :
 \begin{description}
 \item[Ensemble Methods] - whereby an ensemble of different approaches to 
@@ -283,6 +271,8 @@ a winter of its own, despite working `unfairly well'.
 \item[Minimum Description Length] - a concept-cluster that extends from compression, 
 to information theory, encompassing Occam's razor along the way.
 \end{description}
+
+%\section{Conclusions}
 
 %
 % ---- Bibliography ----
@@ -513,6 +503,15 @@ conciousness
       `top of mind' is what floats to the surface
       deep sea of unconscious though seething away beneath
   introspection necessarily can't get beneath the surface
+
+ are not as clear-cut as they might first appear,
+because the field is still in a rapid exploration phase, and the `conventional wisdom' is
+being rewritten regularly.  
+
+In addition, away from the lime-light surrounding 
+the production of headline results for competitive benchmarks, 
+there may still be much to be gained from examining some of 
+the field's basic questions.
 
 \end{document}
 
