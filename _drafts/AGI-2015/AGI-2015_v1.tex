@@ -223,7 +223,7 @@ nuanced internal representations that a simple PCA approach might suggest.
 
 \subsubsection*{Convolutional Nets (human-assisted representation).}
 
-The formulation of Convolution networks is also part of the new movement, 
+The formulation of Convolution Networks is also part of the new movement, 
 and it is interesting because it exposes a useful representational property of images.  
 But it is somewhat hiding the fact that human knowledge is being implicitly 
 built into the network via the representation scheme.
@@ -235,6 +235,9 @@ in a way that is highly suggestive of having explanatory power.
  
 \section{Deep Learning New Stuff}
 
+The following can all be characterized as `unfairly effective', and have 
+arisen as part of the rapid exploration that characterises Deep Learning research.
+
 \subsubsection*{Word Vector Embedding.}
 
     but, looking at word-embedded (whether as float-vectors, or as coincidence matrices)
@@ -242,18 +245,21 @@ in a way that is highly suggestive of having explanatory power.
       random projection
 
 \subsubsection*{Transfer Learning / Internal Representations.}
-  cross-domain knowledge
-    already demonstrated that internal representations can be re-used effectively
-    another `unfair advantage'
-  Also a potential unit for an `idea'
-    need to work on transitions between ideas : Stories
-      ... and then we'd really be getting somewhere
+Taking a cross-section through a trained network to see its internal representation
+has been shown to be applicable to other problem domains (Karpathy \& Fei-Fei, \cite{karpathy2014deep}).
+
+The usefulness of these internal representations
+\footnote{ ... which could also be thought of as 'ideas', particularly 
+if there were a means to capture transitions between them, aka `stories'.}
+has powerful implications regarding the power of networks trained by 
+different modalities to enhance each other's effectiveness without the 
+brittleness associated with building a single 'monolithic' system.
 
 
 \subsubsection*{Drop-out.}
-Another `unfairly effective' approach that can be rationalised as allowing 
-multiple competitive ensembles to self-organize.  However, 
-despite the essence of its operation not being fully understood, 
+this training enhancement (Hinton et al, (\cite{hinton-dropout})) 
+can be rationalised as allowing multiple competitive ensembles to self-organize.  
+However, despite the essence of its operation not being fully understood, 
 many researches are using it as part of the standard toolkit without 
 exploring why it works.
 
@@ -335,10 +341,20 @@ Harpur, George Francis:
 Low entropy coding with unsupervised neural networks
 Dissertation, University of Cambridge (1997).
 
+\bibitem[2012]{hinton-dropout}
+Hinton, Geoffrey E and Srivastava, Nitish and Krizhevsky, Alex and Sutskever, Ilya and Salakhutdinov, Ruslan R:
+Improving neural networks by preventing co-adaptation of feature detectors
+arXiv preprint arXiv:1207.0580 (2012)
+
 \bibitem[2015]{WhiteningOfData}
 Sergey Ioffe, Christian Szegedy:
 Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift
 eprint arXiv:1502.03167v3 (2015)
+
+\bibitem[2014]{karpathy2014deep}
+Karpathy, Andrej and Fei-Fei, Li:
+Deep visual-semantic alignments for generating image descriptions
+arXiv preprint arXiv:1412.2306 (2014)
 
 \bibitem[2014]{Lillicrap-random-matrix}
 Lillicrap, Timothy P.; Cownden, Daniel; Tweed, Douglas B.; Akerman, Colin J.:
