@@ -119,14 +119,14 @@ and could serve (even now) as a realistic baseline against which to compare
 more elaborate neural network models (Chan et al \cite{PCAnet}).
 
 \item[Data] - simply having more data available during the `new phase' 
-is also a factor (The Unreasonable Effectiveness of Data : Halevy, Norvig \& Pereira \cite{norvig-UnreasonableEffectivenessOfData})
-- as is the bravado actually to push it through a network to see what happens.
+is also a factor\footnote{as is the bravado actually to attempt to train a model on the data to see what happens.}
+(The Unreasonable Effectiveness of Data : Halevy, Norvig \& Pereira \cite{norvig-UnreasonableEffectivenessOfData}).
 
 \item[Processing Speed] - this factor would be more convincing if it had been reported at the time 
 that the experiments were working, but much too slowly.  
-In today's experiments, large (downward) jumps in error are experienced in early training epochs.  
-These jumps should have been observable even if the experiment couldn't have 
-been run to convergence in the past.  
+In today's experiments, large (downward) jumps in error are usually experienced in early training epochs.  
+These jumps should have been observable in the past 
+even if the experiment couldn't have been run to convergence.  
 
 So maybe the reasoning is more nuanced : It is not just the raw learning speed 
 for a given experiment that is important, but 
@@ -157,14 +157,14 @@ With the new phase of research came techniques that mitigate the problem :
 \begin{description}
 
 \item[Rectified Linear Units (ReLU) layers] - by computing output vectors $y$ 
-as $y=max(Wx+b, 0)$, this minimalistic computation neatly avoids 
-scaling problems by having the non-linearity agnostic to scale.
+using the minimalistic computation $y=max(Wx+b, 0)$ neatly avoids 
+scaling problems, since the non-linearity is scale-agnostic.
 
 \item[Informed intialisation schemes] - network weights are initialised 
 to random values that are scaled based on fan-in/fan-out considerations as a way of making the 
 average scaling-factor of the matrix multiplication closer to unity.
 
-\item[Normalization] - the scaling of the layer outputs is controlled
+\item[Normalization] - the scaling of the layer outputs can be controlled
 dynamically (described in G{\"u}l{\c{c}}ehre and Bengio \cite{bengio-whitening} and 
 Ioffe and Szegedy \cite{WhiteningOfData}).
 
@@ -244,17 +244,19 @@ exploring why it works.
 
 \section{Other Organisational Principles}
 
-As a side-note, there are a few more organisational principles that seem appropriate 
+Instead of reiterating points made above (by way of a conclusion), 
+it is worth highlighting here a few more organisational principles that seem appropriate 
 to label `foundational' to the cause of AGI :
+
 \begin{description}
+\item[Evolutionary Methods] - currently appear to be suffering through 
+a winter of its own, despite working `unfairly well'.
 \item[Ensemble Methods] - whereby an ensemble of different approaches to 
 solving a problem to rise above the accuracy 
 of any one method has a simple mathematical underpinning.  
 \item[Sparse Encodings] - relatively unexplored compared to the use that 
 the brain appears to make of them (note that Sparse PCA, while interesting, 
 may be optimising for the `final layer' rather than useful intermediate steps).
-\item[Evolutionary Methods] - currently appear to be suffering through 
-a winter of its own, despite working `unfairly well'.
 \item[Minimum Description Length] - a concept-cluster that extends from compression, 
 to information theory, encompassing Occam's razor along the way.
 \end{description}
@@ -326,195 +328,8 @@ Schmidhuber, J{\"u}rgen:
 Deep Learning in Neural Networks: An Overview.
 arXiv:1404.7828v4 (2014)
 
-%\bibitem {clar:eke}
-%Clarke, F., Ekeland, I.:
-%Nonlinear oscillations and
-%boundary-value problems for Hamiltonian systems.
-%Arch. Rat. Mech. Anal. 78, 315--333 (1982)
-%
-%\bibitem {clar:eke:2}
-%Clarke, F., Ekeland, I.:
-%Solutions p\'{e}riodiques, du
-%p\'{e}riode donn\'{e}e, des \'{e}quations hamiltoniennes.
-%Note CRAS Paris 287, 1013--1015 (1978)
-%
-%\bibitem {mich:tar}
-%Michalek, R., Tarantello, G.:
-%Subharmonic solutions with prescribed minimal
-%period for nonautonomous Hamiltonian systems.
-%J. Diff. Eq. 72, 28--55 (1988)
-% 
-%\bibitem {tar}
-%Tarantello, G.:
-%Subharmonic solutions for Hamiltonian
-%systems via a $\bbbz_{p}$ pseudoindex theory.
-%Annali di Matematica Pura (to appear)
-%
-%\bibitem {rab}
-%Rabinowitz, P.:
-%On subharmonic solutions of a Hamiltonian system.
-%Comm. Pure Appl. Math. 33, 609--633 (1980)
 
 \end{thebibliography}
-
-\newpage
-
-\section{OLD Background}
-The study of machine intelligence has suffered from a number of false dawns, 
-as practitioners at the forefront of the latest wave (dubbed `deep learning') 
-are keenly aware.  
-%
-%However, despite their caution, it remains difficult to restrain reporters
-%who want to marvel at the latest `magic' being produced by AI research.
-
-In order to set the current wave in context, Joscha Bach \cite{Joscha-Bach-2012-interview}
-commented that :
-
-\begin{quotation}
-%nature has managed to do it
-%we don't know how the software should be written - 
-%we have some good pointers though.
-
-I think that eventually it will boil down to a few hundred organisational principals
-\dots
-%
-%that can be encoded in the genome
-%and the upper complexity boundary for 
-%this is probably the information content of the genome
-%which, famously, fits on a CDROM.
-%
-%So actually our blueprint for our body is simpler than
-%the blueprint for a current edition of Microsoft Windows.  
-%But it has not been built to be re-engineered.  
-%
-(However) it is very difficult to find the organising principles.
-
-And it's often very easy to see them in hindsight : 
-Backpropagation learning, with hindsight, is a very, very simple phenomenon, 
-but it took mankind a very long time to hit upon the principle of Backpropagation learning. 
-
-I guess we have a few hundred problems on the difficulty level of Backpropagation learning to solve before we get to AGI. 
-
-%And so, in my perspective, we have many, many PhD students that need to get engaged
-%with this and combine this into a common platform - I don't see any easy shortcuts.
-
-\end{quotation}
-
-This paper argues that several other building blocks are also evident, 
-that backpropagation itself might be considered to be several related pieces of the puzzle,
-and that current Machine Learning research, while exciting, may not be
-discovering new blocks systematically.
-
-The history of AI research shows that the discovery of new techniques 
-oftne appears to deamatically expand the boundaries of what is 
-tractable by computer methods.  
-However, AI has been repeatedly cursed by hype, whereby the problems 
-solved are soon discovered to be `low-hanging fruit' compared to subsequent 
-hurdles in the overall AGI endeavour.
-
-
-
-\subsubsection*{Ensemble Methods.}
-The ability of an ensemble of different approaches to solving a problem to rise above the accuracy 
-of any one method has a simple mathematical underpinning.  
-
-Can't make an ensemble with single learned core - no diversity created
-
-drop-out is an interesting technique that deserves to be investigated in itself
-  possible to use `structured' dropout that is more compute-friendly?
-
-
-\subsubsection*{Sparse Encodings.}
-  relatively unexplored, compared to the use that the brain appears to make of it
-    may be an artifact of brain's components
-    
-\subsubsection*{Evolution.}
-  Works `unfairly well'
-  Distance from computation
-    GAs operate directly (parameters for a given substrate)
-    GPs operate (parameters that directly create a substrate)
-    DNA : code that creates stuff that self-organizes to create conditions where 
-      other parts of DNA interact, to produce...   
-        final result is third / forth hand from inital representation
-
-\subsubsection*{Minimum Description Length.}
-This concept-cluster is another mathematical one : extending from compression, to information theory,
-encompassing Occam's razor along the way.
-
-\subsubsection*{Stories.}
-  ???
-
-
-\section{BackPropagation Thoughts}
-  gradient descent is just a method for energy minimisation
-    there are lots of interesting speed-ups (momentum, AGAgrad, etc)
-      but biological plausibility already left the building
-      
-    actual goal is finding lower-energy states
-      update methods and enhancements are techniques, not essential elements
-
-
-
-
-The robustness of the quasi-backpropation algorithms being used to noise
-suggests that brute-force computation can beat elegant mathematics, and that 
-the brain doesn't need to be able to implement an optimal strategy - just one that works.
-
-
-unsupervised learning is actually weakly supervised 
-
-  humans perceive objects that have relationships and labels on different levels
-    these tasks are implicitly also human-learnable
-    properties that are useful to neural network learning (priors, causality, shared factors) are embedded already
-    
-  no interest in classifying (for instance) different `random noise' images
-  
-  features that are interesting to humans seem to be either fairly independent or subsetting
-    unlikely to have interesting features that are complicated vectors of properties
-    this is an interesting prior that can be imposed on a network
-
-\subsubsection*{Convolutional Nets.}
-The formulation of Convolution Networks is also part of the new movement, 
-and it is interesting because it exposes a useful representational property of images.  
-But it is somewhat hiding the fact that human knowledge is being implicitly 
-built into the network via the representation scheme.
-
-The flip side of this is that the convolutional layers seem to 
-map (loosely) to the different levels of processing within the brain - 
-in a way that is highly suggestive of having explanatory power.
-
-
-\section{The Known Unknown}
-
-conciousness 
-  still no idea where to start
-  difference between making a dog and making a person
-    capability for sophisticated language model
-      markov state + RNN + beam search == plausible linguistic output
-  
-  stories that we tell ourselves
-    narrative that we are aware of is highly edited version of sub
-      `top of mind' is what floats to the surface
-      deep sea of unconscious though seething away beneath
-  introspection necessarily can't get beneath the surface
-
- are not as clear-cut as they might first appear,
- 
-because the field is still in a rapid exploration phase, and the `conventional wisdom' is
-being rewritten regularly.  
-
-In addition, away from the lime-light surrounding 
-the production of headline results for competitive benchmarks, 
-there may still be much to be gained from examining some of 
-the field's basic questions.
-
-This robustness is a characteristic of `unfair advantage'.
-
-\footnote{
-Label sparsity is something that likely occurs at multiple levels in the brain 
-(rather than just at the output layer) and is also in contrast to the 
-nuanced internal representations that a simple PCA approach might suggest.
-}
 
 \end{document}
 
