@@ -122,13 +122,28 @@ had its own 'winters' since Neural Networks were first fashionable in the 1980s.
 
 
 \subsubsection*{Exploding gradients are a problem.}
-Mitigated now with :
-  ReLU
-  Better initialization
 
-NB: GAs could train NNs approximately as well as gradient descent, which 
-is / should have been telling : With exact gradients, local search should have 
-been very effective.
+Even though the basic operation of a layer (matrix multiple and non-linearity) 
+have been apparent since the beginning, it is only relatively recently that 
+techniques have been uncovered that mitigate the problem : 
+(i) Rectified Linear Units (ReLU) layers 
+and (ii) informed intialisation schemes.  
+
+ReLU layers, where an output vector $y$ is given by $y=max(Wx+b, 0)$, simply 
+avoid scaling problems by having the non-linearity agnostic to scale.
+
+Initialising the weights to random values that are scaled 
+based on fan-in/fan-out considerations is a way of making the 
+average scaling-factor of the matrix multiplication closer to unity.
+
+In retrospect, the fact that simple Genetic Algorithms (GAs) could train 
+Neural Networks roughly as quickly as gradient descent, should have been 
+telling : With exact gradients, local search should have been much more effective
+than any global search method.
+
+\subsubsection*{Whitening of Data.}
+    shows that engineering for efficiency may be missing bigger picture
+    could whitening applied to old-generation models actually work?
 
 
 \subsubsection*{More Data.}
@@ -136,10 +151,6 @@ been very effective.
     The Unreasonable Effectiveness of Data  Norvig et al (\cite{norvig-UnreasonableEffectivenessOfData}).
     
 
-
-\subsubsection*{Whitening of Data.}
-    shows that engineering for efficiency may be missing bigger picture
-    could whitening applied to old-generation models actually work?
 
 
 \subsubsection*{PCA and Friends.}
