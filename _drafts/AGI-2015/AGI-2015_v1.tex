@@ -198,8 +198,6 @@ elaborate neural network models (Chan et al (\cite{PCAnet})).
 However, techniques such as Singular Value Decomposition (SVD) can more 
 efficiently compute the same results using features of silicon unavailable to biological neurons.
 
-Sparse PCA is a step in the right direction, but may be optimising the wrong sparsity.
- 
 
 \subsubsection*{Natural Problems aren't Antagonistic.}
 
@@ -238,11 +236,28 @@ in a way that is highly suggestive of having explanatory power.
 The following can all be characterized as `unfairly effective', and have 
 arisen as part of the rapid exploration that characterises Deep Learning research.
 
-\subsubsection*{Word Vector Embedding.}
 
-    but, looking at word-embedded (whether as float-vectors, or as coincidence matrices)
-      sparse pattern matching is more `unfairly' powerful 
-      random projection
+\subsubsection*{Trailblazing.}
+The Deep Learning field appears wide open to new ideas.  
+Practitioners are free to blaze a new trail, and this is sometimes 
+reincorporated into the existing frameworks once researchers in those 
+fields realize that something previously unthinkable actually works.
+
+
+\subsubsection*{Drop-out.}
+this training enhancement (Hinton et al, (\cite{hinton-dropout})) 
+can be rationalised as allowing multiple competitive ensembles to self-organize.  
+However, despite the essence of its operation not being fully understood, 
+many researches are using it as part of the standard toolkit without 
+exploring why it works.
+
+
+\subsubsection*{Word Vector Embedding.}
+Originally almost a by-product of learning a word-prediction task, a vector 
+space can be automatically learned to describe words (given a sufficient
+quantity of well-formed sentences in a given langauge, and \it{zero} linguistic knowledge).
+This is both surprising and encouraging for AGI.
+
 
 \subsubsection*{Transfer Learning / Internal Representations.}
 Taking a cross-section through a trained network to see its internal representation
@@ -256,19 +271,6 @@ different modalities to enhance each other's effectiveness without the
 brittleness associated with building a single 'monolithic' system.
 
 
-\subsubsection*{Drop-out.}
-this training enhancement (Hinton et al, (\cite{hinton-dropout})) 
-can be rationalised as allowing multiple competitive ensembles to self-organize.  
-However, despite the essence of its operation not being fully understood, 
-many researches are using it as part of the standard toolkit without 
-exploring why it works.
-
-
-\subsubsection*{Trailblazing.}
-The Deep Learning field appears wide open to new ideas.  
-Practitioners are free to blaze a new trail, and this is sometimes 
-reincorporated into the existing frameworks once researchers in those 
-fields realize that something previously unthinkable actually works.
 
 
 \section{Other Organisational Principles}
@@ -276,12 +278,14 @@ fields realize that something previously unthinkable actually works.
 Here are some of the key organisational principles that seem appropriate 
 to label `foundational' to the cause of AGI :
 \begin{description}
-\item[Ensemble Methods] - whereby an ensemble of different approaches to solving a problem to rise above the accuracy 
+\item[Ensemble Methods] - whereby an ensemble of different approaches to 
+solving a problem to rise above the accuracy 
 of any one method has a simple mathematical underpinning.  
-\item[Sparse Encodings] - relatively unexplore compared to the use that the brain appears to make of them
-(see also : priors)
-\item[Evolutionary Methods] - currently appear to be suffering through a winter of their own, 
-despite working `unfairly well'
+\item[Sparse Encodings] - relatively unexplored compared to the use that 
+the brain appears to make of them (note that Sparse PCA, while interesting, 
+may be optimising for the `final layer' rather than useful intermediate steps).
+\item[Evolutionary Methods] - currently appear to be suffering through 
+a winter of its own, despite working `unfairly well'.
 \item[Minimum Description Length] - a concept-cluster that extends from compression, 
 to information theory, encompassing Occam's razor along the way.
 \end{description}
@@ -311,15 +315,15 @@ conciousness
 
 \bibitem[2012]{Joscha-Bach-2012-interview}
 Joscha Bach:
-Interview during AGI 2012
+Interview during AGI 2012.
 Available on Youtube, 12m38s - 13m48s (2012)
 
 \bibitem[2014]{Bengio-et-al-2014-Book}
 Yoshua Bengio and Ian J. Goodfellow and Aaron Courville:
 Deep Learning.
-MIT Press (2014, book in preparation)
 % http://www.iro.umontreal.ca/~bengioy/dlbook/disentangling.html
 (http://www.iro.umontreal.ca/\mytilde{}bengioy/dlbook)
+MIT Press (2014, book in preparation)
 
 \bibitem[2014]{PCAnet}
 Tsung-Han Chan, Kui Jia, Shenghua Gao, Jiwen Lu, Zinan Zeng, Yi Ma:
@@ -329,41 +333,41 @@ eprint arXiv:1404.3606v2 (2014)
 \bibitem[2013]{bengio-whitening}
 G{\"u}l{\c{c}}ehre, {\c{C}}a{\u{g}}lar and Bengio, Yoshua:
 Knowledge matters: Importance of prior information for optimization.
-CoRR, abs/1301.4083 (2013).
+CoRR, abs/1301.4083 (2013)
 
 \bibitem[2009]{norvig-UnreasonableEffectivenessOfData}
 Alon Halevy, Peter Norvig, Fernando Pereira:
 The Unreasonable Effectiveness of Data.
-IEEE Intelligent Systems, vol. 24 (2009), pp. 8-12
+IEEE Intelligent Systems, vol. 24, pp. 8-12 (2009)
 
 \bibitem[1997]{harpur-thesis}
 Harpur, George Francis: 
-Low entropy coding with unsupervised neural networks
-Dissertation, University of Cambridge (1997).
+Low entropy coding with unsupervised neural networks.
+Dissertation, University of Cambridge (1997)
 
 \bibitem[2012]{hinton-dropout}
 Hinton, Geoffrey E and Srivastava, Nitish and Krizhevsky, Alex and Sutskever, Ilya and Salakhutdinov, Ruslan R:
-Improving neural networks by preventing co-adaptation of feature detectors
+Improving neural networks by preventing co-adaptation of feature detectors.
 arXiv preprint arXiv:1207.0580 (2012)
 
 \bibitem[2015]{WhiteningOfData}
 Sergey Ioffe, Christian Szegedy:
-Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift
+Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift.
 eprint arXiv:1502.03167v3 (2015)
 
 \bibitem[2014]{karpathy2014deep}
 Karpathy, Andrej and Fei-Fei, Li:
-Deep visual-semantic alignments for generating image descriptions
+Deep visual-semantic alignments for generating image descriptions.
 arXiv preprint arXiv:1412.2306 (2014)
 
 \bibitem[2014]{Lillicrap-random-matrix}
 Lillicrap, Timothy P.; Cownden, Daniel; Tweed, Douglas B.; Akerman, Colin J.:
 Random feedback weights support learning in deep neural networks.
-eprint arXiv:1411.0247
+eprint arXiv:1411.0247 (2014)
 
 \bibitem[2014]{SchmidhuberOverview}
 Juergen Schmidhuber:
-Deep Learning in Neural Networks: An Overview
+Deep Learning in Neural Networks: An Overview.
 eprint arXiv:1404.7828v4 (2014)
 
 %\bibitem {clar:eke}
