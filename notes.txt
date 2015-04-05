@@ -86,6 +86,8 @@ Make MathJax work (??)
   https://github.com/Shopify/liquid/wiki/Liquid-for-Designers
 
 
+## Helpful : git commit --date="`stat -c %y myfile`" myfile
+
 Want to do in-depth look at :
   2014 NIPS:
     -- Looking through papers for something interesting to write about

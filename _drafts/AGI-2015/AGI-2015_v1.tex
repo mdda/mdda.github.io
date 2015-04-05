@@ -57,11 +57,10 @@ using Backpropagation learning as an example of one of those principles.
 This short communication argues that the lessons to be learned from 
 the successes of deep learning research are not as clear-cut as they might first appear,
 because the field is still in a rapid exploration phase, and `conventional wisdom' 
-being rewritten regularly.
-
-In addition, away from the lime-light surrounding the production of 
-headline results for competitive benchmarks, there is still much to be 
-gained from examining some of the basic questions in the deep learning field.
+being rewritten regularly.   In addition, away from the lime-light surrounding 
+the production of headline results for competitive benchmarks, 
+there may still be much to be gained from examining some of 
+the field's basic questions.
 
 \keywords{deep learning, backpropagation, organisational principles}
 \end{abstract}
@@ -122,18 +121,18 @@ had its own `winters' since Neural Networks were first fashionable in
 the 1980s.  For simplicity, the `early days' will refer to the 1980s/early-1990s,
 the `new phase' as 2006 onwards, and `recently' to 2011 to the present 
 (with much respect to those who founded the field earlier, and also 
-those who soldiered on during the in-between times).
-
+those who soldiered on during the in-between times) - for a comprehensive 
+overview, see Schmidhuber (\cite{SchmidhuberOverview}).
 
 
 \subsubsection*{Did we give up too early?}
  
-One feature of today's Deep Learning is that huge models are being learned
+One feature of today's Deep Learning is that large models are being learned
 from huge datasets by machines that are orders of magnitude faster than 
-were available in the early 1990s - and this speed differential is one of the 
-main reasons that progress is being made now.
+were available in the early 1990s - and it is argued that the speed 
+differential is one of the main reasons that progress is being made now.
 
-This arguement would be more compelling if it had been observed at the time 
+This argument would be more compelling if it had been observed at the time 
 that the experiments were working, but much too slowly.  Often, large (downward)
 jumps in error are experienced in early training epochs in today's experiments.  
 Those jumps should have been observable even if the experiment couldn't have 
@@ -141,14 +140,26 @@ been run to convergence in the past.
 
 So maybe the reasoning is more nuanced : It is not just the raw learning speed 
 for a given experiment that is important, but the iteration / experiment cycle time.
+So that the model discovery process can run in reasonable time, whereas before
+it was truncated before useful conclusions could be made.
 
 
 
 \subsubsection*{Random Propagation.}
-    eg: WTF-propagation : random matrix error propagation (Lillicrap 2014)
-      possible to use `structured' random matrices that are compute-friendly?
-      suggests that brute-force computation beats elegant mathematics
-        brain doesn't need to implement best strategy - just one that works
+
+While the basic backpropagation is easily understood as the application 
+of the chain rule backwards through the network, it is rarely used in pure form
+because various speed-up methods (such as momentum terms, ADAgrad, RMSprop, etc)
+are almost a requirement for reasonable training times.  
+
+While some of these methods have their roots in previous optimisation theory, 
+others have been developed by `seeing what works' - and have shown that 
+learning occurs even with (for instance) random matrix error propagation 
+(Lillicrap \cite{Lillicrap-random-matrix}).
+
+The robustness of the backpropation algorithms used to (effectively) `helpful noise'
+suggests that brute-force computation can beat elegant mathematics, and that 
+the brain doesn't need to be able to implement an optimal strategy - just one that works.
 
 
 \subsubsection*{Exploding gradients.}
@@ -176,18 +187,18 @@ Prinicipal Component Analysis (PCA) is a `high level' mathematical concept,
 that can, nevertheless, be implemented using simple circulation of error terms
 in a biologically realistic setting.
 
-\cite{PCAnet results}
+Chan et al (\cite{PCAnet})
 
 However, techniques such as Singular Value Decomposition (SVD) can more 
 efficiently compute the same results using features of silicon unavailable to biological neurons.
 
 Sparse PCA is a step in the right direction, but may be optimising the wrong sparsity.
-
+ 
 
 
 \subsubsection*{Whitening of Data.}
 
-A recently discovered technique (\cite{Whitening of Data}) illustrates 
+A recently discovered technique (\cite{WhiteningOfData}) illustrates 
 the importance of controlling the 
 
 
@@ -196,29 +207,29 @@ the importance of controlling the
 
 
 \subsubsection*{More Data.}
-
-  reference to :: The Unreasonable Effectiveness of Data  Norvig et al (\cite{norvig-UnreasonableEffectivenessOfData}).
-
-
-\subsubsection*{Natural priors aren't antagonistic.}
-
-One constant thorn in the side of Neural Network researchers in the early phase
-
-
-
-unsupervised learning is actually weakly supervised 
-
-  humans perceive objects that have relationships and labels on different levels
-    these tasks are implicitly also human-learnable
-    properties that are useful to neural network learning (priors, causality, shared factors) are embedded already
-    
-  no interest in classifying (for instance) different `random noise' images
   
-  features that are interesting to humans seem to be either fairly independent or subsetting
-    unlikely to have interesting features that are complicated vectors of properties
-    this is an interesting prior that can be imposed on a network
-      "Priors Regarding The Underlying Factors" : Section 14.5 of Bengio deep learning book (in preview) 
-        (Bengio et al. \cite{Bengio-et-al-2014-Book}) 
+reference to :: The Unreasonable Effectiveness of Data (Halevy, Norvig \& Pereira, \cite{norvig-UnreasonableEffectivenessOfData}).
+
+
+\subsubsection*{Natural Problems aren't Antagonistic.}
+
+In the early days, Neural Network researchers spent a lot of time on the 
+tractability of the XOR problem, along with other toy problems that were 
+intentionally made challenging for networks to learn.
+
+More recently, as demonstrated repeatedly, when presented with `natural' problems, 
+even unsupervised learning approaches have shown that real-world data sets 
+are not as antagonistic to being learned as might have been anticipated.  
+This might illustrate that the priors embedded in network learning are 
+somehow sympathetic to the data being learned 
+(see, for instance, "Priors Regarding The Underlying Factors" in Bengio et al. \cite{Bengio-et-al-2014-Book}),
+or that the interesting features that humans themselves have identified as being 
+worth learning are those that `come easily' to human brains themselves.
+
+Label sparsity is something that likely occurs at multiple levels in the brain 
+(rather than just at the output layer) and is also in contrast to the 
+nuanced internal representations that a simple PCA approach might suggest.
+
 
 \subsubsection*{Convolutional Nets (human-assisted representation).}
 
@@ -234,8 +245,8 @@ in a way that is highly suggestive of having explanatory power.
  
 \section{Deep Learning New Stuff}
 
+\subsubsection*{Word Vector Embedding.}
 
-\subsubsection*{Word Vector Embedding works = New Insight.}
     but, looking at word-embedded (whether as float-vectors, or as coincidence matrices)
       sparse pattern matching is more `unfairly' powerful 
       random projection
@@ -250,56 +261,34 @@ in a way that is highly suggestive of having explanatory power.
 
 
 \subsubsection*{Drop-out.}
-    something is going on here that is not really understood
+Another `unfairly effective' approach that can be rationalised as allowing 
+multiple competitive ensembles to self-organize.  However, 
+despite the essence of its operation not being fully understood, 
+many researches are using it as part of the standard toolkit without 
+exploring why it works.
+
 
 \subsubsection*{Trailblazing.}
-Field appears wide open to new ideas.  Practitioners are free to blaze a new trail, 
-and this is sometimes reincorporated into the existing frameworks once 
-researchers in those fields realize that something previously unthinkable actually works.
+The Deep Learning field appears wide open to new ideas.  
+Practitioners are free to blaze a new trail, and this is sometimes 
+reincorporated into the existing frameworks once researchers in those 
+fields realize that something previously unthinkable actually works.
 
 
 \section{Other Organisational Principles}
 
-Here are some of the key organisational principles that seem appropriate to label `foundational' :
-
-\subsubsection*{Ensemble Methods.}
-The ability of an ensemble of different approaches to solving a problem to rise above the accuracy 
+Here are some of the key organisational principles that seem appropriate 
+to label `foundational' to the cause of AGI :
+\begin{description}
+\item[Ensemble Methods] - whereby an ensemble of different approaches to solving a problem to rise above the accuracy 
 of any one method has a simple mathematical underpinning.  
-
-Can't make an ensemble with single learned core - no diversity created
-
-drop-out is an interesting technique that deserves to be investigated in itself
-  possible to use `structured' dropout that is more compute-friendly?
-
-
-\subsubsection*{Sparse Encodings.}
-  relatively unexplored, compared to the use that the brain appears to make of it
-    may be an artifact of brain's components
-    
-\subsubsection*{Evolution.}
-  Works `unfairly well'
-  Distance from computation
-    GAs operate directly (parameters for a given substrate)
-    GPs operate (parameters that directly create a substrate)
-    DNA : code that creates stuff that self-organizes to create conditions where 
-      other parts of DNA interact, to produce...   
-        final result is third / forth hand from inital representation
-
-\subsubsection*{Minimum Description Length.}
-This concept-cluster is another mathematical one : extending from compression, to information theory,
-encompassing Occam's razor along the way.
-
-\subsubsection*{Stories.}
-  ???
-  
-
-\section{BackPropagation Thoughts}
-  gradient descent is just a method for energy minimisation
-    there are lots of interesting speed-ups (momentum, AGAgrad, etc)
-      but biological plausibility already left the building
-      
-    actual goal is finding lower-energy states
-      update methods and enhancements are techniques, not essential elements
+\item[Sparse Encodings] - relatively unexplore compared to the use that the brain appears to make of them
+(see also : priors)
+\item[Evolutionary Methods] - currently appear to be suffering through a winter of their own, 
+despite working `unfairly well'
+\item[Minimum Description Length] - a concept-cluster that extends from compression, 
+to information theory, encompassing Occam's razor along the way.
+\end{description}
 
 
 \section{The Known Unknown}
@@ -324,6 +313,11 @@ conciousness
 % Fix the tilde...
 \newcommand{\mytilde}{\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}}
 
+\bibitem[2012]{Joscha-Bach-2012-interview}
+Joscha Bach:
+Interview during AGI 2012
+Available on Youtube, 12m38s - 13m48s (2012)
+
 \bibitem[2014]{Bengio-et-al-2014-Book}
 Yoshua Bengio and Ian J. Goodfellow and Aaron Courville:
 Deep Learning.
@@ -331,15 +325,30 @@ Book in preparation for MIT Press (2014)
 % http://www.iro.umontreal.ca/~bengioy/dlbook/disentangling.html
 (http://www.iro.umontreal.ca/\mytilde{}bengioy/dlbook)
 
-\bibitem[2012]{Joscha-Bach-2012-interview}
-Joscha Bach:
-Interview during AGI 2012
-Available on Youtube, 12m38s - 13m48s (2012)
+\bibitem[2014]{PCAnet}
+Tsung-Han Chan, Kui Jia, Shenghua Gao, Jiwen Lu, Zinan Zeng, Yi Ma:
+PCANet: A Simple Deep Learning Baseline for Image Classification?
+eprint arXiv:1404.3606v2
 
 \bibitem[2009]{norvig-UnreasonableEffectivenessOfData}
 Alon Halevy, Peter Norvig, Fernando Pereira:
 The Unreasonable Effectiveness of Data.
 IEEE Intelligent Systems, vol. 24 (2009), pp. 8-12
+
+\bibitem[2015]{WhiteningOfData}
+Sergey Ioffe, Christian Szegedy:
+Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift
+eprint  arXiv:1502.03167v3
+
+\bibitem[2014]{Lillicrap-random-matrix}
+Lillicrap, Timothy P.; Cownden, Daniel; Tweed, Douglas B.; Akerman, Colin J.:
+Random feedback weights support learning in deep neural networks.
+eprint arXiv:1411.0247
+
+\bibitem[2014]{SchmidhuberOverview}
+Juergen Schmidhuber:
+Deep Learning in Neural Networks: An Overview
+eprint arXiv:1404.7828v4
 
 %\bibitem {clar:eke}
 %Clarke, F., Ekeland, I.:
@@ -421,4 +430,60 @@ and that current Machine Learning research, while exciting, may not be
 discovering new blocks systematically.
 
 
+
+\subsubsection*{Ensemble Methods.}
+The ability of an ensemble of different approaches to solving a problem to rise above the accuracy 
+of any one method has a simple mathematical underpinning.  
+
+Can't make an ensemble with single learned core - no diversity created
+
+drop-out is an interesting technique that deserves to be investigated in itself
+  possible to use `structured' dropout that is more compute-friendly?
+
+
+\subsubsection*{Sparse Encodings.}
+  relatively unexplored, compared to the use that the brain appears to make of it
+    may be an artifact of brain's components
+    
+\subsubsection*{Evolution.}
+  Works `unfairly well'
+  Distance from computation
+    GAs operate directly (parameters for a given substrate)
+    GPs operate (parameters that directly create a substrate)
+    DNA : code that creates stuff that self-organizes to create conditions where 
+      other parts of DNA interact, to produce...   
+        final result is third / forth hand from inital representation
+
+\subsubsection*{Minimum Description Length.}
+This concept-cluster is another mathematical one : extending from compression, to information theory,
+encompassing Occam's razor along the way.
+
+\subsubsection*{Stories.}
+  ???
+
+
+\section{BackPropagation Thoughts}
+  gradient descent is just a method for energy minimisation
+    there are lots of interesting speed-ups (momentum, AGAgrad, etc)
+      but biological plausibility already left the building
+      
+    actual goal is finding lower-energy states
+      update methods and enhancements are techniques, not essential elements
+
+
+
+unsupervised learning is actually weakly supervised 
+
+  humans perceive objects that have relationships and labels on different levels
+    these tasks are implicitly also human-learnable
+    properties that are useful to neural network learning (priors, causality, shared factors) are embedded already
+    
+  no interest in classifying (for instance) different `random noise' images
+  
+  features that are interesting to humans seem to be either fairly independent or subsetting
+    unlikely to have interesting features that are complicated vectors of properties
+    this is an interesting prior that can be imposed on a network
+
 \end{document}
+
+
