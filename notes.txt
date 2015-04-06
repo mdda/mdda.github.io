@@ -317,6 +317,10 @@ Ideas for AGI conf : http://agi-conf.org/2015/call-for-papers/
     
     sudo yum install inotify-tools
     while true; do inotifywait -qe close_write AGI-2015_v1.tex && latex AGI-2015_v1.tex && dvipdf AGI-2015_v1.dvi ; done
+    
+    # More recently: 
+    evince AGI-2015_v4.pdf &
+    while true; do inotifywait -qe close_write AGI-2015_v4.tex && latex AGI-2015_v4.tex && dvipdf AGI-2015_v4.dvi ; done
 
 
 
