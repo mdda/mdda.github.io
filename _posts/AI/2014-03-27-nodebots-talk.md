@@ -9,25 +9,20 @@ published: false
 ---
 {% include JB/setup %}
 
-Seeing a recent presentation from Google on 
-["Large Scale Deep Learning" (Jeff Dean, Google)](http://static.googleusercontent.com/media/research.google.com/en/us/people/jeff/CIKM-keynote-Nov2014.pdf), 
-I realized that it may be something interesting for one of the Singapore meetup groups to hear about.
+For the second meetup of the Singapore NodeBots group, 
+I gave a rather broad talk that the movement towards 'coworking' robots - 
+and how the confluence of a number of factors had made that into a 'real thing' now.
 
-Since I had also made a small contribution to 
-[the ConvnetJS project](https://github.com/karpathy/convnetjs) 
-by Andrej Karpathy at Stanford, 
-which has [a beautiful website](http://cs.stanford.edu/people/karpathy/convnetjs/), 
-I thought these two pieces could be elegantly combined...
 
 
 ### Presentation Link
 
-I recently gave the resulting 
-<strong><a href="http://redcatlabs.com/2014-12-18_DeepLearning.js/" target="_blank">presentation about Deep Learning</a></strong> 
-to the [Singapore Talk.js MeetUp Group](http://www.meetup.com/Singapore-JS/events/219129996/).
+Unlike the later presentations, this one wasn't done with ```reveal.js``` : So here is the 
+<strong><a href="http://redcatlabs.com/2014-03-27_NodeBots-Presentation/" target="_blank">PDF version of my presentation</a></strong> 
+to the [Singapore NodeBots MeetUp Group](http://www.meetup.com/TODO).
 
 ![Presentation Screenshot]({{ site.url }}/assets/img/2014-12-18_DeepLearning_600x390.png)
 
-If there are any questions about the presentation, please ask below, or via the [SingaporeJS MeetUp](http://www.meetup.com/Singapore-JS/) group.
+If there are any questions about the presentation, please ask below.
 
 ![Presentation Content Example]({{ site.url }}/assets/img/2014-12-18_DeepLearning.js_5_600x390.png)
