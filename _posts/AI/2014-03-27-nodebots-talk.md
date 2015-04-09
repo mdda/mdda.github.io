@@ -21,8 +21,8 @@ Unlike the later presentations, this one wasn't done with ```reveal.js``` : So h
 <strong><a href="http://redcatlabs.com/2014-03-27_NodeBots-Presentation/" target="_blank">PDF version of my presentation</a></strong> 
 to the [Singapore NodeBots MeetUp Group](http://www.meetup.com/TODO).
 
-![Presentation Screenshot]({{ site.url }}/assets/img/2014-12-18_DeepLearning_600x390.png)
+![Presentation Screenshot]({{ site.url }}/assets/img/2014-03-27_NodeBots_600x390.png)
 
 If there are any questions about the presentation, please ask below.
 
-![Presentation Content Example]({{ site.url }}/assets/img/2014-12-18_DeepLearning.js_5_600x390.png)
+![Presentation Content Example]({{ site.url }}/assets/img/2014-03-27_NodeBots_5_600x390.png)
