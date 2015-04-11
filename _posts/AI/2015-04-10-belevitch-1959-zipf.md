@@ -15,3 +15,4 @@ published: false
 Belevitch 1959
 
 
+Perhaps truncated log-normal is an even better match to actual word frequencies
