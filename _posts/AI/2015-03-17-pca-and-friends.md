@@ -28,7 +28,6 @@ CorEx
   
   Extension to continuous variables?
     Whiteness of the inputs is typically assumed for statistical work
-  
 
 Provable Non-convex Robust PCA *
   Microsoft
@@ -38,3 +37,9 @@ Provable Non-convex Robust PCA *
 Sparse PCA via Covariance Thresholding
   NIPS 2014
 
+Sparse PCA seems to be optimising for sparse 'outputs' in one step
+  However, going for maximum sparsity in one step doesn't promote the (useful?) Sparse Distributed Representation properties
+    http://numenta.com/learn/properties-of-sparse-distributed-representations.html
+  Perhaps lateral inhibition is a natural way of promoting this?
+  
+  
