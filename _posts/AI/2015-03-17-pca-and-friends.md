@@ -42,4 +42,11 @@ Sparse PCA seems to be optimising for sparse 'outputs' in one step
     http://numenta.com/learn/properties-of-sparse-distributed-representations.html
   Perhaps lateral inhibition is a natural way of promoting this?
   
-  
+Just read Numenta/Hawkins Sparse Distributed 'Combinatorics' paper
+  Interesting how this proves algebraically that sparse representations get better 
+    :: very non-linearly in n (binary vector length) and w (# of 1s ~ 2% of n)
+  Questions : 
+    Could word embedding be done this way?
+    What numerical resolution is required on matrix operations (see other paper?)
+    Can binary representation be efficiently GPU'd (just conditional adds of weights)
+    
