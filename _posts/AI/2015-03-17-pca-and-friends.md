@@ -47,6 +47,8 @@ Just read Numenta/Hawkins Sparse Distributed 'Combinatorics' paper
     :: very non-linearly in n (binary vector length) and w (# of 1s ~ 2% of n)
   Questions : 
     Could word embedding be done this way?
-    What numerical resolution is required on matrix operations (see other paper?)
+    What numerical resolution is required on matrix operations - see HTM white paper:: 
+      hierarchical-temporal-memory-cortical-learning-algorithm-0.2.1-en.pdf
+      Apparently, weight matrix is essentially binary, but there is a scalar association variable (0..1) that keeps track of correlations
     Can binary representation be efficiently GPU'd (just conditional adds of weights)
     
