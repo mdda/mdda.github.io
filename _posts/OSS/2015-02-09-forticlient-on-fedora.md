@@ -56,3 +56,9 @@ cd 64-bit
 ./forticlientsslvpn_cli --server SERVERNAME.fortiddns.com:10443 --vpnuser USERNAME
 {% endhighlight %}
 
+
+
+
+{% highlight bash %}
+[root@square andrewsm]# restorecon -R -v /etc/resolv.conf
+{% endhighlight %}
