@@ -12,7 +12,7 @@ published: false
 {% include custom/paper_review %}
 
 PCA and Friends
-------------
+------------------------
 
 
 CorEx
@@ -52,3 +52,14 @@ Just read Numenta/Hawkins Sparse Distributed 'Combinatorics' paper
       Apparently, weight matrix is essentially binary, but there is a scalar association variable (0..1) that keeps track of correlations
     Can binary representation be efficiently GPU'd (just conditional adds of weights)
     
+
+Also : Random stuff
+  RandomProjections-WordEmbedding_1412.6616v1-reprint.pdf
+  NTU-2006_ExtremeLearningMachines_I-ELM.pdf
+  ? Mallat-2013_RandomScattering_CIMPA13.pdf
+  
+  Applications of Random Matrices in Spectral Computations and Machine Learning
+  
+  Lillicrap-2014_RandomWeight-Backprop_1411.0247v1.pdf
+  ? 5355-stochastic-gradient-descent-weighted-sampling-and-the-randomized-kaczmarz-algorithm.pdf
+
