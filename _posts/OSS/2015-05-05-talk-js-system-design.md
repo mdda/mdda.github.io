@@ -9,6 +9,23 @@ published: false
 ---
 {% include JB/setup %}
 
+I'm not sure how things are shaping up for Thursday night talk-wise, 
+but I'd be happy to give a quick talk on Sphinx Documentation for JS. 
+Or do a bigger one on the various tools I've been pulling together for 
+the (somewhat large) project I'm doing 
+(including microservices, messaging, configuration, language-agnostic, etc).
+
+FWIW, the Machine Learning project that I'm doing is an 18month-to-build kind of thing. 
+For various reasons (including my own interest) it consists of a webserver frontend 
+(node-express-jade, plus socket.io), plus a bunch of services where the actual work gets done. 
+It's designed to language-agnostic, which is why node-yaml-config is used everywhere, 
+as well as http (using hapi for the node pieces), and a sprinkling of nanomsg for PUB-SUB things. 
+Because there's caching and other asynchrony, throw in some bluebird promises. 
+And because I want to limit my MS-facing surface area, there's ODBC from node-as-a-service too. 
+And I probably ought to mention of the Sphinx-aware documentation too. 
+And if you know any Singaporeans looking for a job...
+
+@timoxley --- so it's rather a 'putting it all together' kind of talk, rather than a 'use JS-technique X' one.
 
 
 
