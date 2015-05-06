@@ -15,7 +15,7 @@ that seemed approachable, and launched into it.
 
 The presentation was a rerun of my [previous talk](/oss/2014/06/05/reverse-gol/) - 
 because two Singapore GoLang meet-ups joined forces.  Fortunately, 
-the I wasn't heckled too badly by the half of the audience who had already heard it.
+I wasn't heckled too badly by the half of the audience who had already heard it.
 
 ### Presentation Link
 
