@@ -1,11 +1,11 @@
 ---
 layout: post
 category: OSS
-title: Talk.js Talk on Microservices System
+title: Talk on Microservices System (Javascript focus)
 tagline: Presentation link
 date: 2015-05-07
-tags: [Presentation,JS]
-published: false
+tags: [Presentation,javascript,microservices,nodejs]
+published: true
 ---
 {% include JB/setup %}
 
