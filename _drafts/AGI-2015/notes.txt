@@ -1,0 +1,86 @@
+
+Ideas for AGI conf : http://agi-conf.org/2015/call-for-papers/
+  Needs to be done and written-up by 15-March
+    Basics implemented this weekend
+      i.e. decide on project by Saturday night...
+    Project finished next weekend
+    Submitted on time
+    Check 2014 submissions for technical content expectation :
+      <=4page  : Short technical communications summarizing results and ideas of interest to the AGI audience, 
+                 including reports about recent publications, position papers, and preliminary results.
+      <=10page : Regular papers, presenting new research results or rigorously describing new research ideas
+    Needs to be related to Artificial General Intelligence 'specifically'
+    
+    Looking at technical content of other PDFs ...
+      Lots of 10 page documents, pushing 'write-only' local models
+      Seems likely that a 4-page review could be compelling too
+    
+  Dropout as random ensembles
+    Structured vs unstructured dropout
+      Risky, since not clear what the aim is
+      But still likely to be illuminating in some direction
+        Suitable for optimisation in terms of GEMB(?) operations
+      
+  Teacher / Student networks
+    Slightly sexier topic, since so current
+    Reframe as being auto-improver
+      Parasitic side network 
+    Understand claims about Curriculum Learning in Teacher/Student paper
+    Does teaching student aim at :
+      improving generalization
+      higher speed to learn
+      greater efficiency of representation (valid biological goal)
+    Strange that student networks can be so much smaller and as effective
+
+  Why did earlier NNs fail?  
+    Repeat old experiments?
+      Earliest MNIST experiments ?
+        But error rate was pretty low then anyway
+  
+  Sparse representations
+    This seems more effective - a special lesson from nature
+    Perhaps real-world situations are particularly amenable to sparse representations
+      Multiple labels rather than single folders
+      ~ Photos are compressible via (designed) JPEG
+  
+  Normalization  
+    Whitening layers
+    Weight initialization
+    ReLu with LHS hard zero (and zero gradient)
+    Vanishing gradient problem should be less material with floating point numbers
+      But does seem to be an issue worth publishing about
+
+  ReLu+ vs sigmoidal
+    Is it effective just because of lower computational cost?
+  
+  Word Embedding
+  
+  Genetic Algorithms for training NNs
+    Unclear whether it would work
+  
+  List of 100 problems
+
+  Generating PDF using downloaded LaTeX template : 
+    # See : https://ask.fedoraproject.org/en/question/44989/how-to-install-latex-for-fedora-19/
+    sudo yum install texlive-scheme-basic
+    mkdir ~/texmf/tex/latex/llncs
+    cd  ~/texmf/tex/latex/llncs
+    wget ftp://ftp.springer.de/pub/tex/latex/llncs/latex2e/llncs2e.zip
+    unzip llncs2e.zip
+    cd <PAPER-PREP-DIRECTORY>
+    latex llncs.dem 
+    dvipdf llncs.dvi llncs.dvi-to.pdf
+    evince llncs.dvi-to.pdf 
+    # pages 5-16 are relevant for conf submission
+    
+    latex AGI-2015_v1.tex && dvipdf AGI-2015_v1.dvi 
+    evince AGI-2015_v1.pdf &
+    
+    sudo yum install inotify-tools
+    while true; do inotifywait -qe close_write AGI-2015_v1.tex && latex AGI-2015_v1.tex && dvipdf AGI-2015_v1.dvi ; done
+    
+    # More recently: 
+    evince AGI-2015_v4.pdf &
+    while true; do inotifywait -qe close_write AGI-2015_v4.tex && latex AGI-2015_v4.tex && dvipdf AGI-2015_v4.dvi ; done
+
+
