@@ -88,6 +88,8 @@ Make MathJax work (??)
 
 ## Helpful : git commit --date="`stat -c %y myfile`" myfile
 
+
+
 Want to do in-depth look at :
   2014 NIPS:
     -- Looking through papers for something interesting to write about
@@ -202,9 +204,9 @@ Theano :
     http://deeplearning.net/tutorial/rnnslu.html
     
   (Multi-layer Hidden&ReLu + LogisticOutput) with ADAgrad 
-	http://nbviewer.ipython.org/github/dawenl/deep_tagging/blob/master/code/deep_tagging.ipynb
-	https://github.com/dawenl/deep_tagging
-	
+    http://nbviewer.ipython.org/github/dawenl/deep_tagging/blob/master/code/deep_tagging.ipynb
+    https://github.com/dawenl/deep_tagging
+
   nntools (now Lasagne?) (FF-NN focussed)
     https://github.com/benanne/Lasagne
    
