@@ -229,4 +229,29 @@ https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-man
 TODO :  Add reference to talk.js presentation on RedCatLabs.com (plus video link?)
 
 
+NIPS ideas :
+  Hinton et al : Grammar as a Foreign Language
+    http://arxiv.org/abs/1412.7449v2  :: [v2] Sat, 28 Feb 2015 03:16:54 GMT (115kb)
+    Google-2015_Grammar-as-Foreign-Langauge_1412.7449v2.pdf
 
+  Collobert  (Possible equivalent to Berkeley parser)
+    Natural Language from (almost) Scratch :
+      http://ronan.collobert.com/pub/matos/2011_nlp_jmlr.pdf
+    Code (Non-Commercial)
+      http://ronan.collobert.com/senna/
+    Neural Net version (Cython) (documented, complete with NER examples)
+      https://github.com/erickrf/nlpnet
+    Neural Net version (Theano) (minimal)
+      https://github.com/Fematich/nn_ner
+      
+  Stanford course 
+    Socher : cs224d
+      http://cs224d.stanford.edu/syllabus.html    
+
+  Theano LSTM: 
+    http://www.sphere-engineering.com/blog/quickanswers-io-a-new-algorithm.html
+      https://github.com/keyua-cisco/theano-nlp
+    Shawn Tan (NUS...)
+      https://github.com/shawntan?tab=repositories
+      https://blog.wtf.sg/about/
+      
