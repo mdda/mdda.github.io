@@ -254,4 +254,19 @@ NIPS ideas :
     Shawn Tan (NUS...)
       https://github.com/shawntan?tab=repositories
       https://blog.wtf.sg/about/
-      
+  
+  spaCy: AGPL
+    Same basic engine as the 500-lines blog post (which I've already trans-coded)
+    Docs
+      http://honnibal.github.io/spaCy/
+    Code
+      https://github.com/honnibal/spaCy
+    NER : 
+      13/04: Version 0.80 released. Includes named entity recognition, better sentence boundary detection, and many bug fixes.
+      https://github.com/honnibal/spaCy/issues/62
+
+  DEPENDENCY-BASED WORD EMBEDDINGS
+    Use dependency-derived contexts to imply the word embeddings
+      https://levyomer.wordpress.com/2014/04/25/dependency-based-word-embeddings/
+    
+    
