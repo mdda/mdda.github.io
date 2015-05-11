@@ -269,4 +269,11 @@ NIPS ideas :
     Use dependency-derived contexts to imply the word embeddings
       https://levyomer.wordpress.com/2014/04/25/dependency-based-word-embeddings/
     
-    
+  Structural inference
+    GTN
+      Bottou-1997_GraphTransformerNetworks_gtn.pdf
+    ParseTrees
+      Collobert-2011_BuildingParseTrees_aistats.pdf
+    Recursive NNs (Socher)
+      http://cs224d.stanford.edu/lectures/CS224d-Lecture9.pdf
+      
