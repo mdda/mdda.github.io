@@ -274,6 +274,12 @@ NIPS ideas :
       Bottou-1997_GraphTransformerNetworks_gtn.pdf
     ParseTrees
       Collobert-2011_BuildingParseTrees_aistats.pdf
+      Word embeddings initialised from previous work (helpful)
+      Produced likelihoods of each tag at every position
+      Viterbi for producing best sequence of symbols
+      Contraints so that tree conditions satisfied
     Recursive NNs (Socher)
       http://cs224d.stanford.edu/lectures/CS224d-Lecture9.pdf
+      https://www.youtube.com/watch?v=DJHvaGU9SW8
+      
       
