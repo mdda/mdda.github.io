@@ -280,6 +280,8 @@ NIPS ideas :
       Contraints so that tree conditions satisfied
     Recursive NNs (Socher)
       http://cs224d.stanford.edu/lectures/CS224d-Lecture9.pdf
+        Binarized trees sufficient for language parsing (up to a post-processing step)
+        Also : PCFG hints for better tree 'tree pre-pruning' (but that requires pre-labelled training data too)
       https://www.youtube.com/watch?v=DJHvaGU9SW8
       
       
