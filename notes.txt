@@ -286,4 +286,11 @@ NIPS ideas :
     
     Long Short-Term Memory Over Tree Structures  
       http://arxiv.org/abs/1503.04881     
+    or Tai? in Socher's lab...  Submitted to ACML
  
+  Check out 
+    Socher : MV-RNN for Relationship Classification (looks good for Handshakes...)
+    Socher : Recursive Deep Models for Semantic Compositionality over a Sentiment Treebank 2013
+  
+  
+  
