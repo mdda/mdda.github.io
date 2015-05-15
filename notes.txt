@@ -283,5 +283,7 @@ NIPS ideas :
         Binarized trees sufficient for language parsing (up to a post-processing step)
         Also : PCFG hints for better tree 'tree pre-pruning' (but that requires pre-labelled training data too)
       https://www.youtube.com/watch?v=DJHvaGU9SW8
-      
-      
+    
+    Long Short-Term Memory Over Tree Structures  
+      http://arxiv.org/abs/1503.04881     
+ 
