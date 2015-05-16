@@ -293,4 +293,32 @@ NIPS ideas :
     Socher : Recursive Deep Models for Semantic Compositionality over a Sentiment Treebank 2013
   
   
+Scheme for : "Middle out" Learning of Grammar Embeddings
+  Learn word-vectors in the standard way, with left- and right-contexts being trained to 
+    imply the middle 'idea' (which will initially just be the word, but will later be an 'idea')
+    This will train the word vectors (if they are used, or the previous level's combiner and ancestors) 
+      and the current context transformer
+    
+  Also, over the sentence, combine a pair together (using a combiner transformer), and
+    do the same imputation for the middle 'idea' (this is the middle out piece)
+    This will train the combiner transformer
+    
+  Looking at the whole sentence, pick the combiner error with the lowest value (i.e. most predicable idea in context)
+    [ alternatively, for the null hypothesis, just pick a pair at random ]
+    and replace that pair with the (true) result 
+    And apply the procedure again, until left with one vector (the sentence 'idea')
+      At which point, end
+
   
+  Test word vectors with diagram of embedding learned (null should not care(?))
+  
+  See whether grammar has been learned by training a simple POS classifier on 'idea' vectors vs null
+  
+  Test to see whether parse trees make sense vs null too
+
+  
+  ... Time to figure out what 'simple scheme' for the context transformer
+  ... (and then the combiner transformer too)
+  
+  
+
