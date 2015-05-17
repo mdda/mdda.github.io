@@ -234,7 +234,7 @@ NIPS ideas :
     http://arxiv.org/abs/1412.7449v2  :: [v2] Sat, 28 Feb 2015 03:16:54 GMT (115kb)
     Google-2015_Grammar-as-Foreign-Langauge_1412.7449v2.pdf
 
-  Collobert  (Possible equivalent to Berkeley parser)
+  Collobert  (Possible equivalent performance-wise to Berkeley parser)
     Natural Language from (almost) Scratch :
       http://ronan.collobert.com/pub/matos/2011_nlp_jmlr.pdf
     Code (Non-Commercial)
@@ -321,4 +321,15 @@ Scheme for : "Middle out" Learning of Grammar Embeddings
   ... (and then the combiner transformer too)
   
   
+  Simplest route is to play with Collobert models
 
+    Neural Net version (Cython) (documented, complete with NER examples)
+      https://github.com/erickrf/nlpnet
+    Neural Net version (Theano) (minimal)
+      https://github.com/Fematich/nn_ner
+
+
+  Add curruculum idea too
+  And cite Klein Manning 2001
+  
+  
