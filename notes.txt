@@ -328,6 +328,7 @@ Scheme for : "Middle out" Learning of Grammar Embeddings
     Neural Net version (Theano) (minimal)
       https://github.com/Fematich/nn_ner
 
+    http://matpalm.com/blog/2015/03/28/theano_word_embeddings/
 
   Add curruculum idea too
   And cite Klein Manning 2001
