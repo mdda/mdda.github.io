@@ -313,6 +313,15 @@ Scheme for : "Middle out" Learning of Grammar Embeddings
   Test word vectors with diagram of embedding learned (null should not care(?))
   
   See whether grammar has been learned by training a simple POS classifier on 'idea' vectors vs null
+    But POS only actually labels word 'ideas'.  
+    And these are trained to be insensitive to the current context (i.e. always the same, independent of the current sentence)
+    So, in what sense would grammar get adsorbed into the word vectors?
+      The tree-ification would have to provide additional information over-and-above the linear structure / local context
+      How could that piece be fed as an extra feature alongside the word vectors?
+        Perhaps as a simple indicator as to whether the word becomes a left or a right leaf?
+          But a lot of that associativity is built into the linear structure already
+            Information would have to indicate higher-order associations
+            A lot of work would have to be done before this glimmer of light could be unveiled...
   
   Test to see whether parse trees make sense vs null too
 
@@ -332,5 +341,8 @@ Scheme for : "Middle out" Learning of Grammar Embeddings
 
   Add curruculum idea too
   And cite Klein Manning 2001
+  
+  What would it mean to train LSTM on sentences 'unsupervised'?
+  
   
   
