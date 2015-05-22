@@ -345,4 +345,19 @@ Scheme for : "Middle out" Learning of Grammar Embeddings
   What would it mean to train LSTM on sentences 'unsupervised'?
   
   
+Alternative : 
+
+  Create Entity extraction corpuses from output of :
+    Stanford NER
+    Berkeley NER
+  
+  Then train LSTM network on those corpuses
+
+  Requires out-of-sample validation set 
+    and common test sets
+  
+  See whether network can (a) replicate and (b) supercede 
+  
+  
+  
   
