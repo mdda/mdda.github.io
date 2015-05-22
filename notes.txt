@@ -358,6 +358,9 @@ Alternative :
   
   See whether network can (a) replicate and (b) supercede 
   
-  
-  
-  
+  Other avenues: 
+    Additional NER methods, so that can do voting, and ensembling
+    
+    Curriculum training based on (say) sentence length
+      Or degree of agreement from corpus builders
+      
