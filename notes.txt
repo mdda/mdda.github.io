@@ -356,6 +356,9 @@ Alternative :
   Requires out-of-sample validation set 
     and common test sets
   
+  Corpus to use : CoNLL-2003, which has NER training, test and 'raw' sets 
+    (as well as 1Gb of additional corpus data)
+  
   See whether network can (a) replicate and (b) supercede 
   
   Secondary goal : 
