@@ -8,7 +8,7 @@ tags:
 - Brother
 - DCP-L2540DW
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
