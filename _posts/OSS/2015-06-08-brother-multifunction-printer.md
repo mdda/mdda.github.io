@@ -43,12 +43,31 @@ In the following, assume WOLOG that it's set to ```192.168.1.8```.
 The installation of the RPM 'helpfully' adds the printer as a device locally 
 connected via USB, which is misleading...
 
-Using the standard printer configuration dialog (in XFCE for me)
+Using the standard printer configuration dialog (in XFCE for me), simply go into the printer
+and update the settings to be on the network : 
 
+*  Type : "LPD/LPR Host or Printer"
+*  Host : ```192.168.1.8```
+*  Queue : ```bianry_p1```
+  - Device URI will become : ```lpd://192.168.1.8/binary_p1```
 
 ### Network Scanner setup 
 
-Magic command line (not specified in anything from Brother) : 
+After installing the package (which, I believe should require ```sane-backends-scanners``` 
+to be installed beforehand,  based on installation error messages about unfound files), 
+the Brother driver also needs to understand that it's a network-attached device.
+
+The Magic command line (not specified in anything from Brother, but found via random internet searches) : 
+
 ```
 brsaneconfig4 -a name="DCP-L2540DW" model="DCP-L2540DW" ip=192.168.1.8
 ```
+
+This then adjusts the settings that can be found in :
+```
+/etc/opt/brother/scanner/brscan4/brsanenetdevice4.cfg
+# More ideas via :
+brsaneconfig4 --help
+```
+
+Hope this helps someone.
