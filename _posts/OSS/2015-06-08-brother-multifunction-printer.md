@@ -12,7 +12,11 @@ published: true
 ---
 {% include JB/setup %}
 
-This is a (somewhat grey and ugly printer/scanner) that I picked up recently at a "PC Show" at Singapore Expo.
+This is a (somewhat grey and ugly printer/scanner) that I picked up recently at a ["PC Show" at Singapore Expo](http://itfairsg.com/pcshow2015/brother-printers-laser-inkjet-colour-led-mfc-hl-dcp-mfc-price-list-flyer-brochure-15024/).
+
+For an effective price that was less than S$200 (~U$150), this is a pretty decent deal, 
+particularly since it came with a 2600-page toner, and a hand-trolley to carry it back home
+with...
 
 ### Downloads from Brother site
 
