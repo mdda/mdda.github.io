@@ -29,10 +29,43 @@ dnf remove \*nvidia\*
 dnf -y install nvidia-driver akmod-nvidia kernel-devel
 dnf -y install \
   cuda cuda-libs cuda-extra-libs \
-  cuda-cli-tools cuda-devel \
+  cuda-cli-tools cuda-devel cuda-docs \
   nvidia-driver-libs nvidia-driver-cuda-libs \
-  nvidia-driver-devel nvidia-driver-NVML-devel 
+  nvidia-driver-devel nvidia-driver-NVML-devel \
+  nvidia-modprobe
 {% endhighlight %}
+
+Unfortunately, the directory structure for the ``cuda`` files is not what 
+Theano expects, so, as ``root`` do ::
+
+{% highlight bash %}
+mkdir /usr/local/cuda
+ln -s /usr/include/cuda /usr/local/cuda/include
+mkdir /usr/local/cuda/bin/
+mv /usr/bin/nvcc /usr/local/cuda/bin/
+ln -s /usr/bin/crt /usr/local/cuda/bin/
+{% endhighlight %}
+
+which rigs up a more standard *tree* of folders :: ``/usr/cuda/{include,bin}``.
+
+Now, as root, fix up Nvidia disallowing ``gcc`` greater than ``v4.9``...
+
+In file ``/usr/local/cuda/include/host_config.h``, look to make the following replacement : 
+
+{% highlight bash %}
+// #if __GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ > 9)  // Old version commented out
+// This is the updated line : (Ok, so 14 is much more than 5...)
+#if __GNUC__ > 14 || (__GNUC__ == 4 && __GNUC_MINOR__ > 9)
+{% endhighlight %}
+
+
+Now, to set the right path for ``nvcc``, in the user's ``~/.bash_profile`` add ::
+
+{% highlight bash %}
+export PATH=$PATH:/usr/local/cuda/bin
+{% endhighlight %}
+
+
 
 #### Test the installation
 
@@ -45,11 +78,10 @@ nvidia               8556544  0
 drm                   331776  4 i915,drm_kms_helper,nvidia
 {% endhighlight %}
 
-
 Looking good:
 
 {% highlight bash %}
-sudo nvcc --version
+sudo /usr/local/cuda/bin/nvcc --version
 
 nvcc: NVIDIA (R) Cuda compiler driver
 Copyright (c) 2005-2014 NVIDIA Corporation
@@ -64,6 +96,64 @@ Hmpf...
 sudo nvidia-smi -L
 
 -bash: nvidia-smi: command not found
+{% endhighlight %}
+
+
+###  Installation of ``libgpuarray``
+
+Install the bleeding edge ``libgpuarray`` into your ``virtualenv`` - first 
+compile the ``.so`` and ``.a`` libraries, and put them in a sensible place :
+
+{% highlight bash %}
+. env/bin/activate
+cd env
+git clone https://github.com/Theano/libgpuarray.git
+cd libgpuarray
+mkdir Build
+cd Build
+cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr \
+  -DCUDA_CUDA_LIBRARY=/usr/lib64/nvidia/libcuda.so \
+  -DCUDA_INCLUDE_DIRS=/usr/include/cuda \
+  -DOPENCL_LIBRARIES=/usr/lib64/nvidia/libOpenCL.so \
+  -DOPENCL_INCLUDE_DIRS=/usr/include/cuda/CL
+make
+sudo make install
+{% endhighlight %}
+
+This will likely complain about not finding ``clBLAS``, which isn't a problem here.
+Although, if you know you will require ``clBLAS`` in the future 
+(and this is for advanced/experimental users only),
+see my [OpenCL post](http://blog.mdda.net/oss/2014/11/02/building-clblas/), 
+since you need to install this before running ``cmake`` above).
+
+
+Next, install the Python component (after going into the same ``virtualenv``) : 
+
+{% highlight bash %}
+cd env/libgpuarray/
+python setup.py build
+python setup.py install
+{% endhighlight %}
+
+And then test it from within a regular user directory (using the same ``virtualenv``) :
+
+{% highlight python %}
+python
+import pygpu
+pygpu.init('cuda0')
+{% endhighlight %}
+
+A good result is something along the lines of :
+
+{% highlight python %}
+<pygpu.gpuarray.GpuContext object at 0x7f1547e79550>
+{% endhighlight %}
+
+{% highlight python %}
+## Errors seen :
+#(A) 'cuda'      :: pygpu.gpuarray.GpuArrayException: API not initialized = WEIRD
+#(B) 'cuda0'     :: pygpu.gpuarray.GpuArrayException: No CUDA devices available = GO BACK...
+#(C) 'opencl0:0' :: RuntimeError: Unsupported kind: opencl (if OpenCL library not found)
 {% endhighlight %}
 
 
@@ -100,61 +190,27 @@ And then run, successively :
 
 {% highlight bash %}
 THEANO_FLAGS=mode=FAST_RUN,floatX=float32,device=cpu   python gpu_check.py
+""" output is ::
+[Elemwise{exp,no_inplace}(<TensorType(float32, vector)>)]
+Looping 1000 times took 3.35117197037 seconds
+Result is [ 1.23178029  1.61879337  1.52278066 ...,  2.20771813  2.29967761 1.62323284]
+Used the cpu
+"""
 {% endhighlight %}
 
 and 
 
 {% highlight bash %}
 THEANO_FLAGS=mode=FAST_RUN,floatX=float32,device=gpu   python gpu_check.py
+""" output is ::
+Using gpu device 0: GeForce GTX 760
+[GpuElemwise{exp,no_inplace}(<CudaNdarrayType(float32, vector)>), HostFromGpu(GpuElemwise{exp,no_inplace}.0)]
+Looping 1000 times took 0.339042901993 seconds
+Result is [ 1.23178029  1.61879349  1.52278066 ...,  2.20771813  2.29967761 1.62323296]
+Used the gpu
+"""
 {% endhighlight %}
 
-
-###  Installation of ``libgpuarray``
-
-Install the bleeding edge ``libgpuarray`` into your ``virtualenv`` - first 
-compile the ``.so`` and ``.a`` libraries, and put them in a sensible place :
-
-{% highlight bash %}
-. env/bin/activate
-cd env
-git clone https://github.com/Theano/libgpuarray.git
-cd libgpuarray
-mkdir Build
-cd Build
-cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr \
-  -DCUDA_CUDA_LIBRARY=/usr/lib64/nvidia/libcuda.so \
-  -DOPENCL_LIBRARIES=/usr/lib64/nvidia/libOpenCL.so
-make
-sudo make install
-{% endhighlight %}
-
-This will likely complain about not finding ``clBLAS``, which isn't a problem here.
-Although, if you know you will require ``clBLAS`` in the future 
-(and this is for advanced/experimental users only),
-see my [OpenCL post](http://blog.mdda.net/oss/2014/11/02/building-clblas/), 
-since you need to install this before running ``cmake`` above).
-
-
-Next, install the Python component (after going into the same ``virtualenv``) : 
-
-{% highlight bash %}
-cd env/libgpuarray/
-python setup.py build
-python setup.py install
-{% endhighlight %}
-
-And then test it from within a regular user directory (using the same ``virtualenv``) :
-
-{% highlight bash %}
-python
-import pygpu
-pygpu.init('cuda')
-
-## Errors seen :
-#(A) 'cuda'      :: pygpu.gpuarray.GpuArrayException: API not initialized
-#(B) 'cuda0'     :: pygpu.gpuarray.GpuArrayException: No CUDA devices available
-#(C) 'opencl0:0' :: RuntimeError: Unsupported kind: opencl (if OpenCL library not found)
-{% endhighlight %}
 
 
 
