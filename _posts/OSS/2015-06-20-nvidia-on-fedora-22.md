@@ -18,7 +18,7 @@ This is very much in-progress, since it doesn't yet work to my satisfaction...
 
 Since Nvidia still hasn't provided RPMs for Fedora 22 (which was launched 
 4 weeks ago as-of this post date, having been in Alpha for 3 months prior),
-we need to use the Repo created by the most excellent 'negativo' (which
+we need to use the ``Repo`` created by the most excellent 'negativo' (which
 Nvidia would probably characterise as some *amateur hobbiest*, rather than
 the actual hero that he is) :
 
@@ -27,7 +27,11 @@ dnf install 'dnf-command(config-manager)'
 dnf config-manager --add-repo=http://negativo17.org/repos/fedora-nvidia.repo
 dnf remove \*nvidia\*
 dnf -y install nvidia-driver akmod-nvidia kernel-devel
-dnf -y install cuda-devel nvidia-driver-devel
+dnf -y install \
+  cuda cuda-libs cuda-extra-libs \
+  cuda-cli-tools cuda-devel \
+  nvidia-driver-libs nvidia-driver-cuda-libs \
+  nvidia-driver-devel nvidia-driver-NVML-devel 
 {% endhighlight %}
 
 {% highlight bash %}
