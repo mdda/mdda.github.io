@@ -71,7 +71,7 @@ sudo nvidia-smi -L
 
 Store the following to a file ``gpu_check.py`` : 
 
-{% highlight bash %}
+{% highlight python %}
 from theano import function, config, shared, sandbox
 import theano.tensor as T
 import numpy
