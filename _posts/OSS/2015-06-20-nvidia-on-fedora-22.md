@@ -8,11 +8,9 @@ tags:
 - Nvidia
 - theano
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
-
-This is very much in-progress, since it doesn't yet work to my satisfaction...
 
 ### Better RPMs 
 
@@ -52,7 +50,7 @@ Now, as root, fix up Nvidia disallowing ``gcc`` greater than ``v4.9``...
 
 In file ``/usr/local/cuda/include/host_config.h``, look to make the following replacement : 
 
-{% highlight bash %}
+{% highlight c++ %}
 // #if __GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ > 9)  // Old version commented out
 // This is the updated line : (Ok, so 14 is much more than 5...)
 #if __GNUC__ > 14 || (__GNUC__ == 4 && __GNUC_MINOR__ > 9)
