@@ -149,9 +149,9 @@ import pygpu
 pygpu.init('cuda')
 
 ## Errors seen :
-#(A) pygpu.gpuarray.GpuArrayException: API not initialized
-#(B) pygpu.gpuarray.GpuArrayException: No CUDA devices available
-#(C) RuntimeError: Unsupported kind: opencl
+#(A) 'cuda'      :: pygpu.gpuarray.GpuArrayException: API not initialized
+#(B) 'cuda0'     :: pygpu.gpuarray.GpuArrayException: No CUDA devices available
+#(C) 'opencl0:0' :: RuntimeError: Unsupported kind: opencl (if OpenCL library not found)
 {% endhighlight %}
 
 
@@ -163,4 +163,9 @@ THEANO_FLAGS=floatX=float32,device=gpu
 
 {% highlight bash %}
 python `python -c "import os, theano; print os.path.dirname(theano.__file__)"`/misc/check_blas.py
+{% endhighlight %}
+
+
+{% highlight bash %}
+dnf -y install clinfo ocl-icd opencl-tools 
 {% endhighlight %}
