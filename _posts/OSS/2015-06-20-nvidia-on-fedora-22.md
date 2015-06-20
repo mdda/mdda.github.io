@@ -143,6 +143,8 @@ python setup.py build
 python setup.py install
 {% endhighlight %}
 
+And then test it from within a regular user directory (using the same ``virtualenv``) :
+
 {% highlight bash %}
 python
 import pygpu
