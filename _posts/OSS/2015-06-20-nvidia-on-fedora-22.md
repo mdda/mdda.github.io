@@ -99,14 +99,61 @@ else:
 And then run, successively :
 
 {% highlight bash %}
-THEANO_FLAGS=mode=FAST_RUN,floatX=float32,device=cpu  python gpu_check.py
+THEANO_FLAGS=mode=FAST_RUN,floatX=float32,device=cpu   python gpu_check.py
 {% endhighlight %}
 
 and 
 
 {% highlight bash %}
-THEANO_FLAGS=mode=FAST_RUN,floatX=float32,device=gpu python gpu_check.py
+THEANO_FLAGS=mode=FAST_RUN,floatX=float32,device=gpu   python gpu_check.py
 {% endhighlight %}
+
+
+###  Installation of ``libgpuarray``
+
+Install the bleeding edge ``libgpuarray`` into your ``virtualenv`` - first 
+compile the ``.so`` and ``.a`` libraries, and put them in a sensible place :
+
+{% highlight bash %}
+. env/bin/activate
+cd env
+git clone https://github.com/Theano/libgpuarray.git
+cd libgpuarray
+mkdir Build
+cd Build
+cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr \
+  -DCUDA_CUDA_LIBRARY=/usr/lib64/nvidia/libcuda.so \
+  -DOPENCL_LIBRARIES=/usr/lib64/nvidia/libOpenCL.so
+make
+sudo make install
+{% endhighlight %}
+
+This will likely complain about not finding ``clBLAS``, which isn't a problem here.
+Although, if you know you will require ``clBLAS`` in the future 
+(and this is for advanced/experimental users only),
+see my [OpenCL post](http://blog.mdda.net/oss/2014/11/02/building-clblas/), 
+since you need to install this before running ``cmake`` above).
+
+
+Next, install the Python component (after going into the same ``virtualenv``) : 
+
+{% highlight bash %}
+cd env/libgpuarray/
+python setup.py build
+python setup.py install
+{% endhighlight %}
+
+{% highlight bash %}
+python
+import pygpu
+pygpu.init('cuda')
+
+## Errors seen :
+#(A) pygpu.gpuarray.GpuArrayException: API not initialized
+#(B) pygpu.gpuarray.GpuArrayException: No CUDA devices available
+#(C) RuntimeError: Unsupported kind: opencl
+{% endhighlight %}
+
 
 
 
