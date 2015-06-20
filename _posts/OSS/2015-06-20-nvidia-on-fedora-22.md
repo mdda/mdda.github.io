@@ -36,12 +36,17 @@ dnf -y install \
 
 #### Test the installation
 
+Check that the kernel modules is there :
+
 {% highlight bash %}
 sudo lsmod | grep nv
 
 nvidia               8556544  0 
 drm                   331776  4 i915,drm_kms_helper,nvidia
 {% endhighlight %}
+
+
+Looking good:
 
 {% highlight bash %}
 sudo nvcc --version
@@ -53,6 +58,8 @@ Cuda compilation tools, release 6.5, V6.5.16
 {% endhighlight %}
 
 
+Hmpf...
+
 {% highlight bash %}
 sudo nvidia-smi -L
 
@@ -60,6 +67,7 @@ sudo nvidia-smi -L
 {% endhighlight %}
 
 
+### Theano stuff
 
 {% highlight bash %}
 THEANO_FLAGS=floatX=float32,device=gpu  
