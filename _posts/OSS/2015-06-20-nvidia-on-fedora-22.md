@@ -211,18 +211,28 @@ Used the gpu
 """
 {% endhighlight %}
 
-
-
-
+but 
 
 {% highlight bash %}
-THEANO_FLAGS=floatX=float32,device=gpu  
+THEANO_FLAGS=mode=FAST_RUN,floatX=float32,device=cuda0   python gpu_check.py
+""" output is ::
+*FAILURE...*
+"""
 {% endhighlight %}
+
+
+### Check on the usage of GPU / BLAS
 
 {% highlight bash %}
-python `python -c "import os, theano; print os.path.dirname(theano.__file__)"`/misc/check_blas.py
+TP=`python -c "import os, theano; print os.path.dirname(theano.__file__)"`
+THEANO_FLAGS=mode=FAST_RUN,floatX=float32,device=gpu python ${TP}/misc/check_blas.py
+
+## GPU : 0.14s (GeForce GTX 760)
+## CPU : 5.72s (i7-4770 CPU @ 3.40GHz)
 {% endhighlight %}
 
+
+### OpenCL stuff (for another day)
 
 {% highlight bash %}
 dnf -y install clinfo ocl-icd opencl-tools 
