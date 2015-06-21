@@ -22,10 +22,11 @@ to the  [talk.js Singapore Javascript Group](http://www.meetup.com/Singapore-JS/
 
 ![Presentation Screenshot]({{ site.url }}/assets/img/2015-05-07_Presentation-TalkJS_600x390.png)
 
-If there are any questions about the presentation, please ask below, or via the MeetUp group.
-
-![Presentation Content Example]({{ site.url }}/assets/img/2015-05-07_Presentation-TalkJS_1_600x390.png)
-
 For the masochistic : There was actually a video of the event made by
 [Michael Cheng of Engineers.sg](http://engineers.sg/) which can be 
 seen <a href="https://www.youtube.com/watch?v=b40vo1wiazw&feature=youtu.be" target="_blank">here</a>.
+
+![Presentation Content Example]({{ site.url }}/assets/img/2015-05-07_Presentation-TalkJS_1_600x390.png)
+
+If there are any questions about the presentation, please ask below, 
+or via [the MeetUp group](http://www.meetup.com/Singapore-JS/events/222087414/).
