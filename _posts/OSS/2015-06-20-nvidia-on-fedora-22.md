@@ -52,8 +52,8 @@ In file ``/usr/local/cuda/include/host_config.h``, look to make the following re
 
 {% highlight c++ %}
 // #if __GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ > 9)  // Old version commented out
-// This is the updated line : (Ok, so 14 is much more than 5...)
-#if __GNUC__ > 14 || (__GNUC__ == 4 && __GNUC_MINOR__ > 9)
+// This is the updated line, which guards again gcc > 5.1.x instead
+#if __GNUC__ > 5 || (__GNUC__ == 5 && __GNUC_MINOR__ > 1)
 {% endhighlight %}
 
 
