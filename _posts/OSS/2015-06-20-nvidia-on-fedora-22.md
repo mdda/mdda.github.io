@@ -111,9 +111,9 @@ mkdir Build
 cd Build
 cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr \
   -DCUDA_CUDA_LIBRARY=/usr/lib64/nvidia/libcuda.so \
-  -DCUDA_INCLUDE_DIRS=/usr/include/cuda \
+  -DCUDA_INCLUDE_DIRS=/usr/local/cuda/include \
   -DOPENCL_LIBRARIES=/usr/lib64/nvidia/libOpenCL.so \
-  -DOPENCL_INCLUDE_DIRS=/usr/include/cuda/CL
+  -DOPENCL_INCLUDE_DIRS=/usr/local/cuda/include/CL
 make
 sudo make install
 {% endhighlight %}
