@@ -44,7 +44,8 @@ mv /usr/bin/nvcc /usr/local/cuda/bin/
 ln -s /usr/bin/crt /usr/local/cuda/bin/
 {% endhighlight %}
 
-which rigs up a more standard *tree* of folders :: ``/usr/local/cuda/{include,bin}``.
+which rigs up a more standard *tree* of folders, which is what 
+``Theano`` expects when executing your models :: ``/usr/local/cuda/{include,bin}``.
 
 Now, as root, fix up Nvidia disallowing ``gcc`` greater than ``v4.9``...
 
