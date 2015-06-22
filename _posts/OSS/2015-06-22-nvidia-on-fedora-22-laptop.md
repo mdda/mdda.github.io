@@ -1,50 +1,36 @@
 ---
 date: 2015-06-20
-title: Nvidia installation for Theano on Fedora 22
+title: Nvidia for Theano on Fedora 22 laptop
 category: OSS
 tags:
 - fedora
 - linux
 - Nvidia
 - theano
+- bumblebee
 layout: post
 published: true
 ---
 {% include JB/setup %}
 
-### Better RPMs 
+This write-up is for Laptops with 'separate' NVidia graphics cards, 
+and makes use of the Bumblebee Nvidia installation.
 
-Since Nvidia still hasn't provided RPMs for Fedora 22 (which was launched 
-4 weeks ago as-of this post date, having been in Alpha for 3 months prior),
-we need to use the ``Repo`` created by the most excellent 'negativo' (which
-Nvidia would probably characterise as some *amateur hobbiest*, rather than
-the actual hero that he is) :
+For more typical desktop instructions, see [the write-up here](/oss/2015/06/20/nvidia-on-fedora-22/).
 
-{% highlight bash %}
-dnf install 'dnf-command(config-manager)'
-dnf config-manager --add-repo=http://negativo17.org/repos/fedora-nvidia.repo
-dnf remove \*nvidia\*
-dnf -y install nvidia-driver akmod-nvidia kernel-devel
-dnf -y install \
-  cuda cuda-libs cuda-extra-libs \
-  cuda-cli-tools cuda-devel cuda-docs \
-  nvidia-driver-libs nvidia-driver-cuda-libs \
-  nvidia-driver-devel nvidia-driver-NVML-devel \
-  nvidia-modprobe
-{% endhighlight %}
+### Bumblebee RPMs 
 
-Unfortunately, the directory structure for the ``cuda`` files is not what 
-Theano expects, so, as ``root`` do ::
+The basic RPM installation is as before, in [the previous write-up](/oss/2014/06/15/install-nvidia-optimus-on-FC20-acer-notebook/).
 
-{% highlight bash %}
-mkdir /usr/local/cuda
-ln -s /usr/include/cuda /usr/local/cuda/include
-mkdir /usr/local/cuda/bin/
-mv /usr/bin/nvcc /usr/local/cuda/bin/
-ln -s /usr/bin/crt /usr/local/cuda/bin/
-{% endhighlight %}
 
-which rigs up a more standard *tree* of folders :: ``/usr/local/cuda/{include,bin}``.
+### CUDA 
+
+The CUDA installation should be done from the [Nvidia downloads site](https://developer.nvidia.com/cuda-downloads), as usual.
+
+The end result should be the standard *tree* of folders :: ``/usr/local/cuda/{include,bin}``.
+
+
+### Source fixes
 
 Now, as root, fix up Nvidia disallowing ``gcc`` greater than ``v4.9``...
 
@@ -70,10 +56,16 @@ export PATH=$PATH:/usr/local/cuda/bin
 Check that the kernel modules is there :
 
 {% highlight bash %}
-sudo lsmod | grep nv
+sudo optirun lsmod | grep nv
+nvidia_uvm             69632  0 
+nvidia               8380416  28 nvidia_uvm
+drm                   331776  7 i915,drm_kms_helper,nvidia
+{% endhighlight %}
 
-nvidia               8556544  0 
-drm                   331776  4 i915,drm_kms_helper,nvidia
+{% highlight bash %}
+# NB: With no 'optirun'
+sudo lsmod | grep nv
+## -Nothing-
 {% endhighlight %}
 
 Looking good:
@@ -83,17 +75,24 @@ Looking good:
 
 nvcc: NVIDIA (R) Cuda compiler driver
 Copyright (c) 2005-2014 NVIDIA Corporation
-Built on Wed_Aug_27_10:36:36_CDT_2014
-Cuda compilation tools, release 6.5, V6.5.16
+Built on Thu_Jul_17_21:41:27_CDT_2014
+Cuda compilation tools, release 6.5, V6.5.12
 {% endhighlight %}
 
 
-Hmpf...
+This works better than the previous desktop ... 
 
 {% highlight bash %}
-sudo nvidia-smi -L
+optirun nvidia-smi -L
+GPU 0: GeForce GT 750M (UUID: GPU-9cabfc96-3f6e-889d-29c5-57057738f794)
+{% endhighlight %}
 
--bash: nvidia-smi: command not found
+(and without the ``optirun``) :
+
+{% highlight bash %}
+nvidia-smi -L
+NVIDIA-SMI couldn't find libnvidia-ml.so library in your system. Please make sure that the NVIDIA Display Driver is properly installed and present in your system.
+Please also try adding directory that contains libnvidia-ml.so to your system PATH.
 {% endhighlight %}
 
 
@@ -110,10 +109,10 @@ cd libgpuarray
 mkdir Build
 cd Build
 cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr \
-  -DCUDA_CUDA_LIBRARY=/usr/lib64/nvidia/libcuda.so \
-  -DCUDA_INCLUDE_DIRS=/usr/include/cuda \
-  -DOPENCL_LIBRARIES=/usr/lib64/nvidia/libOpenCL.so \
-  -DOPENCL_INCLUDE_DIRS=/usr/include/cuda/CL
+  -DCUDA_CUDA_LIBRARY=/usr/lib64/nvidia-bumblebee/libcuda.so \
+  -DCUDA_INCLUDE_DIRS=/usr/local/cuda/include \
+  -DOPENCL_LIBRARIES=/usr/lib64/nvidia-bumblebee/libOpenCL.so \
+  -DOPENCL_INCLUDE_DIRS=/usr/local/cuda/include/CL
 make
 sudo make install
 {% endhighlight %}
@@ -136,7 +135,7 @@ python setup.py install
 And then test it from within a regular user directory (using the same ``virtualenv``) :
 
 {% highlight python %}
-python
+optirun python
 import pygpu
 pygpu.init('cuda0')
 {% endhighlight %}
@@ -192,11 +191,11 @@ else:
 And then run, successively :
 
 {% highlight bash %}
-THEANO_FLAGS=mode=FAST_RUN,floatX=float32,device=cpu   python gpu_check.py
+THEANO_FLAGS=mode=FAST_RUN,floatX=float32,device=cpu  optirun  python gpu_check.py 
 """ output is ::
 [Elemwise{exp,no_inplace}(<TensorType(float32, vector)>)]
-Looping 1000 times took 3.35117197037 seconds
-Result is [ 1.23178029  1.61879337  1.52278066 ...,  2.20771813  2.29967761 1.62323284]
+Looping 1000 times took 5.44066691399 seconds
+Result is [ 1.23178029  1.61879337  1.52278066 ...,  2.20771813  2.29967761  1.62323284]
 Used the cpu
 """
 {% endhighlight %}
@@ -204,12 +203,13 @@ Used the cpu
 and 
 
 {% highlight bash %}
-THEANO_FLAGS=mode=FAST_RUN,floatX=float32,device=gpu   python gpu_check.py
+THEANO_FLAGS=mode=FAST_RUN,floatX=float32,device=gpu  optirun  python gpu_check.py 
 """ output is ::
-Using gpu device 0: GeForce GTX 760
+Using gpu device 0: GeForce GT 750M
 [GpuElemwise{exp,no_inplace}(<CudaNdarrayType(float32, vector)>), HostFromGpu(GpuElemwise{exp,no_inplace}.0)]
-Looping 1000 times took 0.339042901993 seconds
-Result is [ 1.23178029  1.61879349  1.52278066 ...,  2.20771813  2.29967761 1.62323296]
+Looping 1000 times took 1.06558203697 seconds
+Result is [ 1.23178029  1.61879349  1.52278066 ...,  2.20771813  2.29967761
+  1.62323296]
 Used the gpu
 """
 {% endhighlight %}
@@ -217,7 +217,7 @@ Used the gpu
 but 
 
 {% highlight bash %}
-THEANO_FLAGS=mode=FAST_RUN,floatX=float32,device=cuda0   python gpu_check.py
+THEANO_FLAGS=mode=FAST_RUN,floatX=float32,device=cuda0  optirun  python gpu_check.py
 """ output is ::
 *FAILURE...*
 """
@@ -228,15 +228,13 @@ THEANO_FLAGS=mode=FAST_RUN,floatX=float32,device=cuda0   python gpu_check.py
 
 {% highlight bash %}
 TP=`python -c "import os, theano; print os.path.dirname(theano.__file__)"`
-THEANO_FLAGS=mode=FAST_RUN,floatX=float32,device=gpu python ${TP}/misc/check_blas.py
+THEANO_FLAGS=mode=FAST_RUN,floatX=float32,device=gpu optirun python ${TP}/misc/check_blas.py
 
-## GPU : 0.14s (GeForce GTX 760)
-## CPU : 5.72s (i7-4770 CPU @ 3.40GHz)
+
+Total execution time: 9.38s on CPU (with direct Theano binding to blas).
+Total execution time: 0.44s on GPU.
+## GPU : 0.44s (GeForce GT 750M)
+## CPU : 9.38s (i5-4200U CPU @ 1.60GHz)
 {% endhighlight %}
 
 
-### OpenCL stuff (for another day)
-
-{% highlight bash %}
-dnf -y install clinfo ocl-icd opencl-tools 
-{% endhighlight %}
