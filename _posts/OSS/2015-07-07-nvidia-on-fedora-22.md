@@ -1,6 +1,6 @@
 ---
 date: 2015-07-07
-title: Nvidia installation for Theano on Fedora 22 (7.0)
+title: Nvidia (7.0) installation for Theano on Fedora 22
 category: OSS
 tags:
 - fedora
@@ -20,7 +20,7 @@ we can fix up their code as it installs.
 
 This write-up is simply a condensed version of 
 [Dr Donald Kinghorn's excellent write-up](https://www.pugetsystems.com/labs/articles/Install-NVIDIA-CUDA-on-Fedora-22-with-gcc-5-1-654/)
-(which it's probably best to follow along with in a separate tab) with
+(with which it's probably best to follow along, opened in a separate tab) plus
 additional instructions concerning the building of Theano.
 
 ### Set up a scratch directory 
@@ -88,7 +88,7 @@ It should now compile the NVIDIA kernel modules...
 Now reboot.
 
 
-#### Test the installation
+### Test the installation
 
 To see that your driver is installed and working properly, check that the kernel modules are there :
 
@@ -149,12 +149,19 @@ cd bin/x86_64/linux/release/
 {% endhighlight %}
 
 
+### Cleaning up
+
+If everything tests out Ok above, then the ``/root/fedora22-cuda`` directory 
+can be safely deleted.
+
+
 ## The Theano Part
 
 ###  Installation of ``libgpuarray``
 
-Install the bleeding edge ``libgpuarray`` into your ``virtualenv`` - first 
-compile the ``.so`` and ``.a`` libraries, and put them in a sensible place :
+To install the bleeding edge ``libgpuarray`` into your ``virtualenv``, first 
+compile the ``.so`` and ``.a`` libraries that the module creates, 
+and put them in a sensible place :
 
 {% highlight bash %}
 . env/bin/activate
@@ -181,7 +188,7 @@ It may also complain about :
       /usr/local/cuda/lib64
 {% endhighlight %}
 
-This won't affect the CUDA functionality (OpenCL impact TBD).
+This won't affect the CUDA functionality (its impact on OpenCL is still TBD).
 
 Next, install the Python component (after going into the same ``virtualenv``) : 
 
