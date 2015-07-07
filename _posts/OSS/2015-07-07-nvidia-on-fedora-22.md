@@ -70,6 +70,13 @@ ldconfig
 
 ### Now install the graphics drivers
 
+Run the Nvidia installer (look at the notes in this section for answer-hints):
+
+{% highlight bash %}
+chmod 755 NVIDIA-Linux-x86_64-352.21.run 
+./NVIDIA-Linux-x86_64-352.21.run 
+{% endhighlight %}
+
 *  Say "Yes" to the question about registering with DKMS
 
 *  Say "Yes" to the question about 32-bit libs
@@ -113,11 +120,9 @@ GPU 0: GeForce GTX 760 (UUID: GPU-b8075eeb-56ff-4595-7901-eef770de8296)
 {% endhighlight %}
 
 
-
-
 ### Fix the CUDA headers to accept new ```gcc```
 
-Now, as ```root```, fix up Nvidia disallowing ``gcc`` greater than ``v4.9``...
+Now, as ```root```, fix up Nvidia's header file that disallows ``gcc`` greater than ``v4.9``...
 
 In file ``/usr/local/cuda/include/host_config.h``, look to make the following replacement : 
 
@@ -128,6 +133,7 @@ In file ``/usr/local/cuda/include/host_config.h``, look to make the following re
 {% endhighlight %}
 
 
+## The Theano Part
 
 ###  Installation of ``libgpuarray``
 
@@ -141,11 +147,7 @@ git clone https://github.com/Theano/libgpuarray.git
 cd libgpuarray
 mkdir Build
 cd Build
-cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr \
-  -DCUDA_CUDA_LIBRARY=/usr/lib64/nvidia/libcuda.so \
-  -DCUDA_INCLUDE_DIRS=/usr/local/cuda/include \
-  -DOPENCL_LIBRARIES=/usr/lib64/nvidia/libOpenCL.so \
-  -DOPENCL_INCLUDE_DIRS=/usr/local/cuda/include/CL
+cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
 make
 sudo make install
 {% endhighlight %}
