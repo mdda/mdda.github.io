@@ -124,12 +124,28 @@ GPU 0: GeForce GTX 760 (UUID: GPU-b8075eeb-56ff-4595-7901-eef770de8296)
 
 Now, as ```root```, fix up Nvidia's header file that disallows ``gcc`` greater than ``v4.9``...
 
-In file ``/usr/local/cuda/include/host_config.h``, look to make the following replacement : 
+In file ``/usr/local/cuda-7.0/include/host_config.h``, look to make the following replacement : 
 
 {% highlight c++ %}
 // #if __GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ > 9)  // Old version commented out
 // This is the updated line, which guards again gcc > 5.1.x instead
 #if __GNUC__ > 5 || (__GNUC__ == 5 && __GNUC_MINOR__ > 1)
+{% endhighlight %}
+
+
+### Test the CUDA functionality
+
+As a regular user, compile the CUDA samples from within a clean directory :
+
+{% highlight bash %}
+cd ~        # for instance
+mkdir cuda  # for instance
+cd cuda
+rsync -av /usr/local/cuda/samples .
+cd samples/
+make -j4
+cd bin/x86_64/linux/release/
+./deviceQuery
 {% endhighlight %}
 
 
@@ -158,6 +174,14 @@ Although, if you know you will require ``clBLAS`` in the future
 see my [OpenCL post](http://blog.mdda.net/oss/2014/11/02/building-clblas/), 
 since you need to install this before running ``cmake`` above).
 
+It may also complain about :
+
+{% highlight bash %}
+    runtime library [libOpenCL.so.1] in /usr/lib64 may be hidden by files in:
+      /usr/local/cuda/lib64
+{% endhighlight %}
+
+This won't affect the CUDA functionality (OpenCL impact TBD).
 
 Next, install the Python component (after going into the same ``virtualenv``) : 
 
