@@ -68,7 +68,7 @@ export PATH=$PATH:/usr/local/cuda/bin
 
 #### Test the installation
 
-Check that the kernel modules is there :
+Check that the kernel modules are there :
 
 {% highlight bash %}
 sudo lsmod | grep nv

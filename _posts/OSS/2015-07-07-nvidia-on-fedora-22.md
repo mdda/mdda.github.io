@@ -23,43 +23,101 @@ This write-up is simply a condensed version of
 (which it's probably best to follow along with in a separate tab) with
 additional instructions concerning the building of Theano.
 
+### Set up a scratch directory 
+
+As ```root``` : 
+
+{% highlight bash %}
+cd ~   # pwd = /root/
+mkdir fedora22-cuda
+cd fedora22-cuda/
+{% endhighlight %}
+
+
 ### Nvidia Driver download (for later)
 
 Go to the [Nvidia Driver download page](http://www.nvidia.com/content/DriverDownload-March2009/confirmation.php?url=/XFree86/Linux-x86_64/352.21/NVIDIA-Linux-x86_64-352.21.run&lang=us&type=GeForce), and grab the 
 76Mb driver package, for installation later...
 
+### CUDA Driver download (installed first)
 
-
-
-
-{% highlight bash %}
-dnf install 'dnf-command(config-manager)'
-dnf config-manager --add-repo=http://negativo17.org/repos/fedora-nvidia.repo
-dnf remove \*nvidia\*
-dnf -y install nvidia-driver akmod-nvidia kernel-devel
-dnf -y install \
-  cuda cuda-libs cuda-extra-libs \
-  cuda-cli-tools cuda-devel cuda-docs \
-  nvidia-driver-libs nvidia-driver-cuda-libs \
-  nvidia-driver-devel nvidia-driver-NVML-devel \
-  nvidia-modprobe
-{% endhighlight %}
-
-Unfortunately, the directory structure for the ``cuda`` files is not what 
-Theano expects, so, as ``root`` do ::
+Download the 1Gb CUDA local installer for RHEL7 (1Gb):
 
 {% highlight bash %}
-mkdir /usr/local/cuda
-ln -s /usr/include/cuda /usr/local/cuda/include
-mkdir /usr/local/cuda/bin/
-mv /usr/bin/nvcc /usr/local/cuda/bin/
-ln -s /usr/bin/crt /usr/local/cuda/bin/
+CUDA7=http://developer.download.nvidia.com/compute/cuda/7_0
+RPMDEB=${CUDA7}/Prod/local_installers/rpmdeb
+wget ${RPMDEB}/cuda-repo-rhel7-7-0-local-7.0-28.x86_64.rpm
 {% endhighlight %}
 
-which rigs up a more standard *tree* of folders, which is what 
-``Theano`` expects when executing your models :: ``/usr/local/cuda/{include,bin}``.
+### Install CUDA using Nvidia's repo
 
-Now, as root, fix up Nvidia disallowing ``gcc`` greater than ``v4.9``...
+{% highlight bash %}
+cd ~/fedora22-cuda # pwd=/root/fedora-cuda/
+dnf install cuda-repo-rhel7-7-0-local-7.0-28.x86_64.rpm 
+dnf install cuda
+{% endhighlight %}
+
+
+### Fix the path &amp; library directories globally
+
+{% highlight bash %}
+echo 'export PATH=$PATH:/usr/local/cuda/bin' >> /etc/profile.d/cuda.sh
+ls -l /usr/local/cuda/lib64
+echo '/usr/local/cuda/lib64' >> /etc/ld.so.conf.d/cuda.conf
+ldconfig
+{% endhighlight %}
+
+
+### Now install the graphics drivers
+
+*  Say "Yes" to the question about registering with DKMS
+
+*  Say "Yes" to the question about 32-bit libs
+
+It should now compile the NVIDIA kernel modules...
+
+*  Say "No" to the question about running nvidia-xconfig!
+
+Now reboot.
+
+
+#### Test the installation
+
+To see that your driver is installed and working properly, check that the kernel modules are there :
+
+{% highlight bash %}
+sudo lsmod | grep nv
+# Output::
+nvidia_uvm             77824  0
+nvidia               8564736  1 nvidia_uvm
+drm                   331776  4 i915,drm_kms_helper,nvidia
+{% endhighlight %}
+
+Check on the CUDA compiler:
+
+{% highlight bash %}
+/usr/local/cuda/bin/nvcc --version
+# Output::
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2015 NVIDIA Corporation
+Built on Mon_Feb_16_22:59:02_CST_2015
+Cuda compilation tools, release 7.0, V7.0.27
+{% endhighlight %}
+
+And an actual check on the card itself :
+
+{% highlight bash %}
+sudo nvidia-smi -L
+# Output::
+GPU 0: GeForce GTX 760 (UUID: GPU-b8075eeb-56ff-4595-7901-eef770de8296)
+{% endhighlight %}
+
+
+
+
+### Fix the CUDA headers to accept new ```gcc```
+
+Now, as ```root```, fix up Nvidia disallowing ``gcc`` greater than ``v4.9``...
 
 In file ``/usr/local/cuda/include/host_config.h``, look to make the following replacement : 
 
@@ -69,45 +127,6 @@ In file ``/usr/local/cuda/include/host_config.h``, look to make the following re
 #if __GNUC__ > 5 || (__GNUC__ == 5 && __GNUC_MINOR__ > 1)
 {% endhighlight %}
 
-
-Now, to set the right path for ``nvcc``, in the user's ``~/.bash_profile`` add ::
-
-{% highlight bash %}
-export PATH=$PATH:/usr/local/cuda/bin
-{% endhighlight %}
-
-
-
-#### Test the installation
-
-Check that the kernel modules is there :
-
-{% highlight bash %}
-sudo lsmod | grep nv
-
-nvidia               8556544  0 
-drm                   331776  4 i915,drm_kms_helper,nvidia
-{% endhighlight %}
-
-Looking good:
-
-{% highlight bash %}
-/usr/local/cuda/bin/nvcc --version
-
-nvcc: NVIDIA (R) Cuda compiler driver
-Copyright (c) 2005-2014 NVIDIA Corporation
-Built on Wed_Aug_27_10:36:36_CDT_2014
-Cuda compilation tools, release 6.5, V6.5.16
-{% endhighlight %}
-
-
-Hmpf...
-
-{% highlight bash %}
-sudo nvidia-smi -L
-
--bash: nvidia-smi: command not found
-{% endhighlight %}
 
 
 ###  Installation of ``libgpuarray``
