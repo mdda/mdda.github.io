@@ -8,6 +8,8 @@ gem install bundler
 bundle install 
 
 #if Ruby upgraded, simplest to ```rm -rf ~/.gem``` otherwise endless search through updates...
+#And then : 
+bundle update
 
 ## Painful route :
 #bundle update 
