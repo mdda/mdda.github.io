@@ -52,7 +52,7 @@ and update the settings to be on the network :
 
 *  Type : "LPD/LPR Host or Printer"
 *  Host : ```192.168.1.8```
-*  Queue : ```bianry_p1```
+*  Queue : ```binary_p1```
   - Device URI will become : ```lpd://192.168.1.8/binary_p1```
 
 ### Network Scanner setup 
