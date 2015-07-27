@@ -1,6 +1,6 @@
 ---
 date: 2015-07-27
-title: Fedora : Converting from Server to Workstation
+title: Fedora - Converting from Server to Workstation
 category: OSS
 tags:
 - fedora
