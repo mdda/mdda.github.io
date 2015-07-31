@@ -7,11 +7,11 @@ tags:
 - curl
 - json
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
-### Tiny Tip
+### Tiny Tip for Better JSON output from ```curl``` to a REST API
 
 Add the following to ```~/.bashrc```:
 
