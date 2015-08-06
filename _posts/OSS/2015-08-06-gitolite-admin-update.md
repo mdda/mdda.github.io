@@ -11,10 +11,10 @@ published: true
 ---
 {% include JB/setup %}
 
-### How to add an additional Admin user to ```gitolite```
-
 This assumes you don't have access to the existing admin account
 (which, if you did, would make things very easy).
+
+### How to add an additional Admin user to ```gitolite```
 
 On the server running ```gitolite```, logged in with the  ```gitolite``` user
 (or whichever user is the one with the gitolite repositories in it) :
@@ -28,6 +28,9 @@ cd conf/
 # edit gitolite.conf, adding the user required to the gitolite-admin repo
 git commit -am "Added new admin"
 gitolite push
+# check that it looks Ok
+cd ~
+rm -rf ~/tmp-delete-me-soon/
 {% endhighlight %}
 
 Then, on the machine where the new admin user works :
