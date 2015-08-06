@@ -7,30 +7,35 @@ tags:
 - git
 - gitolite
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
-### How to add an additional Admin user to gitolite
+### How to add an additional Admin user to ```gitolite```
 
+This assumes you don't have access to the existing admin account
+(which, if you did, would make things very easy).
 
-
-
-
-Add the following to ```~/.bashrc```:
-
-{% highlight bash %}
-function jcurl () {
-  curl $@ --silent |  python -m json.tool
-}
-{% endhighlight %}
-
-so that you get better-looking output for ```curl``` queries that return JSON :
+On the server running ```gitolite```, logged in with the  ```gitolite``` user
+(or whichever user is the one with the gitolite repositories in it) :
 
 {% highlight bash %}
-curl https://api.github.com/users/mdda/repos
-# vs.
-jcurl https://api.github.com/users/mdda/repos
-## which can be  *much* nicer 
-## (depending on whether the source already sends pretty JSON, of course)
+mkdir -p ~/tmp-delete-me-soon/
+cd ~/tmp-delete-me-soon/
+git clone ~/repositories/gitolite-admin.git
+cd gitolite-admin/
+cd conf/
+# edit gitolite.conf, adding the user required to the gitolite-admin repo
+git commit -am "Added new admin"
+gitolite push
 {% endhighlight %}
+
+Then, on the machine where the new admin user works :
+
+{% highlight bash %}
+git clone gitolite@example.com:gitolite-admin
+Cloning into 'gitolite-admin'...
+{% endhighlight %}
+
+Now, ```gitolite``` is at the new user's command...
+
