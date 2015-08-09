@@ -12,17 +12,12 @@ published: false
 ### Presentation Outline
 
 
+Martin will provide 
 
-
-
-
-
-
-
-
-
-
-
+  an overview of concepts and themes in Artificial Intelligence, 
+    including a review of the field today (notably deep learning) 
+    
+  his perspective on Artificial General Intelligence.
 
 
 
