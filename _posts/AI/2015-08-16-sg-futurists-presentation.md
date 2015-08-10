@@ -11,7 +11,7 @@ published: false
 
 ### Presentation Outline
 
-
+#### MeetUp Promises
 Martin will provide 
 
   an overview of concepts and themes in Artificial Intelligence, 
@@ -20,8 +20,32 @@ Martin will provide
   his perspective on Artificial General Intelligence.
 
 
+#### Ideas
 
+Basic philosophical ideas - 
 
+  - Not the meat of the talk...
+
+The past
+  Chess
+  Jeopardy
+  Driverless cars
+
+Current cycle focussing on Deep Learning
+  - GPU : Turning point
+  - Data : More important than realised
+
+What can be done now
+  - audio : In Android 
+  - vision : ImageNet
+  - translation :
+  - labelling of images :
+  
+  - reinforcement learning :
+
+How far can Deep Learning take us?
+
+How about Real AI?
 
 
 ### Presentation Link
