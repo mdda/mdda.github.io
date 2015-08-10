@@ -34,18 +34,36 @@ The past
 Current cycle focussing on Deep Learning
   - GPU : Turning point
   - Data : More important than realised
+  - New thinking : 
+      Sigmoids out, ReLUs in
+      Dropout
+      Batch normalization
+      Networks for the whole stack
+  - Better-than-expected
+      Convolutional networks for images
+      Word Embedding
+      Transfer learning 
 
 What can be done now
   - audio : In Android 
-  - vision : ImageNet
-  - translation :
-  - labelling of images :
-  
-  - reinforcement learning :
+  - vision : ImageNet, google house numbers
+  - translation : google translate (yes, compressed)
+  - labelling of images : 
+  - reinforcement learning : 
 
 How far can Deep Learning take us?
+  lots of fruit now found to be 'hanging low'
+  building ladder to the moon
 
 How about Real AI?
+  Substrate for brain may be poor for 'higher order thinking'
+  'Thought process' of AI may be very different (compare pre- and post- internet search strategies)
+  
+  Conscious thought is the water's surface, whereas mind is the ocean
+
+  Deep Learning frontier is being pushed by competitions
+    Need to figure out competitive 'thinking' data/interactions (rather than 1 per researcher)
+
 
 
 ### Presentation Link
