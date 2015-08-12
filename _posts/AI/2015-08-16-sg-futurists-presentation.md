@@ -1,7 +1,7 @@
 ---
 layout: post
 category: AI
-title: Machine Learning - Going Deeper with Python and Theano
+title: The Future of Mind - Talk at the SG Futurists MeetUp
 tagline: Presentation link
 date: 2015-08-16
 tags: [NeuralNetworks,GOFAI,Presentation]
@@ -12,57 +12,62 @@ published: false
 ### Presentation Outline
 
 #### MeetUp Promises
-Martin will provide 
 
-  an overview of concepts and themes in Artificial Intelligence, 
-    including a review of the field today (notably deep learning) 
+Martin will provide :
+
+*  an overview of concepts and themes in Artificial Intelligence, 
+     + including a review of the field today (notably deep learning) 
     
-  his perspective on Artificial General Intelligence.
+*  his perspective on Artificial General Intelligence.
 
 
 #### Ideas
 
 Basic philosophical ideas - 
+-  Not the meat of the talk...
 
-  - Not the meat of the talk...
+The past:
 
-The past
-  Chess
-  Jeopardy
-  Driverless cars
+*  Chess
+*  Jeopardy
+*  Driverless cars
 
-Current cycle focussing on Deep Learning
-  - GPU : Turning point
-  - Data : More important than realised
-  - New thinking : 
-      Sigmoids out, ReLUs in
-      Dropout
-      Batch normalization
-      Networks for the whole stack
-  - Better-than-expected
-      Convolutional networks for images
-      Word Embedding
-      Transfer learning 
+Current cycle focussing on Deep Learning :
 
-What can be done now
-  - audio : In Android 
-  - vision : ImageNet, google house numbers
-  - translation : google translate (yes, compressed)
-  - labelling of images : 
-  - reinforcement learning : 
+*  GPU : Turning point
+*  Data : More important than realised
+*  New thinking : 
+     +    Sigmoids out, ReLUs in
+     +    Dropout
+     +    Batch normalization
+     +    Networks for the whole stack
+*  Better-than-expected
+     +    Convolutional networks for images
+     +    Word Embedding
+     +    Transfer learning 
+
+What can be done now :
+
+*  audio : In Android 
+*  vision : ImageNet, google house numbers
+*  translation : google translate (yes, compressed)
+*  labelling of images : 
+*  reinforcement learning : 
 
 How far can Deep Learning take us?
-  lots of fruit now found to be 'hanging low'
-  building ladder to the moon
+
+*   lots of fruit now found to be 'hanging low'
+*   building ladder to the moon
 
 How about Real AI?
-  Substrate for brain may be poor for 'higher order thinking'
-  'Thought process' of AI may be very different (compare pre- and post- internet search strategies)
-  
-  Conscious thought is the water's surface, whereas mind is the ocean
 
-  Deep Learning frontier is being pushed by competitions
-    Need to figure out competitive 'thinking' data/interactions (rather than 1 per researcher)
+*   Substrate for brain may be poor for 'higher order thinking'
+*   'Thought process' of AI may be very different (compare pre- and post- internet search strategies)
+  
+*   Conscious thought is the water's surface, whereas mind is the ocean
+
+*   Deep Learning frontier is being pushed by competitions
+    +   Need to figure out competitive 'thinking' data/interactions (rather than 1 per researcher)
 
 
 
