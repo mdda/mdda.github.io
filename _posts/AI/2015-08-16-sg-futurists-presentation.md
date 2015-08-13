@@ -13,7 +13,7 @@ published: false
 
 #### MeetUp Promises
 
-Martin will provide :
+The talk will provide :
 
 *  an overview of concepts and themes in Artificial Intelligence, 
      + including a review of the field today (notably deep learning) 
@@ -23,41 +23,87 @@ Martin will provide :
 
 #### Ideas
 
-Basic philosophical ideas - 
--  Not the meat of the talk...
-
 The past:
-
 *  Chess
 *  Jeopardy
 *  Driverless cars
 
-Current cycle focussing on Deep Learning :
+The past (individual slides):
+*  Chess
 
+*  Jeopardy
+
+*  Driverless cars
+
+
+Current cycle focussing on Deep Learning :
 *  GPU : Turning point
 *  Data : More important than realised
+*  New thinking 
+*  Better-than-expected
+
+Each in turn (individual slides) :
+*  GPU : Turning point
+
+*  Data : More important than realised
+
 *  New thinking : 
      +    Sigmoids out, ReLUs in
      +    Dropout
      +    Batch normalization
      +    Networks for the whole stack
+     
 *  Better-than-expected
      +    Convolutional networks for images
      +    Word Embedding
      +    Transfer learning 
 
-What can be done now :
 
+What can be done now:
 *  audio : In Android 
 *  vision : ImageNet, google house numbers
 *  translation : google translate (yes, compressed)
 *  labelling of images : 
 *  reinforcement learning : 
 
-How far can Deep Learning take us?
+Each in turn (individual slides) :
+*  audio : In Android 
 
+*  vision : ImageNet, google house numbers
+
+*  translation : google translate (yes, compressed)
+
+*  labelling of images : 
+
+*  reinforcement learning : 
+
+
+How far can Deep Learning take us?
 *   lots of fruit now found to be 'hanging low'
 *   building ladder to the moon
+
+
+Each in turn (individual slides) :
+*   lots of fruit now found to be 'hanging low'
+
+*   building ladder to the moon
+
+
+Basic philosophical ideas --  Not the meat of the talk...
+*   Convert one neuron at a time
+*   Chinese Room
+*   Turing Test
+
+Each in turn (individual slides) :
+*   Convert one neuron at a time
+    -   In-principle idea
+
+*   Chinese Room
+    -   System (vs operator) intelligence 
+
+*   Turing Test
+    -   Cheating is now the issue
+    
 
 How about Real AI?
 
@@ -71,6 +117,7 @@ How about Real AI?
 
 
 
+{% comment %} 
 ### Presentation Link
 
 I recently gave a <strong><a href="http://redcatlabs.com/2015-06-19_Presentation-PyConSG/" target="_blank">presentation about Python, Theano, Blocks and Deep Learning</a></strong> 
@@ -84,4 +131,4 @@ that contains all the iPython notebooks, code and documentation that I put toget
 in preparation for the talk.
 
 ![Presentation Content Example]({{ site.url }}/assets/img/2015-06-19_Presentation-PyCon_8-5_600x390.png)
-
+{% endcomment %} 
