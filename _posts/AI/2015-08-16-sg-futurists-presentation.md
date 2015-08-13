@@ -23,12 +23,19 @@ The talk will provide :
 
 #### Ideas
 
+Front Page
+
+About Me
+
 The past:
+
 *  Chess
 *  Jeopardy
 *  Driverless cars
 
+
 The past (individual slides):
+
 *  Chess
 
 *  Jeopardy
@@ -37,12 +44,14 @@ The past (individual slides):
 
 
 Current cycle focussing on Deep Learning :
+
 *  GPU : Turning point
 *  Data : More important than realised
 *  New thinking 
 *  Better-than-expected
 
 Each in turn (individual slides) :
+
 *  GPU : Turning point
 
 *  Data : More important than realised
@@ -60,41 +69,76 @@ Each in turn (individual slides) :
 
 
 What can be done now:
-*  audio : In Android 
-*  vision : ImageNet, google house numbers
-*  translation : google translate (yes, compressed)
-*  labelling of images : 
-*  reinforcement learning : 
+
+*  audio to text
+*  vision - recognising 
+*  language translation 
+*  image captioning
+*  reinforcement learning
+
 
 Each in turn (individual slides) :
-*  audio : In Android 
 
-*  vision : ImageNet, google house numbers
+*  audio 
+   +   In Android Jellybean (=4.3)
+       -   http://www.phonearena.com/news/The-secret-of-Googles-amazing-voice-recognition-revealed-it-works-like-a-brain_id39938
+   +   Voice search works in offline mode in Android Lolipop (=5.0)
+       -   http://android.stackexchange.com/questions/100492/offline-voice-recognition-not-working 
+   
+   +   Also
+       -   http://www.androidheadlines.com/2014/10/google-talk-neural-networks-voice-recognition.html
+       -   http://googleresearch.blogspot.sg/2015/08/the-neural-networks-behind-google-voice.html
 
-*  translation : google translate (yes, compressed)
 
-*  labelling of images : 
+*  vision 
+   +   ImageNet
+       -  Human-competitive (partly to do with dataset)
+       
+   +   google house numbers
+       -  Better-than human :: http://www.geek.com/news/googles-neutral-networks-are-now-better-than-humans-at-reading-addresses-1581653/
+       -  http://arxiv.org/abs/1312.6082
 
-*  reinforcement learning : 
+
+*  translation 
+   +   google translate 
+       -   compressed blog posting confirms availability :: http://googleresearch.blogspot.sg/2015/07/how-google-translate-squeezes-deep.html
+       -   has nice image
+       
+
+
+*  labelling of images 
+   +   Quantity of image data
+   +   Karpathy
+   +   Google Photos (now)
+
+
+*  reinforcement learning 
+   +   DeepMind Atari
+
 
 
 How far can Deep Learning take us?
+
 *   lots of fruit now found to be 'hanging low'
 *   building ladder to the moon
 
 
 Each in turn (individual slides) :
+
 *   lots of fruit now found to be 'hanging low'
 
 *   building ladder to the moon
 
 
+
 Basic philosophical ideas --  Not the meat of the talk...
+
 *   Convert one neuron at a time
 *   Chinese Room
 *   Turing Test
 
 Each in turn (individual slides) :
+
 *   Convert one neuron at a time
     -   In-principle idea
 
