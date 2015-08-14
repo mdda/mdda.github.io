@@ -32,8 +32,8 @@ The past:
 *  Chess
 *  Jeopardy
 *  Driverless cars
-
-
+   
+   
 The past (individual slides):
 
 *  Chess
@@ -66,6 +66,14 @@ Each in turn (individual slides) :
      +    Convolutional networks for images
      +    Word Embedding
      +    Transfer learning 
+
+
+
+"AI Effect"
+
+*  "AI Effect" : https://en.wikipedia.org/wiki/AI_effect
+   -   AI is whatever hasn't been done yet
+
 
 
 What can be done now:
@@ -116,7 +124,6 @@ Each in turn (individual slides) :
    +   DeepMind Atari
 
 
-
 How far can Deep Learning take us?
 
 *   lots of fruit now found to be 'hanging low'
@@ -126,6 +133,8 @@ How far can Deep Learning take us?
 Each in turn (individual slides) :
 
 *   lots of fruit now found to be 'hanging low'
+
+    -   personal experience : Grammar as a Language => DeepNER
 
 *   building ladder to the moon
 
