@@ -188,6 +188,18 @@ Reinforcement learning
 
 
 ---
+Commercial Side
+
+*   It feels like...  'X' wants AI to 'Y' 
+
+    -   IBM : Sell to Enterprise 
+    -   Apple : be Magical
+    -   Baidu : be Functional
+    -   Facebook : be your Friend
+    
+    -   Google : Happen
+
+---
 How far can Deep Learning take us?
 
 *   lots of fruit now found to be 'hanging low'
@@ -202,9 +214,9 @@ How far can Deep Learning take us?
 
 
 ---
-Slides not present : 
+Futurism
 
-*   Graph of silicon vs brain compute power
+*   Graph of silicon vs brain compute power (omitted)
 
 *   Singularity worries
     -   Perhaps AI workers arrive in time to difuse the demographic time-bomb
@@ -216,7 +228,6 @@ Slides not present :
         +    Einstein, etc
     -   Not clear that twice the capacity => twice the smarts
 
-*   
 
 ---
 How about Strong AI?
@@ -362,26 +373,13 @@ Candidates for Higher principals
 
 
 ---
-Commercial Side
-
-*   It feels like...  'X' wants AI to 'Y' 
-    -   IBM : Sell to Enterprise 
-    -   Apple : Magic
-    -   Baidu : be Functional
-    -   Facebook : be your Friend
-    
-    -   Google : Happen
-
-
-
----
 Conclusions
 
 *   Great strides being made
 *   AI Effect is a problem
     +   Don't even know the right questions to ask
 *   Deep Learning frontier is being pushed by competitions
-    +   Need to figure out competitive 'thinking' data/interactions (rather than 1 per researcher)
+    +   Need to figure out competitive 'thinking' data/interactions
 
 
 
