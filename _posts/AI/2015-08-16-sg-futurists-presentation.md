@@ -70,13 +70,32 @@ Driverless cars
 ---
 Current cycle focussing on Deep Learning :
 
-*  Specific 'branding' by leading lights (Hinton, Bengio, Le Cun, Andrew Ng) in mid 2000s
-   -   http://spectrum.ieee.org/automaton/robotics/artificial-intelligence/facebook-ai-director-yann-lecun-on-deep-learning
+*  Neural Networks with many layers
+   -  Specific 'branding' by leading lights (Hinton, Bengio, Le Cun, Andrew Ng) in mid 2000s
+      -   http://spectrum.ieee.org/automaton/robotics/artificial-intelligence/facebook-ai-director-yann-lecun-on-deep-learning
+
+___
+"Neural"
+
+*   One Layers
+
+___
+"Neural Networks"
+
+*   Several Layers
+
+___
+"Deep Neural Networks"
+
+*   Many Layers
+
+
+---
+It's Different this Time
 
 *  Data : More useful than realised
 *  GPUs : Turning point
 *  New thinking
-
 
 ___
 Data : More useful than realised
