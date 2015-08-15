@@ -208,21 +208,6 @@ Commercial Side
     
     -   Google : Happen
 
----
-How far can Deep Learning take us?
-
-*   lots of fruit now found to be 'low hanging'
-    -   personal experience : Grammar as a Language => DeepNER
-
-
-*   Trap : Building ever taller ladders when goal is to reach the Moon
-
-
-*   Higher principals are more important
-    -   Aeroplanes don't flap wings 
-    -   What is the analog of aerodynamics for intelligence?
-
-
 
 ---
 Futurism
@@ -239,6 +224,7 @@ Futurism
         +    Homer Simpson, Bart Simpson, Lisa Simpson
         +    Einstein, etc
     -   Not clear that twice the capacity => twice the smarts
+
 
 
 ---
@@ -270,36 +256,35 @@ Magic and the Brain
 
 
 ___
-Searle's Chinese Room
-
-*   Description
-    -   Arguments
-*   System (vs operator) intelligence 
-
-
-
-___
 Turing Test
 
 *   Description
+*   Chatbots are getting better...
+    -   Cheating is now an issue
+*   Looking for what Lisa Simpson can do rather than Homer
 
-*   Cheating is now the issue
-    -   Probably more like a dinner party conversation
-    
-*   Looking for what a human does that a dog doesn't
 
-    
+___
+Searle's Chinese Room
+
+*   Description
+    -   Simulation of understanding vs real understanding
+    -   Principle relates to Conciousness rather than Intelligence
+
+*   System reply
+
+
 
 ---
 Problems with studying Conciousness
 
 *   Difficult to dig deeply into the actual process of thought
 *   People look to 
-    -   brain damage
-    -   disorders 
+    -   brain damage / disorders 
     -   visual tricks
     -   child development
-*   Conscious thought is the water's surface, whereas mind is the ocean
+
+*   Conscious thought is the water's surface, whereas mind is the full ocean
 
 
 
@@ -322,7 +307,7 @@ Brain Substrate
 ---
 'Thought process' of AI likely to be very different
 
-*   Simple vs Hard
+*   Simple vs Hard problems
     -   people whose names have 'M' as first letter 
     -   people whose names have 'R' as third letter
 
@@ -331,11 +316,25 @@ Brain Substrate
 
 *   Incompatible hardware 
     -   Uploading doesn't make sense to me
-    
 
 
 ---
-Searching for Higher Principals
+How far can Deep Learning take us?
+
+*   lots of fruit now found to be 'low hanging'
+    -   personal experience : Grammar as a Language => DeepNER
+
+
+*   Trap : Building ever taller ladders when goal is to reach the Moon
+
+
+*   Higher principles are more important
+    -   Aeroplanes don't flap wings 
+    -   What is the analog of aerodynamics for intelligence?
+
+
+---
+Searching for Higher Principles
 
 *   Using Biological neurons:
     -   accept that brain solves problems efficiently
@@ -359,14 +358,15 @@ Stuff that can be abstracted
 
 *   Hebbian Learning
     -   "cells that fire together wire together"
-    -   Gradient descent
-    -   Optimisation 
+    
+    -   ~ Gradient descent
+    -   ~ Optimisation 
         -   Matrix Methods
         -   Genetic Algorithms
 
 
 ___
-Candidates for Higher principals 
+Candidates for Higher principles 
 
 *   Learning from data
 
