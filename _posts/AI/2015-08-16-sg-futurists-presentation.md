@@ -308,11 +308,11 @@ Brain Substrate
 'Thought process' of AI likely to be very different
 
 *   Simple vs Hard problems
-    -   people whose names have 'M' as first letter 
-    -   people whose names have 'R' as third letter
+    -   People whose names have 'M' as first letter 
+    -   People whose names have 'R' as third letter
 
 *   Different algorithms
-    -   page numbering
+    -   Page numbering
 
 *   Incompatible hardware 
     -   Uploading doesn't make sense to me
@@ -321,8 +321,8 @@ Brain Substrate
 ---
 How far can Deep Learning take us?
 
-*   lots of fruit now found to be 'low hanging'
-    -   personal experience : Grammar as a Language => DeepNER
+*   Lots of fruit now found to be 'low hanging'
+    -   Personal experience : Grammar as a Language => DeepNER
 
 
 *   Trap : Building ever taller ladders when goal is to reach the Moon
@@ -368,20 +368,18 @@ Stuff that can be abstracted
 ___
 Candidates for Higher principles 
 
-*   Learning from data
+*   Learning from data : Need data
 
 *   Compression of Experience
-    -   Minimal Description Length
-    -   Occam's razor
+    -   Minimal Description Length / Occam's razor
+    -   Search for Novelty / Surprise
 
 *   Sparse Representations
 
 *   Bayesian statistics
 
-*   Search for Novelty / Surprise
-
 *   Language itself is revealing
-    -    highly evolved protocol
+    -    Highly evolved protocol
 
 
 ---
