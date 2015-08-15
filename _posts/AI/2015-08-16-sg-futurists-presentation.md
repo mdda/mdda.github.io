@@ -27,54 +27,71 @@ Front Page
 
 About Me
 
-The past:
+The past
 
-*  Chess
-*  Jeopardy
-*  Driverless cars
+*  Chess  (1950s - 1997)
+*  Jeopardy  (2004 - 2011)
+*  Driverless cars  (1980s - present)
+
+Chess
+*  1957 - 'within 10 years' 
+*  1978 - first game win against master
+*  1997 - first match win against #1 (Kasparov)
+    -   DeepBlue : 200MM moves per second
+*  2009 - Grandmaster level on your phone
+    -   'Pocket Fritz' : 20k moves/sec
+
+Jeopardy
+
++  2004 - New problem sought
++  2008 - IBM approached show hosts 
++  2011 - IBM Watson wins 
+   -   "4Tb of disk storage"
+
+Driverless cars
+
++  1980s - early work (CMU and Germany)
++  2004  - DARPA Grand Challenge - 12km furthest
++  2005  - DARPA Grand Challenge - 90% of contestents > 12km
++  2009  - Google Car driving autonomously around CA
++  2015  - Google Car : 
+   -   Driven 2 million miles 
+   -   14 minor accidents (caused by humans)
    
    
-The past (individual slides):
-
-*  Chess
-
-*  Jeopardy
-
-*  Driverless cars
 
 
 Current cycle focussing on Deep Learning :
 
-*  GPU : Turning point
-*  Data : More important than realised
-*  New thinking 
-*  Better-than-expected
-
-Each in turn (individual slides) :
+*  Specific 'branding' by leading lights (Hinton, Bengio, Le Cun, Andrew Ng) in mid 2000s
+   -   http://spectrum.ieee.org/automaton/robotics/artificial-intelligence/facebook-ai-director-yann-lecun-on-deep-learning
 
 *  GPU : Turning point
-
 *  Data : More important than realised
-
-*  New thinking : 
-     +    Sigmoids out, ReLUs in
-     +    Dropout
-     +    Batch normalization
-     +    Networks for the whole stack
-     
-*  Better-than-expected
-     +    Convolutional networks for images
-     
-     +    Word Embedding
-     
-     +    Transfer learning 
-          -   Learning one task can 'cross-fertilize'
+*  New thinking
 
 
-"AI Effect"
+GPU : Turning point
 
-*  "AI Effect" : https://en.wikipedia.org/wiki/AI_effect
-   -   AI is whatever hasn't been done yet
+*    1000s of cores
+*    >1GFLOP per dollar
+*    1 week x 1000 
+
+
+Data : More important than realised
+
+*    >1Bn Photos per day 
+    -    graph (http://www.kpcb.com/internet-trends)
+*    Wikipedia (~6Gb) standard traing unit
+
+
+New thinking
+
+*    Sigmoids out, ReLUs in
+*    Dropout
+*    Batch normalization
+*    Networks for the whole stack
+
 
 
 
@@ -89,90 +106,153 @@ What can be done now:
 
 Each in turn (individual slides) :
 
-*  audio 
-   +   In Android Jellybean (=4.3)
+Audio 
+
+*   In Android Jellybean (=4.3)
        -   http://www.phonearena.com/news/The-secret-of-Googles-amazing-voice-recognition-revealed-it-works-like-a-brain_id39938
-   +   Voice search works in offline mode in Android Lolipop (=5.0)
+*   Voice search works in offline mode in Android Lolipop (=5.0)
        -   http://android.stackexchange.com/questions/100492/offline-voice-recognition-not-working 
    
-   +   Also
+*   Also
        -   http://www.androidheadlines.com/2014/10/google-talk-neural-networks-voice-recognition.html
        -   http://googleresearch.blogspot.sg/2015/08/the-neural-networks-behind-google-voice.html
 
 
-*  vision 
-   +   ImageNet
+Vision 
+
+*   ImageNet
        -  Human-competitive (partly to do with dataset)
        
-   +   google house numbers
+*   google house numbers
        -  Better-than human :: http://www.geek.com/news/googles-neutral-networks-are-now-better-than-humans-at-reading-addresses-1581653/
        -  http://arxiv.org/abs/1312.6082
 
 
-*  translation 
-   +   google translate 
+Translation 
+
+*   google translate 
        -   compressed blog posting confirms availability :: http://googleresearch.blogspot.sg/2015/07/how-google-translate-squeezes-deep.html
        -   has nice image
-       
 
 
-*  labelling of images 
-   +   Quantity of image data
-   +   Karpathy
-   +   Google Photos (now)
+Labelling of images 
+
+*   Quantity of image data
+*   Karpathy
+*   Google Photos (now)
 
 
-*  reinforcement learning 
-   +   DeepMind Atari
+Reinforcement learning 
+
+*   DeepMind Atari
+
+
+
+
+Better-than-expected (main slide)
+
+*    Convolutional networks for images
+
+*    Word Embedding
+
+*    Transfer learning 
+     -   Learning one task can 'cross-fertilize'
+
 
 
 How far can Deep Learning take us?
 
 *   lots of fruit now found to be 'hanging low'
-*   building ladder to the moon
-
-
-Each in turn (individual slides) :
-
-*   lots of fruit now found to be 'hanging low'
-
     -   personal experience : Grammar as a Language => DeepNER
 
-
 *   How do we avoid the trap of building ever so taller ladders when our goal is to reach the Moon?
+
+*   Higher principals are more important
+    -   Aeroplanes don't flap wings 
     -   What is the analog of aerodynamics for intelligence?
+
+
+
+"AI Effect"
+
+*  "AI Effect" : https://en.wikipedia.org/wiki/AI_effect
+   -   AI is whatever hasn't been done yet
+
 
 
 Basic philosophical ideas --  Not the meat of the talk...
 
-*   Convert one neuron at a time
-*   Chinese Room
-*   Turing Test
-
-Each in turn (individual slides) :
-
-*   Convert one neuron at a time
-    -   In-principle idea
-
-*   Chinese Room
-    -   System (vs operator) intelligence 
+*   Magic and the Brain
 
 *   Turing Test
-    -   Cheating is now the issue
-    
+
+
+
+One neuron at a time
+
+*   In-principle idea
+    -   Special magic
+    -   homunculus
+*   'Not the same'
+    -   Does a submarine swim?
+
+
+
+Chinese Room
+
+*   Description
+    -   Arguments
+*   System (vs operator) intelligence 
+
+
+
+Turing Test
+
+*   Description
+
+*   Cheating is now the issue
     -   Probably more like a dinner party conversation
     
-    -   Does a submarine swim?
+*   Looking for what a human does that a dog doesn't
 
     
 
 How about Real AI?
 
+*   Bound to be speculative
+*   Don't even know the right questions to ask
+*   Compare "Science of Love" to "Science of Conciousness"
+
+
+
+Slides not present : 
+
++   Graph of silicon vs brain compute power
+
++   Singularity worries
+    -   Perhaps AI workers arrive in time to difuse the demographic time-bomb
+
++   Uneven progress
+    -   To get to AI we'll pass through 'person who can't do maths'
+    -   Not clear that twice the capacity => twice the smarts
+
+
+
+Problems with studying Conciousness
+
+*   Difficult to dig deeply into the actual process of thought
+*   People look to 
+    -   brain damage
+    -   disorders 
+    -   visual tricks
+    -   child development
+*   Conscious thought is the water's surface, whereas mind is the ocean
+
+
+
+Brain Substrate
+
 *   Substrate for brain may be poor for 'higher order thinking'
-
-
-*   Aeroplanes don't flap wings : Higher principals are more important
-
 
 *   Neural mechanisms are also tailored for 'real world'
     -   categorisation / hierarchies
@@ -183,35 +263,41 @@ How about Real AI?
     -   more compressed data stream : Minimal hinting
 
 
-*   'Thought process' of AI may be very different
-    -   people whose names have 'p'as first letter 
-    -   people whose names have 't' their third letter
-    
-    -   page numbering
 
-    
+Candidates for Higher principals 
+
+*   Neural machinery is solving problems efficiently (given its building blocks)
+    -   what actual problems need solving
+
+*   Compression of Experience
+    -   Minimal Description Length
+    -   Occam's razor
+
+*   Bayesian statistics
+
+*   Hebbian Learning 
+    -   Gradient descent
+    -   Optimisation 
+
+
+
+'Thought process' of AI may be very different
+
+*   people whose names have 'p' as first letter 
+*   people whose names have 't' as third letter
+
+*   page numbering
+
 *   Incompatible hardware : Uploading doesn't make sense to me
-
-  
-*   Uneven progress
-    -   To get to singularity we'll pass through 'person who can't do maths'
-    -   Not clear that twice the capacity => twice the smarts
+    
 
 
-*   Conscious thought is the water's surface, whereas mind is the ocean
-    +   Difficult to dig deeply into the actual process of thought
-    +   People look to brain damage, disorders, tricks, etc
+Conclusions
 
-
+*   AI Effect is a problem
+*   Don't even know the right questions to ask
 *   Deep Learning frontier is being pushed by competitions
     +   Need to figure out competitive 'thinking' data/interactions (rather than 1 per researcher)
-
-
-*   Slides not present : 
-    +   Graph of computer power vs brain compute power
-    
-    +   Singularity worries
-        -   Perhaps AI workers arrive in time to difuse the demographic time-bomb
 
 
 
