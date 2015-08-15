@@ -180,17 +180,6 @@ Reinforcement learning
 
 
 ---
-Better-than-expected
-
-*    Convolutional networks for images
-
-*    Word Embedding
-
-*    Transfer learning 
-     -   Learning one task can 'cross-fertilize'
-
-
----
 "AI Effect"
 
 *  "AI Effect" : https://en.wikipedia.org/wiki/AI_effect
@@ -215,18 +204,22 @@ How far can Deep Learning take us?
 ---
 Slides not present : 
 
-+   Graph of silicon vs brain compute power
+*   Graph of silicon vs brain compute power
 
-+   Singularity worries
+*   Singularity worries
     -   Perhaps AI workers arrive in time to difuse the demographic time-bomb
 
-+   Uneven progress
-    -   To get to AI we'll pass through 'person who can't do maths'
+*   Arrival of Smart machines
+    -   To get to AI we'll pass through:
+        +    spider, mouse, dog
+        +    Homer Simpson, Bart Simpson, Lisa Simpson
+        +    Einstein, etc
     -   Not clear that twice the capacity => twice the smarts
 
+*   
 
 ---
-How about Real AI?
+How about Strong AI?
 
 *   Bound to be speculative
 *   Don't even know the right questions to ask
@@ -307,8 +300,8 @@ Brain Substrate
 'Thought process' of AI likely to be very different
 
 *   Simple vs Hard
-    -   people whose names have 'p' as first letter 
-    -   people whose names have 't' as third letter
+    -   people whose names have 'M' as first letter 
+    -   people whose names have 'R' as third letter
 
 *   Different algorithms
     -   page numbering
@@ -321,10 +314,27 @@ Brain Substrate
 ---
 Searching for Higher Principals
 
-*   Neural machinery is solving problems efficiently (given its building blocks)
-    -   what actual problems need solving
+*   Using Biological neurons:
+    -   accept that brain solves problems efficiently
+    -   but that doesn't mean it is best way
 
-*   Example : Hebbian Learning
+*   What are the actual take-away from current successes?
+
+*   What actual problems can be solved more abstractly?
+
+
+___
+Stuff that works better-than-expected
+
+*   Convolutional networks for images
+*   Word Embedding
+*   Transfer learning 
+     -   Learning one task can 'cross-fertilize'
+
+___
+Stuff that can be abstracted
+
+*   Hebbian Learning
     -   "cells that fire together wire together"
     -   Gradient descent
     -   Optimisation 
@@ -332,8 +342,7 @@ Searching for Higher Principals
         -   Genetic Algorithms
 
 
-
----
+___
 Candidates for Higher principals 
 
 *   Learning from data
@@ -350,6 +359,18 @@ Candidates for Higher principals
 
 *   Language itself is revealing
     -    highly evolved protocol
+
+
+---
+Commercial Side
+
+*   It feels like...  'X' wants AI to 'Y' 
+    -   IBM : Sell to Enterprise 
+    -   Apple : Magic
+    -   Baidu : be Functional
+    -   Facebook : be your Friend
+    
+    -   Google : Happen
 
 
 
