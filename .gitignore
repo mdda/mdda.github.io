@@ -10,9 +10,15 @@ Thumbs.db
 .rvmrc
 *.lock
 
-_READ/*
-
 .geany/session.ini
 
 tags.html-orig
+tags-orig.html
+tags-tagCloud.html
 
+categories-orig.html
+
+_READ/
+_posts/TEMP/
+_drafts/AGI-2015/
+_mdda-workings/
