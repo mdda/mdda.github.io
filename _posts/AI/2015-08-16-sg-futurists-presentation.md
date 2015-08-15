@@ -40,9 +40,9 @@ The past
 ___
 Chess
 
-*  1957 - 'within 10 years' 
-*  1978 - first game win against master
-*  1997 - first match win against #1 (Kasparov)
+*  1957 - Prediction : Computer to be World #1 'within 10 years' 
+*  1978 - First game win against master
+*  1997 - First match win against #1 (Kasparov)
     -   DeepBlue : 200MM moves per second
 *  2009 - Grandmaster level on your phone
     -   'Pocket Fritz' : 20k moves/sec
@@ -54,6 +54,7 @@ Jeopardy
 +  2008 - IBM approached show hosts 
 +  2011 - IBM Watson wins 
    -   "4Tb of disk storage"
+   -   ADD IMAGE
 
 ___
 Driverless cars
@@ -68,11 +69,13 @@ Driverless cars
    
    
 ---
-Current cycle focussing on Deep Learning :
+Current cycle focussing on Deep Learning
 
 *  Neural Networks with many layers
-   -  Specific 'branding' by leading lights (Hinton, Bengio, Le Cun, Andrew Ng) in mid 2000s
-      -   http://spectrum.ieee.org/automaton/robotics/artificial-intelligence/facebook-ai-director-yann-lecun-on-deep-learning
+   -   Old idea, came back to life
+
+*  Specific 'branding' by leading lights (Hinton, Bengio, Le Cun, Andrew Ng) in mid 2000s
+  -   http://spectrum.ieee.org/automaton/robotics/artificial-intelligence/facebook-ai-director-yann-lecun-on-deep-learning
 
 ___
 "Neural"
@@ -118,21 +121,22 @@ GPU : Turning point
 ___
 New thinking
 
-*    Sigmoids out, ReLUs in
-*    Dropout
-*    Batch normalization
+*    Sigmoids &rarrow; ReLUs
+*    Dropout (worse is better)
+*    Batch normalization 
 *    Networks for the whole stack
 
 
 
 ---
-What can be done now:
+What can be done now
 
-*  audio to text
-*  vision - recognising 
-*  language translation 
-*  image captioning
-*  reinforcement learning
+*  Audio to Text
+*  Language translation 
+*  Vision 
+   -   Object recognition
+   -   Automatic captioning
+*  Reinforcement Learning
 
 
 ___
@@ -148,35 +152,40 @@ Audio
        -   http://googleresearch.blogspot.sg/2015/08/the-neural-networks-behind-google-voice.html
 
 ___
-Vision 
-
-*   ImageNet
-       -  Human-competitive (partly to do with dataset)
-       
-*   google house numbers
-       -  Better-than human :: http://www.geek.com/news/googles-neutral-networks-are-now-better-than-humans-at-reading-addresses-1581653/
-       -  http://arxiv.org/abs/1312.6082
-
-___
 Translation 
 
 *   google translate 
        -   compressed blog posting confirms availability :: http://googleresearch.blogspot.sg/2015/07/how-google-translate-squeezes-deep.html
        -   has nice image
+       -   ADD IMAGE
 
 ___
-Labelling of images 
+Vision 
 
-*   Quantity of image data
-*   Karpathy
+*   google house numbers
+       -   Better-than human :: http://www.geek.com/news/googles-neutral-networks-are-now-better-than-humans-at-reading-addresses-1581653/
+       -   http://arxiv.org/abs/1312.6082
+       -   ADD IMAGE
+___
+Vision 
+
+*   ImageNet
+       -   Human-competitive (partly to do with dataset)
+       -   ADD IMAGE
+
+___
+Captioning Images 
+
 *   Google Photos (now)
+*   Captioning example
+       -   ADD IMAGE (Karpathy)
 
 
 ___
-Reinforcement learning 
+Reinforcement Learning 
 
 *   DeepMind Atari
-
+       -   ADD IMAGE
 
 
 ---
@@ -202,10 +211,12 @@ Commercial Side
 ---
 How far can Deep Learning take us?
 
-*   lots of fruit now found to be 'hanging low'
+*   lots of fruit now found to be 'low hanging'
     -   personal experience : Grammar as a Language => DeepNER
 
+
 *   Trap : Building ever taller ladders when goal is to reach the Moon
+
 
 *   Higher principals are more important
     -   Aeroplanes don't flap wings 
@@ -220,6 +231,7 @@ Futurism
 
 *   Singularity worries
     -   Perhaps AI workers arrive in time to difuse the demographic time-bomb
+
 
 *   Arrival of Smart machines
     -   To get to AI we'll pass through:
