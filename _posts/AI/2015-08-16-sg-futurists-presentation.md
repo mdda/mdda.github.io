@@ -96,12 +96,12 @@ ___
 ---
 It's Different this Time
 
-*  Data : More useful than realised
+*  Data : More effective than expected
 *  GPUs : Turning point
 *  New thinking
 
 ___
-Data : More useful than realised
+Data : More effective than expected
 
 *    &gt;1Bn Photos per day 
     -    graph (http://www.kpcb.com/internet-trends)
@@ -125,6 +125,7 @@ New thinking
 *    Dropout (worse is better)
 *    Batch normalization 
 *    Networks for the whole stack
+*    Competitions work
 
 
 
