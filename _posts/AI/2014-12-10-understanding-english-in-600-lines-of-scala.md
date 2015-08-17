@@ -28,8 +28,12 @@ be used as a micro-service.
 I recently gave a <strong><a href="http://redcatlabs.com/2014-12-10_ParsingEnglish.scala/" target="_blank">presentation about this project</a></strong> 
 to the [Singapore Scala MeetUp Group](http://www.meetup.com/Singapore-Sala-Programmers/events/218727190/).
 
+<a href="http://redcatlabs.com/2014-12-10_ParsingEnglish.scala/" target="_blank">
 ![Presentation Screenshot]({{ site.url }}/assets/img/2014-12-10_ParsingEnglish.scala_600x390.png)
+</a>
 
 If there are any questions about the presentation, please ask below, or via the MeetUp group.
 
+<a href="http://redcatlabs.com/2014-12-10_ParsingEnglish.scala/#/5" target="_blank">
 ![Presentation Content Example]({{ site.url }}/assets/img/2014-12-10_ParsingEnglish.scala_5_600x390.png)
+</a>

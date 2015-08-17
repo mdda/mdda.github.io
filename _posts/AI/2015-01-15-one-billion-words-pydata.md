@@ -36,8 +36,12 @@ Key papers to have a look at :
 I recently gave a <strong><a href="http://redcatlabs.com/2015-01-15_Presentation-PyDataSG/" target="_blank">presentation about this project</a></strong> 
 to the [Singapore PyData MeetUp Group](https://www.facebook.com/events/994351117258134/).
 
+<a href="http://redcatlabs.com/2015-01-15_Presentation-PyDataSG/" target="_blank">
 ![Presentation Screenshot]({{ site.url }}/assets/img/2015-01-15_Presentation-PyDataSG_600x390.png)
+</a>
 
 If there are any questions about the presentation, please ask below, or via the Facebook group.
 
+<a href="http://redcatlabs.com/2015-01-15_Presentation-PyDataSG/#/2" target="_blank">
 ![Presentation Content Example]({{ site.url }}/assets/img/2015-01-15_Presentation-PyDataSG_2_600x390.png)
+</a>

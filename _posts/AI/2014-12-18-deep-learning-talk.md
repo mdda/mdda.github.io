@@ -26,8 +26,12 @@ I recently gave the resulting
 <strong><a href="http://redcatlabs.com/2014-12-18_DeepLearning.js/" target="_blank">presentation about Deep Learning</a></strong> 
 to the [Singapore Talk.js MeetUp Group](http://www.meetup.com/Singapore-JS/events/219129996/).
 
+<a href="http://redcatlabs.com/2014-12-18_DeepLearning.js/" target="_blank">
 ![Presentation Screenshot]({{ site.url }}/assets/img/2014-12-18_DeepLearning_600x390.png)
+</a>
 
 If there are any questions about the presentation, please ask below, or via the [SingaporeJS MeetUp](http://www.meetup.com/Singapore-JS/) group.
 
+<a href="http://redcatlabs.com/2014-12-18_DeepLearning.js/#/5" target="_blank">
 ![Presentation Content Example]({{ site.url }}/assets/img/2014-12-18_DeepLearning.js_5_600x390.png)
+</a>
