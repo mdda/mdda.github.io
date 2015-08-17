@@ -18,13 +18,14 @@ for the 'Silicon Section' of the ['Future of Mind' SG Futurists MeetUp](http://w
 ![Presentation Screenshot]({{ site.url }}/assets/img/2015-08-16_Futurists-AGI_600x390.png)
 </a>
 
-If there are any questions about the presentation, please ask below.
+If there are any questions about the presentation please ask below, 
+or contact me using the details given on the slides themselves.
 
 <a href="http://redcatlabs.com/2015-08-16_Futurists-AGI/#/13/1" target="_blank">
 ![Presentation Content Example]({{ site.url }}/assets/img/2015-08-16_Futurists-AGI_13-1_600x390.png)
 </a>
 
-{% comment %} 
+<!--
 
 ### Presentation Notes
 
@@ -409,4 +410,4 @@ Conclusions
 *   Deep Learning frontier is being pushed by competitions
     +   Need to figure out competitive 'thinking' data/interactions
 
-{% endcomment %} 
+!-->
