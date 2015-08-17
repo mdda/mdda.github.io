@@ -186,3 +186,8 @@ footer {
     left: inherit;
     right: 0px;
 }
+
+.posts li span {
+  display: inline-block;
+  min-width: 6em;
+}
