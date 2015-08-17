@@ -20,7 +20,9 @@ for the 'Silicon Section' of the ['Future of Mind' SG Futurists MeetUp](http://w
 
 If there are any questions about the presentation, please ask below.
 
+<a href="http://redcatlabs.com/2015-08-16_Futurists-AGI/#/13/1" target="_blank">
 ![Presentation Content Example]({{ site.url }}/assets/img/2015-08-16_Futurists-AGI_13-1_600x390.png)
+</a>
 
 {% comment %} 
 
