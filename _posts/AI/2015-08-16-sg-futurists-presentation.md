@@ -1,7 +1,7 @@
 ---
 layout: post
 category: AI
-title: The Future of Mind - Talk at the SG Futurists MeetUp
+title: The Future of Mind - SG Futurists MeetUp
 tagline: Presentation link
 date: 2015-08-16
 tags: [NeuralNetworks,GOFAI,AGI,Presentation]
@@ -11,10 +11,12 @@ published: true
 
 ### Presentation Link
 
-I recently gave a <strong><a href="http://redcatlabs.com/2015-08-16_Futurists-AGI/" target="_blank">presentation for the 'Silicon Section'</a></strong> 
-of the ['Future of Mind' SG Futurists MeetUp](http://www.meetup.com/Singapore-Futurists/events/224048489/).
+I recently gave a <strong><a href="http://redcatlabs.com/2015-08-16_Futurists-AGI/" target="_blank">presentation</a></strong> 
+for the 'Silicon Section' of the ['Future of Mind' SG Futurists MeetUp](http://www.meetup.com/Singapore-Futurists/events/224048489/).
 
+<a href="http://redcatlabs.com/2015-08-16_Futurists-AGI/" target="_blank">
 ![Presentation Screenshot]({{ site.url }}/assets/img/2015-08-16_Futurists-AGI_600x390.png)
+</a>
 
 If there are any questions about the presentation, please ask below.
 
