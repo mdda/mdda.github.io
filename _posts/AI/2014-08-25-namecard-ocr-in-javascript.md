@@ -26,9 +26,13 @@ code (run initially on the server) would be able to run on the phone itself.
 I recently gave a <strong><a href="http://redcatlabs.com/2014-08-25_OCR-v0.01/" target="_blank">presentation about this project</a></strong> 
 at the [Singapore Talk.js MeetUp Group](http://www.meetup.com/Singapore-JS/events/197757042/).
 
+<a href="http://redcatlabs.com/2014-08-25_OCR-v0.01/" target="_blank">
 ![Presentation Screenshot]({{ site.url }}/assets/img/2014-08-25_OCR-v0.01_600x390.png)
+</a>
 
 If there are any questions about the presentation, please ask below, or via the MeetUp group (or at
 the next NodeSchool!).
 
+<a href="http://redcatlabs.com/2014-08-25_OCR-v0.01/#/6" target="_blank">
 ![Presentation Content Example]({{ site.url }}/assets/img/2014-08-25_OCR-v0.01_6_600x390.png)
+</a>

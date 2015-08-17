@@ -20,9 +20,13 @@ about [d3.js](http://d3js.org/), and its application for visualizing the depende
 I recently gave a <strong><a href="http://redcatlabs.com/2014-08-27_shader-school/" target="_blank">presentation about this project</a></strong> 
 at the [first Singapore NodeSchool](http://www.meetup.com/Singapore-JS/events/174971982/) .
 
+<a href="http://redcatlabs.com/2014-08-27_shader-school/" target="_blank">
 ![Presentation Screenshot]({{ site.url }}/assets/img/2014-06-15_SentenceDependencies-D3.js_600x390.png)
+</a>
 
 If there are any questions about the presentation, please ask below, or via the MeetUp group (or at
 the next NodeSchool!).
 
+<a href="http://redcatlabs.com/2014-08-27_shader-school/#/3" target="_blank">
 ![Presentation Content Example]({{ site.url }}/assets/img/2014-06-15_SentenceDependencies-D3.js_3_600x390.png)
+</a>

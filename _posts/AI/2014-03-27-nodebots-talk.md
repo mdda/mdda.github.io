@@ -24,8 +24,12 @@ to the [Singapore NodeBots MeetUp Group](http://www.meetup.com/NodeBotsSingapore
 .article_body img {border:1px solid black;padding:5px;margin:5px 0 5px 0;}
 </style>
 
+<a href="http://redcatlabs.com/2014-03-27_NodeBots-Presentation/" target="_blank">
 ![Presentation Screenshot]({{ site.url }}/assets/img/2014-03-27_NodeBots_600x390.png)
+</a>
 
 If there are any questions about the presentation, please ask below.
 
+<a href="http://redcatlabs.com/2014-03-27_NodeBots-Presentation/" target="_blank">
 ![Presentation Content Example]({{ site.url }}/assets/img/2014-03-27_NodeBots_5_600x390.png)
+</a>
