@@ -4,10 +4,23 @@ category: AI
 title: The Future of Mind - Talk at the SG Futurists MeetUp
 tagline: Presentation link
 date: 2015-08-16
-tags: [NeuralNetworks,GOFAI,Presentation]
-published: false
+tags: [NeuralNetworks,GOFAI,AGI,Presentation]
+published: true
 ---
 {% include JB/setup %}
+
+### Presentation Link
+
+I recently gave a <strong><a href="http://redcatlabs.com/2015-08-16_Futurists-AGI/" target="_blank">presentation for the 'Silicon Section'</a></strong> 
+of the ['Future of Mind' SG Futurists MeetUp](http://www.meetup.com/Singapore-Futurists/events/224048489/).
+
+![Presentation Screenshot]({{ site.url }}/assets/img/2015-08-16_Futurists-AGI_600x390.png)
+
+If there are any questions about the presentation, please ask below.
+
+![Presentation Content Example]({{ site.url }}/assets/img/2015-08-16_Futurists-AGI_13-1_600x390.png)
+
+{% comment %} 
 
 ### Presentation Notes
 
@@ -18,7 +31,7 @@ The talk will provide :
 *  an overview of concepts and themes in Artificial Intelligence, 
      + including a review of the field today (notably deep learning) 
     
-*  his perspectives on Artificial General Intelligence.
+*  Martin's perspectives on Artificial General Intelligence.
 
 
 #### Presentation Outline
@@ -392,20 +405,4 @@ Conclusions
 *   Deep Learning frontier is being pushed by competitions
     +   Need to figure out competitive 'thinking' data/interactions
 
-
-
-{% comment %} 
-### Presentation Link
-
-I recently gave a <strong><a href="http://redcatlabs.com/2015-06-19_Presentation-PyConSG/" target="_blank">presentation about Python, Theano, Blocks and Deep Learning</a></strong> 
-at the [2015 Singapore PyCon](https://pycon.sg/).
-
-![Presentation Screenshot]({{ site.url }}/assets/img/2015-06-19_Presentation-PyCon_600x390.png)
-
-If there are any questions about the presentation, please ask below - 
-alternatively, have a look at my [GitHub repo](https://github.com/mdda/pycon.sg-2015_deep-learning) 
-that contains all the iPython notebooks, code and documentation that I put together
-in preparation for the talk.
-
-![Presentation Content Example]({{ site.url }}/assets/img/2015-06-19_Presentation-PyCon_8-5_600x390.png)
 {% endcomment %} 
