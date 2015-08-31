@@ -1,7 +1,7 @@
 ---
 layout: post
 category: AI
-title: Elligibility Traces and Neural Networks
+title: Eligibility Traces and Neural Networks
 tagline: Performance-based rewards
 date: 2015-08-31
 tags: [NeuralNetworks,ReinforcementLearning]
