@@ -18,6 +18,14 @@ Several things that bubbled to the surface during the Reinforcement Learning cou
 to the states/actions that lead to them seem very reminiscent of activation potentials.
 
 *  Also, aiming for minimum fit error is the same as optimising for least surprise, which is the same as
-making predictions that are as un-surprising as possible
+making predictions that are as un-surprising as possible.  
 
-*  
+*  Refactoring a complex model into a simpler/sparser one seems likely to have generalization benefits,
+since Occam's razor can be cleanly applied.  Can the information content be used to impute the factorization?
+
+*  Wouldn't it be nice to impute a descriptive sparse (e.g. 2-3% of ~10k of activations) version of the 
+(say) 500 reals embedding vectors, in such a way that sense-dependencies could lead to improvements
+among mutually-related concepts?  (so embed -> factorize -> re-embed (with factorised structure to
+boost senses of all words) -> factorize, etc)
+
+
