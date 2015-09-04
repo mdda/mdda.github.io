@@ -20,6 +20,18 @@ to the states/actions that lead to them seem very reminiscent of activation pote
 *  Also, aiming for minimum fit error is the same as optimising for least surprise, which is the same as
 making predictions that are as un-surprising as possible.  
 
+*  Distributing the amount of 'surprise' (positive or negative) to exponentially decaying eligibility
+nodes with a network seems like a very natural reinterpretation of the TD(\lambda) framework.
+
+*  But current neural networks are densified, with multi-dimensional spaces embedding knowledge
+in a way that is entangled far more thoroughly than the sparse representations found in the brain
+would suggest.  
+
+*  Perhaps the 'attribution problem' that sparse+eligibility solves is equivalent to dense+backprop.   
+
+*  But there is a definite disconnect between the rationale between the two methods that requires
+more justification
+
 
 Musings :ICLR
 ------------------------
@@ -44,5 +56,5 @@ a bit of a let-down :
 
 *  the ranking wasn't too bad within a cluster near a particular word
 *  but the absolute value of the first result didn't bear much relationship 
-to the 'actual similarity' of the cluster.
+   to the 'actual similarity' of the cluster.
 
