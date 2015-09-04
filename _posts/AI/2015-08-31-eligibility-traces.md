@@ -15,19 +15,19 @@ Musings : Eligibility Traces
 Several things that bubbled to the surface during the Reinforcement Learning course:
 
 *  Eligibility traces, which are a way of keeping track of how rewards for TD(\lambda) should be attributed
-to the states/actions that lead to them seem very reminiscent of activation potentials.
+to the states/actions that lead to them seem very reminiscent of activation potentials
 
 *  Also, aiming for minimum fit error is the same as optimising for least surprise, which is the same as
-making predictions that are as un-surprising as possible.  
+making predictions that are as un-surprising as possible
 
 *  Distributing the amount of 'surprise' (positive or negative) to exponentially decaying eligibility
-nodes with a network seems like a very natural reinterpretation of the TD(\lambda) framework.
+nodes with a network seems like a very natural reinterpretation of the TD(\lambda) framework
 
 *  But current neural networks are densified, with multi-dimensional spaces embedding knowledge
 in a way that is entangled far more thoroughly than the sparse representations found in the brain
-would suggest.  
+would suggest
 
-*  Perhaps the 'attribution problem' that sparse+eligibility solves is equivalent to dense+backprop.   
+*  Perhaps the 'attribution problem' that sparse+eligibility solves is equivalent to dense+backprop  
 
 *  But there is a definite disconnect between the rationale between the two methods that requires
 more justification
