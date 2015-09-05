@@ -33,13 +33,28 @@ would suggest
 more justification
 
 
+
 Musings : Gimbal Learning
 ------------------------------------------------
 
 Looks like [Lecture 8 of the Reingforcement Learning  Course by David Silver](rl-course-by-david-silver-lecture-8-integrating-learning-and-planning-2/)
-is super-relevant to the Gimbal control problem that I've been considering.  It's also interesting 
-that the things I had already assumed would have been obvious are currently considered
-state-of-the-art.
+is super-relevant to the Gimbal control problem that I've been considering.  
+
+It's also interesting that the things I had already assumed would have been obvious 
+are currently considered state-of-the-art.
+
+In summary : 
+
+*  Learn model from real world by observing state transitions, and then learning {state, action}-to-state mapping
+   +  Also learn {state, action}-to-Reward mapping (almost a separate model)
+*  Apply model-free methods to model-simulated world
+*  Once 'correct' action has been selected, actually perform it
+*  Now we have new real-world learning to fine-tune world model with
+
+To apply this to gimbal, seems like one could present 'target trajectories' to 
+controller in turn, letting it learn a common world-model, 
+with different reward-models for each goal.  And let it self-play...
+
 
 
 Musings :ICLR
