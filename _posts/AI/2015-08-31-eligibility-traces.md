@@ -33,6 +33,15 @@ would suggest
 more justification
 
 
+Musings : Gimbal Learning
+------------------------------------------------
+
+Looks like [Lecture 8 of the Reingforcement Learning  Course by David Silver](rl-course-by-david-silver-lecture-8-integrating-learning-and-planning-2/)
+is super-relevant to the Gimbal control problem that I've been considering.  It's also interesting 
+that the things I had already assumed would have been obvious are currently considered
+state-of-the-art.
+
+
 Musings :ICLR
 ------------------------
 
