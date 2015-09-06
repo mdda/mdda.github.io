@@ -57,6 +57,22 @@ with different reward-models for each goal.  And let it self-play...
 
 
 
+Musings : Exploitation vs Exploration
+------------------------------------------------
+
+*  Interesting that $(\mu + n\sigma)$ is an effective action-chooser, since that is what I was doing in the 1990s,
+   but using as a placeholder heuristic
+   
+*  But $\[0,1\]$ bounded i.i.d variables having a decent confidence bound (Hoeffding's inequality) was a new thing for me
+
+*  Also, liked the Thompson sampling (from 1930s) that implicitly created samples according to a distribution, 
+   merely by using samples from the underlying factors is very elegant
+   + and makes me think about the heuristic in Genetic Algorithms for 'just sampling' 
+   as potentially solving a (very complex) probablity problem, without actually doing any computation
+   
+
+
+
 Musings :ICLR
 ------------------------
 
