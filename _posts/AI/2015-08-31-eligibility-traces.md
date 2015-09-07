@@ -72,6 +72,18 @@ Musings : Exploitation vs Exploration
    
 
 
+Musings : Games and State-of-the-Art
+------------------------------------------------
+
+*  The tree optimisations seem 'obvious' in retrospect - but clearly each was a major 'aha!' when it 
+   was first proposed.  Very interesting.
+
+*  Almost all of the State-of-the-Art methods use binary features, linear approximations to v*(), search and self-play.
+
+*  Perhaps deeper models will work instead of the linear ones - but it's interesting that binary (~sparse?)
+   features are basically powerful enough (when there's some tree-search for trickier strategy planning)
+
+
 
 Musings :ICLR
 ------------------------
