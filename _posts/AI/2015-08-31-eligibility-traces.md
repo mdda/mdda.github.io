@@ -110,3 +110,9 @@ a bit of a let-down :
 *  but the absolute value of the first result didn't bear much relationship 
    to the 'actual similarity' of the cluster.
 
+Perhaps the $l_0$ ideas in the recent paper [Learning Deep $l_0$ Encoders](http://arxiv.org/pdf/1509.00153v1.pdf) could be helpful.
+
+It seems like there is an iterative scheme by which encoders (and their respective weights) can be trained
+to converge to the 'ideal' input-to-output dictionary scheme.  But that's similar to 
+factorising the dictionary into a smaller representation.  Could this be done in a Deep way?
+
