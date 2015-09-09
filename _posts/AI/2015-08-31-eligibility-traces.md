@@ -46,10 +46,10 @@ are currently considered state-of-the-art.
 In summary : 
 
 *  Learn model from real world by observing state transitions, and then learning {state, action}-to-state mapping
-   +  Also learn {state, action}-to-Reward mapping (almost a separate model)
+   +  Also learn {State, Action}-to-Reward mapping (almost a separate model)
 *  Apply model-free methods to model-simulated world
 *  Once 'correct' action has been selected, actually perform it
-*  Now we have new real-world learning to fine-tune world model with
+*  Now we have new real-world learning with which to fine-tune the world model
 
 To apply this to gimbal, seems like one could present 'target trajectories' to 
 controller in turn, letting it learn a common world-model, 
@@ -57,11 +57,11 @@ with different reward-models for each goal.  And let it self-play...
 
 
 
-Musings : Exploitation vs Exploration
+Musings : Exploration vs Exploitation
 ------------------------------------------------
 
 *  Interesting that $(\mu + n\sigma)$ is an effective action-chooser, since that is what I was doing in the 1990s,
-   but using as a placeholder heuristic
+   but using as a placeholder heuristic until I found something that was 'more correct'
    
 *  But $\[0,1\]$ bounded i.i.d variables having a decent confidence bound (Hoeffding's inequality) was a new thing for me
 
