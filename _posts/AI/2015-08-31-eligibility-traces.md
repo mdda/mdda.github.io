@@ -112,12 +112,16 @@ a bit of a let-down :
 
 Perhaps the $l_0$ ideas in the recent paper [Learning Deep $l_0$ Encoders](http://arxiv.org/pdf/1509.00153v1.pdf) could be helpful - 
 except that it is really talking about finding the best encoding against a learned dictionary.  
-But this is not really the 'direction' of learning that I'm thinking about.
+It seems like there is an iterative scheme by which encoders (and their respective weights) can be trained
+to converge to the 'ideal' input-to-output dictionary scheme.  
+
+On the one hand, this is not really the 'direction' of learning that I'm thinking about.
+On the other, it's encouraging that the dictionary encoding scheme can be discovered automatically.  
+
+Could this scheme be implemented in a more general way - in particular one that could be "Deep" 
+(i.e. learns representations at multiple levels)?  Since the 'depth' of the learning is difficult to 
+forsee, perhaps some RNN action is in order, so that arbitrary depth structures could be 
+imputed by the learning itself (getting deeper as more structure is identified)?
 
 There's also a Google paper on efficiently learning large target output spaces, 
 but that seems to involve hashing functions, which don't seem to be adaptive to the space being learned.
-
-It seems like there is an iterative scheme by which encoders (and their respective weights) can be trained
-to converge to the 'ideal' input-to-output dictionary scheme.  But that's similar to 
-factorising the dictionary into a smaller representation.  Could this be done in a Deep way?
-
