@@ -125,3 +125,14 @@ imputed by the learning itself (getting deeper as more structure is identified)?
 
 There's also a Google paper on efficiently learning large target output spaces, 
 but that seems to involve hashing functions, which don't seem to be adaptive to the space being learned.
+
+[Complete Dictionary Recovery over the Sphere - Sun, Qu &amp; Wright2015](http://arxiv.org/abs/1504.06785) seems like it has relevant results,
+as does [Sparse Matrix Factorization - 2014](http://arxiv.org/pdf/1311.3315v3.pdf), where they 
+state that (when factorizing $ Y = X_{1}X_{2}X_{3}X_{4} ... $ with $Y$ dense and $X_{i}$ sparse : 
+
+    Our main observation is that one can compute $X_{1}X_{1}^⊤$ by looking at $YY^⊤$ and
+    rounding it to an integer. From $X_{1}X_{1}^⊤$ one can recover $X_1$. 
+    If $X_1$ has a bounded condition number, it can be inverted and one can solve for 
+    $X_{2}X_{3} ...$ and continue like this iteratively to find the rest.
+
+
