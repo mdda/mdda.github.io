@@ -70,7 +70,7 @@ ldconfig
 
 ### Now install the graphics drivers
 
-This is the first point at which the Nvidia software will actually check for the presence of an Nvidia video card.
+**This is the first point at which the Nvidia software will actually check for the presence of an Nvidia video card.**
 
 Run the Nvidia installer (look at the notes in this section for answer-hints):
 
