@@ -70,9 +70,15 @@ ldconfig
 
 ### Now install the graphics drivers
 
+To enable the 'DKMS' part of the installer will run, make sure you have the kernel module compilation parts available:
+
+{% highlight bash %}
+dnf install kernel-devel
+{% endhighlight %}
+
 **This is the first point at which the Nvidia software will actually check for the presence of an Nvidia video card.**
 
-Run the Nvidia installer (look at the notes in this section for answer-hints):
+Now run the Nvidia installer (look at the notes in this section for answer-hints):
 
 {% highlight bash %}
 chmod 755 NVIDIA-Linux-x86_64-352.21.run 
