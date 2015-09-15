@@ -136,3 +136,8 @@ state that (when factorizing $ Y = X_{1}X_{2}X_{3}X_{4} ... $ with $Y$ dense and
     $X_{2}X_{3} ...$ and continue like this iteratively to find the rest.
 
 
+Measurement of the quality of word vectors : The "Google Analogy Task" (```./demo-word-accuracy.sh```).
+
+Pretrained vector models available via [Google's project page]( https://code.google.com/p/word2vec/ ).
+
+
