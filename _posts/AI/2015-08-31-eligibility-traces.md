@@ -145,3 +145,9 @@ Lots of work has examined the ```Queen ~ King - Man + Woman``` style of analogie
 
 Multiple senses covered in [Efficient Non-parametric Estimation of Multiple Embeddings per Word in Vector Space](http://arxiv.org/abs/1504.06654).
 
+
+Dig into :
+
+*   https://levyomer.wordpress.com/2015/03/30/improving-distributional-similarity-with-lessons-learned-from-word-embeddings/
+
+*   https://bitbucket.org/omerlevy/hyperwords
