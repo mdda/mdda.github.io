@@ -140,4 +140,8 @@ Measurement of the quality of word vectors : The "Google Analogy Task" (```./dem
 
 Pretrained vector models available via [Google's project page]( https://code.google.com/p/word2vec/ ).
 
+Lots of work has examined the ```Queen ~ King - Man + Woman``` style of analogies (notably : 
+[Linguistic Regularities in Sparse and Explicit Word Representations](https://levyomer.files.wordpress.com/2014/04/linguistic-regularities-in-sparse-and-explicit-word-representations-conll-2014.pdf)).
+
+Multiple senses covered in [Efficient Non-parametric Estimation of Multiple Embeddings per Word in Vector Space](http://arxiv.org/abs/1504.06654).
 
