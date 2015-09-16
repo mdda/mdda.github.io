@@ -30,7 +30,6 @@ EOF) /usr/bin/skype
 
 Should now work...
 
-The reason for the problem are rooted in Nvidia redirecting ```libGL.so``` loading to their own library.
-However, the Nvidia card is for GPU usage only - no monitor will ever be connected to it (my
-sole monitor is connected to the motherboard-integrated Intel video, wanting to keep the 
-GPU free for GPGPU usage).
+The reason for the problem are rooted in Nvidia redirecting Skype's loading of ```libGL.so``` to their own library.
+However, in my case, the Nvidia card is for GPGPU usage only - no monitor will ever be connected to it 
+(my sole monitor is connected to the motherboard-integrated Intel video).
