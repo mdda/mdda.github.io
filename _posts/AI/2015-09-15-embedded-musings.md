@@ -78,3 +78,11 @@ Dig into :
 
 *   https://bitbucket.org/omerlevy/hyperwords
 
+
+NB
+=========
+
+ICLR 2016 will take place May 2-4 in the Hilton-Caribe Hotel in San Juan, Puerto Rico. 
+The abstract and title submission deadline is November 12th 2015 at 5:00 pm US Eastern Time. 
+The deadline for submitting arXiv ID to of the papers to ICLR is November 19th 2012 at 5:00 pm US Eastern Time.
+
