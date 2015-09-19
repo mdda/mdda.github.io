@@ -1,16 +1,17 @@
 ---
 layout: post
 category: AI
-title: Eligibility Traces and Neural Networks
-tagline: Performance-based rewards
+title: Reinforcement Learning Course
+tagline: Performance-based Rewards (Musings)
 date: 2015-08-31
 tags: [NeuralNetworks,ReinforcementLearning]
 published: false
 ---
 {% include JB/setup %}
 
-This is a quick advert for the excellent online course ("Reinforcement Learning" by David Silver)[http://www.computervisiontalks.com/tag/reinforcement-learning/].
+This is a quick advert for the excellent online course ["Reinforcement Learning" by David Silver](http://www.computervisiontalks.com/tag/reinforcement-learning/).
 
+These notes are mainly for my own consumption...
 
 
 Musings : Eligibility Traces
@@ -18,14 +19,14 @@ Musings : Eligibility Traces
 
 Several things that bubbled to the surface during the Reinforcement Learning course:
 
-*  Eligibility traces, which are a way of keeping track of how rewards for TD(\lambda) should be attributed
+*  Eligibility traces, which are a way of keeping track of how rewards for \\(TD(\lambda)\\) should be attributed
 to the states/actions that lead to them seem very reminiscent of activation potentials
 
 *  Also, aiming for minimum fit error is the same as optimising for least surprise, which is the same as
 making predictions that are as un-surprising as possible
 
 *  Distributing the amount of 'surprise' (positive or negative) to exponentially decaying eligibility
-nodes with a network seems like a very natural reinterpretation of the TD(\lambda) framework
+nodes with a network seems like a very natural reinterpretation of the \\(TD(\lambda)\\)  framework
 
 *  But current neural networks are densified, with multi-dimensional spaces embedding knowledge
 in a way that is entangled far more thoroughly than the sparse representations found in the brain
@@ -67,7 +68,7 @@ Musings : Exploration vs Exploitation
 *  Interesting that $(\mu + n\sigma)$ is an effective action-chooser, since that is what I was doing in the 1990s,
    but using as a placeholder heuristic until I found something that was 'more correct'
    
-*  But $\[0,1\]$ bounded i.i.d variables having a decent confidence bound (Hoeffding's inequality) was a new thing for me
+*  But \\(\[0,1\]\\) bounded i.i.d variables having a decent confidence bound (Hoeffding's inequality) was a new thing for me
 
 *  Also, liked the Thompson sampling (from 1930s) that implicitly created samples according to a distribution, 
    merely by using samples from the underlying factors is very elegant
@@ -82,7 +83,7 @@ Musings : Games and State-of-the-Art
 *  The tree optimisations seem 'obvious' in retrospect - but clearly each was a major 'aha!' when it 
    was first proposed.  Very interesting.
 
-*  Almost all of the State-of-the-Art methods use binary features, linear approximations to v*(), search and self-play.
+*  Almost all of the State-of-the-Art methods use binary features, linear approximations to \\(v_*()\\), search and self-play.
 
 *  Perhaps deeper models will work instead of the linear ones - but it's interesting that binary (~sparse?)
    features are basically powerful enough (when there's some tree-search for trickier strategy planning)

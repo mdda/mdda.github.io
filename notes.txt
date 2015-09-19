@@ -88,8 +88,9 @@ Make MathJax work (??)
   https://github.com/Shopify/liquid/wiki/Liquid-for-Designers
 
 
-## Helpful : touch --date '1 minute ago'  myfile
-## Helpful : git commit --date="`stat -c %y myfile`" myfile
+## Helpful : myfile=_posts/AI/ETC
+## Helpful : touch --date '1 minute ago' ${myfile}
+## Helpful : git commit --date="`stat -c %y ${myfile}`" ${myfile}
 
 
 
