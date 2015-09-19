@@ -9,6 +9,10 @@ published: false
 ---
 {% include JB/setup %}
 
+This is a quick advert for the excellent online course ("Reinforcement Learning" by David Silver)[http://www.computervisiontalks.com/tag/reinforcement-learning/].
+
+
+
 Musings : Eligibility Traces
 ------------------------------------------------
 
@@ -37,7 +41,7 @@ more justification
 Musings : Gimbal Learning
 ------------------------------------------------
 
-Looks like [Lecture 8 of the Reingforcement Learning  Course by David Silver](rl-course-by-david-silver-lecture-8-integrating-learning-and-planning-2/)
+Looks like [Lecture 8 of the Reinforcement Learning Course by David Silver](http://www.computervisiontalks.com/rl-course-by-david-silver-lecture-8-integrating-learning-and-planning-2/)
 is super-relevant to the Gimbal control problem that I've been considering.  
 
 It's also interesting that the things I had already assumed would have been obvious 
