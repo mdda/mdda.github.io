@@ -11,6 +11,9 @@ published: false
 
 This is a quick advert for the excellent online course ["Reinforcement Learning" by David Silver](http://www.computervisiontalks.com/tag/reinforcement-learning/).
 
+David Silver's ['teaching' home page](http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching.html) includes links to the slides 
+(which are particularly helpful for Lecture 7, where there's no video available - just sound).
+
 These notes are mainly for my own consumption...
 
 

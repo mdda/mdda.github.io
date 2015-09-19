@@ -11,7 +11,7 @@ published: false
 
 
 
-Musings :ICLR
+Musings : ICLR
 ------------------------
 
 
@@ -21,7 +21,7 @@ since Occam's razor can be cleanly applied.  Can the information content be used
 *  Wouldn't it be nice to impute a descriptive sparse (e.g. 2-3% of ~10k of activations) version of the 
 (say) 500 reals embedding vectors, in such a way that sense-dependencies could lead to improvements
 among mutually-related concepts?  
-   +  (so embed -> factorize -> re-embed (with factorised structure to boost senses of all words) -> factorize, etc)
+   +  (so embed &rarr; factorize &rarr; re-embed (with factorised structure to boost senses of all words) &rarr; factorize, etc)
 
 But :
 
@@ -36,7 +36,7 @@ a bit of a let-down :
 *  but the absolute value of the first result didn't bear much relationship 
    to the 'actual similarity' of the cluster.
 
-Perhaps the $l_0$ ideas in the recent paper [Learning Deep $l_0$ Encoders](http://arxiv.org/pdf/1509.00153v1.pdf) could be helpful - 
+Perhaps the \\( l_0 \\) ideas in the recent paper [Learning Deep \\(l_0\\) Encoders](http://arxiv.org/pdf/1509.00153v1.pdf) could be helpful - 
 except that it is really talking about finding the best encoding against a learned dictionary.  
 It seems like there is an iterative scheme by which encoders (and their respective weights) can be trained
 to converge to the 'ideal' input-to-output dictionary scheme.  
@@ -54,12 +54,12 @@ but that seems to involve hashing functions, which don't seem to be adaptive to 
 
 [Complete Dictionary Recovery over the Sphere - Sun, Qu &amp; Wright2015](http://arxiv.org/abs/1504.06785) seems like it has relevant results,
 as does [Sparse Matrix Factorization - 2014](http://arxiv.org/pdf/1311.3315v3.pdf), where they 
-state that (when factorizing \\( Y = X_{1}X_{2}X_{3}X_{4} ... \\) with $Y$ dense and $X_{i}$ sparse : 
+state that, when factorizing \\( Y = X_1 X_2 X_3 X_4 \dotsb \\) with \\( Y \\) dense and \\( X_{i} \\) sparse : 
 
-    Our main observation is that one can compute \\(X_{1}X_{1}^⊤\\) by looking at $YY^⊤$ and
-    rounding it to an integer. From $X_{1}X_{1}^⊤$ one can recover $X_1$. 
-    If $X_1$ has a bounded condition number, it can be inverted and one can solve for 
-    $X_{2}X_{3} ...$ and continue like this iteratively to find the rest.
+> Our main observation is that one can compute \\( X_1 X_1^⊤ \\) by looking at \\( Y Y^⊤ \\) and
+> rounding it to an integer. From \\( X_1 X_1^⊤ \\) one can recover \\( X_1 \\). 
+> If \\( X_1 \\) has a bounded condition number, it can be inverted and one can solve for 
+> \\( X_2 X_3 \dotsb \\) and continue like this iteratively to find the rest.
 
 
 Measurement of the quality of word vectors : The "Google Analogy Task" (```./demo-word-accuracy.sh```).
@@ -79,10 +79,10 @@ Dig into :
 *   https://bitbucket.org/omerlevy/hyperwords
 
 
-NB
+NB :
 =========
 
-ICLR 2016 will take place May 2-4 in the Hilton-Caribe Hotel in San Juan, Puerto Rico. 
-The abstract and title submission deadline is November 12th 2015 at 5:00 pm US Eastern Time. 
-The deadline for submitting arXiv ID to of the papers to ICLR is November 19th 2012 at 5:00 pm US Eastern Time.
+*   ICLR 2016 will take place May 2-4 in the Hilton-Caribe Hotel in San Juan, Puerto Rico. 
+*   The abstract and title submission deadline is November 12th 2015 at 5:00 pm US Eastern Time. 
+*   The deadline for submitting arXiv ID to of the papers to ICLR is November 19th 2012 at 5:00 pm US Eastern Time.
 
