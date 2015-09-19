@@ -68,7 +68,7 @@ with different reward-models for each goal.  And let it self-play...
 Musings : Exploration vs Exploitation
 ------------------------------------------------
 
-*  Interesting that $(\mu + n\sigma)$ is an effective action-chooser, since that is what I was doing in the 1990s,
+*  Interesting that \\( (\mu + n\sigma) \\) is an effective action-chooser, since that is what I was doing in the 1990s,
    but using as a placeholder heuristic until I found something that was 'more correct'
    
 *  But \\(\[0,1\]\\) bounded i.i.d variables having a decent confidence bound (Hoeffding's inequality) was a new thing for me
@@ -86,7 +86,7 @@ Musings : Games and State-of-the-Art
 *  The tree optimisations seem 'obvious' in retrospect - but clearly each was a major 'aha!' when it 
    was first proposed.  Very interesting.
 
-*  Almost all of the State-of-the-Art methods use binary features, linear approximations to \\(v_*()\\), search and self-play.
+*  Almost all of the State-of-the-Art methods use binary features, linear approximations to \\( v_*() \\), search and self-play.
 
 *  Perhaps deeper models will work instead of the linear ones - but it's interesting that binary (~sparse?)
    features are basically powerful enough (when there's some tree-search for trickier strategy planning)
