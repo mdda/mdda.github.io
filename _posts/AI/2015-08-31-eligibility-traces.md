@@ -5,7 +5,7 @@ title: Reinforcement Learning Course
 tagline: Performance-based Rewards (Musings)
 date: 2015-08-31
 tags: [NeuralNetworks,ReinforcementLearning]
-published: false
+published: true
 ---
 {% include JB/setup %}
 
