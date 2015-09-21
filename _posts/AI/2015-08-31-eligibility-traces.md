@@ -23,45 +23,22 @@ Musings : Eligibility Traces
 Several things that bubbled to the surface during the Reinforcement Learning course:
 
 *  Eligibility traces, which are a way of keeping track of how rewards for \\(TD(\lambda)\\) should be attributed
-to the states/actions that lead to them seem very reminiscent of activation potentials
+to the states/actions that lead to them, seem very reminiscent of activation potentials
 
-*  Also, aiming for minimum fit error is the same as optimising for least surprise, which is the same as
+*  Aiming for minimum fit error is the same as optimising for least surprise, which is the same as
 making predictions that are as un-surprising as possible
 
 *  Distributing the amount of 'surprise' (positive or negative) to exponentially decaying eligibility
-nodes with a network seems like a very natural reinterpretation of the \\(TD(\lambda)\\)  framework
+nodes with a _neural network_ seems like a very natural reinterpretation of the \\(TD(\lambda)\\) framework
 
 *  But current neural networks are densified, with multi-dimensional spaces embedding knowledge
-in a way that is entangled far more thoroughly than the sparse representations found in the brain
-would suggest
+in a way that is entangled far more thoroughly than the sparse representations (apparently) found in the brain
 
-*  Perhaps the 'attribution problem' that sparse+eligibility solves is equivalent to dense+backprop  
+*  Perhaps the 'attribution problem' that sparse &amp; eligibility solves is equivalent to dense &amp; backprop  
 
-*  But there is a definite disconnect between the rationale between the two methods that requires
-more justification
+*  But there appears to be a definite disconnect between the rationales 
+behind each of the two methods that requires more justification
 
-
-
-Musings : Gimbal Learning
-------------------------------------------------
-
-Looks like [Lecture 8 of the Reinforcement Learning Course by David Silver](http://www.computervisiontalks.com/rl-course-by-david-silver-lecture-8-integrating-learning-and-planning-2/)
-is super-relevant to the Gimbal control problem that I've been considering.  
-
-It's also interesting that the things I had already assumed would have been obvious 
-are currently considered state-of-the-art.
-
-In summary : 
-
-*  Learn model from real world by observing state transitions, and then learning {state, action}-to-state mapping
-   +  Also learn {State, Action}-to-Reward mapping (almost a separate model)
-*  Apply model-free methods to model-simulated world
-*  Once 'correct' action has been selected, actually perform it
-*  Now we have new real-world learning with which to fine-tune the world model
-
-To apply this to gimbal, seems like one could present 'target trajectories' to 
-controller in turn, letting it learn a common world-model, 
-with different reward-models for each goal.  And let it self-play...
 
 
 
@@ -90,5 +67,31 @@ Musings : Games and State-of-the-Art
 
 *  Perhaps deeper models will work instead of the linear ones - but it's interesting that binary (~sparse?)
    features are basically powerful enough (when there's some tree-search for trickier strategy planning)
+
+
+
+Musings : Gimbal Learning
+------------------------------------------------
+
+[Lecture 8 of the Reinforcement Learning Course by David Silver](http://www.computervisiontalks.com/rl-course-by-david-silver-lecture-8-integrating-learning-and-planning-2/)
+is super-relevant to the Gimbal control problem that I've been considering.  
+
+It's also interesting that the things I had already assumed would have been obvious 
+are currently considered state-of-the-art (but isn't that always the way?  Hindsight, etc).
+
+In summary : 
+
+*  Learn model from real world by observing state transitions, and then learning {state, action}-to-state mapping
+   +  Also learn {State, Action}-to-Reward mapping (almost a separate model)
+
+*  Apply model-free methods to model-simulated world
+
+*  Once 'correct' action has been selected, actually perform it
+
+*  Now we have new real-world learning with which to fine-tune the world model
+
+To apply this to gimbal, seems like one could present 'target trajectories' to 
+controller in turn, letting it learn a common world-model, 
+with different reward-models for each goal.  And let it self-play...
 
 
