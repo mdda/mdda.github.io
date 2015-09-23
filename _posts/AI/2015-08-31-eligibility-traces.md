@@ -95,3 +95,7 @@ controller in turn, letting it learn a common world-model,
 with different reward-models for each goal.  And let it self-play...
 
 
+Apropos of Nothing
+------------------------------------------------
+[DARPA Robotics Fast Track](https://rft.osrfoundation.org/) - are they doing anything?
+
