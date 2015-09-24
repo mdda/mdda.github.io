@@ -79,6 +79,17 @@ Dig into :
 *   https://bitbucket.org/omerlevy/hyperwords
 
 
+Practicalities
+===========================
+
+*  To 'factorize' the raw matrices, need some measure of how well the factorization is doing
+
+*  Thinking about 'variance reduction' as an approach to isolating word-factors, probably need a way to retrain a given set of vectors, to see whether new factors improve some quantitative measure of fit or predictive power.
+
+*  If it's going to be GPU-learned, then need a GPU implementation of word2vec or similar
+
+
+
 NB :
 =========
 
