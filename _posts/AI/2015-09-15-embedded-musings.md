@@ -83,10 +83,14 @@ Practicalities
 ===========================
 
 *  To 'factorize' the raw matrices, need some measure of how well the factorization is doing
+   +  [This Montreal paper](http://arxiv.org/pdf/1412.6448v4.pdf) mentions some word similarity rating methods
 
 *  Thinking about 'variance reduction' as an approach to isolating word-factors, probably need a way to retrain a given set of vectors, to see whether new factors improve some quantitative measure of fit or predictive power.
 
 *  If it's going to be GPU-learned, then need a GPU implementation of word2vec or similar
+   +  [Overview](http://files.meetup.com/12426342/5_An_overview_of_word2vec.pdf)
+   +  [GPU, GloVE, but not words](https://github.com/allentran/graph2vec)
+   +  [GloVE, but Non-GPU](https://github.com/hans/glove.py/blob/master/glove.py)
 
 
 
