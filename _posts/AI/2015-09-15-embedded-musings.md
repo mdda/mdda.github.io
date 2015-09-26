@@ -84,6 +84,14 @@ Practicalities
 
 *  To 'factorize' the raw matrices, need some measure of how well the factorization is doing
    +  [This Montreal paper](http://arxiv.org/pdf/1412.6448v4.pdf) mentions some word similarity rating methods
+   +  [Embedding blog post](http://www.marekrei.com/blog/linguistic-regularities-word-representations/) has links to 3 methods : 
+      - The MSR dataset containing 8,000 analogy questions.
+      - The GOOGLE dataset with 19,544 analogy questions.
+      - The SEMEVAL dataset, covering 79 distinct relation types.
+      
+>  The word vectors were trained on 1.5 billion words of English Wikipedia. 
+>  The vocabulary was restricted to contain only words that occurred at least 100 times in the corpus, resulting in 189,533 words.    
+   
 
 *  Thinking about 'variance reduction' as an approach to isolating word-factors, probably need a way to retrain a given set of vectors, to see whether new factors improve some quantitative measure of fit or predictive power.
 
@@ -94,6 +102,8 @@ Practicalities
       - but with [an excellent write-up](http://www.foldl.me/2014/glove-python/)
 
    +  Relevant Theano snippet on how to [update a subset of weights](http://deeplearning.net/software/theano/tutorial/faq_tutorial.html)
+   
+   +  Pouring some cold water on [newer embedding techniques](https://levyomer.wordpress.com/2015/03/30/improving-distributional-similarity-with-lessons-learned-from-word-embeddings/)
 
 NB :
 =========
@@ -102,3 +112,4 @@ NB :
 *   The abstract and title submission deadline is November 12th 2015 at 5:00 pm US Eastern Time. 
 *   The deadline for submitting arXiv ID to of the papers to ICLR is November 19th 2012 at 5:00 pm US Eastern Time.
 
++   
