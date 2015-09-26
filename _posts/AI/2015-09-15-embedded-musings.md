@@ -93,7 +93,7 @@ Practicalities
    +  [GloVE, but Non-GPU](https://github.com/hans/glove.py/blob/master/glove.py)
       - but with [an excellent write-up](http://www.foldl.me/2014/glove-python/)
 
-
+   +  Relevant Theano snippet on how to [update a subset of weights](http://deeplearning.net/software/theano/tutorial/faq_tutorial.html)
 
 NB :
 =========
