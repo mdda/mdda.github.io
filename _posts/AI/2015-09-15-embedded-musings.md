@@ -91,6 +91,7 @@ Practicalities
    +  [Overview](http://files.meetup.com/12426342/5_An_overview_of_word2vec.pdf)
    +  [GPU, GloVE, but not words](https://github.com/allentran/graph2vec)
    +  [GloVE, but Non-GPU](https://github.com/hans/glove.py/blob/master/glove.py)
+      - but with [an excellent write-up](http://www.foldl.me/2014/glove-python/)
 
 
 
