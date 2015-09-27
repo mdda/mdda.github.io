@@ -69,7 +69,9 @@ Pretrained vector models available via [Google's project page]( https://code.goo
 Lots of work has examined the ```Queen ~ King - Man + Woman``` style of analogies (notably : 
 [Linguistic Regularities in Sparse and Explicit Word Representations](https://levyomer.files.wordpress.com/2014/04/linguistic-regularities-in-sparse-and-explicit-word-representations-conll-2014.pdf)).
 
-Multiple senses covered in [Efficient Non-parametric Estimation of Multiple Embeddings per Word in Vector Space](http://arxiv.org/abs/1504.06654).
+Multiple senses covered in [Efficient Non-parametric Estimation of Multiple Embeddings per Word in Vector Space](http://arxiv.org/abs/1504.06654).  
+Microsoft's Multi-sense paper was trained on [April 2010 snap-shot of the Wikipedia corpus (Shaoul and Westbury, 2010)](http://www.psych.ualberta.ca/~westburylab/downloads/westburylab.wikicorp.download.html)
+(containing approximately 2 million articles and 990 million tokens).
 
 
 Dig into :
@@ -85,13 +87,14 @@ Practicalities
 *  To 'factorize' the raw matrices, need some measure of how well the factorization is doing
    +  [This Montreal paper](http://arxiv.org/pdf/1412.6448v4.pdf) mentions some word similarity rating methods
    +  [Embedding blog post](http://www.marekrei.com/blog/linguistic-regularities-word-representations/) has links to 3 methods : 
-      - The MSR dataset containing 8,000 analogy questions.
-      - The GOOGLE dataset with 19,544 analogy questions.
-      - The SEMEVAL dataset, covering 79 distinct relation types.
+      - The [MSR dataset](http://research.microsoft.com/en-us/projects/rnn/) containing 8,000 analogy questions (this is tough for pure counting methods)
+      - The [GOOGLE dataset](https://code.google.com/p/word2vec/source/browse/trunk/questions-words.txt) with 19,544 analogy questions.
+      - The [SEMEVAL dataset](https://sites.google.com/site/semeval2012task2/download), covering 79 distinct relation types.
       
 >  The word vectors were trained on 1.5 billion words of English Wikipedia. 
 >  The vocabulary was restricted to contain only words that occurred at least 100 times in the corpus, resulting in 189,533 words.    
    
+
 
 *  Thinking about 'variance reduction' as an approach to isolating word-factors, probably need a way to retrain a given set of vectors, to see whether new factors improve some quantitative measure of fit or predictive power.
 
