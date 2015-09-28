@@ -90,7 +90,7 @@ Practicalities
       - The [MSR dataset](http://research.microsoft.com/en-us/projects/rnn/) containing 8,000 analogy questions (this is tough for pure counting methods)
       - The [GOOGLE dataset](https://code.google.com/p/word2vec/source/browse/trunk/questions-words.txt) with 19,544 analogy questions.
       - The [SEMEVAL dataset](https://sites.google.com/site/semeval2012task2/download), covering 79 distinct relation types.
-      
+
 >  The word vectors were trained on 1.5 billion words of English Wikipedia. 
 >  The vocabulary was restricted to contain only words that occurred at least 100 times in the corpus, resulting in 189,533 words.    
    
@@ -107,6 +107,14 @@ Practicalities
    +  Relevant Theano snippet on how to [update a subset of weights](http://deeplearning.net/software/theano/tutorial/faq_tutorial.html)
    
    +  Pouring some cold water on [newer embedding techniques](https://levyomer.wordpress.com/2015/03/30/improving-distributional-similarity-with-lessons-learned-from-word-embeddings/)
+
+
+Minor note:
+
+Building Google's 1-billion-word language modelling benchmark is much more involved than expected, 
+and also contains a large number of duplicate sentences 
+(which, when removed, reduce the number of words in the corpus from 2.9Gb to 0.8Gb).
+
 
 NB :
 =========
