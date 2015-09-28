@@ -115,6 +115,10 @@ Building Google's 1-billion-word language modelling benchmark is much more invol
 and also contains a large number of duplicate sentences 
 (which, when removed, reduce the number of words in the corpus from 2.9Gb to 0.8Gb).
 
+OTOH, the checksums proved that the process was going Ok, even though the line-by-line aggregate produced
+mid-way seemed to have extra double-quotation marks at the beginning of each line.
+
+
 
 NB :
 =========
