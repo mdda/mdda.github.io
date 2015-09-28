@@ -118,6 +118,8 @@ and also contains a large number of duplicate sentences
 OTOH, the checksums proved that the process was going Ok, even though the line-by-line aggregate produced
 mid-way seemed to have extra double-quotation marks at the beginning of each line.
 
+That being said, the version produced ends up IDENTICAL to the version issued by Kaggle.
+
 
 
 NB :
