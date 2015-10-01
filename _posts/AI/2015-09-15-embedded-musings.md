@@ -109,7 +109,33 @@ Practicalities
    +  Pouring some cold water on [newer embedding techniques](https://levyomer.wordpress.com/2015/03/30/improving-distributional-similarity-with-lessons-learned-from-word-embeddings/)
 
 
+GPU Implementation
+---------------------
+How practical is it to store the whole of the training data on the GPU?
+
+Sizing of the vocabulary sparse matrix entries :
+
+*  For vocab size of less than 1,000,000 words, then 20bits is sufficient to store the index
+
+*  So two indices can fit in 5 bytes
+ 
+*  Is 3 bytes sufficient resolution to store the Xij (in some suitable format?) 
+   - because, if so, the data can be compressed into a 64-bit word
+   - half the size of int32+int32+float64, as is currently the format
+   
+
+Also, sizing the number of co-occurrence entries :
+
+*  Dependency on size of vocabulary (equivalently, the minimum number of occurrences of each word)
+
+*  Dependency on the number of cooccurrences to be considered worth learning
+
+
+
+
+
 Minor note:
+---------------------
 
 Building Google's 1-billion-word language modelling benchmark is much more involved than expected, 
 and also contains a large number of duplicate sentences 
