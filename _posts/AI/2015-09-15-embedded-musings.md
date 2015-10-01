@@ -111,7 +111,10 @@ Practicalities
 
 GPU Implementation
 ---------------------
-How practical is it to store the whole of the training data on the GPU?
+For the base GloVe computation, which is mostly vector products, this appears to be memory-bandwidth bound.
+Perhaps more compute-heavy versions could allow better uses of 'closer' memory buffers.
+
+But if we're memory-bandwidth bound, then how practical is it to store the whole of the training data on the GPU?
 
 Sizing of the vocabulary sparse matrix entries :
 
