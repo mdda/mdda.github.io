@@ -147,6 +147,8 @@ Also, sizing the number of co-occurrence entries :
       -  Cooccurrence file : 970,663,456 bytes, 60,666,466 elements (i.e. 16 bytes per line)
       -  Using x_max: 10.000000, alpha: 0.750000
    + applying it to ``kaggle words`` dataset :
+      -  CHECK : Should embeddings ignore all punctuation?  
+      -  Did read that GloVe obeys newlines (so that window doesn't go from one line to the next)
    
 
 
