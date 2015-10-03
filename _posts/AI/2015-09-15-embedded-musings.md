@@ -114,6 +114,12 @@ GPU Implementation
 For the base GloVe computation, which is mostly vector products, this appears to be memory-bandwidth bound.
 Perhaps more compute-heavy versions could allow better uses of 'closer' memory buffers.
 
+    Memory Bandwith (Dual) :  21 GB/s
+    Memory Bandwith (Quad) :  37 GB/s
+    PCI v3.0 x16           :  15.754 GB/s
+    Titan X Bandwidth      : 336 GB/s   (GigaBytes/sec)
+
+
 But if we're memory-bandwidth bound, then how practical is it to store the whole of the training data on the GPU?
 
 Sizing of the vocabulary sparse matrix entries :
@@ -132,6 +138,16 @@ Also, sizing the number of co-occurrence entries :
 *  Dependency on size of vocabulary (equivalently, the minimum number of occurrences of each word)
 
 *  Dependency on the number of cooccurrences to be considered worth learning
+
+*  Looking at GloVe :
+   + embedding vector file size == vocab.size * (embedding.size+1) * 8 * 2 (i.e. stored at 2 64-bit numbers)
+   + their ```text8``` sample stats, using the default parameters : 
+      -  Text contains 17,005,207 tokens with 253,854 unique words
+      -  Truncating vocabulary at min-count 5 gives a vocabulary of size 71290
+      -  Cooccurrence file : 970,663,456 bytes, 60,666,466 elements (i.e. 16 bytes per line)
+      -  Using x_max: 10.000000, alpha: 0.750000
+   + applying it to ``kaggle words`` dataset :
+   
 
 
 
@@ -159,4 +175,3 @@ NB :
 *   The abstract and title submission deadline is November 12th 2015 at 5:00 pm US Eastern Time. 
 *   The deadline for submitting arXiv ID to of the papers to ICLR is November 19th 2012 at 5:00 pm US Eastern Time.
 
-+   
