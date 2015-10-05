@@ -140,15 +140,19 @@ Also, sizing the number of co-occurrence entries :
 *  Dependency on the number of cooccurrences to be considered worth learning
 
 *  Looking at GloVe :
-   + embedding vector file size == vocab.size * (embedding.size+1) * 8 * 2 (i.e. stored at 2 64-bit numbers)
-   + their ```text8``` sample stats, using the default parameters : 
+   +  Embeddings [don't ignore punctuation](http://stackoverflow.com/questions/31710061/stanford-gloves-lack-of-punctuation)
+   +  GloVe obeys newlines (so that window doesn't go from one line to the next)
+   +  embedding vector file size == vocab.size * (embedding.size+1) * 8 * 2 (i.e. stored at 2 64-bit numbers)
+   +  their ```text8``` sample stats, using the default parameters : 
       -  Text contains 17,005,207 tokens with 253,854 unique words
-      -  Truncating vocabulary at min-count 5 gives a vocabulary of size 71290
+      -  Truncating vocabulary at min-count 5 gives a vocabulary of size 71,290
       -  Cooccurrence file : 970,663,456 bytes, 60,666,466 elements (i.e. 16 bytes per line)
       -  Using x_max: 10.000000, alpha: 0.750000
-   + applying it to ``kaggle words`` dataset :
-      -  CHECK : Should embeddings ignore all punctuation?  
-      -  Did read that GloVe obeys newlines (so that window doesn't go from one line to the next)
+   +  applying it to ``kaggle words`` dataset :
+      -  Text contains 768,648,884 tokens with 2,425,337 unique words (numbers not unified)
+      -  Truncating vocabulary at min-count 5 gives a vocabulary of size 552,402
+      -  Cooccurrence file :  bytes, 645,639,963(?) elements (i.e. 16 bytes per line)
+
    
 
 
