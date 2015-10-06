@@ -152,8 +152,12 @@ Also, sizing the number of co-occurrence entries :
       -  Text contains 768,648,884 tokens with 2,425,337 unique words (numbers not unified)
    +  Truncating vocabulary at min-count 5 gives a vocabulary of size 552,402
       -  Cooccurrence file : 10,330,239,408 bytes, 645,639,963 elements (i.e. 16 bytes per line)
+   +  Truncating vocabulary at min-count 25 gives a vocabulary of size 208,350
+      -  Cooccurrence file :  9,088,606,432 bytes, 568,037,902 elements (i.e. 16 bytes per line)
    +  Truncating vocabulary at min-count 100 gives a vocabulary of size 99,561
       -  Cooccurrence file :  7,700,418,528 bytes, 481,276,158 elements (i.e. 16 bytes per line)
+
+
 
    
 
