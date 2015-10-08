@@ -140,10 +140,19 @@ Sizing of the vocabulary sparse matrix entries :
       - modify glove.c to spit out max(Xij) over whole cooccurrence file...
 
    + On sample ```text8``` file : 
-     - lines read :  60,666,466, word_max :  71,290 71,290,  val.min, val.max : 0.0667, 409,566.0413
+     - lines read :  60,666,466, word_max :  71,290 71,290
+     - val.min, val.max, val.max2 : 0.0667, 409,566.0413, 339,164.6820
 
    + On ```kaggle_words``` file : 
-     - lines read :  
+     - 100w : lines read : 481,276,158, word_max :  99,561  99,561, val.min, val.max : 0.0667, 9,133,361.6994, 8,707,079.0381
+     -  25w : lines read : 568,037,902, word_max : 208,350 208,350, val.min, val.max : 0.0667, 9,069,331.6206, 8,674,834.5595
+     -   5w : lines read : 645,639,963, word_max : 552,402 552,402, val.min, val.max : 0.0667, 9,028,503.0483, 8,655,790.3236
+
+   + So, full dynamic range = 9,133,361.6994 / 0.0667 = ~1,370,003,570 which (as integer) needs 31 bits
+     - but : ln(9,133,361.) = 16.027444388459088, ln(8707079.) = 15.979646935304869, and ln(0.0667) = -2.70805020105221
+     - this looks a lot more tractable...  1st place - 2nd place = 0.04, (1/14-1/15) = 0.0047619
+     - So, what dynamic range is required in ln() terms? : (16.0274+2.7080)/0.0047619 = 3934.4379
+
 
 
 
