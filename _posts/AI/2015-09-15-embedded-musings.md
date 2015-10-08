@@ -152,7 +152,14 @@ Sizing of the vocabulary sparse matrix entries :
      - but : ln(9,133,361.) = 16.027444388459088, ln(8707079.) = 15.979646935304869, and ln(0.0667) = -2.70805020105221
      - this looks a lot more tractable...  1st place - 2nd place = 0.04, (1/14-1/15) = 0.0047619
      - So, what dynamic range is required in ln() terms? : (16.0274+2.7080)/0.0047619 = 3934.4379
-
+     - Therefore, can give headroom up to 65k, and with 8 bits fixed binary places in 3 bytes
+    
+   + Test using ```stats.c```:
+     - Using ln(Xij)+3.0 and ```16.8``` representation : Largest decompression error ~ 0.39%
+     - Using ln(Xij)+3.0 and ```14.10``` representation : Largest decompression error ~ 0.098%
+     - Using ln(Xij)+3.0 and ```12.12``` representation : Largest decompression error ~ 0.024%
+  
+   + *Conclusion : can safely encode the Xij values in 3 bytes, and therefore each 16-byte CREC in 8-bytes*
 
 
 
