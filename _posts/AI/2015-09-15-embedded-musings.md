@@ -139,6 +139,11 @@ Sizing of the vocabulary sparse matrix entries :
    + Interested in ln(Xij) and Xij itself when &lt;x_max (default = 100.0)
       - modify glove.c to spit out max(Xij) over whole cooccurrence file...
 
+   + On sample ```text8``` file : 
+     - lines read :  60,666,466, word_max :  71,290 71,290,  val.min, val.max : 0.0667, 409,566.0413
+
+   + On ```kaggle_words``` file : 
+     - lines read :  
 
 
 
