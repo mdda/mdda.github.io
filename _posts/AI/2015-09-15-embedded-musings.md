@@ -128,10 +128,19 @@ Sizing of the vocabulary sparse matrix entries :
 
 *  So two indices can fit in 5 bytes
  
-*  Is 3 bytes sufficient resolution to store the Xij (in some suitable format?) 
+*  Is 3 bytes sufficient resolution to store the Xij (in some suitable format) ?
    - because, if so, the data can be compressed into a 64-bit word
    - half the size of int32+int32+float64, as is currently the format
    
+*  What actual type / range does the Xij element have / need?
+   + Xij is the sum of the inverse distances between the words
+      - up to a distance of (default) 15 words  (a/2 + b/3 + c/4 + ... + n/15) for large a,b,c, ..., n
+      - reciprocal-distance is pretty arbitrary (rather than having a theoretical foundation)
+   + Interested in ln(Xij) and Xij itself when &lt;x_max (default = 100.0)
+      - modify glove.c to spit out max(Xij) over whole cooccurrence file...
+
+
+
 
 Also, sizing the number of co-occurrence entries :
 
@@ -148,6 +157,7 @@ Also, sizing the number of co-occurrence entries :
       -  Truncating vocabulary at min-count 5 gives a vocabulary of size 71,290
       -  Cooccurrence file : 970,663,456 bytes, 60,666,466 elements (i.e. 16 bytes per line)
       -  Using x_max: 10.000000, alpha: 0.750000
+      
    +  applying it to ``kaggle words`` dataset :
       -  Text contains 768,648,884 tokens with 2,425,337 unique words (numbers not unified)
    +  Truncating vocabulary at min-count 5 gives a vocabulary of size 552,402
