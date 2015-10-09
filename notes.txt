@@ -18,6 +18,11 @@ bundle update
 bundle exec jekyll serve --watch --unpublished
 
 
+
+git config user.name "Martin Andrews"
+git config user.email GitHub@mdda.net
+
+
 ### http://jekyllbootstrap3.tk/preview/#/theme/Dbyll
 ## rake theme:install git="https://github.com/jekyll-bs3/dbyll"
 
