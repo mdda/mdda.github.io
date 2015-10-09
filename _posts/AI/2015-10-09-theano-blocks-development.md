@@ -194,6 +194,10 @@ git branch trunk upstream/master
 popd
 {% endhighlight %}
 
+{% highlight bash %}
+## See above for DEVELOP START...LOOP
+{% endhighlight %}
+
 
 Working on Blocks-examples
 =============================================
@@ -216,4 +220,8 @@ git remote add upstream git://github.com/mila-udem/blocks-examples.git
 git fetch upstream
 git branch trunk upstream/master
 
+{% endhighlight %}
+
+{% highlight bash %}
+## See above for DEVELOP START...LOOP
 {% endhighlight %}
