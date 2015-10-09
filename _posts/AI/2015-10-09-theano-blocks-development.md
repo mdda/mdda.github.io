@@ -67,17 +67,21 @@ pip install -r requirements.txt
 Add Theano in development mode
 =============================================
 
-This assumes that you ("USER") have forked the main repo into your "USER" github account :
+This assumes that you (as a GitHub user) have forked the main repo into your github account :
 
 {% highlight bash %}
+# Set a GITHUB_USER variable appropriately:
+#GITHUB_USER=mdda
+GITHUB_USER=FILL_IN_YOUR_GITHUB_USERNAME_HERE
+
 pushd env/
 
 # See : http://deeplearning.net/software/theano/dev_start_guide.html
 
-git clone https://github.com/$USER/Theano.git
+git clone https://github.com/${GITHUB_USER}/Theano.git
 pushd Theano
 
-# Set up my github id, so that I get 'credit' in activity map
+# Set up my github id, so that you get 'credit' in activity map
 # ( Obviously, insert your own details here )
 git config user.name "Firstname Lastname"
 git config user.email USER@example.com
@@ -137,12 +141,12 @@ Add Blocks in development mode
 
 {% highlight bash %}
 # First time 
-pip install -e git+https://github.com/$USER/blocks.git#egg=blocks[test,docs] --src=$HOME/env \
+pip install -e git+https://github.com/${GITHUB_USER}/blocks.git#egg=blocks[test,docs] --src=$HOME/env \
   -r https://raw.githubusercontent.com/mila-udem/blocks/master/requirements.txt
   
 pushd env/blocks
 
-# Set up my github id, so that I get 'credit' in activity map
+# Set up my github id, so that you get 'credit' in activity map
 # ( Obviously, insert your own details here )
 git config user.name "Firstname Lastname"
 git config user.email USER@example.com
@@ -170,13 +174,13 @@ Add Blocks-extras in development mode
 {% highlight bash %}
 pushd env/
 
-git clone https://github.com/mdda/blocks-extras.git
+git clone https://github.com/${GITHUB_USER}/blocks-extras.git
 
 pushd blocks-extras
 
 pip install -e .
 
-# Set up my github id, so that I get 'credit' in activity map
+# Set up my github id, so that you get 'credit' in activity map
 # ( Obviously, insert your own details here )
 git config user.name "Firstname Lastname"
 git config user.email USER@example.com
@@ -205,10 +209,10 @@ Working on Blocks-examples
 Since this is an 'end-user' package, it doesn't need to be installed : Just work on it!
 
 {% highlight bash %}
-git clone https://github.com/mdda/blocks-examples.git
+git clone https://github.com/${GITHUB_USER}/blocks-examples.git
 cd blocks-examples
 
-# Set up my github id, so that I get 'credit' in activity map
+# Set up my github id, so that you get 'credit' in activity map
 # ( Obviously, insert your own details here )
 git config user.name "Firstname Lastname"
 git config user.email USER@example.com
