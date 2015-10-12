@@ -29,7 +29,7 @@ Which cost us a fair bit of time and head-scratching.
 
 Unfortunately, this seems to be [by design](https://github.com/sitaramc/gitolite/blob/master/src/triggers/post-compile/ssh-authkeys#L137) :
 
-{% highlight bash %}
+{% highlight perl %}
 sub optionise {
   my $f = shift;
 
