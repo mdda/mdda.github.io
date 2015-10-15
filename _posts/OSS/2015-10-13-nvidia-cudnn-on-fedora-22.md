@@ -27,7 +27,7 @@ which is the default way that Nvidia installs on Fedora, at least) :
 tar --no-same-owner --owner=root --group=root -xzf cudnn-7.0-linux-x64-v3.0-prod.tgz --directory=/usr/local
 
 # Check the new files arrived in the right place
-ls -l /usr/local/cuda-7.0/lib64/libcud*
+ls -l /usr/local/cuda-7.0/lib64/libcudnn*
 
 # Make sure your compilers find them
 ldconfig -vvvv
