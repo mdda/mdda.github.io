@@ -1,27 +1,27 @@
 ---
 date: 2015-10-16
-title: MonteCarlo for Initialisation Parameters
+title: MonteCarlo for NN Initialisation Parameters
 category: OSS
 tags:
 - NeuralNetworks
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
-### How to choose distribution/parameters for Neural Network initialisations?
+### Choosing the Distribution &amp; Parameters for Neural Network Initialisations
 
-When initialising random weights in a neural network, the $n.Var(W) = 1$ 'rule-of-thumb' 
+When initialising random weights in a neural network, the \\( n.Var(W) = 1 \\) 'rule-of-thumb' 
 is [fairly easy to find online](http://deepdish.io/2015/02/24/network-initialization/).  
 
 However, these often start to get handwavy after the initial results are proved.
 
-The code below just weights an input distribution of $n$ features (in this case $Uniform(0,1)$),
-by a weight vector with distribution $Uniform(-0.5*size, +0.5*size)$, and applies
+The code below just weights an input distribution of \\(n\\) features (in this case ```Uniform(0,1)```),
+by a weight vector with distribution ```Uniform(-0.5*size, +0.5*size)```, and applies
 an activation function to the result.
 
 By running this process over a matrix of samples, one can effectively measure
-the value of $size$ required to equalise the input variance with the output variance.
+the value of ```size``` required to equalise the input variance with the output variance.
 And this approach should give good training stability - since each layer of the network
 will have an 'amplification factor' of approximately 1.  
 
@@ -43,22 +43,16 @@ def factor(features, init_size=1.0, logistic_answer=False):
   # np.mean(feat, axis=1).shape = 10000
 
   print("Features : Mean=%+.4f, stdev=%.4f" % (np.mean(feat), np.std(feat),))
-  print("   Ideal : Mean=%+.4f, stdev=%.4f" % (0.5, 1.0/np.sqrt(12.0),))
-  print("")
-
+  print("   Ideal : Mean=%+.4f, stdev=%.4f\n" % (0.5, 1.0/np.sqrt(12.0),))
 
   # Set as Uniform(1.0) (centered on zero)
   weights = (np.random.random( (samples, features) ) - 0.5) * init_size
   print("Weights  : Mean=%+.4f, stdev=%.4f" % (np.mean(weights), np.std(weights),))
-  print("   Ideal : Mean=%+.4f, stdev=%.4f" % (0.0, init_size/np.sqrt(12.0),))
-  print("")
-
+  print("   Ideal : Mean=%+.4f, stdev=%.4f\n" % (0.0, init_size/np.sqrt(12.0),))
 
   sumprod = np.sum(feat * weights, axis=1)
   print("PreAct.shape", sumprod.shape)
-  print("PreAct   : Mean=%+.4f, stdev=%.4f" % (np.mean(sumprod), np.std(sumprod),))
-  #print("   Ideal : Mean=%+.4f, stdev=%.4f" % (0.0, 1.0/np.sqrt(12.0),))
-  print("")
+  print("PreAct   : Mean=%+.4f, stdev=%.4f\n" % (np.mean(sumprod), np.std(sumprod),))
 
   relu = np.maximum( sumprod, np.zeros( sumprod.shape ) )
   print("ReLU     : Mean=%+.4f, stdev=%.4f" % (np.mean(relu), np.std(relu),))
