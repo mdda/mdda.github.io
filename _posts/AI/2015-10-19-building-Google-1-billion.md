@@ -5,7 +5,7 @@ title: Building Google's 1 Billion word corpus
 tagline: Kaggle's version is identical
 date: 2015-10-19
 tags: [NeuralNetworks,Corpus]
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -25,8 +25,7 @@ Building the 1 billion word corpus from source
 ---------------------------------------------------------------
 
 Building Google's 1-billion-word language modelling benchmark is much more involved than expected, 
-and also contains a large number of duplicate sentences.  
-When removed, the number of words in the corpus is reduced from 2.9G to 0.8G.
+and also contains a large number of duplicate sentences.  When removed, the number of words in the corpus is reduced from 2.9G to 0.8G.
 
 OTOH, the checksums proved that the process was going Ok, even though the line-by-line aggregate produced
 mid-way seemed to have extra double-quotation marks at the beginning of each line.
@@ -36,7 +35,9 @@ pushd data/0-orig-1-billion
 
 git clone https://github.com/ciprian-chelba/1-billion-word-language-modeling-benchmark.git
 cd 1-billion-word-language-modeling-benchmark/tar_archives
+
 wget http://statmt.org/wmt11/training-monolingual.tgz
+
 cd ..
 ls -l tar_archives/
 #-rw-rw-r--. 1 andrewsm andrewsm 10582262657 Feb 24  2011 training-monolingual.tgz
