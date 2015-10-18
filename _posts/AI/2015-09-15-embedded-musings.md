@@ -187,27 +187,8 @@ Also, sizing the number of co-occurrence entries :
       -  Cooccurrence file :  9,088,606,432 bytes, 568,037,902 elements (i.e. 16 bytes per line)
    +  Truncating vocabulary at min-count 100 gives a vocabulary of size 99,561
       -  Cooccurrence file :  7,700,418,528 bytes, 481,276,158 elements (i.e. 16 bytes per line)
+ 
 
-
-
-   
-
-
-
-
-
-Minor note:
----------------------
-
-Building Google's 1-billion-word language modelling benchmark is much more involved than expected, 
-and also contains a large number of duplicate sentences 
-(which, when removed, reduce the number of words in the corpus from 2.9Gb to 0.8Gb).
-
-OTOH, the checksums proved that the process was going Ok, even though the line-by-line aggregate produced
-mid-way seemed to have extra double-quotation marks at the beginning of each line.
-
-That being said, the version produced ends up IDENTICAL to the version issued by Kaggle.
-Should submit a PR that points that out in the README...
 
 
 
