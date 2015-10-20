@@ -192,6 +192,10 @@ Also, sizing the number of co-occurrence entries :
 Interesting Compression Papers
 --------------------------------
 
+The following recent (Sep &amp; Oct 2015) papers are also relevant, even though they
+are directed at compression for power-saving, rather than the idea that minimum length descriptions
+imply knowledge discovery :
+
 *   [Neural Networks with Few Multiplications](http://arxiv.org/abs/1510.03009)
 *   [A Deep Neural Network Compression Pipeline: Pruning, Quantization, Huffman Encoding](http://arxiv.org/abs/1510.00149)
 
