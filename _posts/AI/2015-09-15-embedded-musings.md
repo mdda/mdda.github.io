@@ -189,7 +189,11 @@ Also, sizing the number of co-occurrence entries :
       -  Cooccurrence file :  7,700,418,528 bytes, 481,276,158 elements (i.e. 16 bytes per line)
  
 
+Interesting Compression Papers
+--------------------------------
 
+*   [Neural Networks with Few Multiplications](http://arxiv.org/abs/1510.03009)
+*   [A Deep Neural Network Compression Pipeline: Pruning, Quantization, Huffman Encoding](http://arxiv.org/abs/1510.00149)
 
 
 NB :
