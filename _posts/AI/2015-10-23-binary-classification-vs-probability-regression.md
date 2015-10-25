@@ -49,5 +49,15 @@ Possible Reasons
    'route around' neurons that aren't chosen.
    
 
+Side-Note : Pixelwise Segmentation
+-------------------------------------------
 
-   
+After lots of fumbling around, it's fairly clear that Theano libraries (Blocks, Lasagne, to name two)
+are not really looking at the pixelwise segmentation problem.  And most CNN work doesn't
+get there either : what we set out to do simply didn't match the components that others have created.
+
+End result : Either step through the image manually, or use a scatter-gun approach to pick 
+patches for training / testing.  It works pretty quickly, even though it doesn't have the appeal of
+whole-image-at-a-time training.
+
+
