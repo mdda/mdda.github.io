@@ -44,7 +44,10 @@ Possible Reasons
    signal values.  Propagating 'matched pairs' of training signals may reduce a network's
    tendency to overshoot with high learning rates.  But this doesn't explain :
    
-*  Two matched signals, with a dropout layer, beat single signals without...
+*  Two matched signals, with a dropout layer, beat single signals without dropout.  There 
+   may be an inter-layer thing going on, since dropout also encourages training signals to  
+   'route around' neurons that aren't chosen.
+   
 
 
    
