@@ -4,7 +4,7 @@ category: AI
 title: Machine Learning - Going Deeper with Python and Theano
 tagline: Presentation link
 date: 2015-06-19
-tags: [Theano,blocks,bokeh,NeuralNetworks,pycon,Presentation]
+tags: [theano,blocks,bokeh,NeuralNetworks,pycon,Presentation]
 published: true
 ---
 {% include JB/setup %}
