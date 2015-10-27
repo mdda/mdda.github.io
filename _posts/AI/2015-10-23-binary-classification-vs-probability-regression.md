@@ -2,7 +2,7 @@
 layout: post
 category: AI
 title: Binary Classification vs Probability Regression
-tagline: {0,1} works better than (0,1)
+tagline: \{0,1\} works better than (0,1)
 date: 2015-10-23
 tags: [NeuralNetworks]
 published: false
