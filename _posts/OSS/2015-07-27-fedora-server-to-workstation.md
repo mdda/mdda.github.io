@@ -6,7 +6,7 @@ tags:
 - fedora
 - linux
 - Nvidia
-- intel
+- Intel
 - X11
 layout: post
 published: true
