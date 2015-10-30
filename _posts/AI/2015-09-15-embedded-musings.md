@@ -208,13 +208,15 @@ Early Results
    +  15x faster Theano version
    
 *  Intentional damage on 300D embedding (generated from the 6bn word corpus):
-   +  ```abs()``` all entries : -40.61%
-   +  ```zero (last 33%)```   :  -2.47%
-   +  ```zero (last 50%)```   :  -4.99%
-   +  ```zero (last 67%)```   : -11.36%
+   +  ```abs()``` all entries   : -40.61%
+   +  ```zero (33% binomial)``` : -28.29%
+   +  ```zero (50% binomial)``` : -54.50%
+   +  ```zero (last 33%)```     :  -2.47%
+   +  ```zero (last 50%)```     :  -4.99%
+   +  ```zero (last 67%)```     : -11.36%
 
 *  Comparison to 100D embedding (generated from same 6bn word corpus):
-   + raw                      :  -8.63%
+   + ```raw 100d (no zeros```   :  -8.63%
 
 The 100D version is better than the 300D version with 200 dimensions zeroed out, which 
 suggests that the information content is distributed 'fairly' through all the dimensions 
