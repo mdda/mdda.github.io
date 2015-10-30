@@ -200,6 +200,18 @@ imply knowledge discovery :
 *   [A Deep Neural Network Compression Pipeline: Pruning, Quantization, Huffman Encoding](http://arxiv.org/abs/1510.00149)
 
 
+Early Results
+--------------------------------
+
+*  Exactly agree with paper for Syntactic &amp; Semantic Word Analogy tests (Table 2)
+   +  Simple numpy version
+   +  15x faster Theano version
+   
+*  Intentional damage on 300D embedding (generated from the 6bn word corpus):
+   +  ```abs()``` all entries : -40%
+   +  ```zero (last 50%)```   :  -4.5%
+
+
 NB :
 =========
 
