@@ -216,7 +216,7 @@ Early Results
    +  ```zero (last 67%)```     : -11.36%
 
 *  Comparison to 100D embedding (generated from same 6bn word corpus):
-   + ```raw 100d (no zeros```   :  -8.63%
+   + ```raw 100d (no zeros)```  :  -8.63%  (instead of -11.36% above)
 
 The 100D version is better than the 300D version with 200 dimensions zeroed out, which 
 suggests that the information content is distributed 'fairly' through all the dimensions 
