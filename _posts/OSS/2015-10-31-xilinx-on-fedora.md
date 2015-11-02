@@ -12,181 +12,94 @@ published: false
 ---
 {% include JB/setup %}
 
+Installation of the Xilinx ISE WebPack product took way to much time during the 
+recent Singapore FPGA-for-fun Saturday workshop.
+
+Of course, it's easy to complain about proprietary software *just because*, but
+in this case it was made extra-frustrating because Xilinx's proprietary component
+to install their proprietary (buy free-in-cost) license key was broken.  So, 
+in effect, their 'welcome to the family' process became incredibly painful - 
+entirely through their own doing (since the software itself seemed to work fine).
+
+Xilinx Installation (including license key installer work-around)
+----------------------------------------------------------------------
+
+1   Register at the Xilinx website, and request a free license to the ISE Webpack product - 
+    it will be sent to you via email [direct link](https://secure.xilinx.com/webreg/login.do).
+    
+1   Download the license key (since their installer fails to even run)
+
+1   Download the Linux ISE Webpack ```tar``` file  : ```Xilinx_ISE_DS_Lin_14.7_1015_1.tar```
+
+1   ```tar -xf Xilinx_ISE_DS_Lin_14.7_1015_1.tar```, and run (as ```root``` user, though
+    this may not be necessary beyond the creation of the installation directory) :
+
 {% highlight bash %}
+# 14.7 xilinx 2 ise webpack
+
+./xsetup
+
+# Install location : /opt/Xilinx 
+# Choose : ISE WebPACK (not ISE Design Suite System Edition)
+#   No need to chose anything but the defaults from here...
+
+# Now install the license key manually to the directory in your local home :
+cp ~/Downloads/Xilinx.lic ~/.Xilinx/
+
+# Running the software
+cd /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64
+./ise &
+./ise 
+
 {% endhighlight %}
 
 
-# 14.7 xilinx 2 ise webpack
+Potentially useful (but ?not required?)
+--------------------------------------------------
 
-/run/media/andrewsm/NEW-WD-2TB/
-  Xilinx-Tools/Xilinx_ISE_DS_Lin_14.7_1015_1.tar
+*   Helpful, but old : http://stackoverflow.com/questions/15119734/how-to-launch-xilinx-ise-web-pack-under-ubuntu
+
+{% highlight bash %}
+cd /opt/Xilinx/14.7/ISE_DS/
+
+#sudo . settings64.sh
+
+$ /path_to_the_installation_dir/14.4/ISE_DS/ISE/bin/lin64/ise
+$ /path_to_the_installation_dir/14.4/ISE_DS/ISE/bin/lin64/coregen
+$ /path_to_the_installation_dir/14.4/ISE_DS/EDK/bin/lin64/xps
+$ /path_to_the_installation_dir/14.4/ISE_DS/EDK/bin/lin64/xsdk
+{% endhighlight %}
+
+
+Next Steps:
+------------------------------------------------
   
-  ./xsetup
-    # Choose : ISE WebPACK (not ISE Design Suite System Edition)
-  http://stackoverflow.com/questions/15119734/how-to-launch-xilinx-ise-web-pack-under-ubuntu
+1  Open a project file : ```VHDL-HELLO-WORLD.xise```
+
+1  This will use : ```helloworld.vhd```
+
+1  Run-all on the project (to get 'three green ticks') 
+
+1  This will create : ```mystery.bit```, which is a binary that needs to be uploaded to a Xilinx device
+
+
+
+Final thing to solve : Papilio Loader
+------------------------------------------------
   
-    #cd       /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/ise
-    #sudo . settings64.sh
+*  http://forum.gadgetfactory.net/index.php?/files/file/10-papilio-loader-gui/
 
-    $ /path_to_the_installation_dir/14.4/ISE_DS/ISE/bin/lin64/ise
-    $ /path_to_the_installation_dir/14.4/ISE_DS/ISE/bin/lin64/coregen
-    $ /path_to_the_installation_dir/14.4/ISE_DS/EDK/bin/lin64/xps
-    $ /path_to_the_installation_dir/14.4/ISE_DS/EDK/bin/lin64/xsdk
+*  http://forum.gadgetfactory.net/index.php?/files/download/10-papilio-loader-gui/
+   +  Agree to Disclaimer
 
-    File to run :
-      /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/ise
-    
-    
-  https://secure.xilinx.com/webreg/login.do
-  # Download license file sent from Xilinx in email :
+*  http://papilio.cc/index.php?n=Papilio.PapilioLoaderV2
   
-  cp ~/Downloads/Xilinx.lic ~/.Xilinx/
-  cd /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64
-  ./ise &
-  
-  open project:
-    VHDL-HELLO-WORLD.xise
-  
-  helloworld.vhd
+{% highlight bash %}
+mv ~/Downloads/Papilio-Loader-V2.8.zip .
+unzip Papilio-Loader-V2.8.zip 
+cd papilio-loader/
+sudo dnf install libftdi-devel
+java -jar ...
+{% endhighlight %}
 
-  mystery.bit
-  
-  http://forum.gadgetfactory.net/index.php?/files/file/10-papilio-loader-gui/
-  http://forum.gadgetfactory.net/index.php?/files/download/10-papilio-loader-gui/
-    Agree to Disclaimer
-  mv ~/Downloads/Papilio-Loader-V2.8.zip .
-  unzip Papilio-Loader-V2.8.zip 
-  cd papilio-loader/
-  sudo dnf install libftdi-devel
-  java -jar 
-
-  http://papilio.cc/index.php?n=Papilio.PapilioLoaderV2
-  
-  
-  https://github.com/GadgetFactory/DesignLab/issues/15
-  
-  
-
-Xilinx : 
-  Spartan 3E FPGA
-    XC3S500E
-      papilio-one-500k
-      
-  Spartan-6 : http://www.xilinx.com/support/documentation/data_sheets/ds160.pdf
-    LX-4
-    LX-9
-      Papilio Pro  $85 
-        16 DSP slices
-    LX-16         
-    LX-25
-      XuLA2-LX25   $119
-    LX-45 
-      Pipistrello  $149
-    LX-75 
-      11k slices
-    LX-100 
-    LX-150
-
-  7-series
-    Have internal dynamic clock management
-
-  Artix-7
-    Arty 
-      35T
-  
-  Zynq
-    DSP Slices
-    ARM 
-    
-  Ultrascale
-    DSP Slices
-  
-Altera
-  Have internal dynamic clock management
-  
-  Cylone-IV
-    DE2-115 board
-      ==  EP4CE115
-        115k blocks
-        266 multipliers
-    150?
-    
-  Cylone-IV
-    ep4ce6e22c8n datasheet
-        
-  http://blog.kevmod.com/2015/04/quick-report-altera-vs-xilinx-for-hobbyists/
-     "1 Xilinx slice = 2 Altera LEs"
-  
-"older FPGAs (S3, Cyclone IV and before)"
-
-
-http://papilio.cc/
-  Has a 'wings' system ( ~shields) 
-
-Pmod is 'standard' pinout for daughter boards
-
-
-
-Papilio-Pro
-  Spartan-6 LX-9 
-  64Mbit SRAM
-  
-
-    
-
-
-Zynq 
-  Kintec-7 FPGA 
-  Dual ARM core  (i.e. Raspberry-Pi /2)
-
-Parallella  ~$100
-  
-BeMicro
-  https://www.arrow.com/en/reference-designs/bemicro-cv-a9-fpga-development-kit-features-low-cost-28nm-cyclone-v-e-device-5cefa9f23c8n-and-is-the-perfect-platform-for-small-footprint-embedded-applications/80092271AA830AEFEBE14BA843994F0D
-    5CEFA9F23C8N
-    The CV-A9 with 301K Logic Elements, over 12Mbits of on-chip RAM and 684 variable precision DSP blocks
-    
-    
-Papillo : 
-  VGA / SVGA is fine
-  HDMI really difficult (but possible/limited)
-  
-
-hamsterworks.co.nz
-nandland.com
-fpga4fun.com
-
-
-https://joelw.id.au/FPGA/CheapFPGADevelopmentBoards
-
-
-fpgarduino
-  Arduino on the FPGA
-    Allows much more flexibility in IO...
-    
-Definition language
-  Fundamental tooling (can be mixed)
-    Verilog : .v files
-      Often used in America
-      Terse
-
-    VHDL : .???
-      Often used in Europe
-      More verbose
-
-  Haskell 
-    Clash
-      Michal/
-      
-    Kansas Lava
-      Go"rge
-    
-  Python
-    MyHDL
-      
-
-
-    
-ZPUino
-  http://www.alvie.com/zpuino/
-  
+*  https://github.com/GadgetFactory/DesignLab/issues/15
