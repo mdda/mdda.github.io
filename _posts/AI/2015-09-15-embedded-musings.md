@@ -222,6 +222,15 @@ The 100D version is better than the 300D version with 200 dimensions zeroed out,
 suggests that the information content is distributed 'fairly' through all the dimensions 
 available.  Probably not surprising.
 
+Quantising the elements of the vectors is an easy win, though.
+
+1-bit sign + 7-bits of data (ranging from 0 to highest-in-vocab for this column) is practically no loss of precision.
+
+All the way down to 1+3 (for an 8x space saving), particularly with a non-linearity applied before/after.
+
+Next trial : Instead of a linear (or near-linear scale, due to \( x^\alpha \) factor, with \( \alpha = 0.30 \)), 
+try with 16 levels, chosen from a 'trainable palette' of levels, and use Theano to fix it all up...
+
 
 
 
