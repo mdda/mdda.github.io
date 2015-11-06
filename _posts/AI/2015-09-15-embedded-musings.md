@@ -231,6 +231,12 @@ All the way down to 1+3 (for an 8x space saving), particularly with a non-linear
 Next trial : Instead of a linear (or near-linear scale, due to \( x^\alpha \) factor, with \( \alpha = 0.30 \)), 
 try with 16 levels, chosen from a 'trainable palette' of levels, and use Theano to fix it all up...
 
+Theano version of max(2x.a-a.a,0) optimisation :
+  square CPU (batchsize 4)  : 274ms
+  square CPU (batchsize 64) : 258ms
+  simlim CPU (batchsize 4)  :  76ms
+  simlim GPU (batchsize 4)  :  24ms
+  simlim GPU (batchsize 64) :   4ms
 
 
 
