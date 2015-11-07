@@ -232,12 +232,20 @@ Quantising the elements of the vectors is an easy win, though.
 
 All the way down to 1+3 (for an 8x space saving), particularly with a non-linearity applied before/after.
 
+Also tried near-linear scale, with \( x^\alpha \) factor, settling on \( \alpha = 0.30 \).
+
+
 
 Quantisation with Trainable Levels
 ------------------------------------------------------------------
 
-Next trial : Instead of a linear (or near-linear scale, due to \( x^\alpha \) factor, with \( \alpha = 0.30 \)), 
-try with 16 levels, chosen from a 'trainable palette' of levels, and use Theano to fix it all up...
+Try with 16 levels, chosen from a 'trainable palette' of levels, and use Theano to fix it all up...
+
+This works surprisingly well, quantising the embedding with : 
+*  4-bits per element at only 0.20% loss of overall score
+*  3-bits per element at only 0.73% loss of overall score
+*  2-bits per element at only 3.67% loss of overall score
+
 
 
 
