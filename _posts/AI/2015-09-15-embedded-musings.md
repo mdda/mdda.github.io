@@ -260,8 +260,54 @@ Theano version of max(2x.a-a.a,0) optimisation :
   simlim GPU (batchsize 64) :   4ms
 
 
+Sparse Coding
+------------------------------------------------------------------
+
+http://www.scholarpedia.org/article/Sparse_coding
+https://en.wikipedia.org/wiki/Neural_coding#Sparse_coding
+
+G.F. Harpur, R.W. Prager. Development of low entropy coding in a recurrent network, Network: Computation in Neural Systems, vol. 7, pp.277-284, 1996. (pdf)
+
+https://scholar.google.com.sg/scholar?q=george+harpur+&btnG=&hl=en&as_sdt=0%2C5
+
+http://fias.uni-frankfurt.de/~shelton/papers/binary_sparse_coding.pdf
 
 
+Has excellent bibliography (with PDFs) and code :
+  https://github.com/piotrmirowski/Tutorial_AutoEncoders
+
+
+
+http://stats.stackexchange.com/questions/118199/what-are-the-differences-between-sparse-coding-and-autoencoder
+
+What are the difference between sparse coding and autoencoder?
+
+An autoencoder is a model which tries to reconstruct its input, usually using some sort of 
+constraint. Accordingly to Wikipedia it "is an artificial neural network used for learning efficient 
+codings". There's nothing in autoencoder's definition requiring sparsity. Sparse coding based 
+contraints is one of the available techniques, but there are others, for example 
+Denoising Autoencoders, Contractive Autoencoders and RBMs. All makes the network learn 
+good representations of the input (that are also commonly "sparse").
+
+
+https://web.stanford.edu/class/cs294a/sparseAutoencoder.pdf
+https://chrisjmccormick.wordpress.com/2014/05/30/deep-learning-tutorial-sparse-autoencoder/
+
+
+
+
+
+
+
+
+
+
+
+Tangential :
+  https://github.com/piotrmirowski/DependencyTreeRnn
+  https://github.com/piotrmirowski/LBL
+  
+  
 
 NB :
 =========
