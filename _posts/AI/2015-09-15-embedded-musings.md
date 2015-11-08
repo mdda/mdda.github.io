@@ -297,16 +297,19 @@ https://chrisjmccormick.wordpress.com/2014/05/30/deep-learning-tutorial-sparse-a
 
 
 
+Close in intent : Sparse Encoding for Embedding (not 'of Embedding', though) :
+  http://www.cs.cmu.edu/~bmurphy/NNSE/
+  http://www.cs.cmu.edu/~bmurphy/NNSE/nnse_coling12.pdf
 
 
-
-
-
+ClueWeb Corpus (large) :
+  http://www.lemurproject.org/clueweb09.php/
 
 Tangential :
   https://github.com/piotrmirowski/DependencyTreeRnn
   https://github.com/piotrmirowski/LBL
-  
+  https://piotrmirowski.wordpress.com/about/
+  https://piotrmirowski.files.wordpress.com/2015/10/piotrmirowski_2015_learningrepresentationsoftextfornlp_online.pdf
   
 
 NB :
