@@ -12,9 +12,10 @@ published: true
 ---
 {% include JB/setup %}
 
-Google just released a fantastic-looking deep learning library called ```TensorFlow```.
+Google just released a fantastic-looking deep learning library called [```TensorFlow```](http://www.tensorflow.org/), 
+complete with tutorials, and model-zoo-like examples.
 
-Fortunately, it's very reminiscent of ```Theano```, and has a Python front-end over
+Fortunately, the framework is very reminiscent of ```Theano```, and has a Python front-end over
 a computation graph construction machine in C++ / CUDA (no OpenCL as far as I can tell).
 
 One thing, though, is that contributions to the project have to go over
