@@ -1,9 +1,10 @@
 ---
 date: 2015-11-10
 title: Contributing to TensorFlow
-tagline: (we're not in GitHub any more)
+tagline: (we're not in <s>Kansas</s> GitHub any more)
 category: AI
 tags:
+- tensorflow
 - theano
 - python
 layout: post
