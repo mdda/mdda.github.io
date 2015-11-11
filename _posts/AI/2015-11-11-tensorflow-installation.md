@@ -6,8 +6,9 @@ category: AI
 tags:
 - tensorflow
 - python
+- nvidia
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
