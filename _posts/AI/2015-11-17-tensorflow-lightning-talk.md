@@ -19,14 +19,20 @@ a computation graph construction machine in C++ / CUDA (no OpenCL as far as I ca
 
 Positives:
 
-*  TensorBoard (images?)
-
-*  Cross-platform
-
-*  Hiring tool
+*  Cross-platform : CPUs, GPUs, Android, iOS (soon), etc
 
 *  Open Source (Apache 2)
    +   and Google actively reviews and responds to PRs
+
+*  Theano-like definition and optimisation of calculation graph
+   +   backend in C++
+
+*  Python is first-class citizen (other is C++)
+
+*  TensorBoard (images?)
+
+*  Hiring tool
+
 
 
 There are several points worth highlighting:
@@ -48,12 +54,25 @@ There are several points worth highlighting:
 
 *  C++ build environment requires ```bazel``` which is a Java-based horror story
 
+*  PR submission process is via (painful) ```Gerrit``` rather than GitHub
+
 *  Legacy Nvidia drivers : 
    +  7.0 (rather than 7.5) for the main driver
    +  6.5 (rather than 7.0+) for ```cuDNN```, which is now 'archive', so not even supported
 
+*  No distributed computation (yet), even though that's what Google uses
+
+*  Only Python and C++ APIs (others will be 'community implemented')
+
+*  Incorporates something like ```fuel``` (from ```blocks```) as a data-feed engine
+
+*  Whole approach requires implementing many 'client' operations on the TensorFlow 'server' side
+
+*  Currently targets Python 2.7 (though 3.3+ looks like it's coming soon)
 
 
+
+"A g2.2xlarge is a downclocked GK104 (797 MHz), that would make it 1/4 the speed of the recently released TitanX and 2.7x slower than a GTX 980."
 
 {% highlight bash %}
 {% endhighlight %}
