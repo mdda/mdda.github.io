@@ -70,6 +70,8 @@ There are several points worth highlighting:
 
 *  Currently targets Python 2.7 (though 3.3+ looks like it's coming soon)
 
+*  Would definitely benefit from 'deep learning library' like ```lasagne```
+   +   ```theras``` author has already stated that they'll target TensorFlow
 
 
 "A g2.2xlarge is a downclocked GK104 (797 MHz), that would make it 1/4 the speed of the recently released TitanX and 2.7x slower than a GTX 980."

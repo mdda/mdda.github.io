@@ -41,7 +41,27 @@ git clone https://tensorflow.googlesource.com/tensorflow &&
 
 {% endhighlight %}
 
-*   Update your ```user.name```, and ```user.email``` for this git repo to match your CLA / googlecode user login: 
+*   Since we're going to be using the ```http``` version for pushing ```git``` commits, set up 'git cookies' for ```git``` to use
+    when connecting with the Gerrit server when pushing :  
+    +   In the top-right corner of the [Gerrit site](https://tensorflow-review.googlesource.com/#/dashboard/self), clicking on your username will bring
+        up a dropdown with 'Settings'.  
+    +   Go into the Settings, and then choose 'HTTP Password' from the menu on the left hand side.
+    +   This should take you to [this page](https://tensorflow-review.googlesource.com/#/settings/http-password), which contains a 
+        single link titled 'Obtain HTTP'.
+    +   Clicking on this link will give you some code (specific to your username) to copy-paste into a (Linux) terminal window.  For me this looked like :
+
+{% highlight bash %}
+touch ~/.gitcookies
+chmod 0600 ~/.gitcookies
+
+git config --global http.cookiefile ~/.gitcookies
+
+tr , \\t <<\__END__ >>~/.gitcookies
+.googlesource.com,TRUE,/,TRUE,2147483647,o,git-username.example.com=1/xHxg-NICE-TRY-zAyI-MHzN-SORRY-TO-DISAPPOINT-xHN4E
+__END__
+{% endhighlight %}
+
+*   Now for one last piece of house-keeping on your local machine : Update your ```user.name```, and ```user.email``` for this git repo to match your CLA / googlecode user login: 
 
 {% highlight bash %}
 cd tensorflow
@@ -49,7 +69,7 @@ git config user.name "User Name"
 git config user.email "username@example.com"
 {% endhighlight %}
 
-*  Make edits (it looks like you can even do this in the ```master``` branch on your local machine, 
+*  (FINALLY!) Make edits (it looks like you can even do this in the ```master``` branch on your local machine, 
    since Gerrit will auto-magically create an upstream phantom branch during code review)
 
 *  Then ```commit``` in the usual way : 
@@ -69,4 +89,4 @@ git push origin refs/heads/master:refs/for/master
 
 #### Waiting on Google code-review...
 
-And apparently it worked!
+And apparently it works!
