@@ -284,15 +284,19 @@ What are the difference between sparse coding and autoencoder?
 
 An autoencoder is a model which tries to reconstruct its input, usually using some sort of 
 constraint. Accordingly to Wikipedia it "is an artificial neural network used for learning efficient 
-codings". There's nothing in autoencoder's definition requiring sparsity. Sparse coding based 
+codings". There's nothing in autoencoder's definition requiring sparsity.  Sparse coding based 
 contraints is one of the available techniques, but there are others, for example 
-Denoising Autoencoders, Contractive Autoencoders and RBMs. All makes the network learn 
+Denoising Autoencoders, Contractive Autoencoders and RBMs.  All makes the network learn 
 good representations of the input (that are also commonly "sparse").
 
 
 https://web.stanford.edu/class/cs294a/sparseAutoencoder.pdf
 https://chrisjmccormick.wordpress.com/2014/05/30/deep-learning-tutorial-sparse-autoencoder/
 
+
+Additional:
+```n```-level coding doesn't require any multiplications to look up : This can be computed on-the-fly using
+```n``` vectors that can easily fit in the cache.
 
 
 
