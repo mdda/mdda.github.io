@@ -1,11 +1,12 @@
 ---
 date: 2015-11-17
-title: TensorFlow Lightning Talk
-tagline: PyData SG
+title: TensorFlow @ PyData SG 
+tagline: Presentation
 category: AI
 tags:
 - tensorflow
 - python
+- Presentation
 layout: post
 published: false
 ---
@@ -76,7 +77,7 @@ There are several points worth highlighting:
 
 Look at : 
   https://github.com/zer0n/deepframeworks
-  Add logo
+  Add logo 400x362
 
 
 
