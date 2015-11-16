@@ -74,6 +74,12 @@ There are several points worth highlighting:
    +   ```theras``` author has already stated that they'll target TensorFlow
 
 
+Look at : 
+  https://github.com/zer0n/deepframeworks
+  Add logo
+
+
+
 "A g2.2xlarge is a downclocked GK104 (797 MHz), that would make it 1/4 the speed of the recently released TitanX and 2.7x slower than a GTX 980."
 
 {% highlight bash %}
