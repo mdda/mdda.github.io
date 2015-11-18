@@ -8,7 +8,7 @@ tags:
 - python
 - Presentation
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -20,8 +20,9 @@ a computation graph construction machine in C++ / CUDA (no OpenCL as far as I ca
 
 ### Presentation Link
 
-Because it's new, and Python-related, I gave a "<strong>
-<a href="http://redcatlabs.com/2015-11-17_PyData-TensorFlow/" target="_blank">Lightning Talk</a>" at the Singapore PyData group.
+Because it's new, and Python-related, I gave a 
+"<strong><a href="http://redcatlabs.com/2015-11-17_PyData-TensorFlow/" target="_blank">Lightning Talk</a></strong>" at the 
+November meeting of the [Singapore PyData group](http://www.meetup.com/PyData-SG/events/226537892/).
 
 <a href="http://redcatlabs.com/2015-11-17_PyData-TensorFlow/" target="_blank">
 ![Presentation Screenshot]({{ site.url }}/assets/img/2015-11-17_TensorFlow-PyDataSG_600x390.png)
@@ -36,7 +37,7 @@ or contact me using the details given on the slides themselves.
 
 
 
-Some Key Points
+Some Talking Points
 ---------------------
 
 Positives:
