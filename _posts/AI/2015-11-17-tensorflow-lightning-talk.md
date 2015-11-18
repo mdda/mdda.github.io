@@ -18,6 +18,27 @@ complete with tutorials, and model-zoo-like examples.
 Fortunately, the framework is very reminiscent of ```Theano```, and has a Python front-end over
 a computation graph construction machine in C++ / CUDA (no OpenCL as far as I can tell).
 
+### Presentation Link
+
+Because it's new, and Python-related, I gave a "<strong>
+<a href="http://redcatlabs.com/2015-11-17_PyData-TensorFlow/" target="_blank">Lightning Talk</a>" at the Singapore PyData group.
+
+<a href="http://redcatlabs.com/2015-11-17_PyData-TensorFlow/" target="_blank">
+![Presentation Screenshot]({{ site.url }}/assets/img/2015-11-17_TensorFlow-PyDataSG_600x390.png)
+</a>
+
+If there are any questions about the presentation please ask below, 
+or contact me using the details given on the slides themselves.
+
+<a href="http://redcatlabs.com/2015-11-17_PyData-TensorFlow/#/5/1" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2015-11-17_TensorFlow-PyDataSG_5-1_600x390.png)
+</a>
+
+
+
+Some Key Points
+---------------------
+
 Positives:
 
 *  Cross-platform : CPUs, GPUs, Android, iOS (soon), etc
@@ -38,20 +59,21 @@ Positives:
 
 There are several points worth highlighting:
 
-*  No OpenCL
-
 *  Nvidia devices supported much have 'Compute Capability' >= 3.5
    +   This includes 900-series cards, and Titan, and the 'K cards'
    +   But not 700-series (apart from 750), nor Amazon EC GPUs
-  
-*  Memory hungry - far prefers a 16Gb machine to an 8Gb one
-
-*  Inefficient operations
-   +   No in-place ReLU, for instance
+       -   "A g2.2xlarge is a downclocked GK104 (797 MHz), that would make it 1/4 the speed of the recently released TitanX and 2.7x slower than a GTX 980."
 
 *  Not many ops available in GPU
    +   Vector embedding example can't be run on GPU, for instance
        -   Theano can do this
+
+*  No OpenCL
+
+*  Memory hungry - far prefers a 16Gb machine to an 8Gb one
+
+*  Inefficient operations
+   +   No in-place ReLU, for instance
 
 *  C++ build environment requires ```bazel``` which is a Java-based horror story
 
@@ -73,16 +95,4 @@ There are several points worth highlighting:
 
 *  Would definitely benefit from 'deep learning library' like ```lasagne```
    +   ```theras``` author has already stated that they'll target TensorFlow
-
-
-Look at : 
-  https://github.com/zer0n/deepframeworks
-  Add logo 400x362
-
-
-
-"A g2.2xlarge is a downclocked GK104 (797 MHz), that would make it 1/4 the speed of the recently released TitanX and 2.7x slower than a GTX 980."
-
-{% highlight bash %}
-{% endhighlight %}
 
