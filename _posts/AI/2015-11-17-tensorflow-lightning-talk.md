@@ -37,10 +37,13 @@ or contact me using the details given on the slides themselves.
 
 
 
-Some Talking Points
----------------------
+##Slide Notes (outline)
 
-Positives:
+These are the notes I put together for myself before preparing the slides.
+Almost everything made it into the presentation, but only because I split the 
+positives into 2 slides, and the not-so-positives into 4 slides...
+
+### Positives
 
 *  Cross-platform : CPUs, GPUs, Android, iOS (soon), etc
 
@@ -57,7 +60,7 @@ Positives:
 *  Hiring tool
 
 
-
+### "Lowlights"
 There are several points worth highlighting:
 
 *  Nvidia devices supported much have 'Compute Capability' >= 3.5
