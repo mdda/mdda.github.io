@@ -12,13 +12,34 @@ published: false
 ---
 {% include JB/setup %}
 
+This post lays out an end-to-end working version of a script that works on Fedora 22 (at a minimum)
+for producing ```matplotlib``` output that can be directly incorporated into ```LaTeX``` documents,
+and has the right font sizes, etc. without going through a raster-graphics layer.
+
+The intermediate ```.pgf``` graphics files are also acceptable to arXiv, 
+and can be loaded up alongside your original ```.tex``` source file.
 
 
+### Preparation
+
+On my system that was already set up to produce regular ```LaTeX``` documents, 
+the following additional packages 
 
 {% highlight bash %}
 dnf install texlive-xetex texlive-collection-xetex
 {% endhighlight %}
 
+
+### Basic Imports and Arguments
+
+For stylistic consistency, I chose to have one central script that produces all the 
+graphs required.  Simply call it without arguments to produce all the charts for 
+embedding.  
+
+Calling it with ```--latex=0``` will instead display a popup window with the output 
+for quicker debugging of the code.  And there is an option ```--figure=XXX``` that 
+can be used to focus on one figure type only.  Doing this speeds up the interation 
+speed tremendously.
 
 {% highlight python %}
 import matplotlib.pyplot as plt
@@ -37,13 +58,15 @@ args = parser.parse_args()
 {% endhighlight %}
 
 
+### ```LaTeX``` defaults for ```matplotlib```
 
-
-Code from :
+This code was essentially taken from :
 
 *  http://bkanuka.com/articles/native-latex-plots/
 
 *  http://nipunbatra.github.io/2014/08/latexify/
+
+and modified to bring it up-to-date.
 
 {% highlight python %}
 SPINE_COLOR = 'gray'
@@ -56,7 +79,7 @@ def savefig(filename):
     plt.show()
 
 
-def latexify(fig_width=None, fig_height=None, columns=1):
+def latexify(fig_width=None, fig_height=None):
   if args.latex:
     """Set up matplotlib's RC params for LaTeX plotting.
     Call this before plotting a figure.
@@ -65,7 +88,6 @@ def latexify(fig_width=None, fig_height=None, columns=1):
     ----------
     fig_width : float, optional, inches
     fig_height : float,  optional, inches
-    columns : {1, 2}
     """
 
     # code adapted from http://www.scipy.org/Cookbook/Matplotlib/LaTeX_Examples
@@ -73,13 +95,10 @@ def latexify(fig_width=None, fig_height=None, columns=1):
     # Width and max height in inches for IEEE journals taken from
     # computer.org/cms/Computer.org/Journal%20templates/transactions_art_guide.pdf
 
-    assert(columns in [1,2])
-
-    fig_width_pt = 397.48499                         # Get this from LaTeX using \the\textwidth
+    fig_width_pt = 397.48499                        # Get this from LaTeX using \the\textwidth
     inches_per_pt = 1.0/72.27                       # Convert pt to inch
 
     if fig_width is None:
-        #fig_width = 3.39 if columns==1 else 6.9 # width in inches
         fig_width = fig_width_pt*inches_per_pt
 
     if fig_height is None:
@@ -109,6 +128,7 @@ def latexify(fig_width=None, fig_height=None, columns=1):
     matplotlib.rcParams.update(params)
 
 def format_axes(ax):
+  if args.latex:
     for spine in ['top', 'right']:
         ax.spines[spine].set_visible(False)
 
@@ -122,9 +142,26 @@ def format_axes(ax):
     for axis in [ax.xaxis, ax.yaxis]:
         axis.set_tick_params(direction='out', color=SPINE_COLOR)
 
-    return ax
-
+  return ax
 {% endhighlight %}
+
+
+### Code for a ```matplotlib``` figure
+
+This is produced (if the command line arguments suggest it should be) by
+parsing a log file output by one of my training algorithms, so there's
+some sample log parsing in there.
+
+( note that the ```b:      0``` match is done so specifically because I 
+wanted to capture each epoch's ```batch=zero```, and was in a bit of a hurry... )
+
+The data is plotted against two independent y-axes, and is finally 
+saved (or displayed, depending on ```--latex=X```).
+
+By making use of ```latexify()```, ```format_axes()``` and ```savefig()```
+the whole screen vs page debate is deferred until you can get the graph looking right
+interactively.
+
 
 {% highlight python %}
 if args.figure is None or args.figure == 'frog':
@@ -162,13 +199,20 @@ if args.figure is None or args.figure == 'frog':
   ax2.set_ylim([0,0.25])
   ax2.legend(loc=1)
   
+  ax = format_axes(ax)
+  
   savefig('frog')
 {% endhighlight %}
 
+### Code for the ```LaTeX``` document itself
+
+Near the top of your ```.tex``` file you'll need to include the ```pgf``` package :
 
 {% highlight latex %}
 \usepackage{pgf}
 {% endhighlight %}
+
+And the figure itself can be include (and referred to) as follows :
 
 {% highlight latex %}
 \begin{figure}
