@@ -8,7 +8,7 @@ tags:
 - matplotlib
 - latex
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -95,8 +95,8 @@ def latexify(fig_width=None, fig_height=None):
     # Width and max height in inches for IEEE journals taken from
     # computer.org/cms/Computer.org/Journal%20templates/transactions_art_guide.pdf
 
-    fig_width_pt = 397.48499                        # Get this from LaTeX using \the\textwidth
-    inches_per_pt = 1.0/72.27                       # Convert pt to inch
+    fig_width_pt = 397.48499   # Get this from LaTeX using \the\textwidth
+    inches_per_pt = 1.0/72.27  # Convert pt to inch
 
     if fig_width is None:
         fig_width = fig_width_pt*inches_per_pt
@@ -162,6 +162,9 @@ By making use of ```latexify()```, ```format_axes()``` and ```savefig()```
 the whole screen vs page debate is deferred until you can get the graph looking right
 interactively.
 
+Note that mathmatical notation can be included in any of the text - 
+just introduce within the ```$``` context - and make sure that ```\``` is 
+doubled up - Python will 'use up' the first level of escaping.
 
 {% highlight python %}
 if args.figure is None or args.figure == 'frog':
@@ -212,7 +215,7 @@ Near the top of your ```.tex``` file you'll need to include the ```pgf``` packag
 \usepackage{pgf}
 {% endhighlight %}
 
-And the figure itself can be include (and referred to) as follows :
+And the figure itself can be included (and referred to) as follows :
 
 {% highlight latex %}
 \begin{figure}
