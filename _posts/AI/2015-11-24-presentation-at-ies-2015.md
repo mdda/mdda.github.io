@@ -1,6 +1,6 @@
 ---
 date: 2015-11-24
-title: IES-2015 
+title: "IES-2015 : Learning NER from Experts"
 tagline: Presentation
 category: AI
 tags:
@@ -11,7 +11,7 @@ tags:
 - Theano
 - blocks
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -19,16 +19,17 @@ published: false
 ### Presentation Link
 
 I recently gave a <strong><a href="http://redcatlabs.com/2015-11-24_IES-2015_NER-from-Experts/" target="_blank">presentation</a></strong> 
-at the [IES-2015 conference](http://www.ies-2015.org/) in Thailand.
+(to talk about my accepted paper) at the [IES-2015 conference](http://www.ies-2015.org/) in Thailand.
 
 <a href="http://redcatlabs.com/2015-11-24_IES-2015_NER-from-Experts/" target="_blank">
-![Presentation Screenshot]({{ site.url }}/assets/img/2015-08-16_Futurists-AGI_600x390.png)
+![Presentation Screenshot]({{ site.url }}/assets/img/2015-11-24_IES-2015-Presentation_600x390.png)
 </a>
 
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="http://redcatlabs.com/2015-08-16_Futurists-AGI/#/13/1" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2015-08-16_Futurists-AGI_13-1_600x390.png)
+<a href="http://redcatlabs.com/2015-11-24_IES-2015_NER-from-Experts/#/4/2" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2015-11-24_IES-2015-Presentation_4-2_600x390.png)
 </a>
 
+(I'll post the paper's ```BiBTeX``` entry as soon as I get it)
