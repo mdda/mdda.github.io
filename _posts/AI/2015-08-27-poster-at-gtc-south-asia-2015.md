@@ -12,7 +12,7 @@ tags:
 - Theano
 - blocks
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
