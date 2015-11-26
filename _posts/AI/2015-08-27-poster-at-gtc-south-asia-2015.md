@@ -19,18 +19,13 @@ published: false
 
 ### Poster Link
 
-I recently gave a <strong><a href="http://redcatlabs.com/2015-11-24_IES-2015_NER-from-Experts/" target="_blank">presentation</a></strong> 
-(to talk about my accepted paper) at the [IES-2015 conference](http://www.ies-2015.org/) in Thailand.
+I had a poster accepted to <strong><a href="http://redcatlabs.com/2015-08-27_GTC-SA-2015-Poster/" target="_blank">GTC South Asia</a></strong> (an Nvidia-sponsored GPU event) in Singapore.
 
-<a href="http://redcatlabs.com/2015-11-24_IES-2015_NER-from-Experts/" target="_blank">
-![Presentation Screenshot]({{ site.url }}/assets/img/2015-11-24_IES-2015-Presentation_600x390.png)
+<a href="http://redcatlabs.com/2015-08-27_GTC-SA-2015-Poster/" target="_blank">
+![Presentation Screenshot]({{ site.url }}/assets/img/2015-08-27_GTC-SA-2015-Poster_600x390.png)
 </a>
 
-If there are any questions about the presentation please ask below, 
+If there are any questions about the poster please ask below, 
+check out [the paper]({{ site.url }}/ai/2015/11/24/presentation-at-ies-2015/) (based on similar experimental content)
 or contact me using the details given on the slides themselves.
 
-<a href="http://redcatlabs.com/2015-11-24_IES-2015_NER-from-Experts/#/4/2" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2015-11-24_IES-2015-Presentation_4-2_600x390.png)
-</a>
-
-(I'll post the paper's ```BiBTeX``` entry as soon as I get it)
