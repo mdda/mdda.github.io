@@ -295,6 +295,7 @@ https://chrisjmccormick.wordpress.com/2014/05/30/deep-learning-tutorial-sparse-a
 
 
 Additional:
+
 ```n```-level coding doesn't require any multiplications to look up : This can be computed on-the-fly using
 ```n``` vectors that can easily fit in the cache.
 
