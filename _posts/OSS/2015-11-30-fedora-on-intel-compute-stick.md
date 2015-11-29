@@ -16,6 +16,8 @@ I recently won an [Intel Compute Stick](http://www.intel.com/content/www/us/en/c
 (aka the Fintechathon).  The Windows version has 2Gb of RAM, and 32Gb of ~SSD 
 (compared that to the version with Ubuntu 14.04 LTS 64-bit installed, which only comes with 1Gb and 8Gb respectively - go figure).
 
+~ssd = emmc
+
 Of course, booting into Windows was not an option.  
 However, my distribution preference is Fedora 
 (rather than Ubuntu, which obviously has received more attention from Intel, since it's the officially supported version).
@@ -150,3 +152,49 @@ systemctl poweroff
 
 systemctl reboot
 
+
+
+gt9xx is touchscreen driver (not useful for the Compute Stick)
+
+oem-audio-i915-baytrail-dkms 
+chestersmill 
+oem-settings-audio-i915-baytrail-dkms 
+rtl8723bs-Bluetooth-dkms
+rtl8723bs-Bluetooth-misc 
+rtl8723bs-dkms
+
+Intel SST Audio Device (WDM)
+  drmk.sys
+  isstrtc
+  portcls
+  realtek_fw_sst
+  MsApoFxProxy
+  
+ hdmi-sound patch
+ This version does not need a DSDT patch to get sound to work when booting from 64-bit and therefore maybe more preferable for some.  
+
+ oem-audio-i915-baytrail-dkms_0.20150605_all.deb ??
+ >>> Intel HDMI audio driver intel i915 hdmi baytrail audio
+ 
+ 64-bit bootloader I've made an additional Ubuntu LiveCD. This version does not need a DSDT patch to get sound to work when booting from 64-bit and therefore maybe more preferable for some. 
+ 
+ Intel Z3735F device.
+
+ Error message in forum :
+ [ 3514.915957] baytrail-pcm-audio baytrail-pcm-audio: ASoC: baytrail-pcm-audio hw params failed: -110
+ 
+ then applied my 'dsdt-patch.sh' once installed to get sound. 
+   :: https://sites.google.com/site/ianwmorrison/Downhome/Topic3
+   
+ 
+ 
+Note on HD Audio Bitstreaming
+
+As of April 2015, the Intel graphics drivers for Bay Trail-T (32-bit) have support 
+only for bitstreaming of DTS, Dolby Digital and Dolby Digital Plus. 
+This means that Netflix and other similar OTT sites are in the clear. 
+However, users hoping to take advantage of lossless HD audio in Blu-ray backups are going to be disappointed. 
+In any case, streaming of Blu-rays over a 802.11n Wi-Fi network will result in a bad user experience. 
+So, it is possible that the absence of HD audio bitstreaming will not bother too many consumers.
+
+ 
