@@ -200,20 +200,21 @@ So, it is possible that the absence of HD audio bitstreaming will not bother too
  
 ### ```linuxium-dsdt-patch.sh```
 
+https://www.happyassassin.net/fedlet-a-fedora-remix-for-bay-trail-tablets/
+
 Changes :
 
 *   ```dnf --assumeyes install acpica-tools```  # About 1Mb download
 
-Need ```update-grub2```
+Need ```update-grub2``` : No, it is ```grub2-mkconfig``` in Fedora
 
-ln -sf /boot/efi/EFI/fedora/grub.cfg /etc/grub2-efi.cfg
+##ln -sf /boot/efi/EFI/fedora/grub.cfg /etc/grub2-efi.cfg
+##grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
 
-grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
+grub2-mkconfig -o /boot/grub2/grub.cfg
 
 
-And change ```\${libdir}/grub/grub-mkconfig_lib``` to ??
-
-# grub-mkconfig_lib.in
+And change ```\${libdir}/grub/grub-mkconfig_lib``` to ??  /usr/share/grub instead of /usr/lib/grub
 
 
 
@@ -223,3 +224,73 @@ is the solution.
 /etc/grub2.cfg -> ../boot/grub2/grub.cfg
 
 is a bad link.
+
+
+
+### ```linuxium-dsdt-patch.sh``` Updated for Fedora
+
+{% highlight bash %}
+#!/bin/sh
+
+# Linuxium's installation script for audio DSDT patch
+
+if [ -d /target ]; then
+	echo "$0: Do not run this script from a LiveCD ... exiting."
+	exit
+fi
+
+if [ ! `which iasl` ]; then
+	DEFAULT_GATEWAY=`ip r | grep default | cut -d ' ' -f 3`
+	if ( ! ping -q -w 1 -c 1 "${DEFAULT_GATEWAY}" > /dev/null 2>&1 ); then
+		echo "$0: Not connected to internet ... exiting."
+		exit
+	fi
+	dnf --assumeyes install acpica-tools  # About 1Mb download
+	if [ ! `which iasl` ]; then
+		echo "$0: Missing 'iasl' ... run 'dnf --assumeyes install acpica-tools' mannually to install."
+		exit
+	fi
+fi
+if [ -d /tmp/dsdt.$$ ]; then
+	echo "$0: Cannot create temporary work directory '/tmp/dsdt.$$' ... exiting."
+	exit
+fi
+echo "$0: Started ..."
+mkdir /tmp/dsdt.$$
+cd /tmp/dsdt.$$
+cat /sys/firmware/acpi/tables/DSDT > dsdt.dat
+iasl -d dsdt.dat > /dev/null 2>&1
+sed -i '/Device (HAD/,/Return (Zero)/s/(Zero)/(0x0F)/' dsdt.dsl
+iasl -tc dsdt.dsl > /dev/null 2>&1
+cp dsdt.aml /boot
+cat <<+ > /etc/grub.d/01_acpi
+#! /bin/sh -e
+
+# Uncomment to load custom ACPI table
+GRUB_CUSTOM_ACPI="/boot/dsdt.aml"
+
+# DON'T MODIFY ANYTHING BELOW THIS LINE!
+
+prefix=/usr
+exec_prefix=\${prefix}
+datadir=\${exec_prefix}/share
+
+. \${datadir}/grub/grub-mkconfig_lib
+
+# Load custom ACPI table
+if [ x\${GRUB_CUSTOM_ACPI} != x ] && [ -f \${GRUB_CUSTOM_ACPI} ] \\
+        && is_path_readable_by_grub \${GRUB_CUSTOM_ACPI}; then
+    echo "Found custom ACPI table: \${GRUB_CUSTOM_ACPI}" >&2
+    prepare_grub_to_access_device \`\${grub_probe} --target=device \${GRUB_CUSTOM_ACPI}\` | sed -e "s/^/ /"
+    cat << EOF
+acpi (\\\$root)\`make_system_path_relative_to_its_root \${GRUB_CUSTOM_ACPI}\`
+EOF
+fi
++
+chmod 0755 /etc/grub.d/01_acpi
+echo "$0: Installing ..."
+grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
+cd
+rm -rf /tmp/dsdt.$$
+echo "$0: Finished."
+{% endhighlight %}
