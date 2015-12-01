@@ -198,3 +198,28 @@ In any case, streaming of Blu-rays over a 802.11n Wi-Fi network will result in a
 So, it is possible that the absence of HD audio bitstreaming will not bother too many consumers.
 
  
+### ```linuxium-dsdt-patch.sh```
+
+Changes :
+
+*   ```dnf --assumeyes install acpica-tools```  # About 1Mb download
+
+Need ```update-grub2```
+
+ln -sf /boot/efi/EFI/fedora/grub.cfg /etc/grub2-efi.cfg
+
+grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
+
+
+And change ```\${libdir}/grub/grub-mkconfig_lib``` to ??
+
+# grub-mkconfig_lib.in
+
+
+
+
+is the solution.
+
+/etc/grub2.cfg -> ../boot/grub2/grub.cfg
+
+is a bad link.
