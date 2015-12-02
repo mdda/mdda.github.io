@@ -333,3 +333,9 @@ modprobe -v snd-soc-sst-baytrail-pcm
 Complaints : 
 [    7.545573] sst-acpi 80860F28:00: No matching ASoC machine driver found
 [    7.805593] intel_sst_acpi 80860F28:00: No matching machine driver found
+
+Very Promising ::
+https://bugzilla.kernel.org/show_bug.cgi?id=86581
+
+
+http://netbook-remix.archive.canonical.com/updates/pool/public/o/oem-audio-i915-baytrail-dkms/oem-audio-i915-baytrail-dkms_0.20150605.tar.gz
