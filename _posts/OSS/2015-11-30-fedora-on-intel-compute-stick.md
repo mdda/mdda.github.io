@@ -294,3 +294,42 @@ cd
 rm -rf /tmp/dsdt.$$
 echo "$0: Finished."
 {% endhighlight %}
+
+
+
+
+Sound
+
+On most hardware, you should be able to make sound work with this ALSA state file. Download it and run 
+alsactl -f /path/to/t100_B.state restore
+
+
+https://github.com/AdamWill/baytrail-m/blob/master/alsa/t100_B.state
+
+https://github.com/AdamWill/baytrail-m
+
+Non-Free Driver required ? :: libva-driver-intel 
+
+https://www.happyassassin.net/fedlet/repo/SRPMS/
+
+
+
+diff --git a/drivers/mfd/intel_soc_pmic_core.c b/drivers/mfd/intel_soc_pmic_core.c
+
+A backport of Rawhide’s linux-firmware package, which contains the firmware needed for the sound adapter
+
+Kernel update: based on latest Rawhide, sound (and LPSS) support built in 
+(but not working until you provide fw_sst_0f28.bin* in /usr/lib/firmware/intel and apply this mixer config), 
+shutdown/reboot should work on Venue 8 Pro, T100 and Miix 2
+
+
+DONE ::
+dnf install libva-driver-intel  # from rpmfusion
+
+
+## tried : 
+modprobe -v snd-soc-sst-baytrail-pcm
+
+Complaints : 
+[    7.545573] sst-acpi 80860F28:00: No matching ASoC machine driver found
+[    7.805593] intel_sst_acpi 80860F28:00: No matching machine driver found
