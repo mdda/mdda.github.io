@@ -216,9 +216,6 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 
 And change ```\${libdir}/grub/grub-mkconfig_lib``` to ??  /usr/share/grub instead of /usr/lib/grub
 
-
-
-
 is the solution.
 
 /etc/grub2.cfg -> ../boot/grub2/grub.cfg
@@ -227,7 +224,12 @@ is a bad link.
 
 
 
+
+
 ### ```linuxium-dsdt-patch.sh``` Updated for Fedora
+
+... but DSDT patch doesn't seem to be necessary with 64-bit Fedora (need to check this).
+
 
 {% highlight bash %}
 #!/bin/sh
@@ -338,4 +340,25 @@ Very Promising ::
 https://bugzilla.kernel.org/show_bug.cgi?id=86581
 
 
+I wonder what's the driver, snd-soc-sst-byt-rt5640-mach, or snd-soc-rt5640?
+I modprobe both of them. But it doesn't work.
+
+
+modprobe -v snd-soc-sst-byt-rt5640-mach
+modprobe -v snd-soc-sst-bytcr-rt5640 
+
+ls -l /sys/bus/acpi/devices/ | grep 10EC56
+>> lrwxrwxrwx 1 root root 0 Dec  4 22:01 10EC5640:00 -> ../../../devices/LNXSYSTM:00/LNXSYBUS:00/80860F41:01/10EC5640:00
+
+
+
+
+
+
 http://netbook-remix.archive.canonical.com/updates/pool/public/o/oem-audio-i915-baytrail-dkms/oem-audio-i915-baytrail-dkms_0.20150605.tar.gz
+
+
+dnf remove midori* claws* pidgin* transmission*
+dnf remove abiword* gnumeric* orage* 
+dnf install joe screen
+
