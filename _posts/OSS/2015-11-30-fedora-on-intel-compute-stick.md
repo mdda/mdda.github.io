@@ -297,8 +297,13 @@ rm -rf /tmp/dsdt.$$
 echo "$0: Finished."
 {% endhighlight %}
 
+After rebooting, check which DSDT we're running :
 
-
+cat /sys/firmware/acpi/tables/DSDT > dsdt.dat
+iasl -d dsdt.dat
+more dsdt.dsl
+>> /HAD
+# "Intel(R) HDMI Audio Driver - HAD"
 
 Sound
 
@@ -350,9 +355,78 @@ modprobe -v snd-soc-sst-bytcr-rt5640
 ls -l /sys/bus/acpi/devices/ | grep 10EC56
 >> lrwxrwxrwx 1 root root 0 Dec  4 22:01 10EC5640:00 -> ../../../devices/LNXSYSTM:00/LNXSYBUS:00/80860F41:01/10EC5640:00
 
+cat /sys/bus/acpi/devices/10EC5640\:00/status
+>> 0
+
+# Now run :
+./linuxium-dsdt-patch.sh 
+# and reboot...
+shutdown -r now
+
+cat /sys/bus/acpi/devices/10EC5640\:00/status
+>> 0
+
+more  /sys/bus/acpi/devices/10EC5640\:00/path
+>> \_SB_.I2C2.RTEK
+
+more  /sys/bus/acpi/devices/HAD0F28:00/status
+>> 15
+
+more  /sys/bus/acpi/devices/HAD0F28:00/path
+>> \_SB_.HAD_
+
+grep CONFIG_SND_SOC /boot/config-4.2.6-301.fc23.x86_64 
+
+CONFIG_SND_SOC=m
+CONFIG_SND_SOC_AC97_BUS=y
+CONFIG_SND_SOC_GENERIC_DMAENGINE_PCM=y
+# CONFIG_SND_SOC_FSL_ASRC is not set
+# CONFIG_SND_SOC_FSL_SAI is not set
+# CONFIG_SND_SOC_FSL_SSI is not set
+# CONFIG_SND_SOC_FSL_SPDIF is not set
+# CONFIG_SND_SOC_FSL_ESAI is not set
+# CONFIG_SND_SOC_IMX_AUDMUX is not set
+CONFIG_SND_SOC_INTEL_SST=m
+CONFIG_SND_SOC_INTEL_SST_ACPI=m
+CONFIG_SND_SOC_INTEL_HASWELL=m
+CONFIG_SND_SOC_INTEL_BAYTRAIL=m
+CONFIG_SND_SOC_INTEL_HASWELL_MACH=m
+>> CONFIG_SND_SOC_INTEL_BYT_RT5640_MACH=m
+CONFIG_SND_SOC_INTEL_BYT_MAX98090_MACH=m
+CONFIG_SND_SOC_INTEL_BROADWELL_MACH=m
+CONFIG_SND_SOC_INTEL_BYTCR_RT5640_MACH=m
+CONFIG_SND_SOC_INTEL_CHT_BSW_RT5672_MACH=m
+CONFIG_SND_SOC_INTEL_CHT_BSW_RT5645_MACH=m
+CONFIG_SND_SOC_INTEL_CHT_BSW_MAX98090_TI_MACH=m
 
 
+modprobe -v snd-soc-sst-byt-rt5640-mach
+modprobe -v snd-soc-sst-bytcr-rt5640
+ 
+##modprobe -v baytrail-pcm-audio
+modprobe -v snd-soc-sst-baytrail-pcm
 
+more /proc/asound/cards
+>> --- no soundcards ---
+
+grep DSP /proc/interrupts
+>> (NOTHING)
+
+dmesg | grep -i bay
+>>[    7.585877] iTCO_wdt: Found a Bay Trail SoC TCO device (Version=3, TCOBASE=0x0460)
+
+
+I've got the patch working on the meegopad. 
+It seems that the ACPI device HAD0F28 was marked as not ready. 
+Its readiness is controlled by a flag (OSSL) in the DSDT, 
+so I just forced it ready by returning a status of 0x0F 
+and getting grub to provide a custom DSDT. 
+Once I did this the audio came to life.
+
+
+-- Related module: baytrailudio (hdmi_audio, 0.20150605), i915 (from kernel)
+
+https://github.com/01org/baytrailaudio
 
 
 http://netbook-remix.archive.canonical.com/updates/pool/public/o/oem-audio-i915-baytrail-dkms/oem-audio-i915-baytrail-dkms_0.20150605.tar.gz
