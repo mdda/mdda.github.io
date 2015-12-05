@@ -424,9 +424,51 @@ and getting grub to provide a custom DSDT.
 Once I did this the audio came to life.
 
 
+--- Interesting comment : https://plus.google.com/+IanMORRISON/posts/UNWdwRMqy3j
+
+Tyler Yeomans
+Aug 17, 2015 
++Ian MORRISON after running the DSDT fix, investigating dmesg I see:
+rt5640 i2c-10EC5640:00: Device with ID register 6281 is not rt5640/39 does this mean I have a different chipset?﻿
+
+Ian MORRISON (Linuxium)
+Aug 18, 2015
++Tyler Yeomans You can ignore it as you'll be using the Intel HDMI audio driver.﻿
+
+
+
+
+
 -- Related module: baytrailudio (hdmi_audio, 0.20150605), i915 (from kernel)
 
 https://github.com/01org/baytrailaudio
+
+
+
+Package: oem-audio-i915-baytrail-dkms
+Priority: optional
+Section: misc
+Installed-Size: 2879
+Maintainer: Canonical Commercial Engineering <commercial-engineering@canonical.com>
+Architecture: all
+Version: 0.20150605
+Depends: dkms (>= 1.95)
+Filename: pool/public/o/oem-audio-i915-baytrail-dkms/oem-audio-i915-baytrail-dkms_0.20150605_all.deb
+Size: 483750
+SHA256: cca048c5c63dcd214f3e6106757f2f8c6ebb2acb13e52db1007bdad4b17843b0
+SHA1: 08503e667ba861ecd43beeb84fb50fca869319ee
+MD5sum: 25d8144460951c43d814636aecf0d3fd
+Description: oem-audio-i915-baytrail driver in DKMS format.
+Description-md5: bf6ddc65aaa4ad962330761eab2d0760
+
+
+
+Freezes? ::  https://github.com/hadess/rtl8723bs/issues/33
+4. set kernel command line parameter to include: intel_pstate=disabled 
+
+
+
+
 
 
 http://netbook-remix.archive.canonical.com/updates/pool/public/o/oem-audio-i915-baytrail-dkms/oem-audio-i915-baytrail-dkms_0.20150605.tar.gz
