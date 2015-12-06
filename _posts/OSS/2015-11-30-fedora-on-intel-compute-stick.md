@@ -463,6 +463,13 @@ Description-md5: bf6ddc65aaa4ad962330761eab2d0760
 
 
 
+Restarting sound system after update:
+Update from prior message: I fixed sound, using Pulseaudio. 
+I had to "apt-get install pavucontrol", and then issue "alsa -force-reload". 
+But now, sound works with vmlinuz-3.19.0-22-generic. Thanks everyone!
+
+
+
 Freezes? ::  https://github.com/hadess/rtl8723bs/issues/33
 4. set kernel command line parameter to include: intel_pstate=disabled 
 
