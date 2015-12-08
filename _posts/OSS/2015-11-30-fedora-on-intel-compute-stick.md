@@ -461,8 +461,51 @@ MD5sum: 25d8144460951c43d814636aecf0d3fd
 Description: oem-audio-i915-baytrail driver in DKMS format.
 Description-md5: bf6ddc65aaa4ad962330761eab2d0760
 
+i915-baytrail issues ::
+  https://lists.debian.org/debian-devel/2015/09/msg00553.html
+    http://intel.archive.canonical.com/pool/public/o/oem-audio-i915-baytrail-dkms/
+  https://lists.debian.org/debian-devel/2015/09/msg00560.html 
+    :: points out that kernel may be quite new
+    After cross checking the missing label / function / file etc in lxr website, the code confirmed have been changed from 3.16 --> 3.18 in large extend.  
+    The i915 folder from the DKMS source package can be replaced with the Linux kernel source one (/drivers/gpu/drm/i915), almost all errors gone.
+    The only error left is the missing reference from hdmi_audio_if.h which was actually backported from intel gma source code from kernel 2.6.x.
+    I think the effort to port kernel 2.6.x source code to 3.18 is overwhelming.  So better stay at 3.16.
 
+  https://wiki.edubuntu.org/Audio/i915
+    3.16 and forward : Standard driver (i915) 
 
+  http://mailman.alsa-project.org/pipermail/alsa-devel/2015-July/094335.html
+    Here's what a good boot of baytrail-pcm-audio looks like : 
+        [   15.552097] byt-rt5640 byt-rt5640: ASoC: CPU DAI baytrail-pcm-audio not registered
+        [   15.632979] (NULL device *): FW version: 04.05.13.a0
+        [   15.632986] (NULL device *): Build type: a0
+        [   15.632990] (NULL device *): Build date: Apr  2 2014 14:14:39
+        [   15.691461] byt-rt5640 byt-rt5640: rt5640-aif1 <-> baytrail-pcm-audio mapping ok
+    Firmware options :
+      http://mailman.alsa-project.org/pipermail/alsa-devel/2015-July/094401.html    
+    
+    Can you try the bytcr_rt5640 machine driver as the byt-rt5640 machine
+    driver will be getting deprecated (since it only works with a small
+    number of FWs). The bytcr_rt5640 driver works with a wider range of FW.
+    
+    Liam Girdwood <liam.r.girdwood at intel.com> wrote:
+      When testing the bytcr_rt5640 machine driver give also a try to the latest firmwares:
+      https://git.kernel.org/cgit/linux/kernel/git/vkoul/firmware.git/tree/intel?h=byt
+      I had some success with fw_sst_0f28_ssp0.bin
+
+    snd-soc-sst-bytcr-rt5640 will be loaded automatically if you use snd-intel-sst-acpi instead of snd-soc-sst-acpi, 
+    you can blacklist the latter using a file in /etc/modprobe.d (look up the details), 
+    or just remove snd-soc-sst-acpi.ko from the installation dir as a dirty hack.
+
+    Note that different drivers expect different firmwares, you cannot mix them:
+      snd-soc-sst-acpi   -> fw_sst_0f28.bin-48kHz_i2s_master
+      snd-intel-sst-acpi -> fw_sst_0f28.bin
+      snd-intel-sst-acpi -> fw_sst_0f28_ssp0.bin (renamed to fw_sst_0f28.bin)
+
+    http://mailman.alsa-project.org/pipermail/alsa-devel/2015-July/094428.html
+      Very thorough writing...
+      
+        
 Restarting sound system after update:
 Update from prior message: I fixed sound, using Pulseaudio. 
 I had to "apt-get install pavucontrol", and then issue "alsa -force-reload". 
@@ -485,3 +528,10 @@ dnf remove midori* claws* pidgin* transmission*
 dnf remove abiword* gnumeric* orage* 
 dnf install joe screen
 
+
+Bluetooth comment :
+  http://sparkylinux.org/forum/index.php?topic=3269.0
+    Solved for external usb dongle using blueman instead of the shipped available bluetooth-mate that does not work, so removed bluetooth-mate completely then installed blueman with synaptic.
+    
+    mate-bluetooth has been dropped in favor of blueman, but there is no stable release available atm. 
+    You should replace it with another bluetooth client, like xcfe4-bluetooth for example.
