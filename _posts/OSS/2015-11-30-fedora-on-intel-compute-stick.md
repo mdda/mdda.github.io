@@ -503,8 +503,38 @@ i915-baytrail issues ::
       snd-intel-sst-acpi -> fw_sst_0f28_ssp0.bin (renamed to fw_sst_0f28.bin)
 
     http://mailman.alsa-project.org/pipermail/alsa-devel/2015-July/094428.html
-      Very thorough writing...
+      Very thorough writing from a user (or two) with Vinod@intel
       
+        This is dpcm enabled driver.  So please route the FE to BE and it should work...
+
+        Nicolas, this can be done by using the commands from here:
+        http://mailman.alsa-project.org/pipermail/alsa-devel/2015-June/094080.html
+
+        In particular:
+        amixer -c0 sset 'codec_out0 mix 0 pcm0_in' on
+        amixer -c0 sset 'media0_out mix 0 media1_in' on
+
+        $ cat /proc/interrupts | grep sst    
+        7:          0          0          0          0   IO-APIC 28-fasteoi   intel_sst_driver
+      
+        Sorry I should have been clearer. The dynamic debug allows you to enbale debug logs without recompiling
+
+        So after boot:
+        echo -n 'module snd_soc_sst_mfld_platform +p' > /sys/kernel/debug/dynamic_debug/control
+
+        this will enable prints, so when you start audio, the firmware would be
+        downloaded, and please grab the dmesg ouput and send...
+
+        A final note, you also need to set the right codec controls to get audio; 
+        setting the FE-BE path is necessary to make playback "work" but it may not be enough to actually get sound, 
+        so make sure you run the full script Vinod provided in :
+        http://mailman.alsa-project.org/pipermail/alsa-devel/2015-June/094080.html
+
+        http://mailman.alsa-project.org/pipermail/alsa-devel/2015-July/094663.html
+          Ah, sorry, the info from that bug report is outdated, for the snd-intel-sst-acpi you have to change
+            sound/soc/intel/atom/sst/sst_acpi.c:
+            
+            
         
 Restarting sound system after update:
 Update from prior message: I fixed sound, using Pulseaudio. 
