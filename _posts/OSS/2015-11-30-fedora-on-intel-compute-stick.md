@@ -137,6 +137,11 @@ udhcpc -i eth1
 {% endhighlight %}
 
 
+
+The following issue on the rtl8723bs github page makes more sense, after delving into audio issues (since it also mentions i915) :
+*   https://github.com/hadess/rtl8723bs/issues/33
+
+
 http://kodi.wiki/view/HOW-TO:Install_Kodi_on_Fedora_22_using_RPMFusion_packages
 
 systemctl stop firewalld
