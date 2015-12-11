@@ -552,6 +552,28 @@ Freezes? ::  https://github.com/hadess/rtl8723bs/issues/33
 4. set kernel command line parameter to include: intel_pstate=disabled 
 
 
+Download from https://www.happyassassin.net/fedlet/repo/SRPMS/  ::
+  mv ~/Downloads/kernel-4.2.0-0.rc6.git0.1.1awb.src.rpm .
+  mv ~/Downloads/baytrail-firmware-1.2-1awb.src.rpm .
+
+  within the rpm2cpio kernel, we have patch-XXX.xz
+    mkdir kernel
+    cd kernel
+    rpm2cpio ../kernel-4.2.0-0.rc6.git0.1.1awb.src.rpm | cpio -idmv
+    unxz patch-4.2-rc6.xz 
+    grep -i baytrail patch-4.2-rc6 # ::
+  
+      [andrewsm@square kernel]$ grep -i baytrail patch-4.2-rc6 
+      -	 * HPET on current version of Baytrail platform has accuracy
+      +	 * HPET on the current version of the Baytrail platform has accuracy
+      +/* Shift bits for getting status for Valley View/Baytrail display */
+      +	 * this power. For other platforms, like Baytrail/Braswell, only the
+      @@ -7,4 +7,4 @@ obj-$(CONFIG_SND_SOC_INTEL_BAYTRAIL) += baytrail/
+      diff --git a/sound/soc/intel/baytrail/sst-baytrail-ipc.c b/sound/soc/intel/baytrail/sst-baytrail-ipc.c
+      --- a/sound/soc/intel/baytrail/sst-baytrail-ipc.c
+      +++ b/sound/soc/intel/baytrail/sst-baytrail-ipc.c
+      @@ -263,7 +263,7 @@ static struct sst_acpi_desc sst_acpi_baytrail_desc = {
+        { "80860F28", (unsigned long)&sst_acpi_baytrail_desc },
 
 
 
