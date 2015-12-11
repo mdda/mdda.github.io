@@ -575,6 +575,63 @@ Download from https://www.happyassassin.net/fedlet/repo/SRPMS/  ::
       @@ -263,7 +263,7 @@ static struct sst_acpi_desc sst_acpi_baytrail_desc = {
         { "80860F28", (unsigned long)&sst_acpi_baytrail_desc },
 
+    unxz linux-4.1.tar.xz
+    tar -tf linux-4.1.tar | grep 'soc/intel/baytrail' # ::
+      linux-4.1/sound/soc/intel/baytrail/
+      linux-4.1/sound/soc/intel/baytrail/Makefile
+      linux-4.1/sound/soc/intel/baytrail/sst-baytrail-dsp.c
+      linux-4.1/sound/soc/intel/baytrail/sst-baytrail-ipc.c
+      linux-4.1/sound/soc/intel/baytrail/sst-baytrail-ipc.h
+      linux-4.1/sound/soc/intel/baytrail/sst-baytrail-pcm.c
+
+    tar -tf linux-4.1.tar | grep 'i915'  # highlights :
+      linux-4.1/drivers/gpu/drm/i915/
+      linux-4.1/drivers/gpu/drm/i915/Kconfig
+      linux-4.1/drivers/gpu/drm/i915/Makefile
+      linux-4.1/drivers/gpu/drm/i915/dvo.h
+      linux-4.1/drivers/gpu/drm/i915/dvo_ch7017.c
+      linux-4.1/drivers/gpu/drm/i915/i915_debugfs.c
+      linux-4.1/drivers/gpu/drm/i915/i915_dma.c
+      linux-4.1/drivers/gpu/drm/i915/intel_acpi.c
+      linux-4.1/drivers/gpu/drm/i915/intel_atomic.c
+      linux-4.1/include/drm/i915_component.h
+      linux-4.1/include/drm/i915_drm.h
+      linux-4.1/include/drm/i915_pciids.h
+      linux-4.1/include/uapi/drm/i915_drm.h
+      linux-4.1/sound/pci/hda/hda_i915.c
+
+    tar -tf linux-4.1.tar | grep -i 'hdmi'  # highlights (amongst many files) :
+      linux-4.1/drivers/gpu/drm/i915/intel_hdmi.c
+      linux-4.1/sound/soc/codecs/hdmi.c
+
+    rpm2cpio ../anaconda-23.19-1.1awb.src.rpm | cpio -idmv
+    more anaconda-21.25-baytrail.patch  # Net comment is :
+      # Baytrail patch: force 800x1280 resolution and bypass shim
+      Patch0: anaconda-21.25-baytrail.patch
+
+Intel's Open Source source code site : 
+  https://01.org/ubuntu-hdmi
+    https://github.com/01org/baytrailaudio
+      -- has a baytrail patch in the root folder that contains :
+      
+      +++ b/drivers/gpu/drm/i915/hdmi_audio_if.h (NEW FILE)
+      diff --git a/drivers/gpu/drm/i915/i915_rpm.c b/drivers/gpu/drm/i915/i915_rpm.c ## new file mode 100644    
+
+    In the issues : 
+      I've built a kernel (3.16.7-ckt9) including your patch and installed the kernel onto a meegopad t01 bay trail-t CR device and rebooted.
+      It boots fine and I get a message in the kernel boot logs (dmesg)
+      ******* HAD DRIVER loading.. Ver: 0.01.003
+      But I do not get any devices listed when I use aplay -l.
+      Is there anything I can do to help diagnose the problem?
+
+      I've got the patch working on the meegopad. 
+      It seems that the ACPI device HAD0F28 was marked as not ready. 
+      Its readiness is controlled by a flag (OSSL) in the DSDT, 
+      so I just forced it ready by returning a status of 0x0F and getting grub to provide a custom DSDT. 
+      Once I did this the audio came to life.
+
+      Do you know if there's a proper way of controlling the OSSL flag?
+
 
 
 
