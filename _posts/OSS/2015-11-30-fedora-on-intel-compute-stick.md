@@ -617,7 +617,7 @@ Intel's Open Source source code site :
       +++ b/drivers/gpu/drm/i915/hdmi_audio_if.h (NEW FILE)
       diff --git a/drivers/gpu/drm/i915/i915_rpm.c b/drivers/gpu/drm/i915/i915_rpm.c ## new file mode 100644    
 
-    In the issues : 
+    In the issues (pkendall64 commented on May 1) : 
       I've built a kernel (3.16.7-ckt9) including your patch and installed the kernel onto a meegopad t01 bay trail-t CR device and rebooted.
       It boots fine and I get a message in the kernel boot logs (dmesg)
       ******* HAD DRIVER loading.. Ver: 0.01.003
