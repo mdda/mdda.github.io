@@ -330,20 +330,25 @@ Add to version 2 :
   Neural Networks with Few Multiplications    http://arxiv.org/pdf/1510.03009v1.pdf 
   Reference to quantised networks in ICLR paper discussions
     = ...
+  Pure binary representation reduces cos() to :
+    'and', then 
+    count bytewise lookup/accumulate, then 
+    sqrt - (unless simply trying to find a maximum, in which case it's irrelevant)
+    
   Ideas:
     random vector representations (like LSH encodings)
       - don't aim to 'encode', just to represent
-    Winner-Take-All Autoencoders
-      - seems like a decent idea to impose sparseness
     Two layers on output stage (more expressive...)
       - but throw out the weights to test representation stand-alone
+    Winner-Take-All Autoencoders
+      - seems like a decent idea to impose sparseness
     Check whether I'm currently doing 'BinaryConnect' in hard-choosing (stochastically?) the activations during training
       - can't remember...  https://papers.nips.cc/paper/5647-binaryconnect-training-deep-neural-networks-with-binary-weights-during-propagations.pdf
         +  "Whereas DropConnect’s noise is added Gaussian noise, BinaryConnect’s noise is a binary sampling process.
            In both cases the corrupted value has as expected value the clean original value" 
         +  "we have chosen to clip the real-valued weights within the [-1.1] interval right after the weight updates"
         +  https://github.com/MatthieuCourbariaux/BinaryConnect
-    Rectified Factor Networks
+    Rectified Factor Networks (?)
       - https://papers.nips.cc/paper/5963-rectified-factor-networks.pdf
         +  http://www.bioinf.jku.at/software/rfn
 
