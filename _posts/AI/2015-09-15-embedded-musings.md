@@ -340,6 +340,7 @@ Add to version 2 :
       - don't aim to 'encode', just to represent
       - add as a 'mangle' variant into test.py (rather than a whole new processing method)
         + operation can actually be coded as a big matrix multiply, followed by np.sign()
+        + and performance with ~1k binary places is ~ -8.5%, beating the autoencoder approach
       
     Two layers on output stage (more expressive...)
       - but throw out the weights to test representation stand-alone
