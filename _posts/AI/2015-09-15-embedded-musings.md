@@ -336,8 +336,11 @@ Add to version 2 :
     sqrt - (unless simply trying to find a maximum, in which case it's irrelevant)
     
   Ideas:
-    random vector representations (like LSH encodings)
+    random vector representations (like Locality-sensitive hashing, LSH)
       - don't aim to 'encode', just to represent
+      - add as a 'mangle' variant into test.py (rather than a whole new processing method)
+        + operation can actually be coded as a big matrix multiply, followed by np.sign()
+      
     Two layers on output stage (more expressive...)
       - but throw out the weights to test representation stand-alone
     Winner-Take-All Autoencoders
