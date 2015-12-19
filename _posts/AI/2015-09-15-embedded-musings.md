@@ -341,6 +341,8 @@ Add to version 2 :
       - add as a 'mangle' variant into test.py (rather than a whole new processing method)
         + operation can actually be coded as a big matrix multiply, followed by np.sign()
         + and performance with ~1k binary places is ~ -8.5%, beating the autoencoder approach
+        + at 0.5k ~14.87%
+        + at 1.5k ~ 7.31%  (2k too large for GPU)
       
     Two layers on output stage (more expressive...)
       - but throw out the weights to test representation stand-alone
