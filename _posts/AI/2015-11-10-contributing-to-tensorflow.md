@@ -18,10 +18,10 @@ complete with tutorials, and model-zoo-like examples.
 Fortunately, the framework is very reminiscent of ```Theano```, and has a Python front-end over
 a computation graph construction machine in C++ / CUDA (no OpenCL as far as I can tell).
 
-   *UPDATE* : 
- 
-   Google has listened to reason, and updated the [TensorFlow contribution policy](https://github.com/tensorflow/tensorflow/blob/master/CONTRIBUTING.md).   
-   There's still the Google CLA to fill out, but otherwise it's now through GitHub PRs (phew!).
+>   **UPDATE**
+> 
+>   Google has listened to reason, and updated the [TensorFlow contribution policy](https://github.com/tensorflow/tensorflow/blob/master/CONTRIBUTING.md).   
+>   There's still the Google CLA to fill out, but otherwise it's now through GitHub PRs (phew!).
 
 
 One thing, though, is that contributions to the project have to go over
