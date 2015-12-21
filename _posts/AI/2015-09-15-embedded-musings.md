@@ -335,6 +335,9 @@ Add to version 2 :
     count bytewise lookup/accumulate, then 
     sqrt - (unless simply trying to find a maximum, in which case it's irrelevant)
     
+  One issue with a 'sparse embedding' is that it necessarily gives up minimum-description-length in favour of an encoding that is mostly-zero
+    50/50 one/zero is higher information density
+
   Ideas:
     random vector representations (like Locality-sensitive hashing, LSH)
       - don't aim to 'encode', just to represent
