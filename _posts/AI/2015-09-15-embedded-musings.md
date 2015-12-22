@@ -364,3 +364,68 @@ Add to version 2 :
       
   Add flow chart/psuedo-code for quantisation approach (read ICLR paper reference to see whether it's the same)
   
+Reviewer comments : 
+
+----------
+
+This paper proposes to compress word embeddings. This topic is certainly of interest. 
+
+The paper starts by describing very naive methods for quantisation, apparently not being aware of the vast literature on quantisation. For instance, after introducing trivial suboptimal variant for "linear quantisation" (the right terminology is scalar quantisation), it proposes a method to minimize the square error (page 3) based on gradient descent, while this very same objective function is what is solved by the scalar Lloyd-Max algorithm or its discrete k-means counterpart:
+https://en.wikipedia.org/wiki/Lloyd's_algorithm 
+
+Then, again without citing the relevant body of literature on the subject, the paper tackles the problem of binary embedding. The equation E=BW is something very common. Many papers optimize such an objective function, see for instance the literature review by the recent Arxiv paper, which cites more than 100 references on the on the subject on embedding for compression+search (and still only cover partly the literature):
+http://arxiv.org/pdf/1509.05472.pdf
+
+Even the seminal paper 2002's by Charikar at POCS, who first introduced binary codes as a way to estimate the inner product in the original space, and in particular popularized the project+binarize approach used in many papers, is not cited:
+http://dl.acm.org/citation.cfm?id=509965
+
+Finally, the paper introduces a few greedy approaches. There is no way to determine their interest, given that there is no comparison with the methods introduced in the relevant literature on compression for distance estimation in a context of learning.
+
+Recently, there was a lot of research done on the topic of compressing in a context of learning algorithms such as neural networks. See the following post that report several very interesting works:
+https://www.reddit.com/r/MachineLearning/comments/3oiefh/quantization_then_reduces_the_number_of_bits_that/cvxjd8z
+
+Overall, the paper tackles an important problem, and it is true that compression for word embeddings is something that the community should investigate more. This is the main merit of the paper. However, I must recommend a rejection, since the paper does not meet what I consider as important requirements for acceptance: a minimum of literature review and an evaluation carried out against decent approaches addressing similar problems.
+
+Quantitative Evaluation	3: Clear rejection
+Confidence Score	5: The reviewer is absolutely certain that the evaluation is correct and very familiar with the relevant literature.
+
+----------
+
+This paper explores ways of compressing pretrained word embeddings to reduce the memory footprint and hopefully result in more interpretable embeddings. They are able to achieve the former, but not the latter.
+
+Overall the paper is fairly well-written, however there are several places where statements are made without clear motivation or references. Together these made it hard for me to follow sometimes, and hard to appreciate the goals and the actual contributions. Some thoughts in more detail:
+
+* It should be made clear in the introduction that the goal is to learn a more compact *and* more interpretable representation (only mentioned in abstract and then for first time in Sec 4).
+* Likewise, the conclusion should make it clear in par 2 that the latter goal was unsuccessful.
+* Sec 2.2: "'true' binary representations of the same embedding were sought, following the intuition that a good encoding should have minimal pre-ordained structure". I'm not sure I understand this statement, or if I do, why a 'true' binary encoding corresponds to minimal pre-ordained structure.
+* Sec 2.2.1: "the structure or complexity of the network transformation [...] is not an important factor". Why not?
+* Table 1 could perhaps be visualized as a network instead?
+* Sec 2.2.1 item 2: "that imposed an 'exclusion zone' around zero". How?
+* Sec 2.2.1 Item 3: why choose standard sigmoid during training and hard "step function" during testing?
+* Sec 2.2.1 Item 4: 'Dynamic frog-boiling': highly creative naming! What you're describing here as a "balancing factor" is typically called a "regularization weight". What you're describing is a "binary-ness regularizer". Last paragraph: "before the slightly-harder-to-solve objective function is triggered". No motivation or discussion is referred to to help the reader understand which one of the objectives is "harder-to-solve" and why.
+Sec 2.2.2 "if the choices available are either to subtract it from a particular embedding row, or not". What does this mean and why? What is the "total remaining energy" (again, I can guess, but it should be made more explicit)? I do not understand the paragraph starting "Each iteration of this produces...", and I'm not sure where B_n enters the picture (it's the first mention in this section). Overall, this section left me confused.
+Sec 3: "cosine similarity [...] i.e. where the dot-product is a maximum". If it is cosine similarity, then it must be "normalized dot-product"
+Fig 2: What are "SVD-S" and "SVD-L"? Consider adding a legend to figures. Add a period at the end of captions.
+Sec 3.2 talks about "ada.8" method but does not say what this is or how it should be interpreted (I can guess, but...). "0.58% less than GloVe" absolute/relative?
+Fig 3: Add a legend, clarify somewhat arbitrary naming convention.
+Sec 4.1 mentions for the first time (after abstract) that the goal is to learn about the underlying embedding through an efficient compression algorithm. This should be made much clearer and emphasized earlier.
+Sec 4.2 "The original motivation for searching for optimal 'space-folding' directions.." this is the first time you're talking about space-folding directions. Do you just mean "compressed representation"? If you do mean space-folding, can you elaborate? "Disappointingly, the process was found to be simply slicing and dicing the embedding into an ever-smaller noise sphere around the origin" I do not know where this was shown. Did I miss something?
+Sec 4.2 What is a proof-point?
+Sec 4.3 "Even if the raw binary representation isn't as useful as hoped [...] [such an encoding] enables matrix multiplication to be simply a process of conditional additions". This argues for computational efficiency using the sparse representations. However, my interpretation of Fig 5 is that the sparsity is at around 30%. I may be wrong, but I do not think that is enough to offer much computational speedup over efficient dense BLAS matrix-matrix multiplies. If this is the argument, please include some quantitative evidence to that effect.
+
+One last question: if the main outcome is a method for compressing the word embeddings, did the authors try to just use a standard lossy compression algorithm on e.g. a binary dump of the embeddings?
+
+Quantitative Evaluation	4: Ok but not good enough - rejection
+Confidence Score	5: The reviewer is absolutely certain that the evaluation is correct and very familiar with the relevant literature.
+
+----------
+
+The authors proposes and compares various methods for compressing word embeddings. For each compression method they measure the loss of performance with respect to the ability of the resulting embeddings to correctly predict word analogies.
+
+The strongest result is a quantization method, called Adaptive Level Encoding, that reduces the number of bits required per word embedding by a factor of about 10 (from 32 bits per dimension, to 3 bit per dimension) at the cost of only a marginal performance loss in word analogy tasks.
+
+The reduction is quite impressive and is more than what is possible with, e.g. convolutional neural networks (there the performance degrades significantly when using less than ~12 bits per weight). However, the evaluation of the performance is somewhat problematic: word analogy tasks are not exactly the main purpose of word embeddings. A more thorough evaluation on more direct tasks that involve word embeddings, such as language modelling or machine translation, would yield more confidence in the proposed compression method.
+
+
+Quantitative Evaluation	5: Marginally below acceptance threshold
+Confidence Score	4: The reviewer is confident but not absolutely certain that the evaluation is correct.
