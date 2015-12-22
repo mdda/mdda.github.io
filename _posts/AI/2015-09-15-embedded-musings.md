@@ -429,3 +429,24 @@ The reduction is quite impressive and is more than what is possible with, e.g. c
 
 Quantitative Evaluation	5: Marginally below acceptance threshold
 Confidence Score	4: The reviewer is confident but not absolutely certain that the evaluation is correct.
+
+
+-------------------------
+
+
+Now need to formulate a plan of attack (and/or decide to what extent it is worth fighting) :
+
+Simple fixes :
+  Bibliography additions
+    But reading those papers may suggest tweaks that go 'above and beyond'
+  GloVE construction is for cos(), not purely a bi-product
+  Attempt simple zip compression on embedding
+  
+  reviewer 1 is most critical, 
+    but suggests (essentially) that a better literature review, and tests would be a fix
+  
+  reviewer 2 is ultra-detailed, and helpful
+  
+  reviewer 3 is somewhat positive (though still fails) - wants tests other than word-analogy
+  
+  
