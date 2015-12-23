@@ -449,4 +449,31 @@ Simple fixes :
   
   reviewer 3 is somewhat positive (though still fails) - wants tests other than word-analogy
   
+
+
+
+
+https://en.wikipedia.org/wiki/Lloyd's_algorithm 
+  Move sites of quantisation to centroids of areas (speed-up vs gradient descent?)
+  -- DO?   This alternative algorithm could be implemented fairly easily...
   
+
+http://dl.acm.org/citation.cfm?id=509965
+  This seems to be a LSH method 
+  READ : ICLR-2016/README/Charikar-2004_Estim.pdf 
+    (from http://www.cs.princeton.edu/courses/archive/spr04/cos598B/bib/CharikarEstim.pdf)
+  This looks like an early example : Compare to the LSH method already used (not reported)
+
+http://arxiv.org/pdf/1509.05472.pdf
+  READ : ICLR-2016/README/Wang-et-al-2015_1509.05472.pdf
+    Seems like a LSH overview :: LOTS OF STUFF IN HERE
+
+
+https://www.reddit.com/r/MachineLearning/comments/3oiefh/quantization_then_reduces_the_number_of_bits_that/cvxjd8z
+  Lots of references in a comment here...  Specifically by 'kjearns'
+  Maybe pick a few more - these are about compressing NNs
+  
+  Tensorising Neural Networks
+    http://arxiv.org/abs/1509.06569
+    RE-READ
+    
