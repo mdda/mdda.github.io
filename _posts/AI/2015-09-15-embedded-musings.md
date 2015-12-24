@@ -456,6 +456,7 @@ Simple fixes :
 https://en.wikipedia.org/wiki/Lloyd's_algorithm 
   Move sites of quantisation to centroids of areas (speed-up vs gradient descent?)
   -- DO?   This alternative algorithm could be implemented fairly easily...
+    But not so simple to figure out a 'parallel method'
   
 
 http://dl.acm.org/citation.cfm?id=509965
