@@ -464,6 +464,8 @@ http://dl.acm.org/citation.cfm?id=509965
   READ : ICLR-2016/README/Charikar-2004_Estim.pdf 
     (from http://www.cs.princeton.edu/courses/archive/spr04/cos598B/bib/CharikarEstim.pdf)
   This looks like an early example : Compare to the LSH method already used (not reported)
+    Heavy going for Christmas Day reading...
+  
 
 http://arxiv.org/pdf/1509.05472.pdf
   READ : ICLR-2016/README/Wang-et-al-2015_1509.05472.pdf
