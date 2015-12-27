@@ -473,7 +473,8 @@ http://dl.acm.org/citation.cfm?id=509965
 
 http://arxiv.org/pdf/1509.05472.pdf
   READ : ICLR-2016/README/Wang-et-al-2015_1509.05472.pdf
-    Seems like a LSH overview :: LOTS OF STUFF IN HERE
+    Seems like a LSH overview :: LOTS OF STUFF IN HERE - focusses on binary encodings
+    Existing LSH method is as in C.1(8) without a random shift
 
 
 https://www.reddit.com/r/MachineLearning/comments/3oiefh/quantization_then_reduces_the_number_of_bits_that/cvxjd8z
