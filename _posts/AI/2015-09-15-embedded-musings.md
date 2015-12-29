@@ -476,6 +476,8 @@ http://arxiv.org/pdf/1509.05472.pdf
     Seems like a LSH overview :: LOTS OF STUFF IN HERE - focusses on binary encodings
     Existing LSH method is as in C.1(8) without a random shift
     Are random-permutation ideas relevant?
+    And is hashing really the right comparison tool, 
+      given that our objective function is to do with differences (rather than just closest match)?
 
 
 https://www.reddit.com/r/MachineLearning/comments/3oiefh/quantization_then_reduces_the_number_of_bits_that/cvxjd8z
