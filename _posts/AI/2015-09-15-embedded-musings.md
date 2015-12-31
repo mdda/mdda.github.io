@@ -478,6 +478,9 @@ http://arxiv.org/pdf/1509.05472.pdf
     Are random-permutation ideas relevant?
     And is hashing really the right comparison tool, 
       given that our objective function is to do with differences (rather than just closest match)?
+    Information-theoretic metric learning
+      information-theoretic learning of Mahalanobis distance function
+    p14 starts deep learning variant descriptions
 
 
 https://www.reddit.com/r/MachineLearning/comments/3oiefh/quantization_then_reduces_the_number_of_bits_that/cvxjd8z
