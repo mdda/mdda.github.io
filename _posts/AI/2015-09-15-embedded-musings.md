@@ -481,6 +481,9 @@ http://arxiv.org/pdf/1509.05472.pdf
     Information-theoretic metric learning
       information-theoretic learning of Mahalanobis distance function
     p14 starts deep learning variant descriptions
+      Deep hashing for compact binary codes learning
+        http://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Liong_Deep_Hashing_for_2015_CVPR_paper.pdf
+      
 
 
 https://www.reddit.com/r/MachineLearning/comments/3oiefh/quantization_then_reduces_the_number_of_bits_that/cvxjd8z
