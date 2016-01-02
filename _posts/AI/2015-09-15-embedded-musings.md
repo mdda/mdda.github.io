@@ -458,9 +458,7 @@ https://en.wikipedia.org/wiki/Lloyd's_algorithm
   -- DO?   This alternative algorithm could be implemented fairly easily...
     But not so simple to figure out a 'parallel method'
     Also, seems to concentrate on Euclidean measures (not minimising sum-of-squares error, for instance)
-      numpy.digitize
-      numpy.searchsorted
-      numpy.histogram
+      Not well-matched to task, unfortunately : numpy.digitize, numpy.searchsorted, numpy.histogram
   
 
 http://dl.acm.org/citation.cfm?id=509965
