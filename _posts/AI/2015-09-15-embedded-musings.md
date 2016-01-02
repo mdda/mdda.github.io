@@ -459,6 +459,7 @@ https://en.wikipedia.org/wiki/Lloyd's_algorithm
     But not so simple to figure out a 'parallel method'
     Also, seems to concentrate on Euclidean measures (not minimising sum-of-squares error, for instance)
       Not well-matched to task, unfortunately : numpy.digitize, numpy.searchsorted, numpy.histogram
+    Practically identical results to original theano method
   
 
 http://dl.acm.org/citation.cfm?id=509965
