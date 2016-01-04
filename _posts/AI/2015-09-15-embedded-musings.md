@@ -460,6 +460,7 @@ https://en.wikipedia.org/wiki/Lloyd's_algorithm
     Also, seems to concentrate on Euclidean measures (not minimising sum-of-squares error, for instance)
       Not well-matched to task, unfortunately : numpy.digitize, numpy.searchsorted, numpy.histogram
     Practically identical results to original theano method
+    Try running on lower # of levels on all but 10 'difficult' distributions
   
 
 http://dl.acm.org/citation.cfm?id=509965
