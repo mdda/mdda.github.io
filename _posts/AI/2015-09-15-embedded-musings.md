@@ -486,8 +486,12 @@ http://arxiv.org/pdf/1509.05472.pdf
         http://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Liong_Deep_Hashing_for_2015_CVPR_paper.pdf
         Important idea : Learn the hashing with implicit features (no need to map back to original embedding)
           Features such as : Independence, 0/1-ness, Variability, ?Sparse-ness?, weight-L2, ...
-          Includes ugly lambda_i factors to control relative weights
-      
+          Includes ugly lambda_i factors to control relative weight of each factor
+            Perhaps there's some auto-scaling idea to make this 'pure'
+            - Angular Quantization Based Hashing : This could be another factor
+            - Sparseness could be another factor
+
+Also: Did I test the central representation as {0,1} or {-1,1} vectors?
 
 
 https://www.reddit.com/r/MachineLearning/comments/3oiefh/quantization_then_reduces_the_number_of_bits_that/cvxjd8z
