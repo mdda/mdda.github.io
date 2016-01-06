@@ -484,6 +484,9 @@ http://arxiv.org/pdf/1509.05472.pdf
     p14 starts deep learning variant descriptions
       Deep hashing for compact binary codes learning
         http://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Liong_Deep_Hashing_for_2015_CVPR_paper.pdf
+        Important idea : Learn the hashing with implicit features (no need to map back to original embedding)
+          Features such as : Independence, 0/1-ness, Variability, ?Sparse-ness?, weight-L2, ...
+          Includes ugly lambda_i factors to control relative weights
       
 
 
