@@ -450,6 +450,71 @@ Simple fixes :
   reviewer 3 is somewhat positive (though still fails) - wants tests other than word-analogy
   
 
+-------------------------
+"Rebuttal" : Limit=6000 characters - no HTML
+-------------------------
+
+First off, let me say that putting these comments in a 'Rebuttal' textfield seems rather antagonistic, given that I feel that the reviewers provided very helpful feedback, and I tend to agree with their overall conclusions (my 'review' is below).
+
+I don't know whether the reviewers can see each others' reviews, so I'll summarize the main points.
+
+
+Assigned_Reviewer_1 rightly pointed out that the paper lacks much in the way of literature review, and proved that there were a large number of citations that should be properly included.  Here, I must apologise, and explain that my main focus in 'iteration 1' was to describe the 'hot off the press results' for the paper, and provide the background texture when the rush to get new and improved results was over.
+
+The square-error minimising quantisation (which ended up being the most successful compression) was built as a more general framework than that which gave the reported results.  And, as noted by this reviewer, the Lloyd-Max algorithm is equivalent (subsequently checked by specifically re-implementing this case).
+
+Other techniques from the literature (such as random projection hashing) were also tried, but these (a) were less successful than the Lloyd algorithm, and (b) didn't appear to offer much progress towards the ultimate goal of achieving a 'better representation'.
+
+The literature review paper suggested (http://arxiv.org/pdf/1509.05472.pdf) was very helpful - and one of its dependencies (http://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Liong_Deep_Hashing_for_2015_CVPR_paper.pdf) may have provided an 'aha' moment (more below).
+
+
+Assigned_Reviewer_2 provided an extremely detailed and helpful critique of the text of the paper, by subsection, which will certainly improve the clarity of the paper.  Thank you.
+
+To answer one question directly : a simple 'gzip' of the raw embedding data yields a data size of 26 bits per vector element, illustrating that the paper's numerical approaches do include some representational power that is task-specific.
+
+
+Assigned_Reviewer_3 addressed such questions as whether the paper should be relying so heavily on the word analogy task to measure performance.  This is a valid point, and (given time) results for some word similarity tasks should be included (to mirror the original GloVe paper, http://www-nlp.stanford.edu/pubs/glove.pdf, for instance).  
+
+Although only one metric (the word-analogy problem) was used, it should be noted that this is a somewhat 'savage measure', since each question has only 1 correct answer (and 399,999 incorrect ones), which would appear to make it rather sensitive to small perturbations.
+
+It would also be interesting to see whether the (final) results could be applied to other embeddings - since there may be some GloVe-specific nuances introduced.  Such differences could arise because GloVe is specifically formulated to perform tasks where cosine-similarity is important, rather than the embedding arising as a 'biproduct' of another task (such as reconstructing linguistic contexts of words).
+
+
+Author Review:
+
+The original grand aim of the paper was to 'factorize the English language' by decomposing a known-good embedding into parts that could explain the relationships between concepts.
+
+Since a good explanation should be shorter than the evidence (~mimimum description length, etc), it made sense to gauge the complexity of the embedding overall, which is why trivial compressions were outlined, as well as the surprisingly effective quantisation approach.
+
+Given the 3-bit estimate of 'best compression' as a benchmark, more sophisticated/tailored approached were tried.  A smart hashing approach was devised - which over time revealed itself to be a PCA varient.  And many GPU cycles were burned in an attempt to persuade an auto-encoding approach to work.  
+
+But, at the end of the day, neither of these approaches yielded a representation that was :
+
+(a) 'almost lossless'
+(b) with independent binary bits
+(c) sparse (which contradicts MDL)
+(d) full of explanatory power (i.e. with a 'gender' bit and a 'royalty' bit, for instance)
+
+So, while the paper has an interesting goal and approach, it falls short of its initial aim, despite finding a 10x compression (which seems a useful secondary result, but not enough on its own).
+
+Quantitative Evaluation	4: Ok but not good enough - rejection
+
+
+Next Steps:
+
+Clearly, it would be better to be able to report definite progress on the 'deep learned' embedding.
+
+The approach in Liong et al (Deep Hashing, CVPR-2015) looks promising, when contrasted with the auto-encoding approach (which seemed like the most natural solution), where much effort was expended in trying to get the path from binary embedding back to the original embedding to be linear/simple.  However, in the clear light of day, that doesn't really achieve any of the goals (a-d) above.
+
+Liong et al's Deep Hashing approach now looks more relevant - since in their framework (or a variant) the (a-d) goals can be expressed explicitly, while creating a binarised embedding that is implicitly a representation of the original vectors.
+
+However, that experimentation will take time, and is not guaranteed to work (though during the auto-encoding experiments, some evidence was found that the GloVe embedding necessarily includes difficult non-linearities).
+
+Therefore, rather than spend time optimising the text of a paper that (in my own mind too) doesn't "hit the nail on the head", it makes more sense to continue working towards getting to a clearly satisfactory final result.  If/when that is done, the text of the (full) paper can be fleshed out with the (essential) literature and clarifications suggested by the reviewers - and a shorter ICLR Workshop submission made that reports on the progress made 'hot-off-the-press'.
+
+
+-------------------------
+
 
 
 
