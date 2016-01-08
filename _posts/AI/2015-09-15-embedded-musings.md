@@ -515,6 +515,45 @@ Therefore, rather than spend time optimising the text of a paper that (in my own
 
 -------------------------
 
+Dear Martin Andrews,
+
+     I've just looked at your rebuttal. Based on the score you are giving to your own paper (4: Ok but not good enough - rejection), this would almost suggest that you'd like to retract your paper. Is that what you want?
+
+BTW, I don't know how familiar you are with the author response process at conferences, but it doesn't actually require you to do a self-review of your own paper, as you've done. I think it's very big of you to have done that, but the expectations were only that you identify mistakes made by the reviewers in their evaluation, if any.
+
+Look forward to your answer!
+
+Cheers!
+
+Hugo Larochelle
+ICLR Senior Program Chair
+
+-------------------------
+
+Dear Hugo Larochelle : 
+
+Thanks for reaching out to me about my unconventional 'self-review'!  I guess I should explain my rationale a little...
+
+After I completed my PhD in the 90s, I consciously decided that the academic rat-race was not something that appealed to me - and headed off into "Quant Finance".  Now that adventure is done, I can finally get back into the "AI thing".  In the meantime, Moore's Law has provided the compute resources, and the heroes who 'kept the faith' broke through the exploding gradient logjam (for example).
+
+If I were now full-on participating as an academic, I would definitely take a combative stance in reading/critiquing the reviewers' comments and fixing up the paper as required.   However, as things stand, I'm more interested in producing a paper that's actually 'worthwhile', which is why I thought I should highlight my own dissatisfaction with not solidly achieving the paper's main goal.
+
+My understanding is that there is now a period during which I could/should be arguing with the reviewers.  IMHO, there are better uses of their time - because we'd only be iterating on a paper with a so-so main result.  I'm thinking that there's still a 10% chance, though, that my final 'response' (due 19-Jan) could be a paper that (in addition to addressing their concerns) contains the solid home-run result that I'm (still) looking for  - so 'retraction' seems premature.
+
+Given more time (and here I'm thinking about the Workshop track), I'm a lot more confident of getting meaningful results.  And the real value to me of the ICLR conference is in the ideas/participation, rather than the citation points anyway (modulo having to take a 33 hour flight to get there...)
+
+Anyway - sorry for the lengthy explanation, but I hope it clarifies my thinking.
+
+Looking forwards to participating in May, if possible
+
+Best Regards
+Martin Andrews
+
+-------------------------
+
+
+
+
 
 
 
