@@ -589,11 +589,19 @@ http://arxiv.org/pdf/1509.05472.pdf
       Deep hashing for compact binary codes learning
         http://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Liong_Deep_Hashing_for_2015_CVPR_paper.pdf
         Important idea : Learn the hashing with implicit features (no need to map back to original embedding)
-          Features such as : Independence, 0/1-ness, Variability, ?Sparse-ness?, weight-L2, ...
           Includes ugly lambda_i factors to control relative weight of each factor
             Perhaps there's some auto-scaling idea to make this 'pure'
-            - Angular Quantization Based Hashing : This could be another factor
-            - Sparseness could be another factor
+          Features such as : 
+          - Independence
+          - 0/1-ness 
+          - Variability 
+          - weight-L2, ...
+          Other potential factors :
+          - Sparseness
+          Factors requiring strict input-output dependency :
+          - Linear reconstruction of the input embedding = tried and failed
+          - Angular Quantization similarity (Based Hashing)
+
 
 Also: Did I test the central representation as {0,1} or {-1,1} vectors?
 
