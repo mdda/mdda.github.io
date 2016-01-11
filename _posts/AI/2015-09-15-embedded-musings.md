@@ -592,10 +592,10 @@ http://arxiv.org/pdf/1509.05472.pdf
           Includes ugly lambda_i factors to control relative weight of each factor
             Perhaps there's some auto-scaling idea to make this 'pure'
           Features such as : 
-          - Independence
-          - 0/1-ness 
-          - Variability 
-          - weight-L2, ...
+          - 0/1-ness (squared distance between binarised, and last real layer values)
+          - Maximize variance of the last layer real output (ensures hashing distributes evenly over each bit (?))
+          - Quasi-Independence in weight vectors (summed across all layers)
+          - Weight-L2 (this is partly to counteract summations in above factors)
           Other potential factors :
           - Sparseness
           Factors requiring strict input-output dependency :
