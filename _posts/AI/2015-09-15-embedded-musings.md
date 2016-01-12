@@ -606,7 +606,8 @@ http://arxiv.org/pdf/1509.05472.pdf
 Also: Did I test the central representation as {0,1} or {-1,1} vectors?
   binary_to_embedding is a plain casting : So {0,1} is used, rather than {-1,1}
 
-Also: Some idiot (i.e. me) coded the 0/1-ness as (linear-01) rather than (logistic-01) :: RERUN
+Also: Some idiot (i.e. me) coded the 0/1-ness as (linear-01) rather than (logistic-01)
+  v16 : Rerun with hard01 applied in middle (and compare to sigmoid version)
 
 
 
