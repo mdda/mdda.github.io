@@ -604,6 +604,10 @@ http://arxiv.org/pdf/1509.05472.pdf
 
 
 Also: Did I test the central representation as {0,1} or {-1,1} vectors?
+  binary_to_embedding is a plain casting : So {0,1} is used, rather than {-1,1}
+
+Also: Some idiot (i.e. me) coded the 0/1-ness as (linear-01) rather than (logistic-01) :: RERUN
+
 
 
 https://www.reddit.com/r/MachineLearning/comments/3oiefh/quantization_then_reduces_the_number_of_bits_that/cvxjd8z
