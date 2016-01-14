@@ -608,6 +608,7 @@ Also: Did I test the central representation as {0,1} or {-1,1} vectors?
 
 Also: Some idiot (i.e. me) coded the 0/1-ness as (linear-01) rather than (logistic-01)
   v16 : Rerun with hard01 applied in middle (and compare to sigmoid version)
+  v17 : Rerun with sigmoid driving the embedding equation (and compare to hard01 for penalty)
 
 
 
