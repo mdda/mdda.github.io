@@ -551,6 +551,22 @@ Martin Andrews
 
 -------------------------
 
+Dear Martin Andrews,   Paper#: 233  Title: Compressing Word Embeddings
+
+At this point, reviewers have been given the chance to update their reviews, in light of your author response. While optional, this was their last chance to ask direct questions to authors, before they finalize their opinion about your paper.
+
+If your paper has received such additional feedback you’d like to address, or if you’d like to add more information to your original response anyhow, please log in to CMT and add text in the new text box that now appears in the author response form.
+
+You have until Tuesday, January 19, 2016 at 2:00 PM Pacific Standard time to update your author response and arXiv submission.
+
+If you update your paper on arXiv, remember to also update the PDF on CMT. Be sure to mention any changes that you’ve made to your submission in your rebuttal update.
+
+Thanks,
+
+Hugo, Samy, and Brian - ICLR 2016 program chairs
+
+-------------------------
+
 
 
 
