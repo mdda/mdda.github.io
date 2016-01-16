@@ -567,8 +567,10 @@ Hugo, Samy, and Brian - ICLR 2016 program chairs
 
 -------------------------
 
+Ok - supposing/given that no interesting results appear before the 19th, 
+the new text box sounds like it could be suitable for declaring : "Will resubmit, fixed and slimmed, to the Workshop track"
 
-
+-------------------------
 
 
 
