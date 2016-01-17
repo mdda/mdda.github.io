@@ -6,8 +6,10 @@ tags:
 - linux
 - chrony
 - selinux
+- fedora
+- fc22
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -16,10 +18,10 @@ the fix was simple - and had to do with ```SELINUX```.
 
 ###Losing Track of Time
 
-The clock on my machine seemed unusually 'off' (comparing to a mobile phone
-is an easy check, since they'll typically be synced via the mobile-provider).
+The clock on my machine seemed unusually 'off'.  My first comparison was to my mobile phone
+- an easy check, since mobiles are typically synced against the mobile-provider / cell towers.
 
-A better check on the machine itself : 
+Checking as to the state of play on the machine itself : 
 
 {% highlight bash %}
 systemctl status chronyd
@@ -28,7 +30,7 @@ chronyc sourcestats
 ## reports Zero sources...  Something is up
 {% endhighlight %}
 
-###Where are the sources
+###Where are the sources?
 
 The default Fedora ```/etc/chrony.conf``` contains a valid 'pool' configuration :
 
@@ -51,13 +53,13 @@ Jan 17 02:09:07 square kernel: audit: type=1400 audit(1452967747.816:791): \
 {% endhighlight %}
 
 This tells us that ```chronyd``` is being denied something by ```SELINUX``` (something
-that I felt sure I had turned to permissive mode, since it's often a source of 
+that I felt sure I had turned to ```permissive mode```, since it's often a source of 
 hard-to-fathom errors).
 
 ###Bug in chronyd?
 
-At first blush, this seems like an error with ```chronyd```, since the rest of the 
-system seems to be working fine.
+At first blush, this seemed like an error with ```chronyd```, since the rest of the 
+system was working fine.
 
 However, ```SELINUX``` is doing a typical mis-direct here : The problem actually
 lay with the ```/etc/resolv.conf``` file itself - it had somehow become *mislabled*.
