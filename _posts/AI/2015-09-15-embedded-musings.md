@@ -568,7 +568,14 @@ Hugo, Samy, and Brian - ICLR 2016 program chairs
 -------------------------
 
 Ok - supposing/given that no interesting results appear before the 19th, 
-the new text box sounds like it could be suitable for declaring : "Will resubmit, fixed and slimmed, to the Workshop track"
+the new text box sounds like it could be suitable for declaring something like 
+"Will resubmit, fixed and slimmed, to the Workshop track"
+
+-------------------------
+
+Unfortunately, I haven't been able to find the time to produce the kind of results that I think this paper really should have as a final flourish.
+
+Many thanks for your helpful and insightful reviews, but I believe that it makes more sense for me to resubmit to the Workshop track (including the updates suggested) when/if I have sufficiently compelling results for the second part.
 
 -------------------------
 
