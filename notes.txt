@@ -100,7 +100,7 @@ Make MathJax work (??)
 
 
 Want to do in-depth look at :
-  2014 NIPS:
+  2014/2015 NIPS:
     -- Looking through papers for something interesting to write about
 
   PCAnet (http://arxiv.org/abs/1404.3606)
@@ -301,7 +301,7 @@ NIPS ideas :
     Socher : MV-RNN for Relationship Classification (looks good for Handshakes...)
     Socher : Recursive Deep Models for Semantic Compositionality over a Sentiment Treebank 2013
   
-  
+-------------------  
 Scheme for : "Middle out" Learning of Grammar Embeddings
   Learn word-vectors in the standard way, with left- and right-contexts being trained to 
     imply the middle 'idea' (which will initially just be the word, but will later be an 'idea')
@@ -352,31 +352,52 @@ Scheme for : "Middle out" Learning of Grammar Embeddings
   And cite Klein Manning 2001
   
   What would it mean to train LSTM on sentences 'unsupervised'?
+-------------------
+
   
   
 Alternative : 
 
-  Create Entity extraction corpuses from output of :
-    Stanford NER
-    Berkeley NER
-  
-  Then train LSTM network on those corpuses
+  DONE 
+    Create Entity extraction corpuses from output of :
+      Stanford NER
+      Berkeley NER
 
-  Requires out-of-sample validation set 
-    and common test sets
-  
-  Corpus to use : CoNLL-2003, which has NER training, test and 'raw' sets 
-    (as well as 1Gb of additional corpus data)
-  
-  See whether network can (a) replicate and (b) supercede 
-  
-  Secondary goal : 
-    Reduce need to rely on anti-commercial licensed software
-  
-  Other avenues: 
-    Curriculum training based on (say) sentence length
-      Or degree of agreement from corpus builders
+    Then train LSTM network on those corpuses
 
-    Additional NER methods, so that can do voting, and ensembling
+    Requires out-of-sample validation set 
+      and common test sets
     
+    Corpus to use : CoNLL-2003, which has NER training, test and 'raw' sets 
+      (as well as 1Gb of additional corpus data)
+    
+    See whether network can (a) replicate and (b) supercede 
+    
+    Secondary goal : 
+      Reduce need to rely on anti-commercial licensed software
+    
+    Other avenues: 
+      Curriculum training based on (say) sentence length
+        Or degree of agreement from corpus builders
+
+      Additional NER methods, so that can do voting, and ensembling
+    
+  In-Process
+    Binary re-representation of word embeddings
+    
+  In-Process
+    Palm tree detection
+    
+  IDEA
+    Middle-out learning of grammar embedding, as above
+  
+  IDEA
+    Think about 'internal model' method of learning
+      (Obviously) read the writing Chinese paper some more
+      
+  IDEA
+    Character-based NER
+  
+  IDEA 
+    Imagination for visual networks
     
