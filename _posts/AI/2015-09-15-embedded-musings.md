@@ -579,6 +579,19 @@ Many thanks for your helpful and insightful reviews, but I believe that it makes
 
 -------------------------
 
+ICLR Workshop Track CFP : Due 18-Feb-2016
+
+http://www.iclr.cc/doku.php?id=iclr2016:cfp-workshop
+
+Extended abstracts submitted to the Workshop Track should be 2-3 pages long (excluding references) and describe late-breaking developments. This track is meant to carry on the tradition of the former Snowbird Learning Workshop. These contributions are considered as workshop papers (and can be published elsewhere). They will be lightly reviewed by ICLR reviewers. 
+
+By February 18th, 2016, 2:00 PM Pacific Standard time, authors must submit the PDF of their extended abstract to openreview.
+
+For more information on preparing your extended abstract, including style files and the URL for the openreview ICLR 2016 Workshop Track website, please see http://www.iclr.cc/doku.php?id=iclr2016:main
+
+Acceptance decisions of extended abstract will be sent by March 28th. At least one author of each accepted extended abstract will be required to register to the ICLR event and present their work in poster format.
+
+
 
 
 
