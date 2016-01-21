@@ -390,6 +390,7 @@ Alternative :
     
   IDEA
     Middle-out learning of grammar embedding, as above
+      Stumbling block is testability of 'segmentation/structure' learned
   
   IDEA
     Think about 'internal model' method of learning
@@ -401,3 +402,13 @@ Alternative :
   IDEA 
     Imagination for visual networks
     
+
+Venue : 
+  PyData
+  
+  FOSSASIA
+  
+  PyCon
+  
+  SGDS Lightning Talk
+  
