@@ -407,8 +407,22 @@ Venue :
   PyData
   
   FOSSASIA
-    Thumbs up from organiser on DeepLearning idea
-      Not too worried about track selection, etc - all a work-in-progress
+    Topic :  Deep Learning 
+      Either : 
+        Talk of 20 minutes 
+          simple to demo (own laptop, etc)
+        Workshop of 1 or 2 hours  (very tempting, except for the planning/time committment)
+          What environment to use?  
+            VPS?  expense...
+            docker images?  
+            USB Live environments?  
+            iPython (somehow)?
+      Foundation : Python (or iPython)
+        TensorFlow?  (would require more work)
+        Theano (standing on head)
+      
+      Thumbs up from organiser on DeepLearning idea
+        Not too worried about track selection, etc - all a work-in-progress
     
   
   PyCon
