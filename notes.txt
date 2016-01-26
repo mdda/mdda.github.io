@@ -420,6 +420,8 @@ Venue :
               https://github.com/donnemartin/data-science-ipython-notebooks
               https://github.com/donnemartin/data-science-ipython-notebooks/blob/master/deep-learning/deep-dream/dream.ipynb
                 http://googleresearch.blogspot.sg/2015/07/deepdream-code-example-for-visualizing.html
+              http://www.pyimagesearch.com/2015/07/06/bat-country-an-extendible-lightweight-python-package-for-deep-dreaming-with-caffe-and-convolutional-neural-networks/#show_and_tell  
+                https://github.com/jrosebr1/bat-country/blob/master/demo.py
               https://github.com/donnemartin/data-science-ipython-notebooks/blob/master/deep-learning/tensor-flow-exercises/5_word2vec.ipynb
           Other peoples'
             http://www.slideshare.net/roelofp/deep-learning-as-a-catdog-detector
