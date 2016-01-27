@@ -412,6 +412,8 @@ Venue :
         Talk of 20 minutes 
           simple to demo (own laptop, etc)
         Workshop of 1 or 2 hours  (very tempting, except for the planning/time committment)
+          Michal loves the idea 
+            and also thinks that DeepDream is a really interesting topic
           What environment to use?  
             VPS?  expense...
             docker images?  
@@ -423,6 +425,7 @@ Venue :
               http://www.pyimagesearch.com/2015/07/06/bat-country-an-extendible-lightweight-python-package-for-deep-dreaming-with-caffe-and-convolutional-neural-networks/#show_and_tell  
                 https://github.com/jrosebr1/bat-country/blob/master/demo.py
               https://github.com/donnemartin/data-science-ipython-notebooks/blob/master/deep-learning/tensor-flow-exercises/5_word2vec.ipynb
+              
           Other peoples'
             http://www.slideshare.net/roelofp/deep-learning-as-a-catdog-detector
       Foundation : Python (or iPython)
