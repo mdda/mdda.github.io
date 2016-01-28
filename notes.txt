@@ -414,6 +414,8 @@ Venue :
         Workshop of 1 or 2 hours  (very tempting, except for the planning/time committment)
           Michal loves the idea 
             and also thinks that DeepDream is a really interesting topic
+              suggestion : VirtualBox images are pretty portable
+                if we only need iPython with all the imports, don't need to worry about editor, etc
           What environment to use?  
             VPS?  expense...
             docker images?  
