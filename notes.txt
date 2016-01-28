@@ -416,6 +416,14 @@ Venue :
             and also thinks that DeepDream is a really interesting topic
               suggestion : VirtualBox images are pretty portable
                 if we only need iPython with all the imports, don't need to worry about editor, etc
+                could also do it without installing X - and running the browser session in the host machine...
+                successful installers could also open up their 'server' to access via WiFi, without risk
+                  https://nsrc.org/workshops/2014/btnog/raw-attachment/wiki/Track2Agenda/ex-virtualbox-portforward-ssh.htm
+                http://blog.ouseful.info/2014/12/12/seven-ways-of-running-ipython-notebooks/
+                  http://blog.ouseful.info/2015/05/18/kiteflying-around-containers-a-better-alternative-to-course-vms/
+                http://www.aliexpress.com/item/Usb-flash-drive-4gb-8gb-16gb-32gb-cat-s-claw-usb-pendrive-gift-u-disk-memory/32424298881.html?spm=2114.01010208.3.319.T9dcav&ws_ab_test=searchweb201556_1,searchweb201644_1_505_506_503_504_502_10001_9705_10002_10016_10005_10006_10003_10004_62,searchweb201560_1,searchweb1451318400_6151,searchweb1451318411_6452&btsid=657fe2dd-426e-4442-9694-674c828df7b0
+                
+                
           What environment to use?  
             VPS?  expense...
             docker images?  
