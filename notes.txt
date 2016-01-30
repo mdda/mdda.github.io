@@ -419,6 +419,7 @@ Venue :
                 could also do it without installing X - and running the browser session in the host machine...
                 successful installers could also open up their 'server' to access via WiFi, without risk
                   https://nsrc.org/workshops/2014/btnog/raw-attachment/wiki/Track2Agenda/ex-virtualbox-portforward-ssh.htm
+                  https://www.reddit.com/r/IPython/comments/3gw3e5/how_to_access_to_the_ipython_server_from_a/
                 http://blog.ouseful.info/2014/12/12/seven-ways-of-running-ipython-notebooks/
                   http://blog.ouseful.info/2015/05/18/kiteflying-around-containers-a-better-alternative-to-course-vms/
                 http://lambdaops.com/ipythonjupyter-tmpnb-debuts/                
@@ -441,6 +442,17 @@ Venue :
               
           Other peoples'
             http://www.slideshare.net/roelofp/deep-learning-as-a-catdog-detector
+            
+          JS in the browser :
+            (perhaps using CPU-only, but avoiding thumb-drive distribution would be a net win...)
+              https://github.com/karpathy/convnetjs
+              https://github.com/karpathy/reinforcejs
+                There is a new paper in regards to deep reinforcements learning in continous spaces by deepmind. 
+                Continuous control with deep reinforcements learning. Is there plans to add this in code form. Many thanks Andrew.
+
+              
+
+
       Foundation : Python (or iPython)
         TensorFlow?  (would require more work)
         Theano (standing on head)
