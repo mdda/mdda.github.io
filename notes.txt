@@ -444,7 +444,15 @@ Venue :
             http://www.slideshare.net/roelofp/deep-learning-as-a-catdog-detector
             
           JS in the browser :
-            (perhaps using CPU-only, but avoiding thumb-drive distribution would be a net win...)
+            Pros
+              CPU-only
+              Single-threaded
+              Avoids thumb-drive distribution
+            Cons
+              Not Python
+              No GPU or multi-core
+              Not iPython 
+            Code
               https://github.com/karpathy/convnetjs
               https://github.com/karpathy/reinforcejs
                 There is a new paper in regards to deep reinforcements learning in continous spaces by deepmind. 
