@@ -425,6 +425,35 @@ Venue :
                 http://blog.ouseful.info/2014/12/12/seven-ways-of-running-ipython-notebooks/
                   http://blog.ouseful.info/2015/05/18/kiteflying-around-containers-a-better-alternative-to-course-vms/
                 http://lambdaops.com/ipythonjupyter-tmpnb-debuts/                
+        
+          ConvNets:
+            Pros 
+              More materials available
+              Different angles : Art, Commerce
+              Can do some simple 'real' training (MNIST)
+              Can also use pre-built model (ImageNet / Inception-3)
+            Cons
+              'Simple stuff'
+              Overlap with potential customers?
+              Google DeepDreaming may not be ready : CHECK THIS
+            Ideas for progression :
+              Stanford Seminar - Oriol Vinyals of Google
+                https://youtu.be/UAq961jQjYg
+
+          RNNs / NLP:
+            Pros 
+              More similar to current work
+            Cons
+              Difficult to set up satisfying motivation / experiments
+
+          Reinforcement Learning:
+            Pros 
+              Go=Sexy
+            Cons
+              Not so clearly 'deep learning'
+              Very Difficult to set up satisfying motivation / experiments
+              Very Difficult to set up satisfying motivation / experiments
+              Someone else might do it...
                 
           What environment to use?  
             VPS?  expense...
