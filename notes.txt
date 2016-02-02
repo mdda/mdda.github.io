@@ -485,11 +485,13 @@ Venue :
             
             iPython (somehow)?
               https://github.com/donnemartin/data-science-ipython-notebooks
-              https://github.com/donnemartin/data-science-ipython-notebooks/blob/master/deep-learning/deep-dream/dream.ipynb
-                http://googleresearch.blogspot.sg/2015/07/deepdream-code-example-for-visualizing.html
-              http://www.pyimagesearch.com/2015/07/06/bat-country-an-extendible-lightweight-python-package-for-deep-dreaming-with-caffe-and-convolutional-neural-networks/#show_and_tell  
-                https://github.com/jrosebr1/bat-country/blob/master/demo.py
-              https://github.com/donnemartin/data-science-ipython-notebooks/blob/master/deep-learning/tensor-flow-exercises/5_word2vec.ipynb
+              Deep Dream (Caffe)
+                https://github.com/donnemartin/data-science-ipython-notebooks/blob/master/deep-learning/deep-dream/dream.ipynb
+                  http://googleresearch.blogspot.sg/2015/07/deepdream-code-example-for-visualizing.html
+                http://www.pyimagesearch.com/2015/07/06/bat-country-an-extendible-lightweight-python-package-for-deep-dreaming-with-caffe-and-convolutional-neural-networks/#show_and_tell  
+                  https://github.com/jrosebr1/bat-country/blob/master/demo.py
+              TensorFlow
+                https://github.com/donnemartin/data-science-ipython-notebooks/blob/master/deep-learning/tensor-flow-exercises/5_word2vec.ipynb
 
             Using Caffe models in Lasagne
               https://github.com/Lasagne/Lasagne/issues/157
@@ -497,7 +499,18 @@ Venue :
             TensorFlow + iPython + VM
               https://github.com/gavinln/tensorflow-ipy
               http://stackoverflow.com/questions/33784214/how-to-test-tensorflow-cifar10-cnn-tutorial-model?rq=1
+              
+            Something akin to DeepDream using Keras on TensorFlow :
+              http://blog.keras.io/how-convolutional-neural-networks-see-the-world.html
+              TensorFlow backend for Keras is pretty functional : 
+                http://blog.keras.io/keras-now-running-on-tensorflow.html
 
+            Udacity course from Google 
+              https://www.udacity.com/course/deep-learning--ud730
+                Lesson 1: From Machine Learning to Deep Learning
+                Lesson 2: Deep Neural Networks
+                Lesson 3: Convolutional Neural Networks
+                Lesson 4: Deep Models for Text and Sequences
 
           Model Zoo ideas:
             https://groups.google.com/a/tensorflow.org/forum/m/#!topic/discuss/BKOiAgKDxqM
