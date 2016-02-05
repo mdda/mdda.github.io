@@ -1,10 +1,20 @@
+# Overridable defaults
+
+github: [metadata]
+kramdown:
+  input: GFM
+  hard_wrap: false
+gems:
+ - jekyll-coffeescript
+
+# - jekyll-paginate
+
+
 # This is the default format.
 # For more see: http://jekyllrb.com/docs/permalinks/
 permalink: /:categories/:year/:month/:day/:title
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-#highlighter: pygments
-highlighter: rouge
 
 gems:
 - jekyll-mentions
@@ -153,5 +163,16 @@ JB :
     provider : "custom"
   
 
+  
+# Non-Overridable defaults
+
 paginate: 10 #pagination based on number of posts
 paginate_path: "page:num"
+
+lsi: false
+safe: true
+#source: [your repo's top level directory]
+#incremental: false
+highlighter: rouge
+gist:
+  noscript: false

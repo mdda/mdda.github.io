@@ -10,7 +10,7 @@ group: navigation
     {% for category in categories_list %}
       <li>
         <a href="#{{ category[0] }}-ref" data-toggle="tab">
-          {{ category[0] | upcase }} <span class="badge pull-right">{{ category[1].size }}</span>
+          {{ category[0] }} <span class="badge pull-right">{{ category[1].size }}</span>
         </a>
       </li>
     {% endfor %}

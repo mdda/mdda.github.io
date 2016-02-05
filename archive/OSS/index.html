@@ -1,13 +1,13 @@
 ---
 layout: page
 title : Archive - OSS
-header : OS Post Archive
+header : OSS Post Archive
 group: navigation
 ---
 {% include JB/setup %}
 
 {% for category in site.categories %}
-  {% if category[0] == 'oss' %}
+  {% if category[0] == 'OSS' %}
     {% assign posts_collate = category[1] %}
   {% endif %}
 {% endfor %}

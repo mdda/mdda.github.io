@@ -21,7 +21,7 @@ Please forgive me if the posts aren't crystal clear : Many of the ideas aren't f
 ### Recent Posts
 
 <ul class="posts">
-  {% for post in site.categories['ai'] limit:10 %}
+  {% for post in site.categories['AI'] limit:10 %}
     <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">
       {% unless post.published == false %}
        {{ post.title }}
@@ -42,7 +42,7 @@ As well as trying to be generally supportive of the various excellent OSS projec
 ### Recent Posts
 
 <ul class="posts">
-  {% for post in site.categories['oss'] limit:10 %}
+  {% for post in site.categories['OSS'] limit:10 %}
     <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">
       {% unless post.published == false %}
        {{ post.title }}
