@@ -412,7 +412,11 @@ Venue :
       Provisional outline : 
       *  The workshop will start from the very basics (with a little mathematics), and quickly progress to getting hands-on with open source software (ending the first hour with training a deep network on a simple problem)
       *  The second hour will build on a much larger pre-trained model, and show participants applications in both e-commerce and generative art.  
-              
+      
+      ** ACCEPTED **
+        Thank you for your proposal for FOSSASIA 2016. I am pleased to inform you that your submission "Deep Learning: From Inception to Dreams" has been accepted.
+        We are excited to welcome you at the Singapore Science Center from 18th to 20th March 2016. A few points for the organization and confirmation are below.
+      
     Please provide a short bio for the program
       Martin has a PhD in Machine Learning, and has been an Open Source developer since 1999.  
       After a career in finance, he decided to follow his original passion, and now works on Machine Learning / Artificial Intelligence full-time.
