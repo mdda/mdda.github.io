@@ -403,14 +403,13 @@ Alternative :
     Imagination for visual networks
     
 
-Venue : 
-  PyData
-  
-  FOSSASIA
+Talks by Venue : 
+  FOSSASIA  18-20 March 2016
    -- Now in own repo : https://github.com/mdda/fossasia-2016_deep-learning
     
+  PyCon     23-25 June 2016
   
-  PyCon
+  PyData
   
-  SGDS Lightning Talk
+  SGDataScience Lightning Talk?
   
