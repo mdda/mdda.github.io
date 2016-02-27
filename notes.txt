@@ -95,7 +95,7 @@ Make MathJax work (??)
 
 ## Helpful : myfile=_posts/AI/ETC
 ## Helpful : touch --date '1 minute ago' ${myfile}
-## Helpful : git commit --date="`stat -c %y ${myfile}`" ${myfile}
+## Helpful : git commit --date="`stat -c %y ${myfile}`" ${myfile} -am "Last minute update"
 
 
 
