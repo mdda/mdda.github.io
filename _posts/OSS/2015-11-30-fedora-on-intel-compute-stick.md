@@ -25,8 +25,8 @@ However, my distribution preference is Fedora
 Installing Fedora on the device turned into (yet another) weekend of frustration and small gains...
 
 
-There's now a new version of the Intel Compute stick out, which probably renders working on this one moot
-(except for the fact that I hate to see computer hardware going to waste).
+There's now a [new version of the Intel Compute stick](http://linuxgizmos.com/latest-intel-compute-sticks-use-skylake-and-cherry-trail-cpus/) out, 
+which probably renders working on this one moot (except for the fact that I hate to see computer hardware going to waste).
 
 
 ### Getting WiFi going
