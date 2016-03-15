@@ -44,7 +44,7 @@ author :
   ## This is to do with the gravatar...
   email_md5: c2e5523956cfa2db30b3e8ecbaf8f8f6
 
-theme: dbyll
+#theme: dbyll
   
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt
@@ -94,7 +94,8 @@ JB :
   #   http://s3.amazonaws.com/yoursite/themes/watermelon
   #   /assets
   #
-  ASSET_PATH : false
+  #ASSET_PATH : false
+  ASSET_PATH : /assets/themes/dbyll
 
   # These paths are to the main pages Jekyll-Bootstrap ships with.
   # Some JB helpers refer to these paths; change them here if needed.
