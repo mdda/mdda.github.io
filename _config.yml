@@ -31,6 +31,7 @@ markdown: kramdown
 #
 title : thought process
 tagline: (brain-dump)
+
 author :
   name : Martin Andrews
   email : blog@mdda.net
@@ -42,6 +43,8 @@ author :
   #resume: http://mdda.net/resume
   ## This is to do with the gravatar...
   email_md5: c2e5523956cfa2db30b3e8ecbaf8f8f6
+
+theme: dbyll
   
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt
