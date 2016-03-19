@@ -9,7 +9,7 @@ tags:
 - NER
 - Named Entity Recognition
 - NeuralNetworks
-- Theano
+- theano
 - blocks
 layout: post
 published: true
