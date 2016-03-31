@@ -1,1 +1,21 @@
 
+Vision CNN acheivements
+
+Attention mechanisms replacing state-transfer in LSTMs
+
+Captioning indicates that 'internal process' could be converted into prose
+
+Questions about image (or text) can be examined using their map of attention too
+
+
+Reinforcement learning sucesses have required the bulding of a model
+of the opponent - although this is simplified by the assumption of mini-max actions
+
+  Hidden state complicate this - though there still are (?) optimal strategies, even in the face of uncertainty
+
+
+Building a model of another actor is becoming (?) a necessasary feature of chatbot 
+Self-image
+
+
+Empathy due to time-sharing of mental machinery in order to step into someone else's shoes
