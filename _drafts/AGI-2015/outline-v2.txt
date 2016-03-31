@@ -152,7 +152,7 @@ ReLU is like a one-sided operation
       Shouldn't suffer from gradient issues, only adds "b" and "alpha" as parameters
 
 Sparse PCA tries to fill eigenvectors with many zeroes
-  OTOH, we're interested in represetnations that are sparse too
+  OTOH, we're interested in representations that are sparse too
     (i.e. identity matrix is poor basis set)
 
 Approaches to PCA
