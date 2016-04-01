@@ -27,7 +27,7 @@ The machine is captive to its internal models, so it can’t arrive at any other
 Graziano still writing about his 'new theory' to promote it in popular press.
 
 
-Vision CNN acheivements
+Vision CNN achievements
 
 Attention mechanisms replacing state-transfer in LSTMs
 

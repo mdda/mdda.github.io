@@ -19,19 +19,20 @@
 \title{Consciousness and the Social Machine}
 %
 \titlerunning{Consciousness and the Social Machine}  % abbreviated title (for running head)
-%                                     also used for the TOC unless
-%                                     \toctitle is used
+%                                                      also used for the TOC unless
+%                                                      \toctitle is used
 %
-\author{Martin Andrews\inst{1}}
+%\author{Martin Andrews\inst{1}}
+\author{Martin Andrews}
 %
 \authorrunning{Martin Andrews} % abbreviated author list (for running head)
 %
 %%%% list of authors for the TOC (use if author list has to be modified)
 \tocauthor{Martin Andrews}
 %
-\institute{Red Cat Labs, Singapore, \\
-\email{Martin.Andrews@RedCatLabs.com},\\ 
-WWW home page: \texttt{http://RedCatLabs.com/}
+\institute{Red Cat Labs, Singapore\\
+\email{Martin.Andrews@RedCatLabs.com}\\ 
+%WWW home page: \texttt{http://RedCatLabs.com/}
 }
 
 \maketitle              % typeset the title of the contribution
@@ -39,13 +40,21 @@ WWW home page: \texttt{http://RedCatLabs.com/}
 %%%% using at least 70 and at most 150 words. It will be set in 9-point
 \begin{abstract}
 
-
+One \emph{known unknown} in the pursuit of AGI is how consciousness can be incorporated
+in a machine's design.  
+%
+Graziano and Kastner's Attention Schema theory (\cite{GrazianoKastner})
+describes a mechanism of human consciousness 
+that potentially allows the `hard problem of consciousness' for machines 
+to be approached with an engineering mindset.
+%
+This short note summarizes the Attention Schema theory, 
+puts it in an up-to-date machine learning context, 
+and discusses some practical issues of conscious machines.
 
 \keywords{consciousness,attention schema,attention,chatbots}
 \end{abstract}
 %
-\section{Introduction}
-
 
 %\section{Overview}
 %
@@ -65,12 +74,134 @@ WWW home page: \texttt{http://RedCatLabs.com/}
 %**Philosophy of AGI
 %  Reinforcement Learning
 %
-%Submission deadline moved from 15-march-2015 to 1-apr-2015
+%Submission deadline moved from 25-march-2016 to 1-apr-2016
 %  :: http://agi-conf.org/2015/call-for-papers/
+
+\section{Introduction}
+
+The essence of Attention Schema theory is that "awareness is a description of attention".
+The background, and comparisons to a number of contrasting theories of consciousness,
+are presented in Graziano's \cite{graziano2013consciousness} book.  
+
+For concreteness, considering how a brain is `aware' of an apple,
+there are several functional steps :
+
+\begin{description}
+\item[Input] - pixels representing the shape of the apple itself
+\item[Attention] - identifying the outline of recognisable objects in the image 
+\item[Recognition] - after some processing, activating an 'apple' label
+\item[Context] - every new input can be embellished with additional context (previous experiences, for instance)
+\item[Attention Schema] - a model of the brain's pattern of attention to represent what it is currently aware of
+\item[Responsiveness] - querying the Attention Schema to respond to questions, or direct further actions, etc
+\end{description}
+
+The step that is currently hypothetical is the form of the Attention Schema model.  
+However, its properties can be deduced from considering what human brains require
+for social interaction : a model of attention/motivation of others' brains.
+
+The theory suggests that consciousness is no bizarre byproduct -- it's a tool for regulating information in the brain.
+
+
+https://aeon.co/essays/can-we-make-consciousness-into-an-engineering-problem ::
+
+We know that, but it doesn't. It possesses no information about how it was built. 
+Its internal models don't contain the information: ``By the way, we're a computing device that 
+accesses internal models, and our models are incomplete and inaccurate.''
+It's not even in a position to report that it has internal models, or that it's processing information at all.
+ 
+The machine is captive to its internal models, so it can't arrive at any other conclusions.
+
+
+
+Graziano still writing about his `new theory' to promote it in popular press.
+
+
+\section{Attention}
+
+Vision CNN achievements
+
+Attention mechanisms replacing state-transfer in LSTMs
+
+Captioning indicates that 'internal process' could be converted into prose
+
+Questions about image (or text) can be examined using their map of attention too
+
+
+Reinforcement learning sucesses have required the bulding of a model
+of the opponent - although this is simplified by the assumption of mini-max actions
+
+  Hidden state complicate this - though there still are (?) optimal strategies, even in the face of uncertainty
+
+
+Building a model of another actor is becoming (?) a necessasary feature of chatbot 
+Self-image can be built on same basis
+
+
+Empathy due to time-sharing of mental machinery in order to step into someone else's shoes
+
+
+Callibrated consciousness
+  Based on realism of models of 'other'
+  Depth of introspection can be naturally limited / ascertained
+  
+  Ability to pause/save/restart 'self'
+  Might simplify questions of 'rights'
+
+
+Self image could also include honest description of differences from humans
+  including an acceptance of being self-contained (and paused, etc)
+
+
+\section{Models : Self and Other}
+
+
+Lower hurdle than self-improving AGIs
+  No need to create novelty in decision-making policy, for instance
+  
+Doesn't need full canvas of inputs (compare to LIDA, for instance)
+  The LIDA Model as a Foundational Architecture for AGI - http://ccrg.cs.memphis.edu/assets/papers/2012/LIDA-Foundational%20Architecture%20for%20AGI.pdf
+
+
+
+Turing test involves convincing a human that a machine should be accredited with conciousness
+  Which is a lower bar than that the machine actually has conciousness
+  OTOH, if the workings of the machine can be fully analysed, many humans would reject the machine's consciousness because it appears insufficient
+
+The machine reporting on it's own consciousness would lie on a spectrum from lying to honest to super-honest, 
+  depending on the sophistication of its self mental model (and its capacity to model others could be measured)
+  Potentially, the 'other' models could be more sophisticated than human ones
+  
+Self-model should be 'relateable' in human terms to aid recognition 
+  
+  There was a noticable shift in the way people related to AlphaGo's strategy once they understood that it was motivated by win-probability only
+    Just having a glimpse into it's internal mindset gave commentators a way to relate to the machine (which they appeared to fiind reassuring)
+    
+
+
+\section{Practicalities}
 
 
 \section{Conclusions}
 
+Contributions
+
+	Map current state-of-the-art to components of the Attention Schema theory
+
+	Describe how clarity of this mechanism allows for pause/restore
+
+	Point out the gap between requiring consciousness and (beyond) self-direction towards improvement
+
+
+
+
+Improving chatbot behaviour appears to give the greatest utility to developing models of the attention / motivations of actors
+
+  These models could be benchmarked - and competitions held (specifically for the representations built)
+  
+  Without that component, bots will struggle to relate well (or even understand the dialogue properly)
+  
+  Benefit in human-relatability would be a direct result
+    That positive element of empathy has little bearing on machines being able to acheive super-human levels of performance on other tasks
 
 
 
@@ -138,6 +269,18 @@ arXiv:1412.2306 (2014)
 Schmidhuber, J{\"u}rgen:
 Deep Learning in Neural Networks: An Overview.
 arXiv:1404.7828v4 (2014)
+
+
+\bibitem[2011]{GrazianoKastner}
+Michael S. A.   Graziano  and  Sabine   Kastner:
+Awareness as a perceptual model of attention
+Cognitive Neuroscience (2011), vol 2, no. 2, pp 125-127
+
+
+\bibitem[2013]{graziano2013consciousness}
+Graziano, Michael SA
+Consciousness and the social brain
+Oxford University Press, 2014
 
 \end{thebibliography}
 
