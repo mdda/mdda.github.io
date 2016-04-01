@@ -29,7 +29,16 @@ Empathy due to time-sharing of mental machinery in order to step into someone el
 
 
 Callibrated consciousness
-  Based on realism of modell of 'other'
+  Based on realism of models of 'other'
+  Depth of introspection can be naturally limited / ascertained
+  
   Ability to pause/save/restart 'self'
   Might simplify questions of 'rights'
+
+
+
+Lower hurdle than self-improving AGIs
+  No need to create novelty in decision-making policy, for instance
   
+Doesn't need full canvas of inputs (compare to LIDA, for instance)
+
