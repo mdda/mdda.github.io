@@ -52,7 +52,7 @@ This short note summarizes the Attention Schema theory,
 puts it in an up-to-date machine learning context, 
 and discusses some practical issues of conscious machines.
 
-\keywords{consciousness,attention schema,attention,chatbots}
+\keywords{consciousness, attention schema, awareness, chatbots}
 \end{abstract}
 %
 
@@ -79,52 +79,74 @@ and discusses some practical issues of conscious machines.
 
 \section{Introduction}
 
-The essence of Attention Schema theory is that "awareness is a description of attention".
-The background, and comparisons to a number of contrasting theories of consciousness,
-are presented in Graziano's \cite{graziano2013consciousness} book.  
-
-For concreteness, considering how a brain is `aware' of an apple,
-there are several functional steps :
+The essence of Attention Schema theory is that ``awareness is a description of 
+attention''\footnote{The background, and comparisons to a number of contrasting theories of consciousness,
+are presented in Graziano's \cite{graziano2013consciousness} book.}.
+For concreteness, we can describe how a brain can be `aware' of an apple,
+using several functional steps :
 
 \begin{description}
 \item[Input] - pixels representing the shape of the apple itself
 \item[Attention] - identifying the outline of recognisable objects in the image 
-\item[Recognition] - after some processing, activating an 'apple' label
+\item[Recognition] - after some processing, activating an `apple' label
 \item[Context] - every new input can be embellished with additional context (previous experiences, for instance)
 \item[Attention Schema] - a model of the brain's pattern of attention to represent what it is currently aware of
 \item[Responsiveness] - querying the Attention Schema to respond to questions, or direct further actions, etc
 \end{description}
 
-The step that is currently hypothetical is the form of the Attention Schema model.  
-However, its properties can be deduced from considering what human brains require
-for social interaction : a model of attention/motivation of others' brains.
+Of course, the step above that is currently unknown is the form of the Attention Schema model.  
+Importantly, though, many of this model's properties can be deduced from considering 
+what human brains require for social interaction.
 
-The theory suggests that consciousness is no bizarre byproduct -- it's a tool for regulating information in the brain.
+As a social animal, humans have gained significant adaptive advantage from 
+being able to model the attention and motivation of other humans.  
+%
+And this mechanism can be applied (at an even higher resolution) in 
+modelling the state of the self, which gives rise to another adaptive advantage
+in higher-order planning, for instance. 
+%
 
+%Just as human brains continually build models of other's 
 
-https://aeon.co/essays/can-we-make-consciousness-into-an-engineering-problem ::
+%The theory suggests that consciousness is no bizarre byproduct -- it's a tool for regulating information in the brain.
 
-We know that, but it doesn't. It possesses no information about how it was built. 
-Its internal models don't contain the information: ``By the way, we're a computing device that 
-accesses internal models, and our models are incomplete and inaccurate.''
-It's not even in a position to report that it has internal models, or that it's processing information at all.
- 
-The machine is captive to its internal models, so it can't arrive at any other conclusions.
-
-
-
-Graziano still writing about his `new theory' to promote it in popular press.
+%Graziano still writing about his `new theory' to promote it in popular press.
 
 
-\section{Attention}
+%Empathy due to time-sharing of mental machinery in order to step into someone else's shoes
 
-Vision CNN achievements
 
-Attention mechanisms replacing state-transfer in LSTMs
+\section{Current Components}
+
+In recent years, neural network methods have begun to bear fruit (after years
+of painstaking work - for a review see Schmidhuber \cite{SchmidhuberOverview}).
+%
+Under the broad heading of ``Deep Learning'', these techniques have yielded 
+enormous successes in problems previously thought to be beyond the scope of traditional computation.
+%
+For instance, the recognition of objects in computer vision 
+has progressed below human error-rates (for example the ImageNet competition, top-5 error rates
+have fallen from 27% in 2010 to less than 4% in \cite{MSRresnet}, where human-level performance is around 5%).
+
+Techniques from Deep Learning are now being applied with a surprising 
+level of success to such things as 
+image tracking (\cite{VisualAttention}), 
+speech recognition (\cite{SpeechAttention}), 
+language translation (\cite{TranslationAttention}) 
+and image captioning (\cite{ImageCaptioning}).
+
+One common feature of these techniques is that (either as a direct aim, or as a side-effect)
+the focus of the algorithm's attention is being determined, and can be examined in 
+conjunction with the other outputs being produced (such as the text being heard, or the 
+objects in the images being recognised).
+
+
 
 Captioning indicates that 'internal process' could be converted into prose
 
 Questions about image (or text) can be examined using their map of attention too
+
+Attention mechanisms replacing state-transfer in LSTMs
 
 
 Reinforcement learning sucesses have required the bulding of a model
@@ -136,8 +158,6 @@ of the opponent - although this is simplified by the assumption of mini-max acti
 Building a model of another actor is becoming (?) a necessasary feature of chatbot 
 Self-image can be built on same basis
 
-
-Empathy due to time-sharing of mental machinery in order to step into someone else's shoes
 
 
 Callibrated consciousness
@@ -179,6 +199,17 @@ Self-model should be 'relateable' in human terms to aid recognition
 
 
 \section{Practicalities}
+
+
+%https://aeon.co/essays/can-we-make-consciousness-into-an-engineering-problem ::
+
+We know that, but it doesn't. It possesses no information about how it was built. 
+Its internal models don't contain the information: ``By the way, we're a computing device that 
+accesses internal models, and our models are incomplete and inaccurate.''
+It's not even in a position to report that it has internal models, or that it's processing information at all.
+ 
+The machine is captive to its internal models, so it can't arrive at any other conclusions.
+
 
 
 \section{Conclusions}
@@ -274,13 +305,52 @@ arXiv:1404.7828v4 (2014)
 \bibitem[2011]{GrazianoKastner}
 Michael S. A.   Graziano  and  Sabine   Kastner:
 Awareness as a perceptual model of attention
-Cognitive Neuroscience (2011), vol 2, no. 2, pp 125-127
+Cognitive Neuroscience (2011), vol 2, no. 2, pp 125--127
 
 
 \bibitem[2013]{graziano2013consciousness}
 Graziano, Michael SA
 Consciousness and the social brain
 Oxford University Press, 2014
+
+
+%\bibitem[2015]{MSRimagenet}
+%He, Kaiming; Zhang, Xiangyu; Ren, Shaoqing; Sun, Jian
+%Delving Deep into Rectifiers: Surpassing Human-Level Performance on ImageNet Classification
+%arXiv:1502.01852 (2015)
+
+\bibitem[2015]{MSRresnet}
+He, Kaiming; Zhang, Xiangyu; Ren, Shaoqing; Sun, Jian
+Deep Residual Learning for Image Recognition
+arXiv:1512.03385 (2015)
+
+
+\bibitem[2016]{AlphaGo}
+Silver, D et al
+Mastering the game of Go with deep neural networks and tree search
+Nature (2016), vol 529, pp 484--503
+
+\bibitem[2011]{VisualAttention}
+{Denil}, M. and {Bazzani}, L. and {Larochelle}, H. and {de Freitas}, N.
+Learning where to Attend with Deep Architectures for Image Tracking
+arXiv:1109.3737 (2011)
+
+\bibitem[2014]{TranslationAttention}
+{Bahdanau}, D. and {Cho}, K. and {Bengio}, Y.
+Neural Machine Translation by Jointly Learning to Align and Translate
+arXiv:1409.0473 (2014)
+
+
+\bibitem[2015]{ImageCaptioning}
+{Xu}, K. and {Ba}, J. and {Kiros}, R. and {Cho}, K. and {Courville}, A. and {Salakhutdinov}, R. and {Zemel}, R. and {Bengio}, Y.
+Show, Attend and Tell: Neural Image Caption Generation with Visual Attention
+arXiv:1502.03044 (2015)
+
+\bibitem[2015]{SpeechAttention}
+{Chorowski}, J. and {Bahdanau}, D. and {Serdyuk}, D. and {Cho}, K. and {Bengio}, Y.
+Attention-Based Models for Speech Recognition
+arXiv:1506.07503 (2015)
+
 
 \end{thebibliography}
 
