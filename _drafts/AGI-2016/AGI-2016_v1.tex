@@ -99,10 +99,10 @@ Importantly, though, many of this model's properties can be deduced from conside
 what human brains require for social interaction.
 
 As a social animal, humans have gained significant adaptive advantage from 
-being able to model the attention and motivation of other humans.  
+being able to model the attention and motivation of other humans (an ``Other Model'').  
 %
 And this mechanism can be applied (at an even higher resolution) in 
-modelling the state of the self, which gives rise to another adaptive advantage
+modelling the state of the self (the ``Self Model''), which gives rise to another adaptive advantage
 in higher-order planning, for instance. 
 %
 
@@ -126,37 +126,77 @@ enormous successes in problems previously thought to be beyond the scope of trad
 %
 For instance, the recognition of objects in computer vision 
 has progressed below human error-rates (for example the ImageNet competition, top-5 error rates
-have fallen from 27% in 2010 to less than 4% in \cite{MSRresnet}, where human-level performance is around 5%).
+have fallen from 27\% in 2010 to less than 4\% in \cite{MSRresnet}, where human-level performance is around 5\%).
 
 Techniques from Deep Learning are now being applied with a surprising 
 level of success to such things as 
-image tracking (\cite{VisualAttention}), 
-speech recognition (\cite{SpeechAttention}), 
-language translation (\cite{TranslationAttention}) 
-and image captioning (\cite{ImageCaptioning}).
+image tracking (Denil et al, \cite{VisualAttention}), 
+speech recognition (Chorowski et al, \cite{SpeechAttention}), 
+language translation (Bahdanau et al, \cite{TranslationAttention}) 
+and image captioning (Xu et al, \cite{ImageCaptioning}).
+%
+One common feature of these techniques is that
+the focus of the algorithm's attention is being determined 
+(either as a direct aim, or as a side-effect), 
+and can be examined in conjunction with the other outputs being produced - 
+such as the text being heard, or the objects in the images being recognised.
 
-One common feature of these techniques is that (either as a direct aim, or as a side-effect)
-the focus of the algorithm's attention is being determined, and can be examined in 
-conjunction with the other outputs being produced (such as the text being heard, or the 
-objects in the images being recognised).
+%Attention mechanisms replacing state-transfer in LSTMs
+
+%Questions about image (or text) can be examined using their map of attention too
+
+%Captioning indicates that `internal process' could be converted into prose
+
+In addition to these explicit attention models, effective language translation
+engines have been built (Sutskever et al, \cite{SequenceToSequence}) that reduce
+input sentences to a complex `internal state' that can then be further processed into
+output prose.  The same `backend' can be applied to the output of image recognition
+systems to produce captions too (Karpathy \& Fei-Fei, \cite{karpathy2014deep}).
+%
+This suggests that it should be possible to expose the inner workings of 
+a complex system in (for instance) prose, if required - and, potentially,
+introspect on that stream of text too.
 
 
 
-Captioning indicates that 'internal process' could be converted into prose
+% https://github.com/farizrahman4u/seq2seq
 
-Questions about image (or text) can be examined using their map of attention too
+% Chatbot systems are pretty rudimentary
+% https://www.chatbots.org/ai_zone/viewthread/2153/
 
-Attention mechanisms replacing state-transfer in LSTMs
+In terms of modelling the attention of an outside party, the clearest 
+example is in game-play (the most exciting recent instance being Silver et al, \cite{AlphaGo}).
+%
+However, this is hardly the kind of Other Model that is contemplated in
+the Attention Schema theory, since the pure adversarial relationship given in 
+this case can be hugely simplified by using a rationality assumption and \emph{minimax}.
+
+%Even with more complex/hidden state-spaces (such as Poker), the degree to which 
+%an Other Model needs to incorporate an accurate
 
 
-Reinforcement learning sucesses have required the bulding of a model
-of the opponent - although this is simplified by the assumption of mini-max actions
+%Reinforcement learning sucesses have required the bulding of a model
+%of the opponent - although this is simplified by the assumption of mini-max actions
 
-  Hidden state complicate this - though there still are (?) optimal strategies, even in the face of uncertainty
+%  Hidden state complicate this - though there still are (?) optimal strategies, even in the face of uncertainty
+
+%Building a model of another actor is now becoming (?) a necessasary feature of chatbot 
+
+%Self-image can be built on same basis
 
 
-Building a model of another actor is becoming (?) a necessasary feature of chatbot 
-Self-image can be built on same basis
+Beyond games, the clearest example of machine-human interaction where having an Other Model
+would be beneficial is in the area of chatbots, where conversations often occur in which the 
+themes are built up from sentence fragments; the human partner may not
+write particularly clearly; and (as internet-facing bots discover) partners
+may behave in an adversarial fashion.
+
+
+\section{Models : Self and Other}
+
+
+
+\section{Practicalities}
 
 
 
@@ -172,7 +212,6 @@ Self image could also include honest description of differences from humans
   including an acceptance of being self-contained (and paused, etc)
 
 
-\section{Models : Self and Other}
 
 
 Lower hurdle than self-improving AGIs
@@ -198,7 +237,6 @@ Self-model should be 'relateable' in human terms to aid recognition
     
 
 
-\section{Practicalities}
 
 
 %https://aeon.co/essays/can-we-make-consciousness-into-an-engineering-problem ::
@@ -250,11 +288,11 @@ Improving chatbot behaviour appears to give the greatest utility to developing m
 %(https://youtu.be/PyKzO0MF1zI?t=12m36s)
 
 \bibitem[2014]{Bengio-et-al-2014-Book}
-Bengio, Yoshua; Goodfellow, Ian J. and Courville, Aaron:
-Deep Learning.
-% http://www.iro.umontreal.ca/~bengioy/dlbook/disentangling.html
-(http://www.iro.umontreal.ca/\mytilde{}bengioy/dlbook)
-MIT Press (2014, in prep.)
+%Bengio, Yoshua; Goodfellow, Ian J. and Courville, Aaron:
+%Deep Learning.
+%% http://www.iro.umontreal.ca/~bengioy/dlbook/disentangling.html
+%(http://www.iro.umontreal.ca/\mytilde{}bengioy/dlbook)
+%MIT Press (2014, in prep.)
 
 %\bibitem[2014]{PCAnet}
 %Tsung-Han Chan; Kui Jia; Shenghua Gao; Jiwen Lu; Zinan Zeng; Yi Ma:
@@ -286,21 +324,10 @@ MIT Press (2014, in prep.)
 %Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift.
 %arXiv:1502.03167v3 (2015)
 
-\bibitem[2014]{karpathy2014deep}
-Karpathy, Andrej and Fei-Fei, Li:
-Deep visual-semantic alignments for generating image descriptions.
-arXiv:1412.2306 (2014)
-
 %\bibitem[2014]{Lillicrap-random-matrix}
 %Lillicrap, Timothy P.; Cownden, Daniel; Tweed, Douglas B. and Akerman, Colin J.:
 %Random feedback weights support learning in deep neural networks.
 %arXiv:1411.0247 (2014)
-
-\bibitem[2014]{SchmidhuberOverview}
-Schmidhuber, J{\"u}rgen:
-Deep Learning in Neural Networks: An Overview.
-arXiv:1404.7828v4 (2014)
-
 
 \bibitem[2011]{GrazianoKastner}
 Michael S. A.   Graziano  and  Sabine   Kastner:
@@ -319,21 +346,28 @@ Oxford University Press, 2014
 %Delving Deep into Rectifiers: Surpassing Human-Level Performance on ImageNet Classification
 %arXiv:1502.01852 (2015)
 
+\bibitem[2014]{SchmidhuberOverview}
+Schmidhuber, J{\"u}rgen:
+Deep Learning in Neural Networks: An Overview.
+arXiv:1404.7828v4 (2014)
+
+
 \bibitem[2015]{MSRresnet}
 He, Kaiming; Zhang, Xiangyu; Ren, Shaoqing; Sun, Jian
 Deep Residual Learning for Image Recognition
 arXiv:1512.03385 (2015)
 
 
-\bibitem[2016]{AlphaGo}
-Silver, D et al
-Mastering the game of Go with deep neural networks and tree search
-Nature (2016), vol 529, pp 484--503
-
 \bibitem[2011]{VisualAttention}
 {Denil}, M. and {Bazzani}, L. and {Larochelle}, H. and {de Freitas}, N.
 Learning where to Attend with Deep Architectures for Image Tracking
 arXiv:1109.3737 (2011)
+
+\bibitem[2015]{SpeechAttention}
+{Chorowski}, J. and {Bahdanau}, D. and {Serdyuk}, D. and {Cho}, K. and {Bengio}, Y.
+Attention-Based Models for Speech Recognition
+arXiv:1506.07503 (2015)
+
 
 \bibitem[2014]{TranslationAttention}
 {Bahdanau}, D. and {Cho}, K. and {Bengio}, Y.
@@ -341,15 +375,30 @@ Neural Machine Translation by Jointly Learning to Align and Translate
 arXiv:1409.0473 (2014)
 
 
+
 \bibitem[2015]{ImageCaptioning}
 {Xu}, K. and {Ba}, J. and {Kiros}, R. and {Cho}, K. and {Courville}, A. and {Salakhutdinov}, R. and {Zemel}, R. and {Bengio}, Y.
 Show, Attend and Tell: Neural Image Caption Generation with Visual Attention
 arXiv:1502.03044 (2015)
 
-\bibitem[2015]{SpeechAttention}
-{Chorowski}, J. and {Bahdanau}, D. and {Serdyuk}, D. and {Cho}, K. and {Bengio}, Y.
-Attention-Based Models for Speech Recognition
-arXiv:1506.07503 (2015)
+
+\bibitem[2015]{SequenceToSequence}
+{Sutskever}, I. and {Vinyals}, O. and {Le}, Q.~V.
+Sequence to Sequence Learning with Neural Networks
+arXiv:1409.3215 (2014)
+
+\bibitem[2014]{karpathy2014deep}
+Karpathy, Andrej and Fei-Fei, Li:
+Deep visual-semantic alignments for generating image descriptions.
+arXiv:1412.2306 (2014)
+
+
+
+\bibitem[2016]{AlphaGo}
+Silver, D et al
+Mastering the game of Go with deep neural networks and tree search
+Nature (2016), vol 529, pp 484--503
+
 
 
 \end{thebibliography}
