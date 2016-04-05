@@ -12,7 +12,7 @@ published: true
 ---
 {% include JB/setup %}
 
-### Download the ```cuDNN`` archive
+### Download the ```cuDNN``` archive
 
 You'll need to have an Nvidia Developer account.
 
