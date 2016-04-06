@@ -90,79 +90,9 @@ If that works, then we can move on to fixing the issue within Theano...
 
 
 
-## The Theano Part
-
-###  Installation of ``libgpuarray``
-
-To install the bleeding edge ``libgpuarray`` into your ``virtualenv``, first 
-compile the ``.so`` and ``.a`` libraries that the module creates, 
-and put them in a sensible place :
-
-{% highlight bash %}
-. env/bin/activate
-cd env
-git clone https://github.com/Theano/libgpuarray.git
-cd libgpuarray
-mkdir Build
-cd Build
-cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
-make
-sudo make install
-{% endhighlight %}
-
-This will likely complain about not finding ``clBLAS``, which isn't a problem here.
-Although, if you know you will require ``clBLAS`` in the future 
-(and this is for advanced/experimental users only),
-see my [OpenCL post](http://blog.mdda.net/oss/2014/11/02/building-clblas/), 
-since you need to install this before running ``cmake`` above).
-
-It may also complain about :
-
-{% highlight bash %}
-    runtime library [libOpenCL.so.1] in /usr/lib64 may be hidden by files in:
-      /usr/local/cuda/lib64
-{% endhighlight %}
-
-This won't affect the CUDA functionality (its impact on OpenCL is still TBD).
-
-Next, install the Python component (after going into the same ``virtualenv``) : 
-
-{% highlight bash %}
-cd env/libgpuarray/
-python setup.py build
-python setup.py install
-{% endhighlight %}
-
-And then test it from within a regular user directory (using the same ``virtualenv``) :
-
-{% highlight python %}
-python
-import pygpu
-pygpu.init('cuda0')
-{% endhighlight %}
-
-A good result is something along the lines of :
-
-{% highlight python %}
-<pygpu.gpuarray.GpuContext object at 0x7f1547e79550>
-{% endhighlight %}
-
-{% highlight python %}
-## Errors seen :
-#(A) 'cuda'      :: 
-##  pygpu.gpuarray.GpuArrayException: API not initialized = WEIRD
-
-#(B) 'cuda0'     :: 
-##  pygpu.gpuarray.GpuArrayException: No CUDA devices available = GO BACK...
-
-#(C) 'opencl0:0' :: 
-##  RuntimeError: Unsupported kind: opencl (if OpenCL library not found)
-{% endhighlight %}
-
-
 ### Theano stuff
 
-Store the following to a file ``gpu_check.py`` : 
+As before, store the following to a file ``gpu_check.py`` : 
 
 {% highlight python %}
 from theano import function, config, shared, sandbox
@@ -188,6 +118,12 @@ if numpy.any([isinstance(x.op, T.Elemwise) for x in f.maker.fgraph.toposort()]):
 else:
     print 'Used the gpu'
 {% endhighlight %}
+
+
+But now, we need to supply an additional flag to ```NVCC```, deep inside :
+
+
+
 
 And then run, successively :
 
@@ -221,16 +157,5 @@ THEANO_FLAGS=mode=FAST_RUN,floatX=float32,device=cuda0   python gpu_check.py
 """ output is ::
 *FAILURE...*
 """
-{% endhighlight %}
-
-
-### Check on the usage of GPU / BLAS
-
-{% highlight bash %}
-TP=`python -c "import os, theano; print os.path.dirname(theano.__file__)"`
-THEANO_FLAGS=mode=FAST_RUN,floatX=float32,device=gpu python ${TP}/misc/check_blas.py
-
-## GPU : 0.14s (GeForce GTX 760)
-## CPU : 5.72s (i7-4770 CPU @ 3.40GHz)
 {% endhighlight %}
 
