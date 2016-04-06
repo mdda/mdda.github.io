@@ -1,6 +1,6 @@
 ---
-date: 2015-07-07
-title: Nvidia (7.0) installation for Theano on Fedora 22
+date: 2016-04-07
+title: Nvidia (7.0) installation for Theano on Fedora 23
 category: OSS
 tags:
 - fedora
@@ -8,124 +8,15 @@ tags:
 - Nvidia
 - theano
 layout: post
-published: true
+published: false
 ---
 {% include JB/setup %}
 
-### Below is "Nvidia's way" (modified to actually work)
+### Extra Fix required for Nvidia NVCC to work under Fedora 23
 
 Even though Nvidia still hasn't provided RPMs for Fedora 22 (which was launched 
 a couple of months ago as-of this post date, having been in Alpha for 3 months prior),
 we can fix up their code as it installs.
-
-This write-up is simply a condensed version of 
-[Dr Donald Kinghorn's excellent write-up](https://www.pugetsystems.com/labs/articles/Install-NVIDIA-CUDA-on-Fedora-22-with-gcc-5-1-654/)
-(with which it's probably best to follow along, opened in a separate tab) plus
-additional instructions concerning the building of Theano.
-
-### Set up a scratch directory 
-
-As ```root``` : 
-
-{% highlight bash %}
-cd ~   # pwd = /root/
-mkdir fedora22-cuda
-cd fedora22-cuda/
-{% endhighlight %}
-
-
-### Nvidia Driver download (for later)
-
-Go to the [Nvidia Driver download page](http://www.nvidia.com/content/DriverDownload-March2009/confirmation.php?url=/XFree86/Linux-x86_64/352.21/NVIDIA-Linux-x86_64-352.21.run&lang=us&type=GeForce), and grab the 
-76Mb driver package, for installation later...
-
-### CUDA Driver download (installed first)
-
-Download the 1Gb CUDA local installer for RHEL7 (1Gb):
-
-{% highlight bash %}
-CUDA7=http://developer.download.nvidia.com/compute/cuda/7_0
-RPMDEB=${CUDA7}/Prod/local_installers/rpmdeb
-wget ${RPMDEB}/cuda-repo-rhel7-7-0-local-7.0-28.x86_64.rpm
-{% endhighlight %}
-
-### Install CUDA using Nvidia's repo
-
-{% highlight bash %}
-cd ~/fedora22-cuda # pwd=/root/fedora-cuda/
-dnf install cuda-repo-rhel7-7-0-local-7.0-28.x86_64.rpm 
-dnf install cuda
-{% endhighlight %}
-
-
-### Fix the path &amp; library directories globally
-
-{% highlight bash %}
-echo 'export PATH=$PATH:/usr/local/cuda/bin' >> /etc/profile.d/cuda.sh
-ls -l /usr/local/cuda/lib64
-echo '/usr/local/cuda/lib64' >> /etc/ld.so.conf.d/cuda.conf
-ldconfig
-{% endhighlight %}
-
-
-### Now install the graphics drivers
-
-To enable the 'DKMS' part of the installer will run, make sure you have the kernel module compilation parts available:
-
-{% highlight bash %}
-dnf install kernel-devel
-{% endhighlight %}
-
-**Before this point, the Nvidia software has not actually checked for the presence of an Nvidia video card.**
-
-Now run the Nvidia installer (look at the notes in this section for answer-hints):
-
-{% highlight bash %}
-chmod 755 NVIDIA-Linux-x86_64-352.21.run 
-./NVIDIA-Linux-x86_64-352.21.run 
-{% endhighlight %}
-
-*  Say "Yes" to the question about registering with DKMS
-
-*  Say "Yes" to the question about 32-bit libs
-
-It should now compile the NVIDIA kernel modules...
-
-*  Say "No" to the question about running nvidia-xconfig!
-
-Now reboot.
-
-
-### Test the installation
-
-To see that your driver is installed and working properly, check that the kernel modules are there :
-
-{% highlight bash %}
-sudo lsmod | grep nv
-# Output::
-nvidia_uvm             77824  0
-nvidia               8564736  1 nvidia_uvm
-drm                   331776  4 i915,drm_kms_helper,nvidia
-{% endhighlight %}
-
-Check on the CUDA compiler:
-
-{% highlight bash %}
-/usr/local/cuda/bin/nvcc --version
-# Output::
-nvcc: NVIDIA (R) Cuda compiler driver
-Copyright (c) 2005-2015 NVIDIA Corporation
-Built on Mon_Feb_16_22:59:02_CST_2015
-Cuda compilation tools, release 7.0, V7.0.27
-{% endhighlight %}
-
-And an actual check on the card itself :
-
-{% highlight bash %}
-sudo nvidia-smi -L
-# Output::
-GPU 0: GeForce GTX 760 (UUID: GPU-b8075eeb-56ff-4595-7901-eef770de8296)
-{% endhighlight %}
 
 
 ### Fix the CUDA headers to accept new ```gcc```
@@ -157,10 +48,9 @@ cd bin/x86_64/linux/release/
 {% endhighlight %}
 
 
-### Cleaning up
 
-If everything tests out Ok above, then the ``/root/fedora22-cuda`` directory 
-can be safely deleted.
+
+
 
 
 ## The Theano Part
@@ -307,9 +197,3 @@ THEANO_FLAGS=mode=FAST_RUN,floatX=float32,device=gpu python ${TP}/misc/check_bla
 ## CPU : 5.72s (i7-4770 CPU @ 3.40GHz)
 {% endhighlight %}
 
-
-### OpenCL stuff (for another day)
-
-{% highlight bash %}
-dnf -y install clinfo ocl-icd opencl-tools 
-{% endhighlight %}
