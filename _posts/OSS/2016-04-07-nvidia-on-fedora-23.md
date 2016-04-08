@@ -14,14 +14,14 @@ published: true
 
 ### Extra Fix required for Nvidia NVCC to work under Fedora 23
 
-Fedora 23 changed a default ```gcc``` ABI setting from that in Fedora 22.  The previous value
-was chosen to match earlier versions of ```gcc``` as closely as possible, so this 
+Fedora 23 changed a default ```gcc``` ABI setting from that which was used in Fedora 22.  The previous value
+was chosen so that the default compiler behaviour matched earlier versions of ```gcc``` as closely as possible, so this 
 change actually broke systems that want the earlier behaviour : In our case, Nvidia's tool chain.
 
-This has to be fixed, by adding additional options into the ```NVCC``` invocations.  Doing this
-is not so easy...
+This has to be fixed by adding additional options into the ```NVCC``` invocations.  Doing this
+is not so easy, since Theano (ideally) insulates the programmer from these kinds of details.
 
-These instructions build on the <a href="/oss/2015/07/07/nvidia-on-fedora-22" target="_blank">previous Fedora 22 version</a>.
+The following instructions build upon the <a href="/oss/2015/07/07/nvidia-on-fedora-22" target="_blank">previous Fedora 22 version</a>.
 
 
 ### Fix the CUDA headers to accept new ```gcc``` (5.3.1 for Fedora 23)
@@ -98,13 +98,13 @@ Using the same ```gpu_check.py``` as for the Fedora 22 instructions, the followi
 
 {% highlight python %}
 THEANO_FLAGS=mode=FAST_RUN,floatX=float32,device=gpu   python gpu_check.py
-""" output is ::
+""" output is (among other stuff) ::
 *FAILURE...*
 """
 {% endhighlight %}
 
 
-This should work, though, if we supply an additional flag to ```NVCC```, when it is invoked deep inside ```Theano``` (which means the following should WORK) :
+This should work, though, if we supply an additional flag to ```NVCC```, when it is invoked deep inside ```Theano``` :
 
 {% highlight bash %}
 THEANO_FLAGS=mode=FAST_RUN,floatX=float32,device=gpu,nvcc.flags='-D_GLIBCXX_USE_CXX11_ABI=0'   python gpu_check.py
@@ -120,7 +120,7 @@ Used the gpu
 
 ### Theano stuff - within a program
 
-To achieve the same effect programmatically, an extra line after the standard 'preamble' : 
+To achieve the same effect via program code within a module that uses ```Theano```, add an extra line after the standard Python import 'preamble' : 
 
 {% highlight python %}
 import theano
