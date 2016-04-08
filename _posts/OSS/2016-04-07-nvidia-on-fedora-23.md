@@ -8,7 +8,7 @@ tags:
 - Nvidia
 - theano
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -20,6 +20,8 @@ change actually broke systems that want the earlier behaviour : In our case, Nvi
 
 This has to be fixed, by adding additional options into the ```NVCC``` invocations.  Doing this
 is not so easy...
+
+These instructions build on the <a href="/oss/2015/07/07/nvidia-on-fedora-22" target="_blank">previous Fedora 22 version</a>.
 
 
 ### Fix the CUDA headers to accept new ```gcc``` (5.3.1 for Fedora 23)
@@ -37,7 +39,7 @@ In file ``/usr/local/cuda-7.0/include/host_config.h``, look to make the followin
 
 ### Prove that it's still broken
 
-As a regular user, let's fix up one of the CUDA samples from within a clean directory :
+As a regular user, let's try out one of the CUDA samples from within a clean directory (and then fix it):
 
 {% highlight bash %}
 cd ~        # for instance
@@ -90,57 +92,22 @@ If that works, then we can move on to fixing the issue within Theano...
 
 
 
-### Theano stuff
+### Theano stuff - command line
 
-As before, store the following to a file ``gpu_check.py`` : 
+Using the same ```gpu_check.py``` as for the Fedora 22 instructions, the following command-line should FAIL :
 
 {% highlight python %}
-from theano import function, config, shared, sandbox
-import theano.tensor as T
-import numpy
-import time
-
-vlen = 10 * 30 * 768  # 10 x #cores x # threads per core
-iters = 1000
-
-rng = numpy.random.RandomState(22)
-x = shared(numpy.asarray(rng.rand(vlen), config.floatX))
-f = function([], T.exp(x))
-print f.maker.fgraph.toposort()
-t0 = time.time()
-for i in xrange(iters):
-    r = f()
-t1 = time.time()
-print 'Looping %d times took' % iters, t1 - t0, 'seconds'
-print 'Result is', r
-if numpy.any([isinstance(x.op, T.Elemwise) for x in f.maker.fgraph.toposort()]):
-    print 'Used the cpu'
-else:
-    print 'Used the gpu'
-{% endhighlight %}
-
-
-But now, we need to supply an additional flag to ```NVCC```, deep inside :
-
-
-
-
-And then run, successively :
-
-{% highlight bash %}
-THEANO_FLAGS=mode=FAST_RUN,floatX=float32,device=cpu   python gpu_check.py
+THEANO_FLAGS=mode=FAST_RUN,floatX=float32,device=gpu   python gpu_check.py
 """ output is ::
-[Elemwise{exp,no_inplace}(<TensorType(float32, vector)>)]
-Looping 1000 times took 3.35117197037 seconds
-Result is [ 1.23178029  1.61879337  1.52278066 ...,  2.20771813  2.29967761 1.62323284]
-Used the cpu
+*FAILURE...*
 """
 {% endhighlight %}
 
-and 
+
+This should work, though, if we supply an additional flag to ```NVCC```, when it is invoked deep inside ```Theano``` (which means the following should WORK) :
 
 {% highlight bash %}
-THEANO_FLAGS=mode=FAST_RUN,floatX=float32,device=gpu   python gpu_check.py
+THEANO_FLAGS=mode=FAST_RUN,floatX=float32,device=gpu,nvcc.flags='-D_GLIBCXX_USE_CXX11_ABI=0'   python gpu_check.py
 """ output is ::
 Using gpu device 0: GeForce GTX 760
 [GpuElemwise{exp,no_inplace}(<CudaNdarrayType(float32, vector)>), HostFromGpu(GpuElemwise{exp,no_inplace}.0)]
@@ -150,12 +117,18 @@ Used the gpu
 """
 {% endhighlight %}
 
-but 
 
-{% highlight bash %}
-THEANO_FLAGS=mode=FAST_RUN,floatX=float32,device=cuda0   python gpu_check.py
-""" output is ::
-*FAILURE...*
-"""
+### Theano stuff - within a program
+
+To achieve the same effect programmatically, an extra line after the standard 'preamble' : 
+
+{% highlight python %}
+import theano
+from theano import tensor
+
+floatX = theano.config.floatX = 'float32'
+
+## Required for fedora 23 compilation of NVCC code...
+theano.config.nvcc.flags = '-D_GLIBCXX_USE_CXX11_ABI=0'
 {% endhighlight %}
 

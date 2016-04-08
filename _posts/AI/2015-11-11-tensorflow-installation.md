@@ -6,7 +6,7 @@ category: AI
 tags:
 - tensorflow
 - python
-- nvidia
+- Nvidia
 layout: post
 published: true
 ---
