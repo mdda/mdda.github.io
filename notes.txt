@@ -264,7 +264,7 @@ NIPS ideas :
       https://github.com/shawntan?tab=repositories
       https://blog.wtf.sg/about/
   
-  spaCy: AGPL
+  spaCy: --AGPL-- - Now MIT
     Same basic engine as the 500-lines blog post (which I've already trans-coded)
     Docs
       http://honnibal.github.io/spaCy/
@@ -382,7 +382,7 @@ Alternative :
 
       Additional NER methods, so that can do voting, and ensembling
     
-  In-Process
+  In-Process  :: ICONIP 2016 ? (was ICLR)
     Binary re-representation of word embeddings
     
   In-Process
@@ -397,11 +397,16 @@ Alternative :
       (Obviously) read the writing Chinese paper some more
       
   IDEA
-    Character-based NER
+    Character-based NER (done by LSTM paper 2016-03)
   
   IDEA 
     Imagination for visual networks
+  
+
+  CoNLL 2016 : 
+    More labels for better beginning and ending characteristics ?
     
+  
 
 Talks by Venue : 
   FOSSASIA  18-20 March 2016
