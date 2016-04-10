@@ -94,7 +94,7 @@ If that works, then we can move on to fixing the issue within Theano...
 
 ### Theano stuff - command line
 
-Using the same ```gpu_check.py``` as for the Fedora 22 instructions, the following command-line should FAIL :
+Using the same ```gpu_check.py``` as given in the Fedora 22 instructions, the following command-line should FAIL :
 
 {% highlight python %}
 THEANO_FLAGS=mode=FAST_RUN,floatX=float32,device=gpu   python gpu_check.py
@@ -104,7 +104,7 @@ THEANO_FLAGS=mode=FAST_RUN,floatX=float32,device=gpu   python gpu_check.py
 {% endhighlight %}
 
 
-This should work, though, if we supply an additional flag to ```NVCC```, when it is invoked deep inside ```Theano``` :
+This should work, though, if we supply an additional flag related to ```NVCC``` (for when it is invoked deep inside ```Theano```) :
 
 {% highlight bash %}
 THEANO_FLAGS=mode=FAST_RUN,floatX=float32,device=gpu,nvcc.flags='-D_GLIBCXX_USE_CXX11_ABI=0'   python gpu_check.py
