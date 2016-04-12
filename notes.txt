@@ -381,12 +381,20 @@ Alternative :
         Or degree of agreement from corpus builders
 
       Additional NER methods, so that can do voting, and ensembling
+
     
   In-Process  :: ICONIP 2016 ? (was ICLR)
     Binary re-representation of word embeddings
     
-  In-Process
+  In-Process  :: To be monetised?
     Palm tree detection
+
+
+  CoNLL 2016 : 
+    More labels for better beginning and ending characteristics ?
+    Dual LSTM question is pretty-much resolved, though
+    Unsupervised chunking?
+    
     
   IDEA
     Middle-out learning of grammar embedding, as above
@@ -403,14 +411,11 @@ Alternative :
     Imagination for visual networks
   
 
-  CoNLL 2016 : 
-    More labels for better beginning and ending characteristics ?
-    
   
 
 Talks by Venue : 
   FOSSASIA  18-20 March 2016
-   -- Now in own repo : https://github.com/mdda/fossasia-2016_deep-learning
+    -- Now in own repo : https://github.com/mdda/fossasia-2016_deep-learning
     
   PyCon     23-25 June 2016
   
