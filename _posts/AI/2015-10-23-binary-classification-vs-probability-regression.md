@@ -5,7 +5,7 @@ title: Binary Classification vs Probability Regression
 tagline: \{0,1\} works better than (0,1)
 date: 2015-10-23
 tags: [NeuralNetworks]
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -33,13 +33,13 @@ However (and we're still trying to weigh up why) :
 *  Overall, the second method (i.e. two actual outputs for two distinct classes) works much better
 
 
-Possible Reasons
+Possible Reasons / Puzzles
 ---------------------------
 
 *  Two outputs implies twice the number of weights in a dense network leading up to it - 
    so larger learning capacity, but this doesn't explain :
    
-*  One output networks seemed to suffer from problems with stability during training.  It may be 
+*  Single-output networks seemed to suffer from problems with stability during training.  It may be 
    analogous  to think of differential pair signalling, as opposed to 'absolute' 
    signal values.  Propagating 'matched pairs' of training signals may reduce a network's
    tendency to overshoot with high learning rates.  But this doesn't explain :
@@ -48,16 +48,3 @@ Possible Reasons
    may be an inter-layer thing going on, since dropout also encourages training signals to  
    'route around' neurons that aren't chosen.
    
-
-Side-Note : Pixelwise Segmentation
--------------------------------------------
-
-After lots of fumbling around, it's fairly clear that Theano libraries (Blocks, Lasagne, to name two)
-are not really looking at the pixelwise segmentation problem.  And most CNN work doesn't
-get there either : what we set out to do simply didn't match the components that others have created.
-
-End result : Either step through the image manually, or use a scatter-gun approach to pick 
-patches for training / testing.  It works pretty quickly, even though it doesn't have the appeal of
-whole-image-at-a-time training.
-
-
