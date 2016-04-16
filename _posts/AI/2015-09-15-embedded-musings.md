@@ -11,8 +11,10 @@ published: false
 
 
 
-Musings : ICLR
+Musings : Idea for ICLR 
 ------------------------
+
+NB: This work should now be repurposed for ICONIP 2016 (if possible by 24-April)
 
 
 *  Refactoring a complex model into a simpler/sparser one seems likely to have generalization benefits,
