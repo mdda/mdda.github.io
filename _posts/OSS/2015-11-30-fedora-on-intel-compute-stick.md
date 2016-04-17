@@ -25,8 +25,9 @@ However, my distribution preference is Fedora
 Installing Fedora on the device turned into (yet another) weekend of frustration and small gains...
 
 
-There's now a [new version of the Intel Compute stick](http://linuxgizmos.com/latest-intel-compute-sticks-use-skylake-and-cherry-trail-cpus/) out, 
-which probably renders working on this one moot (except for the fact that I hate to see computer hardware going to waste).
+> There's now a [new version of the Intel Compute stick](http://linuxgizmos.com/latest-intel-compute-sticks-use-skylake-and-cherry-trail-cpus/) out, 
+> which may render working on this one moot (except for the fact that I hate to see computer hardware going to waste).  Certainly, 
+> things are going to get more difficult to find on the web.
 
 
 ### Getting WiFi going
@@ -117,11 +118,28 @@ wlan0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         TX packets 41  bytes 6535 (6.3 KiB)
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 
-
-
-WOOHOO !
+### WOOHOO !
 
 {% endhighlight %}
+
+
+#### Worth watching : 
+
+*   Complete freeze on Intel Compute Stick, sometimes IRQ disabled #33 
+    *   https://github.com/hadess/rtl8723bs/issues/33
+
+
+
+### Getting the HDMI Audio going
+
+...
+
+
+
+
+------------------
+
+
 
 Very interesting :
 
