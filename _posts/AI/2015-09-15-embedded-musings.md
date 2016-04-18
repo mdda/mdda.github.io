@@ -660,3 +660,40 @@ https://www.reddit.com/r/MachineLearning/comments/3oiefh/quantization_then_reduc
     http://arxiv.org/abs/1509.06569
     RE-READ
     
+    
+Just a mo : What's this ? ::
+
+  Learning Effective and Interpretable Semantic Models using Non-Negative Sparse Embedding
+    Brian Murphy, Partha Pratim Talukdar, Tom Mitchell
+      Machine Learning Department
+      Carnegie Mellon University
+      {bmurphy,ppt,tom}@cs.cmu.edu
+    In Proc. of COLING
+    http://www.cs.cmu.edu/~bmurphy/NNSE/nnse_coling12.pdf
+
+    http://www.cs.cmu.edu/~bmurphy/NNSE/
+
+    == v. cool
+
+    
+  Sparse Overcomplete Word Vector Representations  
+    Manaal Faruqui, Yulia Tsvetkov, Dani Yogatama, Chris Dyer, Noah Smith
+      Manaal Faruqui <mfaruqui@cs.cmu.edu>
+      {mfaruqui,ytsvetko,dyogatama,cdyer,nasmith}@cs.cmu.edu
+    Proceedings of ACL 2015
+    http://arxiv.org/abs/1506.02004
+    http://arxiv.org/pdf/1506.02004v1.pdf
+    
+    https://github.com/mfaruqui/sparse-coding
+
+    == v. cool
+
+
+  Documents and Dependencies: an Exploration of Vector Space Models for Semantic Composition.
+    Alona Fyshe, Partha Talukdar, Brian Murphy and Tom Mitchell
+      {afyshe|ppt|bmurphy|tom.mitchell}@cs.cmu.edu
+    CoNLL, 2013 - aclweb.org
+    http://www.cs.cmu.edu/~afyshe/papers/conll2013/deps_and_docs.pdf
+    ==  Meh
+    
+    
