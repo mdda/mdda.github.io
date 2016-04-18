@@ -688,6 +688,14 @@ Just a mo : What's this ? ::
 
     == v. cool
 
+  A Generative Word Embedding Model and its Low Rank Positive Semidefinite Solution
+    Shaohua Li, Jun Zhu, Chunyan Miao
+      lish0018@ntu.edu.sg, dcszj@tsinghua.edu.cn, ascymiao@ntu.edu.s
+    http://arxiv.org/pdf/1508.03826v1.pdf
+  
+    == has review of previous work
+  
+  
 
   Documents and Dependencies: an Exploration of Vector Space Models for Semantic Composition.
     Alona Fyshe, Partha Talukdar, Brian Murphy and Tom Mitchell
@@ -697,4 +705,9 @@ Just a mo : What's this ? ::
     
     ==  Meh (from the perspective of usefulness to this embedding project)
     
+  Supervised Fine Tuning for Word Embedding with Integrated Knowledge
+      Xuefeng Yang, Kezhi Mao  
+    http://arxiv.org/abs/1505.07931
+  
+    ==  Innovative paper that learns rankings on vector representations as a fine-tuning mechanism...
     
