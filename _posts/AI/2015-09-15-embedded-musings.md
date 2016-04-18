@@ -694,6 +694,7 @@ Just a mo : What's this ? ::
       {afyshe|ppt|bmurphy|tom.mitchell}@cs.cmu.edu
     CoNLL, 2013 - aclweb.org
     http://www.cs.cmu.edu/~afyshe/papers/conll2013/deps_and_docs.pdf
-    ==  Meh
+    
+    ==  Meh (from the perspective of usefulness to this embedding project)
     
     
