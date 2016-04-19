@@ -686,6 +686,18 @@ Just a mo : What's this ? ::
     http://arxiv.org/pdf/1506.02004v1.pdf
     
     https://github.com/mfaruqui/sparse-coding
+      -- Needs ~20Gb of RAM to run GloVE-300 x 400k
+      Next steps:
+        Write loader for output 
+          - check on # of non-zero entries
+          - sort and profile them somehow
+            - Is there a wide variety of sparsity numbers
+            - What is range of largest value
+            - Is there a standard decay pattern
+            - Or decay rate? (1 bit ~ 90% of last one)
+            - Or banding (say 4 bits?)
+      
+        Potentially : Create Theano version
 
     == v. cool
 
