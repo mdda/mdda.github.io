@@ -662,6 +662,7 @@ https://www.reddit.com/r/MachineLearning/comments/3oiefh/quantization_then_reduc
     
     
 Just a mo : What's this ? ::
+  -r--------. 1 andrewsm andrewsm   391982 Nov 13 18:57 Coling-2012_SparseEmbeddingOfEnglish_nnse_coling12.pdf
 
   Learning Effective and Interpretable Semantic Models using Non-Negative Sparse Embedding
     Brian Murphy, Partha Pratim Talukdar, Tom Mitchell
@@ -688,14 +689,14 @@ Just a mo : What's this ? ::
 
     == v. cool
 
+
   A Generative Word Embedding Model and its Low Rank Positive Semidefinite Solution
     Shaohua Li, Jun Zhu, Chunyan Miao
       lish0018@ntu.edu.sg, dcszj@tsinghua.edu.cn, ascymiao@ntu.edu.s
     http://arxiv.org/pdf/1508.03826v1.pdf
   
     == has review of previous work
-  
-  
+ 
 
   Documents and Dependencies: an Exploration of Vector Space Models for Semantic Composition.
     Alona Fyshe, Partha Talukdar, Brian Murphy and Tom Mitchell
