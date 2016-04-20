@@ -706,12 +706,17 @@ Just a mo : What's this ? ::
             Can to meta-search for better parameters
           Disadvantages : 
             May waste time (compared to alternative 'goodness' measures)
-            
-            
-          
-          
 
     == v. cool
+
+
+      mirai 2010 : has convergence, etc      
+        GPL3 (with MatLab) : http://spams-devel.gforge.inria.fr/downloads.html
+          
+
+      Constructive Idea : 
+        Non-negative vectors can't be subtracted/etc like regular ones
+        So the A-is-to-B as X-is-to-? test (which requires 'algebra') needs to be re-considered
 
 
   A Generative Word Embedding Model and its Low Rank Positive Semidefinite Solution
