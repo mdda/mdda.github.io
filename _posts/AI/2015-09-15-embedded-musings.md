@@ -724,6 +724,33 @@ Just a mo : What's this ? ::
           (though seem to require same number of dictionary vectors, which is strange)
 
 
+      http://deeplearning4j.org/word2vec
+      
+      https://code.google.com/archive/p/word2vec/
+        https://s3.amazonaws.com/dl4j-distribution/GoogleNews-vectors-negative300.bin.gz
+      
+      
+      ** -> has worthwhile report on analogies too
+      Linguistic Regularities in Sparse and Explicit Word Representations
+        https://www.cs.bgu.ac.il/~yoavg/publications/conll2014analogies.pdf
+          Though it was not mentioned in the paper, Mikolov et al. (2013c) used 
+            PAIRDIRECTION for solving the semantic analogies of the SemEval task, and
+            3COSADD for solving the syntactic analogies
+      
+      ** Big review, casting some doubt on GloVE's superiority to word2vec
+      Improving Distributional Similarity with Lessons Learned from Word Embeddings
+        http://www.aclweb.org/anthology/Q15-1016
+        https://bitbucket.org/omerlevy/hyperwords
+      
+      epsilon = 0.001
+      
+      Reasoning about Linguistic Regularities in Word Embeddings using Matrix Manifolds
+        https://people.cs.umass.edu/~mahadeva/papers/word-emb-grassmann.pdf
+      
+      https://github.com/habernal/dkpro-web-comments/blob/master/xxx.web.comments.clustering/src/main/java/xxx/web/comments/clustering/dl/Word2VecReader.java
+
+
+
   A Generative Word Embedding Model and its Low Rank Positive Semidefinite Solution
     Shaohua Li, Jun Zhu, Chunyan Miao
       lish0018@ntu.edu.sg, dcszj@tsinghua.edu.cn, ascymiao@ntu.edu.s
