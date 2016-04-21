@@ -717,6 +717,11 @@ Just a mo : What's this ? ::
       Constructive Idea : 
         Non-negative vectors can't be subtracted/etc like regular ones
         So the A-is-to-B as X-is-to-? test (which requires 'algebra') needs to be re-considered
+        
+      Also :
+        Shouldn't the embedding be created from the word vectors with weighting?
+        At the moment, 'low ranked' words are just 'lighter'
+          (though seem to require same number of dictionary vectors, which is strange)
 
 
   A Generative Word Embedding Model and its Low Rank Positive Semidefinite Solution
