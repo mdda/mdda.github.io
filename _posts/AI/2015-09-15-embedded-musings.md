@@ -761,7 +761,10 @@ Just a mo : What's this ? ::
       
       https://github.com/habernal/dkpro-web-comments/blob/master/xxx.web.comments.clustering/src/main/java/xxx/web/comments/clustering/dl/Word2VecReader.java
 
-
+      Binary Similarities measures:
+        http://www.ibm.com/support/knowledgecenter/SSLVMB_20.0.0/com.ibm.spss.statistics.help/syn_proximities_measures_binary_data.htm
+      
+      
 
   A Generative Word Embedding Model and its Low Rank Positive Semidefinite Solution
     Shaohua Li, Jun Zhu, Chunyan Miao
