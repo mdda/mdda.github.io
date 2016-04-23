@@ -714,6 +714,16 @@ Just a mo : What's this ? ::
         GPL3 (with MatLab) : http://spams-devel.gforge.inria.fr/downloads.html
           
 
+  Winner-Take-All Autoencoders
+    Alireza Makhzani, Brendan Frey (University of Toronto)
+      makhzani, frey@psi.toronto.edu
+
+    Nice idea for enforcing sparseness :
+      Choose highest k% from 'hidden layer' (the sparse binary layer) to be 'on' (others zero)
+      But do the k% accross each column in a batch, rather than accross the entries in each vector
+        Reduces the 'useless column' problem, by enforcing that each column gets used 'enough'
+
+
       Constructive Idea : 
         Non-negative vectors can't be subtracted/etc like regular ones
         So the A-is-to-B as X-is-to-? test (which requires 'algebra') needs to be re-considered
@@ -722,6 +732,8 @@ Just a mo : What's this ? ::
         Shouldn't the embedding be created from the word vectors with weighting?
         At the moment, 'low ranked' words are just 'lighter'
           (though seem to require same number of dictionary vectors, which is strange)
+
+
 
 
       http://deeplearning4j.org/word2vec
