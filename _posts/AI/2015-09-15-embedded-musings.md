@@ -723,7 +723,27 @@ Just a mo : What's this ? ::
       But do the k% accross each column in a batch, rather than accross the entries in each vector
         Reduces the 'useless column' problem, by enforcing that each column gets used 'enough'
 
+    code 
+      http://www.comm.utoronto.ca/~makhzani/
+      http://www.comm.utoronto.ca/~makhzani/winner_take_all_autoencoders_demo.html
+      
+      more explicit (includes precursor to imported code... ): 
+        https://github.com/stephenbalaban/convnet
 
+        forked to :
+        https://github.com/mdda/convnet
+
+      even better (has lifetime_sparsity parameter) :
+        https://github.com/kalyanp/SparseNet
+
+        forked to :
+          https://github.com/mdda/SparseNet
+
+        lifetime_sparsity defined at :
+          https://github.com/mdda/SparseNet/blob/master/sparsenet/nn_utils.py#L47
+
+
+  TODO::
       Constructive Idea : 
         Non-negative vectors can't be subtracted/etc like regular ones
         So the A-is-to-B as X-is-to-? test (which requires 'algebra') needs to be re-considered
