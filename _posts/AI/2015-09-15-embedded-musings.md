@@ -741,6 +741,13 @@ Just a mo : What's this ? ::
 
         lifetime_sparsity defined at :
           https://github.com/mdda/SparseNet/blob/master/sparsenet/nn_utils.py#L47
+          however, this 'sort' appears to be executed on the CPU, so one has to wonder :
+            Do the GPU-CPU transfers make sense
+            We only need to transfer back the 'kth percentile' cutoff
+            But it's not clear whether 'if>' statements can execute on the GPU either
+            Probably, a mask gets defined on the CPU and sent back
+            
+
 
 
   TODO::
