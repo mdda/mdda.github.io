@@ -757,6 +757,7 @@ Just a mo : What's this ? ::
           BUT :  gradients immediately reduce the values going into middle 'sparse' layer
                  which means that many of them are <0
           Solution?  Attempt to batch-normalize the input to the layer, so that mean(:, each column) is zero
+            -- appears to have stabilised the training sufficiently for learning to occur...
 
 
 
