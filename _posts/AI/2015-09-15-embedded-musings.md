@@ -751,7 +751,12 @@ Just a mo : What's this ? ::
             average (can be done on GPU)
             is hard-sigmoid a GPU operation?  Could use it to zero out elements (GPU-wise)
             ?? T.maximum(x,0)
-          To test logic, need a simple CLI-oriented example to see whether broadcasting is being done correctly
+          DONE : To test logic, need a simple CLI-oriented example to see whether broadcasting is being done correctly
+          
+        Problem : Initial values/tests prove that calculations work
+          BUT :  gradients immediately reduce the values going into middle 'sparse' layer
+                 which means that many of them are <0
+          Solution?  Attempt to batch-normalize the input to the layer, so that mean(:, each column) is zero
 
 
 
