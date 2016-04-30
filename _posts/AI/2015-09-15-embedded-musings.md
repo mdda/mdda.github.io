@@ -741,17 +741,20 @@ Just a mo : What's this ? ::
 
         lifetime_sparsity defined at :
           https://github.com/mdda/SparseNet/blob/master/sparsenet/nn_utils.py#L47
-          however, this 'sort' appears to be executed on the CPU, so one has to wonder :
+          However, this 'sort' appears to be executed on the CPU, so one has to wonder :
             Do the GPU-CPU transfers make sense?
             We only need to transfer back the 'kth percentile' cutoff
             But it's not clear whether 'if>' statements can execute on the GPU either
             Probably, a mask gets defined on the CPU and sent back
-          alternatively:
+            DONE : Test logic, using a simple CLI-oriented example to see whether broadcasting is being done correctly
+            
+          Alternatively, create a GPU-friendly version:
+            batch-normalize the data (so that is it mean()==0, std()==1)
             max() (can be done on the GPU)
-            average (can be done on GPU)
-            is hard-sigmoid a GPU operation?  Could use it to zero out elements (GPU-wise)
-            ?? T.maximum(x,0)
-          DONE : To test logic, need a simple CLI-oriented example to see whether broadcasting is being done correctly
+            Pick 'lo' and 'hi' estimates of where the value hurdle should be to match the sparsity constraint
+              checked in numpy : Best estimates of tail %ages are ratios w.r.t max()
+            Simply  interpolate linearly to guess the hurdle that corresponds to 'idea-sparsity'
+            Check whether this works on the GPU...
           
         Problem : Initial values/tests prove that calculations work
           BUT :  gradients immediately reduce the values going into middle 'sparse' layer
