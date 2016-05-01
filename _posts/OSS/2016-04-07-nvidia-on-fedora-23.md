@@ -132,3 +132,13 @@ floatX = theano.config.floatX = 'float32'
 theano.config.nvcc.flags = '-D_GLIBCXX_USE_CXX11_ABI=0'
 {% endhighlight %}
 
+
+### Theano stuff - in the ```~/.theanorc``` file
+
+To achieve the same effect using your ```.theanorc``` file, add the following section (the config file format doesn't seem to object to the second '='):
+
+{% highlight bash %}
+[nvcc]
+flags=-D_GLIBCXX_USE_CXX11_ABI=0
+{% endhighlight %}
+
