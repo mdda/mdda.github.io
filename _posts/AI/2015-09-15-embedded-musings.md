@@ -755,6 +755,10 @@ Just a mo : What's this ? ::
               checked in numpy : Best estimates of tail %ages are ratios w.r.t max()
             Simply  interpolate linearly to guess the hurdle that corresponds to 'idea-sparsity'
             Check whether this works on the GPU...
+              Yes - it does compile to GPU code (44x speedup) but straightforward approach doesn't work
+                Shape of distribution changes over time, so N() statistics/approximations quickly fail after training
+                Answer : Do a GPU-usable iterative hunt (binary search)
+                  This works well
           
         Problem : Initial values/tests prove that calculations work
           BUT :  gradients immediately reduce the values going into middle 'sparse' layer
