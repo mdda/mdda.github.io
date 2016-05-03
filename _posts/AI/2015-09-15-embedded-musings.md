@@ -765,7 +765,14 @@ Just a mo : What's this ? ::
                  which means that many of them are <0
           Solution?  Attempt to batch-normalize the input to the layer, so that mean(:, each column) is zero
             -- appears to have stabilised the training sufficiently for learning to occur...
+            
+        Problem : Solution doesn't want to improve beyond '30' l2 error for sparsity=5%
+          Idea1 : Use a sparsity parameter that asymptotically approaches sparsity=5% when l2 error <'10'
+          Idea2 : Add additional fully-connected layers in the pre- and post- processing, to see whether limit is there
+        
 
+# http://dangrover.com/blog/2016/04/20/bots-wont-replace-apps.html
+# https://news.ycombinator.com/item?id=11557166
 
 
   TODO::
