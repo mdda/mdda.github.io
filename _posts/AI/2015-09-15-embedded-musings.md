@@ -191,6 +191,29 @@ Also, sizing the number of co-occurrence entries :
       -  Cooccurrence file :  7,700,418,528 bytes, 481,276,158 elements (i.e. 16 bytes per line)
  
 
+
+Pretrained vectors : 
+  https://github.com/3Top/word2vec-api#where-to-get-a-pretrained-models
+  
+  Socher / GloVe :
+    http://www.socher.org/index.php/Main/ImprovingWordRepresentationsViaGlobalContextAndMultipleWordPrototypes
+    Training corpus :
+      http://nlp.stanford.edu/data/WestburyLab.wikicorp.201004.txt.bz2
+         Download started 00:33...
+         
+  Levy :
+    https://levyomer.wordpress.com/2014/04/25/dependency-based-word-embeddings/
+    data = vectors(?) :
+      http://u.cs.biu.ac.il/~yogo/data/syntemb/deps.words.bz2
+  
+  Google :
+    https://code.google.com/archive/p/word2vec/
+    data = word2vec vectors :
+      https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit?usp=sharing
+
+
+
+
 Interesting Compression Papers
 --------------------------------
 
