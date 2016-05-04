@@ -203,8 +203,36 @@ Pretrained vectors :
          
   Levy :
     https://levyomer.wordpress.com/2014/04/25/dependency-based-word-embeddings/
+    paper :
+      https://levyomer.files.wordpress.com/2014/04/dependency-based-word-embeddings-acl-2014.pdf
+    demo :
+      http://irsrv2.cs.biu.ac.il:9998/?word=hogwarts
     data = vectors(?) :
-      http://u.cs.biu.ac.il/~yogo/data/syntemb/deps.words.bz2
+      wget http://u.cs.biu.ac.il/~yogo/data/syntemb/deps.words.bz2
+      # -rw-rw-r--. 1 andrewsm andrewsm 320870380 Apr 26  2014 deps.words.bz2
+      bunzip2 deps.words.bz2 
+      # -rw-rw-r--. 1 andrewsm andrewsm 860005638 Apr 26  2014 deps.words
+      wc deps.words 
+      # 174015  52378515 860005638 deps.words
+
+    Testing :
+      python test.py --embedding /mnt/data/home/andrewsm/OpenSource/Corpuses/Levy/deps.words.hkl
+      # Final  semantic stats: count=, 8599, score=, 16.73%, diff=,-63.14%
+      # Final syntactic stats: count=,10609, score=, 52.92%, diff=,-14.50%
+      #         Overall stats: count=,19208, score=, 36.72%, diff=,-36.27% <<
+      
+      python test.py --embedding /mnt/data/home/andrewsm/OpenSource/Corpuses/Levy/bow5.words.hkl 
+      # Final  semantic stats: count=, 8649, score=, 62.60%, diff=,-16.81%
+      # Final syntactic stats: count=,10609, score=, 62.02%, diff=, -5.39%
+      #         Overall stats: count=,19258, score=, 62.28%, diff=,-10.52% <<
+
+      python test.py --embedding /mnt/data/home/andrewsm/OpenSource/Corpuses/Levy/bow2.words.hkl 
+      # Final  semantic stats: count=, 8649, score=, 54.54%, diff=,-24.87%
+      # Final syntactic stats: count=,10609, score=, 63.16%, diff=, -4.25%
+      #         Overall stats: count=,19258, score=, 59.29%, diff=,-13.51% <<
+
+      == Disappointing
+      
   
   Google :
     https://code.google.com/archive/p/word2vec/
