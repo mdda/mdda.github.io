@@ -66,55 +66,37 @@ state that, when factorizing \\( Y = X_1 X_2 X_3 X_4 \dotsb \\) with \\( Y \\) d
 
 Measurement of the quality of word vectors : The "Google Analogy Task" (```./demo-word-accuracy.sh```).
   In GloVe's dictionary (400k words, Wikipedia) required for google analogy task: 
-    [65248]=debugging
-    [66259]=banjul
-    [67976]=weirdest
-    [68388]=litas
-    [74226]=stepbrother
-    [75093]=stepsister
-    [75324]=belorussian
-    [76348]=paramaribo
-    [77608]=thimphu
-    [79404]=roseau
-    [79750]=vaduz
-    [80119]=rial
-    [87260]=debug
-    [91043]=lats
-    [92099]=nuuk
-    [97581]=funafuti
-    [98623]=kwanza
-    [133989]=tastiest
-    [142260]=hryvnia
-    [155000]=belmopan
-    [177894]=uninformative
-    [394434]=denar
+  
+| word      | GloVe corpus rank  |   1-billion rank |   1-billion count |
+| :---      |  --: |   --: |   --: |
+| debugging           |     65,248 |  110,644 |   507 |
+| banjul              |     66,259 |  128,206 |   380 |
+| weirdest            |     67,976 |   49,236 | 2,527 |
+| litas               |     68,388 |  120,279 |   431 |
+| stepbrother         |     74,226 |   64,985 | 1,477 |
+| stepsister          |     75,093 |   71,601 | 1,214 |
+| belorussian         |     75,324 |  220,954 |   136 |
+| paramaribo          |     76,348 |  113,295 |   485 |
+| thimphu             |     77,608 |   77,904 | 1,023 |
+| roseau              |     79,404 |  170,684 |   219 |
+| vaduz               |     79,750 |   89,261 |   776 |
+| rial                |     80,119 |  141,755 |   313 |
+| debug               |     87,260 |  126,917 |   388 |
+| lats                |     91,043 |   74,481 | 1,120 |
+| nuuk                |     92,099 |  110,826 |   506 |
+| funafuti            |     97,581 |  237,156 |   120 |
+| kwanza              |     98,623 |  237,476 |   120 |
+| tastiest            |    133,989 |   75,694 | 1,084 |
+| hryvnia             |    142,260 |   98,777 |   636 |
+| belmopan            |    155,000 |  223,631 |   133 |
+| uninformative       |    177,894 |  148,755 |   284 |
+| denar               |    394,434 |      n/a |   <20 |
     
   The problem with this is that 1-billion-word benchmark corpus only has 302k words with a frequency > 20
     ```grep -n '^rial ' counts.words.vocab```
-    [110644]debugging (507)
-    [128206]banjul (380)
-    [49236]weirdest (2527)
-    [120279]litas (431)
-    [64985]stepbrother (1477)
-    [71601]stepsister (1214)
-    [220954]belorussian (136)
-    [113295]paramaribo (485)
-    [77904]thimphu (1023)
-    [170684]roseau (219)
-    [89261]vaduz (776)
-    [141755]rial (313)
-    [126917]=debug (388)
-    [74481]=lats (1120)
-    [110826]=nuuk (506)
-    [237156]=funafuti (120)
-    [237476]=kwanza (120)
-    [75694]=tastiest (1084)
-    [98777]=hryvnia (636)
-    [223631]=belmopan (133)
-    [148755]=uninformative (284)
-    [NONE]  =denar (<20)
 
-  But, practically, 2^18 (=262k word) as a vocabulary works for all-but-1 words in the test.
+  But, practically, 2^18 (=262,144 words) as a vocabulary works for all-but-1 words in the test, 
+  and there, in the 1-billion-word corpus, we're right at the 100-instances level.
   
 
 Pretrained vector models available via [Google's project page]( https://code.google.com/p/word2vec/ ).
