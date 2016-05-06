@@ -65,6 +65,57 @@ state that, when factorizing \\( Y = X_1 X_2 X_3 X_4 \dotsb \\) with \\( Y \\) d
 
 
 Measurement of the quality of word vectors : The "Google Analogy Task" (```./demo-word-accuracy.sh```).
+  In GloVe's dictionary (400k words, Wikipedia) required for google analogy task: 
+    [65248]=debugging
+    [66259]=banjul
+    [67976]=weirdest
+    [68388]=litas
+    [74226]=stepbrother
+    [75093]=stepsister
+    [75324]=belorussian
+    [76348]=paramaribo
+    [77608]=thimphu
+    [79404]=roseau
+    [79750]=vaduz
+    [80119]=rial
+    [87260]=debug
+    [91043]=lats
+    [92099]=nuuk
+    [97581]=funafuti
+    [98623]=kwanza
+    [133989]=tastiest
+    [142260]=hryvnia
+    [155000]=belmopan
+    [177894]=uninformative
+    [394434]=denar
+    
+  The problem with this is that 1-billion-word benchmark corpus only has 302k words with a frequency > 20
+    ```grep -n '^rial ' counts.words.vocab```
+    [110644]debugging (507)
+    [128206]banjul (380)
+    [49236]weirdest (2527)
+    [120279]litas (431)
+    [64985]stepbrother (1477)
+    [71601]stepsister (1214)
+    [220954]belorussian (136)
+    [113295]paramaribo (485)
+    [77904]thimphu (1023)
+    [170684]roseau (219)
+    [89261]vaduz (776)
+    [141755]rial (313)
+    [126917]=debug (388)
+    [74481]=lats (1120)
+    [110826]=nuuk (506)
+    [237156]=funafuti (120)
+    [237476]=kwanza (120)
+    [75694]=tastiest (1084)
+    [98777]=hryvnia (636)
+    [223631]=belmopan (133)
+    [148755]=uninformative (284)
+    [NONE]  =denar (<20)
+
+  But, practically, 2^18 (=262k word) as a vocabulary works for all-but-1 words in the test.
+  
 
 Pretrained vector models available via [Google's project page]( https://code.google.com/p/word2vec/ ).
 
