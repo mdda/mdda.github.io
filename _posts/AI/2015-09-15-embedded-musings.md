@@ -67,7 +67,7 @@ state that, when factorizing \\( Y = X_1 X_2 X_3 X_4 \dotsb \\) with \\( Y \\) d
 Measurement of the quality of word vectors : The "Google Analogy Task" (```./demo-word-accuracy.sh```).
   In GloVe's dictionary (400k words, Wikipedia) required for google analogy task: 
   
-| word      | GloVe corpus rank  |   1-billion rank |   1-billion count |
+| word      | GloVe corpus rank  |   Levy 1-billion rank |   1-billion 'levy count' |
 | :---      |  --: |   --: |   --: |
 | debugging           |     65,248 |  110,644 |   507 |
 | banjul              |     66,259 |  128,206 |   380 |
@@ -97,6 +97,12 @@ Measurement of the quality of word vectors : The "Google Analogy Task" (```./dem
 
   But, practically, 2^18 (=262,144 words) as a vocabulary works for all-but-1 words in the test, 
   and there, in the 1-billion-word corpus, we're right at the 100-instances level.
+  
+  
+  Wikipedia 2014 + Gigaword 5 (6B tokens, 400K vocab, uncased, 50d, 100d, 200d, & 300d vectors, 822 MB download): glove.6B.zip
+    http://dumps.wikimedia.org/enwiki/20140102/  
+    https://catalog.ldc.upenn.edu/LDC2011T07
+  
   
 
 Pretrained vector models available via [Google's project page]( https://code.google.com/p/word2vec/ ).
