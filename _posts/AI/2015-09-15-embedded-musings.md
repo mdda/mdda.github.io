@@ -102,12 +102,30 @@ Measurement of the quality of word vectors : The "Google Analogy Task" (```./dem
   Interestingly, using the GloVe code produces different counts, and ```VOCAB_MIN_COUNT``` needs to be set to ```12```
   in order to have a vocabulary of more the 2^18 in size.
 
+
+2^18 = 262,144
+2^17 = 131,072
+2^16 =  65,536
+
   
   *  Wikipedia 2014 + Gigaword 5 (6B tokens, 400K vocab, uncased, 50d, 100d, 200d, & 300d vectors, 822 MB download): glove.6B.zip
     
-    *  http://dumps.wikimedia.org/enwiki/20140102/  
+    *  http://dumps.wikimedia.org/enwiki/20140102/   ## (has now disappeared)
+       *  https://dumps.wikimedia.org/enwiki/20160407/
     *  https://catalog.ldc.upenn.edu/LDC2011T07
+       *  English Gigaword Fifth Edition : 4,032,686k words  (fees: $3k+)
   
+  Alternative source of sentences (wikipedia):
+    http://www.drmaciver.com/2009/12/i-want-one-meelyun-sentences/
+      wget http://d3t3fd87rd28b5.cloudfront.net/one_meelyun_sentences.bz2
+      bunzip2 one_meelyun_sentences.bz2
+      wc one_meelyun_sentences  # == 22MM words (i.e. SMALL)
+      # 1,000,000  22,554,383 139,738,765 one_meelyun_sentences
+
+  
+    wc wikipedia_utf8_filtered_20pageviews.txt 
+    # 463,819  607,722,567 3,309,022,822 wikipedia_utf8_filtered_20pageviews.txt
+
   
 
 Pretrained vector models available via [Google's project page]( https://code.google.com/p/word2vec/ ).
