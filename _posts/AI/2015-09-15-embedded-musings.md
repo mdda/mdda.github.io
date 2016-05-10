@@ -103,9 +103,9 @@ Measurement of the quality of word vectors : The "Google Analogy Task" (```./dem
   in order to have a vocabulary of more the 2^18 in size.
 
 
-2^18 = 262,144
-2^17 = 131,072
-2^16 =  65,536
+  2^18 = 262,144
+  2^17 = 131,072
+  2^16 =  65,536
 
   
   *  Wikipedia 2014 + Gigaword 5 (6B tokens, 400K vocab, uncased, 50d, 100d, 200d, & 300d vectors, 822 MB download): glove.6B.zip
@@ -123,8 +123,12 @@ Measurement of the quality of word vectors : The "Google Analogy Task" (```./dem
       # 1,000,000  22,554,383 139,738,765 one_meelyun_sentences
 
   
+  Wikipedia snapshot (cleaned)
     wc wikipedia_utf8_filtered_20pageviews.txt 
     # 463,819  607,722,567 3,309,022,822 wikipedia_utf8_filtered_20pageviews.txt
+
+    Adding this to 1-billion-words produces a decent-sized (1.5bn actual words) corpus, that scores OK on google sem/syn measure
+
 
   Ontonotes 5.0
     https://catalog.ldc.upenn.edu/LDC2013T19
