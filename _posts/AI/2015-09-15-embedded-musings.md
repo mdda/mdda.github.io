@@ -126,6 +126,8 @@ Measurement of the quality of word vectors : The "Google Analogy Task" (```./dem
     wc wikipedia_utf8_filtered_20pageviews.txt 
     # 463,819  607,722,567 3,309,022,822 wikipedia_utf8_filtered_20pageviews.txt
 
+  Ontonotes 5.0
+    https://catalog.ldc.upenn.edu/LDC2013T19
   
 
 Pretrained vector models available via [Google's project page]( https://code.google.com/p/word2vec/ ).
