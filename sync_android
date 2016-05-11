@@ -6,3 +6,13 @@ jmtpfs _android
 unison
 
 fusermount -u _android
+
+
+# Teclast P80 3G
+#   http://www.teclast.com/en/
+
+# http://bbs.teclast.com/forum-93-2.html
+# http://bbs.teclast.com/thread-395418-1-2.html
+
+# root Masters:
+#   http://bbs.teclast.com/thread-255676-1-2.html  
