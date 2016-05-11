@@ -1,0 +1,8 @@
+#! /bin/bash
+
+mkdir -p android
+jmtpfs _android
+
+unison
+
+fusermount -u _android
