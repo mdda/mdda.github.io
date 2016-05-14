@@ -301,6 +301,19 @@ Pretrained vectors :
 
       == Disappointing
       
+      http://www.aclweb.org/anthology/Q15-1016
+        This is the compare/contrast paper  
+
+      BUT :: Codebase can be re-vamped to do all the tests on a given 'simple' vectors.txt file
+
+        And GloVe representation (words only) corresponds (approximately) to their results (a little better, but for 1 horiffic one)
+
+  
+      Also: 
+        https://www.cs.bgu.ac.il/~yoavg/publications/conll2014analogies.pdf
+          has CosAdd and CosMul, but not full range of tests
+        
+      
   
   Google :
     https://code.google.com/archive/p/word2vec/
