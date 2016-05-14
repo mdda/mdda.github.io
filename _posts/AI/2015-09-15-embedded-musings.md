@@ -306,7 +306,9 @@ Pretrained vectors :
 
       BUT :: Codebase can be re-vamped to do all the tests on a given 'simple' vectors.txt file
 
-        And GloVe representation (words only) corresponds (approximately) to their results (a little better, but for 1 horiffic one)
+        GloVe representation (words only) corresponds (approximately) to their results (a little better, but for 1 horiffic one)
+        GloVe representation (words + context) are about the same + / - (surprisingly)
+        word2vec (words, not context) also make sense compared to the paper (mostly better than GloVe)
 
   
       Also: 
