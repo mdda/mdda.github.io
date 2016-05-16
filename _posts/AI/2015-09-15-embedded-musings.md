@@ -11,18 +11,15 @@ published: false
 
 
 
-Musings : Idea for ICLR 
-------------------------
-
-NB: This work should now be repurposed for ICONIP 2016 (if possible by 24-April)
-
+Musings : Idea for Sparse Embeddings Paper
+------------------------------------------------
 
 *  Refactoring a complex model into a simpler/sparser one seems likely to have generalization benefits,
-since Occam's razor can be cleanly applied.  Can the information content be used to impute the factorization?
+   since Occam's razor can be cleanly applied.  Can the information content be used to impute the factorization?
 
 *  Wouldn't it be nice to impute a descriptive sparse (e.g. 2-3% of ~10k of activations) version of the 
-(say) 500 reals embedding vectors, in such a way that sense-dependencies could lead to improvements
-among mutually-related concepts?  
+    (say) 500 reals embedding vectors, in such a way that sense-dependencies could lead to improvements
+    among mutually-related concepts?  
    +  (so embed &rarr; factorize &rarr; re-embed (with factorised structure to boost senses of all words) &rarr; factorize, etc)
 
 But :
@@ -31,8 +28,7 @@ But :
 
 *  How could the effectiveness of the factorization be measured?
 
-Looking at the cosine similarity of the (English Wikipedia-derived) embeddings was 
-a bit of a let-down : 
+Looking at the cosine similarity of the (English Wikipedia-derived) embeddings was a bit of a let-down : 
 
 *  the ranking wasn't too bad within a cluster near a particular word
 *  but the absolute value of the first result didn't bear much relationship 
@@ -910,9 +906,9 @@ Just a mo : What's this ? ::
 
 
   TODO::
-      Constructive Idea : 
+      Constructive Idea (next paper?): 
         Non-negative vectors can't be subtracted/etc like regular ones
-        So the A-is-to-B as X-is-to-? test (which requires 'algebra') needs to be re-considered
+        So the A-is-to-B as X-is-to-?Y? analogy test (which requires 'algebra') needs to be re-considered
         
       Also :
         Shouldn't the embedding be created from the word vectors with weighting?
@@ -941,6 +937,7 @@ Just a mo : What's this ? ::
         https://bitbucket.org/omerlevy/hyperwords
       
       epsilon = 0.001
+
       
       Reasoning about Linguistic Regularities in Word Embeddings using Matrix Manifolds
         https://people.cs.umass.edu/~mahadeva/papers/word-emb-grassmann.pdf
