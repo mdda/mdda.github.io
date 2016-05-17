@@ -383,31 +383,35 @@ Alternative :
       Additional NER methods, so that can do voting, and ensembling
 
     
-  In-Process  :: ICONIP 2016 ? (was ICLR)
+  DONE :: ICONIP 2016 ? (was ICLR)
     Binary re-representation of word embeddings
     
+  Idea :
+    Geometry for word analogies, tailored for sparse vectors
+    
+  
   In-Process  :: To be monetised?
     Palm tree detection
 
 
-  CoNLL 2016 : 
+  Idea : 
     More labels for better beginning and ending characteristics ?
     Dual LSTM question is pretty-much resolved, though
     Unsupervised chunking?
     
     
-  IDEA
+  IDEA :
     Middle-out learning of grammar embedding, as above
       Stumbling block is testability of 'segmentation/structure' learned
   
-  IDEA
+  IDEA :
     Think about 'internal model' method of learning
       (Obviously) read the writing Chinese paper some more
       
-  IDEA
+  IDEA :
     Character-based NER (done by LSTM paper 2016-03)
   
-  IDEA 
+  IDEA :
     Imagination for visual networks
   
 
@@ -437,3 +441,17 @@ End result : Either step through the image manually, or use a scatter-gun approa
 patches for training / testing.  It works pretty quickly, even though it doesn't have the appeal of
 whole-image-at-a-time training.
 
+
+2015-12-14
+  P80 3G (K3H5) Android 5.1 firmware download
+  V1.05_20151204 (android5.1)
+  
+  "telecommunications"
+    P80 3G (K3H5) -Android5.1-V1.05.rar
+      http://pan.baidu.com/s/1kUj2cx5
+      File size: 487.6M
+
+  "netcom"
+    P80 3G (K3H5)-Android5.1-V1.05.rar
+      http://pan.baidu.com/s/1kUj2cx5
+      Gives up at : 524.3 kB (524,288 bytes)    
