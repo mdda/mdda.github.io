@@ -410,7 +410,33 @@ Alternative :
         >>> closest_to(woman + (king - man))
         king, queen, woman, mswati, vajiravudh, thoden, margrethe, thelred, gojong, mongkut, zvonimir, norodom, wenceslaus, urraca, monarch, hecuba, athelstan, eirik, princess, archelaus
 
+        >>> count_non_zero(man)
+        95
+        >>> count_non_zero(woman)
+        97
+        >>> count_non_zero(king)
+        96
+        >>> count_non_zero(queen)
+        104
 
+        >>> count_non_zero(man+woman)
+        147
+      
+        >>> count_non_zero(man*woman)
+        45
+        >>> count_non_zero(woman*queen)
+        15
+        >>> count_non_zero(man*king)
+        20
+        >>> count_non_zero(king*queen)
+        31
+
+        >>> count_non_zero((man+woman)*king)
+        24
+        >>> count_non_zero(man*king)
+        20
+        >>> count_non_zero(woman*king)
+        17
 
   
   In-Process  :: To be monetised?
