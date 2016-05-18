@@ -395,6 +395,23 @@ Alternative :
       
       but want to think only about non-negative 'things'
         need to set up REPL fns to quickly sort through combinations / filters / conjunctions, etc
+
+      regular geometry:
+        >>> closest_to(man)
+        man, woman, girl, person, men, teenager, she, friend, he, father, her, boy, someone, mother, him, his, victim, son, who, guy
+        >>> closest_to(woman)
+        woman, man, girl, mother, teenager, daughter, wife, women, her, person, she, girlfriend, friend, men, husband, widow, couple, boy, someone, victim
+
+        >>> closest_to(king)
+        king, queen, henry, mswati, mongkut, eirik, charles, vajiravudh, thoden, wenceslaus, zvonimir, athelstan, vladislaus, thelred, gojong, prince, jayavarman, kalkaua, sweyn, pomare
+        >>> closest_to(queen)
+        queen, princess, elizabeth, king, margrethe, empress, lady, sister, prince, sirikit, mary, cixi, monarch, daughter, duchess, olten, mother, infanta, rania, widow
+
+        >>> closest_to(woman + (king - man))
+        king, queen, woman, mswati, vajiravudh, thoden, margrethe, thelred, gojong, mongkut, zvonimir, norodom, wenceslaus, urraca, monarch, hecuba, athelstan, eirik, princess, archelaus
+
+
+
   
   In-Process  :: To be monetised?
     Palm tree detection
