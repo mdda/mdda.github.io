@@ -388,7 +388,13 @@ Alternative :
     
   Idea :
     Geometry for word analogies, tailored for sparse vectors
-    
+      X:Y as A:?
+        ? = A+(Y-X)  # clearly
+        ? = Y+(A-X)  # in dense space
+        ? = (A+Y) -X # in dense space
+      
+      but want to think only about non-negative 'things'
+        need to set up REPL fns to quickly sort through combinations / filters / conjunctions, etc
   
   In-Process  :: To be monetised?
     Palm tree detection
