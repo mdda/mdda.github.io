@@ -407,9 +407,6 @@ Alternative :
         >>> closest_to(queen)
         queen, princess, elizabeth, king, margrethe, empress, lady, sister, prince, sirikit, mary, cixi, monarch, daughter, duchess, olten, mother, infanta, rania, widow
 
-        >>> closest_to(woman + (king - man))
-        king, queen, woman, mswati, vajiravudh, thoden, margrethe, thelred, gojong, mongkut, zvonimir, norodom, wenceslaus, urraca, monarch, hecuba, athelstan, eirik, princess, archelaus
-
         >>> count_non_zero(man)
         95
         >>> count_non_zero(woman)
@@ -438,6 +435,27 @@ Alternative :
         >>> count_non_zero(woman*king)
         17
 
+        >>> count_non_zero(man*woman*king*queen)
+        4
+
+        closest_dist('man:woman=king:queen')
+        man is to woman as king is to ?queen?
+          x+b-a           = king, queen, woman, mswati, vajiravudh, thoden, margrethe, thelred, gojong, mongkut, zvonimir, norodom, wenceslaus, urraca, monarch, hecuba, athelstan, eirik, princess, archelaus
+          [x+b-a]         = king, queen, woman, princess, mswati, monarch, henry, vajiravudh, mongkut, eirik, gojong, margrethe, vii, thoden, zvonimir, prince, thelred, norodom, wenceslaus, urraca
+          x+[b-a]         = king, woman, queen, henry, princess, monarch, mother, charles, daughter, son, prince, mswati, vii, vajiravudh, mongkut, thelred, louis, eirik, gojong, margrethe
+          [x-a]+b         = king, woman, man, queen, girl, mother, daughter, teenager, wife, son, women, her, princess, person, she, monarch, girlfriend, friend, men, husband
+          [2x-a]+[2b-a]   = king, woman, queen, daughter, mother, monarch, princess, henry, girl, son, mongkut, mswati, wife, vajiravudh, margrethe, vii, prince, thelred, gojong, eirik
+          x+[b-a]+b+[x-a] = king, woman, queen, mother, daughter, man, girl, son, princess, henry, wife, monarch, women, her, charles, she, teenager, prince, mongkut, mswati
+
+        Problem (and insight?)
+        >>> closest_dist('pound:england=franc:france')
+        pound is to england as franc is to ?france? 
+          x+b-a           = england, franc, wales, france, australia, switzerland, scotland, zealand, middlesex, manchester, essex, belgium, capello, portugal, spain, cameroon, lanka, indies, senegal, blanc
+          [x+b-a]         = england, franc, wales, france, australia, switzerland, manchester, scotland, essex, middlesex, britain, lancashire, indies, zealand, capello, odi, portugal, cameroon, argentina, francs
+          x+[b-a]         = franc, england, francs, wales, australia, peso, switzerland, france, middlesex, rupee, forint, dirham, manchester, odi, indies, dinar, ruble, essex, zealand, currency
+          [x-a]+b         = england, franc, wales, australia, france, britain, scotland, switzerland, ireland, manchester, capello, spain, zealand, essex, country, middlesex, africa, lancashire, portugal, indies
+          [2x-a]+[2b-a]   = england, franc, wales, australia, france, switzerland, francs, britain, scotland, middlesex, manchester, zealand, essex, indies, capello, odi, lancashire, portugal, spain, swiss
+          x+[b-a]+b+[x-a] = franc, england, wales, australia, france, switzerland, francs, britain, scotland, manchester, middlesex, zealand, essex, indies, capello, lancashire, odi, spain, portugal, swiss
   
   In-Process  :: To be monetised?
     Palm tree detection
