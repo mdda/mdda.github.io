@@ -457,6 +457,14 @@ Alternative :
           [2x-a]+[2b-a]   = england, franc, wales, australia, france, switzerland, francs, britain, scotland, middlesex, manchester, zealand, essex, indies, capello, odi, lancashire, portugal, spain, swiss
           x+[b-a]+b+[x-a] = franc, england, wales, australia, france, switzerland, francs, britain, scotland, manchester, middlesex, zealand, essex, indies, capello, lancashire, odi, spain, portugal, swiss
   
+        Problem:
+          The original 3 'base words' are often near the top of the chosen target list
+            This happens in the linear (dense) case too
+            The original words are deliberately removed from the 'choosable' outcomes
+              Otherwise scores are much lower
+            But this seems to indicate that the original words have a 'basin' that is broader/deeper than the target
+            
+  
   In-Process  :: To be monetised?
     Palm tree detection
 
