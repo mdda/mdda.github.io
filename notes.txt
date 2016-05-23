@@ -462,7 +462,7 @@ Alternative :
             This happens in the linear (dense) case too
             The original words are deliberately removed from the 'choosable' outcomes
               Otherwise scores are much lower
-            But this seems to indicate that the original words have a 'basin' that is broader/deeper than the target
+            But this seems to indicate that the original words have a 'basin/catchment area) that is broader/deeper than the target
             
   
   In-Process  :: To be monetised?
@@ -517,6 +517,41 @@ patches for training / testing.  It works pretty quickly, even though it doesn't
 whole-image-at-a-time training.
 
 
+Teclast P80 annoyances
+-------------------------------------------
+http://www.gearbest.com/tablet-pcs/pp_286683.html
+https://chiandroid.wordpress.com/category/tablets/teclast/
+http://www.aliexpress.com/item/Teclast-P80-3G-Phablet-8-inch-Quad-Core-Android-5-1intel-SoFIA-C3230-64bit-1280-800/32608814119.html?spm=2114.01010208.3.206.3nguKv&ws_ab_test=searchweb201556_7,searchweb201602_1_10037_10017_10021_507_10033_10022_10032_10009_10020_10008_10018_10019,searchweb201603_1&btsid=fbee6553-12a8-4e81-90e2-a9598519076c
+
+
+http://www.baidu.com/baidu?word=p80+site%3Ateclast.com
+
+http://forums.androidcentral.com/google-nexus-6/502930-phone-keeps-rebooting-optimizing-apps-what-did-i-do-lol-4.html
+
+Reset your Android One to factory settings
+  https://support.google.com/android-one/answer/6088915?hl=en
+
+https://www.androidpit.com/how-to-factory-reset-android
+http://www.droidviews.com/how-to-boot-android-devices-in-fastboot-download-bootloader-or-recovery-mode/
+http://trendblog.net/fix-soft-bricked-android-device-first-aid-guide/
+http://trendblog.net/hard-reboot-reset-android/
+
+http://androidforums.com/threads/teclast-p80-tablet.908950/
+
+http://www.chinaphonearena.com/forum/Thread-Teclast-P80-bricked
+
+http://www.teclast.com/tools/pad/showtools.php
+
+http://bbs.teclast.com/forum-93-1.html
+  http://bbs.teclast.com/thread-392079-1-1.html
+  http://bbs.teclast.com/thread-255945-1-1.html
+  http://bbs.teclast.com/thread-510532-1-1.html
+  http://bbs.teclast.com/thread-258622-1-2.html
+
+
+http://techtablets.com/forum/topic/teclast-official-firmware-repository/
+
+
 2015-12-14
   P80 3G (K3H5) Android 5.1 firmware download
   V1.05_20151204 (android5.1)
@@ -530,3 +565,4 @@ whole-image-at-a-time training.
     P80 3G (K3H5)-Android5.1-V1.05.rar
       http://pan.baidu.com/s/1kUj2cx5
       Gives up at : 524.3 kB (524,288 bytes)    
+
