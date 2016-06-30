@@ -16,7 +16,7 @@ published: true
 This is a small thing : ```chrony``` seemed to have lost track of time,
 the fix was simple - and had to do with ```SELINUX```.
 
-###Losing Track of Time
+### Losing Track of Time
 
 The clock on my machine seemed unusually 'off'.  My first comparison was to my mobile phone
 - an easy check, since mobiles are typically synced against the mobile-provider / cell towers.
@@ -30,7 +30,7 @@ chronyc sourcestats
 ## reports Zero sources...  Something is up
 {% endhighlight %}
 
-###Where are the sources?
+### Where are the sources?
 
 The default Fedora ```/etc/chrony.conf``` contains a valid 'pool' configuration :
 
@@ -56,7 +56,7 @@ This tells us that ```chronyd``` is being denied something by ```SELINUX``` (som
 that I felt sure I had turned to ```permissive mode```, since it's often a source of 
 hard-to-fathom errors).
 
-###Bug in chronyd?
+### Bug in chronyd?
 
 At first blush, this seemed like an error with ```chronyd```, since the rest of the 
 system was working fine.
@@ -64,7 +64,7 @@ system was working fine.
 However, ```SELINUX``` is doing a typical mis-direct here : The problem actually
 lay with the ```/etc/resolv.conf``` file itself - it had somehow become *mislabled*.
 
-###Simple Fix
+### Simple Fix
 
 {% highlight bash %}
 ## Relabel (SELINUX-wise) the file in question
