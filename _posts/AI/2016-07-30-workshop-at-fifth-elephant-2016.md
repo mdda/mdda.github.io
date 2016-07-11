@@ -11,7 +11,7 @@ tags:
 - lasagne
 - VirtualBox
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -24,8 +24,9 @@ So, I've been invited to give a day-long (6-hour) workshop as part of the [Fifth
 Bangalore, India.  The conference itself is Thursday/Friday 28/29 July 2016, and the workshop will be on the
 weekend immediately afterwards (i.e. Saturday, 30 July 2016).
 
-Although I normally just put up links to presentation materials here, it has been *suggested* by the 
-organisers that I write a little about the Workshop contents, target audience etc.  
+Although I normally just put up links to presentation materials here after an event, it has been *suggested* by the 
+organisers that I write a little about the Workshop contents, target audience, etc. so that people can 
+decide whether to attend : 
 
 
 ### The Workshop 'Pitch'
@@ -50,8 +51,8 @@ with a <a href="http://convnetjs.com/" target="_blank">ConvNet.js model</a>, and
 also the <a href="http://playground.tensorflow.org/" target="_blank">TensorFlow Playground</a>.
 
 *  But this on-line portion is partly to allow everyone enough time to get the ~1.3Gb VirtualBox "appliance" 
-created for the event installed on their laptops.  Having a laptop with VirtualBox pre-installed is a requirement for 
-this workshop.  But the plus-side is that when the VirtualBox image is running, no further fiddling with Python, etc is required.
+created for the event installed on their laptops ( having a laptop with VirtualBox pre-installed is a requirement for 
+this workshop - but the plus-side is that when the VirtualBox image is running, no further fiddling with Python, etc is required ).
 
 *  Once everyone is up-to-speed tools-wise, the workshop progresses through a series of 
 ```Jupyter``` (fka ```iPython```) notebooks, ranging from Theano basics, through MNIST, to ImageNet networks 
@@ -61,7 +62,7 @@ We'll then go on to some specific applications, which will take 30-60 mins each 
 
 *  Each application will start with an explanation of the general 'problem'
 
-*  ... and then the workshop will dive into pre-built deep learning (partial?) solutions
+*  ... and then the workshop will dive into pre-built deep learning solutions (with additional exercises) 
 
 *  There should be ample time for people to have questions answered (or be shown how to figure things out for themselves).
 
@@ -82,12 +83,13 @@ I'd also like to have something concrete to play with on the RNN front (this is 
 ### Who should come?
 
 The Workshop is aimed at people who are interested in being hands-on with deep learning techniques.  It should 
-be noted, though, that the Fifth Elephant organisers have given it an 'Advanced' designation...
+be noted, though, that the Fifth Elephant organisers have given it the 'Advanced' designation...
 
-Rather than calling this 'Advanced Deep Learning', though, perhaps it's better to contrast it with another
-workshop series at Fifth Elephant : "Math for Data Science + Deep learning for computer vision".  This 
-sounds like an excellent course for people getting 'warmed up' in data science, and I'm sure it has great
-content.  That being said, the Deep Learning Hands-on Workshop isn't that one.
+Rather than explaining what 'Advanced Deep Learning' is, though, perhaps it's better to contrast it with another
+workshop series at Fifth Elephant : "Math for Data Science", which is being held at the same time.  
+This sounds like an excellent course for people getting 'warmed up' in data science, 
+and I'm sure it has great content.  If you want to do that one, then please do : This Deep Learning Workshop
+is not the Workshop you're looking for.  
 
 If you'd like to discuss the Workshop ahead of the weekend, I believe that the organisers are 
 planning some kind of 'meet the presenters' table - and I'd be glad to discuss it there.
@@ -138,13 +140,22 @@ Martin got his PhD in Machine Learning from Cambridge, UK in the mid-1990s.  Aft
 career in finance (based in London and New York), he decided to follow his original passion, 
 and now works on Machine Learning / Artificial Intelligence full-time in Singapore. 
 
+The application area that Martin is currently working on involves the Natural Language Processing
+of company 'Annual Reports' to extract the web of people, companies and other entities and the 
+way in which their are related.  The extracted data is in the form of a complete relationship
+graph, with specificity down to (for instance) company registration numbers, and over 100 different
+relationship types.  The system includes many different components, some of which are 'deep networks'.
+
+
+
 
 ### Open Source Cred
 
-The source is available on <a href="https://github.com/mdda/deep-learning-workshop" target="_blank">GitHub</a> - 
+The source for the Deep Learning Workshop's VirtualMachine 'construction toolkit' is available 
+on <a href="https://github.com/mdda/deep-learning-workshop" target="_blank">GitHub</a> - 
 if you have questions on the software, please leave an 'issue' there.
 
-PS:  And if you liked the Workshop, please 'star' the <a href="https://github.com/mdda/deep-learning-workshop" target="_blank">Deep Learning Workshop</a> repo ::
+PS:  And if you like the Workshop, please 'star' the <a href="https://github.com/mdda/deep-learning-workshop" target="_blank">Deep Learning Workshop</a> repo ::
 <!-- From :: https://buttons.github.io/ -->
 <!-- Place this tag where you want the button to render. -->
 <span style="position:relative;top:5px;">
