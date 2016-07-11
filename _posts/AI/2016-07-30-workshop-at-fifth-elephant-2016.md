@@ -24,13 +24,21 @@ So, I've been invited to give a day-long (6-hour) workshop as part of the [Fifth
 Bangalore, India.  The conference itself is Thursday/Friday 28/29 July 2016, and the workshop will be on the
 weekend immediately afterwards (i.e. Saturday, 30 July 2016).
 
-Although I normally just put up links to presentation materials here, it has been 'suggested' by the 
+Although I normally just put up links to presentation materials here, it has been *suggested* by the 
 organisers that I write a little about the Workshop contents, target audience etc.  
 
 
 ### The Workshop 'Pitch'
 
+Deep Learning is a hot topic, but has a steep initial learning curve. This workshop is aimed at giving participants 'hands-on' 
+experience of a range of deep learning techniques.
 
+While no prior deep learning knowledge is assumed, the content will not be watered down : Even people already deploying 
+models should find material that is new and interesting.
+
+There will be code. Lots of code. To ease the pain, a pre-configured virtual machine will be handed out, 
+so that participants can run it on their own laptops using cross-platform open-source VirtualBox, 
+and avoid a lot of configuration hassles. 
 
 
 ### The Workshop Content
@@ -49,13 +57,14 @@ this workshop.  But the plus-side is that when the VirtualBox image is running, 
 ```Jupyter``` (fka ```iPython```) notebooks, ranging from Theano basics, through MNIST, to ImageNet networks 
 (pretrained models such as ```GoogLeNet``` and ```Inception-v3``` are included in the VM).
 
-*  But then we'll go on to some specific applications, which will take 30 mins-1 hour each.
+We'll then go on to some specific applications, which will take 30-60 mins each : 
 
-   *   Each application will start with an explanation of the general 'problem'
-   
-   *   and then the workshop will dive into pre-built deep learning (partial?) solutions
-   
-   *   There will be ample time for people to have questions answered (or figure things out for themselves) 
+*  Each application will start with an explanation of the general 'problem'
+
+*  ... and then the workshop will dive into pre-built deep learning (partial?) solutions
+
+*  There should be ample time for people to have questions answered (or be shown how to figure things out for themselves).
+
    
 Currently, the application list is planned to be : 
 
@@ -67,12 +76,67 @@ Currently, the application list is planned to be :
 
 *  Reinforcement Learning (inspired by AlphaGo)
 
-I'd also like to have something concrete to plan with on the RNN front (this is currently a work-in-progress)...
+I'd also like to have something concrete to play with on the RNN front (this is currently a work-in-progress)...
 
 
-### Who should come
+### Who should come?
+
+The Workshop is aimed at people who are interested in being hands-on with deep learning techniques.  It should 
+be noted, though, that the Fifth Elephant organisers have given it an 'Advanced' designation...
+
+Rather than calling this 'Advanced Deep Learning', though, perhaps it's better to contrast it with another
+workshop series at Fifth Elephant : "Math for Data Science + Deep learning for computer vision".  This 
+sounds like an excellent course for people getting 'warmed up' in data science, and I'm sure it has great
+content.  That being said, the Deep Learning Hands-on Workshop isn't that one.
+
+If you'd like to discuss the Workshop ahead of the weekend, I believe that the organisers are 
+planning some kind of 'meet the presenters' table - and I'd be glad to discuss it there.
+( And I'll probably be able to help people pre-load the Virtual machine there too - which 
+could save time at the actual Workshop ).
 
 
+
+### What do participants need?
+
+Participants need a laptop with VirtualBox installed (this is cross-platform, 
+and open source). At minimum, the laptop should have 2Gb of RAM and 8Gb of HD available, 
+with the ability to read/install files from a USB key(!).  No platform preference.
+
+
+#### Programming Knowledge Assumed
+
+While parts of this are very technical, the models (inside the Virtual Machine) are all in Jupyter (fka iPython) notebooks, 
+making interaction straightforward : 
+
+*    The code is all Python-based, using Numpy, Theano (and Lasagne)
+*    However, understanding every line in the code is not required, since the essence of the material is ‘laid out’ in the pre-built notebooks
+
+Please install following software before coming to workshop :
+
+*    VirtualBox (https://www.virtualbox.org/wiki/Downloads) is essential;
+*    Chrome (or Firefox) would be good-to-have too.
+
+In addition, some of the modules make use of images - so having a few of your own images (and some kind of image editing tool for resizing/cropping) could make those sections more ‘personal’ (in the nice-to-have category).
+
+
+#### Math and ML Requirements
+
+*    some matrix mathematics (Google : "matrix and vector multiplication");
+*    the idea of using derivatives to minimise functions (Google : "differentiate to find minimum");
+*    images being composed of pixels - and what a Photoshop filter does (Google : "Photoshop custom filter maths"); and
+*    training data vs test data (Google : "training set test set difference");
+
+Those who want to 'get ahead' could Google : "Neural network backpropagation", and beyond that 
+come terms (all of which will be explained in the workshop) 
+such as "imagenet competition", "convolutional neural network", "recurrent neural network", "deepmind alphago", "reinforcement learning" and "q-learning".  And
+(potentially, cross-fingers) : "generative adversarial network" and "deep residual learning".
+
+
+### Who is the Presenter?
+
+Martin got his PhD in Machine Learning from Cambridge, UK in the mid-1990s.  After a 
+career in finance (based in London and New York), he decided to follow his original passion, 
+and now works on Machine Learning / Artificial Intelligence full-time in Singapore. 
 
 
 ### Open Source Cred
