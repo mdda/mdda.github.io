@@ -1,7 +1,7 @@
 ---
 date: 2016-07-11
 title: "Fifth Elephant : Deep Learning Workshop"
-tagline: Presentation
+tagline: Preview
 category: AI
 tags:
 - Presentation
