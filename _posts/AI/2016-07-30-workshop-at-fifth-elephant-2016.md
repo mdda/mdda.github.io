@@ -11,7 +11,7 @@ tags:
 - lasagne
 - VirtualBox
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -165,18 +165,19 @@ PS:  And if you like the Workshop, please 'star' the <a href="https://github.com
 
 ### Presentation Link
 
-I recently lead a <strong><a href="http://redcatlabs.com/2016-03-19_FOSSASIA-Workshop/" target="_blank">2 hour workshop</a></strong> 
-at [FOSSASIA 2016](http://2016.fossasia.org/) in Singapore.
+The [sign-ups](https://fifthelephant.talkfunnel.com/2016/72-advanced-deep-learning-workshop-hands-on) were 
+apparently quickly over-subscribed, which was a pity, given that there were so many people that would have 
+been interested to sign up too.  Perhaps it would make sense to do roughly the same again next year - 
+potentially as part of the Deep Learning conference...
 
-<a href="http://redcatlabs.com/2016-03-19_FOSSASIA-Workshop/" target="_blank">
-![Presentation Screenshot]({{ site.url }}/assets/img/2016-03-19_FOSSASIA-Workshop_600x390.png)
+<a href="http://redcatlabs.com/2016-07-30_FifthElephant-DeepLearning-Workshop/" target="_blank">
+![Presentation Screenshot]({{ site.url }}/assets/img/2016-07-30_FifthElephant-DeepLearning-Workshop_600x390.png)
 </a>
 
 If there are any questions about the workshop please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="http://redcatlabs.com/2016-03-19_FOSSASIA-Workshop/#/6/2" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2016-03-19_FOSSASIA-Workshop_6-2_600x390.png)
+<a href="http://redcatlabs.com/2016-07-30_FifthElephant-DeepLearning-Workshop/#/1/1" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2016-07-30_FifthElephant-DeepLearning-Workshop_1-1_600x390.png)
 </a>
-
 
