@@ -1,5 +1,5 @@
 ---
-date: 2016-07-11
+date: 2016-07-30
 title: "Fifth Elephant : Deep Learning Workshop"
 tagline: Preview
 category: AI
@@ -11,7 +11,7 @@ tags:
 - lasagne
 - VirtualBox
 layout: post
-published: true
+published: false
 ---
 {% include JB/setup %}
 
@@ -26,7 +26,7 @@ weekend immediately afterwards (i.e. Saturday, 30 July 2016).
 
 Although I normally just put up links to presentation materials here after an event, it has been *suggested* by the 
 organisers that I write a little about the Workshop contents, target audience, etc. so that people can 
-decide whether to attend : 
+also decide whether to attend : 
 
 
 ### The Workshop 'Pitch'
@@ -147,8 +147,6 @@ graph, with specificity down to (for instance) company registration numbers, and
 relationship types.  The system includes many different components, some of which are 'deep networks'.
 
 
-
-
 ### Open Source Cred
 
 The source for the Deep Learning Workshop's VirtualMachine 'construction toolkit' is available 
@@ -163,3 +161,22 @@ PS:  And if you like the Workshop, please 'star' the <a href="https://github.com
 <!-- Place this tag right after the last button or just before your close body tag. -->
 <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
 </span>
+
+
+### Presentation Link
+
+I recently lead a <strong><a href="http://redcatlabs.com/2016-03-19_FOSSASIA-Workshop/" target="_blank">2 hour workshop</a></strong> 
+at [FOSSASIA 2016](http://2016.fossasia.org/) in Singapore.
+
+<a href="http://redcatlabs.com/2016-03-19_FOSSASIA-Workshop/" target="_blank">
+![Presentation Screenshot]({{ site.url }}/assets/img/2016-03-19_FOSSASIA-Workshop_600x390.png)
+</a>
+
+If there are any questions about the workshop please ask below, 
+or contact me using the details given on the slides themselves.
+
+<a href="http://redcatlabs.com/2016-03-19_FOSSASIA-Workshop/#/6/2" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2016-03-19_FOSSASIA-Workshop_6-2_600x390.png)
+</a>
+
+
