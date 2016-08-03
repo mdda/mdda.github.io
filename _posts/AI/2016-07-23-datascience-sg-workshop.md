@@ -11,7 +11,7 @@ tags:
 - lasagne
 - VirtualBox
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -25,7 +25,7 @@ The workshop was somewhat similar in structure to my previous PyCon one - except
 add to that, I created a new 'application' that showed how Autoencoders could be used to do anomaly detection (with MNIST
 as the base data).
 
-On top of that, we went through the CNN-Commerce example, so that people could see how 
+In addition to that, we went through the CNN-Commerce example, so that people could see how 
 a pretrained CNN could be repurposed to be used on classes that hadn't previously been encountered by the network.
 
 
@@ -38,13 +38,13 @@ PS:  And if you liked the Workshop, please 'star' the <a href="https://github.co
 <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
 </span>
 
-<a href="http://redcatlabs.com/2016-06-23_PyConSG-Workshop/" target="_blank">
-![Presentation Screenshot]({{ site.url }}/assets/img/2016-06-23_PyConSG-Workshop_600x390.png)
+<a href="http://redcatlabs.com/2016-07-23_DataScienceSG-DeepLearning-Workshop/" target="_blank">
+![Presentation Screenshot]({{ site.url }}/assets/img/2016-07-23_DataScienceSG-DeepLearning-Workshop_600x390.png)
 </a>
 
 If there are any questions about the workshop please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="http://redcatlabs.com/2016-06-23_PyConSG-Workshop/#/17/9" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2016-06-23_PyConSG-Workshop_17-9_600x390.png)
+<a href="http://redcatlabs.com/2016-07-23_DataScienceSG-DeepLearning-Workshop/#/12" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2016-07-23_DataScienceSG-DeepLearning-Workshop_12_600x390.png)
 </a>
