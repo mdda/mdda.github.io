@@ -32,4 +32,8 @@ or contact me using the details given on the slides themselves.
 ![Presentation Content Example]({{ site.url }}/assets/img/2015-11-24_IES-2015-Presentation_4-2_600x390.png)
 </a>
 
+
+### Link to Paper
+
 (I'll post the paper's ```BiBTeX``` entry as soon as I get it)
+
