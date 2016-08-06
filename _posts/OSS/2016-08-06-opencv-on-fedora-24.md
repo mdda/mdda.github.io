@@ -12,23 +12,38 @@ published: false
 ---
 {% include JB/setup %}
 
-On a recently purchased machine with Fedora 22 and an Nvidia GPU installed, 
-following the [excellent instructions](http://www.if-not-true-then-false.com/2012/install-skype-on-fedora-centos-red-hat-rhel-scientific-linux-sl/comment-page-19/)
-didn't result in a working Skype installation (results in a segmentation fault on the command line).
-
-The clues provided [here](http://askubuntu.com/questions/285642/skype-crashes-with-a-segmentation-fault) lead to this solution:
 
 {% highlight bash %}
-cd /usr/bin/
-mv skype skype-bin
-install -b -m 744 <(<<EOF
-#!/bin/bash
-LD_PRELOAD=/usr/lib/libGL.so.1.2.0 /usr/bin/skype-bin
-EOF) /usr/bin/skype
+git clone https://github.com/Itseez/opencv.git
+cd opencv/
+mkdir build
+cd build
 {% endhighlight %}
 
-Should now work...
 
-The reason for the problem are rooted in Nvidia redirecting Skype's loading of ```libGL.so``` to their own library.
-However, in my case, the Nvidia card is for GPGPU usage only - no monitor will ever be connected to it 
-(my sole monitor is connected to the motherboard-integrated Intel video).
+{% highlight bash %}
+cmake -D WITH_TBB=ON -D WITH_EIGEN=ON -D WITH_JAVA=OFF ..
+cmake -D BUILD_DOCS=OFF -D BUILD_TESTS=OFF -D BUILD_PERF_TESTS=OFF -D BUILD_EXAMPLES=OFF ..
+cmake -D WITH_OPENCL=OFF -D WITH_CUDA=OFF -D BUILD_opencv_gpu=OFF -D BUILD_opencv_gpuarithm=OFF -D BUILD_opencv_gpubgsegm=OFF -D BUILD_opencv_gpucodec=OFF -D BUILD_opencv_gpufeatures2d=OFF -D BUILD_opencv_gpufilters=OFF -D BUILD_opencv_gpuimgproc=OFF -D BUILD_opencv_gpulegacy=OFF -D BUILD_opencv_gpuoptflow=OFF -D BUILD_opencv_gpustereo=OFF -D BUILD_opencv_gpuwarping=OFF ..
+cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr ..
+make
+{% endhighlight %}
+
+
+
+{% highlight bash %}
+dnf install ffmpeg-devel tbb-devel eigen3-devel
+make install
+{% endhighlight %}
+
+
+
+
+{% highlight bash %}
+python
+Python 2.7.11 (default, Jun 21 2016, 09:15:12) 
+[GCC 6.1.1 20160510 (Red Hat 6.1.1-2)] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import cv2
+>>> 
+{% endhighlight %}
