@@ -1,0 +1,34 @@
+---
+date: 2016-08-06
+title: Opencv on Fedora 24
+category: OSS
+tags:
+- fedora
+- linux
+- fc24
+- opencv
+layout: post
+published: false
+---
+{% include JB/setup %}
+
+On a recently purchased machine with Fedora 22 and an Nvidia GPU installed, 
+following the [excellent instructions](http://www.if-not-true-then-false.com/2012/install-skype-on-fedora-centos-red-hat-rhel-scientific-linux-sl/comment-page-19/)
+didn't result in a working Skype installation (results in a segmentation fault on the command line).
+
+The clues provided [here](http://askubuntu.com/questions/285642/skype-crashes-with-a-segmentation-fault) lead to this solution:
+
+{% highlight bash %}
+cd /usr/bin/
+mv skype skype-bin
+install -b -m 744 <(<<EOF
+#!/bin/bash
+LD_PRELOAD=/usr/lib/libGL.so.1.2.0 /usr/bin/skype-bin
+EOF) /usr/bin/skype
+{% endhighlight %}
+
+Should now work...
+
+The reason for the problem are rooted in Nvidia redirecting Skype's loading of ```libGL.so``` to their own library.
+However, in my case, the Nvidia card is for GPGPU usage only - no monitor will ever be connected to it 
+(my sole monitor is connected to the motherboard-integrated Intel video).
