@@ -13,6 +13,9 @@ published: false
 {% include JB/setup %}
 
 
+http://docs.opencv.org/3.1.0/dd/dd5/tutorial_py_setup_in_fedora.html#gsc.tab=0
+
+
 {% highlight bash %}
 git clone https://github.com/Itseez/opencv.git
 cd opencv/
@@ -45,5 +48,7 @@ Python 2.7.11 (default, Jun 21 2016, 09:15:12)
 [GCC 6.1.1 20160510 (Red Hat 6.1.1-2)] on linux2
 Type "help", "copyright", "credits" or "license" for more information.
 >>> import cv2
->>> 
+>>> cv2.__version__
+'3.1.0-dev'
+## http://docs.opencv.org/3.1.0/
 {% endhighlight %}
