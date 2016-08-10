@@ -7,8 +7,9 @@ tags:
 - linux
 - tesseract
 - python
+- opencv
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -39,6 +40,37 @@ pip install tesserocr
 
 ### Usage
 
-{% highlight python %}
+The following also includes hints for interoperability with ```opencv``` using ```pillow``` (for ```PIL```), which 
+can be helpful in cleaning up the image prior to textextraction.   It's useful to pre-clean, even though ```tesseract``` 
+iteself does some cleaning, because there's often application-specific knowledge that can be used more effectively than
+the ```tesseract``` generic methods.
 
+
+{% highlight python %}
+from tesserocr import PyTessBaseAPI, RIL, PSM
+
+im = cleaned_view
+
+from PIL import Image
+im_pil = Image.fromarray(cv2.cvtColor(im, cv2.COLOR_BGR2RGB))
+
+plt.imshow(im_pil, 'gray')
+plt.show()
+
+#  PSM : https://github.com/sirfz/tesserocr/blob/3c699c8cff7a7c5552e7bf51d5631bbf95414c9c/tesseract.pxd#L214
+with PyTessBaseAPI(psm=PSM.SINGLE_BLOCK) as ocr:
+    ocr.SetImage(im_pil)
+    
+    boxes = ocr.GetComponentImages(RIL.TEXTLINE, True)
+    print 'Found {} textline image components.'.format(len(boxes))
+    
+    for i, (im, box, _, _) in enumerate(boxes):
+        # box is a dict with x, y, w and h keys
+        ocr.SetRectangle(box['x'], box['y'], box['w'], box['h'])
+        
+        ocrResult = ocr.GetUTF8Text()
+        conf = ocr.MeanTextConf()
+        
+        print (u"Box[{0}]: x={x}, y={y}, w={w}, h={h}, "
+               "confidence: {1}, text: {2}").format(i, conf, ocrResult.replace('\n',''), **box)    
 {% endhighlight %}
