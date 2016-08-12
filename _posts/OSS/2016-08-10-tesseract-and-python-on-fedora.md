@@ -25,7 +25,7 @@ However, quick Google searches offer [several solutions](https://www.quora.com/H
 
 *  Using ```tesseract``` directly via commandline embedding
 
-However, reading the ```tesseract``` project's wiki pages on github indicate that there are several
+However, reading the ```tesseract``` project's [wiki pages on github](https://github.com/tesseract-ocr/tesseract/wiki/AddOns#tesseract-wrappers) indicate that there are several
 other choices available, and I (somewhat arbitrarily) chose [```tesserocr```](https://github.com/sirfz/tesserocr), which is MIT licensed, and 
 has a fairly comprehensive API into the 'raw' ```tesseract``` C/C++ code.
 
