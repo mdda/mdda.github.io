@@ -35,5 +35,18 @@ or contact me using the details given on the slides themselves.
 
 ### Link to Paper
 
-(I'll post the paper's ```BiBTeX``` entry as soon as I get it)
+[Direct link to PDF on this website]({{ site.url }}/assets/papers/IES-2015_v3_camera.pdf) - as allowed by Springer copyright rules.
+
+And the Springer ```BiBTeX``` entry:
+
+{% highlight tex %}
+@incollection{andrews2016named,
+  title={Named Entity Recognition Through Learning from Experts},
+  author={Andrews, Martin},
+  booktitle={Intelligent and Evolutionary Systems},
+  pages={281--292},
+  year={2016},
+  publisher={Springer}
+}
+{% endhighlight %}
 

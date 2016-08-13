@@ -7,9 +7,10 @@ tags:
 - Paper
 - Word Embeddings
 - Sparse
+- NLP
 - theano
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
