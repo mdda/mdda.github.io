@@ -48,3 +48,11 @@ or contact me using the details given on the slides themselves.
 <a href="http://redcatlabs.com/2016-07-23_DataScienceSG-DeepLearning-Workshop/#/12" target="_blank">
 ![Presentation Content Example]({{ site.url }}/assets/img/2016-07-23_DataScienceSG-DeepLearning-Workshop_12_600x390.png)
 </a>
+
+
+### Video Link
+
+And the excellent folks at [Engineers.sg](https://engineers.sg/) also generously made a video of the presentation
+which is available <a href="https://engineers.sg/video/deep-learning-workshop-datasciencesg--913" target="_blank">on their site</a>.  Their 
+videos are normally excellent, though I can't vouch for this one, since I can't bear to watch myself...
+
