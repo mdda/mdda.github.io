@@ -1,9 +1,10 @@
 ---
 date: 2015-11-24
 title: "IES-2015 : Learning NER from Experts"
-tagline: Presentation
+tagline: Paper
 category: AI
 tags:
+- Paper
 - Presentation
 - NER
 - Named Entity Recognition
@@ -14,6 +15,26 @@ layout: post
 published: true
 ---
 {% include JB/setup %}
+
+
+### Link to Paper
+
+<a href="/assets/papers/IES-2015_v3_camera.pdf" target="_blank">
+Direct link to PDF on this website
+</a> - as allowed by Springer copyright rules.
+
+And the Springer ```BiBTeX``` entry:
+
+{% highlight tex %}
+@incollection{andrews2016named,
+  title={Named Entity Recognition Through Learning from Experts},
+  author={Andrews, Martin},
+  booktitle={Intelligent and Evolutionary Systems},
+  pages={281--292},
+  year={2016},
+  publisher={Springer}
+}
+{% endhighlight %}
 
 
 ### Presentation Link
@@ -32,21 +53,4 @@ or contact me using the details given on the slides themselves.
 ![Presentation Content Example]({{ site.url }}/assets/img/2015-11-24_IES-2015-Presentation_4-2_600x390.png)
 </a>
 
-
-### Link to Paper
-
-[Direct link to PDF on this website]({{ site.url }}/assets/papers/IES-2015_v3_camera.pdf) - as allowed by Springer copyright rules.
-
-And the Springer ```BiBTeX``` entry:
-
-{% highlight tex %}
-@incollection{andrews2016named,
-  title={Named Entity Recognition Through Learning from Experts},
-  author={Andrews, Martin},
-  booktitle={Intelligent and Evolutionary Systems},
-  pages={281--292},
-  year={2016},
-  publisher={Springer}
-}
-{% endhighlight %}
 
