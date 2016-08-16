@@ -31,13 +31,13 @@ also decide whether to attend :
 
 ### The Workshop 'Pitch'
 
-Deep Learning is a hot topic, but has a steep initial learning curve. This workshop is aimed at giving participants 'hands-on' 
+Deep Learning is a hot topic, but has a steep initial learning curve.  This workshop is aimed at giving participants 'hands-on' 
 experience of a range of deep learning techniques.
 
 While no prior deep learning knowledge is assumed, the content will not be watered down : Even people already deploying 
 models should find material that is new and interesting.
 
-There will be code. Lots of code. To ease the pain, a pre-configured virtual machine will be handed out, 
+There will be code.  Lots of code.  To ease the pain, a pre-configured virtual machine will be handed out, 
 so that participants can run it on their own laptops using cross-platform open-source VirtualBox, 
 and avoid a lot of configuration hassles. 
 
@@ -130,8 +130,9 @@ In addition, some of the modules make use of images - so having a few of your ow
 
 Those who want to 'get ahead' could Google : "Neural network backpropagation", and beyond that 
 come terms (all of which will be explained in the workshop) 
-such as "imagenet competition", "convolutional neural network", "recurrent neural network", "deepmind alphago", "reinforcement learning" and "q-learning".  And
-(potentially, cross-fingers) : "generative adversarial network" and "deep residual learning".
+such as "imagenet competition", "convolutional neural network", "recurrent neural network", 
+"deepmind alphago", "reinforcement learning" and "q-learning".  And (potentially, cross-fingers) : 
+"generative adversarial network" and "deep residual learning".
 
 
 ### Who is the Presenter?

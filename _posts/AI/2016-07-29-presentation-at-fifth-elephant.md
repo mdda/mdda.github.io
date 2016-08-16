@@ -42,4 +42,8 @@ or contact me using the details given on the slides themselves.
 ![Presentation Content Example]({{ site.url }}/assets/img/2016-07-29_FifthElephant-LessonsLearned_7_600x390.png)
 </a>
 
-The presentation was also recorded...
+
+### Video Link
+
+The presentation was also recorded... and is available <a href="https://www.youtube.com/watch?v=GQ2OMmpxEpw" target="_blank">via HasGeek YouTube channel</a>.  The
+videos were professionally done, though I can't vouch for this one, since I can't bear to watch myself...
