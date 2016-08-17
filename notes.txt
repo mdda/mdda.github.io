@@ -468,6 +468,9 @@ Alternative :
   In-Process  :: To be monetised?
     Palm tree detection
 
+  In-Process  :: To be monetised?
+    Identity card reading, from 'bad photos'
+
 
   Idea : 
     More labels for better beginning and ending characteristics ?
