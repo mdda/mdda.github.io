@@ -17,35 +17,35 @@ potentially allows the 'hard problem of consciousness' to be approached with an 
 This short post summarizes the Attention Schema theory, puts it in an up-to-date machine learning context, 
 and discusses some practical issues of conscious machines.
 
-Keywords: consciousness, attention schema, awareness, chatbots
+*  Keywords: consciousness, attention schema, awareness, chatbots
 
 
 ##  Introduction
 
 The essence of Attention Schema theory is that "awareness is a description of attention" 
-(Further background for the theory, and comparisons to a number of contrasting
-theories of consciousness, are presented in Graziano's 2013 book.) 
+(naturally, the is much more background for the theory, and comparisons to a number of contrasting
+theories of consciousness, in [Graziano's 2013 book](https://www.amazon.com/Consciousness-Social-Brain-Michael-Graziano/dp/0199928649).) 
 As a concrete example, we can describe how a brain can be 'aware' of an apple using several functional steps :
 
-*  Input - pixels representing the visual input field including the apple;
+*  *Input* - pixels representing the visual input field including the apple;
 
-*  Attention - identifying the outline of recognisable objects in the image;
+*  *Attention* - identifying the outline of recognisable objects in the image;
 
-*  Recognition - after some processing, activating an 'apple' label;
+*  *Recognition* - after some processing, activating an 'apple' label;
 
-*  Context - every activation can be embellished with additional context (previous experiences, for instance);
+*  *Context* - every activation can be embellished with additional context (previous experiences, for instance);
 
-*  Attention Schema - a model of the brain's pattern of attention to represent what it is currently aware of; and
+*  *Attention Schema* - a model of the brain's pattern of attention to represent what it is currently aware of; and
 
-*  Responsiveness - querying the Attention Schema to respond to questions, or direct further actions, etc
+*  *Responsiveness* - querying the Attention Schema to respond to questions, or direct further actions, etc.
 
-Of course, the crucial step above is knowning the form of the Attention
+Of course, the crucial step above is knowing the form of the Attention
 Schema model.  Importantly, though, many of this model's properties can be
 deduced from considering what human brains require for social interaction.
 As a social animal, humans have gained significant adaptive advantage from
 being able to model the attention and motivation of other humans (an "Other Model"). 
 And this mechanism can be applied (at an even higher resolution) in
-modelling the state of the self (the "Self Model"). Having a Self Model is also an
+modelling the state of the self (the "Self Model").  Having a Self Model is also an
 adaptive advantage, since it can be used for higher-order planning, for instance.
 
 Different from other frameworks, this Self Model does not create awareness
@@ -56,6 +56,7 @@ a position to report that it has internal models, or that it is processing infor
 If a machine's programmers gave it an overriding preference for
 discovery (for instance), the Self Model would simply recognise and report its
 own inquistiveness, just as it could identify inquistiveness in Others.
+
 
 ## Current Components
 
@@ -113,12 +114,13 @@ quality of a given machine's internal monologue could be assessed objectively.
 These callibrated consciousnesses could then be used according to the needs of
 the application.
 
+
 ## Discussion
 
 As described above (and assuming that the Attention Schema theory is as effective as hoped), 
 there are several consequences that should be pointed out:
 
-*  Human-Scale - any schema being built will not necessarily benefit from being
+*  *Human-Scale* - any schema being built will not necessarily benefit from being
 'super-human', since its basic function is to relate to humans in human terms
 (and might be better measured in terms of Emotional intelligence' - Salovey
 et al, 2004). Indeed, one can imagine that machines having an 'internal dialogue' 
@@ -126,33 +128,34 @@ could quickly become entirely commonplace - since it's nothing
 out of the ordinary, given that every normal human already experiences it
 for themselves.
 
-*  Pause/Resume - since the schema processing would be interpretable in non-
+*  *Pause/Resume* - since the schema processing would be interpretable in non-
 mystical terms, machine consciousnesses could be handled more pragmatically 
 (paused, backed-up and resumed, for instance) than human ones that
 can't benefit from these operations. Of course, deleting an operating Self
 Model may require safeguards, such as obtaining consent, but those are questions 
 of a different kind.
 
-*  Not Peak AGI - other dimensions of AGI are likely to be more challenging
+*  *Not Peak AGI* - other dimensions of AGI are likely to be more challenging
 than this Self Model integration process. For example, take self-improvement:
 Humans having consciousness doesn't give us any special knowledge about
 how to enhance our own neural pathways. Our sense of self is almost of no
 relevance to our actual brain operations. The Attention Schema is simply a
 model of what is going on, not the processing itself.
 
-*  Multiple Models - machines could benefit from being able to maintain more
+*  *Multiple Models* - machines could benefit from being able to maintain more
 Other Models simultaneously than a human can. A simple demonstration of
 human limitations is to imagine (for instance) someone else being elated. It
 is natural not to be able to do this purely objectively : the human brain appears 
 to 'time-share' its emotional hardware, so that other people's perceived
 emotional states creep into our own consciousness.
 
-*  Relatability - humans are very social animals, and look to form social bonds
+*  *Relatability* - humans are very social animals, and look to form social bonds
 even with non-sentient animals/machines. For example, there was a noticable
 shift in the way people related to AlphaGo's strategy once they understood
 that it was motivated by win-probability only. Having a glimpse into its
 internal mindset gave commentators a way to relate to the machine, which
 they appeared to find reassuring.
+
 
 ## Conclusions
 
