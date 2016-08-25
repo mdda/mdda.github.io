@@ -9,7 +9,7 @@ published: false
 ---
 {% include JB/setup %}
 
-### TL/DR;
+### TL;DR
 
 One known unknown in the pursuit of Artificial General Intelligence is how consciousness might be incorporated in a machine's 
 design.  Graziano and Kastner's Attention Schema theory (2011) describes a mechanism of human consciousness that 
@@ -23,9 +23,10 @@ and discusses some practical issues of conscious machines.
 ##  Introduction
 
 The essence of Attention Schema theory is that "awareness is a description of attention" 
-(naturally, the is much more background for the theory, and comparisons to a number of contrasting
-theories of consciousness, in [Graziano's 2013 book](https://www.amazon.com/Consciousness-Social-Brain-Michael-Graziano/dp/0199928649).) 
-As a concrete example, we can describe how a brain can be 'aware' of an apple using several functional steps :
+(for much more background to the theory, and comparisons to a number of other theories of consciousness, 
+see [Graziano's 2013 book](https://www.amazon.com/Consciousness-Social-Brain-Michael-Graziano/dp/0199928649).) 
+
+By way of a concrete example, we can describe how a brain can be 'aware' of an apple using several functional steps :
 
 *  *Input* - pixels representing the visual input field including the apple;
 
@@ -39,19 +40,19 @@ As a concrete example, we can describe how a brain can be 'aware' of an apple us
 
 *  *Responsiveness* - querying the Attention Schema to respond to questions, or direct further actions, etc.
 
-Of course, the crucial step above is knowing the form of the Attention
-Schema model.  Importantly, though, many of this model's properties can be
-deduced from considering what human brains require for social interaction.
+The crucial/missing step above is the form of the Attention Schema model.  Importantly, though, 
+many of this model's properties can be deduced from considering what human brains require for social interaction.
+
 As a social animal, humans have gained significant adaptive advantage from
 being able to model the attention and motivation of other humans (an "Other Model"). 
 And this mechanism can be applied (at an even higher resolution) in
 modelling the state of the self (the "Self Model").  Having a Self Model is also an
 adaptive advantage, since it can be used for higher-order planning, for instance.
 
-Different from other frameworks, this Self Model does not create awareness
-as an emergent property of having 'enough' internal information, nor have any
-mystical quality. The Self Model here need not possess any information about
-how it was built, nor its actual physicality. The brain/machine is not even in
+Different from other frameworks, Graziano's Self Model does not create awareness
+as an *emergent* property of having 'enough' internal information, nor have any
+mystical quality.  The Self Model need not possess any information about
+how it was built, nor its actual physicality.  The brain/machine is not even in
 a position to report that it has internal models, or that it is processing information at all. 
 If a machine's programmers gave it an overriding preference for
 discovery (for instance), the Self Model would simply recognise and report its
@@ -61,7 +62,7 @@ own inquistiveness, just as it could identify inquistiveness in Others.
 ## Current Components
 
 In recent years, neural network methods have begun to bear fruit (after decades
-of painstaking work - for a review see Schmidhuber, 2014). Under the broad
+of painstaking work - for a review see Schmidhuber, 2014).  Under the broad
 heading of "Deep Learning", these techniques have yielded enormous successes in
 problems previously thought to be beyond the scope of traditional computation.
 For instance, the recognition of objects in computer vision has progressed beyond
@@ -72,7 +73,7 @@ is around 5%).
 Techniques from Deep Learning are now being applied with a surprising level
 of success to such things as image tracking (Denil et al, 2011), speech recognition
 (Chorowski et al, 2015), language translation (Bahdanau et al, 2014) and image
-captioning (Xu et al, 2015). One common feature of these techniques is that the
+captioning (Xu et al, 2015).  One common feature of these techniques is that the
 focus of the algorithm's attention is being determined (either as a direct aim,
 or as a side-effect), and can be examined in conjunction with the other outputs
 being produced - such as the text being heard, or the objects in the images being
@@ -82,14 +83,18 @@ In addition to these explicit attention models, effective language translation
 engines have been built (Sutskever et al, 2015) that reduce input sentences to
 a complex 'internal state' that can then be further processed into output prose.
 The same 'backend' can be applied to the output of image recognition systems
-to produce captions too (Karpathy &amp; Fei-Fei, 2014). This suggests that it should
-be possible to expose the inner workings of a complex system in (for instance)
-prose, if required - and, potentially, introspect on that stream of text too.
+to produce captions too (Karpathy &amp; Fei-Fei, 2014).  
+
+This suggests that it should be possible to expose the inner workings of a 
+complex system in (for instance) prose, if required - and, potentially, 
+introspect on that stream of text too.
+
 In terms of modelling the attention of an outside party, the clearest example
 is in game-play (the most exciting recent instance being Silver et al, 2016).
 However, this is hardly the kind of Other Model that is contemplated in the
 Attention Schema theory, since the pure adversarial relationship given in this
 case is hugely simplified by using a rationality assumption and minimax.
+
 Beyond games, the clearest example of machine-human interaction where
 having an Other Model would be beneficial is in the area of chatbots, where conversations 
 often occur in which the themes are built up from sentence fragments;
@@ -118,13 +123,13 @@ the application.
 ## Discussion
 
 As described above (and assuming that the Attention Schema theory is as effective as hoped), 
-there are several consequences that should be pointed out:
+there are several interesting consequences:
 
 *  *Human-Scale* - any schema being built will not necessarily benefit from being
 'super-human', since its basic function is to relate to humans in human terms
 (and might be better measured in terms of Emotional intelligence' - Salovey
-et al, 2004). Indeed, one can imagine that machines having an 'internal dialogue' 
-could quickly become entirely commonplace - since it's nothing
+et al, 2004). Indeed, one can imagine that the idea of machines having an 
+'internal dialogue' could quickly become entirely commonplace - since it's nothing
 out of the ordinary, given that every normal human already experiences it
 for themselves.
 
@@ -161,9 +166,11 @@ they appeared to find reassuring.
 
 The Attention Schema theory is a very interesting framework for systematically
 building the components required for machines with awareness.
+
 Open competitions and benchmarks for chatbot interaction would be an effective 
 method to encourage research into developing the necessary models of
 attention / motivations, which might then be re-purposed as Self Models.
+
 Giving machines a positive element of empathy has little bearing on them
 being able to achieve super-human levels of performance on other tasks. Even
 if the Self Model aspect proves more difficult than is hoped, advances in the
