@@ -61,3 +61,10 @@ or contact me using the details given on the slides themselves.
 <a href="http://redcatlabs.com/2016-06-23_PyConSG-Workshop/#/17/9" target="_blank">
 ![Presentation Content Example]({{ site.url }}/assets/img/2016-06-23_PyConSG-Workshop_17-9_600x390.png)
 </a>
+
+### Video Link
+
+And there's also a video of the presentation available 
+<a href="https://www.youtube.com/watch?v=1KjJPikAodk" target="_blank">on YouTube</a>, which was done
+very professionally, however I can't vouch for its usefulness since I can't bear to watch myself...
+

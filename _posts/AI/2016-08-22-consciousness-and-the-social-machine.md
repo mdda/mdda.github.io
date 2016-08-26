@@ -3,7 +3,7 @@ layout: post
 category: AI
 title: Consciousness and the Social Machine
 tagline: Thoughts
-date: 2016-08-22
+date: 2016-08-27
 tags: [AGI,PaperTakeaway]
 published: false
 ---
