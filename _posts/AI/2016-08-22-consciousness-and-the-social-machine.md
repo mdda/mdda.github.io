@@ -4,23 +4,21 @@ category: AI
 title: Consciousness and the Social Machine
 tagline: Thoughts
 date: 2016-08-27
-tags: [AGI,PaperTakeaway]
+tags: [AGI, PaperTakeaway, Conciousness,Attention Schema, Awareness, Chatbots]
 published: false
 ---
 {% include JB/setup %}
 
-### TL;DR
-
 One known unknown in the pursuit of Artificial General Intelligence is how consciousness might be incorporated in a machine's 
-design.  Graziano and Kastner's Attention Schema theory (2011) describes a mechanism of human consciousness that 
-potentially allows the 'hard problem of consciousness' to be approached with an engineering mindset.
+design.  <a href="https://aeon.co/essays/can-we-make-consciousness-into-an-engineering-problem" target="_blank">Graziano and Kastner's Attention Schema theory</a> 
+describes a mechanism of human consciousness that potentially allows the 'hard problem of consciousness' to be approached with an engineering mindset.
+
 This short post summarizes the Attention Schema theory, puts it in an up-to-date machine learning context, 
-and discusses some practical issues of conscious machines.
+and discusses some practical issues of conscious machines.  Among the conclusions it draws is the idea that 
+conciousness itself may be only a stepping stone along the AGI path, rather than the final destination. 
 
-*  Keywords: consciousness, attention schema, awareness, chatbots
 
-
-##  Introduction
+###  Introduction
 
 The essence of Attention Schema theory is that "awareness is a description of attention" 
 (for much more background to the theory, and comparisons to a number of other theories of consciousness, 
@@ -49,7 +47,7 @@ And this mechanism can be applied (at an even higher resolution) in
 modelling the state of the self (the "Self Model").  Having a Self Model is also an
 adaptive advantage, since it can be used for higher-order planning, for instance.
 
-Different from other frameworks, Graziano's Self Model does not create awareness
+In contrast to other frameworks, Graziano's Self Model does not create awareness
 as an *emergent* property of having 'enough' internal information, nor have any
 mystical quality.  The Self Model need not possess any information about
 how it was built, nor its actual physicality.  The brain/machine is not even in
@@ -59,7 +57,7 @@ discovery (for instance), the Self Model would simply recognise and report its
 own inquistiveness, just as it could identify inquistiveness in Others.
 
 
-## Current Components
+### Current Components
 
 In recent years, neural network methods have begun to bear fruit (after decades
 of painstaking work - for a review see Schmidhuber, 2014).  Under the broad
@@ -102,7 +100,7 @@ the human partner may not write particularly clearly; and (as internet-facing
 bots discover) partners may behave in an adversarial fashion.
 
 
-## Practicalities
+### Practicalities
 
 Assuming that Attention Schema is a workable framework for awareness, the
 process of building a machine with actual consciousness boils down to successively 
@@ -162,7 +160,7 @@ internal mindset gave commentators a way to relate to the machine, which
 they appeared to find reassuring.
 
 
-## Conclusions
+### Conclusions
 
 The Attention Schema theory is a very interesting framework for systematically
 building the components required for machines with awareness.
@@ -214,3 +212,5 @@ Nature (2016), vol 529, pp 484–503
 
 *  Salovey, Peter; Mayer, John; Caruso, David: Emotional Intelligence: Theory, Findings,
 and Implications. Psychological Inquiry, pp. 197215
+
+
