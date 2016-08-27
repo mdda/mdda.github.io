@@ -3,9 +3,9 @@ layout: post
 category: AI
 title: Consciousness and the Social Machine
 tagline: Thoughts
-date: 2016-08-27
+date: 2016-08-28
 tags: [AGI, PaperTakeaway, Conciousness,Attention Schema, Awareness, Chatbots]
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -15,7 +15,7 @@ describes a mechanism of human consciousness that potentially allows the 'hard p
 
 This short post summarizes the Attention Schema theory, puts it in an up-to-date machine learning context, 
 and discusses some practical issues of conscious machines.  Among the conclusions it draws is the idea that 
-conciousness itself may be only a stepping stone along the AGI path, rather than the final destination. 
+consciousness itself may be only a stepping stone along the AGI path, rather than the final destination. 
 
 
 ###  Introduction
@@ -93,7 +93,7 @@ However, this is hardly the kind of Other Model that is contemplated in the
 Attention Schema theory, since the pure adversarial relationship given in this
 case is hugely simplified by using a rationality assumption and minimax.
 
-Beyond games, the clearest example of machine-human interaction where
+Beyond games, an example of machine-human interaction where
 having an Other Model would be beneficial is in the area of chatbots, where conversations 
 often occur in which the themes are built up from sentence fragments;
 the human partner may not write particularly clearly; and (as internet-facing
