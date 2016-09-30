@@ -14,6 +14,14 @@ published: false
 Musings : Mechanisms of Learning
 ------------------------------------------------
 
+Feedback Alignment
+  ["Direct Feedback Alignment Provides Learning in Deep Neural Networks"](https://arxiv.org/abs/1609.01596)
+  https://github.com/anokland/dfa-torch
+
+Done
+  _LowBitwidthTraining_1606.06160v2.pdf
+
+
 '_Benefits to NER, Relation Extraction, Link Analysis, and Inference.pdf'
 _Facebook-FastText_1607.01759v2.pdf
 _Facebook-subwords_1607.04606v1.pdf
@@ -22,6 +30,7 @@ _LearningGDwithGD_1606.04474v1.pdf
 '_Lenat Witbrock Cyc Shades of KRR.pdf'
 _OriginAndStructureOfNames_763_Paper.pdf
 _ProgressNN-for-RL_1606.04671v2.pdf
+_Wav2Letter_1609.03193v2.pdf
 
 _achlioptas_ApplicationsOfRandomMatrices_mmds.pdf
 _ADMM-for-Hashing_1604.01475v1.pdf
@@ -32,7 +41,6 @@ _GAN-Improvements_1606.03498v1.pdf
 _Hernandez-Lobato-2015_ProbabalisticBackpropagation_1502.05336v1.pdf
 _ICSC16-v1.41-hus.pdf
 _LossSurfaceOfDeepNets_1412.0233.pdf
-_LowBitwidthTraining_1606.06160v2.pdf
 _MaximalSparsityWithDeepNetworks_1605.01636v2.pdf
 _PiotrMirowski_2014_ReviewAutoEncoders.pdf
 _Schmidthuber-2015_LearningToThink_1511.09249v1.pdf
