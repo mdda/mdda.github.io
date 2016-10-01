@@ -21,16 +21,32 @@ published: false
 *   Perhaps the back-prop chain could be self-improving, just like the forward pass
 
 *   In auto-encoders, the criteria for 'goodness' are :
-    *   Ability to recreate input when noise added
-    *   ...
-    
+    *   Recreate input as accurately as possible
+    *   Recreate original input when noise added before processing
+
+*   RNN ideas in 'SARM' look interesting
+    *   Is fixed-point of RNN anything relevant?  (or is it an 'artifact' of iteration)
+    *   Can RNN weight adjustments be turned to find fixed point explicitly
+    *   But SARM had issues in getting results - either:
+        *   The paper was just completely fake
+        *   The train/test mistakes will soon be made kosher (not worth time to replicate)
+        *   There was something there, but simplification to single-iteration missed the big picture
+    *   May be too time-consuming to replicate experimental setup - and then make an additional advance
+        *   Also, the SARM ideas may be tainted for a while
+        
+           
 *   For regular deep 'featurization', PCA seems competitive
     *   However, PCA is trying to get the 'right answer' in a single step
         *   And there is also the issue of having a 'most significant bit'
     *   But dropout works well, which seems to argue against having a feature 'pecking order'
         *   What would 'dropout-PCA' look like, where reconstruction was hindered by random dropouts?
 
-*   For embeddings...
+
+*   For embeddings, sparsification works well for word similarities, but not for word analogies
+    *   Perhaps because the geometry of a sparse non-negative space is so different from original regular n-dimensional embedding space
+    *   But sparse embedding can be 'reconstituted' into the regular space using full matrix
+        *   Does that matrix need to be correct (and/or what resolution)?  
+        *   Or would a random matrix work just as well?
 
 
 
