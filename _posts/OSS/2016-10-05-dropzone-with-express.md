@@ -22,12 +22,94 @@ The following currently works : Dropzone vX.Y.Z, Express vA.B.C
 ### In the GUI
 
 {% highlight html %}
+  link(href='/t/css/plugins/dropzone/dropzone.css', rel='stylesheet')
+  
+  form#my-awesome-dropzone.dropzone(action="", style="min-height:160px;", method="post", enctype="multipart/form-data")
+    .fallback
+      input(name="source_file[]", type="file", multiple)
+    
+    .form-group.pull-right
+      button#batch-upload.btn.btn-danger(type="submit") Upload Now! 
 {% endhighlight %}
 
 {% highlight javascript %}
+  script(src="/t/js/plugins/dropzone/dropzone.js")
+  script(type='text/javascript').
+    $(document).ready(function() {
+    
+      Dropzone.options.myAwesomeDropzone = {
+        url:'/batch/upload',
+        autoProcessQueue: false,
+        //paramName:'source_file', // The name that will be used to transfer the file (will have '[i=0,1,2,3,4...]' appended)
+        paramName: function(n) { return 'source_file[]';},  // Don't enumerate the transfers
+        uploadMultiple: true,
+        parallelUploads: 4,  // default is 2
+        //maxFilesize: 2, // MB
+
+        init: function() {
+          var myDropzone = this;
+          this.on("completemultiple", function(files, response) {  // was queuecomplete
+            console.log("Complete!");
+            
+            // Now reload page...
+            location.reload(true);  // true => force server reload
+            console.log("Reloaded?");
+          });
+          
+          this.on("addedfile", function() { 
+            console.log("Added File! - show the upload button");
+            $('#batch-upload').show();
+          });
+          
+          $('#batch-upload').click( function(e) {
+            console.log("Clicked on upload button"); // , e.target.href
+            
+            e.preventDefault();
+            e.stopPropagation();
+            
+            myDropzone.processQueue();
+          }).hide();
+          
+        }
+        
+      };      
+      
+    });  
 {% endhighlight %}
 
 ### On the Express server 
 
 {% highlight javascript %}
+var express = require('express');
+var upload_files = require('multer')();
+
+app.post('/batch/upload', upload_files.array('source_file[]'), process_upload); 
+
+var Promise = require('bluebird');
+var fs = Promise.promisifyAll(require('fs'));
+var path = require('path');
+var sanitize = require("sanitize-filename");
+
+function process_upload(req, res) {
+  if(req.files) { 
+    console.log("req.files.length = ", req.files.length);
+    Promise.resolve(req.files)
+      .each(function(file_incoming, idx) {
+          console.log("  Writing POSTed data :", file_incoming.originalname);
+          var sanitized_filename = sanitize(file_incoming.originalname);
+          var file_to_save = path.join( upload_dir, sanitized_filename );
+          
+          return fs
+            .writeFileAsync(file_to_save, file_incoming.buffer)    
+      })
+      .then( _ => {
+        console.log("Added files : Success");
+        return res.sendStatus(200);
+      });
+  }
+  
+}
+
+
+
 {% endhighlight %}
