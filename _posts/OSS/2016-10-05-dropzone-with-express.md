@@ -17,24 +17,25 @@ making the existing links to sample code outdated.
 I found this out after updating to a new version of a site template that
 I was using - finding that my previous working code stopped working.
 
-The following currently works : Dropzone vX.Y.Z, Express vA.B.C
+The following currently works : Dropzone v4.3.0, Express v4.13.4
 
 ### In the GUI
 
 {% highlight html %}
-  link(href='/t/css/plugins/dropzone/dropzone.css', rel='stylesheet')
-  
-  form#my-awesome-dropzone.dropzone(action="", style="min-height:160px;", method="post", enctype="multipart/form-data")
-    .fallback
-      input(name="source_file[]", type="file", multiple)
-    
-    .form-group.pull-right
-      button#batch-upload.btn.btn-danger(type="submit") Upload Now! 
+<link href="/t/css/plugins/dropzone/dropzone.css" rel="stylesheet"/>
+<form id="my-awesome-dropzone" action="" style="min-height:160px;" method="post" enctype="multipart/form-data" class="dropzone">
+  <div class="fallback">
+    <input name="source_file[]" type="file" multiple="multiple"/>
+  </div>
+  <div class="form-group pull-right">
+    <button id="batch-upload" type="submit" class="btn btn-danger">Upload Now! </button>
+  </div>
+</form>
 {% endhighlight %}
 
-{% highlight javascript %}
-  script(src="/t/js/plugins/dropzone/dropzone.js")
-  script(type='text/javascript').
+{% highlight html %}
+<script src="/t/js/plugins/dropzone/dropzone.js"></script>
+<script>
     $(document).ready(function() {
     
       Dropzone.options.myAwesomeDropzone = {
@@ -75,6 +76,7 @@ The following currently works : Dropzone vX.Y.Z, Express vA.B.C
       };      
       
     });  
+</script>
 {% endhighlight %}
 
 ### On the Express server 
