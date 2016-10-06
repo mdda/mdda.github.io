@@ -7,15 +7,15 @@ tags:
 - nodejs
 - express
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
 The uploader behaviour for ```Dropzone``` changed from previous versions, 
-making the existing links to sample code outdated.  
+making the links to sample code in the ```Dropzone``` documentation outdated.  
 
 I found this out after updating to a new version of a site template that
-I was using - finding that my previous working code stopped working.
+I was using - and seeing that my previous working code stopped working.
 
 The following currently works : Dropzone v4.3.0, Express v4.13.4
 
@@ -33,7 +33,7 @@ The following currently works : Dropzone v4.3.0, Express v4.13.4
 </form>
 {% endhighlight %}
 
-{% highlight html %}
+{% highlight javascript %}
 <script src="/t/js/plugins/dropzone/dropzone.js"></script>
 <script>
     $(document).ready(function() {
@@ -85,6 +85,8 @@ The following currently works : Dropzone v4.3.0, Express v4.13.4
 var express = require('express');
 var upload_files = require('multer')();
 
+// .. regular set-up for 'app' ..
+
 app.post('/batch/upload', upload_files.array('source_file[]'), process_upload); 
 
 var Promise = require('bluebird');
@@ -95,6 +97,9 @@ var sanitize = require("sanitize-filename");
 function process_upload(req, res) {
   if(req.files) { 
     console.log("req.files.length = ", req.files.length);
+    
+    var upload_dir='uploads';  //somewhere relevant
+    
     Promise.resolve(req.files)
       .each(function(file_incoming, idx) {
           console.log("  Writing POSTed data :", file_incoming.originalname);
@@ -111,7 +116,5 @@ function process_upload(req, res) {
   }
   
 }
-
-
 
 {% endhighlight %}
