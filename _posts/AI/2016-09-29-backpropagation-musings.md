@@ -42,12 +42,22 @@ published: false
         *   What would 'dropout-PCA' look like, where reconstruction was hindered by random dropouts?
 
 
+
+### Interesting 'other stuff' (Word Embedding enhancements)
+
 *   For embeddings, sparsification works well for word similarities, but not for word analogies
     *   Perhaps because the geometry of a sparse non-negative space is so different from original regular n-dimensional embedding space
     *   But sparse embedding can be 'reconstituted' into the regular space using full matrix
         *   Does that matrix need to be correct (and/or what resolution)?  
         *   Or would a random matrix work just as well?
 
+*   What's all this graph embedding stuff?  :  
+    *   [Retrofitting Word Vectors to Semantic Lexicons](https://arxiv.org/abs/1411.4166)
+        *   https://github.com/mfaruqui/retrofitting 
+    *   [An Ensemble Method to Produce High-Quality Word Embeddings](https://arxiv.org/pdf/1604.01692v1.pdf)
+        *   https://github.com/commonsense/conceptnet-numberbatch
+    *   [Large Scale Distributed Semi-Supervised Learning Using Streaming Approximation](http://www.jmlr.org/proceedings/papers/v51/ravi16.pdf)
+    
 
 
 ### Papers to Digest : Progress
