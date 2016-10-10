@@ -69,6 +69,11 @@ Feedback Alignment
 *  ["Direct Feedback Alignment Provides Learning in Deep Neural Networks"](https://arxiv.org/abs/1609.01596)
   *   https://github.com/anokland/dfa-torch
 
+Relevant alternative backprop derivation :
+
+*  [Mates of Costate](http://www.argmin.net/2016/05/18/mates-of-costate/)
+*  [Mechanics of Lagrangians](http://www.argmin.net/2016/05/31/mechanics-of-lagrangians/)
+
 #### Done - Less relevant (for now)
 
 *   _LowBitwidthTraining_1606.06160v2.pdf
