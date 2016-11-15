@@ -36,6 +36,12 @@ This dataset contains every fact currently in Freebase :
     *   22 GB gzip
     *   250 GB uncompressed
 
+Data cleansing suite, which includes lots of helpful information about the format, etc :
+*   https://github.com/nchah/freebase-triples
+
+Prebuilt AMI available via this [helpful Blog Post](https://www.linkedin.com/pulse/freebase-going-away-now-what-paul-houle?forceNoSplash=true) :
+*  [Prebuilt AMI](https://aws.amazon.com/marketplace/pp/B010RA39G4/ref=srh_res_product_title?ie=UTF8&sr=0-2&qid=1441317655935)
+
 
 ### Simple Questions Dataset 
 
