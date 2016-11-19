@@ -222,13 +222,69 @@ batch_queue = slim.prefetch_queue.prefetch_queue(
 
 
 ### PrettyTensor
+
+Nice [tutorial walk-through](https://www.youtube.com/watch?v=GCUfJQ_dec8), with [code in GitHub](https://github.com/Hvass-Labs/TensorFlow-Tutorials/blob/master/03_PrettyTensor.ipynb) :
+
+Some complaints about [documentation](https://github.com/google/prettytensor/blob/master/docs/pretty_tensor_top_level.md).
+
 {% highlight python %}
 
+
+%matplotlib inline
+import tensorflow as tf
+import numpy as np
+
+# We also need PrettyTensor.
+import prettytensor as pt
+
+from tensorflow.examples.tutorials.mnist import input_data
+data = input_data.read_data_sets('data/MNIST/', one_hot=True)
+
+# initialisation is standard Tensorflow
+
+x = tf.placeholder(tf.float32, shape=[None, img_size_flat], name='x')
+x_image = tf.reshape(x, [-1, img_size, img_size, num_channels])
+y_true = tf.placeholder(tf.float32, shape=[None, 10], name='y_true')
+y_true_cls = tf.argmax(y_true, dimension=1)
+
+
+# Now the PrettyTensor magic
+x_pretty = pt.wrap(x_image)
+
+with pt.defaults_scope(activation_fn=tf.nn.relu):
+    y_pred, loss = x_pretty.\
+        conv2d(kernel=5, depth=16, name='layer_conv1').\
+        max_pool(kernel=2, stride=2).\
+        conv2d(kernel=5, depth=36, name='layer_conv2').\
+        max_pool(kernel=2, stride=2).\
+        flatten().\
+        fully_connected(size=128, name='layer_fc1').\
+        softmax_classifier(class_count=10, labels=y_true)
+
+# This is a helper function to extract mid-flow variables for inspection
+def get_weights_variable(layer_name):
+    # Retrieve an existing variable named 'weights' in the scope
+    # with the given layer_name.
+    # This is awkward because the TensorFlow function was
+    # really intended for another purpose.
+
+    with tf.variable_scope(layer_name, reuse=True):
+        variable = tf.get_variable('weights')
+    return variable
+    
+weights_conv1 = get_weights_variable(layer_name='layer_conv1')
+weights_conv2 = get_weights_variable(layer_name='layer_conv2')
+
+# rest of code as before...
+optimizer = tf.train.AdamOptimizer(learning_rate=1e-4).minimize(loss)
 
 {% endhighlight %}
 
 
 ### TFlearn
+
+Documentation [all online](http://tflearn.org) in regular Python Sphinx format.
+
 {% highlight python %}
 
 {% endhighlight %}
