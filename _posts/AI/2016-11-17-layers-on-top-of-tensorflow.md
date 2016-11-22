@@ -370,4 +370,29 @@ network = tl.layers.DenseLayer(network, n_units=10,
                 act = tf.identity, name='output_layer')
                                                 # output: (?, 10)
                                                 
+tl.iterate.minibatches(inputs, targets, batchsize, shuffle=False)
+
+y = network.outputs
+y_op = tf.argmax(tf.nn.softmax(y), 1)
+cost = tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_with_logits(y, y_))
+
+cost = cost + tl.cost.maxnorm_regularizer(1.0)(network.all_params[0]) +
+              tl.cost.maxnorm_regularizer(1.0)(network.all_params[2])
+
+train_params = network.all_params
+train_op = tf.train.AdamOptimizer(learning_rate, beta1=0.9, beta2=0.999,
+    epsilon=1e-08, use_locking=False).minimize(cost, var_list=train_params)
+
+feed_dict = {x: X_train_a, y_: y_train_a}
+feed_dict.update( network.all_drop )
+sess.run(train_op, feed_dict=feed_dict)
+
+dp_dict = tl.utils.dict_to_one( network.all_drop )
+feed_dict = {x: X_test_a, y_: y_test_a}
+feed_dict.update(dp_dict)
+err, ac = sess.run([cost, acc], feed_dict=feed_dict)
+
+correct_prediction = tf.equal(tf.argmax(y, 1), y_)
+acc = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
+
 {% endhighlight %}
