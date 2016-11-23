@@ -1,22 +1,38 @@
 ---
 layout: post
 category: AI
-title: Layers on top of Tensorflow
-tagline: Rosetta Stone
+title: Layers on top of TensorFlow #1
+tagline: MNIST CNN - Rosetta Stone
 date: 2016-11-17
-tags: [NeuralNetworks,TensorFlow]
+tags: [NeuralNetworks,TensorFlow,MNIST]
 published: false
 ---
 {% include JB/setup %}
 
 
 
-## CNN MNIST with sugar-coated Tensorflow 
+## CNN MNIST with sugar-coated ```TensorFlow```
+
+The following is just a collection of code samples for colving CNN MNIST 
+(all using roughly the same network structure)
+using different layer-helpers on top of regular ```TensorFlow```.  In a review post (coming soon), 
+I'll figure out which one makes the most sense to me (as someone who has previous used ```Theano```/```Lasagne```).
+
+Currently the list is :
+
+*  Plain ```TensorFlow```
+*  ```Keras```
+*  ```TF-Slim```
+*  ```PrettyTensor```
+*  ```TFlearn```
+*  ```TensorLayer```
+
+If you have any suggestions about other sugar-coatings I should consider, please leave a comment.
 
 
-### Plain Tensorflow
+### Plain ```TensorFlow```
 
-When building a simple CNN for MNIST, raw Tensorflow will typically build some helper functions
+When building a simple CNN for MNIST, raw ```TensorFlow``` will typically build some helper functions
 to make the process easier.  
 
 The following is from [ddigiorg's repo](https://github.com/ddigiorg/AI-TensorFlow/blob/master/CNN-MNIST/CNN-MNIST.py) :
@@ -96,15 +112,15 @@ print("test accuracy %g" % accuracy.eval(feed_dict = {x: mnist.test.images, y_: 
 {% endhighlight %}
 
 
-### Keras
+### ```Keras```
 
-This is a popular frontend - particularly since it can use both Theano and Tensorflow as a backend.
+This is a popular frontend - particularly since it can use both ```Theano``` and ```TensorFlow``` as a backend.
 
-The flip-side of this flexibility, is that one loses the ability to 
-dig into the backend's explicit representation : So adding custom layers is ~no longer possible.
+The flip-side of this flexibility is that one loses the ability to 
+dig into the backend's explicit representation : So adding custom layers is (roughly speaking) no longer possible.
 
 One can see from the ```model=Sequential(); model.add( fn )``` code that ```Keras``` has 
-its own environment for forumulating the computational graph, before handing it off to whichever
+its own environment for formulating the computational graph, before handing it off to whichever
 backend is chosen.
 
 {% highlight python %}
@@ -152,9 +168,9 @@ score = model.evaluate(X_test, Y_test, verbose=0)
 {% endhighlight %}
 
 
-### TFSlim
+### ```TF-Slim```
 
-From a [subdirectory of the  main Tensorflow repo](https://github.com/tensorflow/models/blob/master/slim/nets/lenet.py) :
+From a [subdirectory of the  main TensorFlow repo](https://github.com/tensorflow/models/blob/master/slim/nets/lenet.py) :
 
 {% highlight python %}
 import tensorflow as tf
@@ -221,27 +237,23 @@ batch_queue = slim.prefetch_queue.prefetch_queue(
 {% endhighlight %}
 
 
-### PrettyTensor
+### ```PrettyTensor```
 
-Nice [tutorial walk-through](https://www.youtube.com/watch?v=GCUfJQ_dec8), with [code in GitHub](https://github.com/Hvass-Labs/TensorFlow-Tutorials/blob/master/03_PrettyTensor.ipynb) :
-
-Some complaints about [documentation](https://github.com/google/prettytensor/blob/master/docs/pretty_tensor_top_level.md).
+Nice [tutorial walk-through](https://www.youtube.com/watch?v=GCUfJQ_dec8), with 
+[code in GitHub](https://github.com/Hvass-Labs/TensorFlow-Tutorials/blob/master/03_PrettyTensor.ipynb) 
+( some complaints about [documentation](https://github.com/google/prettytensor/blob/master/docs/pretty_tensor_top_level.md), though ) :
 
 {% highlight python %}
-
-
 %matplotlib inline
 import tensorflow as tf
 import numpy as np
 
-# We also need PrettyTensor.
 import prettytensor as pt
 
 from tensorflow.examples.tutorials.mnist import input_data
 data = input_data.read_data_sets('data/MNIST/', one_hot=True)
 
 # initialisation is standard Tensorflow
-
 x = tf.placeholder(tf.float32, shape=[None, img_size_flat], name='x')
 x_image = tf.reshape(x, [-1, img_size, img_size, num_channels])
 y_true = tf.placeholder(tf.float32, shape=[None, 10], name='y_true')
@@ -281,7 +293,7 @@ optimizer = tf.train.AdamOptimizer(learning_rate=1e-4).minimize(loss)
 {% endhighlight %}
 
 
-### TFlearn
+### ```TFlearn```
 
 Documentation [all online](http://tflearn.org) in regular Python Sphinx format.
 
@@ -326,7 +338,7 @@ model.fit({'input': X}, {'target': Y}, n_epoch=20,
 {% endhighlight %}
 
 
-### TensorLayer
+### ```TensorLayer```
 
 Documentation [all online](http://tensorlayer.readthedocs.io/en/latest/) in regular Python Sphinx format.
 
@@ -396,3 +408,4 @@ correct_prediction = tf.equal(tf.argmax(y, 1), y_)
 acc = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
 {% endhighlight %}
+
