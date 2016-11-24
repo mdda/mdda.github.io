@@ -409,3 +409,15 @@ acc = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
 {% endhighlight %}
 
+
+### ```tf.contrib.learn``` aka ```skflow```
+
+Not to be confused with ```tflearn```...
+
+Documentation .
+
+Partial example from  :
+
+{% highlight python %}
+{% endhighlight %}
+

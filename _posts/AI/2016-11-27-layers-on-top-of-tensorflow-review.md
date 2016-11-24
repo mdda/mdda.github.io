@@ -38,16 +38,33 @@ sophisticated modules prebuilt (Bi-LSTM, attention, dropout, sane initialisation
 
 *  ```TF-Slim```
 *  ```PrettyTensor```
-*  ```TFlearn```
+*  ```tf.contrib.learn```  aka ```skflow```
 
 ```TF-Slim``` is part of the main ```TensorFlow``` repo, and initially looked promising.  However,
 it appears that the main focus is on CNN applications - and the breadth of other modules isn't really there.
 For instance, there has been an Issue requesting an RNN implementation open for the last 6 months without
 any positive response other than 'we (i.e. Google) will get to it soon' - which is pretty unhelpful for a nominally Open Source package.
 
-```PrettyTensor``` is apparently produced by Googlers, but not in the official ```TensorFlow``` mainline.
+```PrettyTensor``` is apparently produced by Googlers, but not in the official ```TensorFlow``` mainline.  One
+very attractive feature is it's chainable syntax, which makes it feel very *functional* in design.  On the other hand,
+its documentation is very disheartening (which is such a pity, since if I went down this road,
+I would certainly help in improving the documentation).  So, it's kind of a tipping point question,
+and (at the moment) I'm just not close enough to the tipping point to make me think that this is 
+going to be mainstream enough to want to be an early adopter.  Such a nice syntax, though...
+
+```tf.contrib.learn``` TBD
 
 
 
-### Third-Party ```TensorLayer```
+### Third-Party 
+
+*  ```TFlearn```
+*  ```TensorLayer```
+
+
+```TFlearn``` has a very similar style to ```lasagne```, which rates as a positive feature.  And the 
+documentation site is a positive too.  Another positive claim : TFLearn is also intended to stay up-to-date 
+with latest deep learning techniques.   
+
+```TensorLayer```  TBD
 
