@@ -44,6 +44,7 @@ sophisticated modules prebuilt (Bi-LSTM, attention, dropout, sane initialisation
 it appears that the main focus is on CNN applications - and the breadth of other modules isn't really there.
 For instance, there has been an Issue requesting an RNN implementation open for the last 6 months without
 any positive response other than 'we (i.e. Google) will get to it soon' - which is pretty unhelpful for a nominally Open Source package.
+Also, it looks like many function arguments are positional, which doesn't help readability.
 
 ```PrettyTensor``` is apparently produced by Googlers, but not in the official ```TensorFlow``` mainline.  One
 very attractive feature is it's chainable syntax, which makes it feel very *functional* in design.  On the other hand,
@@ -64,7 +65,13 @@ going to be mainstream enough to want to be an early adopter.  Such a nice synta
 
 ```TFlearn``` has a very similar style to ```lasagne```, which rates as a positive feature.  And the 
 documentation site is a positive too.  Another positive claim : TFLearn is also intended to stay up-to-date 
-with latest deep learning techniques.   
+with latest deep learning techniques.   However, it looks like many function arguments are positional, which doesn't help readability.
 
-```TensorLayer```  TBD
+```TensorLayer``` named arguments are good.  Their own blurb :     
+>   A frequent question regarding TensorLayer is that why do we develop this library instead of leveraging existing ones like Keras and Tflearn. TensorLayer differentiates with those with its pursuits for flexibility and performance. A DL user may find it comfortable to bootstrap with Keras and Tflearn. These libraries provide high-level abstractions that completely mask the underlying engine from users. Though good for using, it becomes hard to tune and modify from the bottom, which is necessary when addressing domain-specific problems (i.e., one model does not fit all).
+>
+>  In contrast, TensorLayer advocates a flexible programming paradigm where third-party neural network libraries can be used interchangeably with the native TensorFlow functions. This allows users to enjoy the ease of using powerful pre-built modules without sacrificing the control of the underlying training process. TensorLayer's noninvasive nature also makes it easy to consolidate with other wrapper libraries such as TF-Slim. However, flexibility does not come with the loss of performance and heterogeneity support. TensorLayer allows seamless distributed and heterogeneous deployment with its first-class support for the TensorFlow roadmap. 
+>
+>  TensorLayer is a major ongoing research project in Data Science Institute, Imperial College London. TensorLayer contributors are from Imperial College, Tsinghua University, Carnegie Mellon University, Google, Microsoft, Bloomberg and etc. 
+
 
