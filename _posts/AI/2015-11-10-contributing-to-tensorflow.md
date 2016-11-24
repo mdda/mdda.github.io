@@ -4,7 +4,7 @@ title: Contributing to TensorFlow
 tagline: (we're not in <s>Kansas</s> GitHub any more)
 category: AI
 tags:
-- tensorflow
+- TensorFlow
 - theano
 - python
 layout: post
@@ -27,7 +27,7 @@ a computation graph construction machine in C++ / CUDA (no OpenCL as far as I ca
 One thing, though, is that contributions to the project have to go over
 googlesource, rather than GitHub, and I put together a quick self-reminder post:
 
-### Contributing to Tensorflow 
+### Contributing to TensorFlow 
 
 Preparatory steps:
  

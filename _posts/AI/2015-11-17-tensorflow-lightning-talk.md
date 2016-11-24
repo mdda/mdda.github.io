@@ -4,7 +4,7 @@ title: TensorFlow @ PyData SG
 tagline: Presentation
 category: AI
 tags:
-- tensorflow
+- TensorFlow
 - python
 - Presentation
 layout: post

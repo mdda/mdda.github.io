@@ -4,7 +4,7 @@ title: TensorFlow Installation
 tagline: Pretty Smooth...
 category: AI
 tags:
-- tensorflow
+- TensorFlow
 - python
 - Nvidia
 layout: post
@@ -68,7 +68,7 @@ I tensorflow/stream_executor/cuda/cuda_dnn.cc:1062] Unable to load cuDNN DSO.
 
 *  Go to the [Nvidia cuDNN legacy library download site](https://developer.nvidia.com/rdp/cudnn-archive) and download the v6.5 library
 
-Uncompress and copy the cudnn files into the toolkit directory.  Assuming the toolkit is installed in ```/usr/local/cuda```:
+Uncompress and copy the ```cudnn``` files into the toolkit directory.  Assuming the toolkit is installed in ```/usr/local/cuda```:
 
 {% highlight bash %}
 tar xvzf cudnn-6.5-linux-x64-v2.tgz

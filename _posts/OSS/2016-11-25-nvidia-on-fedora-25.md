@@ -1,12 +1,12 @@
 ---
 date: 2016-11-25
-title: Nvidia (8.0) installation for Tensorflow on Fedora 25
+title: Nvidia (8.0) installation for TensorFlow on Fedora 25
 category: OSS
 tags:
 - fedora
 - linux
 - Nvidia
-- tensorflow
+- TensorFlow
 layout: post
 published: true
 ---
