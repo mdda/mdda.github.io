@@ -8,12 +8,12 @@ tags:
 - Nvidia
 - tensorflow
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
 
-### Just use Negativo's Repo...
+## Just use Negativo's Repo...
 
 Since Nvidia totally screwed up the ```gcc``` versioning/ABI on Fedora 24, I decided to 
 take the *easy option* and use someone else's pre-packaged Nvidia installation.
@@ -22,27 +22,48 @@ I had tried this method before (on previous Fedoras), but the choices of paths h
 left me unconvinced (particularly since during the 'teething' phase of getting the
 installation working, error messages can come from all sorts of sources/reasons).
 
-Here's a quick run-down of what has worked for me...
+Here's a quick run-down of what has worked for me :
+
+
+### Clean out previous installations
 
 {% highlight bash %}
-dnf remove xorg-x11-drv-nvidia  # 1Gb of stuff disappears...
-dnf remove cuda-repo-rhel7-7-0-local-7.0-28.x86_64
+dnf remove xorg-x11-drv-nvidia  # 1Gb of stuff disappears
+dnf remove cuda-repo-*
 
 rm -rf /usr/local/cuda*
+# And remove the reminants of any other blind-alleys you've previously gone down...
 {% endhighlight %}
 
 
+### Check that you've got a GPU
 
-Add the [http://negativo17.org/nvidia-driver/](negativo Nvidia repo):
+Running :
+
+{% highlight bash %}
+sudo lspci | grep -i NVIDIA
+{% endhighlight %}
+
+should result in a line that mentions your VGA adapter.
+
+
+### Add the Negativo Nvidia Repo
+
+The [negativo Nvidia repo](http://negativo17.org/nvidia-driver/) should now be added :
 
 {% highlight bash %}
 dnf config-manager --add-repo=http://negativo17.org/repos/fedora-nvidia.repo
 {% endhighlight %}
 
 And then install the nvidia driver, and the necessary libraries for ```cuda``` operations.  
-Note that if you want X11 to run, you'll need a monitor attached.  
-I didn't attach a monitor to the machine while doing this, so it's not proven that 
-the video card ends up doing anything but ```cuda``` operations :: But that's fine with me.
+
+Note that if you want X11 to run on the graphics card, you'll obviously need a monitor 
+attached.  However, since I didn't attach a monitor to the machine while doing this, 
+it's not proven that the video card ends up capable of doing anything but ```cuda``` operations :: But that's fine with me,
+because this is a machine that won't ever have a monitor attached to it (much to the 
+disappointment of the gamers in the office).
+
+The following will each pull in a load more dependencies (the Negativo repo is intentionally modular / fragmented) :
 
 {% highlight bash %}
 dnf install kernel-devel dkms-nvidia  nvidia-driver-cuda
@@ -50,7 +71,8 @@ dnf install cuda-devel cuda-cudnn-devel
 {% endhighlight %}
 
 
-For on-board intel driver (xorg failing to initialize - but no screen plugged in), as a precautionary measure) :
+In my case, I also added an ```intel``` driver for the internal on-board video subsystem 
+(just so that ```X11``` might be tempted to run if there's a monitor plugged in) :
 
 {% highlight bash %}
 dnf install xorg-x11-drv-intel
@@ -68,9 +90,18 @@ drm_kms_helper        151552  2 i915,nvidia_drm
 drm                   344064  4 i915,nvidia_drm,drm_kms_helper
 {% endhighlight %}
 
+The key thing here are the references to ```nvidia``` and ```nvidia_uvm```.
 
-https://www.tensorflow.org/versions/r0.11/get_started/os_setup.html
-Ctrl-F for : Download and install cuDNN
+If you've got references to ```nouveau``` appearing in ```lsmod```, something didn't work correctly.
+
+
+### Install ```TensorFlow``` for the GPU 
+
+Looking within the [TensorFlow installation instructions](https://www.tensorflow.org/versions/r0.11/get_started/os_setup.html) 
+for "Download and install cuDNN" shows that TensorFlow is expecting v8.0, which is good, because
+that is what the Negativo packing supplies.
+
+Now, find and install the right version of the ```TensorFlow``` wheel : 
 
 {% highlight bash %}
 virtualenv --system-site-packages ~/env
@@ -83,6 +114,9 @@ pip install --ignore-installed --upgrade $TF_BINARY_URL
 {% endhighlight %}
 
 
+### Test ```TensorFlow``` with the GPU
+
+The following can be executed (the second line onwards will be within the Python REPL) :
 
 {% highlight python %}
 python
@@ -94,6 +128,8 @@ b = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[3, 2], name='b')
 c = tf.matmul(a, b)
 print sess.run(c)
 {% endhighlight %}
+
+This is what will appear if the installation **DIDN'T WORK** :
 
 {% highlight python %}
 Python 2.7.12 (default, Sep 29 2016, 12:52:02) 
@@ -132,32 +168,13 @@ I tensorflow/core/common_runtime/simple_placer.cc:819] a: /job:localhost/replica
 {% endhighlight %}
 
 
-{% highlight python %}
-python
-Python 2.7.12 (default, Sep 29 2016, 12:52:02) 
-[GCC 6.2.1 20160916 (Red Hat 6.2.1-2)] on linux2
-Type "help", "copyright", "credits" or "license" for more information.
->>> import tensorflow as tf
-I tensorflow/stream_executor/dso_loader.cc:111] successfully opened CUDA library libcublas.so locally
-I tensorflow/stream_executor/dso_loader.cc:111] successfully opened CUDA library libcudnn.so locally
-I tensorflow/stream_executor/dso_loader.cc:111] successfully opened CUDA library libcufft.so locally
-I tensorflow/stream_executor/dso_loader.cc:111] successfully opened CUDA library libcuda.so.1 locally
-I tensorflow/stream_executor/dso_loader.cc:111] successfully opened CUDA library libcurand.so locally
+### Fixing the ```/dev/nvidia0``` problem
 
->>> sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
+The solution to this is running the [bash script inside Nvidia installation instructions](http://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#runfile-verifications), after which it all works as expected.
 
-E tensorflow/stream_executor/cuda/cuda_driver.cc:491] failed call to cuInit: CUDA_ERROR_UNKNOWN
-I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:147] no NVIDIA GPU device is present: /dev/nvidia0 does not exist
-Device mapping: no known devices.
-I tensorflow/core/common_runtime/direct_session.cc:252] Device mapping:
-{% endhighlight %}
-
-
-After running the [bash script inside Nvidia installation instructions](http://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#runfile-verifications), it all works as expected :
+Save the following script as ```./make-nvidia-device-nodes.bash``` and ```chmod 744 ./make-nvidia-device-nodes.bash``` :
 
 {% highlight bash %}
-more /root/fedora25-cuda/make-nvidia-device-nodes.bash 
-
 #!/bin/bash
 
 /sbin/modprobe nvidia
@@ -191,8 +208,16 @@ else
 fi
 {% endhighlight %}
 
+Then, after executing ```./make-nvidia-device-nodes.bash```, the device ```/dev/nvidia0``` should appear.
+
+The reason it may not have been there before is that it is normally created *on-demand* by ```X11```,
+but in a headless/monitorless situation, it never gets called into existence.  That's what the script causes
+to happen.
 
 
+### When it finally works...
+
+Then the python REPL code :
 
 {% highlight python %}
 python
@@ -204,6 +229,8 @@ b = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[3, 2], name='b')
 c = tf.matmul(a, b)
 print sess.run(c)
 {% endhighlight %}
+
+Produces the following happy messages : 
 
 {% highlight python %}
 I tensorflow/stream_executor/dso_loader.cc:111] successfully opened CUDA library libcublas.so locally
@@ -236,3 +263,5 @@ I tensorflow/core/common_runtime/simple_placer.cc:819] a: /job:localhost/replica
 [[ 22.  28.]
  [ 49.  64.]]
 {% endhighlight %}
+
+All done.
