@@ -239,9 +239,12 @@ batch_queue = slim.prefetch_queue.prefetch_queue(
 
 ### ```PrettyTensor```
 
+The [main code](https://github.com/google/prettytensor) demonstrates the 'Fluent' style of function chaining,
+though there are some complaints about [documentation](https://github.com/google/prettytensor/blob/master/docs/pretty_tensor_top_level.md).
+
 Nice [tutorial walk-through](https://www.youtube.com/watch?v=GCUfJQ_dec8), with 
-[code in GitHub](https://github.com/Hvass-Labs/TensorFlow-Tutorials/blob/master/03_PrettyTensor.ipynb) 
-( some complaints about [documentation](https://github.com/google/prettytensor/blob/master/docs/pretty_tensor_top_level.md), though ) :
+[code in GitHub](https://github.com/Hvass-Labs/TensorFlow-Tutorials/blob/master/03_PrettyTensor.ipynb)  :
+
 
 {% highlight python %}
 %matplotlib inline
@@ -381,8 +384,6 @@ network = tl.layers.DropoutLayer(network, keep=0.5, name='drop2')
 network = tl.layers.DenseLayer(network, n_units=10,
                 act = tf.identity, name='output_layer')
                                                 # output: (?, 10)
-                                                
-tl.iterate.minibatches(inputs, targets, batchsize, shuffle=False)
 
 y = network.outputs
 y_op = tf.argmax(tf.nn.softmax(y), 1)
@@ -395,14 +396,25 @@ train_params = network.all_params
 train_op = tf.train.AdamOptimizer(learning_rate, beta1=0.9, beta2=0.999,
     epsilon=1e-08, use_locking=False).minimize(cost, var_list=train_params)
 
+# ...
+
 feed_dict = {x: X_train_a, y_: y_train_a}
 feed_dict.update( network.all_drop )
 sess.run(train_op, feed_dict=feed_dict)
+
+# ...
+
+for batch in tl.iterate.minibatches(inputs, targets, batchsize, shuffle=False):
+  pass # ... Training
+
+# ...
 
 dp_dict = tl.utils.dict_to_one( network.all_drop )
 feed_dict = {x: X_test_a, y_: y_test_a}
 feed_dict.update(dp_dict)
 err, ac = sess.run([cost, acc], feed_dict=feed_dict)
+
+# ...
 
 correct_prediction = tf.equal(tf.argmax(y, 1), y_)
 acc = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
