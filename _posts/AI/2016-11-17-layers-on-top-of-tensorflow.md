@@ -296,7 +296,7 @@ optimizer = tf.train.AdamOptimizer(learning_rate=1e-4).minimize(loss)
 {% endhighlight %}
 
 
-### ```TFlearn```
+### ```TFlearn``` (not ```tf.contrib.learn```)
 
 Documentation [all online](http://tflearn.org) in regular Python Sphinx format.
 
@@ -405,8 +405,7 @@ sess.run(train_op, feed_dict=feed_dict)
 # ...
 
 for batch in tl.iterate.minibatches(inputs, targets, batchsize, shuffle=False):
-  pass # ... Training
-
+  print(batch)   # ... creates batches for Training
 # ...
 
 dp_dict = tl.utils.dict_to_one( network.all_drop )

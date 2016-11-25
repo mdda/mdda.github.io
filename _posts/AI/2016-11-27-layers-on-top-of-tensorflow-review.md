@@ -68,8 +68,9 @@ than using the trained model as part of a bigger data pipeline (however attracti
 
 ```TFlearn``` has a very similar style to ```lasagne```, which rates as a positive feature.  And the 
 documentation site is a positive too.  Another positive claim : TFLearn is also intended to stay up-to-date 
-with latest deep learning techniques.   However, it looks like many function arguments are positional, which doesn't help readability.
-On the plus side, the GitHub repo has more traction than ```TensorLayer```.
+with latest deep learning techniques.   And the GitHub repo has more traction than ```TensorLayer```.
+However, it looks like many function arguments are positional, which doesn't help readability - but that may 
+be a big deal.  
 
 ```TensorLayer``` named arguments are good.  And there are recent commits (and documentation in Chinese, 
 which is interesting).  Their own blurb :     
