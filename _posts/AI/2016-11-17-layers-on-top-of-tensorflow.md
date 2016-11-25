@@ -3,9 +3,9 @@ layout: post
 category: AI
 title: Layers on top of TensorFlow #1
 tagline: MNIST CNN - Rosetta Stone
-date: 2016-11-17
+date: 2016-11-26
 tags: [NeuralNetworks,TensorFlow,MNIST]
-published: false
+published: true
 ---
 {% include JB/setup %}
 

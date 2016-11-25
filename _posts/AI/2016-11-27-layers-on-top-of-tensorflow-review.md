@@ -62,6 +62,8 @@ than using the trained model as part of a bigger data pipeline (however attracti
 
 ### Third-Party 
 
+It seems that these candidates are external to Google, and may be more open to actual outside contributions.
+
 *  ```TFlearn```
 *  ```TensorLayer```
 
