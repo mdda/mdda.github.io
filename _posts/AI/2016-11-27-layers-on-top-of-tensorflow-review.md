@@ -20,6 +20,9 @@ looking at raw ```TensorFlow``` makes me want to reach out for some additional h
 layers.  There are lots of contenders, several of which are backed by Googlers, each 
 with a different emphasis and style.
 
+If there's anything wrong / inaccurate / debatable in the following, please let me know in the comments - 
+I'm just interested in making a decent choice to speed up my ```TensorFlow``` experimentation.
+
 
 ### Basic considerations
 
@@ -74,6 +77,15 @@ with latest deep learning techniques.   And the GitHub repo has more traction th
 However, it looks like many function arguments are positional, which doesn't help readability - but that may 
 be a big deal.  
 
+Looking at the code : ```TFlearn``` seems to be split into a decent hierarchy of modules.  More interestingly, it is structured
+as functions on ```tf.Tensor``` objects directly - not interposing its own object representations.  As such, 
+it's purely a (large) set of helper functions for regular ```TensorFlow```.  This is captured in their statement : 
+
+>  Full transparency over Tensorflow. All functions are built over tensors and can be used independently of TFLearn.
+
+
+
+
 ```TensorLayer``` named arguments are good.  And there are recent commits (and documentation in Chinese, 
 which is interesting).  Their own blurb :     
 
@@ -83,4 +95,7 @@ which is interesting).  Their own blurb :
 >
 >  TensorLayer is a major ongoing research project in Data Science Institute, Imperial College London. TensorLayer contributors are from Imperial College, Tsinghua University, Carnegie Mellon University, Google, Microsoft, Bloomberg and etc. 
 
+Looking at the code : ```TensorLayer``` consists of a number of pretty long class-specific files.  Similarly to 
+```Lasagne```, it operates on its own classes (such as ```Layer```) that can carry around sets of information
+in addition to what ```TensorFlow``` itself uses.
 

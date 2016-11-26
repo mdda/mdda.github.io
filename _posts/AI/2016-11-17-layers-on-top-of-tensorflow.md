@@ -23,9 +23,11 @@ Currently the list is :
 *  Plain ```TensorFlow```
 *  ```Keras```
 *  ```TF-Slim```
+*  ```tf.contrib.learn``` aka ```skflow```
 *  ```PrettyTensor```
 *  ```TFlearn```
 *  ```TensorLayer```
+*  ```SugarTensor```
 
 If you have any suggestions about other sugar-coatings I should consider, please leave a comment.
 
@@ -111,8 +113,10 @@ for i in range(20000):
 print("test accuracy %g" % accuracy.eval(feed_dict = {x: mnist.test.images, y_: mnist.test.labels, keep_prob: 1.0}))
 {% endhighlight %}
 
+A more interesting example that uses pure ```TensorFlow``` is [Fast Style Transfer](https://github.com/lengstrom/fast-style-transfer/).
 
-### ```Keras```
+
+### [```Keras```](https://github.com/fchollet/keras)
 
 This is a popular frontend - particularly since it can use both ```Theano``` and ```TensorFlow``` as a backend.
 
@@ -168,7 +172,10 @@ score = model.evaluate(X_test, Y_test, verbose=0)
 {% endhighlight %}
 
 
-### ```TF-Slim```
+### [```TF-Slim```](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/slim)
+
+This looks like 'just what the Doctor ordered', until you look into the [seq2seq code](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/contrib/seq2seq/python/ops/layers.py),
+and find that the promising looking library has quite a few stubbed functions, which solely execute ```pass```.
 
 From a [subdirectory of the  main TensorFlow repo](https://github.com/tensorflow/models/blob/master/slim/nets/lenet.py) :
 
@@ -237,7 +244,7 @@ batch_queue = slim.prefetch_queue.prefetch_queue(
 {% endhighlight %}
 
 
-### ```PrettyTensor```
+### [```PrettyTensor```](https://github.com/google/prettytensor)
 
 The [main code](https://github.com/google/prettytensor) demonstrates the 'Fluent' style of function chaining,
 though there are some complaints about [documentation](https://github.com/google/prettytensor/blob/master/docs/pretty_tensor_top_level.md).
@@ -296,7 +303,7 @@ optimizer = tf.train.AdamOptimizer(learning_rate=1e-4).minimize(loss)
 {% endhighlight %}
 
 
-### ```TFlearn``` (not ```tf.contrib.learn```)
+### [```TFlearn```](http://tflearn.org) (not ```tf.contrib.learn```)
 
 Documentation [all online](http://tflearn.org) in regular Python Sphinx format.
 
@@ -341,7 +348,7 @@ model.fit({'input': X}, {'target': Y}, n_epoch=20,
 {% endhighlight %}
 
 
-### ```TensorLayer```
+### [```TensorLayer```](http://tensorlayer.readthedocs.io/en/latest/)
 
 Documentation [all online](http://tensorlayer.readthedocs.io/en/latest/) in regular Python Sphinx format.
 
@@ -421,7 +428,7 @@ acc = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 {% endhighlight %}
 
 
-### ```tf.contrib.learn``` aka ```skflow```
+### [```tf.contrib.learn``` aka ```skflow```](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/learn/python/learn)
 
 Not to be confused with ```tflearn```...
 
@@ -432,7 +439,6 @@ Documentation at [the main TensorFlow site](https://www.tensorflow.org/versions/
 Code from [the skflow examples directory](https://github.com/tensorflow/tensorflow/blob/r0.11/tensorflow/examples/skflow/mnist.py) :
 
 {% highlight python %}
-
 """This showcases how simple it is to build image classification networks.
 It follows description from this TensorFlow tutorial:
     https://www.tensorflow.org/versions/master/tutorials/mnist/pros/index.html#deep-mnist-for-experts
@@ -501,3 +507,48 @@ score = metrics.accuracy_score(
 print('Accuracy: {0:f}'.format(score))
 {% endhighlight %}
 
+
+
+### [```sugartensor```](https://github.com/buriburisuri/sugartensor)
+
+This jumped out because of the same author used it to reimplement [Speech-to-Text-WaveNet](https://github.com/buriburisuri/speech-to-text-wavenet).
+
+Documentation is very limited (mainly read-the-code), but the [code is in GitHub](https://github.com/buriburisuri/sugartensor), 
+and makes the interesting choice of putting itself on the TensorFlow tensor variable structure itself, with the prefix ```sg_```
+to avoid polluting the namespace.  This is somewhere in between {clever, ingenious, convenient} and nasty (TBD).  And it 
+also means that these sugar methods can be chained (like ```prettytensor```, without requiring special wrapping).
+
+Code from [main repository README](https://github.com/buriburisuri/sugartensor) :
+
+{% highlight python %}
+import sugartensor as tf
+
+# set log level to debug
+tf.sg_verbosity(10)
+
+# MNIST input tensor ( with QueueRunner )
+data = tf.sg_data.Mnist()
+
+# inputs
+x = data.train.image
+y = data.train.label
+
+# create training graph
+with tf.sg_context(act='relu', bn=True):
+    logit = (x.sg_conv(dim=16).sg_pool()
+             .sg_conv(dim=32).sg_pool()
+             .sg_conv(dim=32).sg_pool()
+             .sg_flatten()
+             .sg_dense(dim=256)
+             .sg_dense(dim=10, act='linear', bn=False))
+
+# cross entropy loss with logit ( for training set )
+loss = logit.sg_ce(target=y)
+
+# accuracy evaluation ( for validation set )
+acc = (logit.sg_reuse(input=data.valid.image).sg_softmax()
+       .sg_accuracy(target=data.valid.label, name='val'))
+
+# train
+tf.sg_train(loss=loss, eval_metric=[acc], ep_size=data.train.num_batch, save_dir='asset/train/conv')
+{% endhighlight %}
