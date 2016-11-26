@@ -69,6 +69,7 @@ It seems that these candidates are external to Google, and may be more open to a
 
 *  ```TFlearn```
 *  ```TensorLayer```
+*  ```SugarTensor```
 
 
 ```TFlearn``` has a very similar style to ```lasagne```, which rates as a positive feature.  And the 
@@ -85,7 +86,6 @@ it's purely a (large) set of helper functions for regular ```TensorFlow```.  Thi
 
 
 
-
 ```TensorLayer``` named arguments are good.  And there are recent commits (and documentation in Chinese, 
 which is interesting).  Their own blurb :     
 
@@ -99,3 +99,17 @@ Looking at the code : ```TensorLayer``` consists of a number of pretty long clas
 ```Lasagne```, it operates on its own classes (such as ```Layer```) that can carry around sets of information
 in addition to what ```TensorFlow``` itself uses.
 
+
+
+```SugarTensor``` looks like a one-person project.  And it makes the 'interesting' choice of creating the 
+sugaring functions directly on the ```TensorFlow``` Tensor objects.  The benefit of this is that regular
+```TensorFlow``` code can be mixed-and-matched easily.  But the syntax also allows for chaining of 
+methods (which is nice).  The examples directory consists of MNIST experiments done in lots of different architectures.
+Documentation is basically 'read the code' (which is itself pretty terse because the sugaring magic is available 
+on every tensor object...)
+
+
+
+## Summary
+
+Hmmm...
