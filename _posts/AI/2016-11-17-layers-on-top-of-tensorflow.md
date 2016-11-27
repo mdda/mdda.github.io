@@ -32,7 +32,7 @@ Currently the list is :
 If you have any suggestions about other sugar-coatings I should consider, please leave a comment.
 
 
-### Plain ```TensorFlow```
+### [Plain ```TensorFlow```](https://www.tensorflow.org/)
 
 When building a simple CNN for MNIST, raw ```TensorFlow``` will typically build some helper functions
 to make the process easier.  
@@ -113,7 +113,8 @@ for i in range(20000):
 print("test accuracy %g" % accuracy.eval(feed_dict = {x: mnist.test.images, y_: mnist.test.labels, keep_prob: 1.0}))
 {% endhighlight %}
 
-A more interesting example that uses pure ```TensorFlow``` is [Fast Style Transfer](https://github.com/lengstrom/fast-style-transfer/).
+A more interesting example that uses pure ```TensorFlow``` is [Fast Style Transfer](https://github.com/lengstrom/fast-style-transfer/),
+or this [thorough LSTM-based tutorial](https://github.com/guillaume-chevalier/LSTM-Human-Activity-Recognition/).
 
 
 ### [```Keras```](https://github.com/fchollet/keras)
@@ -241,6 +242,88 @@ batch_queue = slim.prefetch_queue.prefetch_queue(
 # ...
 
 # slim.learning.train( ... )
+{% endhighlight %}
+
+Also noteworthy : the number of [pretrained models](https://github.com/tensorflow/models/tree/master/slim) available in the ```slim``` hierarchy.
+
+
+### [```tf.contrib.learn``` aka ```skflow```](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/learn/python/learn)
+
+Not to be confused with ```tflearn```...
+
+Head of [their part of the TensorFlow repo](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/learn/python/learn).
+
+Documentation at [the main TensorFlow site](https://www.tensorflow.org/versions/r0.11/tutorials/tflearn/index.html).
+
+Code from [the skflow examples directory](https://github.com/tensorflow/tensorflow/blob/r0.11/tensorflow/examples/skflow/mnist.py) :
+
+{% highlight python %}
+"""This showcases how simple it is to build image classification networks.
+It follows description from this TensorFlow tutorial:
+    https://www.tensorflow.org/versions/master/tutorials/mnist/pros/index.html#deep-mnist-for-experts
+"""
+
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+
+from sklearn import metrics
+import tensorflow as tf
+from tensorflow.contrib import learn
+
+### Download and load MNIST data.
+mnist = learn.datasets.load_dataset('mnist')
+
+
+### Linear classifier.
+feature_columns = learn.infer_real_valued_columns_from_input(mnist.train.images)
+classifier = learn.LinearClassifier(
+    feature_columns=feature_columns, n_classes=10)
+classifier.fit(mnist.train.images, mnist.train.labels, batch_size=100,
+               steps=1000)
+score = metrics.accuracy_score(
+    mnist.test.labels, classifier.predict(mnist.test.images))
+print('Accuracy: {0:f}'.format(score))
+
+
+### Convolutional network
+def max_pool_2x2(tensor_in):
+  return tf.nn.max_pool(
+      tensor_in, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding='SAME')
+
+def conv_model(X, y):
+  # pylint: disable=invalid-name,missing-docstring
+  # reshape X to 4d tensor with 2nd and 3rd dimensions being image width and
+  # height final dimension being the number of color channels.
+  X = tf.reshape(X, [-1, 28, 28, 1])
+  
+  # first conv layer will compute 32 features for each 5x5 patch
+  with tf.variable_scope('conv_layer1'):
+    h_conv1 = learn.ops.conv2d(X, n_filters=32, filter_shape=[5, 5],
+                               bias=True, activation=tf.nn.relu)
+    h_pool1 = max_pool_2x2(h_conv1)
+    
+  # second conv layer will compute 64 features for each 5x5 patch.
+  with tf.variable_scope('conv_layer2'):
+    h_conv2 = learn.ops.conv2d(h_pool1, n_filters=64, filter_shape=[5, 5],
+                               bias=True, activation=tf.nn.relu)
+    h_pool2 = max_pool_2x2(h_conv2)
+    # reshape tensor into a batch of vectors
+    h_pool2_flat = tf.reshape(h_pool2, [-1, 7 * 7 * 64])
+    
+  # densely connected layer with 1024 neurons.
+  h_fc1 = learn.ops.dnn(
+      h_pool2_flat, [1024], activation=tf.nn.relu, dropout=0.5)
+  return learn.models.logistic_regression(h_fc1, y)
+
+# Training and predicting.
+classifier = learn.TensorFlowEstimator(
+    model_fn=conv_model, n_classes=10, batch_size=100, steps=20000,
+    learning_rate=0.001)
+classifier.fit(mnist.train.images, mnist.train.labels)
+score = metrics.accuracy_score(
+    mnist.test.labels, classifier.predict(mnist.test.images))
+print('Accuracy: {0:f}'.format(score))
 {% endhighlight %}
 
 
@@ -427,85 +510,6 @@ acc = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
 {% endhighlight %}
 
-
-### [```tf.contrib.learn``` aka ```skflow```](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/learn/python/learn)
-
-Not to be confused with ```tflearn```...
-
-Head of [their part of the TensorFlow repo](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/learn/python/learn).
-
-Documentation at [the main TensorFlow site](https://www.tensorflow.org/versions/r0.11/tutorials/tflearn/index.html).
-
-Code from [the skflow examples directory](https://github.com/tensorflow/tensorflow/blob/r0.11/tensorflow/examples/skflow/mnist.py) :
-
-{% highlight python %}
-"""This showcases how simple it is to build image classification networks.
-It follows description from this TensorFlow tutorial:
-    https://www.tensorflow.org/versions/master/tutorials/mnist/pros/index.html#deep-mnist-for-experts
-"""
-
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
-from sklearn import metrics
-import tensorflow as tf
-from tensorflow.contrib import learn
-
-### Download and load MNIST data.
-mnist = learn.datasets.load_dataset('mnist')
-
-
-### Linear classifier.
-feature_columns = learn.infer_real_valued_columns_from_input(mnist.train.images)
-classifier = learn.LinearClassifier(
-    feature_columns=feature_columns, n_classes=10)
-classifier.fit(mnist.train.images, mnist.train.labels, batch_size=100,
-               steps=1000)
-score = metrics.accuracy_score(
-    mnist.test.labels, classifier.predict(mnist.test.images))
-print('Accuracy: {0:f}'.format(score))
-
-
-### Convolutional network
-def max_pool_2x2(tensor_in):
-  return tf.nn.max_pool(
-      tensor_in, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding='SAME')
-
-def conv_model(X, y):
-  # pylint: disable=invalid-name,missing-docstring
-  # reshape X to 4d tensor with 2nd and 3rd dimensions being image width and
-  # height final dimension being the number of color channels.
-  X = tf.reshape(X, [-1, 28, 28, 1])
-  
-  # first conv layer will compute 32 features for each 5x5 patch
-  with tf.variable_scope('conv_layer1'):
-    h_conv1 = learn.ops.conv2d(X, n_filters=32, filter_shape=[5, 5],
-                               bias=True, activation=tf.nn.relu)
-    h_pool1 = max_pool_2x2(h_conv1)
-    
-  # second conv layer will compute 64 features for each 5x5 patch.
-  with tf.variable_scope('conv_layer2'):
-    h_conv2 = learn.ops.conv2d(h_pool1, n_filters=64, filter_shape=[5, 5],
-                               bias=True, activation=tf.nn.relu)
-    h_pool2 = max_pool_2x2(h_conv2)
-    # reshape tensor into a batch of vectors
-    h_pool2_flat = tf.reshape(h_pool2, [-1, 7 * 7 * 64])
-    
-  # densely connected layer with 1024 neurons.
-  h_fc1 = learn.ops.dnn(
-      h_pool2_flat, [1024], activation=tf.nn.relu, dropout=0.5)
-  return learn.models.logistic_regression(h_fc1, y)
-
-# Training and predicting.
-classifier = learn.TensorFlowEstimator(
-    model_fn=conv_model, n_classes=10, batch_size=100, steps=20000,
-    learning_rate=0.001)
-classifier.fit(mnist.train.images, mnist.train.labels)
-score = metrics.accuracy_score(
-    mnist.test.labels, classifier.predict(mnist.test.images))
-print('Accuracy: {0:f}'.format(score))
-{% endhighlight %}
 
 
 
