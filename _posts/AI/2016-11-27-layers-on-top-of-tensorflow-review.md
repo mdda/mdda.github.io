@@ -115,4 +115,17 @@ on every tensor object...)
 
 ## Summary
 
-Hmmm...
+Fairly quickly (for my use-case) I can discard ```tf.contrib.learn``` as being too high-level.  ```Keras``` is 
+different from ```Lasagne``` in the same ways on ```Theano``` as it is vs my 'ideal' framework on ```TensorFlow``` 
+(though I have to admit that a lot of good people are involved, so it certainly has momentum).
+
+```prettytensor``` seems to have very few commits recently.  
+
+Looking at 'raw' ```TensorFlow```, a lot of people are using ```TF-slim``` as just an extra toolkit on top, so 
+probably the holes will be filled in soon enough.  But apparently that's not so soon that all the recent papers
+are able to be implemented in it (at least in the public tree).
+
+That leaves ```TFlearn```, ```TensorLayer``` and ```SugarTensor```.  
+
+Hmmm.
+
