@@ -22,7 +22,7 @@ following is what worked for me (and some of the process).
 Bottom line:  Get the kernel parameters right, and the xorg.conf will take care of itself...  
 
 
-### My particular (possibly peculiar) set-up
+### My Deep Learning computer set-up
 
 Two graphics systems installed in computer : 
  
@@ -51,6 +51,9 @@ sudo lspci -k | grep -A3 VGA
 #	Kernel modules: nouveau, nvidia_drm, nvidia
 {% endhighlight %}
 
+The important thing to note is the ```00:02.0``` as the PCI 'slot' for the Intel controller 
+(this number needs to be slightly reformatted for a ```xorg.conf``` file).
+
 Ensure the ```intel``` driver for the internal on-board video subsystem is installed :
 
 {% highlight bash %}
@@ -71,7 +74,7 @@ GRUB_CMDLINE_LINUX="nouveau.modeset=0 rd.driver.blacklist=nouveau nomodeset \
 But the basic point is that ```xorg-x11-drv-intel``` requires the ```intel``` driver
 (which is loaded by the kernel, for me, via ```i915```)  to be in ```modesetting``` mode.
 
-Therefore, the earlier ```/etc/default/grub``` line needs to be updated to :
+Therefore, the ```/etc/default/grub``` line needs to be updated to :
 
 {% highlight bash %}
 GRUB_CMDLINE_LINUX="rd.driver.blacklist=nouveau nvidia.modeset=0 nouveau.modeset=0 intel.modeset=1 \
@@ -187,8 +190,8 @@ Section "Device"
 	#Option	    "NoAccel" "True"
 	#Option	    "DRI"	"false"
 
+	# Needs to be set to match the value given by `lscpi`
 	BusID       "PCI:0:2:0"
-
 EndSection
 
 Section "Screen"
@@ -210,14 +213,13 @@ Section "Monitor"
 	#Option          "PreferredMode" "1680x1050"
 	Option          "PreferredMode" "1920x1080"
 EndSection
-
 {% endhighlight %}
 
-However, while it's nice that this works, it's even nicer that if the system starts without 
-an ```/etc/X11/xorg.conf```, it will configure itself automatically.
+However, while it's nice that the above ```/etc/X11/xorg.conf``` works, it's nicer still 
+that if the system starts without an ```/etc/X11/xorg.conf```, it will configure itself automatically.
 
-Fortunately, with the correct kernel parameters (as above), this auto-configuration works perfectly,
-and X should boot on the on-board graphics chip with acceleration switched on, in the correct resolution
+Fortunately, with the correct kernel parameters (as above), the system auto-configuration works perfectly,
+and X boots on the on-board graphics chip both with acceleration switched on and in the correct resolution
 (the window manager Display tool will list of all the available resolutions too).
 
 
