@@ -1,7 +1,7 @@
 ---
 layout: post
 category: AI
-title: Layers on top of TensorFlow - Summary
+title: Review of TensorFlow sugar coatings
 tagline: Compare and Contrast
 date: 2016-11-27
 tags: [NeuralNetworks,TensorFlow]
@@ -14,11 +14,14 @@ published: false
 
 >  NB:  This is an opinionated review, which I put together to help me make a decision.
 
-
 As someone who has worked most extensively with ```Theano```/```Lasagne``` (with a bit of ```Blocks``` thrown in),
 looking at raw ```TensorFlow``` makes me want to reach out for some additional helper 
 layers.  There are lots of contenders, several of which are backed by Googlers, each 
 with a different emphasis and style.
+
+To help make the choice, I assembled a ('Rosetta Stone' of TensorFlow implementations of CNN MNIST](ai/2016/11/26/layers-on-top-of-tensorflow) 
+using each of the libraries.
+
 
 If there's anything wrong / inaccurate / debatable in the following, please let me know in the comments - 
 I'm just interested in making a decent choice to speed up my ```TensorFlow``` experimentation.
