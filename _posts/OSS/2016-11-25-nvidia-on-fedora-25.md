@@ -70,7 +70,6 @@ dnf install kernel-devel dkms-nvidia  nvidia-driver-cuda
 dnf install cuda-devel cuda-cudnn-devel
 {% endhighlight %}
 
-
 In my case, I also added an ```intel``` driver for the internal on-board video subsystem 
 (just so that ```X11``` might be tempted to run if there's a monitor plugged in) :
 
