@@ -59,7 +59,35 @@ dnf install xorg-x11-drv-intel
 
 ### Updating the kernel parameters
 
-These can be edited on the 
+NB: These can be edited during the boot process as a check/backup while testing things.
+
+The relevant contents of ```/etc/default/grub``` were set as follows by the Nvidia installer :
+
+{% highlight bash %}
+GRUB_CMDLINE_LINUX="nouveau.modeset=0 rd.driver.blacklist=nouveau nomodeset \
+  gfxpayload=vga=normal rd.lvm.lv=fedora swap rd.lvm.lv=fedora/root rhgb quiet"
+{% endhighlight %}
+
+But the basic point is that ```xorg-x11-drv-intel``` requires the ```intel``` driver
+(which is loaded by the kernel, for me, via ```i915```)  to be in ```modesetting``` mode.
+
+Therefore, the earlier ```/etc/default/grub``` line needs to be updated to :
+
+{% highlight bash %}
+GRUB_CMDLINE_LINUX="rd.driver.blacklist=nouveau nvidia.modeset=0 nouveau.modeset=0 intel.modeset=1 \
+  gfxpayload=vga=normal rd.lvm.lv=fedora/swap rd.lvm.lv=fedora/root rhgb quiet"
+{% endhighlight %}
+
+(notice that all the available graphics modules are ```.modeset=0``` apart from ```intel.modeset=1```,
+and that ```nouveau``` is still disabled).
+
+Once that has been updated, run :
+
+{% highlight bash %}
+grub2-mkconfig -o /boot/grub2/grub.cfg
+# or, if EFI boot is enabled (which it is for me) :
+grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
+{% endhighlight %}
 
 
 ### Reboot
@@ -86,13 +114,111 @@ dmesg | grep drm
 #[    2.750981] [drm] [nvidia-drm] [GPU ID 0x00000100] Loading driver
 {% endhighlight %}
 
-The key thing here are the references to ```nvidia``` and ```nvidia_uvm```.
-
-If you've got references to ```nouveau``` appearing in ```lsmod```, something didn't work correctly.
-
 
 ### ```/etc/X11/xorg.conf```
 
+During experimentation, I was fiddling with an ```/etc/X11/xorg.conf``` that ended up like this (working, but rather hacky) : 
+
+{% highlight bash %}
+Section "ServerLayout"
+	Identifier     "X.org Configured"
+	Screen      0  "Screen0" 0 0
+	#Screen      1  "Screen1" RightOf "Screen0"
+	InputDevice    "Mouse0" "CorePointer"
+	InputDevice    "Keyboard0" "CoreKeyboard"
+	#Inactive 	"nouveau"  # Must be a Device Identifier
+	#Inactive 	"nvidia"   # Must be a Device Identifier
+	Inactive 	"Card0"
+EndSection
+
+Section "Files"
+	ModulePath   "/usr/lib64/xorg/modules"
+	FontPath     "catalogue:/etc/X11/fontpath.d"
+	FontPath     "built-ins"
+EndSection
+
+Section "Module"
+	Load  "glx"
+EndSection
+
+Section "Module"
+	Load "dri2"
+	Load "glamoregl"
+	Load "modesetting"
+EndSection
+
+Section "InputDevice"
+	Identifier  "Keyboard0"
+	Driver      "kbd"
+EndSection
+
+Section "InputDevice"
+	Identifier  "Mouse0"
+	Driver      "mouse"
+	Option	    "Protocol" "auto"
+	Option	    "Device" "/dev/input/mice"
+	Option	    "ZAxisMapping" "4 5 6 7"
+EndSection
+
+Section "Device"
+	Identifier  "Card0"
+	#Driver      "nouveau"
+	Driver      "nvidia"
+	BusID       "PCI:1:0:0"
+EndSection
+
+Section "Device"
+	Identifier  "Card1"
+
+	# modesetting (doesn't seem to work at all)
+	#Driver      "modesetting"
+	#Option      "AccelMethod"	"glamore"
+	#Option	    "DRI"      		"false"
+	
+	# This works at correct resolution, but is very slow
+	#Driver      "vesa"
+
+	# This works only at /etc/fb.modes (?) and chooses 1024x768
+	#Driver      "fbdev"
+
+	# This now works, but only if 'nomodeset' is removed from kernel
+	# options, and intel.modeset=1 is present (and no other .modeset=1)
+	Driver      "intel"
+	#Option	    "NoAccel" "True"
+	#Option	    "DRI"	"false"
+
+	BusID       "PCI:0:2:0"
+
+EndSection
+
+Section "Screen"
+	Identifier "Screen0"
+	Device     "Card1"
+	Monitor    "Monitor0"
+EndSection
+
+Section "Monitor"
+	Identifier   "Monitor0"
+	VendorName   "Monitor Vendor"
+	ModelName    "Monitor Model"
+
+	# Run "cvt X Y"
+	Modeline "1024x768"   63.50  1024 1072 1176 1328  768 771 775 798 -hsync +vsync
+	Modeline "1680x1050"  146.25  1680 1784 1960 2240  1050 1053 1059 1089 -hsync +vsync
+	Modeline "1920x1080"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync
+
+	#Option          "PreferredMode" "1680x1050"
+	Option          "PreferredMode" "1920x1080"
+EndSection
+
+{% endhighlight %}
+
+However, while it's nice that this works, it's even nicer that if the system starts without 
+an ```/etc/X11/xorg.conf```, it will configure itself automatically.
+
+Fortunately, with the correct kernel parameters (as above), this auto-configuration works perfectly,
+and X should boot on the on-board graphics chip with acceleration switched on, in the correct resolution
+(the window manager Display tool will list of all the available resolutions too).
 
 
 All done.
