@@ -263,7 +263,7 @@ I tensorflow/core/common_runtime/simple_placer.cc:819] a: /job:localhost/replica
  [ 49.  64.]]
 {% endhighlight %}
 
-or, on another machine : 
+or the relevant device lines on another machine : 
 
 
 {% highlight python %}
