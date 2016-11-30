@@ -7,7 +7,7 @@ tags:
 - linux
 - xfce
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -36,7 +36,10 @@ And re-add assorted entries into ```/etc/hosts```.
 dnf remove pragha parole abiword claws-mail* leafpad orage ristretto pidgin transmission gnumeric asunder
 
 # Better alternatives (and disk analysis tool)
-dnf install libreoffice deluge baobab 
+dnf install libreoffice deluge 
+
+# Specific desirable extras
+dnf install baobab geany-plugins-geanypy
 {% endhighlight %}
 
 ### Google Chrome
