@@ -39,7 +39,17 @@ dnf remove pragha parole abiword claws-mail* leafpad orage ristretto pidgin tran
 dnf install libreoffice deluge 
 
 # Specific desirable extras
-dnf install baobab geany-plugins-geanypy
+dnf install baobab
+
+# Specific python extras (noteably for numpy/jupyter use)
+dnf install python-devel python2-virtualenv \
+            gcc gcc-c++ \
+            scipy numpy python-scikit-learn python-pandas Cython  \
+            blas-devel lapack-devel atlas-devel  \
+            python-pillow geany-plugins-geanypy  \
+            graphviz libyaml hdf5-devel
+
+#? redhat-rpm-config
 {% endhighlight %}
 
 ### Google Chrome
