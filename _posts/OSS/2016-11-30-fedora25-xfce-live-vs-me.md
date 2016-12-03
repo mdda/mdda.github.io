@@ -39,7 +39,7 @@ dnf remove pragha parole abiword claws-mail* leafpad orage ristretto pidgin tran
 dnf install libreoffice deluge 
 
 # Specific desirable extras
-dnf install baobab
+dnf install baobab keepassx
 
 # Specific python extras (noteably for numpy/jupyter use)
 dnf install python-devel python2-virtualenv \
