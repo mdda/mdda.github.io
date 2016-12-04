@@ -81,8 +81,13 @@ dnf update firefox
 ### Printer installation (depending on location)
 
 For Brother Multifunction printers, mostly follow the instructions 
-in [my previous blog entry](http://blog.mdda.net/oss/2015/06/08/brother-multifunction-printer), except for this slight change :
+in [my previous blog entry](/oss/2015/06/08/brother-multifunction-printer), except for the ```rpm``` packages now have slightly different names.
+
+These should be installed *before* installing the scanner driver:
 
 {% highlight bash %}
 dnf install sane-backends sane-backends-drivers-scanners
 {% endhighlight %}
+
+Note that the printer/CUPS controls can also be accessed at [http://localhost:631/](http://localhost:631/).
+
