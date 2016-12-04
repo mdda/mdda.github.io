@@ -39,7 +39,7 @@ dnf remove pragha parole abiword claws-mail* leafpad orage ristretto pidgin tran
 dnf install libreoffice deluge 
 
 # Specific desirable extras
-dnf install baobab keepassx
+dnf install baobab keepassx gstreamer1-plugin-mpg123
 
 # Specific python extras (noteably for numpy/jupyter use)
 dnf install python-devel python2-virtualenv \
@@ -77,3 +77,12 @@ dnf install Downloads/google-talkplugin_current_x86_64.rpm
 dnf update firefox
 {% endhighlight %}
 
+
+### Printer installation (depending on location)
+
+For Brother Multifunction printers, mostly follow the instructions 
+in [my previous blog entry](http://blog.mdda.net/oss/2015/06/08/brother-multifunction-printer), except for this slight change :
+
+{% highlight bash %}
+dnf install sane-backends sane-backends-drivers-scanners
+{% endhighlight %}
