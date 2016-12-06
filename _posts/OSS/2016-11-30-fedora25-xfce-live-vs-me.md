@@ -17,7 +17,7 @@ I do to make my basic machine install out of the standard Fedora (25) XFCE Live 
 base image.
 
 
-### Essential first step
+### Essential first steps
 
 {% highlight bash %}
 systemctl enable sshd
@@ -39,7 +39,7 @@ dnf remove pragha parole abiword claws-mail* leafpad orage ristretto pidgin tran
 dnf install libreoffice deluge 
 
 # Specific desirable extras
-dnf install baobab keepassx gstreamer1-plugin-mpg123
+dnf install baobab keepassx gstreamer1-plugin-mpg123 gthumb unzip 
 
 # Specific python extras (noteably for numpy/jupyter use)
 dnf install python-devel python2-virtualenv \
@@ -51,6 +51,15 @@ dnf install python-devel python2-virtualenv \
 
 #? redhat-rpm-config
 {% endhighlight %}
+
+
+### Disable ```SELINUX``` (for sanity, mainly)
+
+{% highlight bash %}
+scite /etc/selinux/config
+# Change "SELINUX=enforcing" to "SELINUX=permissive"
+{% endhighlight %}
+
 
 ### Google Chrome
 
@@ -67,6 +76,7 @@ EOF
 dnf install google-chrome-stable
 {% endhighlight %}
 
+
 ### Google Talk Plugin (for Firefox - not required for Chrome)
 
 Download the [current version of Google Talk Plugin](https://www.google.com/tools/dlpage/hangoutplugin/download.html?platform=linux_fedora_x86_64), and then :
@@ -75,6 +85,31 @@ Download the [current version of Google Talk Plugin](https://www.google.com/tool
 # after download using browser ...
 dnf install Downloads/google-talkplugin_current_x86_64.rpm 
 dnf update firefox
+{% endhighlight %}
+
+
+### Install ```vlc```
+
+{% highlight bash %}
+rpm -ivh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-25.noarch.rpm
+dnf install vlc
+{% endhighlight %}
+
+
+### Other 'multimedia'
+
+{% highlight bash %}
+dnf install youtube-dl
+dnf install simple-scan
+{% endhighlight %}
+
+
+### Other 'security'
+
+{% highlight bash %}
+dnf install fuse-encfs keepassx
+
+joe /etc/fuse.conf  ## Add (/uncomment):  "user_allow_other"
 {% endhighlight %}
 
 
