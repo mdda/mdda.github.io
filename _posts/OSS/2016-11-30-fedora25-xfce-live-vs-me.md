@@ -35,11 +35,11 @@ And re-add assorted entries into ```/etc/hosts```.
 # Dead-weight
 dnf remove pragha parole abiword claws-mail* leafpad orage ristretto pidgin transmission gnumeric asunder
 
-# Better alternatives (and disk analysis tool)
+# Better alternatives
 dnf install libreoffice deluge 
 
 # Specific desirable extras
-dnf install baobab keepassx gstreamer1-plugin-mpg123 gthumb unzip 
+dnf install baobab keepassx gstreamer1-plugin-mpg123 unzip 
 
 # Specific python extras (noteably for numpy/jupyter use)
 dnf install python-devel python2-virtualenv \
@@ -50,6 +50,9 @@ dnf install python-devel python2-virtualenv \
             graphviz libyaml hdf5-devel
 
 #? redhat-rpm-config
+
+# Graphics
+dnf install gthumb gimp inkscape
 {% endhighlight %}
 
 
