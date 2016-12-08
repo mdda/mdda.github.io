@@ -55,6 +55,20 @@ and update the settings to be on the network :
 *  Queue : ```binary_p1```
   - Device URI will become : ```lpd://192.168.1.8/binary_p1```
 
+
+### Network Printer setup pt II
+
+If the Test Page won't print, there's a possibility that you've hit a problem because Brother hasn't got the dependencies right.  The following 32-bit library needs to be installed:
+
+{% highlight bash %}
+dnf install glibc.i686
+{% endhighlight %}
+
+This problem can (confusingly) be masked if you're computer has ```Skype``` installed - since Microsoft did actually get 
+the dependencies correct (which, unfortunately, entails installing a whole bunch of 32-bit files on your 
+otherwise pristene 64-bit computer).
+
+
 ### Network Scanner setup 
 
 After installing the package (which, I believe should require ```sane-backends-scanners``` 

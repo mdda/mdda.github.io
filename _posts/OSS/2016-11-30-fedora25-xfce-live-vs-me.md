@@ -121,7 +121,13 @@ joe /etc/fuse.conf  ## Add (/uncomment):  "user_allow_other"
 For Brother Multifunction printers, mostly follow the instructions 
 in [my previous blog entry](/oss/2015/06/08/brother-multifunction-printer), except for the ```rpm``` packages now have slightly different names.
 
-These should be installed *before* installing the scanner driver:
+Also, because Brother hasn't got the dependencies right, the following 32-bit library needs to be installed:
+
+{% highlight bash %}
+dnf install glibc.i686
+{% endhighlight %}
+
+Also, these should be installed *before* installing the scanner driver:
 
 {% highlight bash %}
 dnf install sane-backends sane-backends-drivers-scanners
