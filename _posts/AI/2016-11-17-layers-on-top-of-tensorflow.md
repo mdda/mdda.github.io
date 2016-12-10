@@ -386,7 +386,7 @@ optimizer = tf.train.AdamOptimizer(learning_rate=1e-4).minimize(loss)
 {% endhighlight %}
 
 
-### [```TFlearn```](http://tflearn.org) (not ```tf.contrib.learn```)
+### [```TFlearn```](http://tflearn.org) ( [not to be confused with ```tflearn```](https://github.com/tflearn/tflearn/issues/464) )
 
 Documentation [all online](http://tflearn.org) in regular Python Sphinx format.
 
