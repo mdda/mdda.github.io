@@ -102,8 +102,9 @@ dnf install vlc
 ### Other 'multimedia'
 
 {% highlight bash %}
-dnf install youtube-dl
-dnf install simple-scan
+dnf install youtube-dl      # Archiving of videos
+dnf install simple-scan     # Scan to PDF
+dnf install recoll          # Manage research PDF collection
 {% endhighlight %}
 
 
