@@ -86,3 +86,11 @@ for contents created by the algorithm by complying with compliance with applicab
 
 There's also interesting content with repect to [Understanding Short Texts](http://www.wangzhongyuan.com/tutorial/ACL2016/Understanding-Short-Texts/), 
 for which a Knowledge Base comes in handy...
+
+
+*  [SQuAD - the Stanford Question Answering Dataset](https://rajpurkar.github.io/SQuAD-explorer/)
+
+*  [DeepMind Q&amp;A Dataset ](http://cs.nyu.edu/~kcho/DMQA/)
+
+*  [NewsQA](http://datasets.maluuba.com/NewsQA)
+
