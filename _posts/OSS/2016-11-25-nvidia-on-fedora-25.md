@@ -71,7 +71,9 @@ dnf install cuda-devel cuda-cudnn-devel
 {% endhighlight %}
 
 In my case, I also added an ```intel``` driver for the internal on-board video subsystem 
-(just so that ```X11``` might be tempted to run if there's a monitor plugged in) :
+(just so that ```X11``` might be tempted to run if there's a monitor plugged in - but check out the 
+[companion post](/oss/2016/11/28/intel-modesetting-and-xorg) on how to get the ```X11``` 
+configuration working properly if you *do* want to add a monitor) :
 
 {% highlight bash %}
 dnf install xorg-x11-drv-intel

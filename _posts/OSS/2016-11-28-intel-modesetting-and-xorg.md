@@ -19,7 +19,7 @@ Having [re-installed the Nvidia drivers]() (this time using Negativo's repositor
 suddenly X11 didn't boot properly.  And it's a real headache fiddling with the setup - the
 following is what worked for me (and some of the process).
 
-Bottom line:  Get the kernel parameters right, and the xorg.conf will take care of itself...  
+Bottom line:  Get the kernel parameters right, and the ```xorg.conf``` will take care of itself...  
 
 
 ### My Deep Learning computer set-up
@@ -91,6 +91,11 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 # or, if EFI boot is enabled (which it is for me) :
 grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
 {% endhighlight %}
+
+As helpfully pointed out by the creator of the Negativo RPMs, it's probably not essential to 
+explicitly set all the ```.modeset``` parameters individually - there's likely to be a 
+leaner combination that works.  However, given how irritating it is having a machine that boots badly,
+I feel that doing it 'long-hand' has its own benefits...
 
 
 ### Reboot
