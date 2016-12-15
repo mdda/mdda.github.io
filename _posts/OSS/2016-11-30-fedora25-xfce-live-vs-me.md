@@ -33,7 +33,7 @@ And re-add assorted entries into ```/etc/hosts```.
 
 {% highlight bash %}
 # Dead-weight
-dnf remove pragha parole abiword claws-mail* leafpad orage ristretto pidgin transmission gnumeric asunder
+dnf remove pragha parole abiword claws-mail* leafpad orage ristretto pidgin transmission gnumeric asunder tumbler
 
 # Better alternatives
 dnf install libreoffice deluge 
