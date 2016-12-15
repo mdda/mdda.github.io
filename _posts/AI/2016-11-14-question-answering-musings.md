@@ -24,7 +24,6 @@ doesn't require data that only Google-sized people can get their hands on.
 
 And I figure that some Genetic Programming could feature in there too...
 
-
 ### HN Reaction
 
 *  LEARNING A NATURAL LANGUAGE INTERFACE WITH NEURAL PROGRAMMER - yeah, that's something.   The neural programmer 
@@ -93,4 +92,20 @@ for which a Knowledge Base comes in handy...
 *  [DeepMind Q&amp;A Dataset ](http://cs.nyu.edu/~kcho/DMQA/)
 
 *  [NewsQA](http://datasets.maluuba.com/NewsQA)
+
+
+
+## But But But
+
+Looking at some of the papers by IBM (for instance), it appears :
+
+*   That there are very competitive 'simple' ways to do well on the benchmarks (even achieving state-of-the-art incrementally)
+
+*   That IBM (concretely) is inclined to do character-wise matching, and exploit known regularities in the problem (for instance : 
+    each question will only mention *one* entity, and the result will be from exactly *one* database fact)
+
+*   Setting up a system that works is data-cleansing intensive, since apparently little details matter a lot.
+    
+These factors tend to make the Q &amp; A space (over Freebase / Wikipedia) a tall order as an area of study for 
+lone-wolf researchers.
 
