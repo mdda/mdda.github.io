@@ -180,3 +180,13 @@ Backend:
 Apparently network-manager-fortisslvpn is adding '--no-routes' to the command line, which stops this working
 '--no-dns' is ok
   
+https://github.com/GNOME/network-manager-fortisslvpn/blob/913aaf66250b2b1ced9af15093b33ff4a561f1aa/src/nm-fortisslvpn-service.c#L442
+
+https://developer.gnome.org/libnm-util/stable/NMSettingIP4Config.html#NMSettingIP4Config--ignore-auto-routes
+https://github.com/lcp/NetworkManager/blob/master/libnm-util/nm-setting-ip4-config.c#L566
+
+
+14693 ?        Sl     0:00 /usr/libexec/nm-fortisslvpn-service --bus-name org.freedesktop.NetworkManager.fortisslvpn.Connection_22
+14708 ?        Sl     0:00  \_ /bin/openfortivpn -c /var/lib/NetworkManager-fortisslvpn/ab4381b3-95eb-473a-866b-e1dc6b653b84.config --no-routes --no-dns EXAMPLE.fortiddns.com 10443 --trusted-cert 7cd8b92123f09282442bb9c6bc3fbe9e0b0c04678e6e2c0d5XXXXXXXXXXXXXXX --pppd-plugin /usr/lib64/pppd/2.4.7/nm-fortisslvpn-pppd-plugin.so
+14709 pts/8    Ssl+   0:00      \_ /usr/sbin/pppd 38400 noipdefault noaccomp noauth default-asyncmap nopcomp receive-all nodefaultroute :1.1.1.1 nodetach lcp-max-configure 40 mru 1354 usepeerdns plugin /usr/lib64/pppd/2.4.7/nm-fortisslvpn-pppd-plugin.so
+
