@@ -93,6 +93,7 @@ for which a Knowledge Base comes in handy...
 
 *  [NewsQA](http://datasets.maluuba.com/NewsQA)
 
+*  [MS Marco](http://blogs.microsoft.com/next/2016/12/16/msmarco/) - completely open-to-the-world questions &amp; answers
 
 
 ## But But But

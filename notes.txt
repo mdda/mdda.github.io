@@ -1,7 +1,7 @@
 ## See for helpful jekyll stuff : http://jekyllrb.com/docs/templates/
 ## https://github.com/dbtek/jekyll-bootstrap-3/
 
-sudo yum install ruby-devel
+sudo dnf install ruby-devel
 
 ## Instead : Add a Gemfile... and ::
 gem install bundler
