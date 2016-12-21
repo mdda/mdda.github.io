@@ -301,4 +301,175 @@ PS:  And thanks for being so responsive : My first email was less
 informative partly because I didn't know whether this was an appropriate
 email address.
 
+===============
 
+Ah, okay, it's the 192.168.2.0 missing.
+
+I think you've identified the problem correctly.
+
+It's that various versions of Fortigate are somewhat schizophrenic
+about the L3 configuration -- they use PPP's IPCP as well as custom XML
+ code.
+
+For NetworkManager, we let the PPP plugin call back into
+NetworkManager, and thus conveniently ignore anything outside IPCP. We
+need to find a way to pass that information to a PPP plugin. Probably
+an environment variable (that's what most other VPN daemons do) or
+something.
+
+I don't really have much time to hack on this Today, but I'd like to
+look into this. If you don't hear from me until the end of this week,
+please ping me again.
+
+Thanks
+Lubo
+
+---------------
+
+Spoke too soon. The route passing via environment is already there.
+Seems like it was me who added it. Oh the previous memory...
+Nevertheless, it seems to work well for me.
+
+Please attach the "nmcli c show 'VPN connection 1'" output when
+connected and also also the log from NetworkManager (capture
+"journalctl -fl" while activating the connection).
+
+Also, please make sure you're running the latest versions of
+NetworkManager, NetworkManager-fortisslvpn and openfortivpn.
+
+===============
+
+
+Ok : After " dnf update -y "
+(and admittedly a slight sigh of relief that it still doesn't work...)
+
+
+# rpm -qa | grep NetworkM | sort
+NetworkManager-1.4.2-2.fc25.x86_64
+...
+NetworkManager-fortisslvpn-1.2.4-1.fc25.x86_64
+NetworkManager-fortisslvpn-gnome-1.2.4-1.fc25.x86_64
+...
+
+# rpm -qa | grep openforti | sort
+openfortivpn-1.2.0-1.fc25.x86_64
+
+----------------------------
+The following is captured during an unsuccessful connection via the NetworkManager GUI (and I get different output without the trusted cert information, which I redacted - probably unnecessarily): 
+
+
+# journalctl -fl
+
+Dec 20 01:09:59 square.herald NetworkManager[878]: <info>  [1482167399.3079] audit: op="connection-activate" uuid="ab4381b3-95eb-473a-866b-e1dc6b653b84" name="VPN connection 1" pid=1462 uid=1000 result="success"
+Dec 20 01:09:59 square.herald NetworkManager[878]: <info>  [1482167399.3181] vpn-connection[0x563c79680140,ab4381b3-95eb-473a-866b-e1dc6b653b84,"VPN connection 1",0]: Started the VPN service, PID 2298
+Dec 20 01:09:59 square.herald NetworkManager[878]: <info>  [1482167399.3309] vpn-connection[0x563c79680140,ab4381b3-95eb-473a-866b-e1dc6b653b84,"VPN connection 1",0]: Saw the service appear; activating connection
+Dec 20 01:10:04 square.herald NetworkManager[878]: <info>  [1482167404.9021] keyfile: update /etc/NetworkManager/system-connections/VPN connection 1 (ab4381b3-95eb-473a-866b-e1dc6b653b84,"VPN connection 1")
+Dec 20 01:10:04 square.herald NetworkManager[878]: <info>  [1482167404.9162] vpn-connection[0x563c79680140,ab4381b3-95eb-473a-866b-e1dc6b653b84,"VPN connection 1",0]: VPN connection: (ConnectInteractive) reply received
+Dec 20 01:10:04 square.herald NetworkManager[878]: <info>  [1482167404.9207] vpn-connection[0x563c79680140,ab4381b3-95eb-473a-866b-e1dc6b653b84,"VPN connection 1",0]: VPN plugin: state changed: starting (3)
+Dec 20 01:10:05 square.herald NetworkManager[878]: INFO:   Connected to gateway.
+Dec 20 01:10:05 square.herald NetworkManager[878]: INFO:   Authenticated.
+Dec 20 01:10:05 square.herald NetworkManager[878]: INFO:   Remote gateway has allocated a VPN.
+Dec 20 01:10:05 square.herald pppd[2316]: Plugin /usr/lib64/pppd/2.4.7/nm-fortisslvpn-pppd-plugin.so loaded.
+Dec 20 01:10:05 square.herald kernel: PPP generic driver version 2.4.2
+Dec 20 01:10:05 square.herald pppd[2316]: pppd 2.4.7 started by root, uid 0
+Dec 20 01:10:05 square.herald pppd[2316]: Using interface ppp0
+Dec 20 01:10:05 square.herald pppd[2316]: Connect: ppp0 <--> /dev/pts/1
+Dec 20 01:10:05 square.herald NetworkManager[878]: <info>  [1482167405.5100] manager: (ppp0): new Generic device (/org/freedesktop/NetworkManager/Devices/2)
+Dec 20 01:11:05 square.herald NetworkManager[878]: <warn>  [1482167465.6010] vpn-connection[0x563c79680140,ab4381b3-95eb-473a-866b-e1dc6b653b84,"VPN connection 1",0]: VPN connection: connect timeout exceeded.
+Dec 20 01:11:05 square.herald nm-fortisslvpn-[2298]: Connect timer expired, disconnecting.
+Dec 20 01:11:05 square.herald pppd[2316]: Hangup (SIGHUP)
+Dec 20 01:11:05 square.herald pppd[2316]: Modem hangup
+Dec 20 01:11:05 square.herald pppd[2316]: Connection terminated.
+Dec 20 01:11:05 square.herald pppd[2316]: Exit.
+Dec 20 01:11:05 square.herald NetworkManager[878]: <warn>  [1482167465.6165] vpn-connection[0x563c79680140,ab4381b3-95eb-473a-866b-e1dc6b653b84,"VPN connection 1",0]: VPN plugin: failed: connect-failed (1)
+Dec 20 01:11:05 square.herald NetworkManager[878]: <info>  [1482167465.6166] vpn-connection[0x563c79680140,ab4381b3-95eb-473a-866b-e1dc6b653b84,"VPN connection 1",0]: VPN plugin: state changed: stopping (5)
+Dec 20 01:11:05 square.herald NetworkManager[878]: <info>  [1482167465.6166] vpn-connection[0x563c79680140,ab4381b3-95eb-473a-866b-e1dc6b653b84,"VPN connection 1",0]: VPN plugin: state changed: stopped (6)
+
+----------------------------
+
+# nmcli c show 'VPN connection 1'
+
+connection.id:                          VPN connection 1
+connection.uuid:                        ab4381b3-95eb-473a-866b-e1dc6b653b84
+connection.stable-id:                   --
+connection.interface-name:              --
+connection.type:                        vpn
+connection.autoconnect:                 no
+connection.autoconnect-priority:        0
+connection.timestamp:                   0
+connection.read-only:                   no
+connection.permissions:                 
+connection.zone:                        --
+connection.master:                      --
+connection.slave-type:                  --
+connection.autoconnect-slaves:          -1 (default)
+connection.secondaries:                 
+connection.gateway-ping-timeout:        0
+connection.metered:                     unknown
+connection.lldp:                        -1 (default)
+ipv4.method:                            auto
+ipv4.dns:                               
+ipv4.dns-search:                        
+ipv4.dns-options:                       (default)
+ipv4.dns-priority:                      0
+ipv4.addresses:                         
+ipv4.gateway:                           --
+ipv4.routes:                            
+ipv4.route-metric:                      -1
+ipv4.ignore-auto-routes:                no
+ipv4.ignore-auto-dns:                   no
+ipv4.dhcp-client-id:                    --
+ipv4.dhcp-timeout:                      0
+ipv4.dhcp-send-hostname:                yes
+ipv4.dhcp-hostname:                     --
+ipv4.dhcp-fqdn:                         --
+ipv4.never-default:                     no
+ipv4.may-fail:                          yes
+ipv4.dad-timeout:                       -1 (default)
+ipv6.method:                            auto
+ipv6.dns:                               
+ipv6.dns-search:                        
+ipv6.dns-options:                       (default)
+ipv6.dns-priority:                      0
+ipv6.addresses:                         
+ipv6.gateway:                           --
+ipv6.routes:                            
+ipv6.route-metric:                      -1
+ipv6.ignore-auto-routes:                no
+ipv6.ignore-auto-dns:                   no
+ipv6.never-default:                     no
+ipv6.may-fail:                          yes
+ipv6.ip6-privacy:                       0 (disabled)
+ipv6.addr-gen-mode:                     stable-privacy
+ipv6.dhcp-send-hostname:                yes
+ipv6.dhcp-hostname:                     --
+ipv6.token:                             --
+vpn.service-type:                       org.freedesktop.NetworkManager.fortisslvpn
+vpn.user-name:                          --
+vpn.data:                               password-flags = 2, trusted-cert = XXXXX user = martin, gateway = SERVERNAME.fortiddns.com:10443
+vpn.secrets:                            <hidden>
+vpn.persistent:                         no
+vpn.timeout:                            0
+GENERAL.NAME:                           VPN connection 1
+GENERAL.UUID:                           ab4381b3-95eb-473a-866b-e1dc6b653b84
+GENERAL.DEVICES:                        enp2s0
+GENERAL.STATE:                          activating
+GENERAL.DEFAULT:                        no
+GENERAL.DEFAULT6:                       no
+GENERAL.VPN:                            yes
+GENERAL.ZONE:                           --
+GENERAL.DBUS-PATH:                      /org/freedesktop/NetworkManager/ActiveConnection/1
+GENERAL.CON-PATH:                       /org/freedesktop/NetworkManager/Settings/1
+GENERAL.SPEC-OBJECT:                    /org/freedesktop/NetworkManager/ActiveConnection/0
+GENERAL.MASTER-PATH:                    /org/freedesktop/NetworkManager/Devices/1
+VPN.TYPE:                               fortisslvpn
+VPN.USERNAME:                           --
+VPN.GATEWAY:                            --
+VPN.BANNER:                             --
+VPN.VPN-STATE:                          3 - VPN connecting
+VPN.CFG[1]:                             password-flags = 2
+VPN.CFG[2]:                             trusted-cert = XXXXX
+VPN.CFG[3]:                             user = martin
+VPN.CFG[4]:                             gateway = SERVERNAME.fortiddns.com:10443
+
+----------------------------
