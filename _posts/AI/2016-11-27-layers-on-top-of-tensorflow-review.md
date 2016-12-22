@@ -14,10 +14,10 @@ published: true
 
 >  NB:  This is an opinionated review, which I put together to help me make a decision.
 
-As someone who has worked most extensively with ```Theano```/```Lasagne``` (with a bit of ```Blocks``` thrown in),
-looking at raw ```TensorFlow``` makes me want to reach out for some additional helper 
-layers.  There are lots of contenders, several of which are backed by Googlers, each 
-with a different emphasis and style.
+As someone who has worked most extensively with ```Theano``` / ```Lasagne``` (with a bit 
+of ```Blocks``` thrown in), looking at raw ```TensorFlow``` makes me want to reach out 
+for some additional helper layers.  There are lots of contenders, several of which 
+are backed by Googlers, each with a different emphasis and style.
 
 To help make the choice, I assembled a ('Rosetta Stone' of TensorFlow implementations of CNN MNIST](ai/2016/11/26/layers-on-top-of-tensorflow) 
 using each of the libraries.
@@ -68,7 +68,8 @@ its documentation is very disheartening (which is such a pity, since if I went d
 I would certainly help in improving the documentation).  So, it's kind of a tipping point question,
 and (at the moment) I'm just not close enough to the tipping point to make me think that this is 
 going to be mainstream enough to want to be an early adopter.  Such a nice syntax, 
-though...  Also noteworthy : Last commit was 6 months ago.
+though...  Also noteworthy : Last commit was 6 months ago (Update: Lots more commits in December-2016, 
+and ```PrettyTensor``` was used as sugaring for the InfoGAN paper from OpenAI).
 
 
 
