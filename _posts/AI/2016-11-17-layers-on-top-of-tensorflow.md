@@ -556,3 +556,14 @@ acc = (logit.sg_reuse(input=data.valid.image).sg_softmax()
 # train
 tf.sg_train(loss=loss, eval_metric=[acc], ep_size=data.train.num_batch, save_dir='asset/train/conv')
 {% endhighlight %}
+
+<!-- 
+Idea : do a similar Rosetta Stone for the different *frameworks* :
+*  Theano
+*  Torch
+*  Caffe
+*  TensorFlow
+*  CNTK
+*  MXNet (and DSSTNE?)
+*  PaddlePaddle
+!-->
