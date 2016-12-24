@@ -1,17 +1,17 @@
 ---
 layout: post
 category: AI
-title: Layers on top of TensorFlow #1
+title: Deep Learning Frameworks
 tagline: MNIST CNN - Rosetta Stone
 date: 2016-11-26
-tags: [NeuralNetworks,TensorFlow,MNIST]
-published: true
+tags: [NeuralNetworks,MNIST]
+published: false
 ---
 {% include JB/setup %}
 
 
 
-## CNN MNIST with sugar-coated ```TensorFlow```
+## CNN MNIST using various frameworks
 
 The following is just a collection of code samples for solving CNN MNIST 
 (all using roughly the same network structure)
