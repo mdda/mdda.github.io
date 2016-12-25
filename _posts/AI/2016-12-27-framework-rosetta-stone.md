@@ -23,13 +23,13 @@ The following is just a collection of code samples for solving CNN MNIST
 (all using roughly the same network structure)
 using different deep learning frameworks (without additional sugar layers) : 
 
-*  ```TensorFlow```
-*  ```Theano```
-*  ```Torch```
-*  ```Caffe```
-*  ```CNTK```
-*  ```MXNet``` (and DSSTNE?)
-*  ```PaddlePaddle```
+*  ```Caffe``` - Berkeley research
+*  ```Torch``` - Facebook
+*  ```CNTK``` - Microsoft
+*  ```PaddlePaddle``` - Baidu
+*  ```MXNet``` - Amazon (and DSSTNE?)
+*  ```TensorFlow``` - Google
+*  ```Theano``` - MILA (Montreal research)
 
 If you have any suggestions about other frameworks I should consider, please leave a comment.
 
