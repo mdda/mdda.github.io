@@ -23,13 +23,13 @@ The following is just a collection of code samples for solving CNN MNIST
 (all using roughly the same network structure)
 using different deep learning frameworks (without additional sugar layers) : 
 
-*  ```Caffe``` - Berkeley research
-*  ```Torch``` - Facebook
-*  ```CNTK``` - Microsoft
-*  ```PaddlePaddle``` - Baidu
-*  ```MXNet``` - Amazon (and DSSTNE?)
-*  ```TensorFlow``` - Google
-*  ```Theano``` - MILA (Montreal research)
+*  [```Caffe```](http://caffe.berkeleyvision.org/) - Berkeley research
+*  [```Torch```](https://github.com/torch/torch7) - Facebook
+*  [```CNTK```](https://github.com/Microsoft/CNTK) - Microsoft
+*  [```PaddlePaddle```](https://github.com/PaddlePaddle/Paddle) - Baidu
+*  [```MXNet```](https://github.com/dmlc/mxnet) - Amazon (and DSSTNE?)
+*  [```TensorFlow```](https://github.com/tensorflow/tensorflow) - Google
+*  [```Theano```](https://github.com/Theano/Theano) - MILA (Montreal research)
 
 If you have any suggestions about other frameworks I should consider, please leave a comment.
 
@@ -118,3 +118,45 @@ print("test accuracy %g" % accuracy.eval(feed_dict = {x: mnist.test.images, y_: 
 A more interesting example that uses pure ```TensorFlow``` is [Fast Style Transfer](https://github.com/lengstrom/fast-style-transfer/),
 or this [thorough LSTM-based tutorial](https://github.com/guillaume-chevalier/LSTM-Human-Activity-Recognition/).
 
+<!--
+Machinarium
+dnf install libXt.i686 nss.i686 adwaita-gtk2-theme.i686 libcurl.i686
+
+
+LIBGL_DEBUG=verbose ./Machinarium 
+libGL: Can't open configuration file /home/andrewsm/.drirc: No such file or directory.
+
+libGL: pci id for fd 5: 8086:0a16, driver i965
+libGL: OpenDriver: trying /usr/lib/dri/tls/i965_dri.so
+libGL: OpenDriver: trying /usr/lib/dri/i965_dri.so
+libGL: dlopen /usr/lib/dri/i965_dri.so failed (/usr/lib/dri/i965_dri.so: cannot open shared object file: No such file or directory)
+libGL error: unable to load driver: i965_dri.so
+libGL error: driver pointer missing
+libGL error: failed to load driver: i965
+
+libGL: pci id for fd 5: 8086:0a16, driver i965
+libGL: OpenDriver: trying /usr/lib/dri/tls/i965_dri.so
+libGL: OpenDriver: trying /usr/lib/dri/i965_dri.so
+libGL: dlopen /usr/lib/dri/i965_dri.so failed (/usr/lib/dri/i965_dri.so: cannot open shared object file: No such file or directory)
+libGL error: unable to load driver: i965_dri.so
+libGL error: driver pointer missing
+libGL error: failed to load driver: i965
+
+libGL: OpenDriver: trying /usr/lib/dri/tls/swrast_dri.so
+libGL: OpenDriver: trying /usr/lib/dri/swrast_dri.so
+libGL: dlopen /usr/lib/dri/swrast_dri.so failed (/usr/lib/dri/swrast_dri.so: cannot open shared object file: No such file or directory)
+libGL error: unable to load driver: swrast_dri.so
+libGL error: failed to load driver: swrast
+
+## Did not fix any error messages
+#dnf install xorg-x11-drv-intel.i686
+
+
+CrayonPhysicsDeluxe
+https://www.rpmfind.net/linux/RPM/fedora/devel/rawhide/i386/s/SDL-1.2.15-22.fc26.i686.html
+
+https://apps.fedoraproject.org/packages/SDL
+dnf install https://kojipkgs.fedoraproject.org//packages/SDL/1.2.15/21.fc24/i686/SDL-1.2.15-21.fc24.i686.rpm
+dnf install mesa-libGLU.i686
+
+!-->
