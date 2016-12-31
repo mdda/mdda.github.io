@@ -651,8 +651,99 @@ print("Training Completed.", end="\n\n")
 
 
 
+### [```PaddlePaddle```](https://github.com/PaddlePaddle/Paddle)
 
 
+
+The following is from []() :
+
+{% highlight python %}
+
+{% endhighlight %}
+
+
+
+
+### [```MXNet```](https://github.com/dmlc/mxnet)
+
+
+
+The following is from [an MxNet blog posting](http://mxnet.io/tutorials/python/mnist.html) - 
+there's [a large model zoo](https://github.com/dmlc/mxnet/tree/master/example) too, 
+but those examples have lots of common helper code factored out:
+
+{% highlight python %}
+# Get the data
+import numpy as np
+import os
+import urllib
+import gzip
+import struct
+def download_data(url, force_download=True): 
+    fname = url.split("/")[-1]
+    if force_download or not os.path.exists(fname):
+        urllib.urlretrieve(url, fname)
+    return fname
+
+def read_data(label_url, image_url):
+    with gzip.open(download_data(label_url)) as flbl:
+        magic, num = struct.unpack(">II", flbl.read(8))
+        label = np.fromstring(flbl.read(), dtype=np.int8)
+    with gzip.open(download_data(image_url), 'rb') as fimg:
+        magic, num, rows, cols = struct.unpack(">IIII", fimg.read(16))
+        image = np.fromstring(fimg.read(), dtype=np.uint8).reshape(len(label), rows, cols)
+    return (label, image)
+
+path='http://yann.lecun.com/exdb/mnist/'
+(train_lbl, train_img) = read_data(
+    path+'train-labels-idx1-ubyte.gz', path+'train-images-idx3-ubyte.gz')
+(val_lbl, val_img) = read_data(
+    path+'t10k-labels-idx1-ubyte.gz', path+'t10k-images-idx3-ubyte.gz')
+
+# MxNet-specific code...
+import mxnet as mx
+
+def to4d(img):
+    return img.reshape(img.shape[0], 1, 28, 28).astype(np.float32)/255
+
+batch_size = 100
+train_iter = mx.io.NDArrayIter(to4d(train_img), train_lbl, batch_size, shuffle=True)
+val_iter = mx.io.NDArrayIter(to4d(val_img), val_lbl, batch_size)
+
+# CNN model
+
+data = mx.symbol.Variable('data')
+# first conv layer
+conv1 = mx.sym.Convolution(data=data, kernel=(5,5), num_filter=20)
+tanh1 = mx.sym.Activation(data=conv1, act_type="tanh")
+pool1 = mx.sym.Pooling(data=tanh1, pool_type="max", kernel=(2,2), stride=(2,2))
+# second conv layer
+conv2 = mx.sym.Convolution(data=pool1, kernel=(5,5), num_filter=50)
+tanh2 = mx.sym.Activation(data=conv2, act_type="tanh")
+pool2 = mx.sym.Pooling(data=tanh2, pool_type="max", kernel=(2,2), stride=(2,2))
+# first fullc layer
+flatten = mx.sym.Flatten(data=pool2)
+fc1 = mx.symbol.FullyConnected(data=flatten, num_hidden=500)
+tanh3 = mx.sym.Activation(data=fc1, act_type="tanh")
+# second fullc
+fc2 = mx.sym.FullyConnected(data=tanh3, num_hidden=10)
+# softmax loss
+lenet = mx.sym.SoftmaxOutput(data=fc2, name='softmax')
+
+# Output may vary
+model = mx.model.FeedForward(
+    ctx = mx.gpu(0),     # use GPU 0 for training, others are same as before
+    symbol = lenet,       
+    num_epoch = 10,     
+    learning_rate = 0.1)
+model.fit(
+    X=train_iter,  
+    eval_data=val_iter, 
+    batch_end_callback = mx.callback.Speedometer(batch_size, 200)
+) 
+assert model.score(val_iter) > 0.98, "Low validation accuracy."
+
+{% endhighlight %}
 
 
 
