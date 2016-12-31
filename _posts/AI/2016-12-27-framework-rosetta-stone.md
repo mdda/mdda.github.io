@@ -49,7 +49,8 @@ If you have any suggestions about other frameworks I should consider, please lea
 
 Caffe is configured via a plain-text ```.prototxt``` file, and then run on the command line with switches.
 
-The following is from the [main Caffe repo](https://github.com/BVLC/caffe/blob/master/examples/mnist/lenet.prototxt) :
+The following is from the [main Caffe repo](https://github.com/BVLC/caffe/blob/master/examples/mnist/lenet.prototxt), 
+with a [companion tutorial](http://caffe.berkeleyvision.org/gathered/examples/mnist.html) :
 
 {% highlight prototxt %}
 name: "LeNet"
@@ -557,6 +558,96 @@ end
 
 
 
+
+
+
+
+
+
+
+
+### [```CNTK```](https://github.com/Microsoft/CNTK)
+
+
+
+The following is from [a detailed blog posting](https://medium.com/@tuzzer/building-a-deep-handwritten-digits-classifier-using-microsoft-cognitive-toolkit-6ae966caec69), 
+which is a CNN translation of the TensorFlow CNN for MNIST, since the 
+standard example that Microsoft gives in [its CNTK tutorials](https://cntk.ai/pythondocs/tutorials.html) focusses on a fully-connected network :
+
+{% highlight python %}
+# ... loading of the MNIST data set etc ...
+# ...
+
+def create_convolutional_neural_network(input_vars, out_dims, dropout_prob=0.0):
+
+    convolutional_layer_1 = Convolution((5, 5), 32, strides=1, activation=cntk.ops.relu, pad=True)(input_vars)
+    pooling_layer_1 = MaxPooling((2, 2), strides=(2, 2), pad=True)(convolutional_layer_1)
+
+    convolutional_layer_2 = Convolution((5, 5), 64, strides=1, activation=cntk.ops.relu, pad=True)(pooling_layer_1)
+    pooling_layer_2 = MaxPooling((2, 2), strides=(2, 2), pad=True)(convolutional_layer_2)
+
+    fully_connected_layer = Dense(1024, activation=cntk.ops.relu)(pooling_layer_2)
+    dropout_layer = Dropout(dropout_prob)(fully_connected_layer)
+    output_layer = Dense(out_dims, activation=None)(dropout_layer)
+
+    return output_layer
+
+# Define the input to the neural network
+input_vars = cntk.ops.input_variable(image_shape, np.float32)
+
+# Create the convolutional neural network
+output = create_convolutional_neural_network(input_vars, output_dim, dropout_prob=0.5)
+
+
+# Define the label as the other input parameter of the trainer
+labels = cntk.ops.input_variable(output_dim, np.float32)
+
+#Initialize the parameters for the trainer
+train_minibatch_size = 50
+learning_rate = 1e-4
+momentum = 0.9
+
+# Define the loss function
+loss = cntk.ops.cross_entropy_with_softmax(output, labels)
+
+# Define the function that calculates classification error
+label_error = cntk.ops.classification_error(output, labels)
+
+# Instantiate the trainer object to drive the model training
+learner = cntk.adam_sgd(output.parameters, learning_rate, momentum)
+trainer = cntk.Trainer(output, loss, label_error, [learner])
+
+
+num_training_epoch = 1
+training_progress_output_freq = 10
+
+for epoch in range(num_training_epoch):
+
+    sample_count = 0
+    num_minibatch = 0
+
+    # loop over minibatches in the epoch
+    while sample_count < num_train_samples:
+
+        minibatch = train_minibatch_source.next_minibatch(min(train_minibatch_size, num_train_samples - sample_count))
+
+        # Specify the mapping of input variables in the model to actual minibatch data to be trained with
+        data = {input_vars: minibatch[training_features],
+                labels: minibatch[training_labels]}
+        trainer.train_minibatch(data)
+
+        sample_count += data[labels].num_samples
+        num_minibatch += 1
+
+        # Print the training progress data
+        if num_minibatch % training_progress_output_freq == 0:
+            training_loss = cntk.get_train_loss(trainer)
+            eval_error = cntk.get_train_eval_criterion(trainer)
+            print("Epoch %d  |  # of Samples: %6d  |  Loss: %.6f  |  Error: %.6f" % (epoch, sample_count, training_loss, eval_error))
+
+print("Training Completed.", end="\n\n")
+
+{% endhighlight %}
 
 
 
