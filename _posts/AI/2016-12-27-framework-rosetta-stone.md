@@ -655,18 +655,17 @@ print("Training Completed.", end="\n\n")
 
 
 
-The following is from []() :
+The following is from [TBA](https://github.com/PaddlePaddle/Paddle) :
 
 {% highlight python %}
-
+#  Hmm..  this is proving more difficult to find than expected
+#         all the relevant Issues seem to be in Chinese...
 {% endhighlight %}
 
 
 
 
 ### [```MXNet```](https://github.com/dmlc/mxnet)
-
-
 
 The following is from [an MxNet blog posting](http://mxnet.io/tutorials/python/mnist.html) - 
 there's [a large model zoo](https://github.com/dmlc/mxnet/tree/master/example) too, 
