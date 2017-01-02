@@ -653,13 +653,82 @@ print("Training Completed.", end="\n\n")
 
 ### [```PaddlePaddle```](https://github.com/PaddlePaddle/Paddle)
 
+Finding this proved more difficult to find than expected because all the relevant Issues seem to be in Chinese...
 
-
-The following is from [TBA](https://github.com/PaddlePaddle/Paddle) :
+The following is from [a VGG16 CNN implementation within the main Repo](https://github.com/PaddlePaddle/Paddle/blob/develop/demo/mnist/vgg_16_mnist.py) :
 
 {% highlight python %}
-#  Hmm..  this is proving more difficult to find than expected
-#         all the relevant Issues seem to be in Chinese...
+
+# Definition of 'img_conv_group' is in :
+#   https://github.com/PaddlePaddle/Paddle/blob/master/python/paddle/trainer_config_helpers/networks.py
+
+def small_vgg(input_image, num_channels, num_classes):
+    def __vgg__(ipt, num_filter, times, dropouts, num_channels_=None):
+        return img_conv_group(
+            input=ipt,
+            num_channels=num_channels_,
+            pool_size=2,
+            pool_stride=2,
+            conv_num_filter=[num_filter] * times,
+            conv_filter_size=3,
+            conv_act=ReluActivation(),
+            conv_with_batchnorm=True,
+            conv_batchnorm_drop_rate=dropouts,
+            pool_type=MaxPooling())
+
+    tmp = __vgg__(input_image, 64, 2, [0.3, 0], num_channels)
+    tmp = __vgg__(tmp, 128, 2, [0.4, 0])
+    tmp = __vgg__(tmp, 256, 3, [0.4, 0.4, 0])
+    tmp = __vgg__(tmp, 512, 3, [0.4, 0.4, 0])
+    tmp = img_pool_layer(
+        input=tmp, stride=2, pool_size=2, pool_type=MaxPooling())
+    tmp = dropout_layer(input=tmp, dropout_rate=0.5)
+    tmp = fc_layer(
+        input=tmp,
+        size=512,
+        layer_attr=ExtraAttr(drop_rate=0.5),
+        act=LinearActivation())
+    tmp = batch_norm_layer(input=tmp, act=ReluActivation())
+    return fc_layer(input=tmp, size=num_classes, act=SoftmaxActivation())
+
+
+from paddle.trainer_config_helpers import *
+
+is_predict = get_config_arg("is_predict", bool, False)
+
+####################Data Configuration ##################
+
+if not is_predict:
+    data_dir = './data/'
+    define_py_data_sources2(
+        train_list=data_dir + 'train.list',
+        test_list=data_dir + 'test.list',
+        module='mnist_provider',
+        obj='process')
+
+######################Algorithm Configuration #############
+settings(
+    batch_size=128,
+    learning_rate=0.1 / 128.0,
+    learning_method=MomentumOptimizer(0.9),
+    regularization=L2Regularization(0.0005 * 128))
+
+#######################Network Configuration #############
+
+data_size = 1 * 28 * 28
+label_size = 10
+img = data_layer(name='pixel', size=data_size)
+
+# small_vgg is predined in trainer_config_helpers.network
+predict = small_vgg(input_image=img, num_channels=1, num_classes=label_size)
+
+if not is_predict:
+    lbl = data_layer(name="label", size=label_size)
+    inputs(img, lbl)
+    outputs(classification_cost(input=predict, label=lbl))
+else:
+    outputs(predict)
+    
 {% endhighlight %}
 
 
