@@ -5,7 +5,7 @@ title: Deep Learning Frameworks
 tagline: MNIST CNN - Rosetta Stone
 date: 2016-12-27
 tags: [NeuralNetworks,MNIST]
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -17,7 +17,7 @@ current Deep Learning Workshop repo remains relevant to what people believe they
 learn...
 
 
-## CNN MNIST using various frameworks
+## CNN MNIST using various Frameworks
 
 The following is just a collection of code samples for solving CNN MNIST 
 (all using roughly the same network structure)
@@ -27,7 +27,7 @@ using different deep learning frameworks (without additional sugar layers) :
 *  [```Torch```](https://github.com/torch/torch7) - Facebook
 *  [```CNTK```](https://github.com/Microsoft/CNTK) - Microsoft
 *  [```PaddlePaddle```](https://github.com/PaddlePaddle/Paddle) - Baidu
-*  [```MXNet```](https://github.com/dmlc/mxnet) - Amazon (and DSSTNE?)
+*  [```MXNet```](https://github.com/dmlc/mxnet) - Amazon (used to focus on DSSTNE ...)
 *  [```Theano```](https://github.com/Theano/Theano) - MILA (Montreal research)
 *  [```TensorFlow```](https://github.com/tensorflow/tensorflow) - Google
 
@@ -736,9 +736,9 @@ else:
 
 ### [```MXNet```](https://github.com/dmlc/mxnet)
 
-The following is from [an MxNet blog posting](http://mxnet.io/tutorials/python/mnist.html) - 
+The following is from [an MXNet blog posting](http://mxnet.io/tutorials/python/mnist.html) - 
 there's [a large model zoo](https://github.com/dmlc/mxnet/tree/master/example) too, 
-but those examples have lots of common helper code factored out:
+but those examples have lots of common helper code factored out, whereas the blog does it straight-forwardly :
 
 {% highlight python %}
 # Get the data
@@ -768,7 +768,7 @@ path='http://yann.lecun.com/exdb/mnist/'
 (val_lbl, val_img) = read_data(
     path+'t10k-labels-idx1-ubyte.gz', path+'t10k-images-idx3-ubyte.gz')
 
-# MxNet-specific code...
+# MXNet-specific code...
 import mxnet as mx
 
 def to4d(img):
