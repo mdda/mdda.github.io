@@ -502,7 +502,7 @@ Alternative :
       Perhaps 'reasonable' hierarchies should have similar properties
         eg:  MNIST doesn't have 100 latent variables, nor(?) a binary decision tree
       Look into statistical properties of WordNet (branching factor, depth, etc)
-        
+    Are Hierarchical Dirichlet Processes relevant?
    
 
 Side-Note : Pixelwise Segmentation
