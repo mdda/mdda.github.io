@@ -297,6 +297,10 @@ NIPS ideas :
       http://arxiv.org/abs/1503.04881     
     or Tai? in Socher's lab...  Submitted to ACML
  
+    
+    
+ 
+ 
   Check out 
     Socher : MV-RNN for Relationship Classification (looks good for Handshakes...)
     Socher : Recursive Deep Models for Semantic Compositionality over a Sentiment Treebank 2013
@@ -492,7 +496,14 @@ Alternative :
   IDEA :
     Imagination for visual networks
   
-
+  IDEA : 
+    Hierarchical model derived a la InfoGAN
+    WordNet is a human artifact
+      Perhaps 'reasonable' hierarchies should have similar properties
+        eg:  MNIST doesn't have 100 latent variables, nor(?) a binary decision tree
+      Look into statistical properties of WordNet (branching factor, depth, etc)
+        
+   
 
 Side-Note : Pixelwise Segmentation
 -------------------------------------------
