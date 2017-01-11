@@ -279,3 +279,22 @@ Alternative :
       Look into statistical properties of WordNet (branching factor, depth, etc)
     Are Hierarchical Dirichlet Processes relevant?
    
+  IDEA : 
+    Problem : Adversarial Image detection
+    Solution :
+      Train autoencoder to reconstruct final softmax layer 
+      Use reconstruction error as indicator of whether the image is 'genuine'
+      
+  IDEA :
+    Problem : Non-class detection
+    Solution :  (Use, for simplicity, MNIST)
+      Train InfoGAN with 10 independent latent variables on MNIST
+      Instead of training supervised layer on just valid images, also add 'in-between' invalid images
+      Can make nice clock-face style error diagram to illustrate 'no-man's-land' areas
+      
+  IDEA :
+    Problem : Better sparse embedding
+    Solution : (sketch)
+      Each word should be an Indian buffet of concepts
+      
+      
