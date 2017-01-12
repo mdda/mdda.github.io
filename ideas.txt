@@ -297,4 +297,19 @@ Alternative :
     Solution : (sketch)
       Each word should be an Indian buffet of concepts
       
+  IDEA :
+    Summarisation is lossy compression, thinking of something helpful for attention
+    Use 'internal dialogue' as well as text to answer questions
+      and post to internal dialogue for future reference
+      
+  IDEA :
+    Split long texts into sub-units (~paragraphs, etc) for different topics (at different levels of sensitivity)
+      summarise each chunk hierarchically
+    Meaning occurs at different resolutions (~fractal)
+      but also a Direichlet-like process per section
+  
+  IDEA : 
+    Reinforcement learning : Summarise chuinks of history to reduce 'interval' to learn over
+    
+  
       
