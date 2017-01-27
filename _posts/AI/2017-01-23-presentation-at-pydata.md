@@ -22,8 +22,8 @@ January meeting of the [Singapore PyData group](https://www.meetup.com/PyData-SG
 
 Because it was a 'workshop', the Meetup had the following reminder :
 
-   Just as a quick reminder in preparation for Monday night's talk : If you want to get the most out of the 'middle 30 minutes' of the talk, please bring a laptop with VirtualBox already installed on it. USB keys with
-   a complete VirtualBox Appliance will be passed round, so that a whole sandboxed working environment can be brought up on your own machine instantly - which includes the RNN-for-NLP example using that we'll be walking through in detail.
+>   Just as a quick reminder in preparation for Monday night's talk : If you want to get the most out of the 'middle 30 minutes' of the talk, please bring a laptop with VirtualBox already installed on it. USB keys with
+>   a complete VirtualBox Appliance will be passed round, so that a whole sandboxed working environment can be brought up on your own machine instantly - which includes the RNN-for-NLP example using that we'll be walking through in detail.
 
 Since this is a continuation of my previous workshops, all the source is available 
 on <a href="https://github.com/mdda/deep-learning-workshop" target="_blank">GitHub</a> - 
