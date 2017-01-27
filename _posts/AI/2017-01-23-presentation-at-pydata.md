@@ -7,8 +7,9 @@ tags:
 - Presentation
 - NLP
 - RNNs
+- PyData
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -18,9 +19,11 @@ published: false
 
 Since I hadn't yet covered NLP and RNNs in Singapore, I gave a 
 "<strong><a href="http://redcatlabs.com/2017-01-23_PyDataSG_RNNs-for-NLP/" target="_blank">90 minute workshop</a></strong>" at the 
-January meeting of the [Singapore PyData group](https://www.meetup.com/PyData-SG/events/235981761/).
+January meeting of the [Singapore PyData group](https://www.meetup.com/PyData-SG/events/235981761/).  
 
-Because it was a 'workshop', the Meetup had the following reminder :
+Originally, this was meant to be a ~20minute talk, to go along with 2-3 others.  However, it suddenly got top billing, and 
+I had to make it 'worth' 90 minutes.  Luckily, once the length goes over (say) 45 minutes, it becomes practical to make the 
+content 'hands on' - warranting the following warning on the MeetUp event page :
 
 >   Just as a quick reminder in preparation for Monday night's talk : If you want to get the most out of the 'middle 30 minutes' of the talk, please bring a laptop with VirtualBox already installed on it. USB keys with
 >   a complete VirtualBox Appliance will be passed round, so that a whole sandboxed working environment can be brought up on your own machine instantly - which includes the RNN-for-NLP example using that we'll be walking through in detail.
