@@ -26,7 +26,7 @@ be used as a micro-service.
 ### Presentation Link
 
 I recently gave a <strong><a href="http://redcatlabs.com/2014-12-10_ParsingEnglish.scala/" target="_blank">presentation about this project</a></strong> 
-to the [Singapore Scala MeetUp Group](http://www.meetup.com/Singapore-Sala-Programmers/events/218727190/).
+to the [Singapore Scala MeetUp Group](http://www.meetup.com/Singapore-Scala-Programmers/events/218727190/).
 
 <a href="http://redcatlabs.com/2014-12-10_ParsingEnglish.scala/" target="_blank">
 ![Presentation Screenshot]({{ site.url }}/assets/img/2014-12-10_ParsingEnglish.scala_600x390.png)
