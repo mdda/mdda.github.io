@@ -133,6 +133,59 @@ cnn_eval_results = mnist_classifier.evaluate(
 print(cnn_eval_results)
 {% endhighlight %}
 
+
+
 ## NEW STYLE Model (uses features and integer_labels PLAIN)
 
+The model is the same apart the features passed in should be a dictionary of ```Tensors```.
+
 {% highlight python %}
+def cnn_model_fn(features_dict, integer_labels, mode):
+  """Model function for CNN - parses out features and labels from dicts provided."""
+  print("Run cnn_model_fn, mode=%s" % (mode,))
+
+  # Input Layer
+  # Reshape X to 4-D tensor: [batch_size, width, height, channels]
+  input_layer = tf.reshape(features_dict['image'], [-1, 28, 28, 1], name='input_layer')
+
+  # Convolutional Layer #1
+  # Pooling Layer #1
+  # Convolutional Layer #2
+  # Pooling Layer #2
+  # Flatten tensor into a batch of vectors
+  # Dense Layer
+  # Add dropout operation; 0.6 probability that element will be kept
+  # Logits layer
+
+  loss = None
+  train_op = None
+
+  # Calculate Loss (for both TRAIN and EVAL modes)
+  if mode != learn.ModeKeys.INFER:
+    onehot_labels = tf.one_hot(indices=tf.cast( integer_labels, tf.int32), depth=10 )
+    loss = tf.losses.softmax_cross_entropy(onehot_labels=onehot_labels, logits=logits)
+
+  # Configure the Training Op (for TRAIN mode)
+  if mode == learn.ModeKeys.TRAIN:
+    train_op = tf.contrib.layers.optimize_loss(
+      loss=loss,
+      global_step=tf.contrib.framework.get_global_step(),
+      learning_rate=0.001,
+      optimizer="Adam")  #optimizer="SGD")
+
+  # Generate Predictions
+  predictions = {
+    "classes":       tf.argmax(input=logits, axis=1),
+    "probabilities": tf.nn.softmax(logits, name="softmax_tensor"), 
+    "logits":        logits,
+  }
+
+  # Return a ModelFnOps object
+  return model_fn_lib.ModelFnOps(
+      mode=mode, predictions=predictions, loss=loss, train_op=train_op)
+
+# Build batch-wise data feeder
+
+
+{% endhighlight %}
+
