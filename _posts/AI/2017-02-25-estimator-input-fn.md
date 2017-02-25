@@ -185,7 +185,41 @@ def cnn_model_fn(features_dict, integer_labels, mode):
       mode=mode, predictions=predictions, loss=loss, train_op=train_op)
 
 # Build batch-wise data feeder
+#   see : https://www.tensorflow.org/get_started/input_fn#passing_input_fn_data_to_your_model
 
+def mnist_batch_input_fn(dataset, batch_size=100):
+    if False:  # This is the idea (but numpy, rather than Tensors)
+        feature_dict = dict( image = dataset.images )
+        labels = np.asarray( dataset.labels, dtype=np.int32)
+        return feature_dict, labels # but batch_size==EVERYTHING_AT_ONCE, unless we batch it up...
+        
+    # Instead, build a Tensor dict
+    dataset_dict = dict( 
+        image  = tf.constant( dataset.images ),
+        labels = tf.constant( np.asarray( dataset.labels, dtype=np.int32) ),
+    )
+
+    # And create a 'feeder' to batch up the data appropriately...
+    
+    # see : http://datascience.stackexchange.com/questions/15313/train-on-batches-in-tensorflow
+    # see : https://medium.com/@ilblackdragon/tensorflow-tutorial-part-4-958c29c717a0
+    
+    #batch_dict = tf.train.shuffle_batch(
+    #                dataset_dict, batch_size, capacity=batch_size, min_after_dequeue=0,
+    batch_dict = tf.train.batch(
+                    dataset_dict, batch_size,
+                    num_threads=1,
+                    enqueue_many=False, shapes=None, 
+                    allow_smaller_final_batch=False, shared_name=None, 
+                    name=None
+                 )    
+    
+    batch_labels = batch_dict.pop('labels')
+    
+    # Return : 
+    # 1) a mapping of feature columns to Tensors with the corresponding feature data, and 
+    # 2) a Tensor containing labels
+    return batch_dict, batch_labels
 
 {% endhighlight %}
 
