@@ -42,14 +42,14 @@ or contact me using the details given on the slides themselves.
 ![Presentation Content Example]({{ site.url }}/assets/img/2017-02-16_TFandDL_TransferLearning_4-3_600x390.png)
 </a>
 
-<!--
+
 ### Video Link
 
-The presentation was kindly <a href="https://engineers.sg/v/1370" target="_blank">recorded by Engineers.sg</a>.
-!-->
+The presentation was kindly <a href="https://engineers.sg/v/1436" target="_blank">recorded by Engineers.sg</a> and then
+paintaking re-edited together due to some AV weirdness...
 
 
-PS:  And if you liked the Workshop, please 'star' the <a href="https://github.com/mdda/deep-learning-workshop" target="_blank">Deep Learning Workshop</a> repo ::
+PS:  And if you liked the content, please 'star' the <a href="https://github.com/mdda/deep-learning-workshop" target="_blank">Deep Learning Workshop</a> repo ::
 <!-- From :: https://buttons.github.io/ -->
 <!-- Place this tag where you want the button to render. -->
 <span style="position:relative;top:5px;">
