@@ -176,6 +176,10 @@ done in the former, since we have all the data in memory anyway.
 This explains when the ```mnist_batch_input_fn``` is more involved than just passing 
 the features and labels via the DEPRECATED ```x```, ```y```, ```batch_size``` format.
 
+Note that ```steps``` in ```fit``` is the number of batches processed.  So the number of 
+examples processed is ```steps * batch_size```.
+
+
 {% highlight python %}
 
 # Build batch-wise data feeder
@@ -230,16 +234,8 @@ def mnist_batch_input_fn(dataset, batch_size=100, seed=None):  # If seed is defi
 tensors_to_log = {"probabilities": "softmax_tensor"}
 logging_hook = tf.train.LoggingTensorHook( tensors=tensors_to_log, every_n_secs=20 ) #every_n_iter=1000 )
 
-# Train the model
-if False:
-    mnist_classifier.fit(
-      x=train_data,
-      y=train_labels,
-      batch_size=100,
-      steps=50000/100 * 5,
-      monitors=[logging_hook]
-    )
 
+# Train the model
 epochs=5
     
 mnist_classifier.fit(
@@ -247,5 +243,24 @@ mnist_classifier.fit(
   steps=train_labels.shape[0] / batch_size * epochs,
   #monitors=[logging_hook],
 )
+
+
+# Evaluate the model and print results
+
+# Configure the accuracy metric for evaluation
+cnn_metrics = {
+  "accuracy":
+      learn.MetricSpec(
+          metric_fn=tf.metrics.accuracy, prediction_key="classes"),
+}
+
+cnn_eval_results = mnist_classifier.evaluate(
+  input_fn=lambda: mnist_batch_input_fn(mnist.test, batch_size=batch_size), 
+  metrics=cnn_metrics,
+  steps=eval_labels.shape[0]/batch_size,
+)
+
+print(cnn_eval_results)
+
 {% endhighlight %}
 
