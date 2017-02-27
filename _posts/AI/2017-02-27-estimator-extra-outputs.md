@@ -7,23 +7,26 @@ tags:
 - TensorFlow
 - Estimator
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
 ## Estimator Output Smuggling
 
 While the ```TensorFlow``` ```Estimator``` framework has a lot of appeal, since it can hide a lot
-of the training / evaluation / prediction mechanics, it seems at first sight to remove a lot of 
-flexibility in how one can pull apart the models.  In particular, it would be very convenient
-to be able to look at the values of tensors created by a model (other than the ones designated 'label', etc).
+of the training / evaluation / prediction mechanics, the price of this kind of convenience is often
+paid in flexibility in how one can work with the models dynamically (i.e. in research mode).  In particular, 
+it would be very convenient to be able to look at the values of several different output tensors created 
+by a model (other than just the ones designated 'label', etc).
 
 The ```Estimator``` framework has now bifurcated, base on using either 
 the 'OLD style' ```x```, ```y```, ```batch_size``` input parameters, 
 or feeding information to the model using the 'NEW style' ```input_fn``` method 
 (which is more flexible, and doesn't complain about DEPRECATION). 
 
-This post shows how to 'smuggle' out tensor results from a model that has been integrated into the ```Estimator``` framework.
+This post shows how to 'smuggle' out tensor results from a model that has been integrated into the ```Estimator``` framework.  The 
+key parts are the *SMUGGLE TENSORS OUT HERE* sections in the model, and the subsequent ```.evaluate``` or ```.predict``` call
+(depending on which style you're using).
 
 NB: It seems that once you've run specific ```batch_size``` 'NEW style', the model becomes specialized 
 w.r.t. ```batch_size``` and so no longer accepts 'OLD style' batches.  This issue probably warrants further exploration - 
