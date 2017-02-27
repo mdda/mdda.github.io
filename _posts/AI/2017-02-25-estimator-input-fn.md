@@ -229,7 +229,7 @@ examples processed is ```steps * batch_size```.
 # Build batch-wise data feeder
 #   see : https://www.tensorflow.org/get_started/input_fn#passing_input_fn_data_to_your_model
 
-def mnist_batch_input_fn(dataset, batch_size=100, seed=None):  
+def mnist_batch_input_fn(dataset, batch_size=100, seed=None, num_epochs=1):  
   # If seed is defined, this will shuffle data into batches
   if False:  # This is the idea (but numpy, rather than Tensors)
     feature_dict = dict( images = dataset.images )
@@ -250,20 +250,10 @@ def mnist_batch_input_fn(dataset, batch_size=100, seed=None):
   
   # And create a 'feeder' to batch up the data appropriately...
   
-  # see : http://datascience.stackexchange.com/questions/15313/train-on-batches-in-tensorflow
-  # see : https://medium.com/@ilblackdragon/tensorflow-tutorial-part-4-958c29c717a0
-  
-  # useful : http://stackoverflow.com/questions/
-  #               39283605/regarding-the-use-of-tf-train-shuffle-batch-to-create-batches
-
-  # https://github.com/tensorflow/tensorflow/blob/master/
-  #    tensorflow/examples/how_tos/reading_data/fully_connected_preloaded_var.py
-  
-  # Interesting for later ImageNet work :
-  #   https://indico.io/blog/tensorflow-data-inputs-part1-placeholders-protobufs-queues/
-  
   image, label = tf.train.slice_input_producer( [all_images, all_labels], 
-                                                shuffle=(seed is not None), seed=seed)
+                                                num_epochs=num_epochs,
+                                                shuffle=(seed is not None), seed=seed,
+                                              )
   
   dataset_dict = dict( images=image, labels=label ) # This becomes pluralized into batches by .batch()
   
@@ -286,8 +276,8 @@ logging_hook = tf.train.LoggingTensorHook( tensors=tensors_to_log, every_n_secs=
 epochs=5
     
 mnist_classifier.fit(
-  input_fn=lambda: mnist_batch_input_fn(mnist.train, batch_size=batch_size, seed=42), 
-  steps=train_labels.shape[0] / batch_size * epochs,
+  input_fn=lambda: mnist_batch_input_fn(mnist.train, batch_size=batch_size, seed=42, num_epochs=epochs), 
+  #steps=train_labels.shape[0] / batch_size * epochs, # possible, but messy
   #monitors=[logging_hook],
 )
 
@@ -302,9 +292,8 @@ cnn_metrics = {
 }
 
 cnn_eval_results = mnist_classifier.evaluate(
-  input_fn=lambda: mnist_batch_input_fn(mnist.test, batch_size=batch_size), 
+  input_fn=lambda: mnist_batch_input_fn(mnist.test, batch_size=batch_size), # num_epochs=1
   metrics=cnn_metrics,
-  steps=eval_labels.shape[0]/batch_size,
 )
 
 print(cnn_eval_results)
@@ -329,6 +318,22 @@ for class_predictions in class_predictions_generator:
 print( class_predictions['probabilities'] )
 
 {% endhighlight %}
+
+
+
+#### Useful links
+
+*  http://datascience.stackexchange.com/questions/15313/train-on-batches-in-tensorflow
+*  https://medium.com/@ilblackdragon/tensorflow-tutorial-part-4-958c29c717a0
+  
+*  useful : http://stackoverflow.com/questions/39283605/regarding-the-use-of-tf-train-shuffle-batch-to-create-batches
+*  https://github.com/tensorflow/tensorflow/blob/master/tensorflow/examples/how_tos/reading_data/fully_connected_preloaded_var.py
+  
+Interesting for later ImageNet work :
+
+*  https://indico.io/blog/tensorflow-data-inputs-part1-placeholders-protobufs-queues/
+  
+
 
 <!--
 ### Working example...
