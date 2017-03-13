@@ -105,6 +105,7 @@ dnf install vlc
 dnf install youtube-dl      # Archiving of videos
 dnf install simple-scan     # Scan to PDF
 dnf install recoll          # Manage research PDF collection
+dnf install gvfs-mtp        # Talk to Android MTP storage 
 {% endhighlight %}
 
 
