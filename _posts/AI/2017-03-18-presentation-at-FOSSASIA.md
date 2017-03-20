@@ -1,5 +1,5 @@
 ---
-date: 2017-01-23
+date: 2017-03-18
 title: Deep Learning DIY
 tagline: Presentation
 category: AI
