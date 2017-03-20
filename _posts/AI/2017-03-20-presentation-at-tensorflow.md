@@ -15,11 +15,15 @@ published: false
 
 
 Sam Witteveen and I recently started the TensorFlow and Deep Learning Singapore group on MeetUp,
-and [the first MeetUp](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/237032130/) 
-was hosted by Google themselves, in their spacious new Singapore offices.
+and [the second MeetUp](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/237860964/) 
+was hosted by Google themselves, in their spacious Singapore offices.
 
-We decided that, in addition to a round up of TensorFlow Summit news (the Summit had taken place
-on the 15-Feb-2017 in SF), we'd have one Intro talk and one that was slightly more involved.  Since I 
+We were also lucky to be able to give Andrews Selle (from Google Brain in Mountainview) a speaker slot,
+during which he talked about the new TensorFlow XLA infrastructure (included a walk-though of 
+exactly how a new TensorFlow model could be rebuilt into a pure C/C++ library file for a mobile device.
+
+
+ we'd have one Intro talk and one that was slightly more involved.  Since I 
 already had something ready-to-go, I updated my 'ecommerce' CNN example from the deep-learning-workshop (see below)
 to work with TensorFlow, and presented that for about ~30 mins including questions. 
 
