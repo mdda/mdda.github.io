@@ -18,38 +18,30 @@ published: false
 
 ### Presentation Link
 
-Since I hadn't yet covered NLP and RNNs in Singapore, I gave a 
-"<strong><a href="http://redcatlabs.com/2017-01-23_PyDataSG_RNNs-for-NLP/" target="_blank">90 minute workshop</a></strong>" at the 
-January meeting of the [Singapore PyData group](https://www.meetup.com/PyData-SG/events/235981761/).  
 
-Originally, this was meant to be a ~20minute talk, to go along with 2-3 others.  However, it suddenly got top billing, and 
-I had to make it 'worth' 90 minutes.  Luckily, once the length goes over (say) 45 minutes, it becomes practical to make the 
-content 'hands on' - warranting the following warning on the MeetUp event page :
 
->   Just as a quick reminder in preparation for Monday night's talk : If you want to get the most out of the 'middle 30 minutes' of the talk, please bring a laptop with VirtualBox already installed on it. USB keys with
->   a complete VirtualBox Appliance will be passed round, so that a whole sandboxed working environment can be brought up on your own machine instantly - which includes the RNN-for-NLP example using that we'll be walking through in detail.
+
 
 Since this is a continuation of my previous workshops, all the source is available 
 on <a href="https://github.com/mdda/deep-learning-workshop" target="_blank">GitHub</a> - 
 if you have questions on the software, please leave an 'issue' there.
 
 
-<a href="http://redcatlabs.com/2017-01-23_PyDataSG_RNNs-for-NLP/" target="_blank">
-![Presentation Screenshot]({{ site.url }}/assets/img/2017-01-23_PyDataSG-RNNs-and-NLP_600x390.png)
+<a href="http://redcatlabs.com/2017-03-18_FOSSASIA-Workshop/" target="_blank">
+![Presentation Screenshot]({{ site.url }}/assets/img/2017-03-18_FOSSASIA-Workshop_600x390.png)
 </a>
 
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="http://redcatlabs.com/2017-01-23_PyDataSG_RNNs-for-NLP/#/10/6" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2017-01-23_PyDataSG-RNNs-and-NLP_10-6_600x390.png)
+<a href="http://redcatlabs.com/2017-03-18_FOSSASIA-Workshop/#/5/3" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2017-03-18_FOSSASIA-Workshop_5-3_600x390.png)
 </a>
 
 
 ### Video Link
 
-The presentation was kindly <a href="https://engineers.sg/v/1370" target="_blank">recorded by Engineers.sg</a>.
-
+The presentation was kindly <a href="https://engineers.sg/video/deep-learning-d-i-y-workshop-1hr-fossasia-2017--1506" target="_blank">recorded by Engineers.sg</a>.
 
 
 PS:  And if you liked the Workshop, please 'star' the <a href="https://github.com/mdda/deep-learning-workshop" target="_blank">Deep Learning Workshop</a> repo ::
