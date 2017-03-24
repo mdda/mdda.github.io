@@ -1,6 +1,6 @@
 ---
 date: 2017-03-20
-title: Deep Learning DIY
+title: Introduction to CNNs
 tagline: Presentation
 category: AI
 tags:
@@ -9,7 +9,7 @@ tags:
 - CNNs
 - SpeechRecognition
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -22,11 +22,10 @@ We were also lucky to be able to give Andrews Selle (from Google Brain in Mounta
 and he talked about the new TensorFlow XLA infrastructure (included a walk-though of 
 exactly how a new TensorFlow model could be rebuilt into a pure C/C++ library file for a mobile device).
 
-
-Since Sam Witteveen wanted to talk about GANs (in what seems to be a prelude to next month's MeetUp, which
-could well have a GAN theme), I got to do the Intro talk - and chose CNNs.  The basic outline of 
-the talk followed my (longer) FOSSASIA workshop from a couple of days before.  There are links given in the
-presentation to the code and online examples.
+Since Sam wanted to talk about GANs (in what now seems to be a prelude to next month's MeetUp, which
+could well have a GAN theme), it fell to me to do the Intro talk - and the topic was CNNs.  The basic 
+outline of the talk followed my (longer) FOSSASIA workshop from a couple of days before.  There 
+are links given in the presentation to the code and online examples.
 
 <a href="http://redcatlabs.com/2017-03-20_TFandDL_IntroToCNNs/" target="_blank">
 ![Presentation Screenshot]({{ site.url }}/assets/img/2017-03-20_TFandDL_IntroToCNNs_600x390.png)
