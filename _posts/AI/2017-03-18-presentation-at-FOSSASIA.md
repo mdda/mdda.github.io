@@ -10,7 +10,7 @@ tags:
 - SpeechRecognition
 - FOSSASIA
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -18,14 +18,26 @@ published: false
 
 ### Presentation Link
 
+I recently lead a <strong><a href="http://redcatlabs.com/2017-03-18_FOSSASIA-Workshop/" target="_blank">
+1 hour workshop</a></strong> at [FOSSASIA 2017](http://2017.fossasia.org/) in Singapore.
 
+Similarly to the previous year, this workshop was hands-on : After a brief background on deep learning, 
+participants started quickly, getting an understanding of features (and feature creation) 
+by a 'blame assignment' algorithm (aka Backprop).  
 
+For this FOSSASIA workshop, I also created a 
+<a href="http://redcatlabs.com/2017-03-20_TFandDL_IntroToCNNs/CNN-demo.html" target="_blank">
+stand-alone CNN filter demo</a>, so that people could get an intuitive understanding of what
+a single 3x3 CNN filter can do.
 
+Then, using the VirtualBox VM-on-a-stick, we had a quick look at a working GoogLeNet model.  And then went
+on to a longer segment on how the CNN mechanism can be applied to Speech Recognition - 
+a new application/module I put together specifically for FOSSASIA (in the preceeding 5 days, from concept
+to working &amp; demonstrable code).
 
-Since this is a continuation of my previous workshops, all the source is available 
+Naturally, this being a FOSS event, all the source is available 
 on <a href="https://github.com/mdda/deep-learning-workshop" target="_blank">GitHub</a> - 
 if you have questions on the software, please leave an 'issue' there.
-
 
 <a href="http://redcatlabs.com/2017-03-18_FOSSASIA-Workshop/" target="_blank">
 ![Presentation Screenshot]({{ site.url }}/assets/img/2017-03-18_FOSSASIA-Workshop_600x390.png)
