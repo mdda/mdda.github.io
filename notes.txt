@@ -288,6 +288,9 @@ http://techtablets.com/forum/topic/teclast-official-firmware-repository/
       http://pan.baidu.com/s/1kUj2cx5
       Gives up at : 524.3 kB (524,288 bytes)    
 
+
 http://eponvert.net/UPP.html
 https://github.com/eponvert/upparse
 
+http://www.cs.williams.edu/~heeringa/publications/voting-experts.pdf
+http://www.ece.iastate.edu/~alexs/papers/ICDL_2008_HVE/ICDL_2008_HVE.pdf
