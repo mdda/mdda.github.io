@@ -292,5 +292,14 @@ http://techtablets.com/forum/topic/teclast-official-firmware-repository/
 http://eponvert.net/UPP.html
 https://github.com/eponvert/upparse
 
-http://www.cs.williams.edu/~heeringa/publications/voting-experts.pdf
-http://www.ece.iastate.edu/~alexs/papers/ICDL_2008_HVE/ICDL_2008_HVE.pdf
+2007 - Voting Experts
+  http://www.cs.williams.edu/~heeringa/publications/voting-experts.pdf
+2008 - Hierarchical Voting Experts
+  http://www.ece.iastate.edu/~alexs/papers/ICDL_2008_HVE/ICDL_2008_HVE.pdf
+2009 - Bootstrap Voting Experts
+  https://pdfs.semanticscholar.org/8930/f3807eb8a08df9b62a25768d8f66a455f062.pdf
+2011 - (ACL) An Improved MDL-Based Compression Algorithm for Unsupervised Word Segmentation
+  http://www.aclweb.org/anthology/P/P13/P13-2.pdf#page=214
+2009 - Johnson and Goldwater : Improving nonparameteric Bayesian inference: experiments on unsupervised word segmentation with adaptor grammars  
+    http://homepages.inf.ed.ac.uk/sgwater/papers/naacl09_johnson.pdf
+    
