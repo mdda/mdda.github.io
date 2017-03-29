@@ -302,9 +302,16 @@ https://github.com/eponvert/upparse
   http://www.aclweb.org/anthology/P/P13/P13-2.pdf#page=214
   2009 - Johnson and Goldwater : Improving nonparameteric Bayesian inference: experiments on unsupervised word segmentation with adaptor grammars  
     http://homepages.inf.ed.ac.uk/sgwater/papers/naacl09_johnson.pdf
+
+Perhaps this could be learned as a RL game?  
+  Where the reward signal is the compression ratio?
+  Either RL or evolving the agent...
+  
     
 2012 - Turning the pipeline into a loop: Iterated unsupervised dependency parsing and PoS induction
   http://homepages.inf.ed.ac.uk/sgwater/papers/naacl12wkshp_iterated.pdf
   
 2010 - Two Decades of Unsupervised POS induction: How far have we come? (includes code references)
   http://homepages.inf.ed.ac.uk/sgwater/papers/emnlp10-20yrsPOS.pdf
+  
+  
