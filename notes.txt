@@ -315,3 +315,6 @@ Perhaps this could be learned as a RL game?
   http://homepages.inf.ed.ac.uk/sgwater/papers/emnlp10-20yrsPOS.pdf
   
   
+Wowza TTS : 
+  https://google.github.io/tacotron/
+  https://arxiv.org/pdf/1703.10135.pdf
