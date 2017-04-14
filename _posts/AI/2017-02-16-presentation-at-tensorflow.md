@@ -7,7 +7,7 @@ tags:
 - Presentation
 - TensorFlow
 - CNNs
-- Transfer Learning
+- TransferLearning
 layout: post
 published: true
 ---
