@@ -1,6 +1,6 @@
 ---
 date: 2017-04-13
-title: Generative Art \: Style-Transfer
+title: 'Generative Art : Style-Transfer'
 tagline: Presentation
 category: AI
 tags:
