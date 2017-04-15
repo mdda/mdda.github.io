@@ -307,6 +307,22 @@ Perhaps this could be learned as a RL game?
   Where the reward signal is the compression ratio?
   Either RL or evolving the agent...
   
+Source code for lots of stuff (~2009)
+  https://code.google.com/archive/p/voting-experts/
+  https://github.com/pkt/voting-experts
+    These include all the Text Corpora!
+
+  
+  From : 2009 - Bootstrap Voting Experts
+    All of the corpora introduced in Section 5 (Orwell's 1984, Chinese Gigaword, BR87) were included in the this evaluation.  
+    Three additional literary texts were added, Mark Twain's The Adventures of Huckleberry Finn, 
+    Friedrich Nietzsche's Also Sprach Zarathustra in the original German, Julius Caesar's Comentarii de Bello Gallico in the original Latin, 
+    as well as an additional corpus from CHILDES, Bloom73 [Bloom, 1973], 
+    and a collection of stories for young children by William S. Gray. 
+    For one of these corpora, Also Sprach Zarathustra, MDL chose the best possible segmentation. 
+    Overall, MDL was always able to recover more than 90% of the quality of the best segmentation.
+
+
     
 2012 - Turning the pipeline into a loop: Iterated unsupervised dependency parsing and PoS induction
   http://homepages.inf.ed.ac.uk/sgwater/papers/naacl12wkshp_iterated.pdf
