@@ -334,3 +334,17 @@ Source code for lots of stuff (~2009)
 Wowza TTS : 
   https://google.github.io/tacotron/
   https://arxiv.org/pdf/1703.10135.pdf
+  
+  
+Podcasting idea :
+  http://www.lazada.sg/audio-technica-atr2500-usb-cardioid-condenser-usb-microphone-10516993.html
+
+  https://www.aliexpress.com/item/Brand-New-Black-Y-200-Microphone-Audio-Professional-9cm-x-9cm-x-11-5cm-Shock-Mount/32659934098.html
+  https://www.aliexpress.com/item/NB-35-Professional-Adjustable-Metal-Suspension-Scissor-Arm-Microphone-Stand-Holder-for-Mounting-on-PC-Laptop/32429556071.html
+  
+  >>> 50.0/215.*87.0
+  20.232558139534884
+
+
+
+  
