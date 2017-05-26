@@ -17,7 +17,7 @@ published: true
 
 
 Sam Witteveen and I recently started the TensorFlow and Deep Learning Singapore group on MeetUp,
-and [the forth MeetUp](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/238584480/) 
+and [the forth MeetUp](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/239252636/) 
 was again hosted by Google.
 
 This 1 hour talk (which was intended to last 45 minutes) included a 
