@@ -20,7 +20,7 @@ Sam Witteveen and I recently started the TensorFlow and Deep Learning Singapore 
 and [the forth MeetUp](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/238584480/) 
 was again hosted by Google.
 
-This talk included a 
+This 1 hour talk (which was intended to last 45 minutes) included a 
 <a href="https://github.com/mdda/deep-learning-workshop/blob/master/notebooks/5-RNN/6-RNN-Tagger-keras.ipynb" target="_blank">
 TensorFlow version of the Upper Case NER notebook</a> that was already in the 
 deep-learning-workshop repo - and I have to admit, the overall example is again better in the TF version,

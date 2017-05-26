@@ -1,6 +1,6 @@
 ---
 date: 2017-05-20
-title: 'Text and RNNs'
+title: 'Fun with TensorFlow'
 tagline: Presentation
 category: AI
 tags:
@@ -11,7 +11,7 @@ tags:
 - BubbleBreaker
 - AlphaGo
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -19,33 +19,28 @@ published: false
 Because of my involvement in organising the TensorFlow &amp; Deep Learning MeetUp group, 
 and I happened to be in the right place at the right time, I was selected to represent Singapore's
 Data Science community at the 
-[APAC Machine Learning &amp; Data Science Community Summit]() 
+[APAC Machine Learning &amp; Data Science Community Summit](http://m.onoffmix.com/event/97444/content) 
 hosted by Microsoft in Seoul, Korea.
 
 In addition to a short talk I gave at the 'Community Bootcamp' on the Friday, I also gave
-a talk at the main summit.
-This talk included a 
-<a href="https://github.com/mdda/deep-learning-workshop/blob/master/notebooks/2-CNN/6-StyleTransfer/4-Art-Style-Transfer-inception_tf.ipynb" target="_blank">
+a talk at the main summit.  This 45 minute talk included a 
+<a href="https://github.com/mdda/deep-learning-workshop/blob/master/notebooks/7-Reinforcement-Learning/3-BubbleBreaker.ipynb" target="_blank">
 TensorFlow/Keras version of the Reinforcement Learning example for 'Bubble Breaker'</a>.
 
 The updated workbook now includes both Theano/Lasagne and TensorFlow/Keras versions of the code, 
 each of which builds identical models (and have been adapted to provide the same functional interface).  Moreover, 
 because I've spent more time with the notebook improving it, the example is now even stronger than before.
 
-There are links given in the presentation to the code.
-
-<a href="http://redcatlabs.com/2017-05-20_APAC-Summit.pdf" target="_blank">
+<a href="http://redcatlabs.com/2017-05-20_APAC-Summit/" target="_blank">
 ![Presentation Screenshot]({{ site.url }}/assets/img/2017-05-20_APAC-Summit_600x390.png)
 </a>
 
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="http://redcatlabs.com/2017-05-20_APAC-Summit.pdf" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2017-05-20_APAC-Summit_5-4_600x390.png)
+<a href="http://redcatlabs.com/2017-05-20_APAC-Summit/" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2017-05-20_APAC-Summit_5_600x390.png)
 </a>
-
-
 
 
 ### Refactoring
@@ -56,6 +51,7 @@ the assembled-into-a-VM still works with everything pre-loaded.
 
 That means that downloading an individual notebook and stepping through it should *just work*.  If it doesn't 
 please let me know, and I'll prioritorize fixing it.
+
 
 PS:  And if you liked the Workshop, please 'star' the <a href="https://github.com/mdda/deep-learning-workshop" target="_blank">Deep Learning Workshop</a> repo ::
 <!-- From :: https://buttons.github.io/ -->
