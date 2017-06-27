@@ -34,21 +34,21 @@ Keras version of a number of Captioning models</a>  :
 The presentation also includes links to the relevant code at suitable points.
 
 <a href="http://redcatlabs.com/2017-06-22_TFandDL_Captioning/" target="_blank">
-![Presentation Screenshot]({{ site.url }}/assets/img/2017-05-25_TFandDL_TextAndRNNs_600x390.png)
+![Presentation Screenshot]({{ site.url }}/assets/img/2017-06-22_TFandDL_Captioning_600x390.png)
 </a>
 
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="http://redcatlabs.com/2017-06-22_TFandDL_Captioning/#/5/1" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2017-05-25_TFandDL_TextAndRNNs_5-1_600x390.png)
+<a href="http://redcatlabs.com/2017-06-22_TFandDL_Captioning/#/13/4" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2017-06-22_TFandDL_Captioning_13-4_600x390.png)
 </a>
 
-
+<!--
 ### Video Link
 
 The presentation was kindly <a href="https://engineers.sg/video/rnn-and-text-tensorflow-and-deep-learning-singapore--1743" target="_blank">recorded by Engineers.sg</a>.
-
+!-->
 
 ### Refactoring
 
