@@ -16,14 +16,17 @@ published: false
 {% include JB/setup %}
 
 
-Sam Witteveen and I recently started the TensorFlow and Deep Learning Singapore group on MeetUp,
-and [the fifth MeetUp](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/240386386/) 
-was again hosted by Google.
+Sam Witteveen and I started the TensorFlow and Deep Learning Singapore group on MeetUp in February 2017,
+and we held a special [Deep Learning Beginners' Day event](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/240635858/) 
+at the Level3 offices so that people could get up to speed for the regular monthly talks.
 
-This 30 minutes talk (which was intended to last 1 hr, but was cut short due to others running long) included a 
-<a href="https://github.com/mdda/deep-learning-workshop/blob/master/notebooks/2-CNN/7-Captioning/4-run-captioning.ipynb" target="_blank">
-Keras version of a number of Captioning models</a>  :
+We shared the instruction over the course of the Saturday event - 
+I lead off both morning and afternoon sessions with introductory material, as well as defining terms, 
+with a strong dose of Mathematics in the morning to make sure everyone was awake...
 
+Sam put together a set of nice Keras notebooks, running under Anaconda, so that people could try out some
+examples for themselves.  This includes some 'challenges' where people had to change network layouts, etc, 
+to explore how to make things work better.
 
 <a href="http://redcatlabs.com/2017-06-24-BeginnersDay/#/" target="_blank">
 ![Presentation Screenshot]({{ site.url }}/assets/img/2017-06-24_Training_BeginnersDay_600x390.png)
