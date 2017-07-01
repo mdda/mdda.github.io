@@ -13,16 +13,16 @@ tags:
 - AIAYN
 - NLP
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
 
-Sam Witteveen and I recently started the TensorFlow and Deep Learning Singapore group on MeetUp,
+Sam Witteveen and I started the TensorFlow and Deep Learning Singapore group on MeetUp in February 2017,
 and [the fifth MeetUp](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/240386386/) 
 was again hosted by Google.
 
-This 30 minutes talk (which was intended to last 1 hr, but was cut short due to others running long) included a 
+This 30 minute talk (which was intended to last between 45 minutes and 1 hour, but was cut short due to others running long) included a 
 <a href="https://github.com/mdda/deep-learning-workshop/blob/master/notebooks/2-CNN/7-Captioning/4-run-captioning.ipynb" target="_blank">
 Keras version of a number of Captioning models</a>  :
 
@@ -44,20 +44,16 @@ or contact me using the details given on the slides themselves.
 ![Presentation Content Example]({{ site.url }}/assets/img/2017-06-22_TFandDL_Captioning_13-4_600x390.png)
 </a>
 
-<!--
 ### Video Link
 
-The presentation was kindly <a href="https://engineers.sg/video/rnn-and-text-tensorflow-and-deep-learning-singapore--1743" target="_blank">recorded by Engineers.sg</a>.
-!-->
+The presentation was kindly 
+<a href="https://engineers.sg/video/advanced-text-language-captioning-tensorflow-and-deep-learning-singapore--1861" target="_blank">recorded by Engineers.sg</a>.
 
-### Refactoring
+### Data set
 
-By the way, the deep-learning-workshop repo is undergoing some major refactoring.  The aim is to 
-make the individual examples work in a stand-alone fashion (downloading the necessary dependencies) while
-the assembled-into-a-VM still works with everything pre-loaded. 
+The notebook(s) in the Captioning section of the CNN folder require you to download the Flickr30k
+dataset yourself, because there are license restrictions that prevent it from being shared freely.  Which is a pity.
 
-That means that downloading an individual notebook and stepping through it should *just work*.  If it doesn't 
-please let me know, and I'll prioritorize fixing it.
 
 
 PS:  And if you liked the Workshop, please 'star' the <a href="https://github.com/mdda/deep-learning-workshop" target="_blank">Deep Learning Workshop</a> repo ::

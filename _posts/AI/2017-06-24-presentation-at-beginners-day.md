@@ -11,7 +11,7 @@ tags:
 - Dense
 - CNNs
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -25,7 +25,7 @@ I lead off both morning and afternoon sessions with introductory material, as we
 with a strong dose of Mathematics in the morning to make sure everyone was awake...
 
 Sam put together a set of nice Keras notebooks, running under Anaconda, so that people could try out some
-examples for themselves.  This includes some 'challenges' where people had to change network layouts, etc, 
+examples for themselves.  This included some 'challenges' where people had to change network layouts, etc, 
 to explore how to make things work better.
 
 <a href="http://redcatlabs.com/2017-06-24-BeginnersDay/#/" target="_blank">
