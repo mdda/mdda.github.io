@@ -28,14 +28,14 @@ in PyTorch by [kimhc6028](https://github.com/kimhc6028/relational-networks).  I 
 in [my own fork](https://github.com/mdda/relational-networks), just to make sure I understood what 
 was going on, and to check that the RN model actually performs better than the CNN-MLP one.
 
-<a href="http://redcatlabs.com/2017-03-20_TFandDL_IntroToCNNs/" target="_blank">
-![Presentation Screenshot]({{ site.url }}/assets/img/2017-03-20_TFandDL_IntroToCNNs_600x390.png)
+<a href="http://redcatlabs.com/2017-07-06_PyTorch_RelationNetworks/" target="_blank">
+![Presentation Screenshot]({{ site.url }}/assets/img/2017-07-06_PyTorch_RelationNetworks_600x390.png)
 </a>
 
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="http://redcatlabs.com/2017-03-20_TFandDL_IntroToCNNs/#/5/2" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2017-03-20_TFandDL_IntroToCNNs_5-2_600x390.png)
+<a href="http://redcatlabs.com/2017-07-06_PyTorch_RelationNetworks/#/6/1" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2017-07-06_PyTorch_RelationNetworks_6-1_600x390.png)
 </a>
 
