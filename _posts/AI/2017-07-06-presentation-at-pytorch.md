@@ -9,7 +9,7 @@ tags:
 - Relation Networks
 - Relationships
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -21,12 +21,12 @@ was hosted at Facebook, in their new Singapore offices.
 By design, this MeetUp was much smaller than our TensorFlow one (see other posts for those presentations), 
 since we envision something more researchy, more discussion-based for this group.  
 
-So, as an example of how 'out there' we'd like to go, I decided to chat about the DeepMind
+As an example of how 'out there' we'd like to go, I decided to chat about the DeepMind
 paper ["A simple neural network module for relational reasoning"](https://arxiv.org/abs/1706.01427).  This was 
-made easier because of the out-before-the-ink-was-dry implementation of the paper's main contribution,
-in PyTorch by [kimhc6028](https://github.com/kimhc6028/relational-networks).  I added to the code,
-in [my own fork](https://github.com/mdda/relational-networks), just to make sure I understood what 
-was going on, and to check that the RN model actually performs better than the CNN-MLP one.
+made easier because of the out-before-the-ink-was-dry implementation of the paper's main contribution (in PyTorch) 
+by [kimhc6028](https://github.com/kimhc6028/relational-networks).  I added to the code
+in [my own fork](https://github.com/mdda/relational-networks), partly to make sure I understood what 
+was going on and also to check that the RN model actually performs better than the CNN-MLP one.
 
 <a href="http://redcatlabs.com/2017-07-06_PyTorch_RelationNetworks/" target="_blank">
 ![Presentation Screenshot]({{ site.url }}/assets/img/2017-07-06_PyTorch_RelationNetworks_600x390.png)
