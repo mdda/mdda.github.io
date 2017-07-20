@@ -17,11 +17,14 @@ Sam Witteveen and I started the TensorFlow and Deep Learning Singapore group on 
 and [the sixth MeetUp](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/241183195/) 
 was again hosted by Google.
 
-This 30 minute included a 
+This 30 minute talk included a 
+<!--
+
 <a href="https://github.com/mdda/deep-learning-workshop/blob/master/notebooks/2-CNN/7-Captioning/4-run-captioning.ipynb" target="_blank">
 Keras version of a number of Captioning models</a>  :
 
 *  Standard LSTM 
+!-->
 
 The presentation also includes links to the relevant code at suitable points.
 
@@ -32,8 +35,8 @@ The presentation also includes links to the relevant code at suitable points.
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="http://redcatlabs.com/2017-07-20_TFandDL_TipsAndTricks/#/13/4" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2017-07-20_TFandDL_TipsAndTricks_13-4_600x390.png)
+<a href="http://redcatlabs.com/2017-07-20_TFandDL_TipsAndTricks/#/4/6" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2017-07-20_TFandDL_TipsAndTricks_4-6_600x390.png)
 </a>
 
 
