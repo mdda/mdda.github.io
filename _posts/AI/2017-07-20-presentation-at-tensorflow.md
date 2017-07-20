@@ -17,14 +17,8 @@ Sam Witteveen and I started the TensorFlow and Deep Learning Singapore group on 
 and [the sixth MeetUp](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/241183195/) 
 was again hosted by Google.
 
-This 30 minute talk included a 
-<!--
-
-<a href="https://github.com/mdda/deep-learning-workshop/blob/master/notebooks/2-CNN/7-Captioning/4-run-captioning.ipynb" target="_blank">
-Keras version of a number of Captioning models</a>  :
-
-*  Standard LSTM 
-!-->
+My 30 minute talk covered a wide range of tips, tricks and lessons learned from 
+banging my head against a wall when developing Deep Learning models.
 
 The presentation also includes links to the relevant code at suitable points.
 
@@ -39,9 +33,9 @@ or contact me using the details given on the slides themselves.
 ![Presentation Content Example]({{ site.url }}/assets/img/2017-07-20_TFandDL_TipsAndTricks_4-6_600x390.png)
 </a>
 
-
+<!--
 ### Video Link
 
 The presentation was kindly 
 <a href="https://engineers.sg/video/advanced-text-language-captioning-tensorflow-and-deep-learning-singapore--1861" target="_blank">recorded by Engineers.sg</a>.
-
+!-->
