@@ -1,6 +1,6 @@
 ---
 date: 2017-07-20
-title: 'Captioning'
+title: 'Tips and Tricks'
 tagline: Presentation
 category: AI
 tags:
@@ -8,7 +8,7 @@ tags:
 - TensorFlow
 - Keras
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -35,6 +35,8 @@ or contact me using the details given on the slides themselves.
 
 <!--
 ### Video Link
+
+This may not have worked at all...
 
 The presentation was kindly 
 <a href="https://engineers.sg/video/advanced-text-language-captioning-tensorflow-and-deep-learning-singapore--1861" target="_blank">recorded by Engineers.sg</a>.
