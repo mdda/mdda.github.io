@@ -11,6 +11,36 @@ published: false
 ---
 {% include JB/setup %}
 
+## Check whether USB events might be causing the wakeup
+
+If ```EHC1```, ```EHC1``` or ```XHC``` (USB3) are shown as enabled, then it's possible that a USB 
+device might be the culprit :
+
+{% highlight bash %}
+grep enabled /proc/acpi/wakeup 
+
+#PXSX	  S4	*enabled   pci:0000:03:00.0
+#EHC1	  S4	*enabled   pci:0000:00:1d.0
+#EHC2	  S4	*enabled   pci:0000:00:1a.0
+#XHC	  S4	*enabled   pci:0000:00:14.0
+#PWRB	  S3	*enabled   platform:PNP0C0C:00
+{% endhighlight %}
+
+One *can* disable specific device-types using the following script :
+
+{% highlight bash %}
+## parse wakeup and disable wakeup for ARPT(wifi) and XHC1(usb)
+cat /proc/acpi/wakeup | tail -n +2 | awk ‘{print $1,$3}’ | while read ss st;
+do
+  if [ $ss = “ARPT” ] || [ $ss = “XHC1” ]; then
+    if [ $st = “*enabled” ]; then
+      echo $ss > /proc/acpi/wakeup
+    fi
+  fi
+{% endhighlight %}
+
+However, this is a blunt tool if a single USB device is causing the problem.
+
 
 ## Track down the mouse...
 
