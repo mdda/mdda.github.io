@@ -73,11 +73,13 @@ dnf install cuda-devel cuda-cudnn-devel
 In my case, I also added an ```intel``` driver for the internal on-board video subsystem 
 (just so that ```X11``` might be tempted to run if there's a monitor plugged in - but check out the 
 [companion post](/oss/2016/11/28/intel-modesetting-and-xorg) on how to get the ```X11``` 
-configuration working properly if you *do* want to add a monitor) :
+configuration working properly if you *do* want to add a monitor, and also enable 
+the Nvidia card for CUDA without it having a display attached) :
 
 {% highlight bash %}
-dnf install xorg-x11-drv-intel
+dnf install xorg-x11-drv-intel nvidia-modprobe
 {% endhighlight %}
+
 
 Now after rebooting : 
 
@@ -98,20 +100,33 @@ If you've got references to ```nouveau``` appearing in ```lsmod```, something di
 
 ### Install ```TensorFlow``` for the GPU 
 
-Looking within the [TensorFlow installation instructions](https://www.tensorflow.org/versions/r0.11/get_started/os_setup.html) 
-for "Download and install cuDNN" shows that TensorFlow is expecting v8.0, which is good, because
-that is what the Negativo packing supplies.
-
-Now, find and install the right version of the ```TensorFlow``` wheel : 
+Looking within the [TensorFlow installation instructions](https://www.tensorflow.org/install/install_linux) 
+for "Download and install cuDNN" shows that TensorFlow is expecting CUDA toolkit v8.0, which is good, because
+that is what the Negativo packing supplies, but (for now) cuDNN v5.1, which is no longer the main cuDNN supplied by
+Negativo, but there's a back-ported package still there : 
 
 {% highlight bash %}
-virtualenv --system-site-packages ~/env
-. ~/env/bin/activate
+sudo dnf search cudnn
 
-export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow-0.11.0-cp27-none-linux_x86_64.whl
+#Last metadata expiration check: 0:35:09 ago on Fri 11 Aug 2017 11:18:41 PM +08.
+#============================================ Summary & Name Matched: cudnn =============================================
+#cuda-cudnn-devel.x86_64 : Development files for cuda-cudnn
+#cuda-cudnn5.1-devel.x86_64 : Development files for cuda-cudnn
+#cuda-cudnn.x86_64 : NVIDIA CUDA Deep Neural Network library (cuDNN)
+#cuda-cudnn5.1.x86_64 : NVIDIA CUDA Deep Neural Network library (cuDNN)
 
-# python 2.7
-pip install --ignore-installed --upgrade $TF_BINARY_URL
+sudo dnf install cuda-cudnn5.1  # (42Mb download)
+{% endhighlight %}
+
+
+Now, find and install the right version ```TensorFlow``` (this assumes python 3.x, which should be the obvious choice by now): 
+
+{% highlight bash %}
+virtualenv --system-site-packages -p python3 ~/env3
+. ~/env3/bin/activate
+
+# Then, for either version :
+pip install tensorflow-gpu
 {% endhighlight %}
 
 
@@ -122,12 +137,13 @@ The following can be executed (the second line onwards will be within the Python
 {% highlight python %}
 python
 import tensorflow as tf
-sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
 
 a = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[2, 3], name='a')
 b = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[3, 2], name='b')
 c = tf.matmul(a, b)
-print sess.run(c)
+
+sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
+print(sess.run(c))
 {% endhighlight %}
 
 This is what will appear if the installation **DIDN'T WORK** :
@@ -144,19 +160,17 @@ I tensorflow/stream_executor/dso_loader.cc:111] successfully opened CUDA library
 I tensorflow/stream_executor/dso_loader.cc:111] successfully opened CUDA library libcuda.so.1 locally
 I tensorflow/stream_executor/dso_loader.cc:111] successfully opened CUDA library libcurand.so locally
 >>> 
->>> # Creates a graph.
-... a = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[2, 3], name='a')
+>>> a = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[2, 3], name='a')
 >>> b = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[3, 2], name='b')
 >>> c = tf.matmul(a, b)
->>> # Creates a session with log_device_placement set to True.
-... sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
+>>> 
+>>> sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
 E tensorflow/stream_executor/cuda/cuda_driver.cc:491] failed call to cuInit: CUDA_ERROR_UNKNOWN
 I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:147] no NVIDIA GPU device is present: /dev/nvidia0 does not exist
 Device mapping: no known devices.
 I tensorflow/core/common_runtime/direct_session.cc:252] Device mapping:
 
->>> # Runs the op.
-... print sess.run(c)
+>>> print(sess.run(c))
 MatMul: /job:localhost/replica:0/task:0/cpu:0
 I tensorflow/core/common_runtime/simple_placer.cc:819] MatMul: /job:localhost/replica:0/task:0/cpu:0
 b: /job:localhost/replica:0/task:0/cpu:0
@@ -171,49 +185,10 @@ I tensorflow/core/common_runtime/simple_placer.cc:819] a: /job:localhost/replica
 
 ### Fixing the ```/dev/nvidia0``` problem
 
-The solution to this is running the [bash script inside Nvidia installation instructions](http://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#runfile-verifications), after which it all works as expected.
+This should not happen if you're running on the Nvidia card as a display adapter, or
+have installed the ```nvidia-modprobe``` package above.  If there's still a problem,
+have a look at the [solution previously found](/oss/2016/11/25/nvidia-on-fedora-25).
 
-Save the following script as ```./make-nvidia-device-nodes.bash``` and ```chmod 744 ./make-nvidia-device-nodes.bash``` :
-
-{% highlight bash %}
-#!/bin/bash
-
-/sbin/modprobe nvidia
-
-if [ "$?" -eq 0 ]; then
-  # Count the number of NVIDIA controllers found.
-  NVDEVS=`lspci | grep -i NVIDIA`
-  N3D=`echo "$NVDEVS" | grep "3D controller" | wc -l`
-  NVGA=`echo "$NVDEVS" | grep "VGA compatible controller" | wc -l`
-
-  N=`expr $N3D + $NVGA - 1`
-  for i in `seq 0 $N`; do
-    mknod -m 666 /dev/nvidia$i c 195 $i
-  done
-
-  mknod -m 666 /dev/nvidiactl c 195 255
-
-else
-  exit 1
-fi
-
-/sbin/modprobe nvidia-uvm
-
-if [ "$?" -eq 0 ]; then
-  # Find out the major device number used by the nvidia-uvm driver
-  D=`grep nvidia-uvm /proc/devices | awk '{print $1}'`
-
-  mknod -m 666 /dev/nvidia-uvm c $D 0
-else
-  exit 1
-fi
-{% endhighlight %}
-
-Then, after executing ```./make-nvidia-device-nodes.bash```, the device ```/dev/nvidia0``` should appear.
-
-The reason it may not have been there before is that it is normally created *on-demand* by ```X11```,
-but in a headless/monitorless situation, it never gets called into existence.  That's what the script causes
-to happen.
 
 
 ### When it finally works...
@@ -223,12 +198,13 @@ Then the python REPL code :
 {% highlight python %}
 python
 import tensorflow as tf
-sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
 
 a = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[2, 3], name='a')
 b = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[3, 2], name='b')
 c = tf.matmul(a, b)
-print sess.run(c)
+
+sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
+print(sess.run(c))
 {% endhighlight %}
 
 Produces the following happy messages : 
@@ -286,6 +262,40 @@ I tensorflow/core/common_runtime/direct_session.cc:252] Device mapping:
 /job:localhost/replica:0/task:0/gpu:0 -> device: 0, name: GeForce GTX TITAN X, pci bus id: 0000:01:00.0
 {% endhighlight %}
 
+
+
+
+### Install ```PyTorch``` for the GPU 
+
+Looking within the [PyTorch installation instructions](http://pytorch.org/) we see that there's 
+an option for CUDA toolkit v8.0, which is good, and Python 3.6 is supported (also good).
+
+{% highlight bash %}
+pip install http://download.pytorch.org/whl/cu80/torch-0.2.0.post1-cp36-cp36m-manylinux1_x86_64.whl  # 486Mb download!
+pip install torchvision  # (48Kb download)
+{% endhighlight %}
+
+Hmm - there's a ```numpy``` ABI version incompatability...
+
+Fedora 26 default python3 ```numpy 1.12.1```, but PyTorch wants ```numpy 1.13.1``` :
+
+{% highlight bash %}
+pip install --ignore-installed  numpy
+{% endhighlight %}
+
+
+{% highlight python %}
+python
+import torch
+
+#dtype = torch.FloatTensor  # Use this to run on CPU
+dtype = torch.cuda.FloatTensor # Use this to run on GPU
+
+a = torch.Tensor( [[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]).type(dtype)
+b = torch.Tensor( [[1.0, 2.0], [3.0, 4.0], [5.0, 6.0]]).type(dtype)
+
+print(a.mm(b))  # matrix-multiply (should state : on GPU)
+{% endhighlight %}
 
 
 All done.
