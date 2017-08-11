@@ -1,6 +1,6 @@
 ---
 date: 2017-08-11
-title: Nvidia (8.0) installation for TensorFlow on Fedora 26
+title: 'Nvidia (8.0) installation for TensorFlow & PyTorch on Fedora 26'
 category: OSS
 tags:
 - fedora
@@ -275,14 +275,16 @@ pip install http://download.pytorch.org/whl/cu80/torch-0.2.0.post1-cp36-cp36m-ma
 pip install torchvision  # (48Kb download)
 {% endhighlight %}
 
-Hmm - there's a ```numpy``` ABI version incompatability...
-
-Fedora 26 default python3 ```numpy 1.12.1```, but PyTorch wants ```numpy 1.13.1``` :
+Hmm - a quick test shows that there's a ```numpy``` ABI version incompatibility...  
+Fedora 26's default for python3 is ```numpy 1.12.1```, but PyTorch for Python-3.6 wants ```numpy 1.13.1```, 
+fix this just inside the ```virtualenv```:
 
 {% highlight bash %}
 pip install --ignore-installed  numpy
 {% endhighlight %}
 
+
+Then finally test it with the same Hello World calculation as we did for TensorFlow :
 
 {% highlight python %}
 python
