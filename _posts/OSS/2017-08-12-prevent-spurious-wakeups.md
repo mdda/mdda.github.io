@@ -47,7 +47,7 @@ However, this is a blunt tool if a single USB device is causing the problem.
 First, get an idea of which strings/devices you should be searching for :
 
 {% highlight bash %}
-/sys/bus/usb/devices/*/product 
+cat /sys/bus/usb/devices/*/product 
 {% endhighlight %}
 
 Now, specify that you need the 'mouse' device id:
@@ -64,6 +64,28 @@ echo "disabled" > /sys/bus/usb/devices/3-12/power/wakeup
 {% endhighlight %}
 
 Test the resume-from-suspend cycle is no longer triggered by the mouse...
+
+## Make the change permanent...
+
+Put the one-liner above in a (possibly new) file ```/etc/rc.local``` with a ```bash``` invocation : 
+
+{% highlight bash %}
+#!/bin/bash
+echo "disabled" > /sys/bus/usb/devices/3-12/power/wakeup
+{% endhighlight %}
+
+And then make it executable :
+
+{% highlight bash %}
+chmod +x /etc/rc.local
+{% endhighlight %}
+
+Check that the ```rc-local.service``` does exist (though it appears to be defined internally, 
+rather than through a ```.service``` file like many other services) :
+
+{% highlight bash %}
+systemctl status rc-local.service 
+{% endhighlight %}
 
 
 
