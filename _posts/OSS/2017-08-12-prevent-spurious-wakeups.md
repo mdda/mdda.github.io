@@ -7,7 +7,7 @@ tags:
 - linux
 - ACPI
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
