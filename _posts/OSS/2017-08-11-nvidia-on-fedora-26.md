@@ -101,9 +101,9 @@ If you've got references to ```nouveau``` appearing in ```lsmod```, something di
 ### Install ```TensorFlow``` for the GPU 
 
 Looking within the [TensorFlow installation instructions](https://www.tensorflow.org/install/install_linux) 
-for "Download and install cuDNN" shows that TensorFlow is expecting CUDA toolkit v8.0, which is good, because
-that is what the Negativo packing supplies, but (for now) cuDNN v5.1, which is no longer the main cuDNN supplied by
-Negativo, but there's a back-ported package still there : 
+for "Download and install cuDNN" shows that TensorFlow is expecting ```CUDA toolkit v8.0```, which is good, because
+that is what the Negativo packing supplies, but also ```cuDNN v5.1```, 
+which is no longer the main ```cuDNN``` supplied by Negativo, but there's a back-ported package still there : 
 
 {% highlight bash %}
 sudo dnf search cudnn
@@ -118,8 +118,9 @@ sudo dnf search cudnn
 sudo dnf install cuda-cudnn5.1  # (42Mb download)
 {% endhighlight %}
 
+This back-port requirement should change in ```TensorFlow 1.3```, which is planned to be compatible with ```cuDNN v6```.
 
-Now, find and install the right version ```TensorFlow``` (this assumes python 3.x, which should be the obvious choice by now): 
+Now, find and install the right version ```TensorFlow``` (this assumes ```python 3.x```, which should be the obvious choice by now): 
 
 {% highlight bash %}
 virtualenv --system-site-packages -p python3 ~/env3
@@ -368,8 +369,8 @@ Release Date: 2017-03-15
 [     6.989] (==) Using system config directory "/usr/share/X11/xorg.conf.d"
 [     6.990] (==) No Layout section.  Using the first Screen section.
 [     6.990] (==) No screen section available. Using defaults.
-[     6.990] (**) |-->Screen "Default Screen Section" (0)
-[     6.990] (**) |   |-->Monitor "<default monitor>"
+[     6.990] (**) |--&gt;Screen "Default Screen Section" (0)
+[     6.990] (**) |   |--&gt;Monitor "&lt;default monitor&gt;"
 [     6.991] (==) No monitor specified for screen "Default Screen Section".
 	Using a default monitor configuration.
 [     6.991] (==) Automatically adding devices
@@ -1179,7 +1180,7 @@ EndSection
 Section "Device"
     Identifier "nvidia"
     Driver "nvidia"
-    BusID "<BusID for NVIDIA device here>"
+    BusID "&lt;BusID for NVIDIA device here&gt;"
 EndSection
  
 Section "Screen"
