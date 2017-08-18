@@ -101,7 +101,7 @@ If you've got references to ```nouveau``` appearing in ```lsmod```, something di
 ### Install ```TensorFlow``` for the GPU 
 
 Looking within the [TensorFlow installation instructions](https://www.tensorflow.org/install/install_linux) 
-for "Download and install cuDNN" shows that TensorFlow is expecting ```CUDA toolkit v8.0```, which is good, because
+for "Download and install cuDNN" shows that TensorFlow v1.2 expects ```CUDA toolkit v8.0```, which is good, because
 that is what the Negativo packing supplies, but also ```cuDNN v5.1```, 
 which is no longer the main ```cuDNN``` supplied by Negativo, but there's a back-ported package still there : 
 
@@ -118,9 +118,10 @@ sudo dnf search cudnn
 sudo dnf install cuda-cudnn5.1  # (42Mb download)
 {% endhighlight %}
 
-This back-port requirement should change in ```TensorFlow 1.3```, which is planned to be compatible with ```cuDNN v6```.
+This back-port package is not needed for ```TensorFlow 1.3```, which is compatible with ```cuDNN v6``` - so 
+the standard ```cuda-cudnn``` package works fine (this should have been installed already as as dependency of ```cuda-cudnn-devel``` above).
 
-Now, find and install the right version ```TensorFlow``` (this assumes ```python 3.x```, which should be the obvious choice by now): 
+Now install ```TensorFlow``` (this assumes ```python 3.x```, which should be the obvious choice by now): 
 
 {% highlight bash %}
 virtualenv --system-site-packages -p python3 ~/env3
