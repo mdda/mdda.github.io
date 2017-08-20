@@ -20,11 +20,13 @@ Having [re-installed the Nvidia drivers]() (this time using Negativo's repositor
 suddenly X11 didn't boot properly.  And it's a real headache fiddling with the setup - the
 following is what worked for me (and some of the process).
 
-Bottom line go harder :  
+Bottom line :  
 
-*  The kernel parameters might fix this (without needing any special ```xorg.conf``` at all);
-*  But you may need to force in ```xorg.conf``` because the ```modesetting``` driver took over more control in 
+*  The kernel parameters might fix this (without needing any special ```xorg.conf``` at all) - see the 
+   [previous post](/oss/2016/11/28/intel-modesetting-and-xorg) to see whether the simple solution will work;
+*  However, you may need to force the configuration via ```xorg.conf``` because the ```modesetting``` driver took over more control in 
    Fedora 26 (compared to Fedora 25)
+
 
 
 ### My Deep Learning computer set-up
@@ -38,6 +40,12 @@ The main stumbling block is that the Nvidia installation (I think) modified the
 kernel parameters so that the Nvidia driver was happy - but that prevents the 
 ```intel``` driver from enabling ```modesetting```, which X11 requires to be 
 *enabled* for the X-server to boot cleanly.
+
+Moreover, Fedora 26 now has slightly updated ```modesetting``` driver for X11, which may be
+incompatible with the intel on-board chipset.  In this case (look for ```glamoregl``` errors),
+you may need to force X11 to load the ```intel``` driver using a custom ```xorg.conf```.
+
+
 
 ### Checking the system
 
