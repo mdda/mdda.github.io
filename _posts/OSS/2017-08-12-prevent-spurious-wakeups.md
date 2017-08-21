@@ -65,19 +65,25 @@ echo "disabled" > /sys/bus/usb/devices/3-12/power/wakeup
 
 Test the resume-from-suspend cycle is no longer triggered by the mouse...
 
+
 ## Make the change permanent...
 
-Put the one-liner above in a (possibly new) file ```/etc/rc.local``` with a ```bash``` invocation : 
+Shout-out :  The following comes from reading all the advice on [this page](https://ask.fedoraproject.org/en/question/26898/what-is-the-auto-start-file-like-rclocal/).
+
+Put the one-liner above in a (probably new) file ```/etc/rc.d/rc.local``` with a ```bash``` invocation : 
 
 {% highlight bash %}
 #!/bin/bash
 echo "disabled" > /sys/bus/usb/devices/3-12/power/wakeup
 {% endhighlight %}
 
-And then make it executable :
+And then make it executable, and usable by ```systemd``` :
 
 {% highlight bash %}
-chmod +x /etc/rc.local
+chmod +x /etc/rc.d/rc.local
+restorecon -v /etc/rc.d/rc.local
+systemctl enable rc-local.service
+systemctl start rc-local.service
 {% endhighlight %}
 
 Check that the ```rc-local.service``` does exist (though it appears to be defined internally, 
@@ -86,7 +92,6 @@ rather than through a ```.service``` file like many other services) :
 {% highlight bash %}
 systemctl status rc-local.service 
 {% endhighlight %}
-
 
 
 All done.
