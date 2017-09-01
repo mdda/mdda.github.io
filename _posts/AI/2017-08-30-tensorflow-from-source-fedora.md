@@ -10,21 +10,26 @@ published: false
 {% include JB/setup %}
 
 
-https://jasonqsy.github.io/compile-tensorflow-with-gpu-support-on-fedora.html
-
-
 ## ```TensorFlow``` from source
 
 "This should be easy" = Famous last words...  We'll see.
+
+I used this [very helpful guide](https://jasonqsy.github.io/compile-tensorflow-with-gpu-support-on-fedora.html)
+but with the following differences :
+
+  *  This was a laptop install, so no GPU required
+  *  The ```gcc``` version issues discussed there are really a CUDA problem.  
+     Since I would use the negativo Nvidia repo, these compilation tweaks would have 
+     already been taken care of if I were using a GPU
+  *  Anaconda didn't seem necessary
 
 
 ### Prepare the system packages
 
 As ```root``` :
 {% highlight bash %}
-
+# Actually nothing new required...
 {% endhighlight %}
-
 
 
 ### Prepare the user set-up
@@ -54,19 +59,7 @@ bazel version
 {% endhighlight %}
 
 
-As a regular user :
-
-
-
-
-{% highlight bash %}
-git clone https://github.com/tensorflow/tensorflow   # Downloads ~120Mb
-
-cd tensorflow
-
-{% endhighlight %}
-
-### Build
+#### Download ```tensorflow```
 
 As a regular user :
 
@@ -77,7 +70,23 @@ cd tensorflow
 {% endhighlight %}
 
 
-### ```python-3.6 virtualenv```
+### Build ```tensorflow```
+
+As a regular user :
+
+{% highlight bash %}
+git clone https://github.com/tensorflow/tensorflow   # Downloads ~120Mb
+
+cd tensorflow
+{% endhighlight %}
+
+
+#### ```python-3.6 virtualenv```
+
+I did this in the repo base directory itself.  That may have been an unhelpful choice,
+since (later) I found that I couldn't use ```import tensorflow``` there, since
+the repo itself has a ```tensorflow/__init__.py``` which seems to take priority.  OTOH,
+this doesn't stop me using the newly built ```tensorflow``` anywhere else...
 
 {% highlight bash %}
 virtualenv-3.6 --system-site-packages env3
@@ -85,7 +94,7 @@ virtualenv-3.6 --system-site-packages env3
 {% endhighlight %}
 
 
-### ```./configure``` machine compilation defaults
+#### ```./configure``` machine compilation defaults
 
 (All default options apart from adding XLA support) :
 
@@ -143,7 +152,8 @@ please set the environment variable "TF_MKL_ROOT" every time before build.
 Configuration finished
 {% endhighlight %}
 
-### ```bazel``` build TF
+
+#### ```bazel``` build ```tensorflow``` itself
 
 {% highlight bash %}
 #bazel build --config=opt --config=cuda //tensorflow/tools/pip_package:build_pip_package
@@ -165,10 +175,10 @@ In function 'memcpy',
 {% endhighlight %}
 
 
-Magic fix : 
-  * https://stackoverflow.com/questions/40373686/freeze-graph-py-throws-an-error-during-build/40374431#40374431
-  * https://github.com/tensorflow/serving/issues/6
-  * https://github.com/grpc/grpc/issues/10843
+Magic fix hints: 
+  * [stackoverflow](https://stackoverflow.com/questions/40373686/freeze-graph-py-throws-an-error-during-build/40374431#40374431)
+  * [TF serving](https://github.com/tensorflow/serving/issues/6)
+  * [grpc](https://github.com/grpc/grpc/issues/10843)
  
 {% highlight bash %}
 bazel build -c O --config=opt //tensorflow/tools/pip_package:build_pip_package
@@ -176,26 +186,74 @@ bazel build -c O --config=opt //tensorflow/tools/pip_package:build_pip_package
 # INFO: Elapsed time: 5218.471s, Critical Path: 86.01s
 {% endhighlight %}
 
-### Test the install
+
+A second ```bazel build``` takes 9 seconds to figure out that nothing needs to be recompiled.
+
+A third ```bazel build``` takes 0.5 seconds to figure out that nothing needs to be recompiled.
+
+
+
+#### Build the ```pip whl``` package itself
+
+This creates the 'wheel' in ```/tmp/tensorflow_pkg```, and then installs it into the ```env3``` :
 
 {% highlight bash %}
+bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
 
+pip install /tmp/tensorflow_pkg/tensorflow-*.whl
 {% endhighlight %}
 
-### Test the install
+
+
+### Size of built code
 
 {% highlight bash %}
+du -bh --exclude='env3/*'
+# 194Mb  (including all the git history)
 
+du -bh --exclude='.git/*' --exclude='env3/*'
+# 69Mb
 {% endhighlight %}
+
 
 ### Test the install
 
-{% highlight bash %}
-
-{% endhighlight %}
-
-### Test the install
+You need to use the ```env3``` with the freshly built tensorflow inside it, 
+but then move to a directory other than the base repo, since that includes a 'distracting'
+```tensorflow/__init__.py``` file.  Then, run ```python``` to get a python prompt, and :
 
 {% highlight python %}
+import tensorflow as tf
+
+a = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[2, 3], name='a')
+b = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[3, 2], name='b')
+c = tf.matmul(a, b)
+
+sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
+
+print(sess.run(c))
 {% endhighlight %}
+
+should give you results (slightly reformatted) :
+
+{% highlight python %}
+MatMul: (MatMul): /job:localhost/replica:0/task:0/cpu:0
+2017-08-31 01:23:54.678983: I tensorflow/core/common_runtime/simple_placer.cc:875] 
+  MatMul: (MatMul)/job:localhost/replica:0/task:0/cpu:0
+
+b: (Const): /job:localhost/replica:0/task:0/cpu:0
+2017-08-31 01:23:54.679009: I tensorflow/core/common_runtime/simple_placer.cc:875] 
+  b: (Const)/job:localhost/replica:0/task:0/cpu:0
+
+a: (Const): /job:localhost/replica:0/task:0/cpu:0
+2017-08-31 01:23:54.679021: I tensorflow/core/common_runtime/simple_placer.cc:875] 
+  a: (Const)/job:localhost/replica:0/task:0/cpu:0
+
+[[ 22.  28.]
+ [ 49.  64.]]
+{% endhighlight %}
+
+
+
+All Done!
 
