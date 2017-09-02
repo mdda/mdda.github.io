@@ -1,6 +1,6 @@
 ---
 date: 2017-08-24
-title: 'Making Models Smaller'
+title: 'Smaller Networks'
 tagline: Presentation
 category: AI
 tags:
@@ -25,15 +25,15 @@ to fit 'large models' onto small devices (i.e. phones).
 
 The presentation also includes links to the relevant code at suitable points.
 
-<a href="http://redcatlabs.com/2017-07-20_TFandDL_TipsAndTricks/" target="_blank">
-![Presentation Screenshot]({{ site.url }}/assets/img/2017-07-20_TFandDL_TipsAndTricks_600x390.png)
+<a href="http://redcatlabs.com/2017-08-24_TFandDL_SmallerNets/" target="_blank">
+![Presentation Screenshot]({{ site.url }}/assets/img/2017-08-24_TFandDL_SmallerNets_600x390.png)
 </a>
 
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="http://redcatlabs.com/2017-07-20_TFandDL_TipsAndTricks/#/4/6" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2017-07-20_TFandDL_TipsAndTricks_4-6_600x390.png)
+<a href="http://redcatlabs.com/2017-08-24_TFandDL_SmallerNets/#/6/2" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2017-08-24_TFandDL_SmallerNets_6-2_600x390.png)
 </a>
 
 
