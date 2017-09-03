@@ -19,6 +19,7 @@ published: false
 . env3/bin/activate  # env3 with TensorFlow master wheel installed
 jupyter notebook --notebook-dir=.
 
+# Hmm ... need to know the magic incantation...
 
 import tensorflow.contrib.eager as tf
 
