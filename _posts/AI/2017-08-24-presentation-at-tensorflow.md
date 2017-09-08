@@ -10,7 +10,7 @@ tags:
 - CNNs
 - ImageNet
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
