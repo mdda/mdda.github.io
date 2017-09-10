@@ -4,8 +4,8 @@ category: AI
 title: TensorFlow from source on Fedora 26
 tagline: Should be easy
 date: 2017-08-30
-tags: [TensorFlow,Fedora]
-published: false
+tags: [TensorFlow,Fedora,Python]
+published: true
 ---
 {% include JB/setup %}
 
@@ -18,9 +18,9 @@ I used this [very helpful guide](https://jasonqsy.github.io/compile-tensorflow-w
 but with the following differences :
 
   *  This was a laptop install, so no GPU required
-  *  The ```gcc``` version issues discussed there are really a CUDA problem.  
-     Since I would use the negativo Nvidia repo, these compilation tweaks would have 
-     already been taken care of if I were using a GPU
+  *  The ```gcc``` version issues discussed in the helpful guide above are really a CUDA problem.  
+  *  Since I use the negativo Nvidia repo to deal with this, 
+     these compilation tweaks would have already been taken care of if I were using a GPU
   *  Anaconda didn't seem necessary
 
 
@@ -32,7 +32,7 @@ As ```root``` :
 {% endhighlight %}
 
 
-### Prepare the user set-up
+### Prepare user-land set-up
 
 #### ```bazel``` installation
 
@@ -72,16 +72,15 @@ cd tensorflow
 
 ### Build ```tensorflow```
 
-As a regular user :
+This needs several preparatory steps  :
 
-{% highlight bash %}
-git clone https://github.com/tensorflow/tensorflow   # Downloads ~120Mb
+*  Create a ```virtualenv``` so that Python knows which version it's building for
+*  Set up the defaults correctly (some CLI interaction)
+*  Build a ```pip``` package with ```bazel``` (iterate to fix the problems...)
+*  Install the ```pip``` package
 
-cd tensorflow
-{% endhighlight %}
 
-
-#### ```python-3.6 virtualenv```
+#### Set up Python : ```python-3.6 virtualenv```
 
 I did this in the repo base directory itself.  That may have been an unhelpful choice,
 since (later) I found that I couldn't use ```import tensorflow``` there, since
@@ -153,7 +152,9 @@ Configuration finished
 {% endhighlight %}
 
 
-#### ```bazel``` build ```tensorflow``` itself
+#### ```bazel``` build the ```pip``` package (builds ```tensorflow``` too)
+
+This took over an hour (even when it worked cleanly) : 
 
 {% highlight bash %}
 #bazel build --config=opt --config=cuda //tensorflow/tools/pip_package:build_pip_package
@@ -176,13 +177,16 @@ In function 'memcpy',
 
 
 Magic fix hints: 
-  * [stackoverflow](https://stackoverflow.com/questions/40373686/freeze-graph-py-throws-an-error-during-build/40374431#40374431)
-  * [TF serving](https://github.com/tensorflow/serving/issues/6)
-  * [grpc](https://github.com/grpc/grpc/issues/10843)
+
+  *  [stackoverflow](https://stackoverflow.com/questions/40373686/freeze-graph-py-throws-an-error-during-build/40374431#40374431)
+  *  [TF serving](https://github.com/tensorflow/serving/issues/6)
+  *  [grpc](https://github.com/grpc/grpc/issues/10843)
+
+Finally iterate to the following (working) command line : 
  
 {% highlight bash %}
 bazel build -c O --config=opt //tensorflow/tools/pip_package:build_pip_package
-23:40 ... 01:10 
+# 23:40 ... 01:10 
 # INFO: Elapsed time: 5218.471s, Critical Path: 86.01s
 {% endhighlight %}
 
