@@ -28,7 +28,7 @@ Please forgive me if the posts aren't crystal clear : Many of the ideas aren't f
       {% else %}
        <s>{{ post.title }}</s>
       {% endunless %}
-    </a></li>
+    </a> - {{ post.tagline }}</li>
   {% endfor %}
 </ul>
 
