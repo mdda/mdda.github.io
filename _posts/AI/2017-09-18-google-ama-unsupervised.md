@@ -5,17 +5,12 @@ title: Unsupervised Learning
 tagline: Google Reddit AMA (2017)
 date: 2017-09-18
 tags: [NeuralNetworks,Unsupervised]
-published: false
+published: true
 ---
 {% include JB/setup %}
 
-
 The Google Brain team recently did a [Reddit AMA](https://www.reddit.com/r/MachineLearning/comments/6z51xb/we_are_the_google_brain_team_wed_love_to_answer/), 
 and I thought some comments were particularly interesting / crunchy.
-
-If you are someone who I've quoted, and object to me doing so (at pain of copyright infringement, for instance), 
-please let me know and I'll replace the quote with a link directly to the reddit post itself.
-
 
 ## Google AMA : Unsupervised Learning
 
@@ -24,7 +19,7 @@ Question asked by ```dexter89_kp``` :
 *    What is the brain team's take on state of unsupervised methods today? 
 *    Do you anticipate major conceptual strides in the next few years?
 
-Answer by Google Brain's ```vincentvanhoucke``` : 
+Answer by Google Brain's [```vincentvanhoucke```](https://research.google.com/pubs/VincentVanhoucke.html) : 
 
 >I think people are finally getting that autoencoding is a Bad Idea, 
 and that the difference between unsupervised learning that works (e.g. language models) 
@@ -32,7 +27,7 @@ and unsupervised learning that doesn’t is generally about predicting
 the causal future (next word, next frame) instead of the present (autoencoding). 
 >
 >I'm very happy to see how many people have started benchmarking their 'future prediction' work 
-on the push dataset we open-sourced last year, that was quite unexpected.
+on the [push dataset](https://sites.google.com/site/brainrobotdata/home/push-dataset) we open-sourced last year, that was quite unexpected.
 >
 >*Could you elaborate? Bad idea in some specific context or just in general?*
 >      
@@ -49,14 +44,14 @@ and all of that is being destroyed by LSTMs, which, again,
 use causal prediction as the supervisory signal. 
 >      
 >Even Yann LeCun has amended his 'cherry vs cake' statement to no longer be 
-about unsupervised learning, but about predictive learning. 
+about unsupervised learning, but about [predictive learning](https://www.facebook.com/yann.lecun/posts/10154442711667143). 
 >
 >That's essentially the same message :
 >
 >*  Autoencoders bad. 
 *  Future-self predictors good.
 
-Answer by Google Brain's ```gcorrado``` : 
+Answer by Google Brain's [```gcorrado```](https://research.google.com/pubs/GregCorrado.html) : 
 
 >I don’t think we’ve really broken through on unsupervised learning. 
 There’s a huge amount of information and structure in the unconditioned data distribution, 
@@ -69,6 +64,20 @@ of one or two orders of magnitude more compute.
 >Time will tell.
 
 
-### Meta-Comment?
+### Comment
 
+... need to think more about how to unpack the difference between the Word2Vec unsupervised learning
+as a prediction task, vs LDA as a re-representation.
+
+
+### Meta-Comment
+
+Really nice to see some forward-looking opinions from people in the field that
+could easily have kept their ideas to themselves.
+
+There were many insightful comments in this Reddit AMA, so I'll probably do some more
+of these thread synposis things.  Simply reformatting (like a code indentation twitch) 
+is a nice way to revisit what's important, and weed out irrelevant asides.
+
+{% include custom/comment_copyright %}
 
