@@ -14,7 +14,7 @@ published: true
 
 
 Sam Witteveen and I started the TensorFlow and Deep Learning Singapore group on MeetUp in February 2017,
-and [the sixth MeetUp](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/241183195/) 
+and [the sixth MeetUp, aka 'Tips and Tricks'](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/241183195/),
 was again hosted by Google.
 
 My 30 minute talk covered a wide range of tips, tricks and lessons learned from 

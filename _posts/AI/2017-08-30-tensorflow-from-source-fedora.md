@@ -152,6 +152,34 @@ Configuration finished
 {% endhighlight %}
 
 
+<!--
+Please specify the location where CUDA 8.0 toolkit is installed. Refer to README.md for more details. [Default is /usr/local/cuda]: /usr
+#... But this then barfs during the build ::
+#Cuda Configuration Error: Cannot find cudnn.h under /usr
+
+Please specify the location where CUDA 8.0 toolkit is installed. Refer to README.md for more details. [Default is /usr/local/cuda]:  /usr/include/cuda
+#... Problem is that fedora does /usr/XYZ/{include,lib64,...)/
+#... Whereas this expects /usr/{include,lib64,...)/XYZ/
+
+# How about faking the default install?
+cd /usr/local/
+mkdir cuda
+cd cuda
+ln -s /usr/include/cuda include
+ln -s /usr/lib64 .
+ln -s /usr/bin .
+
+# find: ‘/usr/local/cuda/nvvm’: No such file or directory
+#  but we don't have nvvm anyway...
+
+scite /home/andrewsm/OpenSource/tensorflow/third_party/gpus/cuda_configure.bzl  # ~ line 917
+
+# See : https://en.wikipedia.org/wiki/CUDA
+Please note that each additional compute capability significantly increases your build time and binary size. [Default is: 3.5,5.2]5.2
+
+
+!-->
+
 #### ```bazel``` build the ```pip``` package (builds ```tensorflow``` too)
 
 This took over an hour (even when it worked cleanly) : 
