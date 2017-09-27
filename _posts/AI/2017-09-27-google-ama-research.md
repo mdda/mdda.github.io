@@ -86,6 +86,10 @@ Contrast e.g. with Markov nets, where information is propagated in both directio
 
 ### Comment
 
+*  The feedback idea is interesting - and potentially links up with Geoff Hinton's recent comment 
+about Backpropagation needing a bit of a rethink.
+
+
 
 
 ### Meta-Comment
