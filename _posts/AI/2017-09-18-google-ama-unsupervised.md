@@ -69,6 +69,9 @@ of one or two orders of magnitude more compute.
 ... need to think more about how to unpack the difference between the Word2Vec unsupervised learning
 as a prediction task, vs LDA as a re-representation.
 
+Along the way, I also came accross this [interesting blog post by Giorgio Patrini](http://giorgiopatrini.org/posts/2017/09/06/in-search-of-the-missing-signals/),
+which talks about some other interesting papers / lines of enquiry.
+
 
 ### Meta-Comment
 
