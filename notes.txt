@@ -15,7 +15,8 @@ bundle update
 #bundle update 
 ## Problems : nokogiri, posix_spawn_ext
 
-bundle exec jekyll serve --watch --unpublished --future
+bundle exec jekyll serve --watch --unpublished --future --incremental
+
 
 
 
