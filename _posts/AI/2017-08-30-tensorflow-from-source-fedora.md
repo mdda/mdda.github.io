@@ -185,7 +185,7 @@ Magic fix hints:
 Finally iterate to the following (working) command line : 
  
 {% highlight bash %}
-bazel build -c O --config=opt //tensorflow/tools/pip_package:build_pip_package
+bazel build -c 0 --config=opt //tensorflow/tools/pip_package:build_pip_package
 # 23:40 ... 01:10 
 # INFO: Elapsed time: 5218.471s, Critical Path: 86.01s
 {% endhighlight %}
