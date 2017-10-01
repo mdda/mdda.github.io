@@ -33,21 +33,28 @@ Answer by Google Brain's [```vincentvanhoucke```](https://research.google.com/pu
 >      
 >        I often hear researchers complaining how Google tends to publish a lot about large-scale, 
 >        comparatively dumb approaches to solving problems. 
->        Guilty as charged: think about ProdLM and 'stupid backoff', or the 'billion neuron' cat paper, 
->        AlphaGo, the more recent work on obscenely large mixture of experts or the large-scale learning-to-learn papers.
 >        
->        The charges levied against this line of work is that they're inefficiently using large amounts of resources, 
->        not being 'clever', and that nobody else can reproduce them as a result. 
+>        Guilty as charged: think about ProdLM and 'stupid backoff', or the 'billion neuron' cat paper, 
+>        AlphaGo, the more recent work on obscenely large mixture of experts or the large-scale 
+>        learning-to-learn papers.
+>        
+>        The charges levied against this line of work is that they're inefficiently using large 
+>        amounts of resources,  not being 'clever', and that nobody else can reproduce them as a result. 
+>        
 >        But that's exactly the point!! 
+>        
 >        The marginal benefit of us exploring the computational regimes that every other academic lab 
 >        can do just as well is inherently limited. 
+>
 >        Better explore the frontier that few others have the resources to explore: 
->        what happens when we go all out; 
->        try the simple stuff first, 
->        and then if it looks promising we can work backwards and make it more efficient. 
+>
+>        *  what happens when we go all out; 
+>        *  try the simple stuff first, and then if it looks promising we can work backwards 
+>           and make it more efficient. 
 >        
->        ProdLM gave us the focus on data for machine translation that made production-grade neural MT possible. 
->        The 'cat paper' gave us DistBelief and eventually TensorFlow. 
+>        ProdLM gave us the focus on data for machine translation that made production-grade 
+>        neural MT possible. The 'cat paper' gave us DistBelief and eventually TensorFlow. 
+>        
 >        That's not waste, that's progress.
 >
 >Many great developments started as crazy expensive research, 
@@ -78,8 +85,8 @@ Answer by Google Brain's [```gcorrado```](https://research.google.com/pubs/GregC
 
 >More data rarely hurts, but it’s a game of diminishing returns. 
 Depending on the problem you are trying to solve (and how you’re solving it) 
-there’s some critical volume of data to get to pretty good performance...  
-from there redoubling your data only asymptotically bumps prediction accuracy. 
+there’s some critical volume of data to get to pretty good performance...  from 
+there redoubling your data only asymptotically bumps prediction accuracy. 
 >
 >For example, in our paper on detecting diabetic retinopathy we published 
 this curve which shows that for our technique, 
