@@ -5,7 +5,7 @@ title: Deep Pockets
 tagline: Google Reddit AMA (2017)
 date: 2017-10-02
 tags: [NeuralNetworks,Research]
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -103,9 +103,17 @@ and new application ideas are where the real action is going to be, IMHO.
 
 ### Comment
 
-*  TODO 
-
-
+*  I'd also noticed the pattern of using excessive computation to prove that something was possible, 
+   followed by interation and innovation to make the model reasonably tractable.
+   
+*  In this light, it isn't the spectacle of huge resources being applied to a problem that is the 
+   main result - it's the proof-of-concept : Essentially the initial paper gives the green light to 
+   further experimentation, safe in the knowledge that the battle can be won using more resources.
+   
+*  With respect to the availability of data : In many applications, the 0-to-1 breakthrough doesn't
+   need a huge dataset.  After a certain point, the benefits of increasing training data size quickly
+   diminish (for instance, Jeff Dean mentioned that Google Translate currently uses only 1/6th of the
+   training data available).
 
 {% include custom/comment_copyright %}
 
