@@ -16,11 +16,11 @@ published: true
 
 Recently, I moved my GPU to my home office, where the machine is suspended overnight, rather
 than being left on continuously.  But that also caused the Nvidia card to present a 
-problem that sometimes it became unusable after it was suspended.
+problem where it sometimes became unusable after the machine was suspended.
 
-### Solution : kill running GPU processes
+### Solution : Kill running GPU processes
 
-Finally, I noticed that the problem didn't occur if there was nothing running
+Finally, I noticed that the problem didn't occur if there was nothing *at all* running
 on the card during the suspend/resume cycle.
 
 Look at the output of ```nvidia-smi``` :
@@ -45,12 +45,10 @@ Sat Oct 21 23:56:22 2017
 +-----------------------------------------------------------------------------+
 {% endhighlight %}
 
-The card *isn't* doing any active computation, but simply running 
+The card *isn't* doing any active computation.  However, simply running 
 a ```Jupyter notebook``` that imports ```tensorflow``` or ```PyTorch``` is enough 
-to create a process on the card, which causes the GPU to 'loose connection' after a 
+to create a process on the card, which causes the GPU to 'lose connection' after a 
 resume.
 
 So : Before suspending, stop not only the active GPU machine learning things, but
 also things (like ```Jupyter```) that may be keeping the card occupied.
-
-
