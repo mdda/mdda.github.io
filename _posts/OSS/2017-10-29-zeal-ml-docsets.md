@@ -48,7 +48,7 @@ This DocSet works as expected, and is a huge help when dabbling with ```TensorFl
 
 ### ```PyTorch``` documentation
 
-The documentation is good, except that the search functionality online is very frustrating, 
+The ```PyTorch``` documentation is good, except that the search functionality online is very frustrating, 
 since the individual function search index points to a link that requires the page to redraw several times,
 causing the display to leap around.
 
@@ -64,4 +64,33 @@ tar -xzf PyTorch.tgz
 One problem is that the DocSet creator doesn't index the individual functions properly.  However, 
 if you pull up the main PyTorch page, the original search functions are there within the pane - and 
 render much quicker than using the website online.  But still... it's not optimal.
+
+
+#### Better ```PyTorch``` documentation 
+
+Since the original documentation for ```PyTorch``` is built via ```Sphinx```, there's a much cleaner 
+way of creating the documentation : use ```doc2dash``` within the sphinx build of the ```PyTorch``` documentation itself:
+
+{% highlight bash %}
+git clone https://github.com/pytorch/pytorch.git  # Get the full repo down
+cd pytorch/docs/
+
+# Move to the branch of the code that matches your installed version of PyTorch
+# this ensures that the docs you get are relevant (PyTorch moves very quickly...)
+git checkout v0.2.0
+
+. ~/env3/bin/activate # Or whatever you are using for a VirtualEnv
+
+pip install -r requirements.txt
+pip install doc2dash
+
+make docset
+
+cp -r PyTorch.docset ~/.local/share/Zeal/Zeal/docsets/
+{% endhighlight %}
+
+Once this is confirmed to create decent documents (worked 2nd time for me : once the branch version matched the installed version),
+you can safely remove the repo.
+
+All done.
 
