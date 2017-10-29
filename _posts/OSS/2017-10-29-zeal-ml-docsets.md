@@ -9,7 +9,7 @@ tags:
 - PyTorch
 - TensorFlow
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -24,12 +24,13 @@ As ```root``` you just need :
 dnf install zeal
 {% endhighlight %}
 
-And then as a user :
+And then as a user on the command line:
 
 {% highlight bash %}
 zeal
 {% endhighlight %}
 
+(or use StartMenu-Develoment-Zeal in the window manager).
 
 ### ```TensorFlow 1.4.0rc0``` documentation
 
@@ -51,7 +52,7 @@ The documentation is good, except that the search functionality online is very f
 since the individual function search index points to a link that requires the page to redraw several times,
 causing the display to leap around.
 
-I found the helpful PyTorch DocSet via (https://github.com/iamaziz/PyTorch-docset) :
+I found a somewhat helpful PyTorch DocSet via (https://github.com/iamaziz/PyTorch-docset) :
 
 {% highlight bash %}
 # Download (with redirects enabled)
@@ -62,5 +63,5 @@ tar -xzf PyTorch.tgz
 
 One problem is that the DocSet creator doesn't index the individual functions properly.  However, 
 if you pull up the main PyTorch page, the original search functions are there within the pane - and 
-render much quicker than using the website online.
+render much quicker than using the website online.  But still... it's not optimal.
 
