@@ -216,6 +216,23 @@ but in a headless/monitorless situation, it never gets called into existence.  T
 to happen.
 
 
+### Problems when updating kernels
+
+If you had a working system, and then find that after an update the nvidia module is nowhere to 
+be found in ```lsmod```, then you could try to regenerate the the module via ```dkms``` 
+(after rebooting into your latest kernel) :
+
+{% highlight bash %}
+uname -a                              # check the version of the current running kernel
+find /lib/modules/  | grep nvidia.ko  # Nothing there for your current kernel
+rpm -qa | grep nvidia                 # Find the version of nvidia drivers
+dkms install nvidia/384.90            # Rebuild the correct version
+find /lib/modules/  | grep nvidia.ko  # Just to check it was built
+{% endhighlight %}
+
+Now reboot to see whether that fixes the problem.
+
+
 ### When it finally works...
 
 Then the python REPL code :
