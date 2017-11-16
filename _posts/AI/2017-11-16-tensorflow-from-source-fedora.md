@@ -134,8 +134,12 @@ No VERBS support will be enabled for TensorFlow.
 Do you wish to build TensorFlow with OpenCL support? [y/N]: 
 No OpenCL support will be enabled for TensorFlow.
 
-Do you wish to build TensorFlow with CUDA support? [y/N]: 
-No CUDA support will be enabled for TensorFlow.
+
+##
+##Do you wish to build TensorFlow with CUDA support? [y/N]: 
+##No CUDA support will be enabled for TensorFlow.
+##
+
 
 Do you wish to build TensorFlow with MPI support? [y/N]: 
 No MPI support will be enabled for TensorFlow.
@@ -154,29 +158,23 @@ Configuration finished
 
 <!--
 
-Do you wish to build TensorFlow with OpenCL SYCL support? [y/N]: 
-No OpenCL SYCL support will be enabled for TensorFlow.
-
-Do you wish to build TensorFlow with CUDA support? [y/N]: Y
-CUDA support will be enabled for TensorFlow.
-
 Please specify the CUDA SDK version you want to use, e.g. 7.0. [Leave empty to default to CUDA 8.0]: 9.0
 
 
-Please specify the location where CUDA 9.0 toolkit is installed. Refer to README.md for more details. [Default is /usr/local/cuda]: /usr/include/cuda/
+Please specify the location where CUDA 9.0 toolkit is installed. Refer to README.md for more details. [Default is /usr/local/cuda]: /usr/lib64
 
 
-Invalid path to CUDA 9.0 toolkit. /usr/include/cuda/lib64/libcudart.so.9.0 cannot be found
+Invalid path to CUDA 9.0 toolkit. /usr/lib64/lib64/libcudart.so.9.0 cannot be found
 Please specify the CUDA SDK version you want to use, e.g. 7.0. [Leave empty to default to CUDA 8.0]: 9.0
 
 
-Please specify the location where CUDA 9.0 toolkit is installed. Refer to README.md for more details. [Default is /usr/local/cuda]: /
+Please specify the location where CUDA 9.0 toolkit is installed. Refer to README.md for more details. [Default is /usr/local/cuda]: /usr    
 
 
 Please specify the cuDNN version you want to use. [Leave empty to default to cuDNN 6.0]: 
 
 
-Please specify the location where cuDNN 6 library is installed. Refer to README.md for more details. [Default is /]:
+Please specify the location where cuDNN 6 library is installed. Refer to README.md for more details. [Default is /usr]:/usr/include/cuda 
 
 
 Please specify a list of comma-separated Cuda compute capabilities you want to build with.
@@ -196,8 +194,63 @@ No MPI support will be enabled for TensorFlow.
 Please specify optimization flags to use during compilation when bazel option "--config=opt" is specified [Default is -march=native]: 
 
 
+Add "--config=mkl" to your bazel command to build with MKL support.
+Please note that MKL on MacOS or windows is still not supported.
+If you would like to use a local MKL instead of downloading, please set the environment variable "TF_MKL_ROOT" every time before build.
+Configuration finished
 
 
+
+(env-tf-master) [andrewsm@simlim tensorflow]$ bazel build --config=opt --config=cuda //tensorflow/tools/pip_package:build_pip_package
+........
+ERROR: error loading package 'tensorflow/tools/pip_package': Encountered error while reading extension file 'cuda/build_defs.bzl': no such package '@local_config_cuda//cuda': Traceback (most recent call last):
+	File "/home/andrewsm/OpenSource/tensorflow/third_party/gpus/cuda_configure.bzl", line 1042
+		_create_local_cuda_repository(repository_ctx)
+	File "/home/andrewsm/OpenSource/tensorflow/third_party/gpus/cuda_configure.bzl", line 905, in _create_local_cuda_repository
+		_get_cuda_config(repository_ctx)
+	File "/home/andrewsm/OpenSource/tensorflow/third_party/gpus/cuda_configure.bzl", line 662, in _get_cuda_config
+		_cudnn_version(repository_ctx, cudnn_install_base..., ...)
+	File "/home/andrewsm/OpenSource/tensorflow/third_party/gpus/cuda_configure.bzl", line 360, in _cudnn_version
+		_find_cudnn_header_dir(repository_ctx, cudnn_install_base...)
+	File "/home/andrewsm/OpenSource/tensorflow/third_party/gpus/cuda_configure.bzl", line 612, in _find_cudnn_header_dir
+		auto_configure_fail(("Cannot find cudnn.h under %s" ...))
+	File "/home/andrewsm/OpenSource/tensorflow/third_party/gpus/cuda_configure.bzl", line 129, in auto_configure_fail
+		fail(("\n%sCuda Configuration Error:%...)))
+
+Cuda Configuration Error: Cannot find cudnn.h under /
+.
+INFO: Elapsed time: 1.326s
+
+
+
+Please specify the location where CUDA 9.0 toolkit is installed. Refer to README.md for more details. [Default is /usr/local/cuda]: /usr/lib64
+Invalid path to CUDA 9.0 toolkit. /usr/lib64/lib64/libcudart.so.9.0 cannot be found
+== FAIL
+
+Please specify the CUDA SDK version you want to use, e.g. 7.0. [Leave empty to default to CUDA 8.0]: 9.0
+Please specify the location where CUDA 9.0 toolkit is installed. Refer to README.md for more details. [Default is /usr/local/cuda]: /usr    
+
+
+
+
+
+#more third_party/gpus/cuda_configure.bzl 
+Indicates :
+cuda_toolkit_path = /usr/bin/  # from location of nvcc
+cudnn_install_basedir = /usr/include/cuda/
+
+_find_cudnn_header_dir should return /usr/include/cuda
+_find_cudnn_lib_path   should return /usr/lib64
+
+cuda_config.cuda_toolkit_path should be path to /usr/lib64/{libcudart.so.9.0, ...}
+
+/usr/bin/nvcc
+/usr/include/cuda/cudnn.h
+/usr/lib64/libcudart.so.9.0
+/usr/lib64/libcudnn.so.6
+
+Recent card compute capability : 6.1?
+My Titan X = 5.2, probably
 
 !-->
 
