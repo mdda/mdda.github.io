@@ -346,3 +346,6 @@ Podcasting idea :
   >>> 50.0/215.*87.0
   20.232558139534884
 
+
+geany 1.31.1 fc26 = gtk2
+geany 1.31.5 fc27 = gtk3 - which kills geanypy :-(
