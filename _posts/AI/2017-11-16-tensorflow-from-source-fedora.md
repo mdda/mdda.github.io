@@ -252,6 +252,155 @@ cuda_config.cuda_toolkit_path should be path to /usr/lib64/{libcudart.so.9.0, ..
 Recent card compute capability : 6.1?
 My Titan X = 5.2, probably
 
+
+## Updated .tf_configure.bazelrc :
+
+build --action_env TF_NEED_CUDA="1"
+#build --action_env CUDA_TOOLKIT_PATH="/usr/bin"
+build --action_env CUDA_TOOLKIT_PATH="/usr"
+build --action_env TF_CUDA_VERSION="9.0"
+#build --action_env CUDNN_INSTALL_PATH="/lib64"
+build --action_env CUDNN_INSTALL_PATH="/usr/include/cuda"
+build --action_env TF_CUDNN_VERSION="6"
+build --action_env TF_CUDA_COMPUTE_CAPABILITIES="3.5,5.2"
+build --action_env TF_CUDA_CLANG="0"
+build --action_env GCC_HOST_COMPILER_PATH="/usr/bin/gcc"
+build --config=cuda
+test --config=cuda
+
+bazel build --config=opt --config=cuda //tensorflow/tools/pip_package:build_pip_package
+# Now complains about ```nvvm```
+
+
+# Download the cuda 9.0 toolkit from 
+#   https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&target_distro=Fedora&target_version=25&target_type=runfilelocal
+# As root : 
+mkdir /root/fedora27-cuda
+cd /root/fedora27-cuda
+mv /home/andrewsm/Downloads/cuda_9.0.176_384.81_linux.run .
+chmod 744 cuda_9.0.176_384.81_linux.run 
+./cuda_9.0.176_384.81_linux.run --extract `pwd`
+##./cuda-linux.9.0.176-22781540.run --extract cuda-linux.9.0
+./cuda-linux.9.0.176-22781540.run -noprompt -nosymlink -prefix=`pwd`/orig
+
+
+find orig | grep nvvm  # pruned a bit to reduce duplication
+./nvvm
+./nvvm/lib64
+./nvvm/lib64/libnvvm.so.3.2.0
+./nvvm/lib64/libnvvm.so
+./nvvm/libnvvm-samples/cuda-c-linking/CMakeLists.txt
+./nvvm/libnvvm-samples/simple/CMakeLists.txt
+./nvvm/libnvvm-samples/ptxgen/CMakeLists.txt
+./nvvm/libnvvm-samples/README.txt
+./nvvm/libnvvm-samples/common/include/drvapi_error_string.h
+./nvvm/libdevice/libdevice.10.bc
+./nvvm/bin/cicc
+./nvvm/include/nvvm.h
+./doc/man/man7/libnvvm.so.7
+./doc/html/libnvvm-api/modules.html
+./doc/html/nvvm-ir-spec/index.html
+
+
+
+Logging to /tmp/cuda-installer-13899
+========================================
+Please make sure that
+ -   PATH includes /root/fedora27-cuda/bin
+ -   LD_LIBRARY_PATH includes /root/fedora27-cuda/lib64, or, add /root/fedora27-cuda/lib64 to /etc/ld.so.conf and run ldconfig as root
+Please read the release notes in /root/fedora27-cuda/doc/
+To uninstall the CUDA Toolkit, run the uninstall script in /root/fedora27-cuda/bin
+Installation Complete
+
+
+
+
+dnf remove cuda\*
+Dependencies resolved.
+==============================================================================================================================================================================================
+ Package                                            Arch                                  Version                                         Repository                                     Size
+==============================================================================================================================================================================================
+Removing:
+ cuda                                               x86_64                                1:9.0.176-1.fc27                                @fedora-nvidia                                 41 M
+ cuda-cublas                                        x86_64                                1:9.0.176-1.fc27                                @fedora-nvidia                                 51 M
+ cuda-cublas-devel                                  x86_64                                1:9.0.176-1.fc27                                @fedora-nvidia                                123 M
+ cuda-cudart                                        x86_64                                1:9.0.176-1.fc27                                @fedora-nvidia                                548 k
+ cuda-cudart-devel                                  x86_64                                1:9.0.176-1.fc27                                @fedora-nvidia                                3.9 M
+ cuda-cudnn6.0                                      x86_64                                1:6.0-1.fc26                                    @fedora-nvidia                                147 M
+ cuda-cudnn6.0-devel                                x86_64                                1:6.0-1.fc26                                    @fedora-nvidia                                147 M
+ cuda-cufft                                         x86_64                                1:9.0.176-1.fc27                                @fedora-nvidia                                127 M
+ cuda-cufft-devel                                   x86_64                                1:9.0.176-1.fc27                                @fedora-nvidia                                131 M
+ cuda-cupti                                         x86_64                                1:9.0.176-1.fc27                                @fedora-nvidia                                5.5 M
+ cuda-cupti-devel                                   x86_64                                1:9.0.176-1.fc27                                @fedora-nvidia                                1.8 M
+ cuda-curand                                        x86_64                                1:9.0.176-1.fc27                                @fedora-nvidia                                 56 M
+ cuda-curand-devel                                  x86_64                                1:9.0.176-1.fc27                                @fedora-nvidia                                122 M
+ cuda-cusolver                                      x86_64                                1:9.0.176-1.fc27                                @fedora-nvidia                                 74 M
+ cuda-cusolver-devel                                x86_64                                1:9.0.176-1.fc27                                @fedora-nvidia                                 34 M
+ cuda-cusparse                                      x86_64                                1:9.0.176-1.fc27                                @fedora-nvidia                                 53 M
+ cuda-cusparse-devel                                x86_64                                1:9.0.176-1.fc27                                @fedora-nvidia                                 62 M
+ cuda-devel                                         x86_64                                1:9.0.176-1.fc27                                @fedora-nvidia                                9.5 M
+ cuda-libs                                          x86_64                                1:9.0.176-1.fc27                                @fedora-nvidia                                 28 M
+ cuda-npp                                           x86_64                                1:9.0.176-1.fc27                                @fedora-nvidia                                136 M
+ cuda-npp-devel                                     x86_64                                1:9.0.176-1.fc27                                @fedora-nvidia                                165 M
+ cuda-nvgraph                                       x86_64                                1:9.0.176-1.fc27                                @fedora-nvidia                                 74 M
+ cuda-nvgraph-devel                                 x86_64                                1:9.0.176-1.fc27                                @fedora-nvidia                                 15 k
+ cuda-nvml-devel                                    x86_64                                1:9.0.176-1.fc27                                @fedora-nvidia                                286 k
+ cuda-nvrtc                                         x86_64                                1:9.0.176-1.fc27                                @fedora-nvidia                                 25 M
+ cuda-nvrtc-devel                                   x86_64                                1:9.0.176-1.fc27                                @fedora-nvidia                                 20 k
+
+Transaction Summary
+==============================================================================================================================================================================================
+Remove  26 Packages
+
+Freed space: 1.6 G
+
+
+# rpm -qa | grep nvidia | sort
+dkms-nvidia-387.22-1.fc27.x86_64
+nvidia-driver-387.22-1.fc27.x86_64
+nvidia-driver-cuda-387.22-1.fc27.x86_64
+nvidia-driver-cuda-libs-387.22-1.fc27.x86_64
+nvidia-driver-libs-387.22-1.fc27.x86_64
+nvidia-driver-NVML-387.22-1.fc27.x86_64
+nvidia-modprobe-387.22-1.fc27.x86_64
+nvidia-persistenced-387.22-1.fc27.x86_64
+
+
+./cuda-linux.9.0.176-22781540.run
+accept
+/usr/local/cuda-9.0
+no desktop shortcuts
+Creating symbolic link /usr/local/cuda -> /usr/local/cuda-9.0
+
+Please make sure that
+ -   PATH includes /usr/local/cuda-9.0/bin
+ -   LD_LIBRARY_PATH includes /usr/local/cuda-9.0/lib64, or, add /usr/local/cuda-9.0/lib64 to /etc/ld.so.conf and run ldconfig as root
+Please read the release notes in /usr/local/cuda-9.0/doc/
+To uninstall the CUDA Toolkit, run the uninstall script in /usr/local/cuda-9.0/bin
+Installation Complete
+
+more /etc/ld.so.conf.d/cuda.conf
+/usr/local/cuda-9.0/lib64
+ldconfig
+
+# Add to ~/.bash_profile
+PATH=$PATH:/usr/local/cuda-9.0/bin
+
+# Also need cudnn (separate download)
+#  Goto : https://developer.nvidia.com/rdp/cudnn-download
+https://developer.nvidia.com/compute/machine-learning/cudnn/secure/v7.0.4/prod/9.0_20171031/cudnn-9.0-linux-x64-v7
+
+mv /home/andrewsm/Downloads/cudnn-9.0-linux-x64-v7.tgz .
+tar -xzf cudnn-9.0-linux-x64-v7.tgz --directory /usr/local
+
+bazel build --config=opt --config=cuda //tensorflow/tools/pip_package:build_pip_package
+
+/usr/local/cuda-9.0/bin/..//include/crt/host_config.h:119:2: error: #error -- unsupported GNU version! gcc versions later than 6 are not supported!
+ #error -- unsupported GNU version! gcc versions later than 6 are not supported!
+  ^~~~~
+
+
+
 !-->
 
 #### ```bazel``` build the ```pip``` package (builds ```tensorflow``` too)

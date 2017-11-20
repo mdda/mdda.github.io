@@ -349,3 +349,79 @@ Podcasting idea :
 
 geany 1.31.1 fc26 = gtk2
 geany 1.31.5 fc27 = gtk3 - which kills geanypy :-(
+
+
+[andrewsm@simlim ~]$ rpm -qa | grep geany
+geany-1.31-5.fc27.x86_64
+geany-plugins-common-1.31-5.fc27.x86_64
+geany-devel-1.31-5.fc27.x86_64
+geany-libgeany-1.31-5.fc27.x86_64
+[andrewsm@simlim ~]$ su
+Password: 
+[root@simlim andrewsm]# dnf remove geany
+Dependencies resolved.
+=======================================================================================================================================
+ Package                                    Arch                    Version                            Repository                 Size
+=======================================================================================================================================
+Removing:
+ geany                                      x86_64                  1.31-5.fc27                        @fedora                   8.9 M
+Removing dependent packages:
+ geany-devel                                x86_64                  1.31-5.fc27                        @fedora                   438 k
+ geany-libgeany                             x86_64                  1.31-5.fc27                        @fedora                   2.7 M
+ geany-plugins-common                       x86_64                  1.31-5.fc27                        @fedora                   1.2 M
+ gtk3-devel                                 x86_64                  3.22.26-1.fc27                     @updates                   30 M
+Removing unused dependencies:
+ at-spi2-atk-devel                          x86_64                  2.26.1-1.fc27                      @updates                  1.5 k
+ at-spi2-core-devel                         x86_64                  2.26.2-1.fc27                      @updates                  1.3 M
+ cairo-gobject-devel                        x86_64                  1.15.8-1.fc27                      @fedora                   6.6 k
+ dbus-devel                                 x86_64                  1:1.12.0-1.fc27                    @updates                  127 k
+ libXdamage-devel                           x86_64                  1.1.4-11.fc27                      @fedora                   2.5 k
+ libepoxy-devel                             x86_64                  1.4.3-3.fc27                       @fedora                   1.5 M
+ libxkbcommon-devel                         x86_64                  0.7.1-5.fc27                       @fedora                   290 k
+ mesa-libwayland-egl-devel                  x86_64                  17.2.4-2.fc27                      @updates                  225  
+ vte3                                       x86_64                  0.36.5-5.fc27                      @fedora                   984 k
+ wayland-devel                              x86_64                  1.14.0-1.fc27                      @fedora                   568 k
+ wayland-protocols-devel                    noarch                  1.10-1.fc27                        @fedora                   293 k
+
+Transaction Summary
+=======================================================================================================================================
+Remove  16 Packages
+
+Freed space: 48 M
+Is this ok [y/N]: 
+
+
+[andrewsm@simlim ~]$ ssh andrewsm@anson
+Last login: Sun Nov 19 22:35:59 2017 from 192.168.2.254
+[andrewsm@anson ~]$ rpm -qa | grep geany
+geany-1.31-1.fc26.x86_64
+geany-libgeany-1.31-1.fc26.x86_64
+geany-plugins-common-1.31-1.fc26.x86_64
+geany-plugins-geanypy-1.31-1.fc26.x86_64
+[andrewsm@anson ~]$ 
+
+
+ftp://rpmfind.net/linux/fedora/linux/updates/26/x86_64/g/geany-1.31-1.fc26.x86_64.rpm
+ftp://rpmfind.net/linux/fedora/linux/updates/26/x86_64/g/geany-libgeany-1.31-1.fc26.x86_64.rpm
+ftp://rpmfind.net/linux/fedora/linux/updates/26/x86_64/g/geany-plugins-common-1.31-1.fc26.x86_64.rpm
+ftp://rpmfind.net/linux/fedora/linux/updates/26/x86_64/g/geany-plugins-geanypy-1.31-1.fc26.x86_64.rpm
+
+dnf localinstall geany*.rpm
+
+[root@simlim geany]# rpm -qa | grep geany
+geany-plugins-geanypy-1.31-1.fc26.x86_64
+geany-libgeany-1.31-1.fc26.x86_64
+geany-1.31-1.fc26.x86_64
+geany-plugins-common-1.31-1.fc26.x86_64
+
+
+But be careful : 
+dnf update # wants to update the base geany install, which will implicitly 
+## disable geany-plugins-geanypy
+
+See : https://ask.fedoraproject.org/en/question/23741/how-do-i-make-the-software-updater-skipexclude-some-packages/ updated for ```dnf ```instead of ```yum```:
+
+nano /etc/dnf/dnf.conf
+#Append the following line under [main] section, enter:
+exclude=geany*
+
