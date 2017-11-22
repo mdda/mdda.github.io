@@ -17,36 +17,33 @@ published: false
 
 ### Presentation Link
 
-Sam Witteveen and I recently started the TensorFlow and Deep Learning Singapore group on MeetUp,
-and [the first MeetUp](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/237032130/) 
-was hosted by Google themselves, in their spacious new Singapore offices.
+Sam Witteveen and I started the TensorFlow and Deep Learning Singapore group on MeetUp back in February 2017.  And the 
+group has grown significantly over the last ~9 months.  But that also means that
+many of the people who have recently joined missed out on our early sessions.  So we're re-running
+some of the earlier events at "Replay" events, hoping that new people will enjoy the content 
+and increase awareness of the group overall.  Our [first 'replay' MeetUp](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/244988340/) 
+was suppoerted by SGInnovate themselves, in their office on Carpenter St.
 
-We decided that, in addition to a round up of TensorFlow Summit news (the Summit had taken place
-on the 15-Feb-2017 in SF), we'd have one Intro talk and one that was slightly more involved.  Since I 
+As in the original February talk, we had one Intro talk and one that was slightly more involved.  Since I 
 already had something ready-to-go, I updated my 'ecommerce' CNN example from the deep-learning-workshop (see below)
-to work with TensorFlow, and presented that for about ~30 mins including questions. 
+to work with TensorFlow, and presented that for about ~40 mins including questions. 
 
-Since this is a continuation of my previous workshops, all the source is available 
-on <a href="https://github.com/mdda/deep-learning-workshop" target="_blank">GitHub</a> - 
-if you have questions on the software, please leave an 'issue' there.
+The source for the Transfer Learning model is available on 
+<a href="https://github.com/mdda/deep-learning-workshop" target="_blank">GitHub</a> - if 
+you have questions on the software, please leave an 'issue' there.
 
 
-<a href="http://redcatlabs.com/2017-02-16_TFandDL_TransferLearning/" target="_blank">
-![Presentation Screenshot]({{ site.url }}/assets/img/2017-02-16_TFandDL_TransferLearning_600x390.png)
+<a href="http://redcatlabs.com/2017-11-21_TFandDL_TransferLearning/" target="_blank">
+![Presentation Screenshot]({{ site.url }}/assets/img/2017-11-21_TFandDL_TransferLearning_600x390.png)
 </a>
 
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="http://redcatlabs.com/2017-02-16_TFandDL_TransferLearning/#/4/3" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2017-02-16_TFandDL_TransferLearning_4-3_600x390.png)
+<a href="http://redcatlabs.com/2017-11-21_TFandDL_TransferLearning/#/5/2" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2017-11-21_TFandDL_TransferLearning_5-2_600x390.png)
 </a>
 
-
-### Video Link
-
-The presentation was kindly <a href="https://engineers.sg/v/1436" target="_blank">recorded by Engineers.sg</a> and then
-paintaking re-edited together due to some AV weirdness...
 
 
 PS:  And if you liked the content, please 'star' the <a href="https://github.com/mdda/deep-learning-workshop" target="_blank">Deep Learning Workshop</a> repo ::
