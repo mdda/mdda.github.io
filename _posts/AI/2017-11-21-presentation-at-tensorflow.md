@@ -9,7 +9,7 @@ tags:
 - CNNs
 - TransferLearning
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -17,15 +17,18 @@ published: false
 
 ### Presentation Link
 
-Sam Witteveen and I started the TensorFlow and Deep Learning Singapore group on MeetUp back in February 2017.  And the 
-group has grown significantly over the last ~9 months.  But that also means that
+Sam Witteveen and I started the TensorFlow and Deep Learning Singapore group on MeetUp back in February 2017, and the 
+group has grown significantly over the last ~9 months.  However, that also means that
 many of the people who have recently joined missed out on our early sessions.  So we're re-running
-some of the earlier events at "Replay" events, hoping that new people will enjoy the content 
-and increase awareness of the group overall.  Our [first 'replay' MeetUp](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/244988340/) 
-was suppoerted by SGInnovate themselves, in their office on Carpenter St.
+some of the earlier events as "Replay" events, hoping that new people will be able to 'catch up'
+and get more out of coming to the main graoup events.  
 
-As in the original February talk, we had one Intro talk and one that was slightly more involved.  Since I 
-already had something ready-to-go, I updated my 'ecommerce' CNN example from the deep-learning-workshop (see below)
+Our [first 'replay' MeetUp](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/244988340/) 
+was suppoerted by SGInnovate, in their office on Carpenter St.
+
+As in the original February talk, we had one Intro talk and one that was slightly more involved.  Since Sam
+already had the intro talk (complete with additional shiny slides created by the Google team) ready-to-roll, 
+I simpled polished up my 'ecommerce' CNN example from the deep-learning-workshop (see below)
 to work with TensorFlow, and presented that for about ~40 mins including questions. 
 
 The source for the Transfer Learning model is available on 
