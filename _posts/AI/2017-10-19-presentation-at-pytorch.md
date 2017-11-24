@@ -9,18 +9,18 @@ tags:
 - Relation Networks
 - Relationships
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
 
-Sam Witteveen and I started the PyTorch and Deep Learning Singapore group on MeetUp back in August 2017,
-and held [the second MeetUp](https://www.meetup.com/PyTorch-and-Deep-Learning-Singapore/events/243672468/) 
-was hosted in Facebook's fine Singapore offices - complete with delicious food.
+Sam Witteveen and I started the PyTorch and Deep Learning Singapore group on MeetUp back in August 2017.  Just
+to prove that we intend to continue running this group, [the second MeetUp](https://www.meetup.com/PyTorch-and-Deep-Learning-Singapore/events/243672468/) 
+was again hosted in Facebook's fine Singapore offices - and this time came complete with delicious food.
 
 Following up from my discussion at the last event about the DeepMind paper 
 ["A simple neural network module for relational reasoning"](https://arxiv.org/abs/1706.01427).  I talked
-about some work I've been doing (in PyTorch) that I tentatively titled 
+about some work I've been doing (in PyTorch) that I have tentatively titled 
 "Relationships from Entity Stream", the code for which is in [this github repo](https://github.com/mdda/relational-networks).
 
 <a href="http://redcatlabs.com/2017-10-19_PyTorch_RelationsFromStreams/" target="_blank">
