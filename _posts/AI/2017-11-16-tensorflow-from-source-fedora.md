@@ -5,7 +5,7 @@ title: TensorFlow from source on Fedora 27
 tagline: Should be easy
 date: 2017-11-16
 tags: [TensorFlow,Fedora,Python]
-published: true
+published: false
 ---
 {% include JB/setup %}
 
