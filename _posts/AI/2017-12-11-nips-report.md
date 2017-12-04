@@ -11,14 +11,20 @@ published: false
 ---
 {% include JB/setup %}
 
-Uber at 6:35 (shared) arrive ~ 6:55 registration
 
-8:00 start of "" in Hall A
+### Monday  2017-12-05
 
+*  Uber at 6:35 (shared) arrive ~ 6:55 registration
 
+*  8:00 start of "Deep Learning: Practice and Trends", 
+*Nando de Freitas · Scott Reed · Oriol Vinyals* in Hall A
 
+*  10:45 start of "Statistical Relational Artificial Intelligence: Logic, Probability and Computation", 
+*Luc De Raedt · David Poole · Kristian Kersting · Sriraam Natarajan" in Hall C
 
-A - 
+*  2:30 start of "Engineering and Reverse-Engineering Intelligence Using Probabilistic Programs, Program Induction, and Deep Learning",
+*Josh Tenenbaum · Vikash K Mansinghka* in Hall C
+
 
 
 
