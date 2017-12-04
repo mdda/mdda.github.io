@@ -11,7 +11,14 @@ published: false
 ---
 {% include JB/setup %}
 
+Uber at 6:35 (shared) arrive ~ 6:55 registration
 
+8:00 start of "" in Hall A
+
+
+
+
+A - 
 
 
 
