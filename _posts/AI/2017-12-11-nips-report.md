@@ -12,12 +12,13 @@ published: false
 {% include JB/setup %}
 
 
-### Monday  2017-12-05
+### Monday  2017-12-04
 
 *  Uber at 6:35 (shared) arrive ~ 6:55 registration
 
 *  8:00 start of "Deep Learning: Practice and Trends", 
 *Nando de Freitas · Scott Reed · Oriol Vinyals* in Hall A
+   *  Presentation slides...
 
 *  10:45 start of "Statistical Relational Artificial Intelligence: Logic, Probability and Computation", 
 *Luc De Raedt · David Poole · Kristian Kersting · Sriraam Natarajan" in Hall C
@@ -26,7 +27,7 @@ published: false
 *Josh Tenenbaum · Vikash K Mansinghka* in Hall C
 
 
-### Tuesday  2017-12-06
+### Tuesday  2017-12-05
 
 *   10:40 Track on Algorithms
 
@@ -34,17 +35,37 @@ published: false
 
 *   1:50 Invited Talk: Kate Crawford:  The Trouble wih Bias
 
-*   2:50 Tracks on Algorithms, Optimization and Theory
+*   2:50 Track on Algorithms, Optimization and Theory
 
 *   4:20 Track on Deep Learning Applications
 
-*   6:00 Light snack for poster viewing and Demonstrations
+*   6:00 Light snack (pulled pork burgers) for poster viewing and Demonstrations
 
-*   9:00 Intel Party with Flo Rida
+*   9:00 Intel Party with Flo Rida (line too long, room at capacity)
 
 
 
-The presentation also includes links to the relevant code at suitable points.
+### Wednesday 2017-12-06
+
+*   9:00 Invited Talk: Lise Getoor:  The Unreasonable Effectiveness of Structure
+
+*   10:20 Track on Deep Learning (mostly GANs)
+
+*   1:50 Invited Talk:  Pieter Abbeel:   Deep Learning for Robotics
+
+
+
+### Thursday 2017-12-07
+
+
+### Friday 2017-12-08
+
+ViGIL workshop
+
+
+### Saturday 2017-12-09
+
+
 
 <a href="http://redcatlabs.com/2017-08-24_TFandDL_SmallerNets/" target="_blank">
 ![Presentation Screenshot]({{ site.url }}/assets/img/2017-08-24_TFandDL_SmallerNets_600x390.png)
