@@ -26,8 +26,21 @@ published: false
 *Josh Tenenbaum · Vikash K Mansinghka* in Hall C
 
 
+### Tuesday  2017-12-06
 
+*   10:40 Track on Algorithms
 
+*   12:00 Singaporeans@NIPS for hotdog lunch
+
+*   1:50 Invited Talk: Kate Crawford:  The Trouble wih Bias
+
+*   2:50 Tracks on Algorithms, Optimization and Theory
+
+*   4:20 Track on Deep Learning Applications
+
+*   6:00 Light snack for poster viewing and Demonstrations
+
+*   9:00 Intel Party with Flo Rida
 
 
 
