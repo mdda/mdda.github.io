@@ -36,13 +36,20 @@ published: false
 *   1:50 Invited Talk: Kate Crawford:  The Trouble wih Bias
 
 *   2:50 Track on Algorithms, Optimization and Theory
+    *  "Bayesian Optimization with Gradients" - Jian Wu, Matthias Poloczek, Andrew Gordon Wilson, Peter I. Frazier 
+        *   https://github.com/wujian16/Cornell-MOE
 
 *   4:20 Track on Deep Learning Applications
 
 *   6:00 Light snack (pulled pork burgers) for poster viewing and Demonstrations
+    *  "Modulating early visual processing by language" - Harm de Vries, Florian Strub, Jeremie Mary, Hugo Larochelle, Olivier Pietquin, Aaron C Courville
+    *  "One-Sided Unsupervised Domain Mapping" - Sagie Benaim, Lior Wolf
+    *  "Deep Voice 2: Multi-Speaker Neural Text-to-Speech" - Andrew Gibiansky. Sercan Arik, Gregory Diamos, John Miller, Kainan Peng, Wei Ping, Jonathan Raiman, Yanqi Zhou
+    *  "Dynamic Routing Between Capsules: - Sara Sabour, Nicholas Frosst, Geoffrey E Hinton
 
 *   9:00 Intel Party with Flo Rida (line too long, room at capacity)
-
+    *  "Learned in Translation: Contextualized Word Vectors" - Bryan McCann, James Bradbury, Caiming Xiong, Richard Socher
+    *  Many more...
 
 
 ### Wednesday 2017-12-06
@@ -50,12 +57,42 @@ published: false
 *   9:00 Invited Talk: Lise Getoor:  The Unreasonable Effectiveness of Structure
 
 *   10:20 Track on Deep Learning (mostly GANs)
+    *  "Unsupervised Image-to-Image Translation Networks" -Ming-Yu Liu, Thomas Breuel, Jan Kautz
+        *  https://github.com/mingyuliutw/unit
+    *  "End-to-end Differentiable Proving" - Tim Rocktäschel, Sebastian Riedel
 
 *   1:50 Invited Talk:  Pieter Abbeel:   Deep Learning for Robotics
+
+*   2:50 Track on Reinforcement Learning, Deep Learning
+    *   "Imagination-Augmented Agents for Deep Reinforcement Learning" - Sébastien Racanière, Theophane Weber, David Reichert, Lars Buesing, Arthur Guez, Danilo Jimenez Rezende, Adrià Puigdomènech Badia, Oriol Vinyals, Nicolas Heess, Yujia Li, Razvan Pascanu, Peter Battaglia, Demis Hassabis, David Silver, Daan Wierstra
+    *   "A simple neural network module for relational reasoning" - Adam Santoro, David Raposo, David Barrett, Mateusz Malinowski, Razvan Pascanu, Peter Battaglia, Tim Lillicrap
+    *   "Attention is All you Need" - Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Łukasz Kaiser, Illia Polosukhin
+
+*   4:20 Track on Reinforcement Learning, Algorithms, Applications
+
+
+*   7:00 Poster session and Demonstrations
+
+*   8:00pm  Salesforce Party : Cafe Sevilla at 140 Pine Ave in Long Beach
 
 
 
 ### Thursday 2017-12-07
+
+*   9:00 Invited Talk:  Yael Niv:  Learning State Representations
+
+*   9:50 Invited Talk:  Yee Whye Teh:  On Bayesian Deep Learning and Deep Bayesian Learning
+
+*   11:10 Track on Deep Learning, Algorithms
+
+*   2:00 Symposia https://sites.google.com/view/deeprl-symposium-nips2017/
+    *   https://sites.google.com/view/deeprl-symposium-nips2017/
+        *   David Silver : AlphaZero
+
+*   4:30 Symposia
+
+*   7:30 Symposia
+
 
 
 ### Friday 2017-12-08
