@@ -97,7 +97,32 @@ published: false
 
 ### Friday 2017-12-08
 
-ViGIL workshop
+ViGIL workshop == Poster
+
+Martin :
+08:45 AM : ViGIL : Visually Grounded Language: Past, Present, and Future… Raymond J. Mooney
+
+
+10:15 AM : ViGIL : Coffee Break & Poster Session
+
+
+Sam : 
+9:00	9:30	AKBC : Luna Dong	Challenges and Innovations in Building a Product Knowledge Graph Abstract
+
+?  ConversationalAI 10:10-10:30    Accepted Talk: A Deep Reinforcement Learning Chatbot
+
+
+
+
+10:15-10:40 ViGIL : Coffee Break & Poster Session
+10:30	11:30	AKBC  : Morning Poster Session and Coffee Break
+10:30-11:00 ConversationalAI : Coffee Break / Hangup Posters
+
+
+12:10-14:00 : ViGIL : LUNCH
+12:30-2:00 : AKBC : Lunch Break
+12:00-13:30 : ConversationalAI : Lunch Break
+
 
 
 ### Saturday 2017-12-09
