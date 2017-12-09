@@ -97,69 +97,109 @@ published: false
 
 ### Friday 2017-12-08
 
-ViGIL workshop == Poster
+####  102B : [Visually-Grounded Interaction and Language (ViGIL)](https://nips2017vigil.github.io/)
 
-Martin :
-08:45 AM : ViGIL : Visually Grounded Language: Past, Present, and Future… Raymond J. Mooney
-09:30 AM : ViGIL : Connecting high-level semantics with low-level vision. Sanja Fidler
-   http://www.cs.utoronto.ca/~fidler/publications.html
-   *   Understanding videos through MovieGraphs
-10:15 AM : ViGIL : Coffee Break & Poster Session + Meet GDEs
-10:40 AM : ViGIL : The interface between vision and language in the human brain Jack Gallant
-11:40-12:00 : ConversationalAI: Multi-Domain Adversarial Learning for Slot Filling in Spoken Language Understanding
-12:00	12:30 : AKBC : Sebastian Riedel	Reading and Reasoning with Neural Program Interpreters
-   Bengio : interested in building Tamagotchi-like interactive Baby language learner system 
-14:00 PM : ViGIL : Dialogue systems and RL: interconnecting language, vision and rewards. Olivier Pietquin
-14:30-14:45 : AKBC : Contributed Talk: Go for a Walk and Arrive at the Answer: Reasoning Over Knowledge Bases with Reinforcement Learning
-15:15 PM : ViGIL : Coffee Break & Poster Session
-15:45 Talk to Yoshika & Mu-chan at 15:45 (check sanity at 14:45)
-15:40 PM : ViGIL : Grounded Language Learning in a Simulated 3D World. Felix Hill (DeepMind)
-16:25 PM : ViGIL : (snooze to) How infant learn to speak by interacting with the visual world? Chen Yu
-17:10 PM : ViGIL : Panel, including McClelland (PDP book author)
+*  08:45 AM : ViGIL : Visually Grounded Language: Past, Present, and Future… Raymond J. Mooney
+*  09:30 AM : ViGIL : Connecting high-level semantics with low-level vision. Sanja Fidler
+   *   http://www.cs.utoronto.ca/~fidler/publications.html
+      *   Understanding videos through MovieGraphs
+*  10:15 AM : ViGIL : Coffee Break & Poster Session + Meet GDEs
+   *   Poster :
+*  10:40 AM : ViGIL : The interface between vision and language in the human brain Jack Gallant
 
 
+#### [Conversational AI: "Today's Practice and Tomorrow's Potential"](http://alborz-geramifard.com/workshops/nips17-Conversational-AI/Main.html)
 
+*  11:40 - 12:00 : ConversationalAI: Multi-Domain Adversarial Learning for Slot Filling in Spoken Language Understanding
+
+
+####  102C : [6th Workshop on Automated Knowledge Base Construction (AKBC)](http://www.akbc.ws/2017/)
+
+*  12:00 - 12:30 : Sebastian Riedel	Reading and Reasoning with Neural Program Interpreters
+
+
+####  102B : [Visually-Grounded Interaction and Language (ViGIL)](https://nips2017vigil.github.io/)
+
+    *    Bengio : interested in building Tamagotchi-like interactive Baby language learner system 
+*  14:00 - 14:30 : Dialogue systems and RL: interconnecting language, vision and rewards. Olivier Pietquin
+
+
+####  102C : [6th Workshop on Automated Knowledge Base Construction (AKBC)](http://www.akbc.ws/2017/)
+
+*  14:30 - 14:45 : Contributed Talk: Go for a Walk and Arrive at the Answer: Reasoning Over Knowledge Bases with Reinforcement Learning
+
+
+####  102B : [Visually-Grounded Interaction and Language (ViGIL)](https://nips2017vigil.github.io/)
+
+*  15:15 PM : Coffee Break & Poster Session
+    *  15:45 Talk to Yoshika & Mu-chan at 15:45 (check sanity at 14:45)
+*  15:40 PM : Grounded Language Learning in a Simulated 3D World. Felix Hill (DeepMind)
+*  16:25 PM : (jet-lag induced snooze to) How infant learn to speak by interacting with the visual world? Chen Yu
+*  17:10 PM : Panel, including McClelland (PDP book author)
+
+
+<!--
 Sam : 
 09:00-9 :30 : AKBC : Luna Dong	Challenges and Innovations in Building a Product Knowledge Graph Abstract
 10:10-10:30 : ConversationalAI : A Deep Reinforcement Learning Chatbot
-
+!-->
 
 
 ### Saturday 2017-12-09
 
 
-[Deep Learning: Bridging Theory and Practice](https://ludwigschmidt.github.io/nips17-dl-workshop-website/)
+#### Hall A : [Deep Learning: Bridging Theory and Practice](https://ludwigschmidt.github.io/nips17-dl-workshop-website/) 
 
 *  08:45 - 09:15 : Yoshua Bengio: Generalization, Memorization and SGD
+   *   Cyclic learning rates++
+   
 *  09:15 - 09:45 : Ian Goodfellow: Bridging Theory and Practice of GANs
+   *   Make problems convex by making them more complex?
+   *   Damping idea Naranajam(?) 2017 (seen as a spotlight)
+   *   Heusel et al, 2017 - two learning rates for G+D\
+       *   Decay learning rate for G (says Goodfellow)
 
-[NIPS HIGHLIGHTS, LEARN HOW TO CODE A PAPER WITH STATE OF THE ART FRAMEWORKS](https://mltrain.cc/events/nips-highlights-learn-how-to-code-a-paper-with-state-of-the-art-frameworks/)
+
+#### Room 202 : [NIPS HIGHLIGHTS, LEARN HOW TO CODE A PAPER WITH STATE OF THE ART FRAMEWORKS](https://mltrain.cc/events/nips-highlights-learn-how-to-code-a-paper-with-state-of-the-art-frameworks/)  
 
 *  09:45 - 10:05 : Tips and tricks of coding papers on PyTorch by Sumith Chintalla , Facebook
+   *  Start with experiments for basic outline
+   *  Choose the simplest (non-MNIST) dataset to start with
+   *  Weight initialisation details important
+   *  Hyperparameters are often hidden
+   
 *  10:05 - 10:25 : Differentiable Learning of Logical Rules for Knowledge Base Reasoning by Fan Yang , CMU
 
 ~10:15 - 11:00  Morning Posters
 
+?  10:45 - 11:15 : Coding Reinforcement Learning Papers by Shangtong Zhang , University of Alberta
+?  11:15 - 11:35 : A Linear-Time Kernel Goodness-of-Fit Test (NIPS 2017 Best paper) by Wittawat Jitkrittum , GATSBY
+?  11:35 - 11:55 : Imagination-Augmented Agents for Deep Reinforcement Learning by Sébastien Racaniere , DeepMind
+?  11:55 - 12:15 : Inductive Representation Learning on Large Graphs by Will Hamilton , Stanford
 
 ??
 ~12:30 - 14:00  lunch
 
-[Cognitively Informed Artificial Intelligence](https://sites.google.com/view/ciai2017/schedule)
+
+#### 104A : [Cognitively Informed Artificial Intelligence](https://sites.google.com/view/ciai2017/schedule)
 
 *  14:00 - 14:25 : From deep learning of disentangled representations to higher-level cognition Yoshua Bengio (U. Montreal)
 
 ??
 ~14:50-15:30  Afternoon Posters
 
-[LEARNING WITH LIMITED LABELED DATA: WEAK SUPERVISION AND BEYOND](https://lld-workshop.github.io/)
+
+#### Grand Ballroom B : [LEARNING WITH LIMITED LABELED DATA: WEAK SUPERVISION AND BEYOND](https://lld-workshop.github.io/)
 
 *  16:45 - 17:15 : Invited Talk: Ian Goodfellow, Overcoming Limited Data with GANs
 *  17:45 - 18:15 : Invited Talk: Alan Ritter, What’s so Hard About Natural Language Understanding?
 
 
-[Hierarchical RL Workshop](https://sites.google.com/view/hrlnips2017)
-[Workshop on Meta-Learning (MetaLearn 2017)](http://metalearning.ml/)
-[Learning Disentangled Representations: from Perception to Control](https://sites.google.com/view/disentanglenips2017)
+#### Grand Ballroom A : [Hierarchical RL Workshop](https://sites.google.com/view/hrlnips2017)
+
+#### Hyatt Beacon - Ballroom D+E+F+H : [Workshop on Meta-Learning (MetaLearn 2017)](http://metalearning.ml/)
+
+#### 203 : [Learning Disentangled Representations: from Perception to Control](https://sites.google.com/view/disentanglenips2017)
 
 
 <a href="http://redcatlabs.com/2017-08-24_TFandDL_SmallerNets/" target="_blank">
