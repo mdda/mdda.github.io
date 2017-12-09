@@ -214,22 +214,18 @@ Sam :
       *  Do ~tf.shuffle, and ~tf.slice to sample nodes rather than numpy
 
 
-##### ~12:30 - 14:00  lunch
+##### 12:30 - 14:00  lunch  (food trucks)
 
 
+#### Hyatt Hotel - Beacon Ballroom D+E+F+H : [Workshop on Meta-Learning (MetaLearn 2017)](http://metalearning.ml/)
 
-#### Hyatt Beacon - Ballroom D+E+F+H : [Workshop on Meta-Learning (MetaLearn 2017)](http://metalearning.ml/)
-
-*  13:30 - 14:00 : Learn to learn high-dimensional models from few examples - Josh Tenenbaum
+*  13:30 - 14:00 : Learn to learn high-dimensional models from few examples (Omniglot) - Josh Tenenbaum
 
 
 #### 104A : [Cognitively Informed Artificial Intelligence](https://sites.google.com/view/ciai2017/schedule)
 
 *  14:00 - 14:25 : From deep learning of disentangled representations to higher-level cognition Yoshua Bengio (U. Montreal)
-
-
-??
-~14:50-15:30  Afternoon Posters
+   *  Conciousness prior (more slides exist...)
 
 
 #### 203 : [Learning Disentangled Representations: from Perception to Control](https://sites.google.com/view/disentanglenips2017)
@@ -237,15 +233,35 @@ Sam :
 *  14:30 - 15:00 :  Exploring the different paths to achieving disentangled representations - Pushmeet Kohli
 
 
-#### Grand Ballroom A : [Hierarchical RL Workshop](https://sites.google.com/view/hrlnips2017)
+#####  ~15:00-15:30  Afternoon Posters
 
-*  15:30 - 16:00 : Applying Variational Information Bottleneck in Hierarchical Domains - Matt Botvinick
+
+*  15:30 - 16:00  : Priors to help automatically discover and disentangle explanatory factors - Yoshua Bengio
+
+??  Room 203 : LDR
+*  16:00 - 16:30 : Generalized Separation of Style and Content on Manifolds: The role of Homeomorphism - Ahmed Elgammal
+
+
+
+<!--
+?? Grand Ballroom A : [Hierarchical RL Workshop](https://sites.google.com/view/hrlnips2017)
+
+?  15:30 - 16:00 : Applying Variational Information Bottleneck in Hierarchical Domains - Matt Botvinick
+
+??  Room 104A : CIAI
+*  16:20 - 16:35 : Scale-invariant temporal history (SITH): Optimal slicing of the past in an uncertain world - Per Sederberg (U. Virginia)
+
+??  Room 202 : Coding
+*  16:00 - 16:25 : Best of Both Worlds: Transferring Knowledge from Discriminative Learning to a Generative Visual Dialog Mode -  Lu, Jiasen , Georgia Tech
+
+!-->
+
 
 
 #### Grand Ballroom B : [LEARNING WITH LIMITED LABELED DATA: WEAK SUPERVISION AND BEYOND](https://lld-workshop.github.io/)
 
 *  16:45 - 17:15 : Invited Talk: Ian Goodfellow, Overcoming Limited Data with GANs
-*  17:45 - 18:15 : Invited Talk: Alan Ritter, What’s so Hard About Natural Language Understanding?
+*  17:45 - 18:15 : Invited Talk: Alan Ritter, What's so Hard About Natural Language Understanding?
 
 
 
