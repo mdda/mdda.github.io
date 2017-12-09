@@ -162,31 +162,84 @@ Sam :
 
 #### Room 202 : [NIPS HIGHLIGHTS, LEARN HOW TO CODE A PAPER WITH STATE OF THE ART FRAMEWORKS](https://mltrain.cc/events/nips-highlights-learn-how-to-code-a-paper-with-state-of-the-art-frameworks/)  
 
-*  09:45 - 10:05 : Tips and tricks of coding papers on PyTorch by Sumith Chintalla , Facebook
+*  09:45 - 10:05 : Tips and tricks of coding papers on PyTorch - Sumith Chintalla, Facebook
    *  Start with experiments for basic outline
    *  Choose the simplest (non-MNIST) dataset to start with
    *  Weight initialisation details important
    *  Hyperparameters are often hidden
+   *  Profile code (eg: lineprofiler)
    
-*  10:05 - 10:25 : Differentiable Learning of Logical Rules for Knowledge Base Reasoning by Fan Yang , CMU
+*  10:05 - 10:25 : Differentiable Learning of Logical Rules for Knowledge Base Reasoning - Fan Yang, CMU
+   *  TensorFlow (sparse matrices too)
+   *  Code is online : github.com/fanyangxyz/Neural-LP
+   *  batch_size is a problem, since whole KB also nees to be in memory
+   
 
-~10:15 - 11:00  Morning Posters
+##### 10:15 - 11:00  Morning Posters
 
-?  10:45 - 11:15 : Coding Reinforcement Learning Papers by Shangtong Zhang , University of Alberta
-?  11:15 - 11:35 : A Linear-Time Kernel Goodness-of-Fit Test (NIPS 2017 Best paper) by Wittawat Jitkrittum , GATSBY
-?  11:35 - 11:55 : Imagination-Augmented Agents for Deep Reinforcement Learning by Sébastien Racaniere , DeepMind
-?  11:55 - 12:15 : Inductive Representation Learning on Large Graphs by Will Hamilton , Stanford
+*  10:45 - 11:15 : Coding Reinforcement Learning Papers by Shangtong Zhang , University of Alberta
+   *  Better to implement from scratch : Improves own understanding
+   *  Start without all the tricks (bells &amp; whistles)
+   *  Patience : 
+      *  A3C + Atari = 1hr
+      *  DQN +Atari = 1 day 
+      *  Async Q/SARSA + Atari = days
+   *  No random seed...
+   *  Has now moved off TF to PyTorch, but still likes TensorBoard
+   *  np.argmax(values + rand()) to avoid consistent choice of argmax index
+   *  for Linear value-function approximation : Suggest Tile coding : ```tile3```
+   *  Share CNN lower layers for separate Actor-Critic output final layers
+   *  Roboschool is Free version of MoJoCo
+   *  Actor/Critic - even simple networks work v well
 
-??
-~12:30 - 14:00  lunch
+*  11:15 - 11:35 : A Linear-Time Kernel Goodness-of-Fit Test (NIPS 2017 Best paper) - Wittawat Jitkrittum, GATSBY
+   *  Simple procedure to find worst-fit location between given density and data
+   *  Code available : github.com/wittawatj/kernel-gof
+   
+*  11:35 - 11:55 : Imagination-Augmented Agents for Deep Reinforcement Learning - Sébastien Racaniere, DeepMind
+   *  Sonnet code - completely compatible with TensorFlow
+   *  Extensive explanation of all the different components of the imagination structure
+
+*  11:55 - 12:15 : Inductive Representation Learning on Large Graphs - Will Hamilton, Stanford
+   *  github.com/williamleif/GraphSAGE
+   *  Able to generate embeddings/feature representations as graph changes dynamically
+   *  Aggregate operator : Permutation invariant NN  (could be DeepSets)
+   *  Large wins over pure features, or Node2Vec
+   *  Collaboration with Pinterest - better accuracy, etc on 3bn node and 12bn edges
+   *  Problem : batching on GPU...
+      *  Sample fixed-sized neighbourhoods (say, size 3) randomly with replacement
+      *  Good scaling performance (no need to do lots of samples, eg gains max out quickly) 
+      *  Depth of 2 or 3 works fine (no need to have larger depth in hops)
+      *  Represent node-node lists densely, choosing at random, rather than sparsely
+      *  Do ~tf.shuffle, and ~tf.slice to sample nodes rather than numpy
+
+
+##### ~12:30 - 14:00  lunch
+
+
+
+#### Hyatt Beacon - Ballroom D+E+F+H : [Workshop on Meta-Learning (MetaLearn 2017)](http://metalearning.ml/)
+
+*  13:30 - 14:00 : Learn to learn high-dimensional models from few examples - Josh Tenenbaum
 
 
 #### 104A : [Cognitively Informed Artificial Intelligence](https://sites.google.com/view/ciai2017/schedule)
 
 *  14:00 - 14:25 : From deep learning of disentangled representations to higher-level cognition Yoshua Bengio (U. Montreal)
 
+
 ??
 ~14:50-15:30  Afternoon Posters
+
+
+#### 203 : [Learning Disentangled Representations: from Perception to Control](https://sites.google.com/view/disentanglenips2017)
+
+*  14:30 - 15:00 :  Exploring the different paths to achieving disentangled representations - Pushmeet Kohli
+
+
+#### Grand Ballroom A : [Hierarchical RL Workshop](https://sites.google.com/view/hrlnips2017)
+
+*  15:30 - 16:00 : Applying Variational Information Bottleneck in Hierarchical Domains - Matt Botvinick
 
 
 #### Grand Ballroom B : [LEARNING WITH LIMITED LABELED DATA: WEAK SUPERVISION AND BEYOND](https://lld-workshop.github.io/)
@@ -195,11 +248,6 @@ Sam :
 *  17:45 - 18:15 : Invited Talk: Alan Ritter, What’s so Hard About Natural Language Understanding?
 
 
-#### Grand Ballroom A : [Hierarchical RL Workshop](https://sites.google.com/view/hrlnips2017)
-
-#### Hyatt Beacon - Ballroom D+E+F+H : [Workshop on Meta-Learning (MetaLearn 2017)](http://metalearning.ml/)
-
-#### 203 : [Learning Disentangled Representations: from Perception to Control](https://sites.google.com/view/disentanglenips2017)
 
 
 <a href="http://redcatlabs.com/2017-08-24_TFandDL_SmallerNets/" target="_blank">
