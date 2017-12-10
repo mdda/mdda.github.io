@@ -175,7 +175,7 @@ Sam :
    *  batch_size is a problem, since whole KB also nees to be in memory
    
 
-##### 10:15 - 11:00  Morning Posters
+**10:15 - 11:00 : Morning Posters**
 
 *  10:45 - 11:15 : Coding Reinforcement Learning Papers by Shangtong Zhang , University of Alberta
    *  Better to implement from scratch : Improves own understanding
@@ -214,7 +214,7 @@ Sam :
       *  Do ~tf.shuffle, and ~tf.slice to sample nodes rather than numpy
 
 
-##### 12:30 - 14:00  lunch  (food trucks)
+**12:30 - 14:00 : Lunch (food trucks)**
 
 
 #### Hyatt Hotel - Beacon Ballroom D+E+F+H : [Workshop on Meta-Learning (MetaLearn 2017)](http://metalearning.ml/)
@@ -232,48 +232,49 @@ Sam :
 
 *  14:30 - 15:00 :  Exploring the different paths to achieving disentangled representations - Pushmeet Kohli
 
+**15:00-15:30  Afternoon Posters**
 
-#####  ~15:00-15:30  Afternoon Posters
-
-
-*  15:30 - 16:00  : Priors to help automatically discover and disentangle explanatory factors - Yoshua Bengio
-
-??  Room 203 : LDR
-*  16:00 - 16:30 : Generalized Separation of Style and Content on Manifolds: The role of Homeomorphism - Ahmed Elgammal
-
-
+*  15:30 - 16:00 : Priors to help automatically discover and disentangle explanatory factors - Yoshua Bengio
 
 <!--
 ?? Grand Ballroom A : [Hierarchical RL Workshop](https://sites.google.com/view/hrlnips2017)
-
 ?  15:30 - 16:00 : Applying Variational Information Bottleneck in Hierarchical Domains - Matt Botvinick
+!-->
+
+*  16:00 - 16:30 : Generalized Separation of Style and Content on Manifolds: The role of Homeomorphism - Ahmed Elgammal
+
+
+<!--
+??  Room 202 : Coding
+?  16:00 - 16:25 : Best of Both Worlds: Transferring Knowledge from Discriminative Learning to a Generative Visual Dialog Mode -  Lu, Jiasen , Georgia Tech
 
 ??  Room 104A : CIAI
-*  16:20 - 16:35 : Scale-invariant temporal history (SITH): Optimal slicing of the past in an uncertain world - Per Sederberg (U. Virginia)
-
-??  Room 202 : Coding
-*  16:00 - 16:25 : Best of Both Worlds: Transferring Knowledge from Discriminative Learning to a Generative Visual Dialog Mode -  Lu, Jiasen , Georgia Tech
+?  16:20 - 16:35 : Scale-invariant temporal history (SITH): Optimal slicing of the past in an uncertain world - Per Sederberg (U. Virginia)
 
 !-->
 
 
-
 #### Grand Ballroom B : [LEARNING WITH LIMITED LABELED DATA: WEAK SUPERVISION AND BEYOND](https://lld-workshop.github.io/)
 
-*  16:45 - 17:15 : Invited Talk: Ian Goodfellow, Overcoming Limited Data with GANs
-*  17:45 - 18:15 : Invited Talk: Alan Ritter, What's so Hard About Natural Language Understanding?
+*  16:15 - 16:45 : Invited Talk: [Sameer Singh](https://scholar.google.com/citations?hl=en&user=-hGZC54AAAAJ&view_op=list_works&sortby=pubdate)
+   *   Formulation of relationship rules easier for people to annotate than individual relationship labels
 
+*  16:45 - 17:15 : Invited Talk: Overcoming Limited Data with GANs - Ian Goodfellow
+   *   Add labels : Discriminator has n+1 classes (all classes, plus Fake)
+   *   Simulate training data (make 3d renders more 'realistic', eg: eye gaze direction)
+   *   Domain adaptation (professor forcing for text)
+   
+*  17:15 - 17:30 : Local Affine Approximators of Deep Neural Nets for Improving Knowledge Transfer - Tatjana Chavdarova (on behalf of Suraj Srinivas)
+   *  eg: "Parallel WaveNet" Oord et al 2017  - student network now deployed to phones...
+   *  Previous work (eg: Hinton) student matches values of teacher 
+   *  In this work student also matches gradients too) of teacher - Sobolev training for neural networks (NIPS 2017)
 
+*  17:30 - 17:45 : Co-trained Ensemble Models for Weakly Supervised Cyberbullying Detection - Elaheh Raisi
+   *  Possibly relevant to media monitoring projects
 
-
-<a href="http://redcatlabs.com/2017-08-24_TFandDL_SmallerNets/" target="_blank">
-![Presentation Screenshot]({{ site.url }}/assets/img/2017-08-24_TFandDL_SmallerNets_600x390.png)
-</a>
-
-If there are any questions about the presentation please ask below, 
-or contact me using the details given on the slides themselves.
-
-<a href="http://redcatlabs.com/2017-08-24_TFandDL_SmallerNets/#/6/2" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2017-08-24_TFandDL_SmallerNets_6-2_600x390.png)
-</a>
+*  17:45 - 18:15 : Invited Talk: What's so Hard About Natural Language Understanding? - Alan Ritter
+   *  See /r/SiriFail
+   *  Twitter : 0.5bn conversations every month
+   *  Adversarial Learning for Neural Dialogue (also uses REINFORCE) - better human approval rate
+   *  Distant supervision (eg: Resolve time expressions)
 
