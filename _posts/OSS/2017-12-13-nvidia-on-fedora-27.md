@@ -56,6 +56,7 @@ The [negativo Nvidia repo](http://negativo17.org/nvidia-driver/) should now be a
 dnf config-manager --add-repo=http://negativo17.org/repos/fedora-nvidia.repo
 {% endhighlight %}
 
+
 And then install the nvidia driver, and the necessary libraries for ```cuda``` operations.  
 
 Note that if you want X11 to run on the graphics card, you'll obviously need a monitor 
@@ -100,6 +101,10 @@ If you've got references to ```nouveau``` appearing in ```lsmod```, something di
 
 
 ### Install ```TensorFlow``` for the GPU 
+
+<!--
+https://negativo17.org/cuda-9-0-cudnn-7-0-and-wayland-support-in-fedora-27/
+!-->
 
 Looking within the [TensorFlow installation instructions](https://www.tensorflow.org/install/install_linux) 
 for "Download and install cuDNN" shows that TensorFlow v1.4 (the current stable release) expects ```CUDA toolkit v8.0```, 
@@ -341,13 +346,13 @@ Release Date: 2017-10-12
 [     5.727] (==) Using config directory: "/etc/X11/xorg.conf.d"
 [     5.727] (==) Using system config directory "/usr/share/X11/xorg.conf.d"
 [     5.730] (==) ServerLayout "layout"
-[     5.730] (**) |-->Screen "intel" (0)
-[     5.730] (**) |   |-->Monitor "<default monitor>"
-[     5.731] (**) |   |-->Device "intel"
-[     5.731] (**) |   |-->GPUDevice "intel"
+[     5.730] (**) |--&gt;Screen "intel" (0)
+[     5.730] (**) |   |--&gt;Monitor "<default monitor&gt;"
+[     5.731] (**) |   |--&gt;Device "intel"
+[     5.731] (**) |   |--&gt;GPUDevice "intel"
 [     5.731] (==) No monitor specified for screen "intel".
 	Using a default monitor configuration.
-[     5.731] (**) |-->Inactive Device "nvidia"
+[     5.731] (**) |--&gt;Inactive Device "nvidia"
 [     5.731] (==) Automatically adding devices
 [     5.731] (==) Automatically enabling devices
 [     5.731] (==) Automatically adding GPU devices
