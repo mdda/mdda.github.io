@@ -5,16 +5,16 @@ title: Keep CUDA version under control
 tagline: For TensorFlow 1.5RC 
 date: 2018-01-10
 tags: [TensorFlow,Fedora,Nvidia]
-published: false
+published: true
 ---
 {% include JB/setup %}
 
 
-## ```TensorFlow``` 1.5 Release Candidate supports CUDA 9.0 (not 9.1)
+## ```TensorFlow``` 1.5 RC supports ```CUDA``` 9.0 (not 9.1)
 
 If you've just done a ```dnf update``` to get the kernel version that
 has the fixes for Meltdown and Spectre, you may have inadvertently pulled
-in CUDA 9.1 as well.  This isn't supported yet in ```TF-nightly``` unless you
+in CUDA 9.1 as well.  This isn't supported yet in ```TF-nightly-gpu``` unless you
 install from source (which is *difficult* if using the Negativo CUDA repos).
 
 This quick note explains how to downgrade to a supported CUDA version
@@ -23,6 +23,7 @@ This quick note explains how to downgrade to a supported CUDA version
 
 {% highlight bash %}
 rpm -qa | grep cuda-devel
+#cuda-devel-9.1.xxxx
 {% endhighlight %}
 
 
@@ -31,6 +32,9 @@ rpm -qa | grep cuda-devel
 As ```root``` :
 {% highlight bash %}
 dnf repoquery cuda-devel
+#cuda-devel-1:9.0.176-2.fc27.x86_64
+#cuda-devel-1:9.1.85-1.fc27.x86_64
+#cuda-devel-1:9.1.85-2.fc27.x86_64
 {% endhighlight %}
 
 
