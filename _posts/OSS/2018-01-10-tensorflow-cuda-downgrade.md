@@ -1,10 +1,14 @@
 ---
 layout: post
-category: AI
+category: OSS
 title: Keep CUDA version under control
 tagline: For TensorFlow 1.5RC 
 date: 2018-01-10
-tags: [TensorFlow,Fedora,Nvidia]
+tags:
+- fedora
+- linux
+- Nvidia
+- TensorFlow
 published: true
 ---
 {% include JB/setup %}
