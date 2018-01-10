@@ -34,6 +34,7 @@ And re-add assorted entries into ```/etc/hosts```.
 {% highlight bash %}
 # Dead-weight
 dnf remove pragha parole abiword claws-mail* leafpad orage ristretto pidgin transmission gnumeric asunder tumbler
+dnf remove dnfdragora dnfdragora-gui
 
 # Better alternatives
 dnf install libreoffice deluge 
