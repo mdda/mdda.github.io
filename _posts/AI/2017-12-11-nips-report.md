@@ -1,13 +1,13 @@
 ---
-date: 2017-12-1
-title: 'NIPS 2017 Report'
+date: 2017-12-11
+title: 'NIPS 2017 Itinerary'
 tagline: Conference
 category: AI
 tags:
-- Conferencee
+- Conference
 - NIPS2017
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -23,7 +23,7 @@ published: false
 *  10:45 start of "Statistical Relational Artificial Intelligence: Logic, Probability and Computation", 
 *Luc De Raedt · David Poole · Kristian Kersting · Sriraam Natarajan" in Hall C
 
-*  2:30 start of "Engineering and Reverse-Engineering Intelligence Using Probabilistic Programs, Program Induction, and Deep Learning",
+*  14:30 start of "Engineering and Reverse-Engineering Intelligence Using Probabilistic Programs, Program Induction, and Deep Learning",
 *Josh Tenenbaum · Vikash K Mansinghka* in Hall C
 
 
@@ -95,7 +95,7 @@ published: false
 
 
 
-### Friday 2017-12-08
+### Friday 2017-12-08 (Hectic Workshop timeslicing)
 
 ####  102B : [Visually-Grounded Interaction and Language (ViGIL)](https://nips2017vigil.github.io/)
 
@@ -104,11 +104,11 @@ published: false
    *   http://www.cs.utoronto.ca/~fidler/publications.html
       *   Understanding videos through MovieGraphs
 *  10:15 AM : ViGIL : Coffee Break & Poster Session + Meet GDEs
-   *   Poster :
+   *   Poster : ME!
 *  10:40 AM : ViGIL : The interface between vision and language in the human brain Jack Gallant
 
 
-#### [Conversational AI: "Today's Practice and Tomorrow's Potential"](http://alborz-geramifard.com/workshops/nips17-Conversational-AI/Main.html)
+####  202 : [Conversational AI: "Today's Practice and Tomorrow's Potential"](http://alborz-geramifard.com/workshops/nips17-Conversational-AI/Main.html)
 
 *  11:40 - 12:00 : ConversationalAI: Multi-Domain Adversarial Learning for Slot Filling in Spoken Language Understanding
 
@@ -145,7 +145,7 @@ Sam :
 !-->
 
 
-### Saturday 2017-12-09
+### Saturday 2017-12-09 (Hectic Workshop timeslicing)
 
 
 #### Hall A : [Deep Learning: Bridging Theory and Practice](https://ludwigschmidt.github.io/nips17-dl-workshop-website/) 
@@ -160,7 +160,7 @@ Sam :
        *   Decay learning rate for G (says Goodfellow)
 
 
-#### Room 202 : [NIPS HIGHLIGHTS, LEARN HOW TO CODE A PAPER WITH STATE OF THE ART FRAMEWORKS](https://mltrain.cc/events/nips-highlights-learn-how-to-code-a-paper-with-state-of-the-art-frameworks/)  
+#### 202 : [NIPS HIGHLIGHTS, LEARN HOW TO CODE A PAPER WITH STATE OF THE ART FRAMEWORKS](https://mltrain.cc/events/nips-highlights-learn-how-to-code-a-paper-with-state-of-the-art-frameworks/)  
 
 *  09:45 - 10:05 : Tips and tricks of coding papers on PyTorch - Sumith Chintalla, Facebook
    *  Start with experiments for basic outline
@@ -178,16 +178,16 @@ Sam :
 **10:15 - 11:00 : Morning Posters**
 
 *  10:45 - 11:15 : Coding Reinforcement Learning Papers by Shangtong Zhang , University of Alberta
-   *  Better to implement from scratch : Improves own understanding
+   *  Better to implement from scratch : Improve own understanding
    *  Start without all the tricks (bells &amp; whistles)
    *  Patience : 
       *  A3C + Atari = 1hr
-      *  DQN +Atari = 1 day 
-      *  Async Q/SARSA + Atari = days
+      *  DQN + Atari = 1 day 
+      *  Async Q/SARSA + Atari = n days
    *  No random seed...
    *  Has now moved off TF to PyTorch, but still likes TensorBoard
    *  np.argmax(values + rand()) to avoid consistent choice of argmax index
-   *  for Linear value-function approximation : Suggest Tile coding : ```tile3```
+   *  For Linear value-function approximation : Suggest Tile coding : ```tile3```
    *  Share CNN lower layers for separate Actor-Critic output final layers
    *  Roboschool is Free version of MoJoCo
    *  Actor/Critic - even simple networks work v well
