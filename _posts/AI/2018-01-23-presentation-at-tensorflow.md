@@ -17,35 +17,31 @@ published: false
 
 ### Presentation Link
 
-Sam Witteveen and I started the TensorFlow and Deep Learning Singapore group on MeetUp back in February 2017, and the 
-group has grown significantly over the last ~9 months.  However, that also means that
-many of the people who have recently joined missed out on our early sessions.  So we're re-running
-some of the earlier events as "Replay" events, hoping that new people will be able to 'catch up'
-and get more out of coming to the main graoup events.  
+Sam Witteveen and I started the TensorFlow and Deep Learning Singapore group on MeetUp in February 2017,
+and [the tenth MeetUp, aka TensorFlow and Deep Learning: 2018 What's new and what's changed](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/246745197/),
+was again hosted by Google.
 
-Our [first 'replay' MeetUp](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/244988340/) 
-was suppoerted by SGInnovate, in their office on Carpenter St.
-
-As in the original February talk, we had one Intro talk and one that was slightly more involved.  Since Sam
-already had the intro talk (complete with additional shiny slides created by the Google team) ready-to-roll, 
-I simpled polished up my 'ecommerce' CNN example from the deep-learning-workshop (see below)
-to work with TensorFlow, and presented that for about ~40 mins including questions. 
-
-The source for the Transfer Learning model is available on 
-<a href="https://github.com/mdda/deep-learning-workshop" target="_blank">GitHub</a> - if 
-you have questions on the software, please leave an 'issue' there.
+The line-up of talks included my talk on WaveNet, a guest speaker talking about Federated Learning, 
+a lightning talk about eye tracking, and Sam describing GANs and his experience with the TFGAN framework.
 
 
-<a href="http://redcatlabs.com/2017-11-21_TFandDL_TransferLearning/" target="_blank">
-![Presentation Screenshot]({{ site.url }}/assets/img/2017-11-21_TFandDL_TransferLearning_600x390.png)
+
+<a href=" http://redcatlabs.com/2018-01-23_TFandDL_WaveNets/" target="_blank">
+![Presentation Screenshot]({{ site.url }}/assets/img/2018-01-23_TFandDL_WaveNets_600x390.png)
 </a>
 
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="http://redcatlabs.com/2017-11-21_TFandDL_TransferLearning/#/5/2" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2017-11-21_TFandDL_TransferLearning_5-2_600x390.png)
+<a href=" http://redcatlabs.com/2018-01-23_TFandDL_WaveNets/#/8/2" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2018-01-23_TFandDL_WaveNets_8-2_600x390.png)
 </a>
+
+
+### Video Link
+
+The presentation was kindly 
+<a href="https://engineers.sg/video/deepmind-s-wavenet-how-it-works-and-how-it-is-evolving-tensorflow-and-deep-learning--2239" target="_blank">recorded by Engineers.sg</a>.
 
 
 
