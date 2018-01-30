@@ -33,8 +33,8 @@ a lightning talk about eye tracking, and Sam describing GANs and his experience 
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href=" http://redcatlabs.com/2018-01-23_TFandDL_WaveNets/#/8/2" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2018-01-23_TFandDL_WaveNets_8-2_600x390.png)
+<a href=" http://redcatlabs.com/2018-01-23_TFandDL_WaveNets/#/5/1" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2018-01-23_TFandDL_WaveNets_5-1_600x390.png)
 </a>
 
 
