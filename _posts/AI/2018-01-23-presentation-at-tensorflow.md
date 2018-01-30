@@ -1,15 +1,14 @@
 ---
 date: 2018-01-23
-title: Going Deeper - Transfer Learning
+title: "2018 : What's new and what's changed"
 tagline: Presentation
 category: AI
 tags:
 - Presentation
 - TensorFlow
-- CNNs
-- TransferLearning
+- WaveNet
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -23,8 +22,8 @@ was again hosted by Google.
 
 The line-up of talks included my talk on WaveNet, a guest speaker talking about Federated Learning, 
 a lightning talk about eye tracking, and Sam describing GANs and his experience with the TFGAN framework.
-
-
+I'm not exactly sure what this had to do with the overall title of the MeetUp...  But we had a 
+full house at Google!
 
 <a href=" http://redcatlabs.com/2018-01-23_TFandDL_WaveNets/" target="_blank">
 ![Presentation Screenshot]({{ site.url }}/assets/img/2018-01-23_TFandDL_WaveNets_600x390.png)
@@ -45,7 +44,7 @@ The presentation was kindly
 
 
 
-PS:  And if you liked the content, please 'star' the <a href="https://github.com/mdda/deep-learning-workshop" target="_blank">Deep Learning Workshop</a> repo ::
+PS:  And if you liked the content, please 'star' the <a href="https://github.com/mdda/deep-learning-workshop" target="_blank">Deep Learning Workshop</a> repo, which now includes the WaveNet implementation in Keras linked in the presentation slides ::
 <!-- From :: https://buttons.github.io/ -->
 <!-- Place this tag where you want the button to render. -->
 <span style="position:relative;top:5px;">
