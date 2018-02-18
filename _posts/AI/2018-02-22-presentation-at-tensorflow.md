@@ -47,15 +47,20 @@ The presentation was kindly
 <!--
 Let's make presentation notes (including slide # and video timing) for the NIPS talk here : 
 *  https://www.reddit.com/r/MachineLearning/comments/7jhdiq/d_deep_learning_practice_and_trends_a_nips_2017/
-*  https://www.youtube.com/watch?v=YJnddoa8sHk
+*  Talk : https://www.youtube.com/watch?v=YJnddoa8sHk
+*  Slides : 
+* Presenters : 
+   *  Oriol Vinyals (Berkley, Google, then DeepMind);
+   *  Scott Reed (Michigan, DeepMind)
 
-slide03 : Trends : 
+slide03 : 01:45 : Trends : 
   Autoregressive models
   Domain Alignment
   Learning to Learn
   Graph Networks
   Program Induction
-  (Deep RL tutorial will deal with that)
+  
+  (Deep RL tutorial will deal with that topic)
 
 2m30 : slide03 : 
  Deep Learning Building Blocks
@@ -147,8 +152,55 @@ Trend : Domain Alignment (58:51, slide 111) un- or weakly- supervised
   slide125 : 1:09:55 : GraspGAN (robotics) nice SLIDEs
   slide127 : 1:44:20 : Text corpora (machine translation) 2 different papers
   
-Trend : Learning to Learn / MetaLearning
-
+Trend : Learning to Learn / MetaLearning (back to OV : 1:13:05, slide130)
+  Loss game (again) : Loss that models another loss
+     One-shot learning is in this category
+  
+  slide133 : 1:13:45 : Learning to Learn - sample new task => adapt quickly
+  slide134 : 1:15:25 : Building the equation (SLIDE?)
+  slide136 : 1:18:00 : Model-based; Metric-based; Optimisation-based
+  slide137 : 1:21:00 : One-shot imitation learning
+  
+Trend : Graphs (1:22:00, slide 141)
+  Natural trend :: Fixed->Tensor->Sequential->Graphs
+    Building blocks : architecture game
+    
+  slide144 : 1:23:40 : Inductive bias for graphs : Want order-invariant model  (DeepSets = recommended)
+  slide145 : 1:24:50 : Message Passing Neural Networks with worked example
+  slide154 : 1:27:50 : Predicting chemical experiment with MPNNs
+  slide156 : 1:28:25 : Interaction Networks (glossed over)
+  slide158 : 1:28:34 : Gated Graph Neural Networks. etc, etc 
+  slide163 : 1:28:54 : Technical challenges : Batching is a problem for graph-building frameworks
+  slide164 : 1:29:53 : Summary and Further Reading
+  
+  
+Trend : Program induction (back to Scott : 1:30:00, slide165)
+  Research landscape
+    Neural network is the program
+    Neural network generates the program source code (if it works : perfect generalisation)
+    Probabalistic programming with neural networks (not now)
+    
+  slide168 : 1:32:20 : Learning to Execute "Bold" - apply seq2seq to everything
+  slide170 : 1:33:20 : Neural Turing Machine / Differentiable Neural Computer (with memory)
+  slide173 : 1:35:40 : Hierarchical Programs : Neural task programming
+  slide175 : 1:36:25 : DeepCoder (generates code in a DSL) - use attribute prediction to prune search space
+  slide176 : 1:38:15 : RobustFill (robust to data errors in I/O pairs)
+  
+Conclusions and Expectations (Scott : 1:41:07, slide181)
+  Autoregressive models and ConvNets are already in use in consumer applications
+  
+  Inductive biases are useful
+    - Spacial invariance : CNNs
+    - Time recurrence : RNNs
+    - Permutation invariance : Graphs
+    
+  More ResNet tricks to be discovered?
+  
+  GANs may have interesting market applications (phone apps)
+  
+  Meta-Learning : Learn more of model lifecycle end-to-end
+  
+  
 
 !-->
 
