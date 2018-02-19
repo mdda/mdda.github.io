@@ -201,6 +201,31 @@ Conclusions and Expectations (Scott : 1:41:07, slide181)
   Meta-Learning : Learn more of model lifecycle end-to-end
   
   
+--------------
+Outline presentation
+
+What is NIPS?
+  Why did we go?
+This talk : Trends
+  Source of the trend data = ICLR 2018 submissions
+Trends
+  Autoregressive models
+    WaveNet
+  Domain Alignment
+    Sketching faces
+    CycleGAN
+    Language alignment
+    Pose alignment
+  Learning to Learn
+    NASnet?  
+    One-shot learning
+  Graph Networks
+    Need to think about suitable invariances
+  Program Induction
+    Hoopy stuff
+
+
+
 
 !-->
 
