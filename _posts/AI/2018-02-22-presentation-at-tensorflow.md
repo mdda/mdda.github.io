@@ -247,19 +247,44 @@ Trends
       Language alignment
       Pose alignment
     
-  Learning to Learn
-    NASnet?  
-    One-shot learning
+  Learning to Learn and MetaLearning
+    Big ideas: 
+      Learn multiple tasks and hope to find better model for 'real' task
+      Model building 
+    New this year:
+      One-shot learning starting to work
+      NASnet
+      
   Graph Networks
-    Need to think about suitable invariances
-    Idea : Permutation invariance
-    Can be expressed in message-passing equations
-    - Lots of experimentation
-  Program Induction
-    Hoopy stuff
+    Big ideas: 
+      Need to think about suitable invariances for Graphs
+        Idea : Permutation invariance (also : DeepSets)
+      Can be expressed in message-passing equations
+    New this year:
+      Predicting chemical experiment with MPNNs
+      - Lots of experimentation
+      
+  Program Induction 
+    Big ideas: (Hoopy stuff)
+      Neural network is the program
+      Neural network writes the program
+    New this year:
+      DeepCoder
+      RobustFill
 
-
-
+Conclusions and Expectations (Scott : 1:41:07, slide181)
+  Autoregressive models and ConvNets are already in use in consumer applications
+  
+  Inductive biases are useful
+    - Spacial invariance : CNNs
+    - Time recurrence : RNNs
+    - Permutation invariance : Graphs
+    
+  More ResNet tricks to be discovered?
+  
+  GANs may have interesting market applications (phone apps)
+  
+  Meta-Learning : Learn more of model lifecycle end-to-end
 
 !-->
 
