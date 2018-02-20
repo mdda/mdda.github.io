@@ -66,6 +66,7 @@ slide03 : 01:45 : Trends :
  Deep Learning Building Blocks
 
 6m00 : Inputs and Outputs
+
   slide09 : Structured = Not really
   slide10 : Images (including bread-muscle man)
   slide11 : Sequences (including decision-making)
@@ -97,12 +98,14 @@ slide03 : 01:45 : Trends :
                         seq2seq init is ~U(-0.05,+0.05))
                         clipping : If norm(grad)>5, grad=grad_direction * 5
     slide63 : 36:39 : Attention and Memory Toolbox + Additional Resources
+
+
   
 slide65 : 37:20 : Trends (source: ICLR 2018 abstracts)  NICE SLIDE
   
 
 Trend : Generative and Autoregressive Models (new speaker 39:00) 
-  Latent varbale models (VAE, DRAW)
+  Latent variable models (VAE, DRAW)
   Implicit (GAN, GMME, Progressive GAN)
   Transform (NIDE, IAF, Real NVP)
   Autoregressive (NADE, MADE, RIDE, PixelCNN, WaveNet)
@@ -119,7 +122,7 @@ Trend : Generative and Autoregressive Models (new speaker 39:00)
   slide80 : 46:35 : WaveNet distillation O(N)->O(1) sampling
   
   slide83 : 47:52 : Modeling Text
-  slide90 : 48:58 : NMR with dialted causal convolutions
+  slide90 : 48:58 : NMR with dilated causal convolutions
   slide91 : 49:00 : Convolutional MT with attention (Facebook)
   slide95 : 51:15 : Non-autoregressive transformer for NMT "Fertility values" (Gu et al)
                       Similar to training a teacher network (parallel) for fertilities
@@ -206,21 +209,52 @@ Outline presentation
 
 What is NIPS?
   Why did we go?
-This talk : Trends
+This talk : Intro+Trends
   Source of the trend data = ICLR 2018 submissions
+  Corporate research publication stats
+Architectures:
+  CNNs : Capture spatial 'invariance' in images
+    Big ideas:
+      Batch Normalisation 
+      Residual connections
+    New this year:
+      DenseNet, U-Net
+      
+  RNNs : Capture time    'invariance' in sequences
+    Big ideas:
+      Embeddings
+      seq2seq = translation
+      Attention 
+    New this year:
+      Attention-is-all-you-need
+  
 Trends
-  Autoregressive models
-    WaveNet
+  Autoregressive models (avoiding RNNs)
+    Big ideas:
+      Dilated convolutions
+      Model distributions rather than points
+    New this year:
+      Parallel WaveNet
+      Parallel text with attention (Facebook)
+    
   Domain Alignment
-    Sketching faces
-    CycleGAN
-    Language alignment
-    Pose alignment
+    Big ideas:
+      Force representations to be same
+        Implicit 'understanding' happens
+    New this year:
+      Sketching faces
+      CycleGAN
+      Language alignment
+      Pose alignment
+    
   Learning to Learn
     NASnet?  
     One-shot learning
   Graph Networks
     Need to think about suitable invariances
+    Idea : Permutation invariance
+    Can be expressed in message-passing equations
+    - Lots of experimentation
   Program Induction
     Hoopy stuff
 
