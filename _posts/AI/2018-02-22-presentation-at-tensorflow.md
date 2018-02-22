@@ -18,31 +18,26 @@ Sam Witteveen and I started the TensorFlow and Deep Learning Singapore group on 
 and [the eleventh MeetUp, aka TensorFlow and Deep Learning: NIPS](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/247733545/),
 was again hosted by Google (we're only up to 11 because we essentially skipped one month because of venue scheduling conflicts at Google HQ).
 
-The line-up of talks included my talk on 'Practice and Trends', 
-Olzhas describing Capsule Networks (with code), 
-Chaitanya (a researcher from EPFL, now at SAP via NTU) presenting "Personalization in Goal-Oriented Dialog" 
-which he co-wrote and was featured in the NIPS Conversational Agents Workshop, 
-and Sam looking at the developments in the space of ML that creates other ML models (eg: AutoML).
+The line-up of talks included : 
 
+*  my talk on 'Practice and Trends' (which was a condensed version of the first Tutorial session by Oriol Vinyals and Scott Reed);
+*  Olzhas describing Capsule Networks using an extensive deck, 
+*  Chaitanya (a researcher from EPFL, now at SAP via NTU) presenting "Personalization in Goal-Oriented Dialog", a paper which he co-wrote and was featured in the NIPS Conversational Agents Workshop; and 
+*  Sam looking at the developments in the space of ML that creates other ML models (eg: AutoML).
 
-<a href=" http://redcatlabs.com/2018-02-22_TFandDL_NIPS/" target="_blank">
-![Presentation Screenshot]({{ site.url }}/assets/img/2018-02-22_TFandDL_NIPS_600x390.png)
+<a href=" http://redcatlabs.com/2018-02-22_TFandDL_NIPS-review/" target="_blank">
+![Presentation Screenshot]({{ site.url }}/assets/img/2018-02-22_TFandDL_NIPS-review_600x390.png)
 </a>
 
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href=" http://redcatlabs.com/2018-02-22_TFandDL_NIPS/#/5/1" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2018-02-22_TFandDL_NIPS_5-1_600x390.png)
+<a href=" http://redcatlabs.com/2018-02-22_TFandDL_NIPS-review/#/12/1" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2018-02-22_TFandDL_NIPS-review_12-1_600x390.png)
 </a>
 
-<!--
-### Video Link
-
-The presentation was kindly 
-<a href="https://engineers.sg/video/deepmind-s-wavenet-how-it-works-and-how-it-is-evolving-tensorflow-and-deep-learning--2239" target="_blank">recorded by Engineers.sg</a>.
-!-->
-
+If you're looking for a more in-depth map of the original talk (timings of slides, and topics), 
+there's a bunch of rough notes commented out below...
 
 <!--
 Let's make presentation notes (including slide # and video timing) for the NIPS talk here : 
@@ -51,7 +46,7 @@ Let's make presentation notes (including slide # and video timing) for the NIPS 
 *  Slides : 
 * Presenters : 
    *  Oriol Vinyals (Berkley, Google, then DeepMind);
-   *  Scott Reed (Michigan, DeepMind)
+   *  Scott Reed (U. Michigan, DeepMind)
 
 slide03 : 01:45 : Trends : 
   Autoregressive models
@@ -104,7 +99,7 @@ slide03 : 01:45 : Trends :
 slide65 : 37:20 : Trends (source: ICLR 2018 abstracts)  NICE SLIDE
   
 
-Trend : Generative and Autoregressive Models (new speaker 39:00) 
+Trend : Generative and Autoregressive Models (new speaker 39:00, slide68) 
   Latent variable models (VAE, DRAW)
   Implicit (GAN, GMME, Progressive GAN)
   Transform (NIDE, IAF, Real NVP)
@@ -203,88 +198,5 @@ Conclusions and Expectations (Scott : 1:41:07, slide181)
   
   Meta-Learning : Learn more of model lifecycle end-to-end
   
-  
---------------
-Outline presentation
-
-What is NIPS?
-  Why did we go?
-This talk : Intro+Trends
-  Source of the trend data = ICLR 2018 submissions
-  Corporate research publication stats
-Architectures:
-  CNNs : Capture spatial 'invariance' in images
-    Big ideas:
-      Batch Normalisation 
-      Residual connections
-    New this year:
-      DenseNet, U-Net
-      
-  RNNs : Capture time    'invariance' in sequences
-    Big ideas:
-      Embeddings
-      seq2seq = translation
-      Attention 
-    New this year:
-      Attention-is-all-you-need
-  
-Trends
-  Autoregressive models (avoiding RNNs)
-    Big ideas:
-      Dilated convolutions
-      Model distributions rather than points
-    New this year:
-      Parallel WaveNet
-      Parallel text with attention (Facebook)
-    
-  Domain Alignment
-    Big ideas:
-      Force representations to be same
-        Implicit 'understanding' happens
-    New this year:
-      Sketching faces
-      CycleGAN
-      Language alignment
-      Pose alignment
-    
-  Learning to Learn and MetaLearning
-    Big ideas: 
-      Learn multiple tasks and hope to find better model for 'real' task
-      Model building 
-    New this year:
-      One-shot learning starting to work
-      NASnet
-      
-  Graph Networks
-    Big ideas: 
-      Need to think about suitable invariances for Graphs
-        Idea : Permutation invariance (also : DeepSets)
-      Can be expressed in message-passing equations
-    New this year:
-      Predicting chemical experiment with MPNNs
-      - Lots of experimentation
-      
-  Program Induction 
-    Big ideas: (Hoopy stuff)
-      Neural network is the program
-      Neural network writes the program
-    New this year:
-      DeepCoder
-      RobustFill
-
-Conclusions and Expectations (Scott : 1:41:07, slide181)
-  Autoregressive models and ConvNets are already in use in consumer applications
-  
-  Inductive biases are useful
-    - Spacial invariance : CNNs
-    - Time recurrence : RNNs
-    - Permutation invariance : Graphs
-    
-  More ResNet tricks to be discovered?
-  
-  GANs may have interesting market applications (phone apps)
-  
-  Meta-Learning : Learn more of model lifecycle end-to-end
-
 !-->
 
