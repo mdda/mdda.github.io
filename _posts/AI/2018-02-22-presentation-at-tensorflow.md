@@ -8,7 +8,7 @@ tags:
 - TensorFlow
 - NIPS
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -16,14 +16,17 @@ published: false
 
 Sam Witteveen and I started the TensorFlow and Deep Learning Singapore group on MeetUp in February 2017,
 and [the eleventh MeetUp, aka TensorFlow and Deep Learning: NIPS](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/247733545/),
-was again hosted by Google (we're only up to 11 because we essentially skipped one month because of venue scheduling conflicts at Google HQ).
+was again hosted by Google Singapore.
 
 The line-up of talks included : 
 
-*  my talk on 'Practice and Trends' (which was a condensed version of the first Tutorial session by Oriol Vinyals and Scott Reed);
-*  Olzhas describing Capsule Networks using an extensive deck, 
+*  My talk on 'Practice and Trends' (which was a condensed version of the first Tutorial session by Oriol Vinyals and Scott Reed);
+*  Olzhas describing Capsule Networks using an extensive deck; 
 *  Chaitanya (a researcher from EPFL, now at SAP via NTU) presenting "Personalization in Goal-Oriented Dialog", a paper which he co-wrote and was featured in the NIPS Conversational Agents Workshop; and 
 *  Sam looking at the developments in the space of ML that creates other ML models (eg: AutoML).
+
+I didn't present [the paper](/ai/2017/10/19/presentation-at-pytorch) that Sam and I had at the NIPS ViGiL workshop, 
+since the code there was rather too PyTorch-y to show at Google offices...
 
 <a href=" http://redcatlabs.com/2018-02-22_TFandDL_NIPS-review/" target="_blank">
 ![Presentation Screenshot]({{ site.url }}/assets/img/2018-02-22_TFandDL_NIPS-review_600x390.png)
@@ -37,7 +40,7 @@ or contact me using the details given on the slides themselves.
 </a>
 
 If you're looking for a more in-depth map of the original talk (timings of slides, and topics), 
-there's a bunch of rough notes commented out below...
+there's a bunch of rough notes commented out below...  (visible if you do a RightClick-View-Source)
 
 <!--
 Let's make presentation notes (including slide # and video timing) for the NIPS talk here : 
