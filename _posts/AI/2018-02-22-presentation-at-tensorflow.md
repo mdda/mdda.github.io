@@ -1,6 +1,6 @@
 ---
 date: 2018-02-22
-title: NIPS 
+title: NIPS Tutorial Synposis
 tagline: Presentation
 category: AI
 tags:
@@ -15,7 +15,7 @@ published: true
 ### Presentation Link
 
 Sam Witteveen and I started the TensorFlow and Deep Learning Singapore group on MeetUp in February 2017,
-and [the eleventh MeetUp, aka TensorFlow and Deep Learning: NIPS](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/247733545/),
+and [the eleventh MeetUp, aka TensorFlow and Deep Learning: NIPS review](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/247733545/),
 was again hosted by Google Singapore.
 
 The line-up of talks included : 
