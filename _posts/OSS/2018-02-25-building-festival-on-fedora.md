@@ -9,16 +9,16 @@ tags:
 - festival
 - TTS
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
-## ```Festival``` packages on Fedora are Broken
+### The ```Festival``` packages on Fedora are Broken
 
 Some work has taken place in the upstream tar-balls to upgrade to make
 the code work with the newer ```gcc```, but this doesn't seem to have 
 made it into the RPMs yet.
-
+ 
 
 ### Building ```Festival``` locally
 
@@ -36,7 +36,7 @@ cd festival-local  # This is where we'll build festival locally
 {% endhighlight %}
 
 
-### Download the source(s) and a suitable voice
+#### Download the source(s) and a suitable voice
 
 {% highlight bash %}
 # https://bugzilla.redhat.com/show_bug.cgi?id=1457878
@@ -52,7 +52,7 @@ wget http://festvox.org/packed/festival/2.5/voices/festvox_cmu_us_slt_cg.tar.gz
 Actually, 'nina' would be a better voice, but download is difficult to find...
 
 
-### Unpack everything 
+#### Unpack everything 
 
 {% highlight bash %}
 tar -xzf  speech_tools*.tar.gz
@@ -63,7 +63,7 @@ tar -xzf  festvox_cmu_us_slt_cg.tar.gz
 {% endhighlight %}
 
 
-### Build ```speech_tools```
+#### Build ```speech_tools```
 
 {% highlight bash %}
 cd speech_tools
@@ -73,7 +73,7 @@ cd ..
 {% endhighlight %}
 
 
-### Build ```festival``` itself
+#### Build ```festival``` itself
 
 {% highlight bash %}
 cd festival
@@ -83,20 +83,22 @@ cd ..
 {% endhighlight %}
 
 
-### Test ```festival``` on command line
+#### Test ```festival``` on command line
 
 {% highlight bash %}
 cd festival/bin
-#echo "This is a test" | ./festival --tts  # Needs /dev/dsp => FAIL
 
-# WORKS!!
+# Try the simplest invocation (to audio output)
+echo "This is a test" | ./festival --tts  # Needs /dev/dsp => FAIL
+
+# Send instead to a local WAV file : WORKS!!
 echo "This is a test" | ./text2wave -o test.wav
 # Output is a mono WAV at 16KHz
 
 {% endhighlight %}
 
 
-### Install ```festival``` system-wide (?)
+#### Install ```festival``` system-wide (?)
 
 It wasn't necessary to install ```festival``` nor ```speech_tools``` system-wide in 
 order to get the TTS functionality required.
