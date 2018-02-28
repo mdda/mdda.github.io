@@ -24,7 +24,7 @@ some of the earlier events as "Replay" events, hoping that new people will be ab
 and get more out of coming to the main graoup events.  
 
 Our [first 'replay' MeetUp](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/244988340/) 
-was suppoerted by SGInnovate, in their office on Carpenter St.
+was supported by SGInnovate, in their office on Carpenter St.
 
 As in the original February talk, we had one Intro talk and one that was slightly more involved.  Since Sam
 already had the intro talk (complete with additional shiny slides created by the Google team) ready-to-roll, 
