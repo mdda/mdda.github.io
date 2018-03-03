@@ -23,15 +23,14 @@ many of the people who have recently joined missed out on our early sessions.  S
 some of the earlier events as <strike>"Replay"</strike> "Back-to-Basics" events, 
 hoping that new people will be able to 'catch up' and get more out of coming to the main graoup events.  
 
-Our [second 'Back-to-Basics' MeetUp](xxhttps://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/244988340/) 
+Our [second 'Back-to-Basics' Meeting](https://www.sginnovate.com/events/deep-learning-and-tensorflow-back-basics-cnns) 
 was supported by SGInnovate, in their office on Carpenter St.
 
 As in the original March talk last year, I presented an introduction to CNNs, 
 which are typically presented as a vision solution, using MNIST as an example.  
 However, my version has a bit of a twist : Instead of using visual digits,
 I have created a spoken-word dataset (the digits 0 to 9, of course), and the
-CNN is trained to recognise spectrograms of the audio - i.e. the CNN is
-doing voice recognition!
+CNN is trained to recognise spectrograms of the audio - i.e. the CNN is doing voice recognition!
 
 The source for the CNN 'Stamps' Speech Recognition model is available on 
 <a href="https://github.com/mdda/deep-learning-workshop" target="_blank">GitHub</a> - if 
