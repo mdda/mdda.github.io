@@ -9,7 +9,7 @@ tags:
 - CNNs
 - SpeechRecognition
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -31,6 +31,11 @@ which are typically presented as a vision solution, using MNIST as an example.
 However, my version has a bit of a twist : Instead of using visual digits,
 I have created a spoken-word dataset (the digits 0 to 9, of course), and the
 CNN is trained to recognise spectrograms of the audio - i.e. the CNN is doing voice recognition!
+
+As an added bonus, there's also an 'animals' audio dataset, and the demo notebook
+includes an illustration of transfer learning : Where animal names are learned 
+solely by modeling the errors made by the network trained to recognise digits.  
+Fortunately, during the demo, the transfer-learned model scored 4/4 on the test animal name examples (YMMV).
 
 The source for the CNN 'Stamps' Speech Recognition model is available on 
 <a href="https://github.com/mdda/deep-learning-workshop" target="_blank">GitHub</a> - if 
