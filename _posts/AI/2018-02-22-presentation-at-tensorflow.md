@@ -1,6 +1,6 @@
 ---
 date: 2018-02-22
-title: NIPS 
+title: NIPS Tutorial Synposis
 tagline: Presentation
 category: AI
 tags:
@@ -8,41 +8,39 @@ tags:
 - TensorFlow
 - NIPS
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
 ### Presentation Link
 
 Sam Witteveen and I started the TensorFlow and Deep Learning Singapore group on MeetUp in February 2017,
-and [the eleventh MeetUp, aka TensorFlow and Deep Learning: NIPS](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/247733545/),
-was again hosted by Google (we're only up to 11 because we essentially skipped one month because of venue scheduling conflicts at Google HQ).
+and [the eleventh MeetUp, aka TensorFlow and Deep Learning: NIPS review](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/247733545/),
+was again hosted by Google Singapore.
 
-The line-up of talks included my talk on 'Practice and Trends', 
-Olzhas describing Capsule Networks (with code), 
-Chaitanya (a researcher from EPFL, now at SAP via NTU) presenting "Personalization in Goal-Oriented Dialog" 
-which he co-wrote and was featured in the NIPS Conversational Agents Workshop, 
-and Sam looking at the developments in the space of ML that creates other ML models (eg: AutoML).
+The line-up of talks included : 
 
+*  My talk on 'Practice and Trends' (which was a condensed version of the first Tutorial session by Oriol Vinyals and Scott Reed);
+*  Olzhas describing Capsule Networks using an extensive deck; 
+*  Chaitanya (a researcher from EPFL, now at SAP via NTU) presenting "Personalization in Goal-Oriented Dialog", a paper which he co-wrote and was featured in the NIPS Conversational Agents Workshop; and 
+*  Sam looking at the developments in the space of ML that creates other ML models (eg: AutoML).
 
-<a href=" http://redcatlabs.com/2018-02-22_TFandDL_NIPS/" target="_blank">
-![Presentation Screenshot]({{ site.url }}/assets/img/2018-02-22_TFandDL_NIPS_600x390.png)
+I didn't present [the paper](/ai/2017/10/19/presentation-at-pytorch) that Sam and I had at the NIPS ViGiL workshop, 
+since the code there was rather too PyTorch-y to show at Google offices...
+
+<a href=" http://redcatlabs.com/2018-02-22_TFandDL_NIPS-review/" target="_blank">
+![Presentation Screenshot]({{ site.url }}/assets/img/2018-02-22_TFandDL_NIPS-review_600x390.png)
 </a>
 
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href=" http://redcatlabs.com/2018-02-22_TFandDL_NIPS/#/5/1" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2018-02-22_TFandDL_NIPS_5-1_600x390.png)
+<a href=" http://redcatlabs.com/2018-02-22_TFandDL_NIPS-review/#/12/1" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2018-02-22_TFandDL_NIPS-review_12-1_600x390.png)
 </a>
 
-<!--
-### Video Link
-
-The presentation was kindly 
-<a href="https://engineers.sg/video/deepmind-s-wavenet-how-it-works-and-how-it-is-evolving-tensorflow-and-deep-learning--2239" target="_blank">recorded by Engineers.sg</a>.
-!-->
-
+If you're looking for a more in-depth map of the original talk (timings of slides, and topics), 
+there's a bunch of rough notes commented out below...  (visible if you do a RightClick-View-Source)
 
 <!--
 Let's make presentation notes (including slide # and video timing) for the NIPS talk here : 
@@ -51,7 +49,7 @@ Let's make presentation notes (including slide # and video timing) for the NIPS 
 *  Slides : 
 * Presenters : 
    *  Oriol Vinyals (Berkley, Google, then DeepMind);
-   *  Scott Reed (Michigan, DeepMind)
+   *  Scott Reed (U. Michigan, DeepMind)
 
 slide03 : 01:45 : Trends : 
   Autoregressive models
@@ -66,6 +64,7 @@ slide03 : 01:45 : Trends :
  Deep Learning Building Blocks
 
 6m00 : Inputs and Outputs
+
   slide09 : Structured = Not really
   slide10 : Images (including bread-muscle man)
   slide11 : Sequences (including decision-making)
@@ -97,12 +96,14 @@ slide03 : 01:45 : Trends :
                         seq2seq init is ~U(-0.05,+0.05))
                         clipping : If norm(grad)>5, grad=grad_direction * 5
     slide63 : 36:39 : Attention and Memory Toolbox + Additional Resources
+
+
   
 slide65 : 37:20 : Trends (source: ICLR 2018 abstracts)  NICE SLIDE
   
 
-Trend : Generative and Autoregressive Models (new speaker 39:00) 
-  Latent varbale models (VAE, DRAW)
+Trend : Generative and Autoregressive Models (new speaker 39:00, slide68) 
+  Latent variable models (VAE, DRAW)
   Implicit (GAN, GMME, Progressive GAN)
   Transform (NIDE, IAF, Real NVP)
   Autoregressive (NADE, MADE, RIDE, PixelCNN, WaveNet)
@@ -119,7 +120,7 @@ Trend : Generative and Autoregressive Models (new speaker 39:00)
   slide80 : 46:35 : WaveNet distillation O(N)->O(1) sampling
   
   slide83 : 47:52 : Modeling Text
-  slide90 : 48:58 : NMR with dialted causal convolutions
+  slide90 : 48:58 : NMR with dilated causal convolutions
   slide91 : 49:00 : Convolutional MT with attention (Facebook)
   slide95 : 51:15 : Non-autoregressive transformer for NMT "Fertility values" (Gu et al)
                       Similar to training a teacher network (parallel) for fertilities
@@ -200,7 +201,5 @@ Conclusions and Expectations (Scott : 1:41:07, slide181)
   
   Meta-Learning : Learn more of model lifecycle end-to-end
   
-  
-
 !-->
 
