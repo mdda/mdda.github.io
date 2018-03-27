@@ -13,7 +13,7 @@ tags:
 - SpeechRecognition
 - FOSSASIA
 layout: post
-published: true
+published: false
 ---
 {% include JB/setup %}
 
@@ -57,7 +57,7 @@ or contact me using the details given on the slides themselves.
 
 ### Video Link
 
-The presentation was kindly <a href="https://engineers.sg/video/deep-learning-d-i-y-workshop-1hr-fossasia-2017--1506" target="_blank">recorded by Engineers.sg</a>.
+The presentation was kindly <a href="https://engineers.sg/video/deep-learning-d-i-y-workshop-fossasia-2018--2455" target="_blank">recorded by Engineers.sg</a>.
 
 
 PS:  And if you liked the Workshop, please 'star' the <a href="https://github.com/mdda/deep-learning-workshop" target="_blank">Deep Learning Workshop</a> repo ::
