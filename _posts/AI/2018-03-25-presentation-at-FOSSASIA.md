@@ -34,7 +34,7 @@ a new application/module I put together specifically for FOSSASIA (in the precee
 to working &amp; demonstrable code).
 
 For this FOSSASIA workshop, I also created a 
-<a href="http://redcatlabs.com/2017-03-20_TFandDL_IntroToCNNs/CNN-demo.html" target="_blank">
+<a href="http://redcatlabs.com/2018-03-25_FOSSASIA-Workshop/MetaLearning-demo.html" target="_blank">
 stand-alone Reptile one-shot learning demo</a>, so that people could get an intuitive understanding of what
 test example for the meta-learning task look like, without being connected to the internet (and without
 needing the VirtualBox VM running).
@@ -50,8 +50,8 @@ if you have questions on the software, please leave an 'issue' there.
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="http://redcatlabs.com/2018-03-25_FOSSASIA-Workshop/#/5/3" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2018-03-25_FOSSASIA-Workshop_5-3_600x390.png)
+<a href="http://redcatlabs.com/2018-03-25_FOSSASIA-Workshop/MetaLearning-demo.html" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2018-03-25_FOSSASIA-Workshop_3boxes_600x390.png)
 </a>
 
 
