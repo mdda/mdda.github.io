@@ -10,10 +10,9 @@ tags:
 - MetaLearning
 - OneShotLearning
 - Reptile
-- SpeechRecognition
 - FOSSASIA
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -24,19 +23,25 @@ published: false
 I recently lead a <strong><a href="http://redcatlabs.com/2018-03-25_FOSSASIA-Workshop/" target="_blank">
 1 hour workshop</a></strong> at [FOSSASIA 2018](http://2018.fossasia.org/) in Singapore.
 
-Similarly to the previous year, this workshop was hands-on : After a brief background on deep learning, 
-participants started quickly, getting an understanding of features (and feature creation) 
-by a 'blame assignment' algorithm (aka Backprop).  
+Similar to the previous year, this workshop was hands-on : It included a couple of 
+examples in Javascript (rebuilt to run locally, to avoid network problems), followed
+by the use of a VirtualBox pre-configured linux image (somthing that has proven
+to be a good way of getting everyone in a workshop up-and-running with the minumum
+of hassle, and the maximum amount of preinstalled notebooks, models and data - with zero
+interaction with the WiFi / internet).
 
-Using the VirtualBox VM-on-a-stick, we had a quick look at a working GoogLeNet model.  And then went
-on to a longer segment on how the CNN mechanism can be applied to Speech Recognition - 
-a new application/module I put together specifically for FOSSASIA (in the preceeding 5 days, from concept
-to working &amp; demonstrable code).
+Using the updated VirtualBox VM-on-a-stick, we had a quick look at a working NASNet model.  And then went
+on showing how transfer learning can work.  That essentially covered the
+first two sections of the talk : Learning with lots of data; and Learning with some data.
 
-For this FOSSASIA workshop, I also created a 
-<a href="http://redcatlabs.com/2018-03-25_FOSSASIA-Workshop/MetaLearning-demo.html" target="_blank">
+For the second half of this FOSSASIA workshop, I introduced meta-learning, with the 
+emphasis on one-shot learning, to show how models can be learned from very little data.  This
+topic was prompted by the publication (3 weeks earlier) of the OpenAI "Reptile" paper,
+and the VM included an updated version of the reptile-sines code.
+
+I also (re-)created a <a href="http://redcatlabs.com/2018-03-25_FOSSASIA-Workshop/MetaLearning-demo.html" target="_blank">
 stand-alone Reptile one-shot learning demo</a>, so that people could get an intuitive understanding of what
-test example for the meta-learning task look like, without being connected to the internet (and without
+a test example for the meta-learning task look like, without being connected to the internet (and without
 needing the VirtualBox VM running).
 
 Naturally, this being a FOSS event, all the source is available 
