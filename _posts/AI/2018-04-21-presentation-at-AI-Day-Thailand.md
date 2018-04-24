@@ -20,10 +20,17 @@ published: false
 
 ### Presentation Link
 
-I recently lead a <strong><a href="http://redcatlabs.com/2018-04-21_AI-Day-Thailand/" target="_blank">
-1 hour workshop</a></strong> at [the 2018 AI Day](http://redcatlabs.com/2018-04-21_AI-Day-Thailand/#/) in Thailand.
+I was recently to Thailand by Google to give a  <strong><a href="http://redcatlabs.com/2018-04-21_AI-Day-Thailand/" target="_blank">
+50 minute talk</a></strong> at the Thai Google Developer Group's [2018 AI Day](http://redcatlabs.com/2018-04-21_AI-Day-Thailand/).
 
+The talk I gave was an updated version of the FOSSASIA workshop I gave previously, but without
+the ability for people to follow along with their own Virtual Machines.  Also, because the 
+audience mix was a little different, I chose to spend approximately equal time on four sections : 
 
+*  Machine Learning in TensorFlow Playground
+*  Using Keras model zoo for the pre-trained NASNet model, and doing transfer learning there
+*  Going through the Reptile meta-learning algorithm (implemented in PyTorch)
+*  Showing how TensorFlow Eager mode can accomplish the same, line-by-line
 
 we had a quick look at a working NASNet model.  And then went
 on showing how transfer learning can work.  That essentially covered the
