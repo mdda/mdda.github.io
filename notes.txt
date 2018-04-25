@@ -100,6 +100,39 @@ Make MathJax work (??)
 
 
 
+
+# Load up in tabs : 
+
+# xwininfo -tree  # Select Firefox window - copy Window id
+# xwininfo: Window id: 0x800ce5 (has no name)
+
+# Find geometry of TF&DL presentation window : Want to make screenshot 600x390
+# wmctrl -lG | grep "TensorFlow and Deep Learning"
+# 0x0200003d  1 161  68   1271 930  square.herald TensorFlow and Deep Learning Singapore : February-2018 : NIPS review - Mozilla Firefox
+
+# WIN!
+#wmctrl -r "TensorFlow and Deep Learning" -e 0,-1,-1,1280,900 # Screenshot, CopyImage, Gimp-NewImageFromClipboard : 1050x682 Resize: 600x390
+
+#wmctrl -r "TensorFlow and Deep Learning" -e 0,-1,-1,1280,900 # Screenshot, CopyImage, Gimp-NewImageFromClipboard : 1280x824 Resize: 600x386
+wmctrl -r "TensorFlow and Deep Learning" -e 0,-1,-1,1280,908 # Screenshot, CopyImage, Gimp-NewImageFromClipboard : 1280x832 Resize: 600x390
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Want to do in-depth look at :
   2014/2015 NIPS:
     -- Looking through papers for something interesting to write about

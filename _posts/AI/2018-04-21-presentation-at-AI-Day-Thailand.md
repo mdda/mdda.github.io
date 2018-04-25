@@ -32,37 +32,25 @@ audience mix was a little different, I chose to spend approximately equal time o
 *  Going through the Reptile meta-learning algorithm (implemented in PyTorch)
 *  Showing how TensorFlow Eager mode can accomplish the same, line-by-line
 
-we had a quick look at a working NASNet model.  And then went
-on showing how transfer learning can work.  That essentially covered the
-first two sections of the talk : Learning with lots of data; and Learning with some data.
-
-For the second half of the talk, I introduced meta-learning, with the 
-emphasis on one-shot learning, to show how models can be learned from very little data.  This
-topic was prompted by the publication (3 weeks earlier) of the OpenAI "Reptile" paper,
-and the VM included an updated version of the reptile-sines code.
-
-I also (re-)created a <a href="http://redcatlabs.com/2018-04-21_AI-Day-Thailand/MetaLearning-demo.html" target="_blank">
-stand-alone Reptile one-shot learning demo</a>, so that people could get an intuitive understanding of what
-a test example for the meta-learning task look like, without being connected to the internet (and without
-needing the VirtualBox VM running).
-
-Naturally, this being a FOSS event, all the source is available 
-on <a href="https://github.com/mdda/deep-learning-workshop" target="_blank">GitHub</a> - 
+As usual, all the source for the deeplearning-workshop notebooks 
+is available on <a href="https://github.com/mdda/deep-learning-workshop" target="_blank">GitHub</a> - 
 if you have questions on the software, please leave an 'issue' there.
 
-<a href="http://redcatlabs.com/2018-03-25_FOSSASIA-Workshop/" target="_blank">
-![Presentation Screenshot]({{ site.url }}/assets/img/2018-03-25_FOSSASIA-Workshop_600x390.png)
+<a href="http://redcatlabs.com/2018-04-21_AI-Day-Thailand/" target="_blank">
+![Presentation Screenshot]({{ site.url }}/assets/img/2018-04-21_AI-Day-Thailand_600x390.png)
 </a>
 
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="http://redcatlabs.com/2018-03-25_FOSSASIA-Workshop/MetaLearning-demo.html" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2018-03-25_FOSSASIA-Workshop_3boxes_600x390.png)
+<a href="http://redcatlabs.com/2018-04-21_AI-Day-Thailand/#/11/2" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2018-04-21_AI-Day-Thailand_11-2_600x390.png)
 </a>
 
 
 <!--
+wmctrl -r "AI Day - Thailand 2018 - Mozilla Firefox" -e 0,-1,-1,1280,908 # Screenshot, CopyImage, Gimp-NewImageFromClipboard : 1280x832 Resize: 600x390
+
 ### Video Link
 
 The presentation was kindly <a href="https://engineers.sg/video/deep-learning-d-i-y-workshop-fossasia-2018--2455" target="_blank">recorded by Engineers.sg</a>.
