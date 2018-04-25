@@ -12,7 +12,7 @@ tags:
 - Reptile
 - AIDay
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -20,11 +20,11 @@ published: false
 
 ### Presentation Link
 
-I was recently to Thailand by Google to give a  <strong><a href="http://redcatlabs.com/2018-04-21_AI-Day-Thailand/" target="_blank">
+I was recently flown to Thailand by Google to give a  <strong><a href="http://redcatlabs.com/2018-04-21_AI-Day-Thailand/" target="_blank">
 50 minute talk</a></strong> at the Thai Google Developer Group's [2018 AI Day](http://redcatlabs.com/2018-04-21_AI-Day-Thailand/).
 
 The talk I gave was an updated version of the FOSSASIA workshop I gave previously, but without
-the ability for people to follow along with their own Virtual Machines.  Also, because the 
+enough time for people to follow along with their own Virtual Machines.  Also, because the 
 audience mix was a little different, I chose to spend approximately equal time on four sections : 
 
 *  Machine Learning in TensorFlow Playground
