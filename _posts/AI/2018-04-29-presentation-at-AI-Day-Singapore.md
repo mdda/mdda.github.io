@@ -20,14 +20,14 @@ published: false
 
 ### Presentation Link
 
-I was recently flown to Thailand by Google to give a  <strong><a href="http://redcatlabs.com/2018-04-21_AI-Day-Thailand/" target="_blank">
-50 minute talk</a></strong> at the Thai Google Developer Group's [2018 AI Day](http://redcatlabs.com/2018-04-21_AI-Day-Thailand/).
+At last the <strong><a href="https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/249595913/" target="_blank">Singapore AI Day</a></strong> arrived!  
 
 The talk I gave was an updated version of the FOSSASIA workshop I gave previously, but without
-enough time for people to follow along with their own Virtual Machines.  Also, because the 
-audience mix was a little different, I chose to spend approximately equal time on four sections : 
+having people follow along with their own Virtual Machines, due to time construints.  
 
-*  Machine Learning in TensorFlow Playground
+I chose to give greater weight to the last three of the four sections : 
+
+*  Machine Learning in TensorFlow Playground 
 *  Using Keras model zoo for the pre-trained NASNet model, and doing transfer learning there
 *  Going through the Reptile meta-learning algorithm (implemented in PyTorch)
 *  Showing how TensorFlow Eager mode can accomplish the same, line-by-line
@@ -36,15 +36,15 @@ As usual, all the source for the deeplearning-workshop notebooks
 is available on <a href="https://github.com/mdda/deep-learning-workshop" target="_blank">GitHub</a> - 
 if you have questions on the software, please leave an 'issue' there.
 
-<a href="http://redcatlabs.com/2018-04-21_AI-Day-Thailand/" target="_blank">
-![Presentation Screenshot]({{ site.url }}/assets/img/2018-04-21_AI-Day-Thailand_600x390.png)
+<a href="http://redcatlabs.com/2018-04-29_AI-Day-Singapore/" target="_blank">
+![Presentation Screenshot]({{ site.url }}/assets/img/2018-04-29_AI-Day-Singapore_600x390.png)
 </a>
 
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="http://redcatlabs.com/2018-04-21_AI-Day-Thailand/#/11/2" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2018-04-21_AI-Day-Thailand_11-2_600x390.png)
+<a href="http://redcatlabs.com/2018-04-29_AI-Day-Singapore/#/11/2" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2018-04-29_AI-Day-Singapore_11-2_600x390.png)
 </a>
 
 
