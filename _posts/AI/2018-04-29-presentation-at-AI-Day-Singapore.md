@@ -44,12 +44,12 @@ If there are any questions about the presentation please ask below,
 or contact me using the details given on the slides themselves.
 
 <a href="http://redcatlabs.com/2018-04-29_AI-Day-Singapore/#/11/2" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2018-04-29_AI-Day-Singapore_11-2_600x390.png)
+![Presentation Content Example]({{ site.url }}/assets/img/2018-04-29_AI-Day-Singapore_12_600x390.png)
 </a>
 
 
 <!--
-wmctrl -r "AI Day - Thailand 2018 - Mozilla Firefox" -e 0,-1,-1,1280,908 # Screenshot, CopyImage, Gimp-NewImageFromClipboard : 1280x832 Resize: 600x390
+wmctrl -r "AI Day - Singapore 2018 - Mozilla Firefox" -e 0,-1,-1,1280,908 # Screenshot, CopyImage, Gimp-NewImageFromClipboard : 1280x832 Resize: 600x390
 
 ### Video Link
 
