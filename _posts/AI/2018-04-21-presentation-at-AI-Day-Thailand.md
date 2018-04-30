@@ -1,6 +1,6 @@
 ---
 date: 2018-04-21
-title: Learn to Learn to Learn
+title: Learn to Learn to Learn (Thailand)
 tagline: Presentation
 category: AI
 tags:

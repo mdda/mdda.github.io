@@ -1,6 +1,6 @@
 ---
 date: 2018-04-29
-title: Learn to Learn to Learn
+title: Learn to Learn to Learn (Singapore)
 tagline: Presentation
 category: AI
 tags:
@@ -12,7 +12,7 @@ tags:
 - Reptile
 - AIDay
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -50,11 +50,11 @@ or contact me using the details given on the slides themselves.
 
 <!--
 wmctrl -r "AI Day - Singapore 2018 - Mozilla Firefox" -e 0,-1,-1,1280,908 # Screenshot, CopyImage, Gimp-NewImageFromClipboard : 1280x832 Resize: 600x390
+!-->
 
 ### Video Link
 
-The presentation was kindly <a href="https://engineers.sg/video/deep-learning-d-i-y-workshop-fossasia-2018--2455" target="_blank">recorded by Engineers.sg</a>.
-!-->
+The presentation was kindly <a href="https://engineers.sg/video/learn-to-learn-to-learn--2589" target="_blank">recorded by Engineers.sg</a>.
 
 PS:  And if you liked the Workshop, please 'star' the <a href="https://github.com/mdda/deep-learning-workshop" target="_blank">Deep Learning Workshop</a> repo ::
 <!-- From :: https://buttons.github.io/ -->

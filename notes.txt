@@ -122,17 +122,6 @@ wmctrl -r "TensorFlow and Deep Learning" -e 0,-1,-1,1280,908 # Screenshot, CopyI
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 Want to do in-depth look at :
   2014/2015 NIPS:
     -- Looking through papers for something interesting to write about
