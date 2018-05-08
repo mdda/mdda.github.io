@@ -12,16 +12,16 @@ published: false
 ---
 {% include JB/setup %}
 
-### An alternative to Google Documentation
+### Quick route for linux command line 
+
+#### (An alternative to Google Documentation)
 
 https://stackoverflow.com/questions/48860586/how-to-upload-and-save-large-data-to-google-colaboratory-from-local-drive
 
-https://cloud.google.com/storage/docs/gsutil_install
-https://stackoverflow.com/questions/47527868/importerror-cannot-import-name-opentype-on-new-installation
+*  https://cloud.google.com/storage/docs/gsutil_install
+*  https://stackoverflow.com/questions/47527868/importerror-cannot-import-name-opentype-on-new-installation
 
 https://console.cloud.google.com/cloud-resource-manager
-
-https://cloud.google.com/storage/docs/gsutil/commands/cp
 
 
 #### Installing the Cloud tools in a ```virtualenv```
@@ -54,6 +54,8 @@ gsutil ls
 
 
 #### Actually upload to the bucket
+
+Looking at the [Google Docs](https://cloud.google.com/storage/docs/gsutil/commands/cp) :
 
 {% highlight bash %}
 cd XYZ/
