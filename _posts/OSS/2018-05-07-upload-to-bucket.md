@@ -26,14 +26,21 @@ https://console.cloud.google.com/cloud-resource-manager
 
 #### Installing the Cloud tools in a ```virtualenv```
 
-As ```user``` you just need :
+Sadly, Google's tools appear to be Python 2.x (and discussions indicate that Google considers
+updating to Python 3.x as a low priority).  Thus, rather than 'dirty' Fedora's native 2.7 installation.
+it makes sense to create a ```virtualenv``` to contain the functionality cleanly.  As ```user``` you just need :
 
 {% highlight bash %}
 virtualenv --system-site-packages gcloud-env
 . gcloud-env/bin/activate
 pip install gsutil
 pip install --upgrade google-auth-oauthlib
+{% endhighlight %}
 
+
+Cbeck that the installation has worked :
+
+{% highlight bash %}
 gsutil info
 gsutil version -l
 {% endhighlight %}
