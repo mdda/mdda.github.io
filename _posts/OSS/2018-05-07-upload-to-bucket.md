@@ -48,6 +48,9 @@ gsutil version -l
 
 #### Authenticate/configure Google Cloud account
 
+This will ask you to authenticate against your Google Cloud account (and
+save the token, and othr settings, in ```~/.XYZ```):
+
 {% highlight bash %}
 gsutil config
 {% endhighlight %}
@@ -71,7 +74,7 @@ gsutil -m cp -r FOLDER-TO-UPLOAD gs://MY-BUCKET-NAME/
 {% endhighlight %}
 
 {% highlight bash %}
-/ [35.0k/35.0k files][ 14.3 GiB/ 14.3 GiB] 100% Done  12.0 MiB/s ETA 00:00:00
+. [35.0k/35.0k files][ 14.3 GiB/ 14.3 GiB] 100% Done  12.0 MiB/s ETA 00:00:00
 Operation completed over 35.0k objects/14.3 GiB.    
 (gcloud-env) [PROMPT]$ 
 {% endhighlight %}
