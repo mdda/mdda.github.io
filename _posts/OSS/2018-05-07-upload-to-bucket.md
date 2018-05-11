@@ -8,20 +8,22 @@ tags:
 - linux
 - GoogleCloud
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
 ### Quick route for linux command line 
 
-#### (An alternative to Google Documentation)
+#### (An alternative to Google's documentation)
 
-https://stackoverflow.com/questions/48860586/how-to-upload-and-save-large-data-to-google-colaboratory-from-local-drive
+The following were useful resources for putting this together: 
+
+*  https://stackoverflow.com/questions/48860586/how-to-upload-and-save-large-data-to-google-colaboratory-from-local-drive
 
 *  https://cloud.google.com/storage/docs/gsutil_install
-*  https://stackoverflow.com/questions/47527868/importerror-cannot-import-name-opentype-on-new-installation
+   *  https://stackoverflow.com/questions/47527868/importerror-cannot-import-name-opentype-on-new-installation
 
-https://console.cloud.google.com/cloud-resource-manager
+*  https://console.cloud.google.com/cloud-resource-manager
 
 
 #### Installing the Cloud tools in a ```virtualenv```
@@ -41,7 +43,6 @@ pip install --upgrade google-auth-oauthlib
 Cbeck that the installation has worked :
 
 {% highlight bash %}
-gsutil info
 gsutil version -l
 {% endhighlight %}
 
@@ -49,11 +50,16 @@ gsutil version -l
 #### Authenticate/configure Google Cloud account
 
 This will ask you to authenticate against your Google Cloud account (and
-save the token, and othr settings, in ```~/.XYZ```):
+save the token, and othr settings, in ```~/.boto```):
 
 {% highlight bash %}
 gsutil config
 {% endhighlight %}
+
+After going to the web authentication page to get the 
+required code (which needs you to identify which Google account is linked to your
+cloud stuff), go to [the project link suggested](https://cloud.google.com/console#/project)
+to get the list of project ids, and select the one required.
 
 
 #### Look at the buckets available
@@ -65,18 +71,15 @@ gsutil ls
 
 #### Actually upload to the bucket
 
-Looking at the [Google Docs](https://cloud.google.com/storage/docs/gsutil/commands/cp) :
+Looking at the [gsutil Google documentation](https://cloud.google.com/storage/docs/gsutil/commands/cp) :
 
 {% highlight bash %}
 cd XYZ/
 gsutil help options
 gsutil -m cp -r FOLDER-TO-UPLOAD gs://MY-BUCKET-NAME/
-{% endhighlight %}
-
-{% highlight bash %}
-. [35.0k/35.0k files][ 14.3 GiB/ 14.3 GiB] 100% Done  12.0 MiB/s ETA 00:00:00
-Operation completed over 35.0k objects/14.3 GiB.    
-(gcloud-env) [PROMPT]$ 
+# ...
+# [35.0k/35.0k files][ 14.3 GiB/ 14.3 GiB] 100% Done  12.0 MiB/s ETA 00:00:00
+# Operation completed over 35.0k objects/14.3 GiB.    
 {% endhighlight %}
 
 

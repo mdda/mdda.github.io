@@ -6,6 +6,7 @@ sudo dnf install ruby-devel
 ## Instead : Add a Gemfile... and ::
 gem install bundler
 bundle install 
+bundle install --path ~/.bundle
 
 #if Ruby upgraded, simplest to ```rm -rf ~/.gem``` otherwise endless search through updates...
 #And then : 
