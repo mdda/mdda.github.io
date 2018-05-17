@@ -17,7 +17,7 @@ has been such a long time, we decided to have [our third MeetUp](https://www.mee
 once again hosted in Facebook's fine Singapore offices - and despite it being in their cafeteria, 
 there was (sadly) no food.
 
-In addition to Sam describing the new features of 0.4.0, and the roadmap to 1.0 for PyTorch,
+In addition to Sam Witteveen describing the new features of 0.4.0, and the roadmap to 1.0 for PyTorch,
 we also had a Facebook employee that talked about his work with autonomously learning robots during 
 his PhD days.
 

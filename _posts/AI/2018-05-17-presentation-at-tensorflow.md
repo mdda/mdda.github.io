@@ -17,25 +17,25 @@ published: false
 
 ### Presentation Link
 
+Following the trip that Sam Witteveen and I made to Google IO in Mountain View (Silicon Valley, California),
+we held a Google-news themed TensorFlow event - appararently [our fifteenth MeetUp](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/250679043/), 
+and the first one since the group grew beyond 2,500 people...
 
+In addition to me talking about TensorFlow.js, Sam talked about TPUs (and gave a live demo of this amazing technology).  And
+Dmitry Martyanov gave an interesting talk about sequence modelling (specifically where the intervals between
+the sequence events are also variable).
 
+The slides for my talk about TensorFlow.js are here :
 
-
-
-The source for the CNN 'Stamps' Speech Recognition model is available on 
-<a href="https://github.com/mdda/deep-learning-workshop" target="_blank">GitHub</a> - if 
-you have questions on the software, please leave an 'issue' there.
-
-
-<a href="http://redcatlabs.com/2018-03-06_TFandDL_IntroToCNNs/" target="_blank">
-![Presentation Screenshot]({{ site.url }}/assets/img/2018-03-06_TFandDL_IntroToCNNs_600x390.png)
+<a href="http://redcatlabs.com/2018-05-17_TFandDL_TensorFlow.js/" target="_blank">
+![Presentation Screenshot]({{ site.url }}/assets/img/2018-05-17_TFandDL_TensorFlow.js_600x390.png)
 </a>
 
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="http://redcatlabs.com/2018-03-06_TFandDL_IntroToCNNs/#/5/2" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2018-03-06_TFandDL_IntroToCNNs_5-2_600x390.png)
+<a href="http://redcatlabs.com/2018-05-17_TFandDL_TensorFlow.js/#/3/1" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2018-05-17_TFandDL_TensorFlow.js_3-1_600x390.png)
 </a>
 
 
