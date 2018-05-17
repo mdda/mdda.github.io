@@ -13,8 +13,9 @@ published: false
 {% include JB/setup %}
 
 
+
 Sam Witteveen and I started the PyTorch and Deep Learning Singapore group on MeetUp back in August 2017.  Just
-to prove that we intend to continue running this group, [the second MeetUp](https://www.meetup.com/PyTorch-and-Deep-Learning-Singapore/events/243672468/) 
+to prove that we intend to continue running this group, [the third MeetUp](https://www.meetup.com/PyTorch-and-Deep-Learning-Singapore/events/243672468/) 
 was again hosted in Facebook's fine Singapore offices - and this time came complete with delicious food.
 
 Following up from my discussion at the last event about the DeepMind paper 
