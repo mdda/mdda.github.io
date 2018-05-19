@@ -17,13 +17,14 @@ published: false
 
 ### Presentation Link
 
-Following the trip that Sam Witteveen and I made to Google IO in Mountain View (Silicon Valley, California),
-we held a Google-news themed TensorFlow event - appararently [our fifteenth MeetUp](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/250679043/), 
+Following the trip that Sam Witteveen and I made to [Google IO](https://events.google.com/io/recap/) 
+in Mountain View (Silicon Valley, California),  we held a Google-news themed TensorFlow event - 
+appararently [our fifteenth MeetUp](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/250679043/), 
 and the first one since the group grew beyond 2,500 people...
 
-In addition to me talking about TensorFlow.js, Sam talked about TPUs (and gave a live demo of this amazing technology).  And
-Dmitry Martyanov gave an interesting talk about sequence modelling (specifically where the intervals between
-the sequence events are also variable).
+In addition to my talk on TensorFlow.js, Sam talked about TPUs (and gave a live demo of this amazing technology), and
+Dmitry Martyanov gave an interesting talk about sequence modelling (specifically where the time intervals between
+the events in the sequence are also variable).
 
 The slides for my talk about TensorFlow.js are here :
 

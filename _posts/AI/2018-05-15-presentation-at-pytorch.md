@@ -13,8 +13,9 @@ published: false
 {% include JB/setup %}
 
 Sam Witteveen and I started the PyTorch and Deep Learning Singapore group on MeetUp back in August 2017.  Since it
-has been such a long time, we decided to have [our third MeetUp](https://www.meetup.com/PyTorch-and-Deep-Learning-Singapore/events/250567010/), 
-once again hosted in Facebook's fine Singapore offices - and despite it being in their cafeteria, 
+has been such a long time, we decided to 
+have [our third MeetUp](https://www.meetup.com/PyTorch-and-Deep-Learning-Singapore/events/250567010/), once 
+again hosted in Facebook's fine Singapore offices.  Despite it being in their cafeteria, 
 there was (sadly) no food.
 
 In addition to Sam Witteveen describing the new features of 0.4.0, and the roadmap to 1.0 for PyTorch,
