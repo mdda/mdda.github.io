@@ -8,7 +8,7 @@ tags:
 - PyTorch
 - Intrinsic Dimension
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -19,13 +19,13 @@ again hosted in Facebook's fine Singapore offices.  Despite it being in their ca
 there was (sadly) no food.
 
 In addition to Sam Witteveen describing the new features of 0.4.0, and the roadmap to 1.0 for PyTorch,
-we also had a Facebook employee that talked about his work with autonomously learning robots during 
-his PhD days.
+we also had St&eacute;phane Lall&eacute;e (from Facebook itself) who talked about his PhD work with 
+robots that learned autonomously.
 
 For my part, I gave an introductory talk about the Uber paper 
 ["Measuring the Intrinsic Dimension of Objective Landscapes"](https://arxiv.org/abs/1804.08838).  In order to 
 play around with the ideas myself, I rebuilt their models in PyTorch, 
-and demonstrated that code in a Notebook via Colab 'hands-on'.
+and demonstrated the code in a Notebook via Colab 'hands-on'.
 
 <a href="http://redcatlabs.com/2018-05-15_PyTorch_IntrinsicDimension/" target="_blank">
 ![Presentation Screenshot]({{ site.url }}/assets/img/2018-05-15_PyTorch_IntrinsicDimension_600x390.png)

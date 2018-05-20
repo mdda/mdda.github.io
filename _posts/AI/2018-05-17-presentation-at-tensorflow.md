@@ -9,7 +9,7 @@ tags:
 - GoogleIO
 - TensorFlow.js
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
