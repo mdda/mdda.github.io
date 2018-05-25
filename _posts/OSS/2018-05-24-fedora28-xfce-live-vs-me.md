@@ -26,8 +26,8 @@ systemctl start sshd
 dnf install joe scite git unzip ack 
 {% endhighlight %}
 
-Now get the other disks mounted against newly created mount-points in ```/mnt/``` (into ```/etc/fstab```).
-And re-add assorted entries into ```/etc/hosts```.
+After that, get any other pre-existing data disks mounted against newly created 
+mount-points in ```/mnt/``` (into ```/etc/fstab```).  And re-add assorted entries into ```/etc/hosts```.
 
 
 ### Base Packages
