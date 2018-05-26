@@ -34,24 +34,25 @@ mount-points in ```/mnt/``` (into ```/etc/fstab```).  And re-add assorted entrie
 
 {% highlight bash %}
 # Dead-weight
-dnf remove pragha parole abiword claws-mail* leafpad orage ristretto pidgin transmission gnumeric asunder tumbler
+dnf remove pragha parole abiword claws-mail* leafpad orage \
+           ristretto pidgin transmission goffice gnumeric asunder tumbler
+
+# Unnecessary helpers
 dnf remove dnfdragora dnfdragora-gui
 
 # Better alternatives
 dnf install libreoffice deluge 
 
-# Specific possibly desirable extras
+# Specific possibly desirable extras (though may need unison RPMs)
 dnf install baobab keepassx gstreamer1-plugin-mpg123 unison240 
 
 # Specific python extras (noteably for numpy/jupyter use)
 dnf install python-devel python2-virtualenv \
-            gcc gcc-c++ \
+            gcc gcc-c++ cmake \
             scipy numpy python-scikit-learn python-pandas Cython \
             blas-devel lapack-devel atlas-devel  \
-            python-pillow geany-plugins-geanypy  \
-            graphviz libyaml hdf5-devel
-
-#? redhat-rpm-config
+            python-pillow graphviz \
+            libyaml hdf5-devel
 
 # Graphics
 dnf install gthumb gimp inkscape
