@@ -7,7 +7,7 @@ tags:
 - linux
 - xfce
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -40,6 +40,9 @@ dnf remove pragha parole abiword claws-mail* leafpad orage \
 # Unnecessary helpers
 dnf remove dnfdragora dnfdragora-gui
 
+# Only now do the update :
+dnf update
+
 # Better alternatives
 dnf install libreoffice deluge 
 
@@ -55,7 +58,7 @@ dnf install python-devel python2-virtualenv \
             libyaml hdf5-devel
 
 # Graphics
-dnf install gthumb gimp inkscape
+dnf install mirage evince inkscape gimp 
 {% endhighlight %}
 
 
@@ -80,6 +83,29 @@ dnf config-manager --set-enabled google-chrome
 dnf install google-chrome-stable
 {% endhighlight %}
 
+
+### Geany old version (pre breaking update)
+
+Sadly, the ```geany``` update broke the python plugin mechanism - and we need to install old RPMs
+to get the functionality back : 
+
+{% highlight bash %}
+mkdir -p /root/geany/
+# Need to find and download :
+#-rw-r--r--. 1 root root 2596382 Jul 22  2017 geany-1.31-1.fc26.x86_64.rpm
+#-rw-r--r--. 1 root root 1047318 Jul 22  2017 geany-libgeany-1.31-1.fc26.x86_64.rpm
+#-rw-r--r--. 1 root root  293602 Jul 22  2017 geany-plugins-common-1.31-1.fc26.x86_64.rpm
+#-rw-r--r--. 1 root root   90738 Jul 22  2017 geany-plugins-geanypy-1.31-1.fc26.x86_64.rpm
+
+dnf install geany*.rpm
+
+{% endhighlight %}
+
+Finally, add to ```/etc/dnf/dnf.conf``` : 
+
+{% highlight bash %}
+exclude=geany*
+{% endhighlight %}
 
 
 ### Install ```vlc```
@@ -128,3 +154,10 @@ dnf install sane-backends sane-backends-drivers-scanners
 
 Note that the printer/CUPS controls can also be accessed at [http://localhost:631/](http://localhost:631/).
 
+
+
+
+
+
+
+All done.
