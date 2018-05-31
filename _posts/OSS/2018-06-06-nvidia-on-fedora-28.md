@@ -33,18 +33,46 @@ the ```TensorFlow``` team has decided :
 So, given that my installation was already working for Fedora 27, 
 I wanted to do an upgrade without disturbing the existing ```cuda-9.0``` packages.
 
-Here's a quick run-down of what has worked for me :
+Here's a quick run-down of what has worked for me (building on the [previous installation](/oss/2017/12/13/nvidia-on-fedora-27)) :
 
 
-### Clean out previous installations
+### Sanity-check the existing installation
+
+First ensure that the following is in ```/etc/dnf/dnf.conf``` : 
 
 {% highlight bash %}
-dnf remove xorg-x11-drv-nvidia  # 1Gb of stuff disappears
-dnf remove cuda-repo-*
-
-rm -rf /usr/local/cuda*
-# And remove the reminants of any other blind-alleys you've previously gone down...
+exclude=kernel* cuda* *nvidia* nvidia-driver-NVML nvidia-driver-cuda-libs 
 {% endhighlight %}
+
+This means that the standard upgrade won't touch the kernel or working ```cuda``` installation (will be fixed later).
+
+Also, take notes about which ```.conf``` files are in:
+{% highlight bash %}
+/etc/X11/
+/etc/X11/xorg.conf.d/
+{% endhighlight %}
+
+For my installation (which has a GPU card which isn't connected to a monitor, and motherboard integrated ```intel```
+graphics connected to the actual monitor), there are *NO* special ```.conf``` files : It all works 
+via autoconfiguration.  Note that NVidia has a habbit of trying to fix this up for you by writing their own
+configuration files without asking : These should be moved to ```.conf-disabled``` if you get any new problems with the following steps...
+
+
+### Upgrade the fedora version (excluding kernels)
+
+Then follow the [standard upgrade steps](https://fedoraproject.org/wiki/DNF_system_upgrade) :
+
+{% highlight bash %}
+dnf upgrade --refresh
+dnf install dnf-plugin-system-upgrade
+# reboot should be fairly quick
+
+dnf system-upgrade download --refresh --releasever=28
+dnf system-upgrade reboot
+# reboot takes ~ 40mins
+{% endhighlight %}
+
+Hopefully, everything should come back as before.  
 
 
 ### Check that you've got a GPU
@@ -55,45 +83,7 @@ Running :
 sudo lspci | grep -i NVIDIA
 {% endhighlight %}
 
-should result in a line that mentions your VGA adapter.
-
-
-### Add the Negativo Nvidia Repo
-
-The [negativo Nvidia repo](http://negativo17.org/nvidia-driver/) should now be added :
-
-{% highlight bash %}
-dnf config-manager --add-repo=http://negativo17.org/repos/fedora-nvidia.repo
-{% endhighlight %}
-
-
-And then install the nvidia driver, and the necessary libraries for ```cuda``` operations.  
-
-Note that if you want X11 to run on the graphics card, you'll obviously need a monitor 
-attached.  However, since I didn't attach a monitor to the machine while doing this, 
-it's not proven that the video card ends up capable of doing anything but ```cuda``` operations :: But that's fine with me,
-because this is a machine that won't ever have a monitor attached to it (much to the 
-disappointment of the gamers in the office).
-
-The following will each pull in a load more dependencies (the Negativo repo is intentionally modular / fragmented) :
-
-{% highlight bash %}
-dnf install kernel-devel dkms-nvidia  nvidia-driver-cuda
-dnf install cuda-devel cuda-cudnn-devel
-{% endhighlight %}
-
-In my case, I also added an ```intel``` driver for the internal on-board video subsystem 
-(just so that ```X11``` might be tempted to run if there's a monitor plugged in - but check out the 
-[companion post](/oss/2016/11/28/intel-modesetting-and-xorg) on how to get the ```X11``` 
-configuration working properly if you *do* want to add a monitor, and also enable 
-the Nvidia card for CUDA without it having a display attached) :
-
-{% highlight bash %}
-dnf install xorg-x11-drv-intel nvidia-modprobe
-{% endhighlight %}
-
-
-Now after rebooting : 
+should result in a line that mentions your VGA adapter, and the following modules should also be loaded : 
 
 {% highlight bash %}
 # sudo lsmod  | grep nv
@@ -108,6 +98,15 @@ drm                   352256  5 i915,nvidia_drm,drm_kms_helper
 The key thing here are the references to ```nvidia``` and ```nvidia_uvm```.
 
 If you've got references to ```nouveau``` appearing in ```lsmod```, something didn't work correctly.
+
+
+
+
+
+
+
+
+
 
 
 ### Install ```TensorFlow``` for the GPU 
