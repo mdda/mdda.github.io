@@ -75,7 +75,7 @@ dnf system-upgrade reboot
 Hopefully, everything should come back as before.  
 
 
-### Check that you've got a GPU
+### Check that you've (still) got a GPU
 
 Running :
 
@@ -100,9 +100,29 @@ The key thing here are the references to ```nvidia``` and ```nvidia_uvm```.
 If you've got references to ```nouveau``` appearing in ```lsmod```, something didn't work correctly.
 
 
+### Now upgrade the ```nvidia``` driver
+
+Change the ```/etc/dnf/dnf.conf``` : 
+
+{% highlight bash %}
+#exclude=kernel* cuda* *nvidia* nvidia-driver-NVML nvidia-driver-cuda-libs 
+exclude=cuda* 
+{% endhighlight %}
+
+And then run an update (and make sure you have ```nvidia-driver-NVML``` too, 
+which confused me with bad version messages for *ages*) : 
+
+{% highlight bash %}
+dnf update
+dnf install nvidia-driver-NVML nvidia-driver-cuda-libs 
+{% endhighlight %}
 
 
+At this point, check that your ```/etc/X11``` configuration hasn't been messed up, before the :
 
+{% highlight bash %}
+shutdown -r now # moment of truth
+{% endhighlight %}
 
 
 
