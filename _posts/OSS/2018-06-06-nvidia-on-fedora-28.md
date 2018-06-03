@@ -328,7 +328,7 @@ Looking within the [PyTorch installation instructions](http://pytorch.org/) we s
 an option for CUDA toolkit v9.0, which is good, and Python 3.6 is supported (also good).
 
 {% highlight bash %}
-pip3 install http://download.pytorch.org/whl/cu90/torch-0.4.0.post4-cp36-cp36m-linux_x86_64.whl 
+pip3 install http://download.pytorch.org/whl/cu90/torch-0.4.0-cp36-cp36m-linux_x86_64.whl 
 pip install torchvision  # (48Kb download)
 {% endhighlight %}
 
@@ -338,13 +338,15 @@ Then finally test it with the same Hello World calculation as we did for TensorF
 python
 import torch
 
-#dtype = torch.FloatTensor  # Use this to run on CPU
-dtype = torch.cuda.FloatTensor # Use this to run on GPU
+#device = torch.device("cpu")    # Use this to run on CPU
+device = torch.device("cuda:0") # Use this to run on GPU
 
-a = torch.Tensor( [[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]).type(dtype)
-b = torch.Tensor( [[1.0, 2.0], [3.0, 4.0], [5.0, 6.0]]).type(dtype)
+a = torch.Tensor( [[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]).to(device)
+b = torch.Tensor( [[1.0, 2.0], [3.0, 4.0], [5.0, 6.0]]).to(device)
 
-print(a.mm(b))  # matrix-multiply (should state : on GPU)
+print(a.mm(b))  # matrix-multiply : Look for device 'cuda:0' 
+# tensor([[ 22.,  28.],
+#        [ 49.,  64.]], device='cuda:0')
 {% endhighlight %}
 
 
