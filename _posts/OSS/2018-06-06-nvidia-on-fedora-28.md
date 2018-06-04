@@ -14,21 +14,18 @@ published: false
 {% include JB/setup %}
 
 
-## Just use Negativo's Repo...
+## Negativo's Repo is a bit too quick...
 
 Since Nvidia totally screwed up the ```gcc``` versioning/ABI on Fedora 24, I decided to 
-take the *easy option* and use someone else's pre-packaged Nvidia installation.
+take the *easy option* and use someone else's pre-packaged Nvidia installation.  My packager
+of choice has been [Negativo](https://negativo17.org/nvidia-driver/).
 
-I had tried this method before (on previous Fedoras), but the choices of paths had
-left me unconvinced (particularly since during the 'teething' phase of getting the
-installation working, error messages can come from all sorts of sources/reasons).
-
-*However*, the Negativo repo has been quickly updated to ```cuda-9.1``` and it seems that 
+*However*, the Negativo repo has been quickly updated to ```cuda-9.1``` whereas it seems that 
 the ```TensorFlow``` team has decided : 
 
 *  that ```9.1``` is going to be an orphan version as far as ```TensorFlow``` goes;
-*  that everything will be fixed in the ```1.9``` release of ```TensorFlow```;
-*  and that means that if you're upgrading, you're basically stuck until the 1.9RC magically appears.
+*  that everything will be fixed in the ```1.9``` release of ```TensorFlow```; and 
+*  if you're upgrading, you're basically stuck until the 1.9RC magically appears.
 
 So, given that my installation was already working for Fedora 27, 
 I wanted to do an upgrade without disturbing the existing ```cuda-9.0``` packages.
