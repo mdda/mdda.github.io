@@ -30,18 +30,19 @@ the ```TensorFlow``` team has decided :
 So, given that my installation was already working for Fedora 27, 
 I wanted to do an upgrade without disturbing the existing ```cuda-9.0``` packages.
 
-Here's a quick run-down of what has worked for me (building on the [previous installation](/oss/2017/12/13/nvidia-on-fedora-27)) :
+Here's a quick run-down of what has worked for me (building on the [previous installation](/oss/2017/12/13/nvidia-on-fedora-27))...
 
 
 ### Sanity-check the existing installation
 
-First ensure that the following is in ```/etc/dnf/dnf.conf``` : 
+First ensure that the following is in ```/etc/dnf/dnf.conf``` :
 
 {% highlight bash %}
 exclude=kernel* cuda* *nvidia* nvidia-driver-NVML nvidia-driver-cuda-libs 
 {% endhighlight %}
 
 This means that the standard upgrade won't touch the kernel or working ```cuda``` installation (will be fixed later).
+
 
 Also, check the versions of the ```nvidia``` driver, ```cuda``` and ```cudnn``` :
 
@@ -72,8 +73,7 @@ rpm -qa | grep cudnn
 {% endhighlight %}
 
 
-
-Also, take notes about which ```.conf``` files are in:
+And also, take notes about which ```.conf``` files are in:
 {% highlight bash %}
 /etc/X11/
 /etc/X11/xorg.conf.d/
@@ -84,10 +84,13 @@ graphics connected to the actual monitor), there are *NO* special ```.conf``` fi
 via autoconfiguration.  Note that NVidia has a habbit of trying to fix this up for you by writing their own
 configuration files without asking : These should be moved to ```.conf-disabled``` if you get any new problems with the following steps...
 
+Copy the information above onto a machine that isn't the one being upgraded, since 
+if this process fails then there's a chance you won't be able to see anything on the monitor, which is *frustrating*.
+
 
 ### Upgrade the fedora version (excluding kernels)
 
-Then follow the [standard upgrade steps](https://fedoraproject.org/wiki/DNF_system_upgrade) :
+Follow the [standard upgrade steps](https://fedoraproject.org/wiki/DNF_system_upgrade) :
 
 {% highlight bash %}
 dnf upgrade --refresh
@@ -210,7 +213,7 @@ Install the latest ```TensorFlow``` version (currently 1.8)
 virtualenv --system-site-packages -p python3 ~/env3
 . ~/env3/bin/activate
 
-# Then, for either version :
+# Then, for either python version :
 pip install tensorflow-gpu
 {% endhighlight %}
 
