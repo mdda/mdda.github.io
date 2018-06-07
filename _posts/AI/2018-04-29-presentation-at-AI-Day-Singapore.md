@@ -22,6 +22,26 @@ published: true
 
 At last the <strong><a href="https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/249595913/" target="_blank">Singapore AI Day</a></strong> arrived!  
 
+Our speaker line-up included : 
+
+*  A Recap from TensorFlow Summit - *Sorawit Saengkyongam, Google Developer Expert Machine Learning*
+
+*  Machine Learning in JavaScript with TensorFlow.js - *Virot Chiraphadhanakul, Google Developer Expert Machine Learning*
+
+*  Parallelising Machine Learing using R - *Chris Auld, Principal Technical Evangelist Manager - Southeast Asia at Microsoft*
+
+*  Building AI Products: From Paper to Prototype to Production - *Sam Witteveen, Google Developer Expert Machine Learning*
+
+*  Learn to Learn to Learn - *Martin Andrews, Google Developer Expert Machine Learning (me)*
+
+*  Deep learning in life sciences - *Allen Day, Developer Advocate, Google*
+
+*  Reinforcement Learning for Connect4 - *Hardeep Arora, Head AI/Advanced Analytics, Accenture* 
+
+*  Data Science at GoJek
+
+
+
 The talk I gave was an updated version of the FOSSASIA workshop I gave previously, but without
 having people follow along with their own Virtual Machines, due to time construints.  
 
