@@ -45,7 +45,6 @@ required by TensorFlow at PyTorch stands at **3.5**.
 *  750/750Ti
 
 
-
 #### Now border-line (3.5)
 
 *  Nvidia Titan -/Z/Black (REALLY?)
@@ -57,10 +56,19 @@ required by TensorFlow at PyTorch stands at **3.5**.
 #### Now obsolete (below 3.5)
 
 *  880M/870M
+*  820M/800M
 *  770/760
 *  740
+*  6-series, 5-series, 4-series, ...
 
 
 ### Bottom Line
 
+Compute Capability 'Expiry' is a problem.  Specifically for my GTX 760.
+
+Huge shout-out to the salesperson at Sim Lim Square (a large electronics 
+mall in Singapore) who upgraded me from a 750Ti to a 760 : And inadvertantly 
+doomed my GPU-for-ML ideas to premature obsolescence.  
+
+Cross-fingers that 5.2 says valid for a while...
 
