@@ -7,7 +7,7 @@ tags:
 - TensorFlow
 - PyTorch
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -76,7 +76,7 @@ Compute Capability 'Expiry' is a problem.  Specifically for my GTX 760.
 
 Huge shout-out to the salesperson at Sim Lim Square (a large electronics 
 mall in Singapore) who 'upgraded' me from a 750Ti to a 760 : And 
-doomed my GPU-for-ML plan to premature obsolescence.  
+doomed my GPU-for-ML plan to premature obsolescence... /s
 
-Cross-fingers that 5.2 says valid for a while...
+Cross-fingers that 5.2 stays valid for a while (and the Titan X that I won in an Nvidia poster competition remains relevant).
 
