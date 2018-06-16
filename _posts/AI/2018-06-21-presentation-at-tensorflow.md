@@ -31,23 +31,48 @@ recently announced by OpenAI), and then fine-tuning the output to suit your
 application. Martin will explain how this works, and you can create better models for your data, 
 leveraging the models created on other, huge datasets by Google / OpenAI / Facebook / etc.
 
+<!--
+Outline:
+
+Word2Vec / GloVe
+
+CoVe
+
+ELMo
+
+Jeremy Howard, Sebastian Ruder = Universal Language Model Fine-tuning (ULMFiT)
+  https://arxiv.org/abs/1801.06146
+
+OpenAI
+  https://blog.openai.com/language-unsupervised/
+  https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf
+  https://github.com/openai/finetune-transformer-lm
+  
+Demo 
+  Load model
+  Sentiment (simple)
+  Winograd (like Google)
+  
+  
+!-->
 
 
-In addition to my talk on TensorFlow.js, Sam talked about TPUs (and gave a live demo of this amazing technology), and
-Dmitry Martyanov gave an interesting talk about sequence modelling (specifically where the time intervals between
-the events in the sequence are also variable).
 
-The slides for my talk about TensorFlow.js are here :
 
-<a href="http://redcatlabs.com/2018-05-17_TFandDL_TensorFlow.js/" target="_blank">
-![Presentation Screenshot]({{ site.url }}/assets/img/2018-05-17_TFandDL_TensorFlow.js_600x390.png)
+In addition to my talk on Natural Language Processing trends, ...
+
+
+The slides for my talk about NLP are here :
+
+<a href="http://redcatlabs.com/2018-06-21_TFandDL_NLP-trends/" target="_blank">
+![Presentation Screenshot]({{ site.url }}/assets/img/2018-06-21_TFandDL_NLP-trends_600x390.png)
 </a>
 
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="http://redcatlabs.com/2018-05-17_TFandDL_TensorFlow.js/#/3/1" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2018-05-17_TFandDL_TensorFlow.js_3-1_600x390.png)
+<a href="http://redcatlabs.com/2018-06-21_TFandDL_NLP-trends/#/3/1" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2018-06-21_TFandDL_NLP-trends_3-1_600x390.png)
 </a>
 
 
