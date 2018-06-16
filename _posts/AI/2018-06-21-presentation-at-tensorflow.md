@@ -34,14 +34,36 @@ leveraging the models created on other, huge datasets by Google / OpenAI / Faceb
 <!--
 Outline:
 
-Word2Vec / GloVe
+2013 Word2Vec = Efficient Estimation of Word Representations in Vector Space
+  Tomas Mikolov, Kai Chen, Greg Corrado, Jeffrey Dean
+  https://arxiv.org/abs/1301.3781
+  https://radimrehurek.com/gensim/models/word2vec.html
 
-CoVe
+2014 GloVe = Global Vectors for Word Representation
+  Jeffrey Pennington,   Richard Socher,   Christopher D. Manning
+  https://nlp.stanford.edu/projects/glove/
+  https://github.com/stanfordnlp/GloVe
+  https://nlp.stanford.edu/pubs/glove.pdf
+ 
+2017 CoVe = Learned in Translation: Contextualized Word Vectors
+  Bryan McCann, James Bradbury, Caiming Xiong, Richard Socher
+  https://arxiv.org/abs/1708.00107
+  https://github.com/salesforce/cove  # PyTorch
 
-ELMo
+2018-02 ELMo = Deep contextualized word representations
+  Matthew E. Peters, Mark Neumann, Mohit Iyyer, Matt Gardner, Christopher Clark, Kenton Lee, Luke Zettlemoyer
+  https://arxiv.org/abs/1802.05365
+  https://allennlp.org/elmo
+  https://github.com/allenai/bilm-tf  # TensorFlow
+  https://www.tensorflow.org/hub/modules/google/elmo/2  # TFHub
+  https://github.com/allenai/allennlp/blob/master/tutorials/how_to/elmo.md # PyTorch
 
-Jeremy Howard, Sebastian Ruder = Universal Language Model Fine-tuning (ULMFiT)
-  https://arxiv.org/abs/1801.06146
+2018-01...05 ULMFiT = Universal Language Model Fine-tuning for Text Classification
+  Jeremy Howard, Sebastian Ruder
+  https://arxiv.org/abs/1801.06146 (flag planting??)
+  http://nlp.fast.ai/classification/2018/05/15/introducting-ulmfit.html   
+  https://github.com/fastai/fastai
+  http://files.fast.ai/models/wt103/   # Pretrained ~440Mb each
 
 OpenAI
   https://blog.openai.com/language-unsupervised/
