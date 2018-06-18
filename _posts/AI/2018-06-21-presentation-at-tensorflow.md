@@ -65,10 +65,29 @@ Outline:
   https://github.com/fastai/fastai
   http://files.fast.ai/models/wt103/   # Pretrained ~440Mb each
 
-OpenAI
+2018-06 = OpenAI  Improving Language Understanding with Unsupervised Learning
   https://blog.openai.com/language-unsupervised/
   https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf
-  https://github.com/openai/finetune-transformer-lm
+  https://github.com/openai/finetune-transformer-lm  # TF
+  https://github.com/huggingface/pytorch-openai-transformer-lm  # PyTorch
+  
+  This work builds on the approach introduced in Semi-supervised Sequence Learning, 
+  which showed how to improve document classification performance by using 
+  unsupervised pre-training of an LSTM followed by supervised fine-tuning. 
+  
+  It also extends ULMFiT, research that shows how a single dataset-agnostic LSTM language model 
+  can be fine-tuned to get state-of-the-art performance on a variety of document classification datasets; 
+  
+  our work shows how a Transformer-based model can be used in this approach to succeed at 
+  a broader range of tasks beyond document classification, such as 
+    commonsense reasoning, 
+    semantic similarity, and 
+    reading comprehension. 
+  
+  It is also similar to but more task-agnostic than ELMo, which incorporates pre-training 
+  but uses task-customized architectures to get state-of-the-art results on a broad suite of tasks.
+
+  We used a 37-layer (12 block) Transformer architecture, and we train on sequences of up to 512 tokens. 
   
 Demo 
   Load model
