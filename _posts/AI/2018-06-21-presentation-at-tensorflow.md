@@ -93,7 +93,12 @@ Demo
   Load model
   Sentiment (simple)
   Winograd (like Google)
-  
+
+Advertise 
+  Google ML event 
+  SmartHome Hackathon (?)
+  JumpStart
+  Interns
   
 !-->
 
