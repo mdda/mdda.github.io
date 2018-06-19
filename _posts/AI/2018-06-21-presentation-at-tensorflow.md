@@ -89,6 +89,11 @@ Outline:
 
   We used a 37-layer (12 block) Transformer architecture, and we train on sequences of up to 512 tokens. 
   
+2018-06 = Google  A Simple Method for Commonsense Reasoning  
+  Trieu H. Trinh, Quoc V. Le
+  https://arxiv.org/abs/1806.02847
+  
+  
 Demo 
   Load model
   Sentiment (simple)
