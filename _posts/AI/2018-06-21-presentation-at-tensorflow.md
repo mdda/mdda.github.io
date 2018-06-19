@@ -66,6 +66,7 @@ Outline:
   http://files.fast.ai/models/wt103/   # Pretrained ~440Mb each
 
 2018-06 = OpenAI  Improving Language Understanding with Unsupervised Learning
+  Alec Radford, Karthik Narasimhan, Tim Salimans, Ilya Sutskever
   https://blog.openai.com/language-unsupervised/
   https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf
   https://github.com/openai/finetune-transformer-lm  # TF
