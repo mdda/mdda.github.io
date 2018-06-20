@@ -101,9 +101,12 @@ Demo
   Winograd (like Google)
 
 Advertise 
+  Deep Learning Developer Module 1 : JumpStart
+  https://cloudplatform.googleblog.com/2018/06/Introducing-improved-pricing-for-Preemptible-GPUs.html
+  https://cloudplatform.googleblog.com/2018/06/Cloud-TPU-now-offers-preemptible-pricing-and-global-availability.html
+
   Google ML event 
   SmartHome Hackathon (?)
-  JumpStart
   Interns
   
 !-->
