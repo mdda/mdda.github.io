@@ -21,15 +21,13 @@ Sam Witteveen and I started the TensorFlow and Deep Learning Singapore group on 
 and [the sixteenth MeetUp, aka TensorFlow and Deep Learning: Dialogue and NLP](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/251687521/),
 was again hosted by Google Singapore.
 
+In addition to Matt Henderson talking about "Machine Learning for Spoken Dialogue Systems", 
+we had Hardeep Arora explaining "Sequence to Sequence Model Advances".  For my part, 
+I gave a talk on "The Rise of the Language Model", which set out to explain a major current 
+trend in Natural Language Processing : the increasing focus on using 
+pre-built 'pure' language models (such as ELMO or the model recently announced by OpenAI), 
+and then fine-tuning the output to suit specific applications. 
 
-
-"The Rise of the Language Model" - Martin Andrews
-
-This talk will explain a major current trend in Natural Language Processing : the 
-increasing focus on using pre-built 'pure' language models (such as ELMO or the model 
-recently announced by OpenAI), and then fine-tuning the output to suit your 
-application. Martin will explain how this works, and you can create better models for your data, 
-leveraging the models created on other, huge datasets by Google / OpenAI / Facebook / etc.
 
 <!--
 Outline:
@@ -111,12 +109,6 @@ Advertise
   
 !-->
 
-
-
-
-In addition to my talk on Natural Language Processing trends, ...
-
-
 The slides for my talk about NLP are here :
 
 <a href="http://redcatlabs.com/2018-06-21_TFandDL_NLP-trends/" target="_blank">
@@ -129,6 +121,11 @@ or contact me using the details given on the slides themselves.
 <a href="http://redcatlabs.com/2018-06-21_TFandDL_NLP-trends/#/3/1" target="_blank">
 ![Presentation Content Example]({{ site.url }}/assets/img/2018-06-21_TFandDL_NLP-trends_3-1_600x390.png)
 </a>
+
+
+### Video Link
+
+The presentation was kindly <a href="https://engineers.sg/video/learn-to-learn-to-learn--2589" target="_blank">recorded by Engineers.sg</a>.
 
 
 
