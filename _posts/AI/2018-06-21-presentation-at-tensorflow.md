@@ -118,8 +118,8 @@ The slides for my talk about NLP are here :
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="http://redcatlabs.com/2018-06-21_TFandDL_NLP-trends/#/3/1" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2018-06-21_TFandDL_NLP-trends_3-1_600x390.png)
+<a href="http://redcatlabs.com/2018-06-21_TFandDL_NLP-trends/#/10" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2018-06-21_TFandDL_NLP-trends_10_600x390.png)
 </a>
 
 
