@@ -6,10 +6,10 @@ category: AI
 tags:
 - Presentation
 - TensorFlow
-- GoogleIO
-- TensorFlow.js
+- NLP
+- OpenAI
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -22,10 +22,13 @@ and [the sixteenth MeetUp, aka TensorFlow and Deep Learning: Dialogue and NLP](h
 was again hosted by Google Singapore.
 
 In addition to Matt Henderson talking about "Machine Learning for Spoken Dialogue Systems", 
-we had Hardeep Arora explaining "Sequence to Sequence Model Advances".  For my part, 
+we had Hardeep Arora explaining "Sequence to Sequence Model Advances", as well as a last minute addition :
+Bo Lin Ng giving a lightning talk about the fun he is having "Using TensorFlow to implement a Generative Adversarial Network".
+
+For my part, 
 I gave a talk on "The Rise of the Language Model", which set out to explain a major current 
 trend in Natural Language Processing : the increasing focus on using 
-pre-built 'pure' language models (such as ELMO or the model recently announced by OpenAI), 
+pre-built 'pure' language models (such as ELMo or the model recently announced by OpenAI), 
 and then fine-tuning the output to suit specific applications. 
 
 
@@ -125,7 +128,7 @@ or contact me using the details given on the slides themselves.
 
 ### Video Link
 
-The presentation was kindly <a href="https://engineers.sg/video/learn-to-learn-to-learn--2589" target="_blank">recorded by Engineers.sg</a>.
+The presentation was kindly <a href="https://engineers.sg/video/the-rise-of-the-language-model-tensorflow-and-deep-learning-singapore--2696" target="_blank">recorded by Engineers.sg</a>.
 
 
 
