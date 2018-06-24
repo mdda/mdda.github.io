@@ -1,6 +1,6 @@
 ---
 date: 2018-06-21
-title: 
+title:  "NLP Trends : The Rise of the Language Model"
 tagline: Presentation
 category: AI
 tags:
