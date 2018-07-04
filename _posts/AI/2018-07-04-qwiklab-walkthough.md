@@ -32,6 +32,64 @@ reservations :
 This quick write-up is just an aide-memoire for me, so that I can plod through
 on Saturday without messing up too much.  We'll see how critical it turns out.  Cross-fingers.
 
+#### Start from scratch
+
+
+*  """Thanks for volunteering to teach the ['Baby-weight prediction'](https://google.piqwiklabs.com/focuses/607) tutorial in Qwiklabs on Sat, July 8th. """
+
+*  For you to prepare, please use the following access code : bd35-dead-beef-2015
+
+   * New browser window : "Sorry, access denied to this resource."
+   * Sign into Qwiklabs : Wants an email or a Google Login  (chose Google)
+   * Must accept the 4000+ word "Qwiklabs Terms of Service" (I Accept)
+   
+   * "You don't have any history yet! Enroll in an instructor-led course, get started on a self-paced course, or take a short lab to get started."
+   * My Account - Credits & Subscriptions - "Buy Credits or Subscriptions" button
+   * Tiny link near bottom : "Have Promo Code?" (enter 'access' code given - hopefully it's a 'promo' code)
+   * FAILURE
+
+   * Look at [See how to apply a Qwiklab access code](https://docs.google.com/presentation/d/1pDE_LOj2-0HWWxWzLD_fY_TcF1DOQ0is49ocXYJFojQ/edit?usp=sharing) : 1 Page Presentation
+   * "go to the Course or the codelab you wish to use" : (Search for "baby" in the Search Bar)
+   * Pick third link shown (only one with "baby" in the title)
+   * "Start Lab"-button -> "Enter Lab Access Code" (Cannot copy-paste code)
+   * Type in code from email : Press button
+   * Button didn't seem to work, press it again
+   * QwikLab counter seems to start to go down, but there's a big red box at the top of the page :
+     *  "Sorry, this token was already used by Martin on Wed, 04 Jul 2018 11:05:33 -0400" = Sigh, pressing on..?
+  
+   *  Presentation now says : "Qwiklabs generates a new temporary Google Account for you"
+   *  Is this the stuff on the Left Hand side?
+   *  As instructed open a new Incognito Window, and goto the [Google Cloud Console](http://console.cloud.google.com/) there
+   *  Agree to the terms of Service
+   *  But it already chose one of my existing accounts, not the new, temporary. one
+      *  Sign Out (?)
+   *  Account = Pull-down to "Use another account"
+      *  Use (randomised) username and password : "Welcome to your new account"
+      *  Accept large T&amp;Cs paragraph
+      *  "Protect your account" : nope, don't need.  "Done"
+   *  Agree to the terms of Service (for temporary account) : "Agree and Continue"
+   *  New account creation process took 10mins of the QwikLabs time
+   
+   *  Use the Hamburger in Top Left to shrink 'Catalog' sidebar
+   *  Use little arrow on Bottom Left to shrink 'Connection Details' sidebar
+   *  AHAH!  Now the QwikLabs thing fits on my laptop screen at regular 100% size
+   
+   *  Finally, on to the Lab itself...
+   
+
+### Launch Cloud Datalab
+
+
+
+### Carry out local training
+
+### Carry out distributed training
+
+### Deploy the ML model as a web service
+
+### Make predictions with the model
+
+
 
 
 
