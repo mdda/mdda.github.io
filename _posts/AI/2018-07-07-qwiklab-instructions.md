@@ -9,9 +9,10 @@ tags:
 - GoogleCloud
 - Machine Learning
 layout: post
-published: true
+published: false
 ---
 {% include JB/setup %}
+
 
 ### Redoing Google's materials 
 
@@ -31,98 +32,31 @@ Since the first run through went so badly, here's a version that makes much more
 
 
 Load up QwikLabs to get the temporary Cloud Account
+  Go to 'https://google.qwiklabs.com/focuses/607?parent=catalog'
+  "Join to Start this Lab".button.click()
   Using your own Google account
   Accept the Ts&Cs
-  Click on '' to enter the special code
+  "Start Lab".button.click()
+  Enter the special code in the popup (cannot copy-paste, though)
+  "Launch with Access Code".button.click()  (wait for it...)
+  Timer starts to count down
+  New temporary Cloud account credentials on Left hand side
+  Can minimise the 'Catalog' sidebar using the 'hamburger'
+  
+  Bad instructions are on this page too...
 
 
 Set up the Cloud Account (in incognito mode)
-  With a new incognito mode browser, load '' with the new credentials
-  Open a terminal, and set the project
-  And set the Zone (based on the Region)
-  In the main window, create a new Bucket for data
-  Copy data into the bucket using the terminal
-  Start the browser-based DataLab
+  With a new incognito mode browser, load [Google Cloud Console](http://console.cloud.google.com/) with the new credentials
+    May need to sign out of your existing account
+  'Use another Account' in account list drop-down
+    New account as email, "Next".button.click()
+    New account password, "Next".button.click()
+    Accept Ts&Cs
+    No need to protect this account (will vanish in 1h25m)
+    No email, Yes to more conditions, "Next".button.click()
+  Open a terminal (=Cloud Shell, the leftmost icon in top right group)
   
-Preparing the DataLab
-  Clone in code via UnGit
-  Go into the notebook, and start executing cells
-
-
-#### Start from scratch
-
-*  From the email : 
-
-
-    "Thanks for volunteering to teach the ['Baby-weight prediction'](https://google.piqwiklabs.com/focuses/607) 
-    tutorial in Qwiklabs on Sat, July 8th. 
-    For you to prepare, please use the following access code : ```bd35-dead-beef-2015```"
-
-
-*  Following the email link :
-
-
-   *  New browser window : "Sorry, access denied to this resource."
-   *  Sign into Qwiklabs : Wants an email or a Google Login  (chose Google)
-   *  Must accept the 4000+ word "Qwiklabs Terms of Service" (I Accept)
-
-   
-   *  "You don't have any history yet! Enroll in an instructor-led course, get started on a self-paced course, or take a short lab to get started."
-   *  My Account - Credits & Subscriptions - "Buy Credits or Subscriptions" button
-   *  Tiny link near bottom : "Have Promo Code?" (enter 'access' code given - hopefully it's a 'promo' code)
-   *  FAILURE
-
-
-   *  Look at [See how to apply a Qwiklab access code](https://docs.google.com/presentation/d/1pDE_LOj2-0HWWxWzLD_fY_TcF1DOQ0is49ocXYJFojQ/edit?usp=sharing) : 1 Page Presentation
-   *  "go to the Course or the codelab you wish to use" : (Search for "baby" in the Search Bar)
-   *  Pick third link shown (only one with "baby" in the title)
-   *  "Start Lab"-button -> "Enter Lab Access Code" (Cannot copy-paste code)
-      *  Type in code from email : Press button
-      *  Button didn't seem to work, press it again
-   *  QwikLab counter seems to start to go down, but there's a big red box at the top of the page :
-      *  "Sorry, this token was already used by Martin on Wed, 04 Jul 2018 11:05:33 -0400" = Sigh, pressing on..?
-
-
-*  Presentation now says : "Qwiklabs generates a new temporary Google Account for you"
-   *  Is this the stuff on the Left Hand side?
-   *  As instructed, open a new Incognito Window, and go to the [Google Cloud Console](http://console.cloud.google.com/) there
-   *  Agree to the terms of Service
-   *  But it already chose one of my existing accounts, not the new, temporary. one
-      *  Sign Out (?)
-
-
-   *  Account = Pull-down to "Use another account"
-      *  Use (randomised) username and password : "Welcome to your new account"
-      *  Accept large T&amp;Cs paragraph
-      *  "Protect your account" : nope, don't need.  "Done"
-   *  Agree to the terms of Service (for temporary account) : "Agree and Continue"
-   *  New account creation process took 10mins of the QwikLabs time
-
-
-*  Now seem to be signed in :    
-   *  Use the Hamburger in Top Left to shrink 'Catalog' sidebar
-   *  Use little arrow on Bottom Left to shrink 'Connection Details' sidebar
-   *  AHAH!  Now the QwikLabs thing fits on my laptop screen at regular 100% size
-
-
-   *  Finally, on to the Lab itself...
-      *  Why does the Lab timer keep jumping down?  My machine is not under any load
-
-
-   *  Instructions now state : 
-      *  "If you already have your own GCP account, make sure you do not use it for this lab."
-   *  Ohhh : Now I see that the instructions are actually on *this page*, just several page-downs away
-
-
-### Launch Cloud Datalab
-
-*  In the Incognito (new user) window, use the leftmost tiny icon on the top right to:
-   *  Open a dialog box with an animation, which seems to be typing stuff into a shell for me
-   *  Decide that it's "fake", and press "Start Cloud Shell" highlighted text at the bottom
-  
-*  Apparently, I should type in the text in the black boxes : 
-   *  ```gcloud auth list``` : Seems to produce output
-
 {% highlight bash %}
 $ gcloud auth list
           Credentialed Accounts
@@ -131,27 +65,10 @@ ACTIVE  ACCOUNT
 To set the active account, run:
     $ gcloud config set account `ACCOUNT`
 {% endhighlight %}
+    is correct
+    
 
-The account does seem to be active, but looks different from the instructions.  Puzzling.
-
-{% highlight bash %}
-$ gcloud config list project
-ERROR: (gcloud.config.list) The project property is set to the empty string, which is invalid.
-To set your project, run:
-  $ gcloud config set project PROJECT_ID
-or to unset it, run:
-  $ gcloud config unset project
-{% endhighlight %}
-
-
-Hmmm : so this seems to be untrue : 
-
-    "Once connected to the cloud shell, you'll see that you are already authenticated 
-    and the project is set to your PROJECT_ID:"
-
-
-Attempt to fix it (using the project id in the sidepane that the instructions told me to hide)
-
+  And set the project
 {% highlight bash %}
 $ gcloud config set project qwiklabs-gcp-84f8f1c4f27f96a8
 Updated property [core/project].
@@ -161,18 +78,19 @@ $ gcloud config list project
 project = qwiklabs-gcp-84f8f1c4f27f96a8
 Your active configuration is: [cloudshell-15818]
 {% endhighlight %}
+    is correct
+  
+  And set the Zone (based on the Region)
+    asia-east1 -> asia-east1-b
 
 
-This looks better.
-
-
-#### Enable Dataflow API
-
-    "On the Console, enable the Dataflow API by selecting APIs &amp; Services > Library from the left menu"
-
-So this does not refer to the Console terminal.  But apparently the whole cloud webpage is the Console.
-
-    "On the dashboard search  for 'dataflow'."
+Enable Dataflow API
+  Select your project in the top dropdown
+  Hamburger side-bar : API and Services - Dashboard : Open
+  Enable APIs and Services
+  Search for Dataflow
+    Click on panel
+    Say Yes (not test)
 
 Means type 'dataflow' into the search box.  One panel called "DataFlow API - Google" comes up, 
 mostly hidden by the Terminal Console.
@@ -194,7 +112,6 @@ This isn't mentioned in the instructions, and doing "CREATE" seems to suggest
 the wrong project id.  So don't follow that route.
 
 
-### Launch Cloud Datalab (for real this time?)
 
 {% highlight bash %}
 $ gcloud compute zones list
@@ -253,39 +170,20 @@ northamerica-northeast1-c  northamerica-northeast1  UP
 
 Wowza, that's a long list that scrolls off the page quickly.
 
-How do I pick a zone?  I need to open a [zone/capabilities list](https://cloud.google.com/ml-engine/docs/tensorflow/regions) to cross-reference,
-let's pick the Asia Pacific Region to have a look.
+    Open a [zone/capabilities list](https://cloud.google.com/ml-engine/docs/tensorflow/regions) to cross-reference, 
+    let's pick the Asia Pacific Region to have a look.
+      Actually, we can't do Cloud Serving from 'asia-east1', so the Region should be 'asia-northeast1'
+      We need a "Training" Region - and one that also allows "Online prediction"
+      
+      Pick a Zone from the previous list : 'asia-northeast1-b'
 
-But I need to know whether I'm going to be doing :
-*  Training (DEFINITELY)
-*  Training with GPUs (SOUNDS NICE)
-*  Online Prediction (HMMM - aren't we going to be predicting Baby Weights Online?)
-*  Batch Prediction
+  Timer : 1h15m
 
-Nothing say "ML Engine" - but nor do the other regions, 
-so it's not just me.
-
-Let's try the first one that looks good "asia-east1" (for 'Training', 
-but it's not ticked for 'Online Prediction', which is worrying).
 
 {% highlight bash %}
-$ datalab create babyweight --zone asia-east1
+$ datalab create babyweight --zone asia-northeast1-b
 Creating the network datalab-network
-#  Awkward pause 
 Creating the firewall rule datalab-network-allow-ssh
-#  Awkward pause 
-Creating the disk babyweight-pd
-ERROR: (gcloud.compute.disks.create) Could not fetch resource:
- - Invalid value for field 'zone': 'asia-east1'. Unknown zone.
-A nested call to gcloud failed, use --verbosity=debug for more info.
-{% endhighlight %}
-
-
-Ahhh - perhaps I should look up something in the first column that matches the Region 
-given as a column heading in the Available Regions table: 'asia-east1-b' fits the bill.
-
-{% highlight bash %}
-$ datalab create babyweight --zone asia-east1
 Creating the disk babyweight-pd
 Creating the repository datalab-notebooks
 Creating the instance babyweight
@@ -298,7 +196,6 @@ This tool needs to create the directory
 [/home/google646468_student/.ssh] before being able to generate SSH keys.
 Do you want to continue (Y/n)?
 {% endhighlight %}
-
 
 This looks a lot more promising.  
 
@@ -334,37 +231,28 @@ The connection to Datalab is now open and will remain until this command is kill
 Click on the *Web Preview* (square button at top-right), select *Change port > Port 8081*, and start using Datalab.
 {% endhighlight %}
 
-
    "Datalab will take about 5 minutes to start."
 
-Ok. so let's keep going
 
-   "In the Console, go to Products & services > Storage. Create a bucket that is regional, and match the Location to region as the VM you just made. "
-   
-   
-Hmmm.  Doesn't seem to be anything called that in the Left Hand Side panel.
-
-How about "Select a Project" from the top bar?  There are two projects available :
-   *  QwikLab resources
-   *  A project id that could be mine  (Clicked this one)
-
-Not sure that did anything.  Nothing has changed on the Left Sidebar.
-
-Next attempt : "Storage-Browser"
-*  Leads me to "Buckets" with a "Create Bucket" button.  Looks promising
-*  "Create a bucket" : "Name Must be unique across Cloud Storage. If you’re serving website content, enter the website domain as the name."
-*  Flying blind now - pick a bucket name at random "random-bucket-name-please"
-*  Regional (Checked) and "asia-east1" picked from long selection box
-*  "Create"-button (Clicked) : Some activity
-*  Now at a kind of upload/file list page
-
-"Use the + button to open another tab of Cloud Shell" : Ahh - why didn't you tell me about this before?
-
-Code template to enter the bucket name wraps...
-
+  
+  While waiting for that...
+    
+  In the main window, create a new Bucket for data
+    Hamburger : Storage - Browser - 'Create Bucket'.button.click()
+    'mdda-unique-bucket-20180705'  Regional.  'asia-east1'  'Create'.button.click()
+    
+    
+  Use the + button to open another tab of Cloud Shell
+  Copy data into the bucket using the terminal
+  
 {% highlight bash %}
+## Template :
 # gsutil cp gs://cloud-training-demos/babyweight/preproc/* gs://<BUCKET>/babyweight/preproc/
-$ gsutil cp gs://cloud-training-demos/babyweight/preproc/* gs://random-bucket-name-please/babyweight/preproc/
+
+$ gsutil cp gs://cloud-training-demos/babyweight/preproc/* gs://mdda-unique-bucket-20180705/babyweight/preproc/
+
+## This is much, much faster :
+$ gsutil -m cp gs://cloud-training-demos/babyweight/preproc/* gs://mdda-unique-bucket-20180705/babyweight/preproc/
 
 Copying gs://cloud-training-demos/babyweight/preproc/eval.csv-00000-of-00012 [Content-Type=text/plain]...
 Copying gs://cloud-training-demos/babyweight/preproc/eval.csv-00001-of-00012 [Content-Type=text/plain]...
@@ -389,51 +277,66 @@ Operation completed over 55 objects/5.7 GiB.
 {% endhighlight %}
 
 
-That looks like a warning that I'm doing something wrong - but the instructions don't mention
-anything about this step.  So I'll just let it continue
+This looks like a warning that you're doing something wrong - but the instructions don't mention
+anything about this step.  
 
-*Just a mo : There are only 23 minutes left to complete this thing...*
+  The datarate implies that this takes :
+    *  17m27s (for the non-parallel version) 
+    *  Unknown/unmetered length of time for the ```-m``` version
+  
+  
+  Start the browser-based DataLab
+    Meanwhile, you can look at the previous Cloud Shell, and it should be saying...
 
-Copying these files is like several Gb of data.  And the speed *sucks*.  Is it normally this slow?
 
-Why are there 43 files of babyweight data?  *I just want to play around with a DataLab.*  
-And this QwikLab is so slow &amp; confusing that I'll run out of time before even getting to the notebook.
+Tiny button in top right "Web Preview > Change port." - to 8081 : 'Change and Preview'.button.click()
 
 
-#### Checkout notebook into Cloud Datalab
 
-Will something happen now?  Only ... minutes left : Except the counter has reset to 1:30:00 
-(though there should be about 15mins left) - probably because I backbuttoned, and the state was lost.
-
-"Web Preview > Change port." - to 8081 : (DONE)
 
 Ahah!  The DataLab thing is working!
 
-"In Datalab, click on the icon for Open ungit in the top-right."  :  UnGit???  (DONE)
+Timer = 1h02m
+
+    
+  
+Preparing the DataLab
+  Clone in code via UnGit
+  
+
+"In Datalab, click on the icon for Open ungit in the top-right."  :  =Little Fork Icon
 
 "remove "/notebooks" from the title of the page," (DONE)
 
-'Clone From' (https://github.com/GoogleCloudPlatform/training-data-analyst) (DONE)
+'Clone From' (https://github.com/GoogleCloudPlatform/training-data-analyst) -
+destination directory is set automatically
 
-Blimey : Stuff has been going on in this repo.  (Best not to touch)
+Yes : Stuff has been going on in this repo.  (Best not to touch)
 
-Back in the DataLab file page : "Jump to File" : "training-data-analyst/blogs/babyweight/train_deploy.ipynb" (DONE)
-
-
+Back in the DataLab file page : "Jump to File" : "training-data-analyst/blogs/babyweight/train_deploy.ipynb"
+  Needs two clicks
+  
+  
+  
+  Go into the notebook, and start executing cells
+  
 #### Execute training and prediction jobs
 
 Set up the Bucket, Project and Region ids.
 
 {% highlight bash %}
-BUCKET = 'random-bucket-name-please'
-PROJECT = 'qwiklabs-gcp-84f8f1c4f27f96a8'
+BUCKET = 'mdda-unique-bucket-20180705'
+PROJECT = 'qwiklabs-gcp-e98cc244afb926e0'
 REGION = 'asia-east1'
 {% endhighlight %}
 
-
-But doesn't the cell "gsutil -m cp -R gs://cloud-training-demos/babyweight gs://${BUCKET}" 
-essentially re-do what I did on the command line (which took *ages*)?
-
+  
+  Probably still need to wait for the bucket copy process in the CloudShell to finish (now at 23/43 files) - progress is super-slow
+  
+  0h57m remaining on clock
+  
+  Run the '%%bash' copying cell (and wait...) : 
+  
 {% highlight bash %}
 # ... long wait ...
 Copying gs://cloud-training-demos/babyweight/trained_model_tuned/model.ckpt-571432.index...
@@ -442,90 +345,46 @@ Copying gs://cloud-training-demos/babyweight/trained_model_tuned/model.ckpt-5714
 Operation completed over 609 objects/6.1 GiB.    
 {% endhighlight %}
 
-
-How am I meant to get through this notebook in 15 minutes?
-
-### Carry out local training
-
-Just pressing Ctrl-Enter repeatedly now, since there's no time to read the cells...
-
-
-```import tensorflow``` cell : 
-
-{% highlight bash %}
-/usr/local/envs/py2env/lib/python2.7/site-packages/h5py/__init__.py:36: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
-  from ._conv import register_converters as _register_converters
-/usr/local/envs/py2env/lib/python2.7/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
-  from ._conv import register_converters as _register_converters
-/usr/local/envs/py2env/lib/python2.7/site-packages/h5py/_hl/group.py:22: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
-  from .. import h5g, h5i, h5o, h5r, h5t, h5l, h5p
-/usr/local/envs/py2env/lib/python2.7/site-packages/scipy/ndimage/measurements.py:36: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
-  from . import _ni_label
-/usr/local/envs/py2env/lib/python2.7/site-packages/simplejson/encoder.py:286: DeprecationWarning: Interpreting naive datetime as local 2018-07-04 16:30:35.570388. Please add timezone info to timestamps.
-  chunks = self.iterencode(o, _one_shot=True)
-{% endhighlight %}
-
-
-At the training step : 
-
-{% highlight bash %}
-/usr/local/envs/py2env/lib/python2.7/site-packages/sklearn/utils/__init__.py:10: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
-  from .murmurhash import murmurhash3_32
-/usr/local/envs/py2env/lib/python2.7/site-packages/sklearn/utils/extmath.py:24: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
-  from ._logistic_sigmoid import _log_logistic_sigmoid
-/usr/local/envs/py2env/lib/python2.7/site-packages/sklearn/metrics/cluster/supervised.py:23: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
-  from .expected_mutual_info_fast import expected_mutual_information
-/usr/local/envs/py2env/lib/python2.7/site-packages/sklearn/metrics/pairwise.py:30: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
-  from .pairwise_fast import _chi2_kernel_fast, _sparse_manhattan
-{% endhighlight %}
+  i.e. That took 484secs = 8 minutes
+  
+  0h49m remaining on clock
+  
+  # Now the actual Machine Learning can start...
+  
+  Seems like "estimator = tf.estimator.DNNLinearCombinedRegressor"
+  
+  
+  Cloud ML Engine : 
+    Hamburger - Big Data - ML Engine - Jobs
+      View Logs is interesting (takes a while for training &amp; evaluation phases to start)
+      "Task completed successfully."
+      Not sure whether pressing Stop is a good idea
+    
+    Click to open TensorBoard : WooHoo!
+    
+    .. says wait to finish, but we see in logs : 
+      "SavedModel written to: gs://mdda-unique-bucket-20180705/babyweight/trained_model/export/exporter/temp-1530782684/saved_model.pb"
+      "..."
+      "Task completed successfully."
+  
+    Deploying to serve a REST API ::
+    """
+      ERROR: (gcloud.ml-engine.models.create) INVALID_ARGUMENT: Field: model.regions 
+      Error: The provided GCE region 'asia-east1' is not available. Options are [asia-northeast1, europe-west1, us-central1, us-east1].
+    """
+    
+    Clearly, we made a bad choice 1 hour ago...
 
 
-Looks like something happened :
-
-{% highlight bash %}
-!ls babyweight_trained
-checkpoint				     model.ckpt-1000.index
-eval					     model.ckpt-1000.meta
-events.out.tfevents.1530721891.7286677d5bcc  model.ckpt-1.data-00000-of-00001
-export					     model.ckpt-1.index
-graph.pbtxt				     model.ckpt-1.meta
-model.ckpt-1000.data-00000-of-00001
-{% endhighlight %}
+  0h33m remaining on clock - but giving up since the Region was wrong at the very start.
+  
 
 
+### <strike>Deploy the ML model as a web service</strike>  (WRONG REGION)
 
-### Carry out distributed training
-
-Is that's what's happening here?  :
-
-{% highlight bash %}
-Removing gs://random-bucket-name-please/babyweight/trained_model/model.ckpt-390628.meta#1530721709406785...
-/ [58/58 objects] 100% Done                                                     
-Operation completed over 58 objects.                                             
-Job [babyweight_180704_163436] submitted successfully.
-Your job is still active. You may view the status of your job with the command
-
-  $ gcloud ml-engine jobs describe babyweight_180704_163436
-
-or continue streaming the logs with the command
-
-  $ gcloud ml-engine jobs stream-logs babyweight_180704_163436
-/usr/local/envs/py2env/lib/python2.7/site-packages/simplejson/encoder.py:286: DeprecationWarning: Interpreting naive datetime as local 2018-07-04 16:34:36.878487. Please add timezone info to timestamps.
-  chunks = self.iterencode(o, _one_shot=True)
-{% endhighlight %}
-
-
-... No idea, the connection just timed out.
-
-   *"The connection to your Google Cloud Shell was lost. "*
-
-
-
-### <strike>Deploy the ML model as a web service</strike>  (OUT OF TIME)
-
-### <strike>Make predictions with the model</strike>  (OUT OF TIME)
+### <strike>Make predictions with the model</strike>  (WRONG REGION)
 
 ----
 
-# LEARNING FAILURE
+# Better, but still *SAD*
 
