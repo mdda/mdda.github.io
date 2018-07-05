@@ -31,31 +31,31 @@ reservations :
 Since the first run through went so badly, here's a version that makes much more sense to me.
 
 
-Load up QwikLabs to get the temporary Cloud Account
-  Go to 'https://google.qwiklabs.com/focuses/607?parent=catalog'
-  "Join to Start this Lab".button.click()
-  Using your own Google account
-  Accept the Ts&Cs
-  "Start Lab".button.click()
-  Enter the special code in the popup (cannot copy-paste, though)
-  "Launch with Access Code".button.click()  (wait for it...)
-  Timer starts to count down
-  New temporary Cloud account credentials on Left hand side
-  Can minimise the 'Catalog' sidebar using the 'hamburger'
+#### Load up QwikLabs to get the temporary Cloud Account
+   *  Go to 'https://google.qwiklabs.com/focuses/607?parent=catalog'
+   *  "Join to Start this Lab".button.click()
+   *  Using your own Google account
+   *  Accept the Ts&amp;Cs
+   *  "Start Lab".button.click()
+   *  Enter the special code in the popup (cannot copy-paste, though)
+   *  "Launch with Access Code".button.click()  (wait for it...)
+   *  Timer starts to count down
+   *  New temporary Cloud account credentials on Left hand side
+   *  Can minimise the 'Catalog' sidebar using the 'hamburger'
   
-  Bad instructions are on this page too...
+   *  Bad instructions are on this page too...
 
 
-Set up the Cloud Account (in incognito mode)
-  With a new incognito mode browser, load [Google Cloud Console](http://console.cloud.google.com/) with the new credentials
-    May need to sign out of your existing account
-  'Use another Account' in account list drop-down
-    New account as email, "Next".button.click()
-    New account password, "Next".button.click()
-    Accept Ts&Cs
-    No need to protect this account (will vanish in 1h25m)
-    No email, Yes to more conditions, "Next".button.click()
-  Open a terminal (=Cloud Shell, the leftmost icon in top right group)
+#### Set up the Cloud Account (in incognito mode)
+   *  With a new incognito mode browser, load [Google Cloud Console](http://console.cloud.google.com/) with the new credentials
+      *   May need to sign out of your existing account
+   *  'Use another Account' in account list drop-down
+      * New account as email, "Next".button.click()
+      * New account password, "Next".button.click()
+      * Accept Ts&amp;Cs
+      * No need to protect this account (will vanish in 1h25m)
+      * No email, Yes to more conditions, "Next".button.click()
+   *  Open a terminal (=Cloud Shell, the leftmost icon in top right group)
   
 {% highlight bash %}
 $ gcloud auth list
@@ -67,8 +67,8 @@ To set the active account, run:
 {% endhighlight %}
     is correct
     
+And set the project : 
 
-  And set the project
 {% highlight bash %}
 $ gcloud config set project qwiklabs-gcp-84f8f1c4f27f96a8
 Updated property [core/project].
@@ -78,19 +78,16 @@ $ gcloud config list project
 project = qwiklabs-gcp-84f8f1c4f27f96a8
 Your active configuration is: [cloudshell-15818]
 {% endhighlight %}
-    is correct
+
+...    is correct
   
-  And set the Zone (based on the Region)
-    asia-east1 -> asia-east1-b
-
-
-Enable Dataflow API
-  Select your project in the top dropdown
-  Hamburger side-bar : API and Services - Dashboard : Open
-  Enable APIs and Services
-  Search for Dataflow
-    Click on panel
-    Say Yes (not test)
+#### Enable Dataflow API
+   *  Select your project in the top dropdown
+   *  Hamburger side-bar : API and Services - Dashboard : Open
+   *  Enable APIs and Services
+   *  Search for Dataflow
+      * Click on panel
+      * Say Yes (not test)
 
 Means type 'dataflow' into the search box.  One panel called "DataFlow API - Google" comes up, 
 mostly hidden by the Terminal Console.
