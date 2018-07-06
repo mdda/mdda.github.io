@@ -30,6 +30,30 @@ reservations :
 
 Since the first run through went so badly, here's a version that makes much more sense to me.
 
+### Overview
+
+*  Use QwikLabs to create a temporary Google Cloud Account
+
+*  Use that accout to start DataLabs  (with some data)
+
+*  Run the DataLab to see Machine Learning via Google Cloud
+
+
+### Overview (detail)
+
+*  Use QwikLabs to create a temporary Google Cloud Account
+   *  The QwikLab instructions are tricky to follow
+   
+*  Use that accout to start DataLabs  (with some data)
+   *  The account created is too small for the data
+   *  So we need to create a Storage Bucket for it
+   
+*  Run the DataLab to see Machine Learning via Google Cloud
+   *  There's a lot of detail in this part 
+   *  Hopefully (depending on time) we'll be able to do it all
+
+
+### Off we go!
 
 #### Load up QwikLabs to get the temporary Cloud Account
    *  Go to 'https://google.qwiklabs.com/focuses/607?parent=catalog'
@@ -67,7 +91,7 @@ To set the active account, run:
 {% endhighlight %}
     is correct
     
-And set the project : 
+And set the project (and make sure you get the correct response to the query) : 
 
 {% highlight bash %}
 $ gcloud config set project qwiklabs-gcp-84f8f1c4f27f96a8
@@ -79,23 +103,15 @@ project = qwiklabs-gcp-84f8f1c4f27f96a8
 Your active configuration is: [cloudshell-15818]
 {% endhighlight %}
 
-...    is correct
   
 #### Enable Dataflow API
    *  Select your project in the top dropdown
    *  Hamburger side-bar : API and Services - Dashboard : Open
    *  Enable APIs and Services
    *  Search for Dataflow
-      * Click on panel
-      * Say Yes (not test)
+      * Click on panel : Something seems to happen (i.e. waiting signs).
+      * "ENABLE".button.click()  (Ignore the "Try this API" button)
 
-Means type 'dataflow' into the search box.  One panel called "DataFlow API - Google" comes up, 
-mostly hidden by the Terminal Console.
-
-Click on the overall panel : Something seems to happen (i.e. waiting signs).
-A "ENABLE" button appears.  And a "Try this API" button too.
-
-Click "ENABLE" per the instructions (though "trying" sounds appealing)
 
 Now at "Library" page which says : 
 
@@ -167,14 +183,14 @@ northamerica-northeast1-c  northamerica-northeast1  UP
 
 Wowza, that's a long list that scrolls off the page quickly.
 
-    Open a [zone/capabilities list](https://cloud.google.com/ml-engine/docs/tensorflow/regions) to cross-reference, 
-    let's pick the Asia Pacific Region to have a look.
-      Actually, we can't do Cloud Serving from 'asia-east1', so the Region should be 'asia-northeast1'
-      We need a "Training" Region - and one that also allows "Online prediction"
+   *  Open a [zone/capabilities list](https://cloud.google.com/ml-engine/docs/tensorflow/regions) to cross-reference, 
+   *  let's pick the Asia Pacific Region to have a look.
+      *   Actually, we can't do Cloud Serving from 'asia-east1', so the Region should be 'asia-northeast1'
+      *   We need a "Training" Region - and one that also allows "Online prediction"
       
-      Pick a Zone from the previous list : 'asia-northeast1-b'
+      *   Pick a Zone from the previous list : 'asia-northeast1-b'
 
-  Timer : 1h15m
+*Timer : 1h15m*
 
 
 {% highlight bash %}
@@ -232,15 +248,15 @@ Click on the *Web Preview* (square button at top-right), select *Change port > P
 
 
   
-  While waiting for that...
+   *  While waiting for that...
     
-  In the main window, create a new Bucket for data
-    Hamburger : Storage - Browser - 'Create Bucket'.button.click()
-    'mdda-unique-bucket-20180705'  Regional.  'asia-east1'  'Create'.button.click()
+   *  In the main window, create a new Bucket for data
+      * Hamburger : Storage - Browser - 'Create Bucket'.button.click()
+      * 'mdda-unique-bucket-20180705'  Regional.  'asia-east1'  'Create'.button.click()
     
     
-  Use the + button to open another tab of Cloud Shell
-  Copy data into the bucket using the terminal
+   *  Use the + button to open another tab of Cloud Shell
+   *  Copy data into the bucket using the terminal
   
 {% highlight bash %}
 ## Template :
@@ -277,13 +293,13 @@ Operation completed over 55 objects/5.7 GiB.
 This looks like a warning that you're doing something wrong - but the instructions don't mention
 anything about this step.  
 
-  The datarate implies that this takes :
-    *  17m27s (for the non-parallel version) 
-    *  Unknown/unmetered length of time for the ```-m``` version
+   *  The datarate implies that this takes :
+      *  17m27s (for the non-parallel version) 
+      *  Unknown/unmetered length of time for the ```-m``` version
   
   
-  Start the browser-based DataLab
-    Meanwhile, you can look at the previous Cloud Shell, and it should be saying...
+   *  Start the browser-based DataLab
+      *   Meanwhile, you can look at the previous Cloud Shell, and it should be saying...
 
 
 Tiny button in top right "Web Preview > Change port." - to 8081 : 'Change and Preview'.button.click()
@@ -293,29 +309,31 @@ Tiny button in top right "Web Preview > Change port." - to 8081 : 'Change and Pr
 
 Ahah!  The DataLab thing is working!
 
-Timer = 1h02m
+*Timer = 1h02m*
 
     
   
-Preparing the DataLab
-  Clone in code via UnGit
+#### Preparing the DataLab
+
+Clone in code via UnGit
   
 
-"In Datalab, click on the icon for Open ungit in the top-right."  :  =Little Fork Icon
+   *  "In Datalab, click on the icon for Open ungit in the top-right."  :  =Little Fork Icon
 
-"remove "/notebooks" from the title of the page," (DONE)
+   *  "remove "/notebooks" from the title of the page," (DONE)
 
-'Clone From' (https://github.com/GoogleCloudPlatform/training-data-analyst) -
-destination directory is set automatically
+   *  'Clone From' (https://github.com/GoogleCloudPlatform/training-data-analyst) -
+       destination directory is set automatically
 
-Yes : Stuff has been going on in this repo.  (Best not to touch)
+   *  Yes : Stuff has been going on in this repo.  (Best not to touch)
 
-Back in the DataLab file page : "Jump to File" : "training-data-analyst/blogs/babyweight/train_deploy.ipynb"
-  Needs two clicks
+   *  Back in the DataLab file page : "Jump to File" : "training-data-analyst/blogs/babyweight/train_deploy.ipynb"
+      *    Needs two clicks
   
   
-  
-  Go into the notebook, and start executing cells
+Go into the notebook, and start executing cells
+
+
   
 #### Execute training and prediction jobs
 
@@ -328,11 +346,12 @@ REGION = 'asia-east1'
 {% endhighlight %}
 
   
-  Probably still need to wait for the bucket copy process in the CloudShell to finish (now at 23/43 files) - progress is super-slow
+   * Probably still need to wait for the bucket copy process in the CloudShell to finish (now at 23/43 files) - progress is super-slow
   
-  0h57m remaining on clock
+*0h57m remaining on clock*
+
   
-  Run the '%%bash' copying cell (and wait...) : 
+Run the '%%bash' copying cell (and wait...) : 
   
 {% highlight bash %}
 # ... long wait ...
@@ -342,38 +361,40 @@ Copying gs://cloud-training-demos/babyweight/trained_model_tuned/model.ckpt-5714
 Operation completed over 609 objects/6.1 GiB.    
 {% endhighlight %}
 
-  i.e. That took 484secs = 8 minutes
+i.e. That took 484secs = 8 minutes
   
-  0h49m remaining on clock
+*0h49m remaining on clock*
   
-  # Now the actual Machine Learning can start...
+#### Now the actual Machine Learning can start...
   
-  Seems like "estimator = tf.estimator.DNNLinearCombinedRegressor"
+Seems like ```estimator = tf.estimator.DNNLinearCombinedRegressor```
   
   
-  Cloud ML Engine : 
-    Hamburger - Big Data - ML Engine - Jobs
-      View Logs is interesting (takes a while for training &amp; evaluation phases to start)
-      "Task completed successfully."
-      Not sure whether pressing Stop is a good idea
+   *  Cloud ML Engine : 
+      * Hamburger - Big Data - ML Engine - Jobs
+         * View Logs is interesting (takes a while for training &amp; evaluation phases to start)
+         * "Task completed successfully."
+         * Not sure whether pressing Stop is a good idea
     
-    Click to open TensorBoard : WooHoo!
+   *  Click to open TensorBoard : WooHoo!
     
-    .. says wait to finish, but we see in logs : 
+      * says wait to finish, but we see in logs : 
+      
       "SavedModel written to: gs://mdda-unique-bucket-20180705/babyweight/trained_model/export/exporter/temp-1530782684/saved_model.pb"
       "..."
       "Task completed successfully."
   
-    Deploying to serve a REST API ::
+   *  Deploying to serve a REST API ::
+    
     """
       ERROR: (gcloud.ml-engine.models.create) INVALID_ARGUMENT: Field: model.regions 
       Error: The provided GCE region 'asia-east1' is not available. Options are [asia-northeast1, europe-west1, us-central1, us-east1].
     """
     
-    Clearly, we made a bad choice 1 hour ago...
+    *  Clearly, we made a bad choice 1 hour ago...
 
 
-  0h33m remaining on clock - but giving up since the Region was wrong at the very start.
+*0h33m remaining on clock* - but giving up since the Region was wrong at the very start.
   
 
 
