@@ -34,7 +34,7 @@ Since the first run through went so badly, here's a version that makes much more
 
 *  Use QwikLabs to create a temporary Google Cloud Account
 
-*  Use that accout to start DataLabs  (with some data)
+*  Use that account to start DataLab (with some data)
 
 *  Run the DataLab to see Machine Learning via Google Cloud
 
@@ -43,14 +43,52 @@ Since the first run through went so badly, here's a version that makes much more
 
 *  Use QwikLabs to create a temporary Google Cloud Account
    *  The QwikLab instructions are tricky to follow
-   
-*  Use that accout to start DataLabs  (with some data)
+
+
+<br/>
+*  Use that account to start DataLabs  (with some data)
    *  The account created is too small for the data
    *  So we need to create a Storage Bucket for it
-   
+
+
+<br/>
 *  Run the DataLab to see Machine Learning via Google Cloud
    *  There's a lot of detail in this part 
    *  Hopefully (depending on time) we'll be able to do it all
+
+
+### Overview (detail^2)
+
+*  Use QwikLabs to create a temporary Google Cloud Account
+   *  Be careful to leave the QwikLabs window open
+   *  The new account should be in an incognito window
+   *  The QwikLab instructions are tricky to follow
+
+
+<br/>
+*  Use that account to start DataLabs  (with some data)
+   *  Open a Cloud Shell to link to your project
+   *  Use the UI to enable the DataLab API
+
+
+<br/>
+   *  The account created is too small for the data
+   *  So we need to create a Storage Bucket for it
+   *  But that requires us to pick a region / zone
+
+
+<br/>
+   *  After that, we can link the Shell to the bucket
+   *  So we can copy data into the bucket
+   *  And then you can launch the DataLab itelf (new port &amp; tab)
+
+
+<br/>
+*  Run the DataLab to see Machine Learning via Google Cloud
+   *  There's a lot of detail in this part 
+   *  Hopefully (depending on time) we'll be able to do it all
+
+
 
 
 ### Off we go!
@@ -89,7 +127,7 @@ ACTIVE  ACCOUNT
 To set the active account, run:
     $ gcloud config set account `ACCOUNT`
 {% endhighlight %}
-    is correct
+... is correct
     
 And set the project (and make sure you get the correct response to the query) : 
 
