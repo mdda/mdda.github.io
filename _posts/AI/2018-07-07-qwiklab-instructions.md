@@ -43,15 +43,11 @@ Since the first run through went so badly, here's a version that makes much more
 
 *  Use QwikLabs to create a temporary Google Cloud Account
    *  The QwikLab instructions are tricky to follow
-
-
-<br/>
+<div style="margin-top:1em"></div>
 *  Use that account to start DataLabs  (with some data)
    *  The account created is too small for the data
    *  So we need to create a Storage Bucket for it
-
-
-<br/>
+<div style="margin-top:1em"></div>
 *  Run the DataLab to see Machine Learning via Google Cloud
    *  There's a lot of detail in this part 
    *  Hopefully (depending on time) we'll be able to do it all
@@ -63,27 +59,19 @@ Since the first run through went so badly, here's a version that makes much more
    *  Be careful to leave the QwikLabs window open
    *  The new account should be in an incognito window
    *  The QwikLab instructions are tricky to follow
-
-
-<br/>
+<div style="margin-top:1em"></div>
 *  Use that account to start DataLabs  (with some data)
    *  Open a Cloud Shell to link to your project
    *  Use the UI to enable the DataLab API
-
-
-<br/>
+   <div style="margin-top:1em"></div>
    *  The account created is too small for the data
    *  So we need to create a Storage Bucket for it
    *  But that requires us to pick a region / zone
-
-
-<br/>
+   <div style="margin-top:1em"></div>
    *  After that, we can link the Shell to the bucket
    *  So we can copy data into the bucket
    *  And then you can launch the DataLab itelf (new port &amp; tab)
-
-
-<br/>
+<div style="margin-top:1em"></div>
 *  Run the DataLab to see Machine Learning via Google Cloud
    *  There's a lot of detail in this part 
    *  Hopefully (depending on time) we'll be able to do it all
