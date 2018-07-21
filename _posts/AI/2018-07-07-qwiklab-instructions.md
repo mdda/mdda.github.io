@@ -66,11 +66,11 @@ Since the first run through went so badly, here's a version that makes much more
    <div style="margin-top:1em"></div>
    *  The account created is too small for the data
    *  So we need to create a Storage Bucket for it
-   *  But that requires us to pick a region / zone
+   *  And that requires us to pick a region / zone
    <div style="margin-top:1em"></div>
    *  After that, we can link the Shell to the bucket
    *  So we can copy data into the bucket
-   *  And then you can launch the DataLab itelf (new port &amp; tab)
+   *  And then we can launch the DataLab itelf (new port &amp; tab)
 <div style="margin-top:1em"></div>
 *  Run the DataLab to see Machine Learning via Google Cloud
    *  There's a lot of detail in this part 
@@ -93,9 +93,10 @@ Since the first run through went so badly, here's a version that makes much more
    *  New temporary Cloud account credentials on Left hand side
    *  Can minimise the 'Catalog' sidebar using the 'hamburger'
   
-   *  Bad instructions are on this page too...
-
-
+   *  All the instructions are on this page too (including some pictures), 
+      though you may want to keep going through these ones
+      
+   
 #### Set up the Cloud Account (in incognito mode)
    *  With a new incognito mode browser, load [Google Cloud Console](http://console.cloud.google.com/) with the new credentials
       *   May need to sign out of your existing account
