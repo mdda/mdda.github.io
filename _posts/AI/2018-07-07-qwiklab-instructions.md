@@ -219,15 +219,16 @@ northamerica-northeast1-c  northamerica-northeast1  UP
 
 Wowza, that's a long list that scrolls off the page quickly.
 
-   *  Open a [zone/capabilities list](https://cloud.google.com/ml-engine/docs/tensorflow/regions) to cross-reference, 
-   *  let's pick the Asia Pacific Region to have a look.
-      *   Actually, we can't do Cloud Serving from 'asia-east1', so the Region should be 'asia-northeast1'
-      *   We need a "Training" Region - and one that also allows "Online prediction"
+In order to select a suitable region/zone : 
+
+   *  Open a [zone/capabilities list](https://cloud.google.com/ml-engine/docs/tensorflow/regions) to cross-reference
+   *  For instance, pick the Asia Pacific Region to have a look :
+      *   However, one gotcha is that we can't do Cloud Serving from 'asia-east1', so the Region should be 'asia-northeast1'
+      *   That is to say : We need a "Training" Region - and one that also allows "Online prediction"
       
-      *   Pick a Zone from the previous list : 'asia-northeast1-b'
+   *   Pick a Zone from the previous list : 'asia-northeast1-b'
 
-*Timer : 1h15m*
-
+Set the zone using the console interface : 
 
 {% highlight bash %}
 $ datalab create babyweight --zone asia-northeast1-b
@@ -283,16 +284,14 @@ Click on the *Web Preview* (square button at top-right), select *Change port > P
    "Datalab will take about 5 minutes to start."
 
 
-  
-   *  While waiting for that...
+While waiting for that...
     
    *  In the main window, create a new Bucket for data
       * Hamburger : Storage - Browser - 'Create Bucket'.button.click()
       * 'mdda-unique-bucket-20180705'  Regional.  'asia-east1'  'Create'.button.click()
     
-    
-   *  Use the + button to open another tab of Cloud Shell
-   *  Copy data into the bucket using the terminal
+   *  Use the + button to open another tab of Cloud Shell (!)
+   *  Now copy data into the bucket using the console terminal :
   
 {% highlight bash %}
 ## Template :
@@ -335,13 +334,10 @@ anything about this step.
   
   
    *  Start the browser-based DataLab
-      *   Meanwhile, you can look at the previous Cloud Shell, and it should be saying...
+      *   Meanwhile, you can look at the previous Cloud Shell (terminal console), to check on progress
 
 
-Tiny button in top right "Web Preview > Change port." - to 8081 : 'Change and Preview'.button.click()
-
-
-
+Use the tiny button in top right "Web Preview > Change port." - to 8081 : 'Change and Preview'.button.click()
 
 Ahah!  The DataLab thing is working!
 
