@@ -9,7 +9,7 @@ tags:
 - GoogleCloud
 - Machine Learning
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
