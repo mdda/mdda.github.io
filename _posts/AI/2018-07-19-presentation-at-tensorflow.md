@@ -42,8 +42,8 @@ The slides for my talk are here :
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="http://redcatlabs.com/2018-07-19_TFandDL_MixedPrecision/#/10" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2018-07-19_TFandDL_MixedPrecision_10_600x390.png)
+<a href="http://redcatlabs.com/2018-07-19_TFandDL_MixedPrecision/#/10/2" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2018-07-19_TFandDL_MixedPrecision_10-2_600x390.png)
 </a>
 
 
