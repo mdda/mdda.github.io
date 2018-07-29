@@ -9,7 +9,7 @@ tags:
 - Mixed Precision
 - Nvidia
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -28,7 +28,7 @@ the new Deep Learning VM images that Google released less than 2 weeks ago.  We 
 a lightning talk by Hardeep Arora about doing face detection in the browser using TensorFlow.js.
 
 For my part, 
-I gave a talk titled "Go Faster with float16", which explained some of the intricasies in 
+I gave a talk titled "Go Faster with float16", which explained some of the intricacies in 
 training a model in a mixed-precision environment, such as might be used on a P100 or V100
 GPU (if you want to use the float16 cores - or even the TensorCores - provided by these
 server-class Nvidia chips).
@@ -49,7 +49,7 @@ or contact me using the details given on the slides themselves.
 
 
 
-PS:  And if you liked the content, please 'star' the <a href="https://github.com/mdda/deep-learning-workshop" target="_blank">Deep Learning Workshop</a> repo ::
+PS:  And if you liked the content, please 'star' my <a href="https://github.com/mdda/deep-learning-workshop" target="_blank">Deep Learning Workshop</a> repo ::
 <!-- From :: https://buttons.github.io/ -->
 <!-- Place this tag where you want the button to render. -->
 <span style="position:relative;top:5px;">
