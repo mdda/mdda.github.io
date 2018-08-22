@@ -93,17 +93,38 @@ Properties desired, and reasoning :
 
 
 *  Regions with K80s : 
-   *  asia-east1 ; asia-northeast1 ; asia-southeast1 
-   *  us-central1 ; us-east1 ; us-west1
-   *  europe-west1 ; europe-west3 ; europe-west4
+   *  That have been allocated quota... : 
+      *  asia-east1 ; asia-northeast1 ; asia-southeast1 
+      *  us-central1 ; us-east1 ; us-west1
+      *  europe-west1 ; europe-west3 ; europe-west4
 
-*  Regions with P100s (that have been allocated quota...) : 
-   *  us-central1 ; us-east1
+   *  But actually existing (https://cloud.google.com/compute/docs/gpus/ "GPUs for compute workloads") : 
+      *  us-central1-{a,c} ; us-east1-{c,d} ; us-west1-{b}
+      *  europe-west1-{b,d}
+      *  asia-east1-{a,b}
 
-*  Regions with V100s (that have been allocated quota...) : 
-   *  us-central1 ; us-east1
 
-So, we really have to choose ```us-central1``` (for instance), without loving the decision...  Arbitrary decision : choose zone 'b'.
+*  Regions with P100s :
+   *  That have been allocated quota... : 
+      *  us-central1 ; us-east1
+
+   *  But actually existing (https://cloud.google.com/compute/docs/gpus/ "GPUs for compute workloads") : 
+      *  us-central1-{c,f} ; us-west1-{a,b} ; us-east1-{b,c}
+      *  europe-west1-{b,d} ; europe-west4-{a}
+      *  asia-east1-{a,c}
+
+
+*  Regions with V100s : 
+   *  That have been allocated quota... : 
+      *  us-central1 ; us-east1
+   
+   *  But actually existing (https://cloud.google.com/compute/docs/gpus/ "GPUs for compute workloads") : 
+      *  us-central1-{a,f} ; us-west1-{a,b}
+      *  europe-west4-{a}
+      *  asia-east1-{c}
+
+
+So, we really have to choose ```us-central1``` (for instance), without loving the decision...  And since we care about P100s (and K80s) : choose zone 'c'.
 
 
 
@@ -115,7 +136,7 @@ Looking at the [Google documentation](https://cloud.google.com/storage/docs/gsut
 
 {% highlight bash %}
 export IMAGE_FAMILY="tf-latest-cu92" 
-export ZONE="us-central1-b"
+export ZONE="us-central1-c"
 export INSTANCE_NAME="rdai-tts-base-vm"
 export INSTANCE_TYPE="n1-highmem-2"
 gcloud compute instances create $INSTANCE_NAME \
