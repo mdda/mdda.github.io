@@ -31,9 +31,9 @@ The following were useful resources for putting this together:
 *  https://lobster1234.github.io/2017/05/14/get-started-on-google-cloud-with-cli/
 
 
+### Installing the Google Cloud tools
 
-
-#### Installing the Cloud tools in a ```virtualenv```
+#### Installing the python-based tools in a ```virtualenv```
 
 Sadly, Google's tools appear to be Python 2.x (and discussions indicate that Google considers
 updating to Python 3.x as a low priority).  Thus, rather than 'dirty' Fedora's native 2.7 installation.
@@ -43,15 +43,44 @@ it makes sense to create a ```virtualenv``` to contain the functionality cleanly
 virtualenv --system-site-packages gcloud-env
 . gcloud-env/bin/activate
 pip install --upgrade pip
-pip install gsutil gcloud
+pip install gsutil 
 pip install --upgrade google-auth-oauthlib
 {% endhighlight %}
-
 
 Cbeck that the installation has worked :
 
 {% highlight bash %}
 gsutil version -l
+{% endhighlight %}
+
+
+#### Installing the GCloud tool itself 'globally'
+
+We also need to install ```gcloud``` (which wasn't needed for just the bucket operations, but the compute engine creation requires it).
+
+As ```root```, update YUM with Cloud SDK repo information (NB: The indentation for the 2nd line of gpgkey is important) :
+
+{% highlight bash %}
+tee -a /etc/yum.repos.d/google-cloud-sdk.repo << EOM
+[google-cloud-sdk]
+name=Google Cloud SDK
+baseurl=https://packages.cloud.google.com/yum/repos/cloud-sdk-el7-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg
+       https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+EOM
+
+# Install the Cloud SDK (need to agree to 3 separate Signing Keys)
+dnf install google-cloud-sdk  # Installed size 127Mb
+{% highlight bash %}
+
+
+Cbeck that the installation has worked :
+
+{% highlight bash %}
+gcloud --version
 {% endhighlight %}
 
 
