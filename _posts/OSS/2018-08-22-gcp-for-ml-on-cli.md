@@ -108,19 +108,28 @@ gsutil ls
 
 ### Create a GPU-enabled VM
 
+#### Choose VM base image
+
 Do this based on ```tensorflow-gpu``` since that has been specially compiled, etc.  
 
-Properties desired, and reasoning : 
-
 *  Actual image name : ```tf-latest-cu92```  (We'll add ```PyTorch``` later)
+
+
+
+#### Choose VM cores and memory size
+
 *  Choose a 13Gb RAM, 2-core machine (doesn't need to be powerful, but prefer RAM to cores) :
    * Regular is : ```n1-standard-8 	8 	30GB 	$0.3800 	$0.0800```
    * 2-core  is : ```n1-standard-2 	2 	7.5GB 	$0.0950 	$0.0200```
    * This choice is ```n1-highmem-2 	2 	13GB 	$0.1184 	$0.0250```
+
+
+#### Choose GPU (initial, and final) - implies region/zone too
+
 *  Initially, just use a ```K80``` : 
-   * Possible : ```--accelerator='type=nvidia-tesla-v100,count=8'```
+   * Starter   : ```--accelerator='type=nvidia-tesla-k80,count=1'```
    * Realistic : ```--accelerator='type=nvidia-tesla-p100,count=1'```
-   * Starter : ```--accelerator='type=nvidia-tesla-k80,count=1'```
+   * Possible  : ```--accelerator='type=nvidia-tesla-v100,count=8'```
 
 
 *  Regions with K80s : 
@@ -158,25 +167,28 @@ Properties desired, and reasoning :
 So, we really have to choose ```us-central1``` (for instance), without loving the decision...  And since we care about P100s (and K80s) : choose zone 'c'.
 
 
+#### Choose VM persistent disk size
 
 NB: Included for free in monthly usage : 
 *  30 GB of Standard persistent disk storage per month.
-
 
 But disk size must be as big as the image....
 
 ``` - Invalid value for field 'resource.disks[0].initializeParams.diskSizeGb': '10'. Requested disk size cannot be smaller than the image size (30 GB)```
 
 
+#### Authenticate against Google Cloud
 
 gcloud auth login
+
+
+#### Choose the project id
 
 export PROJECT="rdai-tts"
 gcloud config set project $PROJECT
 
 
-Looking at the [Google documentation](https://cloud.google.com/storage/docs/gsutil/commands/cp) :
-
+#### Actually build the VM
 
 {% highlight bash %}
 export IMAGE_FAMILY="tf-latest-cu92" 
