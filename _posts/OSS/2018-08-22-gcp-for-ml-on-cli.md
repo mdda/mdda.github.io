@@ -203,14 +203,14 @@ This takes &lt; 1 minute - despite the warnings about Nvidia install times in 't
 {% highlight bash %}
 export IMAGE_FAMILY="tf-latest-cu92" 
 export ZONE="us-central1-c"
-export INSTANCE_NAME="rdai-tts-base-vm"
-export INSTANCE_TYPE="n1-highmem-2"
-gcloud compute instances create $INSTANCE_NAME \
+export BASE_INSTANCE_NAME="rdai-tts-base-vm"
+export BASE_INSTANCE_TYPE="n1-highmem-2"
+gcloud compute instances create $BASE_INSTANCE_NAME \
         --zone=$ZONE \
         --image-family=$IMAGE_FAMILY \
         --image-project=deeplearning-platform-release \
         --maintenance-policy=TERMINATE \
-        --machine-type=$INSTANCE_TYPE \
+        --machine-type=$BASE_INSTANCE_TYPE \
         --accelerator='type=nvidia-tesla-k80,count=1' \
         --boot-disk-size=30GB \
         --metadata='install-nvidia-driver=True'
@@ -227,7 +227,7 @@ rdai-tts-base-vm  us-central1-c  n1-highmem-2               10.128.0.2   WW.XX.Y
 
 #### Look around inside the VM
 
-gcloud compute ssh $INSTANCE_NAME
+gcloud compute ssh $BASE_INSTANCE_NAME
 # *NOW* IT ASKS ABOUT THE NVIDIA DRIVER!
 
 """  This VM requires Nvidia drivers to function correctly.   Installation takes 3 to 5 minutes and will automatically reboot the machine. """
@@ -266,20 +266,92 @@ Thu Aug 23 16:06:48 2018
 #### Ensure the VM is not running
 
 {% highlight bash %}
-gcloud compute instances stop $INSTANCE_NAME
+gcloud compute instances stop $BASE_INSTANCE_NAME
 {% endhighlight %}
 
 
 #### Create image from the current boot image
 
 {% highlight bash %}
-export IMAGE_NAME="rdai-awesome-image"
-export IMAGE_FAMILY="rdai-gpu-family"
+export MY_IMAGE_NAME="rdai-awesome-image"
+export MY_IMAGE_FAMILY="rdai-gpu-family"
 
-gcloud compute images create $IMAGE_NAME \
-        --source-disk $INSTANCE_NAME \
+gcloud compute images create $MY_IMAGE_NAME \
+        --source-disk $BASE_INSTANCE_NAME \
         --source-disk-zone $ZONE \
-        --family $IMAGE_FAMILY
+        --family $MY_IMAGE_FAMILY
 {% endhighlight %}
 
-(
+{% highlight bash %}
+Created [https://www.googleapis.com/compute/v1/projects/rdai-tts/global/images/rdai-awesome-image].
+NAME                PROJECT   FAMILY           DEPRECATED  STATUS
+rdai-awesome-image  rdai-tts  rdai-gpu-family              READY
+{% endhighlight %}
+
+
+
+#### So now boot a 'better GPU' image from that one
+
+{% highlight bash %}
+export INSTANCE_NAME="rdai-tts-p100-vm"
+export INSTANCE_TYPE="n1-highmem-2"
+gcloud compute instances create $INSTANCE_NAME \
+        --zone=$ZONE \
+        --image-family=$MY_IMAGE_FAMILY \
+        --maintenance-policy=TERMINATE \
+        --machine-type=$INSTANCE_TYPE \
+        --accelerator='type=nvidia-tesla-p100,count=1' \
+        --preemptible
+{% endhighlight %}
+
+
+{% highlight bash %}
+Created [https://www.googleapis.com/compute/v1/projects/rdai-tts/zones/us-central1-c/instances/rdai-tts-p100-vm].
+NAME              ZONE           MACHINE_TYPE  PREEMPTIBLE  INTERNAL_IP  EXTERNAL_IP    STATUS
+rdai-tts-p100-vm  us-central1-c  n1-highmem-2  true         10.128.0.3   WW.XX.YY.ZZ   RUNNING
+{% endhighlight %}
+
+
+
+{% highlight bash %}
+gcloud compute ssh $INSTANCE_NAME
+{% endhighlight %}
+
+
+{% highlight bash %}
+andrewsm@rdai-tts-p100-vm:~$ nvidia-smi 
+Thu Aug 23 16:58:27 2018       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 396.44                 Driver Version: 396.44                    |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|===============================+======================+======================|
+|   0  Tesla P100-PCIE...  Off  | 00000000:00:04.0 Off |                    0 |
+| N/A   36C    P0    28W / 250W |      0MiB / 16280MiB |      0%      Default |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID   Type   Process name                             Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+{% endhighlight %}
+
+
+#### Ensure the VM is not running
+
+{% highlight bash %}
+gcloud compute instances stop $INSTANCE_NAME
+{% endhighlight %}
+
+
+
+So : Now have two TERMINATED VMs with persistent disks :
+
+*  one with the BASE image (can be updated)
+*  the other as a preemptible nice-GPU one
+
+Let's wait a while, and see to what extent the preemptible machine disappears by 1:10am tomorrow...
+
