@@ -163,7 +163,20 @@ NB: Included for free in monthly usage :
 *  30 GB of Standard persistent disk storage per month.
 
 
+But disk size must be as big as the image....
+
+``` - Invalid value for field 'resource.disks[0].initializeParams.diskSizeGb': '10'. Requested disk size cannot be smaller than the image size (30 GB)```
+
+
+
+gcloud auth login
+
+export PROJECT="rdai-tts"
+gcloud config set project $PROJECT
+
+
 Looking at the [Google documentation](https://cloud.google.com/storage/docs/gsutil/commands/cp) :
+
 
 {% highlight bash %}
 export IMAGE_FAMILY="tf-latest-cu92" 
