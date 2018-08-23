@@ -228,12 +228,58 @@ rdai-tts-base-vm  us-central1-c  n1-highmem-2               10.128.0.2   WW.XX.Y
 #### Look around inside the VM
 
 gcloud compute ssh $INSTANCE_NAME
-# NOW IT ASKS ABOUT THE NVIDIA DRIVER!
+# *NOW* IT ASKS ABOUT THE NVIDIA DRIVER!
 
+"""  This VM requires Nvidia drivers to function correctly.   Installation takes 3 to 5 minutes and will automatically reboot the machine. """
+Actually took ~110secs (&lt; 2 mins)
+Reboots machine
+Re SSH in
+Installation process continues...
+
+
+{% highlight bash %}
 nvidia-smi
+
+
+Thu Aug 23 16:06:48 2018       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 396.44                 Driver Version: 396.44                    |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|===============================+======================+======================|
+|   0  Tesla K80           Off  | 00000000:00:04.0 Off |                    0 |
+| N/A   56C    P0    76W / 149W |      0MiB / 11441MiB |    100%      Default |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID   Type   Process name                             Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+{% endhighlight %}
+
 
 
 
 #### Ensure the VM is not running
 
+{% highlight bash %}
+gcloud compute instances stop $INSTANCE_NAME
+{% endhighlight %}
 
+
+#### Create image from the current boot image
+
+{% highlight bash %}
+export IMAGE_NAME="rdai-awesome-image"
+export IMAGE_FAMILY="rdai-gpu-family"
+
+gcloud compute images create $IMAGE_NAME \
+        --source-disk $INSTANCE_NAME \
+        --source-disk-zone $ZONE \
+        --family $IMAGE_FAMILY
+{% endhighlight %}
+
+(
