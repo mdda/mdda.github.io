@@ -179,16 +179,26 @@ But disk size must be as big as the image....
 
 #### Authenticate against Google Cloud
 
+This will (probably) request that you approve ```gcloud``` access from the current machine to your Google Cloud account : 
+
+{% highlight bash %}
 gcloud auth login
+{% endhighlight %}
 
 
 #### Choose the project id
 
+(Assuming you've already set up a project via the Google Cloud 'Console' GUI) :
+
+{% highlight bash %}
 export PROJECT="rdai-tts"
 gcloud config set project $PROJECT
+{% endhighlight %}
 
 
 #### Actually build the VM
+
+This takes &lt; 1 minute - despite the warnings about Nvidia install times in 'that one blog post' : 
 
 {% highlight bash %}
 export IMAGE_FAMILY="tf-latest-cu92" 
@@ -202,7 +212,28 @@ gcloud compute instances create $INSTANCE_NAME \
         --maintenance-policy=TERMINATE \
         --machine-type=$INSTANCE_TYPE \
         --accelerator='type=nvidia-tesla-k80,count=1' \
-        --boot-disk-size=10GB \
+        --boot-disk-size=30GB \
         --metadata='install-nvidia-driver=True'
 {% endhighlight %}
+
+So perhaps there's no need to do the whole cloning thing after all...
+
+{% highlight bash %}
+Created [https://www.googleapis.com/compute/v1/projects/rdai-tts/zones/us-central1-c/instances/rdai-tts-base-vm].
+NAME              ZONE           MACHINE_TYPE  PREEMPTIBLE  INTERNAL_IP  EXTERNAL_IP  STATUS
+rdai-tts-base-vm  us-central1-c  n1-highmem-2               10.128.0.2   WW.XX.YY.ZZ  RUNNING
+{% endhighlight %}
+
+
+#### Look around inside the VM
+
+gcloud compute ssh $INSTANCE_NAME
+# NOW IT ASKS ABOUT THE NVIDIA DRIVER!
+
+nvidia-smi
+
+
+
+#### Ensure the VM is not running
+
 
