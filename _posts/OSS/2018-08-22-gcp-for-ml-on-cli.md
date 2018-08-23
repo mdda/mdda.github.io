@@ -8,6 +8,7 @@ tags:
 - GoogleCloud
 - tensorflow
 - pytorch
+- fedora
 layout: post
 published: false
 ---
@@ -23,6 +24,7 @@ The following were useful resources for putting this together:
 *  https://cloud.google.com/compute/docs/instances/create-start-preemptible-instance
 
 *  https://blog.kovalevskyi.com/deep-learning-images-for-google-cloud-engine-the-definitive-guide-bc74f5fb02bc
+*  https://blog.kovalevskyi.com/gce-deeplearning-images-m4-new-pytorch-with-cuda-9-2-1913dd37a7c2
 
 *  https://medium.com/@jamsawamsa/running-a-google-cloud-gpu-for-fast-ai-for-free-5f89c707bae6
 
