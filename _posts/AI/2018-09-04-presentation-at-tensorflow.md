@@ -1,6 +1,6 @@
 ---
 date: 2018-09-04
-title:  "Does the Model Understand the Question"
+title:  "Does the Model Understand the Question?"
 tagline: Presentation
 category: AI
 tags:
@@ -24,22 +24,17 @@ was again hosted by Google Singapore.
 
 
 To some extent the theme of the MeetUp was set by Lee XA volunteering to talk about 
-"", based on his extensive experience as the TensorFlow 
-maintainer for the Gentoo project.  Sam Witteveen (via video hook-up from New York) talked about 
-the new Deep Learning VM images that Google released less than 2 weeks ago.  We also had
-a lightning talk by Hardeep Arora about doing face detection in the browser using TensorFlow.js.
+"Explainable AI : Shapley Values and Concept Activation Vectors", based on his experiences with 
+Shapley values from Scott M. Lundberg NIPS 2016 paper titled "A Unified Approach to Interpreting Model Predictions" on a transfer learned model of a CNN.
 
-
-
-
+We also had a talk by Hardeep Arora about XYZ.
 
 
 
 For my part, 
-I gave a talk titled "Go Faster with float16", which explained some of the intricacies in 
-training a model in a mixed-precision environment, such as might be used on a P100 or V100
-GPU (if you want to use the float16 cores - or even the TensorCores - provided by these
-server-class Nvidia chips).
+I gave a talk titled "Does the Model Understand the Question?", which explained some of the 
+thinking in the paper by the same title by [Mudrakarta <i>et al</i>](https://arxiv.org/abs/1805.05492).
+
 
 <!--
 Outline:

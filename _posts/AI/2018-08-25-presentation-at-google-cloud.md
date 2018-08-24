@@ -27,7 +27,19 @@ from DIY TensorFlow/Keras models to the shiny new AutoML tools.
 
 <!--
 Outline:
-
+  Who am I
+  ML Spectrum (according to Google)
+    TensorFlow 
+      TensorFlow Lite
+    DataSet API
+      TPUs
+    Keras
+    TensorFlow Eager
+    Estimators
+    Cloud ML
+    AutoML
+    
+  Two points on the spectrum
 
   
 Demo 
