@@ -20,16 +20,10 @@ Sam Witteveen and I started the TensorFlow and Deep Learning Singapore group on 
 and [the sixteenth MeetUp, aka TensorFlow and Deep Learning: Dialogue and NLP](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/251687521/),
 was again hosted by Google Singapore.
 
-In addition to Matt Henderson talking about "Machine Learning for Spoken Dialogue Systems", 
-we had Hardeep Arora explaining "Sequence to Sequence Model Advances", as well as a last minute addition :
-Bo Lin Ng giving a lightning talk about the fun he is having "Using TensorFlow to implement a Generative Adversarial Network".
-
 For my part, 
-I gave a talk on "The Rise of the Language Model", which set out to explain a major current 
-trend in Natural Language Processing : the increasing focus on using 
-pre-built 'pure' language models (such as ELMo or the model recently announced by OpenAI), 
-and then fine-tuning the output to suit specific applications. 
-
+I gave a talk on "ML options from hardcore (TF) to autopilot (AutoML)", 
+which gave a (super quick) run through of the ML spectrum available through Google : 
+from DIY TensorFlow/Keras models to the shiny new AutoML tools. 
 
 <!--
 Outline:
@@ -37,7 +31,7 @@ Outline:
 
   
 Demo 
-  Transfer Learning (Keras)
+  Transfer Learning (Keras+SVM) 
   AutoML (photos ?+ sentiment?)
 
 Advertise 

@@ -41,6 +41,19 @@ training a model in a mixed-precision environment, such as might be used on a P1
 GPU (if you want to use the float16 cores - or even the TensorCores - provided by these
 server-class Nvidia chips).
 
+<!--
+Outline:
+
+
+
+Advertise 
+  Deep Learning Developer Module 1 : JumpStart
+  TF&DL next == Frank
+  Interns
+  
+!-->
+
+
 The slides for my talk are here :
 
 <a href="http://redcatlabs.com/2018-07-19_TFandDL_MixedPrecision/" target="_blank">
