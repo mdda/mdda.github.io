@@ -261,6 +261,43 @@ Thu Aug 23 16:06:48 2018
 {% endhighlight %}
 
 
+#### Install additional useful stuff for the base image
+
+For instance see : https://www.zybuluo.com/BIGBALLON/note/685122#step-4-1-install-pytorch-via-virtualenv : 
+
+{% highlight bash %}
+sudo apt-get install python3-pip python3-dev python-virtualenv
+cd ~
+virtualenv --system-site-packages -p python3 env3
+. ~/env3/bin/activate
+# Check ... (want python 3.6)
+python --version
+# Check ...
+pip3 install http://download.pytorch.org/whl/cu92/torch-0.4.1-cp36-cp36m-linux_x86_64.whl 
+pip3 install torchvision
+{% endhighlight %}
+
+
+#### Check that TensorFlow and PyTorch are operational
+
+{% highlight python %}
+. ~/env3/bin/activate
+python --version
+python
+
+import tensorflow as tf
+
+
+
+import torch
+
+
+
+{% endhighlight %}
+
+
+
+
 
 
 #### Ensure the VM is not running
