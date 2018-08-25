@@ -84,8 +84,7 @@ or contact me using the details given on the slides themselves.
 
 ### Video Link
 
-The presentation was kindly <a href="https://engineers.sg/video/the-rise-of-the-language-model-tensorflow-and-deep-learning-singapore--2696" target="_blank">recorded by Engineers.sg</a>.
-
+The presentation was kindly <a href="https://engineers.sg/video/ml-options-from-hardcore-tf-to-autopilot-automl-google-developer-expert-machine-learning--2857" target="_blank">recorded by Engineers.sg</a>.
 
 
 PS:  And if you liked the content, please 'star' the <a href="https://github.com/mdda/deep-learning-workshop" target="_blank">Deep Learning Workshop</a> repo ::
