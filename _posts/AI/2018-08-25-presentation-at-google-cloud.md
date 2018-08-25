@@ -16,9 +16,9 @@ published: false
 
 ### Presentation Link
 
-Sam Witteveen and I started the TensorFlow and Deep Learning Singapore group on MeetUp in February 2017,
-and [the sixteenth MeetUp, aka TensorFlow and Deep Learning: Dialogue and NLP](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/251687521/),
-was again hosted by Google Singapore.
+Next '18 Extended Singapore
+
+https://www.meetup.com/GCPUGSG/events/251921227/
 
 For my part, 
 I gave a talk on "ML options from hardcore (TF) to autopilot (AutoML)", 
@@ -26,23 +26,37 @@ which gave a (super quick) run through of the ML spectrum available through Goog
 from DIY TensorFlow/Keras models to the shiny new AutoML tools. 
 
 <!--
+This Meetup is past : 405 people went
+
 Outline:
   Who am I
-  ML Spectrum (according to Google)
+  
+  Picture of the TF ecosystem (oldish)
+    Explain this initially
+    
+  ML Spectrum (more detail)
     TensorFlow 
       TensorFlow Lite
-    DataSet API
+      TensorFlow.js
+      Eager Mode
+    td.data APIs
       TPUs
     Keras
-    TensorFlow Eager
     Estimators
-    Cloud ML
     AutoML
+    Google Cloud Vision API
+    
+    
+    Google Colab
+    Google Deep Learning VM images
+    
     
   Two points on the spectrum
+  TF/Keras (Demo)
+  AutoML (~Demo)
 
   
-Demo 
+Demo (preload in browser)
   Transfer Learning (Keras+SVM) 
   AutoML (photos ?+ sentiment?)
 
@@ -53,17 +67,18 @@ Advertise
   
 !-->
 
+
 The slides for my talk about NLP are here :
 
-<a href="http://redcatlabs.com/2018-06-21_TFandDL_NLP-trends/" target="_blank">
-![Presentation Screenshot]({{ site.url }}/assets/img/2018-06-21_TFandDL_NLP-trends_600x390.png)
+<a href="http://redcatlabs.com/2018-08-25_CloudNext-SG/" target="_blank">
+![Presentation Screenshot]({{ site.url }}/assets/img/2018-08-25_CloudNext-SG_600x390.png)
 </a>
 
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="http://redcatlabs.com/2018-06-21_TFandDL_NLP-trends/#/10" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2018-06-21_TFandDL_NLP-trends_10_600x390.png)
+<a href="http://redcatlabs.com/2018-08-25_CloudNext-SG/#/9" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2018-08-25_CloudNext-SG_9_600x390.png)
 </a>
 
 
