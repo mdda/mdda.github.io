@@ -483,7 +483,16 @@ python version the kernel purports to be running), nor know about our
 custom ```virtualenv```.  So fixing that is a TODO...
 
 
+#### Run Tensorboard locally
 
+You can get access to is via a ```localhost``` browser connection by setting up a local proxy for the machine's port ```8080``` :
+
+{% highlight bash %}
+gcloud compute ssh $INSTANCE_NAME -- -L 6006:localhost:6006
+tensorboard  --port 6006 --logdir ./log
+{% endhighlight %}
+
+This works (assuming you're pointing to a log directory that has files in it...)
 
 
 ## TODO :
