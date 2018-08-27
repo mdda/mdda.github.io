@@ -433,6 +433,8 @@ So : Now have two TERMINATED VMs with persistent disks :
 
 Let's wait a while, and see to what extent the preemptible machine disappears by 1:10am tomorrow...
 
+
+
 #### Boot a Terminated image
 
 {% highlight bash %}
