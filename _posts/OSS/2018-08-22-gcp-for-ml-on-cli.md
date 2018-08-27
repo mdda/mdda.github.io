@@ -35,28 +35,16 @@ The following were useful resources for putting this together:
 
 #### Installing the python-based tools in a ```virtualenv```
 
-Sadly, Google's tools appear to be Python 2.x (and discussions indicate that Google considers
-updating to Python 3.x as a low priority).  Thus, rather than 'dirty' Fedora's native 2.7 installation.
-it makes sense to create a ```virtualenv``` to contain the functionality cleanly.  As ```user``` you just need :
+Actually, this doesn't work for ```gcloud```, which appears to install ```gsutils``` itself, so
+the previous instructions (which worked if you just need to manage Google's Storage Buckets) don't really apply here.  
 
-{% highlight bash %}
-#virtualenv --system-site-packages gcloud-env
-#. gcloud-env/bin/activate
-#pip install --upgrade pip
-#pip install gsutil 
-#pip install --upgrade google-auth-oauthlib
-{% endhighlight %}
-
-Check that the installation has worked :
-
-{% highlight bash %}
-#gsutil version -l
-{% endhighlight %}
+So : **Ignore the local virtualbox idea** : You have to install packages globally (If not, 
+please let me know in the comments below : I don't like polluting my machine with company-specific nonsense).
 
 
 #### Installing the GCloud tool itself 'globally'
 
-We also need to install ```gcloud``` (which wasn't needed for just the bucket operations, but the compute engine creation requires it).
+We need to install ```gcloud``` (which wasn't needed for just the bucket operations, but the compute engine creation requires it).
 
 As ```root```, update YUM with Cloud SDK repo information (NB: The indentation for the 2nd line of gpgkey is important) :
 
@@ -77,7 +65,7 @@ dnf install google-cloud-sdk  # Installed size 127Mb
 {% endhighlight %}
 
 
-Cbeck that the installation has worked :
+Check that the installation has worked (the commands should show some status-like information) :
 
 {% highlight bash %}
 gsutil version -l
@@ -88,37 +76,35 @@ gcloud --version
 #### Authenticate/configure Google Cloud account
 
 This will ask you to authenticate against your Google Cloud account (and
-save the token, and othr settings, in ```~/.boto```):
+save the token, and other settings, in ```~/.boto```):
 
 {% highlight bash %}
 gcloud auth login
-gcloud projects list
-gcloud config set project rdai-tts
-
-#? gsutil config
 {% endhighlight %}
 
 After going to the web authentication page to get the 
 required code (which needs you to identify which Google account is linked to your
 cloud stuff), go to [the project link suggested](https://cloud.google.com/console#/project)
-to get the list of project ids, and select the one required (or use ```gcloud projects list```, as above).
-
-
-#### Look at the buckets available (for instance)
+to get the list of project ids, and select the one required (or use ```gcloud projects list```) : 
 
 {% highlight bash %}
-gsutil ls
+gcloud projects list
+gcloud config set project rdai-tts
 {% endhighlight %}
 
 
-### Create a GPU-enabled VM
+### Choose parameters for a base GPU-enabled VM image
+
+We do this first with a low-cost GPU so that we have a VM image with the Nvidia drivers installed (as 
+well as other software that we want in all our subsequent VMs).  This disk can then be 
+cloned, and started with a better GPU (and low creation delay).
+
 
 #### Choose VM base image
 
 Do this based on ```tensorflow-gpu``` since that has been specially compiled, etc.  
 
 *  Actual image name : ```tf-latest-cu92```  (We'll add ```PyTorch``` later)
-
 
 
 #### Choose VM cores and memory size
@@ -177,9 +163,15 @@ So, we really have to choose ```us-central1``` (for instance), without loving th
 NB: Included for free in monthly usage : 
 *  30 GB of Standard persistent disk storage per month.
 
-But disk size must be as big as the image....
+But disk size must be as big as the image (sigh) :
 
-``` - Invalid value for field 'resource.disks[0].initializeParams.diskSizeGb': '10'. Requested disk size cannot be smaller than the image size (30 GB)```
+``` - Invalid value for field 'resource.disks[0].initializeParams.diskSizeGb': '10'. 
+   Requested disk size cannot be smaller than the image size (30 GB)```
+
+
+### Actually set up the base VM
+
+This includes all the necessary steps (now the choices have been justified).
 
 
 #### Authenticate against Google Cloud
@@ -203,7 +195,7 @@ gcloud config set project $PROJECT
 
 #### Actually build the VM
 
-This takes &lt; 1 minute - despite the warnings about Nvidia install times in 'that one blog post' : 
+This takes &lt; 1 minute : The main Nvidia install happens during the reboot(s) : 
 
 {% highlight bash %}
 export IMAGE_FAMILY="tf-latest-cu92" 
@@ -221,7 +213,8 @@ gcloud compute instances create $BASE_INSTANCE_NAME \
         --metadata='install-nvidia-driver=True'
 {% endhighlight %}
 
-So perhaps there's no need to do the whole cloning thing after all...
+
+Once that works, you'll get a status report message : 
 
 {% highlight bash %}
 Created [https://www.googleapis.com/compute/v1/projects/rdai-tts/zones/us-central1-c/instances/rdai-tts-base-vm].
@@ -232,20 +225,21 @@ rdai-tts-base-vm  us-central1-c  n1-highmem-2               10.128.0.2   WW.XX.Y
 
 #### Look around inside the VM
 
+{% highlight bash %}
 gcloud compute ssh $BASE_INSTANCE_NAME
 # *NOW* IT ASKS ABOUT THE NVIDIA DRIVER!
+{% endhighlight %}
 
 """  This VM requires Nvidia drivers to function correctly.   Installation takes 3 to 5 minutes and will automatically reboot the machine. """
-Actually took ~110secs (&lt; 2 mins)
-Reboots machine
-Re SSH in
-Installation process continues...
 
+*  Actually took ~110secs (&lt; 2 mins) : 
+*  Reboots machine
+*  Re-SSH in
+*  Installation process continues...
+
+Finally, run ```nvidia-smi``` to get the following GPU card 'validation' : 
 
 {% highlight bash %}
-nvidia-smi
-
-
 Thu Aug 23 16:06:48 2018       
 +-----------------------------------------------------------------------------+
 | NVIDIA-SMI 396.44                 Driver Version: 396.44                    |
@@ -268,7 +262,7 @@ Thu Aug 23 16:06:48 2018
 
 #### Install additional useful stuff for the base image
 
-For instance see : https://www.zybuluo.com/BIGBALLON/note/685122#step-4-1-install-pytorch-via-virtualenv : 
+For instance ```PyTorch``` :
 
 {% highlight bash %}
 # These are, apparently already installed
@@ -312,8 +306,8 @@ b = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[3, 2], name='b')
 c = tf.matmul(a, b)
 
 sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
-print(sess.run(c))
 
+print(sess.run(c))
 # MatMul: (MatMul): /job:localhost/replica:0/task:0/device:GPU:0
 {% endhighlight %}
 
@@ -331,9 +325,6 @@ print(a.mm(b).device)  # matrix-multiply (should state : on GPU)
 #cuda:0
 {% endhighlight %}
 
-
-
-
 #### Ensure the VM is not running
 
 {% highlight bash %}
@@ -341,7 +332,19 @@ gcloud compute instances stop $BASE_INSTANCE_NAME
 {% endhighlight %}
 
 
-#### Create image from the current boot image
+
+### Now clone the base image
+
+We're currently in a no-charge state (assuming this is your only persistent disk on GCP, 
+since you have a free 30Gb quota as a base).
+
+But, since we'd like to create new 'vanilla' machines from this one, we 
+have to go into the (low) charge-zone.
+
+
+#### Clone persistent disk from the current boot image
+
+This makes a new 'family' so that you can specify the VM+Drivers+Extras easily.
 
 {% highlight bash %}
 export MY_IMAGE_NAME="rdai-awesome-image"
@@ -360,8 +363,7 @@ rdai-awesome-image  rdai-tts  rdai-gpu-family              READY
 {% endhighlight %}
 
 
-
-#### So now create a 'better GPU' image using that boot image
+#### (Finally) create a 'better GPU' machine using that boot image
 
 {% highlight bash %}
 export INSTANCE_NAME="rdai-tts-p100-vm"
@@ -381,19 +383,18 @@ gcloud compute instances create $INSTANCE_NAME \
 #        --image-family=$MY_IMAGE_FAMILY 
 {% endhighlight %}
 
-
 {% highlight bash %}
 Created [https://www.googleapis.com/compute/v1/projects/rdai-tts/zones/us-central1-c/instances/rdai-tts-p100-vm].
 NAME              ZONE           MACHINE_TYPE  PREEMPTIBLE  INTERNAL_IP  EXTERNAL_IP    STATUS
 rdai-tts-p100-vm  us-central1-c  n1-highmem-2  true         10.128.0.3   WW.XX.YY.ZZ   RUNNING
 {% endhighlight %}
 
-
+This machine is running (and costing, for the ```preemtible P100``` version ~ $0.50 an hour).  So
+you can ```SSH``` into it : 
 
 {% highlight bash %}
 gcloud compute ssh $INSTANCE_NAME
 {% endhighlight %}
-
 
 {% highlight bash %}
 andrewsm@rdai-tts-p100-vm:~$ nvidia-smi 
@@ -417,13 +418,16 @@ Thu Aug 23 16:58:27 2018
 {% endhighlight %}
 
 
-#### Ensure the VM is not running
+#### Now ensure the VM is not running
 
 {% highlight bash %}
 gcloud compute instances stop $INSTANCE_NAME
 {% endhighlight %}
 
+To get out of the 'running a P100 for no reason' state.
 
+
+#### Summary
 
 So : Now have two TERMINATED VMs with persistent disks :
 
@@ -432,7 +436,13 @@ So : Now have two TERMINATED VMs with persistent disks :
 
 Let's wait a while, and see to what extent the preemptible machine disappears by 1:10am tomorrow...
 
+*... waited for 24hrs ...*
 
+... And indeed, the persistent disk does not die, even though a machine based on it would Terminate
+after 24hrs.  That means we can safely store data on the remaining ~14Gb of persistent disk available to us.
+
+
+### Next Steps
 
 #### Boot a Terminated image
 
@@ -447,8 +457,9 @@ gcloud compute ssh $INSTANCE_NAME
 {% endhighlight %}
 
 
-### Sort out the ```jupyter``` installation
+## TODO :
 
+#### Sort out the ```jupyter``` installation
 
 Interestingly, ```jupyter``` (which is running already) is using ```python3``` : 
 

@@ -50,7 +50,7 @@ gsutil version -l
 #### Authenticate/configure Google Cloud account
 
 This will ask you to authenticate against your Google Cloud account (and
-save the token, and othr settings, in ```~/.boto```):
+save the token, and other settings, in ```~/.boto```):
 
 {% highlight bash %}
 gsutil config
