@@ -442,7 +442,7 @@ Let's wait a while, and see to what extent the preemptible machine disappears by
 after 24hrs.  That means we can safely store data on the remaining ~14Gb of persistent disk available to us.
 
 
-### Next Steps
+### Using your shiny new cloud Machine(s)
 
 #### Boot a Terminated image
 
@@ -452,21 +452,44 @@ gcloud compute instances start $INSTANCE_NAME
 # This already has the preemptible flags, etc set
 {% endhighlight %}
 
+
+#### SSH into an image
+
 {% highlight bash %}
 gcloud compute ssh $INSTANCE_NAME
 {% endhighlight %}
+
+It's probably a good idea to run training (etc) within a ```screen``` or a ```tmux```, so that
+if your network disconnects, the machine will keep going.
+
+
+#### Run Jupyter locally
+
+We can see that ```jupyter``` is running already, apparently using ```python3``` : 
+
+{% highlight bash %}
+ps fax | grep jupyter
+# /usr/bin/python3 /usr/local/bin/jupyter-lab --config=/root/.jupyter/jupyter_notebook_config.py --allow-root
+{% endhighlight %}
+
+You can get access to is via a ```localhost``` browser connection by setting up a local proxy for the machine's port ```8080``` :
+
+{% highlight bash %}
+gcloud compute ssh $INSTANCE_NAME -- -L 8080:localhost:8080
+{% endhighlight %}
+
+*EXCEPT* : This doesn't seem to respect the kernel versions (particularly, since ```which python``` reports 2.7.x regardless of which 
+python version the kernel purports to be running), nor know about our 
+custom ```virtualenv```.  So fixing that is a TODO...
+
+
+
 
 
 ## TODO :
 
 #### Sort out the ```jupyter``` installation
 
-Interestingly, ```jupyter``` (which is running already) is using ```python3``` : 
-
-{% highlight bash %}
-ps fax | grep jupyter
-# ...  /usr/bin/python3 /usr/local/bin/jupyter-lab --config=/root/.jupyter/jupyter_notebook_config.py --allow-root
-{% endhighlight %}
 
 But may want to specify the virtualenv ...
 
@@ -484,4 +507,22 @@ tornado==5.1
 ipykernel==4.8.2
 {% endhighlight %}
 
-May need to put the virtualenv above into :: ```/home/andrewsm/.virtualenvs/env3/bin/python```
+May need to put the virtualenv above into :: ```/home/andrewsm/.virtualenvs/env3-custom/bin/python``` :
+
+
+{% highlight bash %}
+mkdir -p .virtualenvs/
+virtualenv --system-site-packages -p python3 .virtualenvs/env3-custom
+. ~/.virtualenvs/env3-custom/bin/activate
+# Check ... (want python 3.5.3)
+python --version
+
+# Install for Jupyter recognition
+pip3 install tornado==5.1 ipykernel==4.8.2  # These are already available due to system-site-packages
+pip3 install tiny # This is a test to see whether kernel is using our env
+
+# Now PyTorch install : 
+pip3 install http://download.pytorch.org/whl/cu92/torch-0.4.1-cp35-cp35m-linux_x86_64.whl 
+pip3 install torchvision # includes pillow
+{% endhighlight %}
+
