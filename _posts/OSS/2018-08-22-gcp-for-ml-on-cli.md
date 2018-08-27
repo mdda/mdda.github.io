@@ -40,17 +40,17 @@ updating to Python 3.x as a low priority).  Thus, rather than 'dirty' Fedora's n
 it makes sense to create a ```virtualenv``` to contain the functionality cleanly.  As ```user``` you just need :
 
 {% highlight bash %}
-virtualenv --system-site-packages gcloud-env
-. gcloud-env/bin/activate
-pip install --upgrade pip
-pip install gsutil 
-pip install --upgrade google-auth-oauthlib
+#virtualenv --system-site-packages gcloud-env
+#. gcloud-env/bin/activate
+#pip install --upgrade pip
+#pip install gsutil 
+#pip install --upgrade google-auth-oauthlib
 {% endhighlight %}
 
-Cbeck that the installation has worked :
+Check that the installation has worked :
 
 {% highlight bash %}
-gsutil version -l
+#gsutil version -l
 {% endhighlight %}
 
 
@@ -80,6 +80,7 @@ dnf install google-cloud-sdk  # Installed size 127Mb
 Cbeck that the installation has worked :
 
 {% highlight bash %}
+gsutil version -l
 gcloud --version
 {% endhighlight %}
 
@@ -90,13 +91,17 @@ This will ask you to authenticate against your Google Cloud account (and
 save the token, and othr settings, in ```~/.boto```):
 
 {% highlight bash %}
-gsutil config
+gcloud auth login
+gcloud projects list
+gcloud config set project rdai-tts
+
+#? gsutil config
 {% endhighlight %}
 
 After going to the web authentication page to get the 
 required code (which needs you to identify which Google account is linked to your
 cloud stuff), go to [the project link suggested](https://cloud.google.com/console#/project)
-to get the list of project ids, and select the one required.
+to get the list of project ids, and select the one required (or use ```gcloud projects list```, as above).
 
 
 #### Look at the buckets available (for instance)
@@ -266,36 +271,65 @@ Thu Aug 23 16:06:48 2018
 For instance see : https://www.zybuluo.com/BIGBALLON/note/685122#step-4-1-install-pytorch-via-virtualenv : 
 
 {% highlight bash %}
+# These are, apparently already installed
 sudo apt-get install python3-pip python3-dev python-virtualenv
+
 cd ~
 virtualenv --system-site-packages -p python3 env3
 . ~/env3/bin/activate
-# Check ... (want python 3.6)
+# Check ... (want python 3.5.3)
 python --version
-# Check ...
-pip3 install http://download.pytorch.org/whl/cu92/torch-0.4.1-cp36-cp36m-linux_x86_64.whl 
-pip3 install torchvision
+# Now PyTorch install : 
+pip3 install http://download.pytorch.org/whl/cu92/torch-0.4.1-cp35-cp35m-linux_x86_64.whl 
+pip3 install torchvision # includes pillow
+# More...?
+
+{% endhighlight %}
+
+
+About half of the 30Gb is now used : 
+
+{% highlight bash %}
+df -h | grep sda
+# /dev/sda1        30G   14G   15G  50% /
 {% endhighlight %}
 
 
 #### Check that TensorFlow and PyTorch are operational
 
-{% highlight python %}
+{% highlight bash %}
 . ~/env3/bin/activate
 python --version
 python
-
-import tensorflow as tf
-
-
-
-import torch
-
-
-
 {% endhighlight %}
 
 
+{% highlight python %}
+import tensorflow as tf
+
+a = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[2, 3], name='a')
+b = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[3, 2], name='b')
+c = tf.matmul(a, b)
+
+sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
+print(sess.run(c))
+
+# MatMul: (MatMul): /job:localhost/replica:0/task:0/device:GPU:0
+{% endhighlight %}
+
+
+{% highlight python %}
+import torch
+
+#dtype = torch.FloatTensor  # Use this to run on CPU
+dtype = torch.cuda.FloatTensor # Use this to run on GPU
+
+a = torch.Tensor( [[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]).type(dtype)
+b = torch.Tensor( [[1.0, 2.0], [3.0, 4.0], [5.0, 6.0]]).type(dtype)
+
+print(a.mm(b).device)  # matrix-multiply (should state : on GPU)
+#cuda:0
+{% endhighlight %}
 
 
 
@@ -327,18 +361,25 @@ rdai-awesome-image  rdai-tts  rdai-gpu-family              READY
 
 
 
-#### So now boot a 'better GPU' image from that one
+#### So now create a 'better GPU' image using that boot image
 
 {% highlight bash %}
 export INSTANCE_NAME="rdai-tts-p100-vm"
 export INSTANCE_TYPE="n1-highmem-2"
+export ZONE="us-central1-c"                # As above
+export MY_IMAGE_NAME="rdai-awesome-image"  # As above
+
 gcloud compute instances create $INSTANCE_NAME \
-        --zone=$ZONE \
-        --image-family=$MY_IMAGE_FAMILY \
-        --maintenance-policy=TERMINATE \
         --machine-type=$INSTANCE_TYPE \
+        --zone=$ZONE \
+        --image=$MY_IMAGE_NAME \
+        --maintenance-policy=TERMINATE \
         --accelerator='type=nvidia-tesla-p100,count=1' \
         --preemptible
+        
+# Could also use (instead of --image):
+#        --image-family=$MY_IMAGE_FAMILY 
+        
 {% endhighlight %}
 
 
@@ -391,4 +432,28 @@ So : Now have two TERMINATED VMs with persistent disks :
 *  the other as a preemptible nice-GPU one
 
 Let's wait a while, and see to what extent the preemptible machine disappears by 1:10am tomorrow...
+
+#### Boot a Terminated image
+
+{% highlight bash %}
+export INSTANCE_NAME="rdai-tts-p100-vm"  # As above
+gcloud compute instances start $INSTANCE_NAME
+# This already has the preemptible flags, etc set
+{% endhighlight %}
+
+{% highlight bash %}
+gcloud compute ssh $INSTANCE_NAME
+{% endhighlight %}
+
+
+Interestingly, ```jupyter``` (which is running already) is using ```python3``` : 
+
+{% highlight bash %}
+ps fax | grep jupyter
+# ...  /usr/bin/python3 /usr/local/bin/jupyter-lab --config=/root/.jupyter/jupyter_notebook_config.py --allow-root
+{% endhighlight %}
+
+
+
+
 
