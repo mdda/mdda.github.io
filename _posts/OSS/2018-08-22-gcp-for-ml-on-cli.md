@@ -1,6 +1,6 @@
 ---
 date: 2018-08-22
-title: Google Cloud Deep Learning images
+title: Google Cloud Deep Learning VM images
 tagline: CLI set-up
 category: OSS
 tags:

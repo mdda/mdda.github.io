@@ -32,7 +32,7 @@ We also had a talk by Hardeep Arora about XYZ.
 
 
 For my part, 
-I gave a talk titled "Does the Model Understand the Question?", which explained some of the 
+I gave a talk titled "Did the Model Understand the Question?", which explained some of the 
 thinking in the paper by the same title by [Mudrakarta <i>et al</i>](https://arxiv.org/abs/1805.05492).
 
 
@@ -51,15 +51,15 @@ Advertise
 
 The slides for my talk are here :
 
-<a href="http://redcatlabs.com/2018-07-19_TFandDL_MixedPrecision/" target="_blank">
-![Presentation Screenshot]({{ site.url }}/assets/img/2018-07-19_TFandDL_MixedPrecision_600x390.png)
+<a href="http://redcatlabs.com/2018-09-04_TFandDL_Explainability/" target="_blank">
+![Presentation Screenshot]({{ site.url }}/assets/img/2018-09-04_TFandDL_Explainability_600x390.png)
 </a>
 
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="http://redcatlabs.com/2018-07-19_TFandDL_MixedPrecision/#/10/2" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2018-07-19_TFandDL_MixedPrecision_10-2_600x390.png)
+<a href="http://redcatlabs.com/2018-09-04_TFandDL_Explainability/#/10/2" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2018-09-04_TFandDL_Explainability_10-2_600x390.png)
 </a>
 
 

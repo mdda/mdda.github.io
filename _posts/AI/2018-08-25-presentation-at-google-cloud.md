@@ -8,7 +8,7 @@ tags:
 - TensorFlow
 - AutoML
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -16,13 +16,13 @@ published: false
 
 ### Presentation Link
 
-As part of the aftermath of Google's CloudNext 2018 event in San Francisco, which I was fortunate enough to attend, Google
-groups around the world are giving "Google Cloud Next '18 Extended" events.   The 
+Part of the aftermath of Google's CloudNext 2018 event in San Francisco, which I was fortunate enough to attend, 
+is that Google groups around the world are giving "Google Cloud Next '18 Extended" events.   The 
 [Google Cloud Next '18 Extended Singapore](https://www.meetup.com/GCPUGSG/events/251921227/) event was on the 25-Aug-2018,
-and I was invited to talk about what I found most interesting from the event.
+and I was invited to talk about interesting Machine Learning take-aways from the event.
 
 So, for my part of the afternoon, 
-I gave a talk on "ML options from hardcore (TF) to autopilot (AutoML)", 
+I gave a talk that was billed as "ML options from hardcore (TF) to autopilot (AutoML)", 
 which gave a (super quick) run through of the ML spectrum available through Google : 
 from DIY TensorFlow/Keras models to the shiny new AutoML tools. 
 
