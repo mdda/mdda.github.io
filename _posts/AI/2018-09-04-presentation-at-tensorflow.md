@@ -1,6 +1,6 @@
 ---
 date: 2018-09-04
-title:  "Does the Model Understand the Question?"
+title:  "Did the Model Understand the Question?"
 tagline: Presentation
 category: AI
 tags:
