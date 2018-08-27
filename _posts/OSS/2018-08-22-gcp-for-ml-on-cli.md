@@ -74,7 +74,7 @@ EOM
 
 # Install the Cloud SDK (need to agree to 3 separate Signing Keys)
 dnf install google-cloud-sdk  # Installed size 127Mb
-{% highlight bash %}
+{% endhighlight %}
 
 
 Cbeck that the installation has worked :
@@ -379,7 +379,6 @@ gcloud compute instances create $INSTANCE_NAME \
         
 # Could also use (instead of --image):
 #        --image-family=$MY_IMAGE_FAMILY 
-        
 {% endhighlight %}
 
 
@@ -448,26 +447,30 @@ gcloud compute ssh $INSTANCE_NAME
 {% endhighlight %}
 
 
+### Sort out the ```jupyter``` installation
+
+
 Interestingly, ```jupyter``` (which is running already) is using ```python3``` : 
 
 {% highlight bash %}
 ps fax | grep jupyter
 # ...  /usr/bin/python3 /usr/local/bin/jupyter-lab --config=/root/.jupyter/jupyter_notebook_config.py --allow-root
-
-But may want to specify the virtualenv ...
-# See : https://help.pythonanywhere.com/pages/IPythonNotebookVirtualenvs/
-#workon my-virtualenv-name  # activate your virtualenv, if you haven't already
-#pip install tornado==4.5.3
-#pip install ipykernel==4.8.2
-
-#But we have : 
-#tornado==5.1
-#ipykernel==4.8.2
-
-
-/home/andrewsm/.virtualenvs/env3/bin/python
-
 {% endhighlight %}
 
+But may want to specify the virtualenv ...
 
+*   See : https://help.pythonanywhere.com/pages/IPythonNotebookVirtualenvs/
 
+{% highlight bash %}
+workon my-virtualenv-name  # activate your virtualenv, if you haven't already
+pip install tornado==4.5.3
+pip install ipykernel==4.8.2
+{% endhighlight %}
+
+But we have : 
+{% highlight bash %}
+tornado==5.1
+ipykernel==4.8.2
+{% endhighlight %}
+
+May need to put the virtualenv above into :: ```/home/andrewsm/.virtualenvs/env3/bin/python```

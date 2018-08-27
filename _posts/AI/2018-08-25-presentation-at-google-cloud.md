@@ -16,11 +16,12 @@ published: false
 
 ### Presentation Link
 
-Next '18 Extended Singapore
+As part of the aftermath of Google's CloudNext 2018 event in San Francisco, which I was fortunate enough to attend, Google
+groups around the world are giving "Google Cloud Next '18 Extended" events.   The 
+[Google Cloud Next '18 Extended Singapore](https://www.meetup.com/GCPUGSG/events/251921227/) event was on the 25-Aug-2018,
+and I was invited to talk about what I found most interesting from the event.
 
-https://www.meetup.com/GCPUGSG/events/251921227/
-
-For my part, 
+So, for my part of the afternoon, 
 I gave a talk on "ML options from hardcore (TF) to autopilot (AutoML)", 
 which gave a (super quick) run through of the ML spectrum available through Google : 
 from DIY TensorFlow/Keras models to the shiny new AutoML tools. 
@@ -68,7 +69,7 @@ Advertise
 !-->
 
 
-The slides for my talk about NLP are here :
+The slides for my talk are here :
 
 <a href="http://redcatlabs.com/2018-08-25_CloudNext-SG/" target="_blank">
 ![Presentation Screenshot]({{ site.url }}/assets/img/2018-08-25_CloudNext-SG_600x390.png)
