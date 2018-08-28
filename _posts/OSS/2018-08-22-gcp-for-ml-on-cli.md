@@ -495,6 +495,31 @@ tensorboard  --port 6006 --logdir ./log
 This works (assuming you're pointing to a log directory that has files in it...)
 
 
+#### Download files from the image
+
+See [the official documentation](https://cloud.google.com/compute/docs/instances/transfer-files#transfergcloud).  Also 
+note that it's definitely easier to get this right if you also have an open ```ssh``` session :
+
+{% highlight bash %}
+#gcloud compute scp [LOCAL_FILE_PATH] $INSTANCE_NAME:[REMOTE_FILE_PATH]
+#gcloud compute scp $INSTANCE_NAME:[REMOTE_FILE_PATH] [LOCAL_FILE_PATH]
+## Also copy recursively :
+#gcloud compute scp --recurse $INSTANCE_NAME:[REMOTE_FILE_PATH] [LOCAL_FILE_PATH]
+{% endhighlight %}
+
+
+#### Stop the VM
+
+I've included this one twice, since it's important not to let these things sit idle...
+
+{% highlight bash %}
+gcloud compute instances stop $INSTANCE_NAME
+{% endhighlight %}
+
+
+
+
+
 ## TODO :
 
 #### Sort out the ```jupyter``` installation
