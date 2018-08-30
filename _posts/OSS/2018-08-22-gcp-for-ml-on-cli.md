@@ -508,6 +508,15 @@ note that it's definitely easier to get this right if you also have an open ```s
 {% endhighlight %}
 
 
+#### Mount Bucket Storage as a Drive
+
+See [the official documentation](https://cloud.google.com/storage/docs/gcs-fuse#using_feat_name).  :
+
+{% highlight bash %}
+{% endhighlight %}
+
+
+
 #### Stop the VM
 
 I've included this one twice, since it's important not to let these things sit idle...
