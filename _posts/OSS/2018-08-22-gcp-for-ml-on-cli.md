@@ -510,11 +510,23 @@ note that it's definitely easier to get this right if you also have an open ```s
 
 #### Mount Bucket Storage as a Drive
 
+The following (taken from the [gcsfuse repository](https://github.com/GoogleCloudPlatform/gcsfuse/blob/master/docs/installing.md)) are 
+required to install the necessary 'gcsfuse' utility : (I'll put this up into the overall machine config once it's confirmed to work) :
+
+{% highlight bash %}
+export GCSFUSE_REPO=gcsfuse-`lsb_release -c -s`
+echo "deb http://packages.cloud.google.com/apt $GCSFUSE_REPO main" | sudo tee /etc/apt/sources.list.d/gcsfuse.list
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install gcsfuse
+{% endhighlight %}
+
 See [the official documentation](https://cloud.google.com/storage/docs/gcs-fuse#using_feat_name).  :
 
 {% highlight bash %}
-{% endhighlight %}
+# Mounts a bucket at a particular location
 
+{% endhighlight %}
 
 
 #### Stop the VM
