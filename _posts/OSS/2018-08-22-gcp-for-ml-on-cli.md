@@ -525,7 +525,33 @@ See [the official documentation](https://cloud.google.com/storage/docs/gcs-fuse#
 
 {% highlight bash %}
 # Mounts a bucket at a particular location
+BUCKET_MOUNT_POINT=~/rdai-mount-point
+BUCKET_TO_MOUNT=sample-bucket-name
+mkdir -p $BUCKET_MOUNT_POINT
+# Mount the bucket onto the mount point
+gcsfuse $BUCKET_TO_MOUNT $BUCKET_MOUNT_POINT
 
+# Can also add a debug flag
+gcsfuse --debug_gcs $BUCKET_TO_MOUNT $BUCKET_MOUNT_POINT
+
+# If you want a more browseable directory structure, use :
+gcsfuse --debug_gcs --implicit-dirs  $BUCKET_TO_MOUNT $BUCKET_MOUNT_POINT
+{% endhighlight %}
+
+Expected output : 
+
+{% highlight bash %}
+Using mount point: /home/andrewsm/rdai-mount-point
+Opening GCS connection...
+Opening bucket...
+Mounting file system...
+File system has been successfully mounted.
+{% endhighlight %}
+
+Unmount the bucket : 
+
+{% highlight bash %}
+fusermount -u $BUCKET_MOUNT_POINT
 {% endhighlight %}
 
 
