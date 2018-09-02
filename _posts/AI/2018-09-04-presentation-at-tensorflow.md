@@ -74,13 +74,11 @@ Outline:
   #        The top 6 words in the isolated set are {color, many, what, is, there, how}. 
   #        Model under-relies  on  important  question  words  (e.g.   nouns) 
   #     Add distractor text to change answers
-  #        in not a lot of words, 
-  #        what is the answer to,
-  #        in not many words, 
+  #        in not a lot of words,  | what is the answer to, | in not many words, 
   #     These are Ok : 
-  #        tell me 
-  #        answer this
-  #        answer this for me
+  #        tell me | answer this | answer this for me
+  #   Did the model... :: "Integrated Gradients (IG)"
+  #   Pathologies of Neural Models... :: "Input Gradient" (simpler description)
   
   
 
