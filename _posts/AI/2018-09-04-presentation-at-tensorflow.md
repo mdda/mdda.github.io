@@ -27,13 +27,15 @@ To some extent the theme of the MeetUp was set by Lee XA volunteering to talk ab
 "Explainable AI : Shapley Values and Concept Activation Vectors", based on his experiences with 
 Shapley values from Scott M. Lundberg NIPS 2016 paper titled "A Unified Approach to Interpreting Model Predictions" on a transfer learned model of a CNN.
 
-We also had a talk by Hardeep Arora about XYZ.
+Before that though, in order to set the scene, we had a talk "Explainability : An Overview" by Hardeep Arora, 
+which looked at the explainability issue coming from the direction of 'regular' datascience.
 
-
+We also had an excellent last-minute lightning talk by Timothy Liu about implementing machine CPU/GPU sharing using KubeFlow, 
+orchestrating a collection of Docker containers delivering Jupyter.
 
 For my part, 
 I gave a talk titled "Did the Model Understand the Question?", which explained some of the 
-thinking in the paper by the same title by [Mudrakarta <i>et al</i>](https://arxiv.org/abs/1805.05492).
+thinking in the paper by the same title by [Mudrakarta <i>et al</i> (2018)](https://arxiv.org/abs/1805.05492).
 
 
 <!--
@@ -61,24 +63,24 @@ Outline:
   cd deep-learning-workshop/notebooks/work-in-progress/did-the-model-understand-the-question
   git clone https://github.com/Cyanogenoid/pytorch-vqa.git
   wget https://github.com/Cyanogenoid/pytorch-vqa/releases/download/v1.0/2017-08-04_00.55.19.pth
-  https://github.com/Cyanogenoid/pytorch-resnet.git
+  git clone https://github.com/Cyanogenoid/pytorch-resnet.git
 
   . ~/env3/bin/activate
 
-  # Ok, so the playground.ipynb now works...
-  #   Let's make it produce content that is presentable, ideally :
-  #     Have successive delete-a-word to hone questions to minimal size (hopefully ridiculous)
-  #        Network ignores many question words, relying largely on the image to produce answers
-  #        Model retains  more than 50% of its original accuracy even when every word that is not “color” is deleted from all questions in the validation  set.
-  #        Even when empty questions are passed as input to the network, its accuracy remains at about 44.3% of its original accuracy.  
-  #        The top 6 words in the isolated set are {color, many, what, is, there, how}. 
-  #        Model under-relies  on  important  question  words  (e.g.   nouns) 
-  #     Add distractor text to change answers
-  #        in not a lot of words,  | what is the answer to, | in not many words, 
-  #     These are Ok : 
-  #        tell me | answer this | answer this for me
-  #   Did the model... :: "Integrated Gradients (IG)"
-  #   Pathologies of Neural Models... :: "Input Gradient" (simpler description)
+  Ok, so the playground.ipynb now works...
+    Let's make it produce content that is presentable, ideally :
+      Have successive delete-a-word to hone questions to minimal size (hopefully ridiculous)
+        Network ignores many question words, relying largely on the image to produce answers
+          Model retains  more than 50% of its original accuracy even when every word that is not “color” is deleted from all questions in the validation set.
+          Even when empty questions are passed as input to the network, its accuracy remains at about 44.3% of its original accuracy.  
+          The top 6 words in the isolated set are {color, many, what, is, there, how}. 
+          Model under-relies on important question words (e.g. nouns) 
+        Add distractor text to change answers
+          in not a lot of words,  | what is the answer to, | in not many words, 
+        These are Ok : 
+          tell me | answer this | answer this for me
+    Did the model... :: "Integrated Gradients (IG)"
+    Pathologies of Neural Models... :: "Input Gradient" (simpler description)
   
   
 
@@ -99,8 +101,8 @@ The slides for my talk are here :
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="http://redcatlabs.com/2018-09-04_TFandDL_Explainability/#/10/2" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2018-09-04_TFandDL_Explainability_10-2_600x390.png)
+<a href="http://redcatlabs.com/2018-09-04_TFandDL_Explainability/#/6" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2018-09-04_TFandDL_Explainability_6_600x390.png)
 </a>
 
 
