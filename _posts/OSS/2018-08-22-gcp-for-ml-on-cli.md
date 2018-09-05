@@ -262,7 +262,7 @@ Thu Aug 23 16:06:48 2018
 
 #### Install additional useful stuff for the base image
 
-For instance ```PyTorch``` :
+Basics (set up a user ```virtualenv``` in ```~/env3/``` ) : 
 
 {% highlight bash %}
 # These are, apparently already installed
@@ -273,13 +273,26 @@ virtualenv --system-site-packages -p python3 env3
 . ~/env3/bin/activate
 # Check ... (want python 3.5.3)
 python --version
-# Now PyTorch install : 
-pip3 install http://download.pytorch.org/whl/cu92/torch-0.4.1-cp35-cp35m-linux_x86_64.whl 
-pip3 install torchvision # includes pillow
-# More...?
-
 {% endhighlight %}
 
+For instance install ```PyTorch``` (0.4.1) :
+
+{% highlight bash %}
+pip3 install http://download.pytorch.org/whl/cu92/torch-0.4.1-cp35-cp35m-linux_x86_64.whl 
+pip3 install tensorboardX torchvision # includes Pillow==5.2.0
+{% endhighlight %}
+
+
+The following (taken from the [gcsfuse repository](https://github.com/GoogleCloudPlatform/gcsfuse/blob/master/docs/installing.md)) are 
+required to install the 'gcsfuse' utility, which is needed to mount storage buckets as file systems :
+
+{% highlight bash %}
+export GCSFUSE_REPO=gcsfuse-`lsb_release -c -s`
+echo "deb http://packages.cloud.google.com/apt $GCSFUSE_REPO main" | sudo tee /etc/apt/sources.list.d/gcsfuse.list
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install gcsfuse
+{% endhighlight %}
 
 About half of the 30Gb is now used : 
 
@@ -472,15 +485,27 @@ ps fax | grep jupyter
 # /usr/bin/python3 /usr/local/bin/jupyter-lab --config=/root/.jupyter/jupyter_notebook_config.py --allow-root
 {% endhighlight %}
 
-You can get access to is via a ```localhost``` browser connection by setting up a local proxy for the machine's port ```8080``` :
+You can get access to is via a ```localhost``` browser connection by setting up a proxy for the local machine's port ```8880``` 
+(chosen to avoid conflict with 'true local' jupyter sessions) :
 
 {% highlight bash %}
-gcloud compute ssh $INSTANCE_NAME -- -L 8080:localhost:8080
+# This is the 'root' jupyterlab install
+gcloud compute ssh $INSTANCE_NAME -- -L 8880:localhost:8080
 {% endhighlight %}
 
-*EXCEPT* : This doesn't seem to respect the kernel versions (particularly, since ```which python``` reports 2.7.x regardless of which 
-python version the kernel purports to be running), nor know about our 
-custom ```virtualenv```.  So fixing that is a TODO...
+*EXCEPT* : the above doesn't know about the user's custom ```virtualenv```.  
+
+To connect to a jupyter notebook running within your own ```virtualenv``` (which I normally have as ```~/env3/``` : 
+
+{% highlight bash %}
+# This is for a 'virtualenv' jupyterlab :
+gcloud compute ssh $INSTANCE_NAME -- -L 8880:localhost:8081
+# And once logged into the cloud machine, enable the virtualenv, and run jupyter within it
+. ~/env3/bin/activate
+jupyter notebook --port=8081 --no-browser --notebook-dir . 
+{% endhighlight %}
+
+
 
 
 #### Run Tensorboard locally
@@ -509,17 +534,6 @@ note that it's definitely easier to get this right if you also have an open ```s
 
 
 #### Mount Bucket Storage as a Drive
-
-The following (taken from the [gcsfuse repository](https://github.com/GoogleCloudPlatform/gcsfuse/blob/master/docs/installing.md)) are 
-required to install the necessary 'gcsfuse' utility : (I'll put this up into the overall machine config once it's confirmed to work) :
-
-{% highlight bash %}
-export GCSFUSE_REPO=gcsfuse-`lsb_release -c -s`
-echo "deb http://packages.cloud.google.com/apt $GCSFUSE_REPO main" | sudo tee /etc/apt/sources.list.d/gcsfuse.list
-curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-sudo apt-get update
-sudo apt-get install gcsfuse
-{% endhighlight %}
 
 See [the official documentation](https://cloud.google.com/storage/docs/gcs-fuse#using_feat_name).  :
 
@@ -566,11 +580,10 @@ gcloud compute instances stop $INSTANCE_NAME
 
 
 
-
+<!--
 ## TODO :
 
 #### Sort out the ```jupyter``` installation
-
 
 But may want to specify the virtualenv ...
 
@@ -590,6 +603,36 @@ ipykernel==4.8.2
 
 May need to put the virtualenv above into :: ```/home/andrewsm/.virtualenvs/env3-custom/bin/python``` :
 
+Hmmm, but after enabling our 'env', (see [this issue](https://github.com/jupyterlab/jupyterlab/issues/4064)) we get : 
+
+{% highlight bash %}
+(env3) :~$ jupyter lab paths
+#Application directory:   /usr/local/share/jupyter/lab
+#User Settings directory: /home/andrewsm/.jupyter/lab/user-settings
+#Workspaces directory /home/andrewsm/.jupyter/lab/workspaces
+{% endhighlight %}
+
+and : 
+
+{% highlight bash %}
+(env3) :~$ jupyter --paths
+config:
+    /home/andrewsm/.jupyter
+    /usr/etc/jupyter
+    /usr/local/etc/jupyter
+    /etc/jupyter
+data:
+    /home/andrewsm/.local/share/jupyter
+    /usr/local/share/jupyter
+    /usr/share/jupyter
+runtime:
+    /run/user/1000/jupyter
+{% endhighlight %}
+
+{% highlight bash %}
+(env3) :~$ jupyter notebook --port=8081 --no-browser --notebook-dir . 
+{% endhighlight %}
+
 
 {% highlight bash %}
 mkdir -p .virtualenvs/
@@ -607,3 +650,25 @@ pip3 install http://download.pytorch.org/whl/cu92/torch-0.4.1-cp35-cp35m-linux_x
 pip3 install torchvision # includes pillow
 {% endhighlight %}
 
+
+. env3/bin/activate
+python -m ipykernel install --user --name env3 --display-name "Python (~/env3)"
+Installed kernelspec env3 in /home/andrewsm/.local/share/jupyter/kernels/env3
+#                            /home/andrewsm/.local/share/jupyter
+
+## https://ipython.readthedocs.io/en/stable/install/kernel_install.html
+python -m ipykernel install --prefix=/usr/local/share/jupyter --name 'rdai-env3'
+
+sudo python -m ipykernel install --prefix=/usr/local --name 'rdai-env3'
+
+
+(env3) ~$ envpy=`which python`
+(env3) ~$ sudo ${envpy} -m ipykernel install --prefix=/usr/local --name 'rdai-env3'
+# Installed kernelspec rdai-env3 in /usr/local/share/jupyter/kernels/rdai-env3
+
+envhome=`pwd`
+sudo ln -s ${envhome} /opt/deeplearning/workspace/
+
+
+
+!-->
