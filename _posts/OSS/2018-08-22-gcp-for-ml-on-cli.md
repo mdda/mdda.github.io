@@ -478,33 +478,38 @@ if your network disconnects, the machine will keep going.
 
 #### Run Jupyter locally
 
-We can see that ```jupyter``` is running already, apparently using ```python3``` : 
+We can see that ```jupyter``` is running already, using ```python3``` : 
 
 {% highlight bash %}
 ps fax | grep jupyter
 # /usr/bin/python3 /usr/local/bin/jupyter-lab --config=/root/.jupyter/jupyter_notebook_config.py --allow-root
 {% endhighlight %}
 
-You can get access to is via a ```localhost``` browser connection by setting up a proxy for the local machine's port ```8880``` 
-(chosen to avoid conflict with 'true local' jupyter sessions) :
+You can get access to is via a ```localhost:8880``` browser connection by setting up a proxy 
+to the cloud machine's ```8080``` (```localhost:8880``` was chosen to avoid conflict with 'true local' jupyter sessions) :
 
 {% highlight bash %}
 # This is the 'root' jupyterlab install
 gcloud compute ssh $INSTANCE_NAME -- -L 8880:localhost:8080
 {% endhighlight %}
 
-*EXCEPT* : the above doesn't know about the user's custom ```virtualenv```.  
+*EXCEPT* : the above doesn't *yet* know about the user's custom ```virtualenv```.  
 
-To connect to a jupyter notebook running within your own ```virtualenv``` (which I normally have as ```~/env3/``` : 
+To connect to a jupyter notebook running within your own ```virtualenv``` (which I normally have as ```~/env3/```) : 
 
 {% highlight bash %}
-# This is for a 'virtualenv' jupyterlab :
-gcloud compute ssh $INSTANCE_NAME -- -L 8880:localhost:8081
-# And once logged into the cloud machine, enable the virtualenv, and run jupyter within it
+# Once logged into the cloud machine, enable the virtualenv to find its python, to copy into the 'root' jupyterlab   
 . ~/env3/bin/activate
-jupyter notebook --port=8081 --no-browser --notebook-dir . 
+(env3) ~$ envpy=`which python`
+(env3) ~$ sudo ${envpy} -m ipykernel install --prefix=/usr/local --name 'custom-env3'
+# Installed kernelspec rdai-env3 in /usr/local/share/jupyter/kernels/custom-env3
+
+# Now go to where you want your workspace to live, and create a link to it :
+localworkspace=`pwd`
+sudo ln -s ${localworkspace} /opt/deeplearning/workspace/
 {% endhighlight %}
 
+(This only has to be done once - it persists).
 
 
 
@@ -659,8 +664,8 @@ Installed kernelspec env3 in /home/andrewsm/.local/share/jupyter/kernels/env3
 ## https://ipython.readthedocs.io/en/stable/install/kernel_install.html
 python -m ipykernel install --prefix=/usr/local/share/jupyter --name 'rdai-env3'
 
-sudo python -m ipykernel install --prefix=/usr/local --name 'rdai-env3'
 
+### Breakthrough ! 
 
 (env3) ~$ envpy=`which python`
 (env3) ~$ sudo ${envpy} -m ipykernel install --prefix=/usr/local --name 'rdai-env3'
@@ -668,6 +673,11 @@ sudo python -m ipykernel install --prefix=/usr/local --name 'rdai-env3'
 
 envhome=`pwd`
 sudo ln -s ${envhome} /opt/deeplearning/workspace/
+
+# Hmm
+sys.path.insert(0, ('./pytorch-vqa'))
+
+
 
 
 
