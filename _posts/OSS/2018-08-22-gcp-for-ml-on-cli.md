@@ -495,16 +495,19 @@ gcloud compute ssh $INSTANCE_NAME -- -L 8880:localhost:8080
 
 *EXCEPT* : the above doesn't *yet* know about the user's custom ```virtualenv```.  
 
-To connect to a jupyter notebook running within your own ```virtualenv``` (which I normally have as ```~/env3/```) : 
+To connect to a jupyter notebook running within your own ```virtualenv``` (which I normally have as ```~/env3/```), 
+once logged into the cloud machine, enable the virtualenv to find its python, to copy into the 'root' jupyterlab :
 
 {% highlight bash %}
-# Once logged into the cloud machine, enable the virtualenv to find its python, to copy into the 'root' jupyterlab   
 . ~/env3/bin/activate
 (env3) ~$ envpy=`which python`
 (env3) ~$ sudo ${envpy} -m ipykernel install --prefix=/usr/local --name 'custom-env3'
-# Installed kernelspec rdai-env3 in /usr/local/share/jupyter/kernels/custom-env3
+# Installed kernelspec custom-env3 in /usr/local/share/jupyter/kernels/custom-env3
+{% endhighlight %}
 
-# Now go to where you want your workspace to live, and create a link to it :
+Now go to where you want your workspace to live, and create a link to it :
+
+{% highlight bash %}
 localworkspace=`pwd`
 sudo ln -s ${localworkspace} /opt/deeplearning/workspace/
 {% endhighlight %}
@@ -512,13 +515,14 @@ sudo ln -s ${localworkspace} /opt/deeplearning/workspace/
 (This only has to be done once - it persists).
 
 
-
 #### Run Tensorboard locally
 
-You can get access to is via a ```localhost``` browser connection by setting up a local proxy for the machine's port ```8080``` :
+You can get access to is via a ```localhost:6606``` browser connection by setting up a proxy 
+to the cloud machine's ```6006``` (```localhost:6606``` was chosen to avoid conflict with 'true local' tensorboard sessions) :
 
 {% highlight bash %}
-gcloud compute ssh $INSTANCE_NAME -- -L 6006:localhost:6006
+gcloud compute ssh $INSTANCE_NAME -- -L 6606:localhost:6006
+# And in the cloud machine's terminal session that opens :
 tensorboard  --port 6006 --logdir ./log
 {% endhighlight %}
 
