@@ -501,7 +501,7 @@ Thu Aug 23 16:58:27 2018
 {% endhighlight %}
 
 
-#### Finally ensure the VM is not running
+#### Finally : Ensure the VM is not running
 
 Now, we've accomplished a few things : 
 
@@ -555,11 +555,11 @@ if your network disconnects, the machine will keep going.
 
 #### Run Jupyter locally
 
-You can get access to is via a ```localhost:8880``` browser connection by setting up a proxy 
+You can get access to is via a ```http://localhost:8880/``` browser connection by setting up a proxy 
 to the cloud machine's ```8080``` (```localhost:8880``` was chosen to avoid conflict with 'true local' jupyter sessions) :
 
 {% highlight bash %}
-# This is the 'root' jupyterlab install
+# This uses the existing 'root' jupyterlab install
 gcloud compute ssh $INSTANCE_NAME -- -L 8880:localhost:8080
 {% endhighlight %}
 
@@ -567,7 +567,7 @@ gcloud compute ssh $INSTANCE_NAME -- -L 8880:localhost:8080
 
 #### Run Tensorboard locally
 
-You can get access to is via a ```localhost:6606``` browser connection by setting up a proxy 
+You can get access to is via a ```http://localhost:6606/``` browser connection by setting up a proxy 
 to the cloud machine's ```6006``` (```localhost:6606``` was chosen to avoid conflict with 'true local' tensorboard sessions) :
 
 {% highlight bash %}
@@ -576,7 +576,7 @@ gcloud compute ssh $INSTANCE_NAME -- -L 6606:localhost:6006
 tensorboard  --port 6006 --logdir ./log
 {% endhighlight %}
 
-This works (assuming you're pointing to a log directory that has files in it...)
+(make sure you're pointing to a ```log``` directory that has files in it...)
 
 
 #### Download files from the image
@@ -636,6 +636,9 @@ I've included this one twice, since it's important not to let these things sit i
 gcloud compute instances stop $INSTANCE_NAME
 {% endhighlight %}
 
+---
+
+All Done!
 
 
 
