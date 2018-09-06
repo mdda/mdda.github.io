@@ -14,11 +14,15 @@ published: false
 ---
 {% include JB/setup %}
 
-### Quick route for linux command line 
+### Using the GCP VMs effectively (and cheaply)
 
-#### (An alternative to Google's documentation)
+#### Linux CLI quick guide - every line written down
 
-The following were useful resources for putting this together: 
+All the instructions you should need are given below - unlike the 
+regular Google documentation that seems to have a huge branching factor.
+I wrote this because I normally find that other blog posts also don't really address how I usually set up a machine (and I don't think I'm that strange...)
+
+That being said, the following were useful resources for putting this together: 
 
 *  https://cloudplatform.googleblog.com/2018/06/Introducing-improved-pricing-for-Preemptible-GPUs.html
 *  https://cloud.google.com/compute/docs/instances/create-start-preemptible-instance
@@ -29,6 +33,7 @@ The following were useful resources for putting this together:
 *  https://medium.com/@jamsawamsa/running-a-google-cloud-gpu-for-fast-ai-for-free-5f89c707bae6
 
 *  https://lobster1234.github.io/2017/05/14/get-started-on-google-cloud-with-cli/
+
 
 
 ### Installing the Google Cloud tools
