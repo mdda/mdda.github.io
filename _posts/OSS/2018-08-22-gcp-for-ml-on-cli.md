@@ -262,6 +262,8 @@ Thu Aug 23 16:06:48 2018
 
 #### Install additional useful stuff for the base image
 
+#####  Basics
+
 Basics (set up a user ```virtualenv``` in ```~/env3/``` ) : 
 
 {% highlight bash %}
@@ -275,6 +277,8 @@ virtualenv --system-site-packages -p python3 env3
 python --version
 {% endhighlight %}
 
+#####  PyTorch
+
 For instance install ```PyTorch``` (0.4.1) :
 
 {% highlight bash %}
@@ -282,6 +286,7 @@ pip3 install http://download.pytorch.org/whl/cu92/torch-0.4.1-cp35-cp35m-linux_x
 pip3 install tensorboardX torchvision # includes Pillow==5.2.0
 {% endhighlight %}
 
+#####  ```gcsfuse```
 
 The following (taken from the [gcsfuse repository](https://github.com/GoogleCloudPlatform/gcsfuse/blob/master/docs/installing.md)) are 
 required to install the 'gcsfuse' utility, which is needed to mount storage buckets as file systems :
@@ -293,6 +298,40 @@ curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 sudo apt-get update
 sudo apt-get install gcsfuse
 {% endhighlight %}
+
+
+#####  JupyterLab with user ```virtualenv```
+
+We can see that ```jupyter``` is running already, using ```python3``` : 
+
+{% highlight bash %}
+ps fax | grep jupyter
+# /usr/bin/python3 /usr/local/bin/jupyter-lab --config=/root/.jupyter/jupyter_notebook_config.py --allow-root
+{% endhighlight %}
+
+So that we can use JupyterLab from within our own (user) ```virtualenv```, we need to set it 
+up (assuming ```~/env3/``` is the ```virtualenv``` as above).  Once logged into the cloud machine as the cloud user, 
+enable the ```virtualenv``` to find its python, to copy into the 'root' jupyterlab :
+
+{% highlight bash %}
+. ~/env3/bin/activate
+(env3) ~$ envpy=`which python`
+(env3) ~$ sudo ${envpy} -m ipykernel install --prefix=/usr/local --name 'custom-env3'
+# Installed kernelspec custom-env3 in /usr/local/share/jupyter/kernels/custom-env3
+{% endhighlight %}
+
+Now go to where you want your workspace to live, as your cloud user, and create a link to it visible within the
+main JupyterLab opening directory :
+
+{% highlight bash %}
+localworkspace=`pwd`
+sudo ln -s ${localworkspace} /opt/deeplearning/workspace/
+{% endhighlight %}
+
+(This only has to be done once - it persists).
+
+
+##### Summary 
 
 About half of the 30Gb is now used : 
 
@@ -311,6 +350,8 @@ python
 {% endhighlight %}
 
 
+##### TensorFlow 
+
 {% highlight python %}
 import tensorflow as tf
 
@@ -325,6 +366,8 @@ print(sess.run(c))
 {% endhighlight %}
 
 
+##### PyTorch
+
 {% highlight python %}
 import torch
 
@@ -338,7 +381,7 @@ print(a.mm(b).device)  # matrix-multiply (should state : on GPU)
 #cuda:0
 {% endhighlight %}
 
-#### Ensure the VM is not running
+#### Wrap-up : Ensure the VM is not running
 
 {% highlight bash %}
 gcloud compute instances stop $BASE_INSTANCE_NAME
@@ -478,13 +521,6 @@ if your network disconnects, the machine will keep going.
 
 #### Run Jupyter locally
 
-We can see that ```jupyter``` is running already, using ```python3``` : 
-
-{% highlight bash %}
-ps fax | grep jupyter
-# /usr/bin/python3 /usr/local/bin/jupyter-lab --config=/root/.jupyter/jupyter_notebook_config.py --allow-root
-{% endhighlight %}
-
 You can get access to is via a ```localhost:8880``` browser connection by setting up a proxy 
 to the cloud machine's ```8080``` (```localhost:8880``` was chosen to avoid conflict with 'true local' jupyter sessions) :
 
@@ -493,26 +529,6 @@ to the cloud machine's ```8080``` (```localhost:8880``` was chosen to avoid conf
 gcloud compute ssh $INSTANCE_NAME -- -L 8880:localhost:8080
 {% endhighlight %}
 
-*EXCEPT* : the above doesn't *yet* know about the user's custom ```virtualenv```.  
-
-To connect to a jupyter notebook running within your own ```virtualenv``` (which I normally have as ```~/env3/```), 
-once logged into the cloud machine, enable the virtualenv to find its python, to copy into the 'root' jupyterlab :
-
-{% highlight bash %}
-. ~/env3/bin/activate
-(env3) ~$ envpy=`which python`
-(env3) ~$ sudo ${envpy} -m ipykernel install --prefix=/usr/local --name 'custom-env3'
-# Installed kernelspec custom-env3 in /usr/local/share/jupyter/kernels/custom-env3
-{% endhighlight %}
-
-Now go to where you want your workspace to live, and create a link to it :
-
-{% highlight bash %}
-localworkspace=`pwd`
-sudo ln -s ${localworkspace} /opt/deeplearning/workspace/
-{% endhighlight %}
-
-(This only has to be done once - it persists).
 
 
 #### Run Tensorboard locally
@@ -596,18 +612,12 @@ gcloud compute instances stop $INSTANCE_NAME
 
 But may want to specify the virtualenv ...
 
-*   See : https://help.pythonanywhere.com/pages/IPythonNotebookVirtualenvs/
+*   Not very helpful : https://help.pythonanywhere.com/pages/IPythonNotebookVirtualenvs/
 
 {% highlight bash %}
 workon my-virtualenv-name  # activate your virtualenv, if you haven't already
 pip install tornado==4.5.3
 pip install ipykernel==4.8.2
-{% endhighlight %}
-
-But we have : 
-{% highlight bash %}
-tornado==5.1
-ipykernel==4.8.2
 {% endhighlight %}
 
 May need to put the virtualenv above into :: ```/home/andrewsm/.virtualenvs/env3-custom/bin/python``` :
@@ -642,23 +652,7 @@ runtime:
 (env3) :~$ jupyter notebook --port=8081 --no-browser --notebook-dir . 
 {% endhighlight %}
 
-
-{% highlight bash %}
-mkdir -p .virtualenvs/
-virtualenv --system-site-packages -p python3 .virtualenvs/env3-custom
-. ~/.virtualenvs/env3-custom/bin/activate
-# Check ... (want python 3.5.3)
-python --version
-
-# Install for Jupyter recognition
-pip3 install tornado==5.1 ipykernel==4.8.2  # These are already available due to system-site-packages
-pip3 install tiny # This is a test to see whether kernel is using our env
-
-# Now PyTorch install : 
-pip3 install http://download.pytorch.org/whl/cu92/torch-0.4.1-cp35-cp35m-linux_x86_64.whl 
-pip3 install torchvision # includes pillow
-{% endhighlight %}
-
+Next things ....
 
 . env3/bin/activate
 python -m ipykernel install --user --name env3 --display-name "Python (~/env3)"
@@ -680,9 +674,5 @@ sudo ln -s ${envhome} /opt/deeplearning/workspace/
 
 # Hmm
 sys.path.insert(0, ('./pytorch-vqa'))
-
-
-
-
 
 !-->
