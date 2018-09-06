@@ -43,15 +43,16 @@ That being said, the following were useful resources for putting this together:
 Actually, this doesn't work for ```gcloud```, which appears to install ```gsutils``` itself, so
 the previous instructions (which worked if you just need to manage Google's Storage Buckets) don't really apply here.  
 
-So : **Ignore the local virtualbox idea** : You have to install packages globally (If not, 
-please let me know in the comments below : I don't like polluting my machine with company-specific nonsense).
+So : **Ignore the virtualenv idea for 'containing' the Google polution on your local machine** : 
+You have to install packages globally (If not, please let me know in the comments below : I don't like polluting my machine with company-specific nonsense).
 
 
 #### Installing the GCloud tool itself 'globally'
 
-We need to install ```gcloud``` (which wasn't needed for just the bucket operations, but the compute engine creation requires it).
+We need to install ```gcloud``` (which wasn't needed for just the bucket operations, but it's required for "compute engine" creation).
 
-As ```root```, update YUM with Cloud SDK repo information (NB: The indentation for the 2nd line of gpgkey is important) :
+As ```root```, update the ```yum/dnf``` repos (my local machine is Fedora, so your process may vary on this one part) 
+to include the Google Cloud SDK repo (NB: The indentation for the 2nd line of gpgkey is important) :
 
 {% highlight bash %}
 tee -a /etc/yum.repos.d/google-cloud-sdk.repo << EOM
@@ -87,22 +88,29 @@ save the token, and other settings, in ```~/.boto```):
 gcloud auth login
 {% endhighlight %}
 
-After going to the web authentication page to get the 
-required code (which needs you to identify which Google account is linked to your
-cloud stuff), go to [the project link suggested](https://cloud.google.com/console#/project)
-to get the list of project ids, and select the one required (or use ```gcloud projects list```) : 
+This will have you going to a web authentication page to get the required code 
+(which needs you to identify which Google account is linked to your
+cloud stuff).
+
+Then to find the project you want to associate the VMs with, either execute : 
 
 {% highlight bash %}
 gcloud projects list
-gcloud config set project rdai-tts
+{% endhighlight %}
+
+Or go to [the project link suggested](https://cloud.google.com/console#/project)
+to get the list of project ids, and select the one required :
+
+{% highlight bash %}
+gcloud config set project myprojectid
 {% endhighlight %}
 
 
 ### Choose parameters for a base GPU-enabled VM image
 
 We do this first with a low-cost GPU so that we have a VM image with the Nvidia drivers installed (as 
-well as other software that we want in all our subsequent VMs).  This disk can then be 
-cloned, and started with a better GPU (and low creation delay).
+well as other software that we want in all our subsequent VMs) as cheaply as possible.  This disk can then be 
+cloned, and started with a better GPU (and ~30 second creation delay).
 
 
 #### Choose VM base image
