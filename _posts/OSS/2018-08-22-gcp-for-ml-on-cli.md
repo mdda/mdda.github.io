@@ -115,9 +115,11 @@ cloned, and started with a better GPU (and ~30 second creation delay).
 
 #### Choose VM base image
 
-Do this based on ```tensorflow-gpu``` since that has been specially compiled, etc.  
+Since my ideal machine has both current TensorFlow and PyTorch installed, it's best to start with 
+the  ```tensorflow-gpu``` Google image since the TensorFlow has been specially compiled, etc (in a way that is
+super-difficult to do yourself), whereas the PyTorch install is easier to DIY later.  
 
-*  Actual image name : ```tf-latest-cu92```  (We'll add ```PyTorch``` later)
+*  Actual image name : ```tf-latest-cu92```  (We'll add ```PyTorch``` to this VM later)
 
 
 #### Choose VM cores and memory size
@@ -142,7 +144,7 @@ Do this based on ```tensorflow-gpu``` since that has been specially compiled, et
       *  us-central1 ; us-east1 ; us-west1
       *  europe-west1 ; europe-west3 ; europe-west4
 
-   *  But actually existing (https://cloud.google.com/compute/docs/gpus/ "GPUs for compute workloads") : 
+   *  But actually existing ["GPUs for compute workloads"](https://cloud.google.com/compute/docs/gpus/) : 
       *  us-central1-{a,c} ; us-east1-{c,d} ; us-west1-{b}
       *  europe-west1-{b,d}
       *  asia-east1-{a,b}
@@ -152,7 +154,7 @@ Do this based on ```tensorflow-gpu``` since that has been specially compiled, et
    *  That have been allocated quota... : 
       *  us-central1 ; us-east1
 
-   *  But actually existing (https://cloud.google.com/compute/docs/gpus/ "GPUs for compute workloads") : 
+   *  But actually existing ["GPUs for compute workloads"](https://cloud.google.com/compute/docs/gpus/) : 
       *  us-central1-{c,f} ; us-west1-{a,b} ; us-east1-{b,c}
       *  europe-west1-{b,d} ; europe-west4-{a}
       *  asia-east1-{a,c}
@@ -162,13 +164,14 @@ Do this based on ```tensorflow-gpu``` since that has been specially compiled, et
    *  That have been allocated quota... : 
       *  us-central1 ; us-east1
    
-   *  But actually existing (https://cloud.google.com/compute/docs/gpus/ "GPUs for compute workloads") : 
+   *  But actually existing ["GPUs for compute workloads"](https://cloud.google.com/compute/docs/gpus/) : 
       *  us-central1-{a,f} ; us-west1-{a,b}
       *  europe-west4-{a}
       *  asia-east1-{c}
 
 
-So, we really have to choose ```us-central1``` (for instance), without loving the decision...  And since we care about P100s (and K80s) : choose zone 'c'.
+So, despite me having got quota in a variety of places, it really comes down to having to choose ```us-central1``` (say), 
+without really loving the decision...  And since we care about P100s (and K80s) : choose zone 'c'.
 
 
 #### Choose VM persistent disk size
@@ -180,6 +183,9 @@ But disk size must be as big as the image (sigh) :
 
 ``` - Invalid value for field 'resource.disks[0].initializeParams.diskSizeGb': '10'. 
    Requested disk size cannot be smaller than the image size (30 GB)```
+
+This means that the initial base VM persistent disk has to be 30GB in size, and we can't have it *and* a ready-for-use one
+just sitting around idle for free.
 
 
 ### Actually set up the base VM
@@ -213,8 +219,8 @@ This takes &lt; 1 minute : The main Nvidia install happens during the reboot(s) 
 {% highlight bash %}
 export IMAGE_FAMILY="tf-latest-cu92" 
 export ZONE="us-central1-c"
-export BASE_INSTANCE_NAME="rdai-tts-base-vm"
-export BASE_INSTANCE_TYPE="n1-highmem-2"
+export BASE_INSTANCE_NAME="rdai-tts-base-vm"  # My choice of name
+export BASE_INSTANCE_TYPE="n1-highmem-2"      # 13Gb memory, but only 2 CPU cores
 gcloud compute instances create $BASE_INSTANCE_NAME \
         --zone=$ZONE \
         --image-family=$IMAGE_FAMILY \
@@ -234,6 +240,8 @@ Created [https://www.googleapis.com/compute/v1/projects/rdai-tts/zones/us-centra
 NAME              ZONE           MACHINE_TYPE  PREEMPTIBLE  INTERNAL_IP  EXTERNAL_IP  STATUS
 rdai-tts-base-vm  us-central1-c  n1-highmem-2               10.128.0.2   WW.XX.YY.ZZ  RUNNING
 {% endhighlight %}
+
+And the machine should be running in your Google Cloud 'Console' (actually the web-based GUI).
 
 
 #### Look around inside the VM
@@ -275,9 +283,9 @@ Thu Aug 23 16:06:48 2018
 
 #### Install additional useful stuff for the base image
 
-#####  Basics
+#####  First steps
 
-Basics (set up a user ```virtualenv``` in ```~/env3/``` ) : 
+Of course, you're free to make other choices, but my instinct is to set up a Python3 user ```virtualenv``` in ```~/env3/``` : 
 
 {% highlight bash %}
 # These are, apparently already installed
@@ -290,16 +298,18 @@ virtualenv --system-site-packages -p python3 env3
 python --version
 {% endhighlight %}
 
-#####  PyTorch
 
-For instance install ```PyTorch``` (0.4.1) :
+#####  Install PyTorch
+
+Here we install ```PyTorch``` (0.4.1) into the VM (TensorFlow is already baked in) :
 
 {% highlight bash %}
 pip3 install http://download.pytorch.org/whl/cu92/torch-0.4.1-cp35-cp35m-linux_x86_64.whl 
 pip3 install tensorboardX torchvision # includes Pillow==5.2.0
 {% endhighlight %}
 
-#####  ```gcsfuse```
+
+#####  Install ```gcsfuse```
 
 The following (taken from the [gcsfuse repository](https://github.com/GoogleCloudPlatform/gcsfuse/blob/master/docs/installing.md)) are 
 required to install the 'gcsfuse' utility, which is needed to mount storage buckets as file systems :
@@ -313,9 +323,9 @@ sudo apt-get install gcsfuse
 {% endhighlight %}
 
 
-#####  JupyterLab with user ```virtualenv```
+#####  Set up JupyterLab with the user ```virtualenv```
 
-We can see that ```jupyter``` is running already, using ```python3``` : 
+We can see that ```jupyter``` is running on the machine already, using ```python3``` : 
 
 {% highlight bash %}
 ps fax | grep jupyter
@@ -333,7 +343,8 @@ enable the ```virtualenv``` to find its python, to copy into the 'root' jupyterl
 # Installed kernelspec custom-env3 in /usr/local/share/jupyter/kernels/custom-env3
 {% endhighlight %}
 
-Now go to where you want your workspace to live, as your cloud user, and create a link to it visible within the
+For ease-of-use of the JupyterLab system, it's helpful to be able to navigate to your user code quickly.
+So, as your cloud user, go to where you want your workspace to live, and create a link to it that will be visible within the
 main JupyterLab opening directory :
 
 {% highlight bash %}
@@ -344,7 +355,7 @@ sudo ln -s ${localworkspace} /opt/deeplearning/workspace/
 (This only has to be done once - it persists).
 
 
-##### Summary 
+##### Installation Summary 
 
 About half of the 30Gb is now used : 
 
@@ -365,6 +376,8 @@ python
 
 ##### TensorFlow 
 
+Here's a ~minimal ```tensorflow-gpu``` check :
+
 {% highlight python %}
 import tensorflow as tf
 
@@ -381,6 +394,8 @@ print(sess.run(c))
 
 ##### PyTorch
 
+Here's a ~minimal ```pytorch-gpu``` check :
+
 {% highlight python %}
 import torch
 
@@ -394,6 +409,7 @@ print(a.mm(b).device)  # matrix-multiply (should state : on GPU)
 #cuda:0
 {% endhighlight %}
 
+
 #### Wrap-up : Ensure the VM is not running
 
 {% highlight bash %}
@@ -405,10 +421,8 @@ gcloud compute instances stop $BASE_INSTANCE_NAME
 ### Now clone the base image
 
 We're currently in a no-charge state (assuming this is your only persistent disk on GCP, 
-since you have a free 30Gb quota as a base).
-
-But, since we'd like to create new 'vanilla' machines from this one, we 
-have to go into the (low) charge-zone.
+since you have a free 30Gb quota as a base). But, since we'd like to create 
+new 'vanilla' machines from this one, we have to go into the (low) charge-zone.
 
 
 #### Clone persistent disk from the current boot image
@@ -459,7 +473,7 @@ rdai-tts-p100-vm  us-central1-c  n1-highmem-2  true         10.128.0.3   WW.XX.Y
 {% endhighlight %}
 
 This machine is running (and costing, for the ```preemtible P100``` version ~ $0.50 an hour).  So
-you can ```SSH``` into it : 
+you can ```ssh``` into it : 
 
 {% highlight bash %}
 gcloud compute ssh $INSTANCE_NAME
@@ -487,13 +501,20 @@ Thu Aug 23 16:58:27 2018
 {% endhighlight %}
 
 
-#### Now ensure the VM is not running
+#### Finally ensure the VM is not running
+
+Now, we've accomplished a few things : 
+
+*  We have a clean VM with NVidia installed, ready to be cloned
+*  A cloned persistent disk that can be used 'live' - but that we're also not too attached to
+
+Thus, we can stop where we are, and think about actually using the machine(s) : 
 
 {% highlight bash %}
 gcloud compute instances stop $INSTANCE_NAME
 {% endhighlight %}
 
-To get out of the 'running a P100 for no reason' state.
+This gets us out of the 'running a P100 for no reason' state.
 
 
 #### Summary
@@ -507,7 +528,7 @@ Let's wait a while, and see to what extent the preemptible machine disappears by
 
 *... waited for 24hrs ...*
 
-... And indeed, the persistent disk does not die, even though a machine based on it would Terminate
+... And indeed, the persistent disk does not die, even though a machine based on it would TERMINATE
 after 24hrs.  That means we can safely store data on the remaining ~14Gb of persistent disk available to us.
 
 
