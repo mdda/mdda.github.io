@@ -34,6 +34,8 @@ That being said, the following were useful resources for putting this together:
 
 *  https://lobster1234.github.io/2017/05/14/get-started-on-google-cloud-with-cli/
 
+|   NB: There are now [new image(s)](https://blog.kovalevskyi.com/deeplearning-images-revision-m7-chainer-4-4-0-jupyter-no-longer-using-root-39e85e6cbd12) 
+|   out that may solve the Jupyter issues, but the underlying TF version, etc, don't make it compelling for me to upgrade (yet).
 
 
 ### Installing the Google Cloud tools
