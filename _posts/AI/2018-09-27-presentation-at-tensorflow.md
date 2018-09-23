@@ -38,13 +38,21 @@ Outline:
       https://www.reddit.com/r/MachineLearning/comments/9hkwcp/p_raw_audio_to_piano_transcription_in_the_web/
     Javascript:
       https://piano-scribe.glitch.me/
-    Original Code
+    Original Code :
       Copy Colab notebook into drive
         Installs a whole bunch of .deb files, as well as some python packages
         Need to upload audio file readable by librosa
           eg : 04 - 12 Etudes, op. 10 No. 4 in C sharp minor.mp3
           eg : 401 - Someone To Watch Over Me.ogg
         Both work *Pretty well*
+          Upload cell may need a couple of attempts on same file (check for 'uploading text')
+        Transcribe cell spends most time converting midi->audio for Play button
+
+    Questions : 
+      Are the dynamics captured?
+
+
+
 
 Advertise 
   Deep Learning Developer Module 1 : JumpStart
