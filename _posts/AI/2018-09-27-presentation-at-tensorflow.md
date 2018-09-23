@@ -49,7 +49,11 @@ Outline:
         Transcribe cell spends most time converting midi->audio for Play button
 
     Questions : 
-      Are the dynamics captured?
+      Are the dynamics captured = YES, apparently
+        frame_predictions.shape # (8099, 88)  Booleans 
+        onset_predictions.shape # (8099, 88)  Booleans
+        velocity_values.shape   # (8099, 88)  # values range :-0.51426625 ...  1.3687868
+
 
 
 
