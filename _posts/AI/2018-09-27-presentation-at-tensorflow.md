@@ -33,53 +33,23 @@ thinking in the paper by the same title by [Mudrakarta <i>et al</i> (2018)](http
 
 <!--
 Outline:
-  "Pathologies of Neural Models Make Interpretation Difficult" (previously "Right Answer for the Wrong Reason")
-    Shi Feng <i>et al</i>
-    EMNLP 2018 camera ready
-    https://arxiv.org/abs/1804.07781
-    
-    Code : https://github.com/Cyanogenoid/pytorch-vqa
-    Downloadable model : https://github.com/Cyanogenoid/pytorch-vqa/releases/tag/v1.0  # 80Mb
-           
-
-  Did the Model Understand the Question?
-    Pramod Kaushik Mudrakarta <i>et al</i>
-    ACL 2018 long paper ~ Google
-    https://arxiv.org/abs/1805.05492
-    
-    Code: https://github.com/pramodkaushik/acl18_results
-      https://github.com/pramodkaushik/visual_qa_analysis/tree/5edacd72ec9b1544a3776c325590aee38256d333
-        Pre-process images (93 GiB of free disk space required for f16 accuracy) with [ResNet152 weights ported from Caffe] 
-        and vocabularies for questions and answers with ...
-      Ultimately depends on Cyanogenoid/pytorch-vqa too...
-      
-  cd deep-learning-workshop/notebooks/work-in-progress/did-the-model-understand-the-question
-  git clone https://github.com/Cyanogenoid/pytorch-vqa.git
-  wget https://github.com/Cyanogenoid/pytorch-vqa/releases/download/v1.0/2017-08-04_00.55.19.pth
-  git clone https://github.com/Cyanogenoid/pytorch-resnet.git
-
-  . ~/env3/bin/activate
-
-  Ok, so the playground.ipynb now works...
-    Let's make it produce content that is presentable, ideally :
-      Have successive delete-a-word to hone questions to minimal size (hopefully ridiculous)
-        Network ignores many question words, relying largely on the image to produce answers
-          Model retains  more than 50% of its original accuracy even when every word that is not “color” is deleted from all questions in the validation set.
-          Even when empty questions are passed as input to the network, its accuracy remains at about 44.3% of its original accuracy.  
-          The top 6 words in the isolated set are {color, many, what, is, there, how}. 
-          Model under-relies on important question words (e.g. nouns) 
-        Add distractor text to change answers
-          in not a lot of words,  | what is the answer to, | in not many words, 
-        These are Ok : 
-          tell me | answer this | answer this for me
-    Did the model... :: "Integrated Gradients (IG)"
-    Pathologies of Neural Models... :: "Input Gradient" (simpler description)
-  
-  
+  Magenta project : "Raw Audio to Piano Transcription in the web browser (TensorFlow.js)"
+    Discussion:
+      https://www.reddit.com/r/MachineLearning/comments/9hkwcp/p_raw_audio_to_piano_transcription_in_the_web/
+    Javascript:
+      https://piano-scribe.glitch.me/
+    Original Code
+      Copy Colab notebook into drive
+        Installs a whole bunch of .deb files, as well as some python packages
+        Need to upload audio file readable by librosa
+          eg : 04 - 12 Etudes, op. 10 No. 4 in C sharp minor.mp3
+          eg : 401 - Someone To Watch Over Me.ogg
+        Both work *Pretty well*
 
 Advertise 
   Deep Learning Developer Module 1 : JumpStart
-  TF&DL next == Frank
+  Deep Learning Developer Module 2+ 
+  TF&DL next == ?
   Interns
   
 !-->
