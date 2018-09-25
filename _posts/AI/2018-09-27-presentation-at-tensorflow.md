@@ -32,12 +32,22 @@ thinking in the paper by the same title by [Mudrakarta <i>et al</i> (2018)](http
 
 
 <!--
+
+"Raw Audio to Piano Transcription" - Martin Andrews
+
+Google's Magenta team has created a network to convert raw audio files to 
+a midi piano roll, and has now released the python backend, a Colab notebook and
+an in-browser (local Javascript) version.  Martin will describe how their Deep Learning
+network is built, the special 'losses' required to make it perform so well, and 
+demonstrate it in action on music sourced 'in the wild'.
+
+
 Outline:
   Magenta project : "Raw Audio to Piano Transcription in the web browser (TensorFlow.js)"
     Discussion:
       https://www.reddit.com/r/MachineLearning/comments/9hkwcp/p_raw_audio_to_piano_transcription_in_the_web/
-    Javascript:
-      https://piano-scribe.glitch.me/
+    Original Blog :
+      https://magenta.tensorflow.org/onsets-frames  
     Original Code :
       Copy Colab notebook into drive
         Installs a whole bunch of .deb files, as well as some python packages
@@ -47,6 +57,8 @@ Outline:
         Both work *Pretty well*
           Upload cell may need a couple of attempts on same file (check for 'uploading text')
         Transcribe cell spends most time converting midi->audio for Play button
+    Javascript:
+      https://piano-scribe.glitch.me/
 
     Questions : 
       Are the dynamics captured = YES, apparently
