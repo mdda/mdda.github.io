@@ -57,6 +57,9 @@ Outline:
         Both work *Pretty well*
           Upload cell may need a couple of attempts on same file (check for 'uploading text')
         Transcribe cell spends most time converting midi->audio for Play button
+      Updates:
+        Create separate directory for uploaded audio 
+        Read all files in directory
     Javascript:
       https://piano-scribe.glitch.me/
 
