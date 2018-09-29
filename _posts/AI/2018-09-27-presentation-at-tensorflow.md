@@ -22,7 +22,20 @@ was again hosted by Google Singapore.
 
 
 We were honoured to have our favourite Singaporean Google Brain team member that works with TPUs 
-speak at the event.  Frank Chen's talk was "TensorFlow 2.0 is coming".
+speak at the event.  Frank Chen's talk was "TensorFlow 2.0 is coming" - and comprised 4 parts :
+
+*  TensorFlow 2.0
+*  TensorFlow.js
+*  TensorFlow Lite
+*  TensorFlow Distribution Strategies
+
+And, at the last minute, we also discovered that Wolf Dobson from the TensorFlow team could give a talk before
+he passed out from Jet Lag : "Eager Mode and @autograph".
+
+Following that, Sam Witteveen (now returned from New York) gave a talk about the (very) new feature that appeared in 
+Google Research's Colab : Free access to TPUs.  In a talk that apparently took the Google team a little of 
+guard (because they thought that noone would be able to figure out how to do it, given the lack of documentation),
+Sam showed how to "Use Keras and TPUs in the Cloud for Free".
 
 
 
