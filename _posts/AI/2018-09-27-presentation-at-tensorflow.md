@@ -1,6 +1,6 @@
 ---
 date: 2018-09-27
-title:  "Did the Model Understand the Question?"
+title:  "Raw Audio to Piano Transcription"
 tagline: Presentation
 category: AI
 tags:
@@ -17,9 +17,8 @@ published: false
 ### Presentation Link
 
 Sam Witteveen and I started the TensorFlow and Deep Learning Singapore group on MeetUp in February 2017,
-and [the nineteenth MeetUp, aka TensorFlow and Deep Learning: What's new](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/254809924/),
+and [the nineteenth MeetUp, aka TensorFlow and Deep Learning: TensorFlow 2.0 - the New Stuff](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/254809924/),
 was again hosted by Google Singapore.
-
 
 We were honoured to have our favourite Singaporean Google Brain team member that works with TPUs 
 speak at the event.  Frank Chen's talk was "TensorFlow 2.0 is coming" - and comprised 4 parts :
@@ -33,13 +32,13 @@ And, at the last minute, we also discovered that Wolf Dobson from the TensorFlow
 he passed out from Jet Lag : "Eager Mode and @autograph".
 
 Following that, Sam Witteveen (now returned from New York) gave a talk about the (very) new feature that appeared in 
-Google Research's Colab : Free access to TPUs.  In a talk that apparently took the Google team a little of 
-guard (because they thought that noone would be able to figure out how to do it, given the lack of documentation),
+Google Research's Colab : Free access to TPUs!  In a talk that apparently took the Google team a little off-guard 
+(because they thought that noone would be able to figure out how to do it, given the lack of documentation),
 Sam showed how to "Use Keras and TPUs in the Cloud for Free".
 
 For my part, I gave a talk titled "Piano Transcriptions", which discussed the Google Magenta team's model 
 to convert raw audio files to midi piano rolls.  Even though the talk was super-brief 
-(because the additional talk had caused everything to run late), I described how their Deep Learning
+(because the additional talk had caused everything to run late), I described how the Deep Learning transcription 
 network is built, the special 'losses' required to make it perform so well, and 
 demonstrated it in action on music sourced 'in the wild' (the code for the enhanced Colab file is also available - see the slides for details).
 
@@ -99,8 +98,8 @@ The slides for my talk are here :
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="http://redcatlabs.com/2018-09-27_TFandDL_PianoTranscription/#/6" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2018-09-27_TFandDL_PianoTranscription_6_600x390.png)
+<a href="http://redcatlabs.com/2018-09-27_TFandDL_PianoTranscription/#/5/1" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2018-09-27_TFandDL_PianoTranscription_5-1_600x390.png)
 </a>
 
 
