@@ -9,7 +9,7 @@ tags:
 - forticlient
 - vpn
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -18,12 +18,12 @@ For whatever reason, my previous Fortigate client UI stopped working recently.
 Since I haven't been able to configure anything using the NetworkManager VPN GUI,
 and the Fortigate binary has stopped working, something else was required
 The FortiClient package, which appears to do virus scanning, etc, and
-hide the VPN functionality (AFAICT), was quickly removed (after a &gt;200Mb download).
+hide the VPN functionality (AFAICT), was quickly removed (after a &gt;200Mb download)...
 
 
 ### Single package required
 
-The Fortigate custom openvpn is even part of the standard install! :
+The Fortigate custom openvpn is even part of the standard Fedora system repo ! :
 
 {% highlight bash %}
 # dnf whatprovides openfortivpn
@@ -45,12 +45,15 @@ Try to connect manually first...  Run as ```root``` :
 mv /etc/openfortivpn/config /etc/openfortivpn/config.old
 
 # Now connect via the CLI (test by using the network somehow in another window) :
-openfortivpn somewhere.fortiddns.com:10443 -u username --trusted-cert dead1e96dead013cdead5c14dead8f5ddeadd3c5deadf3c9dead008bdead6c07
+openfortivpn somewhere.fortiddns.com:10443 -u username \
+             --trusted-cert dead1e96dead013cdead5c14dead8f5ddeadd3c5deadf3c9dead008bdead6c07
+# This will prompt for your password
 {% endhighlight %}
 
-Where the ```--trusted-cert``` is given to you in the debug message, if it fails to match the VPN destination.
+Where the value for ```--trusted-cert``` is given to you in the debug message, 
+if ```openfortivpn``` fails to have a certificate that matches the VPN destination.
 
-When it works the connection messages for ```openfortivpn``` will look like :
+When it works, the connection messages for ```openfortivpn``` will look like :
 
 {% highlight bash %}
 VPN account password: (ENTERED HERE)
@@ -63,7 +66,7 @@ INFO:   Setting new routes...
 INFO:   Adding VPN nameservers...
 INFO:   Tunnel is up and running.
 
-# Now working, until we press ^C in the window...
+# Now the VPN connection is running, and ready for use... Until we press ^C in this window.
 
 ^CINFO:   Cancelling threads...
 INFO:   Setting ppp interface down.
@@ -77,7 +80,8 @@ INFO:   Logged out.
 
 ### Making it simpler
 
-Now put the working parameters into ```/etc/openfortivpn/config``` (edit as ```root```):
+Having made sure the connection works on the command line,  
+put the known-good parameters into ```/etc/openfortivpn/config``` (edit as ```root```):
 
 {% highlight bash %}
 # config file for openfortivpn, see man openfortivpn(1)
@@ -92,6 +96,7 @@ And now the VPN connection can be opened with a simple (run as ```root```) :
 
 {% highlight bash %}
 openfortivpn
+# Will prompt for password, unless you add it to /etc/openfortivpn/config
 {% endhighlight %}
 
 
