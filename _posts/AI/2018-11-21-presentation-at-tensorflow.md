@@ -52,6 +52,7 @@ Outline:
   
   Newest version
     http://muppet.wikia.com/wiki/Bert
+    https://www.reddit.com/r/MachineLearning/comments/9t01to/p_official_bert_tensorflow_code_pretrained_models/
     'Unsupervised' training 
     
   Code etc
