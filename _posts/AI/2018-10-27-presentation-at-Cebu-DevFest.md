@@ -16,76 +16,13 @@ published: false
 
 ### Presentation Link
 
-Sam Witteveen and I started the TensorFlow and Deep Learning Singapore group on MeetUp in February 2017,
-and [the nineteenth MeetUp, aka TensorFlow and Deep Learning: TensorFlow 2.0 - the New Stuff](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/254809924/),
-was again hosted by Google Singapore.
+Sam Witteveen and I headed over to Cebu in the Phillipines in October,
+to take part in the [tenth anniversary Cebu GDG DevFest event](https://devfest.gdgcebu.org/) - 
+which was also advertised [on MeetUp](https://www.meetup.com/GDGCebu/events/253369852/).
 
-We were honoured to have our favourite Singaporean Google Brain team member that works with TPUs 
-speak at the event.  Frank Chen's talk was "TensorFlow 2.0 is coming" - and comprised 4 parts :
-
-*  TensorFlow 2.0
-*  TensorFlow.js
-*  TensorFlow Lite
-*  TensorFlow Distribution Strategies
-
-And, at the last minute, we also discovered that Wolf Dobson from the TensorFlow team could give a talk before
-he passed out from Jet Lag : "Eager Mode and @autograph".
-
-Following that, Sam Witteveen (now returned from New York) gave a talk about the (very) new feature that appeared in 
-Google Research's Colab : Free access to TPUs!  In a talk that apparently took the Google team a little off-guard 
-(because they thought that noone would be able to figure out how to do it, given the lack of documentation),
-Sam showed how to "Use Keras and TPUs in the Cloud for Free".
-
-For my part, I gave a talk titled "Piano Transcriptions", which discussed the Google Magenta team's model 
-to convert raw audio files to midi piano rolls.  Even though the talk was super-brief 
-(because the additional talk had caused everything to run late), I described how the Deep Learning transcription 
-network is built, the special 'losses' required to make it perform so well, and 
-demonstrated it in action on music sourced 'in the wild' (the code for the enhanced Colab file is also available - see the slides for details).
 
 <!--
 
-"Raw Audio to Piano Transcription" - Martin Andrews
-
-Google's Magenta team has created a network to convert raw audio files to 
-a midi piano roll, and has now released the python backend, a Colab notebook and
-an in-browser (local Javascript) version.  Martin will describe how their Deep Learning
-network is built, the special 'losses' required to make it perform so well, and 
-demonstrate it in action on music sourced 'in the wild'.
-
-
-Outline:
-  Magenta project : "Raw Audio to Piano Transcription in the web browser (TensorFlow.js)"
-    Discussion:
-      https://www.reddit.com/r/MachineLearning/comments/9hkwcp/p_raw_audio_to_piano_transcription_in_the_web/
-    Original Blog :
-      https://magenta.tensorflow.org/onsets-frames  
-    Original Code :
-      Copy Colab notebook into drive
-        Installs a whole bunch of .deb files, as well as some python packages
-        Need to upload audio file readable by librosa
-          eg : 04 - 12 Etudes, op. 10 No. 4 in C sharp minor.mp3
-          eg : 401 - Someone To Watch Over Me.ogg
-        Both work *Pretty well*
-          Upload cell may need a couple of attempts on same file (check for 'uploading text')
-        Transcribe cell spends most time converting midi->audio for Play button
-      Updates:
-        Create separate directory for uploaded audio 
-        Read all files in directory
-    Javascript:
-      https://piano-scribe.glitch.me/
-
-    Questions : 
-      Are the dynamics captured = YES, apparently
-        frame_predictions.shape # (8099, 88)  Booleans 
-        onset_predictions.shape # (8099, 88)  Booleans
-        velocity_values.shape   # (8099, 88)  # values range :-0.51426625 ...  1.3687868
-
-Advertise 
-  Deep Learning Developer Module 1 : JumpStart
-  Deep Learning Developer Module 2+ 
-  TF&DL next == ?
-  Interns
-  
 !-->
 
 
