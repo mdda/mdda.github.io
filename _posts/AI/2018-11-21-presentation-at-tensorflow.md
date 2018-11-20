@@ -33,17 +33,57 @@ natural language processing model.
 "Learning Language with BERT" - Martin Andrews
 
 In this talk for people just starting out, 
-Martin will describe how Google's new BERT model can turbo charge your Natural Language Processing solutions.
-
-
+Martin will describe how Google's new BERT model 
+can turbo charge your Natural Language Processing solutions.
 
 
 Outline:
 
-  TensorFlow :
+  Old Style
+    Embeddings
+    BiDirectional LSTM layers 
+      https://www.researchgate.net/figure/Word-embeddings-are-fed-to-a-bidirectional-LSTM-where-V-f-V-b-respectively-represent_fig4_316863199
+    Train from scratch
+  
+  New Style
+    SentencePiece
+    Language Model objective
+    FineTuning
+  
+  Newest version
+    http://muppet.wikia.com/wiki/Bert
+    'Unsupervised' training 
+    
+  Code etc
+
+  ImageNet moment
+
+
+
+
+  Paper: 
+    https://arxiv.org/abs/1810.04805
+    
+    AIAYN : https://arxiv.org/abs/1706.03762
+    
+    
+  Code: 
+    https://github.com/google-research/bert#what-is-bert
+    
+  TensorFlow:
+    https://github.com/google-research/bert
     
   PyTorch (install via pip):
     https://github.com/huggingface/pytorch-pretrained-BERT
+
+
+
+
+
+
+  Next steps : 
+    We are planning on releasing a multilingual model soon (big shared WordPiece vocab trained on 60 languages, with special handling of Chinese).
+
 
 
 Advertise 
