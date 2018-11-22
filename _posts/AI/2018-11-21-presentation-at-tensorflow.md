@@ -28,6 +28,8 @@ We were honoured to have two Google Brain team members speak at the event :
 For my part, I gave a talk titled "Language Learning with BERT", which discussed the basics of Google's newly released BERT 
 natural language processing model.
 
+Sam rounded out the evening with an entertaining look at the Big-GAN models available on TF-Hub.
+
 <!--
 
 "Learning Language with BERT" - Martin Andrews
@@ -79,9 +81,6 @@ Outline:
 
 
 
-
-
-
   Next steps : 
     We are planning on releasing a multilingual model soon (big shared WordPiece vocab trained on 60 languages, with special handling of Chinese).
 
@@ -105,11 +104,13 @@ The slides for my talk are here :
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="http://redcatlabs.com/2018-11-21_TDandDL_BERT/#/5/1" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2018-11-21_TDandDL_BERT_5-1_600x390.png)
+<a href="http://redcatlabs.com/2018-11-21_TDandDL_BERT/#/5" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2018-11-21_TDandDL_BERT_5_600x390.png)
 </a>
 
+### Video Link
 
+The presentation was kindly <a href="https://www.engineers.sg/video/language-learning-with-bert-tensorflow-and-deep-learning-singapore--2982" target="_blank">recorded by Engineers.sg</a>.
 
 
 PS:  And if you liked the content, please 'star' my <a href="https://github.com/mdda/deep-learning-workshop" target="_blank">Deep Learning Workshop</a> repo ::
