@@ -8,7 +8,7 @@ tags:
 - TensorFlow
 - TensorFlow.js
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -20,23 +20,26 @@ Sam Witteveen and I headed over to Cebu in the Phillipines in October,
 to take part in the [tenth anniversary Cebu GDG DevFest event](https://devfest.gdgcebu.org/) - 
 which was also advertised [on MeetUp](https://www.meetup.com/GDGCebu/events/253369852/).
 
+Sam and I presented at two different sessions : giving a 45-minute general-audience talk about
+the TensorFlow ecosystem, and a (heavily oversubscribed) 3-hour Deep Learning workshop.
+
 
 <!--
 
 !-->
 
 
-The slides for my talk are here :
+The slides for my TensorFlow.js talk are here :
 
-<a href="http://redcatlabs.com/2018-09-27_TFandDL_PianoTranscription/" target="_blank">
-![Presentation Screenshot]({{ site.url }}/assets/img/2018-09-27_TFandDL_PianoTranscription_600x390.png)
+<a href="http://redcatlabs.com/2018-10-27_DevFest-Cebu_TensorFlow.js/" target="_blank">
+![Presentation Screenshot]({{ site.url }}/assets/img/2018-10-27_DevFest-Cebu_TensorFlow.js_600x390.png)
 </a>
 
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="http://redcatlabs.com/2018-09-27_TFandDL_PianoTranscription/#/5/1" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2018-09-27_TFandDL_PianoTranscription_5-1_600x390.png)
+<a href="http://redcatlabs.com/2018-10-27_DevFest-Cebu_TensorFlow.js/#/6/3" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2018-10-27_DevFest-Cebu_TensorFlow.js_6-3_600x390.png)
 </a>
 
 
