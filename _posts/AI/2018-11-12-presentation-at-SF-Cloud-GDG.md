@@ -30,15 +30,15 @@ recently came out of Nvidia and Korea respectively.
 
 The slides for my talk are here :
 
-<a href="http://redcatlabs.com/2018-09-27_TFandDL_PianoTranscription/" target="_blank">
-![Presentation Screenshot]({{ site.url }}/assets/img/2018-09-27_TFandDL_PianoTranscription_600x390.png)
+<a href="http://redcatlabs.com/2018-11-12_GDG-SF_DeepLearningVoices/" target="_blank">
+![Presentation Screenshot]({{ site.url }}/assets/img/2018-11-12_GDG-SF_DeepLearningVoices_600x390.png)
 </a>
 
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="http://redcatlabs.com/2018-09-27_TFandDL_PianoTranscription/#/5/1" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2018-09-27_TFandDL_PianoTranscription_5-1_600x390.png)
+<a href="http://redcatlabs.com/2018-11-12_GDG-SF_DeepLearningVoices/#/5/1" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2018-11-12_GDG-SF_DeepLearningVoices_5-1_600x390.png)
 </a>
 
 
