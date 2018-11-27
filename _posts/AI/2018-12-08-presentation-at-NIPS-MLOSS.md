@@ -18,18 +18,10 @@ published: false
 ### Presentation Link
 
 Sam Witteveen and I started the TensorFlow and Deep Learning Singapore group on MeetUp in February 2017,
-and [the twentieth MeetUp, aka TensorFlow and Deep Learning: Happy Birthday TensorFlow](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/256431012/),
-was again hosted by Google Singapore.
+and have been actively building the community around TensorFlow in the South-East Asia region ever since,
 
-We were honoured to have two Google Brain team members speak at the event : 
-
-*  Rachel Lim talking about tf.data ("Beyond the Basics"); and
-*  Chuan Yu Foo talking about TFX ("Complete ML Pipelines")
-
-For my part, I gave a talk titled "Language Learning with BERT", which discussed the basics of Google's newly released BERT 
-natural language processing model.
-
-Sam rounded out the evening with an entertaining look at the Big-GAN models available on TF-Hub.
+We were honoured to have our paper about community building accepted bu the ["Machine Learning Open Source Software 2018: Sustainable communities"](https://nips.cc/Conferences/2018/Schedule?showEvent=10920)
+workshop at NeurIPS (aka NIPS) 2018.  Moreover, since we've also be pencilled in for a speaking slot...
 
 <!--
 
