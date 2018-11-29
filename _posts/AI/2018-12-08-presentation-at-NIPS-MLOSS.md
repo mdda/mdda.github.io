@@ -30,8 +30,33 @@ https://nips.cc/Conferences/2018/Schedule?showEvent=10920
 11 am Sat, 15mins (allow 2-3mins for questions)
 
 Outline:
-
-
+  What Libraries & Frameworks can do to widen their appeal
+    • Differentiation
+    • Example
+    • Ecosystem
+  Importance of in-person communities
+    • Social aspect
+    • Best practices and "know how"
+    • Discovering new MLOSS projects
+  How projects can facilitate community up-take
+    • Relevant examples
+    • Aspirational goals / road maps
+    • Shout-outs
+    
+  Lessons learned from a successful community 
+    Holding events
+      • Consistency
+      • Content mix
+      • Entertainment value
+    Audience Mix
+      • Experience levels
+      • Diversity
+      • Willingness to participate
+    Speakers
+      • Deadlines create action
+      • Thematic events
+      • Social standing and résumé value  
+      
 
 Advertise 
   TF&DL next == ?
