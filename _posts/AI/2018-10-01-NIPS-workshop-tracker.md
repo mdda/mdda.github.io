@@ -232,3 +232,21 @@ maincard_10946 :: NIPS 2018 Competition Track Day 2
 maincard_10925 :: Machine Learning for Systems
   ?
 
+
+##  NIPS Authors
+
+https://nips.cc/Conferences/2018/Schedule
+
+//<div class="maincardBody">Visualization for Machine Learning</div>
+//<div class="maincardFooter">J. Zico Kolter · Aleksander Madry</div>
+
+var a=[], authors={}; $('div.maincard').each( function() { 
+  var id=$(this).attr("id");
+  var num = id.substr(-5);
+  var title = $(this).find('.maincardBody').html();
+  var names = $(this).find('.maincardFooter').html().split(' · ');
+  names.forEach(n => {
+    authors[n] = (authors[n] || 0)+1;
+  });
+  a.push( { id:num, title:title, names:names } );
+}); console.log( a.slice(0,5).map( e => e.names.join('\n')) ); 
