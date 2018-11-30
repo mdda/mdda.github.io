@@ -249,4 +249,18 @@ var a=[], authors={}; $('div.maincard').each( function() {
     authors[n] = (authors[n] || 0)+1;
   });
   a.push( { id:num, title:title, names:names } );
-}); console.log( a.slice(0,5).map( e => e.names.join('\n')) ); 
+}); console.log( a.slice(0,5).map( e => e.names.join(', ')) ); 
+// Now print out top 10 authors (exclude coffee breaks)
+console.log( Object.keys(authors).sort( (a,b) => (authors[b]-authors[a]) ).slice(1,11).map( a => a+' - '+authors[a]) );
+/*
+"Josh Tenenbaum - 16"
+"Sergey Levine - 12"
+"Eric Xing - 10"
+"Michael Jordan - 10"
+"Yoshua Bengio - 9"
+"Stefano Ermon - 8"
+"Jiajun Wu - 8"
+"Yee Whye Teh - 8"
+"Francis Bach - 8"
+"Honglak Lee - 8"
+*/
