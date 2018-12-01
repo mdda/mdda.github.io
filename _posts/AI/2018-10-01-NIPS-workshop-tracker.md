@@ -264,3 +264,5 @@ console.log( Object.keys(authors).sort( (a,b) => (authors[b]-authors[a]) ).slice
 "Francis Bach - 8"
 "Honglak Lee - 8"
 */
+console.log( Object.keys(authors).join('\t') ); // Copy to file : 3423 distinct authors
+
