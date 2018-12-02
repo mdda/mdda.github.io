@@ -265,4 +265,9 @@ console.log( Object.keys(authors).sort( (a,b) => (authors[b]-authors[a]) ).slice
 "Honglak Lee - 8"
 */
 console.log( Object.keys(authors).join('\t') ); // Copy to file : 3423 distinct authors
-
+var author_last = Object.keys(authors).reduce( (acc,a) => {
+  acc[a]=a.substring(a.lastIndexOf(' '));
+  return acc;
+}, {});
+console.log( Object.keys(authors).map( a => author_last[a]+"&&"+a).join('\t') );
+// In resulting 'copy-paste' : Replace '\t'->'\n', '&&'->'\n' Copy to speadsheet, sort
