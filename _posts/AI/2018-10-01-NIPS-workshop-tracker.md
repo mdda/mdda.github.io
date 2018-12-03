@@ -246,6 +246,7 @@ var a=[], authors={}; $('div.maincard').each( function() {
   var title = $(this).find('.maincardBody').html();
   var names = $(this).find('.maincardFooter').html().split(' · ');
   names.forEach(n => {
+    n=n.trim();
     authors[n] = (authors[n] || 0)+1;
   });
   a.push( { id:num, title:title, names:names } );
@@ -269,5 +270,5 @@ var author_last = Object.keys(authors).reduce( (acc,a) => {
   acc[a]=a.substring(a.lastIndexOf(' '));
   return acc;
 }, {});
-console.log( Object.keys(authors).map( a => author_last[a]+"&&"+a).join('\t') );
+console.log( Object.keys(authors).map( a => author_last[a],trim()+"&&"+a).join('\t') );
 // In resulting 'copy-paste' : Replace '\t'->'\n', '&&'->'\n' Copy to speadsheet, sort
