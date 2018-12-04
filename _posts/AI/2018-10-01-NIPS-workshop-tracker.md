@@ -272,3 +272,6 @@ var author_last = Object.keys(authors).reduce( (acc,a) => {
 }, {});
 console.log( Object.keys(authors).map( a => author_last[a],trim()+"&&"+a).join('\t') );
 // In resulting 'copy-paste' : Replace '\t'->'\n', '&&'->'\n' Copy to speadsheet, sort
+// Now big id,paper,authors dump
+console.log( a.map( e => e.id+"&&"+e.title+"&&"+(e.names.join(', ')) ).join('\t') ); 
+// In resulting 'copy-paste' : Replace '\t'->'\n', '&&'->'\n' Copy to speadsheet (new tab)
