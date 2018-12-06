@@ -27,9 +27,9 @@ workshop at NeurIPS (aka NIPS) 2018.  Moreover, since we've also be pencilled in
 
 "Building, growing and sustaining ML communities" - Martin Andrews
 https://nips.cc/Conferences/2018/Schedule?showEvent=10920
-11 am Sat, 15mins (allow 2-3mins for questions)
+~10am Sat, 15mins (allow 2-3mins for questions)
 
-Outline:
+Paper Outline:
   What Libraries & Frameworks can do to widen their appeal
     • Differentiation
     • Example
@@ -57,6 +57,13 @@ Outline:
       • Thematic events
       • Social standing and résumé value  
       
+Talk Outline:
+
+
+
+
+
+
 
 Advertise 
   TF&DL next == ?
