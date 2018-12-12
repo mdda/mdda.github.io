@@ -9,7 +9,7 @@ tags:
 - Communities
 - NIPS
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -59,21 +59,23 @@ Paper Outline:
       • Social standing and résumé value  
 
 DIR=2018-12-08_NeurIPS-2018_MLOSS
-google-chrome --disable-gpu  --headless --window-size=1200,780 --screenshot="tmp.png" "https://docs.google.com/presentation/d/1FelOsZJ9RJgJ_S4gko0n93W6e0orxjtaLJvg-zLeRGo/edit#slide=id.gc6fa3c898_0_0"    
+# Just load presentation fullscreen and screenshot-save-to-file ...
 convert tmp.png -adaptive-resize 600x390 ${DIR}_600x390.png && rm tmp.png
+# Just load presentation fullscreen and screenshot-save-to-file ...
+convert tmp.png -adaptive-resize 600x390 ${DIR}_11_600x390.png && rm tmp.png
 !-->
 
 
 The slides for our talk (given jointly, with a switch at the projects/in-person stage) are here :
 
-<a href="https://docs.google.com/presentation/d/1FelOsZJ9RJgJ_S4gko0n93W6e0orxjtaLJvg-zLeRGo/edit#slide=id.gc6fa3c898_0_0" target="_blank">
-![Presentation Screenshot]({{ site.url }}/assets/img/2018-12-08_NeurIPS-2018_MLOSS_600x390.png)
+<a href="https://docs.google.com/presentation/d/1FelOsZJ9RJgJ_S4gko0n93W6e0orxjtaLJvg-zLeRGo/present#slide=id.gc6fa3c898_0_0" target="_blank">
+  <img src="{{ site.url }}/assets/img/2018-12-08_NeurIPS-2018_MLOSS_600x390.png" alt="Presentation Content Example" style='border:1px solid #000000' />
 </a>
 
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="https://docs.google.com/presentation/d/1FelOsZJ9RJgJ_S4gko0n93W6e0orxjtaLJvg-zLeRGo/edit#slide=id.g33b0b56e38_3_29" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2018-12-08_NeurIPS-2018_MLOSS_5_600x390.png)
+<a href="https://docs.google.com/presentation/d/1FelOsZJ9RJgJ_S4gko0n93W6e0orxjtaLJvg-zLeRGo/present#slide=id.g33b0b56e38_3_29" target="_blank">
+  <img src="{{ site.url }}/assets/img/2018-12-08_NeurIPS-2018_MLOSS_11_600x390.png" alt="Presentation Content Example" style='border:1px solid #000000' />
 </a>
 
