@@ -1,14 +1,14 @@
 ---
-date: 2018-11-21
-title:  "Learning Language with BERT"
+date: 2018-12-18
+title:  "Embed All The Things"
 tagline: Presentation
 category: AI
 tags:
 - Presentation
 - TensorFlow
-- Magenta
+- Embeddings
 layout: post
-published: true
+published: false
 ---
 {% include JB/setup %}
 
@@ -17,40 +17,25 @@ published: true
 ### Presentation Link
 
 Sam Witteveen and I started the TensorFlow and Deep Learning Singapore group on MeetUp in February 2017,
-and [the twentieth MeetUp, aka TensorFlow and Deep Learning: Happy Birthday TensorFlow](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/256431012/),
+and [the twenty first MeetUp, aka TensorFlow and Deep Learning - Dealing with tabular data](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/257155233/),
 was again hosted by Google Singapore.
 
-We were honoured to have two Google Brain team members speak at the event : 
 
-*  Rachel Lim talking about tf.data ("Beyond the Basics"); and
-*  Chuan Yu Foo talking about TFX ("Complete ML Pipelines")
+For my part, I gave a talk titled "Embed All The Things", which discussed how embeddings can be used in a wide variety of settings.  
 
-For my part, I gave a talk titled "Language Learning with BERT", which discussed the basics of Google's newly released BERT 
-natural language processing model.
-
-Sam rounded out the evening with an entertaining look at the Big-GAN models available on TF-Hub.
+Sam's talk showed the new TF tabular data interface for tf.data, and did a demo using a cross-and-deep network for the Titanic dataset.
 
 <!--
 
-"Learning Language with BERT" - Martin Andrews
+"Embed All The Things" - Martin Andrews
 
 In this talk for people just starting out, 
-Martin will describe how Google's new BERT model 
-can turbo charge your Natural Language Processing solutions.
+Martin will describe how Embeddings (inspired by their initial usecase in text) 
+can be used to understand graph networks, image search and ... language itself.
 
 
 Outline:
 
-  Old Style
-    Embeddings
-    BiDirectional LSTM layers 
-      https://www.researchgate.net/figure/Word-embeddings-are-fed-to-a-bidirectional-LSTM-where-V-f-V-b-respectively-represent_fig4_316863199
-    Train from scratch
-  
-  New Style
-    SentencePiece
-    Language Model objective
-    FineTuning
   
   Newest version
     http://muppet.wikia.com/wiki/Bert
