@@ -36,38 +36,21 @@ can be used to understand graph networks, image search and ... language itself.
 
 Outline:
 
+  Word Embeddings
   
-  Newest version
-    http://muppet.wikia.com/wiki/Bert
-    https://www.reddit.com/r/MachineLearning/comments/9t01to/p_official_bert_tensorflow_code_pretrained_models/
-    'Unsupervised' training 
+  Other Sequence Embeddings
+  
+  Other Object Embeddings
+  
+  Multi-Object Embeddings
+  
     
-  Code etc
+  ?Code etc
 
-  ImageNet moment
-
-
-
-
-  Paper: 
-    https://arxiv.org/abs/1810.04805
-    
-    AIAYN : https://arxiv.org/abs/1706.03762
-    
-    
-  Code: 
-    https://github.com/google-research/bert#what-is-bert
-    
-  TensorFlow:
-    https://github.com/google-research/bert
-    
-  PyTorch (install via pip):
-    https://github.com/huggingface/pytorch-pretrained-BERT
+  Wrap-up
+  
 
 
-
-  Next steps : 
-    We are planning on releasing a multilingual model soon (big shared WordPiece vocab trained on 60 languages, with special handling of Chinese).
 
 
 
@@ -82,15 +65,15 @@ Advertise
 
 The slides for my talk are here :
 
-<a href="http://redcatlabs.com/2018-11-21_TFandDL_BERT/" target="_blank">
-![Presentation Screenshot]({{ site.url }}/assets/img/2018-11-21_TFandDL_BERT_600x390.png)
+<a href="http://redcatlabs.com/2018-12-18_TFandDL_Embeddings/" target="_blank">
+![Presentation Screenshot]({{ site.url }}/assets/img/2018-12-18_TFandDL_Embeddings_600x390.png)
 </a>
 
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="http://redcatlabs.com/2018-11-21_TFandDL_BERT/#/5" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2018-11-21_TFandDL_BERT_5_600x390.png)
+<a href="http://redcatlabs.com/2018-12-18_TFandDL_Embeddings/#/5" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2018-12-18_TFandDL_Embeddings_5_600x390.png)
 </a>
 
 ### Video Link
