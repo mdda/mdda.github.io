@@ -20,10 +20,10 @@ Sam Witteveen and I started the TensorFlow and Deep Learning Singapore group on 
 and [the twenty first MeetUp, aka TensorFlow and Deep Learning - Dealing with tabular data](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/257155233/),
 was again hosted by Google Singapore.
 
-
 For my part, I gave a talk titled "Embed All The Things", which discussed how embeddings can be used in a wide variety of settings.  
 
-Sam's talk showed the new TF tabular data interface for tf.data, and did a demo using a cross-and-deep network for the Titanic dataset.
+Sam's talk showed the new TF tabular data interface for ```tf.data```, 
+and did a demo using a cross-and-deep network for the Titanic dataset.
 
 <!--
 
@@ -49,11 +49,6 @@ Outline:
 
   Wrap-up
   
-
-
-
-
-
 Advertise 
   Deep Learning Developer Module 1 : JumpStart
   Deep Learning Developer Module 2+ 
@@ -75,10 +70,6 @@ or contact me using the details given on the slides themselves.
 <a href="http://redcatlabs.com/2018-12-18_TFandDL_Embeddings/#/5" target="_blank">
 ![Presentation Content Example]({{ site.url }}/assets/img/2018-12-18_TFandDL_Embeddings_5_600x390.png)
 </a>
-
-### Video Link
-
-The presentation was kindly <a href="https://www.engineers.sg/video/language-learning-with-bert-tensorflow-and-deep-learning-singapore--2982" target="_blank">recorded by Engineers.sg</a>.
 
 
 PS:  And if you liked the content, please 'star' my <a href="https://github.com/mdda/deep-learning-workshop" target="_blank">Deep Learning Workshop</a> repo ::
