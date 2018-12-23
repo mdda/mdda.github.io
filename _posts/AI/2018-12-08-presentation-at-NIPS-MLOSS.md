@@ -66,7 +66,7 @@ convert tmp.png -adaptive-resize 600x390 ${DIR}_11_600x390.png && rm tmp.png
 !-->
 
 
-The slides for our talk (given jointly, with a switch at the projects/in-person stage) are here :
+The slides for our talk (given jointly, with a switch from Martin to Sam at the projects/in-person stage) are here :
 
 <a href="https://docs.google.com/presentation/d/1FelOsZJ9RJgJ_S4gko0n93W6e0orxjtaLJvg-zLeRGo/present#slide=id.gc6fa3c898_0_0" target="_blank">
   <img src="{{ site.url }}/assets/img/2018-12-08_NeurIPS-2018_MLOSS_600x390.png" alt="Presentation Content Example" style='border:1px solid #000000' />
