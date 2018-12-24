@@ -10,3 +10,16 @@ published: false
 ---
 {% include JB/setup %}
 
+<!--
+
+Idea : Make a crossword solving helper for Mum
+
+Need to be able to costrain answers by :
+
+*  number of letters
+*  specific known letters (frequently not set-in-stone)
+*  'straight' meaning of clue
+*  Names of people, places, etc : Facts
+
+
+!-->
