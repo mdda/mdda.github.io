@@ -21,5 +21,11 @@ Need to be able to costrain answers by :
 *  'straight' meaning of clue
 *  Names of people, places, etc : Facts
 
+Further idea : Cryptic solver
+
+*  https://crypticshewrote.wordpress.com/explanations/
+*  Much more difficult reasoning problem...
+
+
 
 !-->
