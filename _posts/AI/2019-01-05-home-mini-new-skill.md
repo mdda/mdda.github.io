@@ -27,5 +27,12 @@ Further idea : Cryptic solver
 *  Much more difficult reasoning problem...
 
 
+project/crossword-solver-12f1e
+
+Ahah!  Alpha release can be to 20 nominated users, 
+and doesn't require Google review before releasing it... :  
+
+https://console.actions.google.com/project/crossword-solver-12f1e/release/
+
 
 !-->
