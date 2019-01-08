@@ -5,39 +5,91 @@ category: OSS
 tags:
 - fedora
 - linux
-- Fortinet
-- forticlient
-- vpn
+- borg
+- backup
 layout: post
 published: false
 ---
 {% include JB/setup %}
 
-For whatever reason, my previous Fortigate client UI stopped working recently.
-
-Since I haven't been able to configure anything using the NetworkManager VPN GUI,
-and the Fortigate binary has stopped working, something else was required
-The FortiClient package, which appears to do virus scanning, etc, and
-hide the VPN functionality (AFAICT), was quickly removed (after a &gt;200Mb download)...
 
 
 ### Single package required
 
-The Fortigate custom openvpn is even part of the standard Fedora system repo ! :
+{% highlight bash %}
+dnf install borgbackup
+{% endhighlight %}
+
+
+### Single package required
 
 {% highlight bash %}
-# dnf whatprovides openfortivpn
+mount /dev/sdd1 /media/disk
+borg init --encryption=repokey /media/disk/borg-home
+{% endhighlight %}
 
-openfortivpn-1.6.0-1.fc28.x86_64 : Client for PPP+SSL VPN tunnel services
-Repo        : @System
-Matched from:
-Provide    : openfortivpn = 1.6.0-1.fc28
+
+### Single package required
+
+{% highlight bash %}
+import os
+
+# Need to make sure backup drive is mounted...
+disk = '/media/disk'
+
+if not os.path.isfile( os.path.join( disk, '.mounted')):
+  print("Error : Need to mount %s" % (disk,))
+  exit(1)
 
 {% endhighlight %}
 
 
+### Single package required
+
+{% highlight bash %}
+repo = os.path.join( disk, 'borg-home')
+
+print('')
+print("""export BORG_PASSPHRASE=`zenity --title 'Borg Password' --entry --hide-text --text 'Please enter Borg password'`""")
+print('')
+
+{% endhighlight %}
+
+
+### Single package required
+
+{% highlight bash %}
+def beautify(comment, cmd):
+  cmd= ' '.join([ l.strip() for l in cmd.split('\n') if not l.strip().startswith('#') ]).strip()
+  cmd = cmd.replace('{repo}', repo)
+  return "echo \"%s\" && \\\n  %s" % (comment, cmd)
+
+if True:
+  cmd="""
+  borg create 
+    --progress
+#   --list --dry-run
+    --exclude '*/.Trash*/'    
+    --exclude '*/checkpoint*/'    
+    {repo}::'rdai-{now}'
+    /mnt/rdai
+  """
+  print(beautify("RedDragonAI", cmd))
+
+{% endhighlight %}
+
+
+### Single package required
+
+{% highlight bash %}
+print(beautify("See the archives", "borg list {repo}"))
+print(beautify("See the compression", "borg info {repo}"))
+{% endhighlight %}
 
 
 All done.
+
+
+
 
 
