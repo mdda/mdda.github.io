@@ -87,6 +87,17 @@ print(beautify("See the compression", "borg info {repo}"))
 {% endhighlight %}
 
 
+### Check files can be retrieved
+
+VERY IMPORTANT STEP FOR ANY BACKUP SOLUTION!
+
+Quick example :
+
+{% highlight bash %}
+borg extract  /media/disk/borg-home::personal-2019-01-09T01:03:27 mnt/data/Personal/Property/StreetEasy.txt
+{% endhighlight %}
+
+
 All done.
 
 
