@@ -12,6 +12,27 @@ published: false
 ---
 {% include JB/setup %}
 
+Over the past `n` years, I've used ```rdiff-backup``` as my backup solution.  However,
+this has grown increasingly irritating because : 
+
+*   If a backup gets terminated early, 'reverting' the incomplete backup takes a long time
+*   Backups would always complain about bad access modes (MSDOS backup disk vs Linux host system?)
+*   My backup scripts were written in ```Perl```, which is feeling/looking like a weakness now
+*   My backup scripts were due for an overhaul anyway, since new disks/repos have appeared, and old machines have retired
+
+Checking online shows that a number of new solutions have appeared, and so I decided 
+to test one out (and actually switch if successful).  
+
+The key requirements were :
+
+*   Backups should be incremental
+*   Backup media should be encrypted (so that I can rotate two sets of media, and store one 'insecurely' off-site without worrying)
+*   Decent include/exclude mechanism for files/folders
+*   Ability to back up accross network
+*   Simple tools to get access to my data in the future (or a disaster scenario)
+*   Support in main-line Fedora
+
+Fortunately, ```borgbackup``` met all these criteria.
 
 
 ### Single package required
