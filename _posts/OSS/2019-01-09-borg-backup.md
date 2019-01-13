@@ -8,17 +8,17 @@ tags:
 - borg
 - backup
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
-Over the past `n` years, I've used ```rdiff-backup``` as my backup solution.  However,
+Over the past *n* years, I've used ```rdiff-backup``` as my backup solution.  However,
 this has grown increasingly irritating because : 
 
 *   If a backup gets terminated early, 'reverting' the incomplete backup takes a long time
 *   Backups would always complain about bad access modes (MSDOS backup disk vs Linux host system?)
 *   My backup scripts were written in ```Perl```, which is feeling/looking like a weakness now
-*   My backup scripts were due for an overhaul anyway, since new disks/repos have appeared, and old machines have retired
+*   My backup scripts were due for an overhaul anyway, since new disks/repos have appeared, and old machines have been retired.
 
 Checking online shows that a number of new solutions have appeared, and so I decided 
 to test one out (and actually switch if successful).  
@@ -37,6 +37,8 @@ Fortunately, ```borgbackup``` met all these criteria.
 
 ### Single package required
 
+NB:  All the below needs to be done as ```root```, so that all paths are traversible, and all permissions are preserved
+
 {% highlight bash %}
 dnf install borgbackup
 {% endhighlight %}
@@ -44,15 +46,20 @@ dnf install borgbackup
 
 ### Mount the media
 
+It makes sense to create a consistent mount-point for the media, since that simplifies all the subsequent scripts :
+
 {% highlight bash %}
+mkdir -p /media/disk
 mount /dev/sdd1 /media/disk
 {% endhighlight %}
 
 ### Initialise the repo
 
-First time only :
+First time only (and this will require inventing a decently strong password, with which a keyfile stored with the repo will be secured) :
 
 {% highlight bash %}
+touch /media/disk/.mounted # enables media presence to be checked easily
+
 borg init --encryption=repokey /media/disk/borg-home
 {% endhighlight %}
 
@@ -113,7 +120,7 @@ if True:
 {% endhighlight %}
 
 
-### Single package required
+### Include some utility commands too
 
 {% highlight bash %}
 print(beautify("See the archives", "borg list {repo}"))
@@ -121,13 +128,15 @@ print(beautify("See the compression", "borg info {repo}"))
 {% endhighlight %}
 
 
-### KEY CHECK
+### Check that the backup can be restored
 
-VERY IMPORTANT STEP FOR ANY BACKUP SOLUTION!
+THIS IS A VERY IMPORTANT STEP FOR ANY BACKUP SOLUTION!
 
-Quick example :
+Quick example with a file that I knew should be in a specific backup batch :
 
 {% highlight bash %}
+mkdir -p ~/tmp/
+cd ~/tmp/
 borg extract  /media/disk/borg-home::personal-2019-01-09T01:03:27 mnt/data/Personal/Property/StreetEasy.txt
 {% endhighlight %}
 
