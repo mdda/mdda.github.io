@@ -42,17 +42,26 @@ dnf install borgbackup
 {% endhighlight %}
 
 
-### Single package required
+### Mount the media
 
 {% highlight bash %}
 mount /dev/sdd1 /media/disk
+{% endhighlight %}
+
+### Initialise the repo
+
+First time only :
+
+{% highlight bash %}
 borg init --encryption=repokey /media/disk/borg-home
 {% endhighlight %}
 
 
-### Single package required
+### Basic approach using Python
 
-{% highlight bash %}
+Check that the media is there :
+
+{% highlight python %}
 import os
 
 # Need to make sure backup drive is mounted...
@@ -65,7 +74,9 @@ if not os.path.isfile( os.path.join( disk, '.mounted')):
 {% endhighlight %}
 
 
-### Single package required
+### ```export``` the password locally
+
+This gets printed out, so it can be executed on the command line easily:
 
 {% highlight bash %}
 repo = os.path.join( disk, 'borg-home')
@@ -77,7 +88,9 @@ print('')
 {% endhighlight %}
 
 
-### Single package required
+### And produce the command-line text
+
+Creating the necessary command-line entries is easier, and more maintainable, in Python :
 
 {% highlight bash %}
 def beautify(comment, cmd):
@@ -108,7 +121,7 @@ print(beautify("See the compression", "borg info {repo}"))
 {% endhighlight %}
 
 
-### Check files can be retrieved
+### KEY CHECK
 
 VERY IMPORTANT STEP FOR ANY BACKUP SOLUTION!
 
@@ -120,8 +133,5 @@ borg extract  /media/disk/borg-home::personal-2019-01-09T01:03:27 mnt/data/Perso
 
 
 All done.
-
-
-
 
 
