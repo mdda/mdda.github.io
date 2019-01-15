@@ -40,6 +40,22 @@ ffmpeg -i ${stub}.mp4 -af "volume=1dB" -c:v copy -c:a aac -b:a 64k ${stub}_volfi
 {% endhighlight %}
 
 
+### Treating the audio separately
+
+*  Take the audio from the combined file
+*  Process the audio (keep length the same)
+*  Recombine the audio into the video file
+
+#### Take the audio from the combined file
+
+
+#### Process the audio (keep length the same)
+
+
+#### Recombine the audio into the video file
+
+
+
 All done.
 
 
