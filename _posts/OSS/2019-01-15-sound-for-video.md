@@ -118,8 +118,11 @@ Load `SEER-01_audio_raw.wav` into Audacity to do the following processing :
 #### Recombine the audio into the video file
 
 {% highlight bash %}
-ffmpeg -i SEER-01_2019-01-09.mp4 -i SEER-01_audio_clean.ogg \
+ffmpeg -i SEER-01_2019-01-09_high-xvid_HD720p.25.mp4 -i SEER-01_audio_clean.ogg \
   -c:v copy -map 0:v:0 -map 1:a:0 SEER-01_2019-01-09_clean.mp4
+
+ffmpeg -i SEER-01_2019-01-09_Med-VimeoWide_1Mb.mp4 -i SEER-01_audio_clean.ogg \
+  -c:v copy -map 0:v:0 -map 1:a:0 SEER-01_2019-01-09_small-clean.mp4
 {% endhighlight %}
 
 
