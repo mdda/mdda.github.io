@@ -5,19 +5,21 @@ category: OSS
 tags:
 - fedora
 - linux
+- ffmpeg
+- video
+- audio
 layout: post
 published: false
 ---
 {% include JB/setup %}
 
 
+Often sound for 'voice over slides' videos gets recorded badly (or at least needs some fixing up), so
+here are two approaches to enhancing the sound quality (and some reasonable settings for video)
 
-
-
-Quick example with a file that I knew should be in a specific backup batch :
+###  Method 1 : In-place volume normalisation
 
 {% highlight bash %}
-
 # https://superuser.com/questions/323119/how-can-i-normalize-audio-using-ffmpeg
 
 ffmpeg -i video.avi -af "volumedetect" -vn -sn -dn -f null /dev/null
@@ -40,7 +42,7 @@ ffmpeg -i ${stub}.mp4 -af "volume=1dB" -c:v copy -c:a aac -b:a 64k ${stub}_volfi
 {% endhighlight %}
 
 
-### Treating the audio separately
+###  Method 2 : Treating the audio separately
 
 *  Take the audio from the combined file
    -  https://www.bugcodemaster.com/article/extract-audio-video-using-ffmpeg
