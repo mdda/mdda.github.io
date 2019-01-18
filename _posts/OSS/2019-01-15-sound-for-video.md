@@ -35,7 +35,7 @@ ffmpeg -i ${stub}.mp4 -af "volumedetect" -vn -sn -dn -f null /dev/null
 [Parsed_volumedetect_0 @ 0x5642c8652c40] histogram_18db: 3538
 
 # Seems best
-ffmpeg -i ${stub}.mp4 -af "volume=1dB" -c:v copy -c:a aac -b:a 64k ${stub}_volfix.mp4 
+ffmpeg -i ${stub}.mp4 -af "volume=16dB" -c:v copy -c:a aac -b:a 64k ${stub}_volfix.mp4 
 
 # This resamples to 192kHz, which seems extreme
 #ffmpeg -i ${stub} -af "loudnorm" -c:v copy -c:a aac -b:a 64k ${stub}_volfix-loudnorm.mp4 
@@ -134,6 +134,28 @@ ffmpeg -i SEER-01_2019-01-09_Med-VimeoWide_1Mb.mp4 -i SEER-01_audio_clean.ogg \
 {% endhighlight %}
 
 
-All done.
+###  Next steps...
 
+It would be nice if there was a 'Noise Reduction' option for ```ffmpeg``` - though perhaps there's 
+[good news](https://superuser.com/a/1393535) : 
 
+>  FFmpeg now have 2 native filters to deal with noise background: [afftdn](afftdn) 
+>  and [anlmdn](https://ffmpeg.org/ffmpeg-filters.html#anlmdn). Also, for some 
+>  time one has been able to use ladspa (look for noise-supressor) and/or lv2 (look for speech denoiser) filters with FFmpeg.
+
+Ideas :
+
+{% highlight bash %}
+# Fix volume
+volume=volume=16dB
+
+# Dynamic volume normalization
+#   https://ffmpeg.org/ffmpeg-filters.html#dynaudnorm
+dynaudnorm
+
+# Half-a-second fade-in
+afade=t=in:ss=0:d=0.5
+
+# FFT-wise eliminate white noise
+afftdn=nt=w
+{% endhighlight %}
