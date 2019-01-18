@@ -100,24 +100,30 @@ Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'Seer 01 2019 01 09.mp4':
 #### Take the audio from the combined file
 
 {% highlight bash %}
+# This is the default, apparently:
 ffmpeg -i SEER-01_2019-01-09.mp4 -vn -acodec copy SEER-01_audio_raw.aac
+
+# Get a list of all supported formats
 ffmpeg -codecs
 
+# Best choice for 'regular WAV'
 ffmpeg -i SEER-01_2019-01-09.mp4 -vn -acodec pcm_s16be SEER-01_audio_raw.wav
 {% endhighlight %}
 
 
 #### Process the audio (keep length the same)
 
-Load `SEER-01_audio_raw.wav` into Audacity to do the following processing : 
+Load `SEER-01_audio_raw.wav` manually into Audacity to do the following processing : 
 
 *   `Effect - Fade-in / out` to smooth out the recording
 *   `Effect - Noise Reduction` (need to find a section of 'silence' for it to fingerprint first)
 *   `Effect - Amplify` (so that maxiumum amplitude is 0dB)
-*   `File - Export as` OGG (quality=5 seems fine) = SEER-01_audio_clean.ogg
+*   `File - Export as` OGG (Quality=5 seems fine) &r_arr; `SEER-01_audio_clean.ogg`
 
 
 #### Recombine the audio into the video file
+
+Two versions of the same command (illustrating combinations tried) :
 
 {% highlight bash %}
 ffmpeg -i SEER-01_2019-01-09_high-xvid_HD720p.25.mp4 -i SEER-01_audio_clean.ogg \
