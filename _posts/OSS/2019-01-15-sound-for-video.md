@@ -156,6 +156,13 @@ dynaudnorm
 # Half-a-second fade-in
 afade=t=in:ss=0:d=0.5
 
-# FFT-wise eliminate white noise
+# FFT-wise eliminate white noise (needs ffmpeg >= 4.1, not in Fedora 29...)
 afftdn=nt=w
 {% endhighlight %}
+
+so (without the denoising, for now) : 
+
+{% highlight bash %}
+ffmpeg -i ${stub}.mp4 -c:v copy -c:a aac -b:a 64k -af "dynaudnorm, afade=t=in:ss=0:d=0.5" ${stub}_fixed.mp4 
+{% endhighlight %}
+
