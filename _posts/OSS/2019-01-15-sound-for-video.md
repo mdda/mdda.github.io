@@ -17,7 +17,7 @@ published: false
 Often sound for 'voice over slides' videos gets recorded badly (or at least needs some fixing up), so
 here are two approaches to enhancing the sound quality (and some reasonable settings for video)
 
-###  Method 1 : In-place volume normalisation
+###  Method 1 : Direct in-place volume normalisation
 
 {% highlight bash %}
 # https://superuser.com/questions/323119/how-can-i-normalize-audio-using-ffmpeg
@@ -43,6 +43,39 @@ ffmpeg -i ${stub}.mp4 -af "volume=16dB" -c:v copy -c:a aac -b:a 64k ${stub}_volf
 
 
 ###  Method 2 : Treating the audio separately
+
+It would be nice if there was a 'Noise Reduction' option for ```ffmpeg``` - though perhaps there is 
+[good news](https://superuser.com/a/1393535) : 
+
+>  FFmpeg now have 2 native filters to deal with noise background: [afftdn](afftdn) 
+>  and [anlmdn](https://ffmpeg.org/ffmpeg-filters.html#anlmdn). Also, for some 
+>  time one has been able to use ladspa (look for noise-supressor) and/or lv2 (look for speech denoiser) filters with FFmpeg.
+
+Ideas :
+
+{% highlight bash %}
+# Fix volume
+volume=volume=16dB
+
+# Dynamic volume normalization
+#   https://ffmpeg.org/ffmpeg-filters.html#dynaudnorm
+dynaudnorm
+
+# Half-a-second fade-in
+afade=t=in:ss=0:d=0.5
+
+# FFT-wise eliminate white noise (needs ffmpeg >= 4.1, not in Fedora 29...)
+afftdn=nt=w
+{% endhighlight %}
+
+so (without the denoising, for now) : 
+
+{% highlight bash %}
+ffmpeg -i ${stub}.mp4 -c:v copy -c:a aac -b:a 64k -af "dynaudnorm, afade=t=in:ss=0:d=0.5" ${stub}_fixed.mp4 
+{% endhighlight %}
+
+
+###  Method 3 : Treating the audio separately
 
 *  Take the audio from the combined file
    -  https://www.bugcodemaster.com/article/extract-audio-video-using-ffmpeg
@@ -134,35 +167,9 @@ ffmpeg -i SEER-01_2019-01-09_Med-VimeoWide_1Mb.mp4 -i SEER-01_audio_clean.ogg \
 {% endhighlight %}
 
 
-###  Next steps...
+### Choices, choices...
 
-It would be nice if there was a 'Noise Reduction' option for ```ffmpeg``` - though perhaps there's 
-[good news](https://superuser.com/a/1393535) : 
+Will be much easier to go with Method 2 (but need to wait for newer ```ffmpeg``` to arrive
+in the repos).
 
->  FFmpeg now have 2 native filters to deal with noise background: [afftdn](afftdn) 
->  and [anlmdn](https://ffmpeg.org/ffmpeg-filters.html#anlmdn). Also, for some 
->  time one has been able to use ladspa (look for noise-supressor) and/or lv2 (look for speech denoiser) filters with FFmpeg.
-
-Ideas :
-
-{% highlight bash %}
-# Fix volume
-volume=volume=16dB
-
-# Dynamic volume normalization
-#   https://ffmpeg.org/ffmpeg-filters.html#dynaudnorm
-dynaudnorm
-
-# Half-a-second fade-in
-afade=t=in:ss=0:d=0.5
-
-# FFT-wise eliminate white noise (needs ffmpeg >= 4.1, not in Fedora 29...)
-afftdn=nt=w
-{% endhighlight %}
-
-so (without the denoising, for now) : 
-
-{% highlight bash %}
-ffmpeg -i ${stub}.mp4 -c:v copy -c:a aac -b:a 64k -af "dynaudnorm, afade=t=in:ss=0:d=0.5" ${stub}_fixed.mp4 
-{% endhighlight %}
 
