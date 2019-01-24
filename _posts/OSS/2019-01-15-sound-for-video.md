@@ -9,20 +9,22 @@ tags:
 - video
 - audio
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
 
 Often sound for 'voice over slides' videos gets recorded badly (or at least needs some fixing up), so
-here are two approaches to enhancing the sound quality (and some reasonable settings for video)
+here are three approaches to enhancing the sound quality (and some reasonable settings for video).
 
 ###  Method 1 : Direct in-place volume normalisation
 
-{% highlight bash %}
-# https://superuser.com/questions/323119/how-can-i-normalize-audio-using-ffmpeg
+From [this helpful Q&amp;A](https://superuser.com/questions/323119/how-can-i-normalize-audio-using-ffmpeg) :
 
+{% highlight bash %}
 ffmpeg -i video.avi -af "volumedetect" -vn -sn -dn -f null /dev/null
+
+# systematise a little ...
 
 stub=01_front-page
 ffmpeg -i ${stub}.mp4 -af "volumedetect" -vn -sn -dn -f null /dev/null
@@ -42,7 +44,7 @@ ffmpeg -i ${stub}.mp4 -af "volume=16dB" -c:v copy -c:a aac -b:a 64k ${stub}_volf
 {% endhighlight %}
 
 
-###  Method 2 : Treating the audio separately
+###  Method 2 : More complex ```ffmpeg``` filters
 
 It would be nice if there was a 'Noise Reduction' option for ```ffmpeg``` - though perhaps there is 
 [good news](https://superuser.com/a/1393535) : 
@@ -170,6 +172,6 @@ ffmpeg -i SEER-01_2019-01-09_Med-VimeoWide_1Mb.mp4 -i SEER-01_audio_clean.ogg \
 ### Choices, choices...
 
 Will be much easier to go with Method 2 (but need to wait for newer ```ffmpeg``` to arrive
-in the repos).
+in the repos to get the denoising filter).
 
 
