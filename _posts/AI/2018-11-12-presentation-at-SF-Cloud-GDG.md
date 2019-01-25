@@ -40,7 +40,18 @@ or contact me using the details given on the slides themselves.
 ![Presentation Content Example]({{ site.url }}/assets/img/2018-11-12_GDG-SF_DeepLearningVoices_8-1_600x390.png)
 </a>
 
+<!--
+Also now include :
+LPCnet
 
+and think about practical aspects of text-to-descriptors networks :
+Tacotron
+Tacotron2
+DeepVoice
+DeepVoice2
+DeepVoice3
+DC
+!-->
 
 
 PS:  And if you liked the content, please 'star' my <a href="https://github.com/mdda/deep-learning-workshop" target="_blank">Deep Learning Workshop</a> repo ::
