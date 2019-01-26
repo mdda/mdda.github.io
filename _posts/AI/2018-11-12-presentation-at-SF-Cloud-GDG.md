@@ -50,7 +50,14 @@ Tacotron2
 DeepVoice
 DeepVoice2
 DeepVoice3
-DC
+DC-TTS : 
+  https://github.com/Kyubyong/dc_tts  # low-level-TF
+  https://github.com/tugstugi/pytorch-dc-tts # PyTorch
+  
+Adaptation
+  https://github.com/Kyubyong/speaker_adapted_tts
+  
+  
 !-->
 
 
