@@ -44,16 +44,30 @@ or contact me using the details given on the slides themselves.
 Also now include :
 LPCnet
 
+------
+
 and think about practical aspects of text-to-descriptors networks :
-Tacotron
-Tacotron2
+
+Tacotron :
+  https://github.com/keithito/tacotron          # TF tf.layers
+  https://github.com/r9y9/tacotron_pytorch      # PyTorch
+Tacotron2 :
+  https://github.com/Rayhane-mamah/Tacotron-2   # TF low-level
+  https://github.com/NVIDIA/tacotron2           # PyTorch including fp16
+
 DeepVoice
+  https://github.com/DeepSwissVoice/DeepVoice   # TF + "native" bindings in C + JS (full website infra?)
 DeepVoice2
 DeepVoice3
+  https://github.com/Kyubyong/deepvoice3        # TF low-level, fairly spartan
+  https://github.com/r9y9/deepvoice3_pytorch    $ PyTorch, mature
+
 DC-TTS : 
   https://github.com/Kyubyong/dc_tts  # low-level-TF
   https://github.com/tugstugi/pytorch-dc-tts # PyTorch
   
+------
+
 Adaptation
   https://github.com/Kyubyong/speaker_adapted_tts
   
