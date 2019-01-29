@@ -12,11 +12,10 @@ published: false
 
 
 
-### Presentation Link
 
+##  NIPS Workshops Chooser
 
-
-##  NIPS Workshops
+{% highlight javascript %}
 https://nips.cc/Conferences/2018/Schedule?type=Workshop&day=4
   https://nips.cc/Conferences/2018/Schedule?showEvent=10939
 // <div onclick="showDetail(10939)">
@@ -29,9 +28,10 @@ var a=[]; $('div.maincard.Workshop').each( function() {
   a.push( id+" :: "+num+" :: "+ $(this).find('.maincardBody').html() ) ;
   window.open("https://nips.cc/Conferences/2018/Schedule?showEvent="+num, "_blank");
 }); console.log( a.join('\n') );
+{% endhighlight %}
 
 
-#### Need to go through this list ASAP...
+### Need to go through this list ASAP...
 
 
 https://nips.cc/Conferences/2018/Schedule?type=Workshop&day=4
@@ -43,6 +43,7 @@ https://nips.cc/Conferences/2018/Schedule?type=Workshop&day=5
 
 ### Already passed
 
+{% highlight none %}
 maincard_10921 :: Machine Learning for Geophysical &amp; Geochemical Signals
   http://www.physics.purdue.edu/MLGGS/
   September 27, 2018	    Abstract Submission Closes
@@ -217,11 +218,13 @@ maincard_10913 :: Emergent Communication Workshop
 maincard_10938 :: Wordplay: Reinforcement and Language Learning in Text-based Games
   https://www.wordplay2018.com/
   Midnight UTC on 9 November.
-
-### ALL DONE!
-
+{% endhighlight %}
 
 
+
+### ALL OVER!
+
+{% highlight none %}
 maincard_10945 :: NIPS 2018 Competition Track Day 1
   https://nips.cc/Conferences/2018/CompetitionTrack
   Various competition end-dates (not clear tickets will be available)
@@ -231,5 +234,6 @@ maincard_10946 :: NIPS 2018 Competition Track Day 2
 
 maincard_10925 :: Machine Learning for Systems
   ?
+{% endhighlight %}
 
 
