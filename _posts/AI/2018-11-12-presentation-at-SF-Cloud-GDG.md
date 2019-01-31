@@ -44,6 +44,17 @@ or contact me using the details given on the slides themselves.
 Also now include :
 LPCnet
 
+
+Look at :
+  https://arxiv.org/abs/1811.12208
+    = UFANS: U-shaped Fully-Parallel Acoustic Neural Structure For Statistical Parametric Speech Synthesis With 20X Faster
+  https://arxiv.org/abs/1811.01376
+    = Investigating context features hidden in End-to-End TTS
+  https://arxiv.org/abs/1901.04276
+    = Exploring Transfer Learning for Low Resource Emotional TTS
+  https://arxiv.org/abs/1811.07240
+    = Representation Mixing for TTS Synthesis
+
 ------
 
 and think about practical aspects of text-to-descriptors networks :
