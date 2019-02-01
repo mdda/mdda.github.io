@@ -31,8 +31,29 @@ or contact me using the details given on the slides themselves.
 
 <!--
 
-  
-  
+Tensor2Tensor library
+  Notebook :
+    https://github.com/tensorflow/tensor2tensor/blob/master/tensor2tensor/notebooks/asr_transformer.ipynb
+  TPU instructions :
+    https://cloud.google.com/tpu/docs/tutorials/automated-speech-recognition
+  Comment by dev:
+    There are many difference between v1 and v2 (actually transformer_librispeech_v2 is exactly transformer_librispeech)
+    https://github.com/tensorflow/tensor2tensor/issues/896#issuecomment-400975458
+  Issue : ASR Transformer performance vs. Google Speech-to-Text
+    https://github.com/tensorflow/tensor2tensor/issues/1121
+  Papers
+    https://arxiv.org/abs/1712.01769  == https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/46687.pdf
+      = State-of-the-art Speech Recognition With Sequence-to-Sequence Models
+
+
+LMs for ASR
+  Papers
+    http://homepages.inf.ed.ac.uk/miles/papers/emnlp07.pdf
+      = Smoothed Bloom filter language models: Tera-Scale LMs on the Cheap
+    https://arxiv.org/abs/1811.04284
+      = Improving End-to-end Speech Recognition with Pronunciation-assisted Sub-word Modeling
+    https://arxiv.org/abs/1808.02480
+      = Deep context: end-to-end contextual speech recognition
 !-->
 
 
