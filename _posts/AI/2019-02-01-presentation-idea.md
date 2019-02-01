@@ -46,6 +46,13 @@ Tensor2Tensor library
       = State-of-the-art Speech Recognition With Sequence-to-Sequence Models
 
 
+Other libraries
+  wav2letter++
+    https://arxiv.org/abs/1812.07625v1
+      = wav2letter++: The Fastest Open-source Speech Recognition System
+  Kaldi
+
+
 LMs for ASR
   Papers
     http://homepages.inf.ed.ac.uk/miles/papers/emnlp07.pdf
@@ -53,7 +60,12 @@ LMs for ASR
     https://arxiv.org/abs/1811.04284
       = Improving End-to-end Speech Recognition with Pronunciation-assisted Sub-word Modeling
     https://arxiv.org/abs/1808.02480
-      = Deep context: end-to-end contextual speech recognition
+      = Deep context: end-to-end contextual speech recognition (refers to 1712.01769 as [13])
+      
+      
+Related       
+    https://arxiv.org/abs/1806.04558
+      = Transfer Learning from Speaker Verification to Multispeaker Text-To-Speech Synthesis
 !-->
 
 
