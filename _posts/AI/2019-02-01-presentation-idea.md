@@ -52,6 +52,9 @@ Other libraries
       = wav2letter++: The Fastest Open-source Speech Recognition System
   Kaldi
 
+  Data
+    https://github.com/juliagusak/dataloaders
+
 
 LMs for ASR
   Papers
@@ -66,6 +69,52 @@ LMs for ASR
 Related       
     https://arxiv.org/abs/1806.04558
       = Transfer Learning from Speaker Verification to Multispeaker Text-To-Speech Synthesis
+      
+      
+https://github.com/zzw922cn/awesome-speech-recognition-speech-synthesis-papers      
+http://www.arxiv-sanity.com/search?q=speech+recognition
+
+https://arxiv.org/abs/1712.01769
+https://arxiv.org/pdf/1808.02480.pdf
+https://arxiv.org/pdf/1807.10857.pdf
+https://arxiv.org/abs/1807.09597
+https://www.google.com/search?q=awesome+speech+recognition+github&oq=awesome+speech+recognition+github&aqs=chrome..69i57j69i60j0.8607j1j7&sourceid=chrome&ie=UTF-8
+
+
+Transfer Learning from Speaker Verification to Multispeaker Text-To-Speech Synthesis - Google
+  https://arxiv.org/pdf/1806.04558.pdf
+
+Fully Convolutional Speech Recognition - Collobert, Facebook
+  https://arxiv.org/abs/1812.06864v1
+  https://github.com/facebookresearch/wav2letter
+  https://github.com/facebookresearch/fairseq
+  prev?: 
+    End-to-End Speech Recognition From the Raw Waveform  - Collobert, Facebook
+      https://arxiv.org/abs/1806.07098v2
+
+The PyTorch-Kaldi Speech Recognition Toolkit - Bengio, MILA
+  https://arxiv.org/abs/1811.07453v1
+
+A Comparison of Techniques for Language Model Integration in Encoder-Decoder Speech Recognition
+  https://arxiv.org/abs/1807.10857v2
+
+https://arxiv.org/abs/1805.10387v2
+https://arxiv.org/abs/1811.06621v1
+https://arxiv.org/abs/1811.05247v1
+https://arxiv.org/abs/1811.04531v1
+
+  
+Cycle-consistency training for end-to-end speech recognition
+  https://arxiv.org/abs/1811.01690v1
+  
+Cascaded CNN-resBiLSTM-CTC: An End-to-End Acoustic Model For Speech Recognition
+  https://arxiv.org/abs/1810.12001v2
+
+Densely Connected Convolutional Networks for Speech Recognition
+  https://arxiv.org/abs/1808.03570v1
+
+https://arxiv.org/abs/1811.00006v1
+
 !-->
 
 
