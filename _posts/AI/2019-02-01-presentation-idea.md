@@ -78,8 +78,6 @@ https://arxiv.org/abs/1712.01769
 https://arxiv.org/pdf/1808.02480.pdf
 https://arxiv.org/pdf/1807.10857.pdf
 https://arxiv.org/abs/1807.09597
-https://www.google.com/search?q=awesome+speech+recognition+github&oq=awesome+speech+recognition+github&aqs=chrome..69i57j69i60j0.8607j1j7&sourceid=chrome&ie=UTF-8
-
 
 Transfer Learning from Speaker Verification to Multispeaker Text-To-Speech Synthesis - Google
   https://arxiv.org/pdf/1806.04558.pdf
@@ -98,9 +96,14 @@ The PyTorch-Kaldi Speech Recognition Toolkit - Bengio, MILA
 A Comparison of Techniques for Language Model Integration in Encoder-Decoder Speech Recognition
   https://arxiv.org/abs/1807.10857v2
 
+Attention-Based Models for Speech Recognition
+  https://arxiv.org/pdf/1506.07503.pdf
+
+An Online Attention-based Model for Speech Recognition
+  https://arxiv.org/abs/1811.05247v1
+
 https://arxiv.org/abs/1805.10387v2
 https://arxiv.org/abs/1811.06621v1
-https://arxiv.org/abs/1811.05247v1
 https://arxiv.org/abs/1811.04531v1
 
   
@@ -113,7 +116,9 @@ Cascaded CNN-resBiLSTM-CTC: An End-to-End Acoustic Model For Speech Recognition
 Densely Connected Convolutional Networks for Speech Recognition
   https://arxiv.org/abs/1808.03570v1
 
-https://arxiv.org/abs/1811.00006v1
+Smaller models:
+  Low-Dimensional Bottleneck Features for On-Device Continuous Speech Recognition
+    https://arxiv.org/abs/1811.00006v1
 
 !-->
 

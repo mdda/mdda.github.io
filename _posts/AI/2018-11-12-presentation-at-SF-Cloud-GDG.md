@@ -45,15 +45,18 @@ Also now include :
 LPCnet
 
 
+
 Look at :
-  https://arxiv.org/abs/1811.12208
-    = UFANS: U-shaped Fully-Parallel Acoustic Neural Structure For Statistical Parametric Speech Synthesis With 20X Faster
-  https://arxiv.org/abs/1811.01376
-    = Investigating context features hidden in End-to-End TTS
-  https://arxiv.org/abs/1901.04276
-    = Exploring Transfer Learning for Low Resource Emotional TTS
-  https://arxiv.org/abs/1811.07240
-    = Representation Mixing for TTS Synthesis
+  UFANS: U-shaped Fully-Parallel Acoustic Neural Structure For Statistical Parametric Speech Synthesis With 20X Faster
+    = https://arxiv.org/abs/1811.12208
+  Investigating context features hidden in End-to-End TTS
+    = https://arxiv.org/abs/1811.01376
+  Exploring Transfer Learning for Low Resource Emotional TTS
+    = https://arxiv.org/abs/1901.04276
+  Representation Mixing for TTS Synthesis
+    = https://arxiv.org/abs/1811.07240
+  Attention-Based Models for Speech Recognition
+    = https://arxiv.org/pdf/1506.07503.pdf
 
 ------
 
@@ -71,12 +74,23 @@ DeepVoice
 DeepVoice2
 DeepVoice3
   https://github.com/Kyubyong/deepvoice3        # TF low-level, fairly spartan
-  https://github.com/r9y9/deepvoice3_pytorch    $ PyTorch, mature
+  https://github.com/r9y9/deepvoice3_pytorch    # PyTorch, mature
 
 DC-TTS : 
   https://github.com/Kyubyong/dc_tts  # low-level-TF
   https://github.com/tugstugi/pytorch-dc-tts # PyTorch
+
+Mozilla :   
+  https://github.com/mozilla/TTS                # Torch-based model inspired by Tacotron 2
+  https://github.com/mozilla/TTS#what-is-new-with-tts
   
+Microsoft : 
+  1_TTS_Microsoft_TTSwithTransformer_1809.08895.pdf    # 3-6 layer Transformer-based TTS (WaveNet head)
+  In our experiment, time consume in a single training step for our model is ∼0.4s, which is 4.25 times faster than that of Tacotron2 (∼1.7s)
+     with equal batch size (16 samples per batch). 
+  However, since the parameter quantity of our model is almost twice than Tacotron2, 
+     it still takes ∼3 days to converge comparing to ∼4.5 days of that for Tacotron2.
+
 ------
 
 Adaptation
