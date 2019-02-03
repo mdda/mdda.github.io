@@ -45,6 +45,11 @@ Tensor2Tensor library
     https://arxiv.org/abs/1712.01769  == https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/46687.pdf
       = State-of-the-art Speech Recognition With Sequence-to-Sequence Models
 
+Baidu DeepSpeech
+  https://github.com/Mozilla/DeepSpeech  # TF
+    # Has pre-trained English language model
+    # TFlite export available
+
 
 Other libraries
   wav2letter++
@@ -102,7 +107,13 @@ Attention-Based Models for Speech Recognition
 An Online Attention-based Model for Speech Recognition
   https://arxiv.org/abs/1811.05247v1
 
-https://arxiv.org/abs/1805.10387v2
+Mixed-Precision Training for NLP and Speech Recognition with OpenSeq2Seq  : Nvidia
+  https://arxiv.org/abs/1805.10387v2
+  https://github.com/NVIDIA/OpenSeq2Seq
+    https://nvidia.github.io/OpenSeq2Seq/  # Docs
+
+
+
 https://arxiv.org/abs/1811.06621v1
 https://arxiv.org/abs/1811.04531v1
 

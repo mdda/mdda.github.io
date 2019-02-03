@@ -55,10 +55,14 @@ Look at :
     = https://arxiv.org/abs/1901.04276
   Representation Mixing for TTS Synthesis
     = https://arxiv.org/abs/1811.07240
-  Attention-Based Models for Speech Recognition
+  Attention-Based Models for Speech Recognition  (Has TTS-relevant content, apparently)
     = https://arxiv.org/pdf/1506.07503.pdf
 
+https://r9y9.github.io/nnmnkwii/latest/nnmnkwii_gallery/notebooks/tts/02-Bidirectional-LSTM%20based%20RNNs%20for%20speech%20synthesis%20(en).html
+
 ------
+
+
 
 and think about practical aspects of text-to-descriptors networks :
 
@@ -83,6 +87,7 @@ DC-TTS :
 Mozilla :   
   https://github.com/mozilla/TTS                # Torch-based model inspired by Tacotron 2
   https://github.com/mozilla/TTS#what-is-new-with-tts
+  """ What I observe, encoding with f0 tunning by harvest is the best. """
   
 Microsoft : 
   1_TTS_Microsoft_TTSwithTransformer_1809.08895.pdf    # 3-6 layer Transformer-based TTS (WaveNet head)
