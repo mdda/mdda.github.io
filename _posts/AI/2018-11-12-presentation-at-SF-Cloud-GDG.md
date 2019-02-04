@@ -42,8 +42,9 @@ or contact me using the details given on the slides themselves.
 
 <!--
 Also now include :
-LPCnet
 
+LPCnet
+  https://github.com/mozilla/LPCNet/issues/4
 
 
 Look at :
@@ -60,6 +61,17 @@ Look at :
 
 https://r9y9.github.io/nnmnkwii/latest/nnmnkwii_gallery/notebooks/tts/02-Bidirectional-LSTM%20based%20RNNs%20for%20speech%20synthesis%20(en).html
 
+------
+https://cloud.google.com/tpu/docs/tensorflow-ops#available_python_apis
+https://www.tensorflow.org/api_docs/python/tf/spectral/rfft
+https://stackoverflow.com/questions/49616081/use-tensorflow-operation-in-tf-keras-model
+https://stackoverflow.com/questions/47860237/how-to-use-tf-operations-in-keras-models
+MNIST TPU (public).ipynb
+  https://colab.research.google.com/drive/1myF-aXi33KCz8Ff6BY6hWolSxNVagIz5
+keras-bert.ipynb  
+  https://colab.research.google.com/github/HighCWu/keras-bert-tpu/blob/master/demo/load_model/load_and_predict.ipynb#scrollTo=uA4moo4dpLBr
+Signal Processing (contrib)
+  https://www.tensorflow.org/api_guides/python/contrib.signal#Computing_spectrograms
 ------
 
 
