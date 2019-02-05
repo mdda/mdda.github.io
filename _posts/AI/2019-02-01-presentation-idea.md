@@ -60,16 +60,27 @@ Other libraries
   Data
     https://github.com/juliagusak/dataloaders
 
+  Datasets
+    RM : DARPA 1000-words English language Resource Management = 3hrs training, 1hrs test, bigram word-pair LM
+       WER is ~2.1% with 2.5hr training
+    WSJ : 78 hours of speech which are the results of spontaneous dictation.  20k word trigram LM
+       WER (dev93)  ~8% with 7 days training
+       WER (eval92) ~4% with 7 days training
+    Librispeech : 100hrs clean speech
+       WER ~3.5% 
+    AMI : 70 hours of meeting speech transcription corpus
+       
 
 LMs for ASR
   Papers
-    http://homepages.inf.ed.ac.uk/miles/papers/emnlp07.pdf
-      = Smoothed Bloom filter language models: Tera-Scale LMs on the Cheap
-    https://arxiv.org/abs/1811.04284
-      = Improving End-to-end Speech Recognition with Pronunciation-assisted Sub-word Modeling
-    https://arxiv.org/abs/1808.02480
-      = Deep context: end-to-end contextual speech recognition (refers to 1712.01769 as [13])
-      
+    Smoothed Bloom filter language models: Tera-Scale LMs on the Cheap
+      = http://homepages.inf.ed.ac.uk/miles/papers/emnlp07.pdf
+    Improving End-to-end Speech Recognition with Pronunciation-assisted Sub-word Modeling
+      = https://arxiv.org/abs/1811.04284
+    Deep context: end-to-end contextual speech recognition (refers to 1712.01769 as [13])
+      = https://arxiv.org/abs/1808.02480
+    Two Efficient Lattice Rescoring Methods Using Recurrent Neural Network Language Models
+      = http://mi.eng.cam.ac.uk/~xc257/papers/TASLP2016_RNNLM_Latrescore.pdf
       
 Related       
     https://arxiv.org/abs/1806.04558
@@ -113,6 +124,7 @@ Fully Convolutional Speech Recognition - Collobert, Facebook
 
 The PyTorch-Kaldi Speech Recognition Toolkit - Bengio, MILA
   https://arxiv.org/abs/1811.07453v1
+    github.com/mravanelli/PyTorch-kaldi/
 
 A Comparison of Techniques for Language Model Integration in Encoder-Decoder Speech Recognition
   https://arxiv.org/abs/1807.10857v2
@@ -140,13 +152,29 @@ Cycle-consistency training for end-to-end speech recognition
 Cascaded CNN-resBiLSTM-CTC: An End-to-End Acoustic Model For Speech Recognition
   https://arxiv.org/abs/1810.12001v2
 
-Densely Connected Convolutional Networks for Speech Recognition
+Densely Connected Convolutional Networks for Speech Recognition  == DenseNets
   https://arxiv.org/abs/1808.03570v1
+    For instance, Google uses 18,000 hours of training data for speech recognition for Google Home
+      Kim et al : "Generation of large-scale simulated utterances in virtual rooms to train deep-neural networks for far-field speech recognition in google home," in INTERSPEECH, 2017.
+      Li et al : "Acoustic modeling for google home," in INTERSPEECH, 2017.
+
+
 
 Smaller models:
-  Low-Dimensional Bottleneck Features for On-Device Continuous Speech Recognition
+  Low-Dimensional Bottleneck Features for On-Device Continuous Speech Recognition (Google+MIT)
     https://arxiv.org/abs/1811.00006v1
+      Impact of larger training set is substantial :
+        Chiu, Sainath, Wu, et al. [2] report a WER of 4.1 % with over 12,500 hours of training data; 
+        the *same model* trained on 100 hours of Librispeech data gives a WER of 21.8 %
+      Delta- and double delta- feature stacking do not have a large effect relative to their 3 x increase in size;
+      A 40 ms compressed step size seems to be the limit for high accuracy models
+      We designed a model that successfully compresses the original DSP QM-features to 1/10 the size without any loss in accuracy
 
+  Small-footprint Deep Neural Networks with Highway Connections for Speech Recognition
+    https://arxiv.org/abs/1512.04280
+      
+    
+    
 !-->
 
 
