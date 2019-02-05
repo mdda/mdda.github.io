@@ -87,7 +87,9 @@ Transfer Learning from Speaker Verification to Multispeaker Text-To-Speech Synth
   https://arxiv.org/pdf/1806.04558.pdf
     v. interesting : Same embedding from speaker verification useful for TTS tasks
 
-
+Latent Sequence Decompositions
+  https://arxiv.org/abs/1610.03035 = 1_Google_LatentSequenceDecompositions_1610.03035.pdf
+    Seems to have discovered phonemes...
 
 Acoustic-to-Word Recognition with Sequence-to-Sequence Models
   https://arxiv.org/abs/1807.09597
