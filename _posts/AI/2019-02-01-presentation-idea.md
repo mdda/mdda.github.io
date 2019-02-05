@@ -82,15 +82,29 @@ http://www.arxiv-sanity.com/search?q=speech+recognition
 https://arxiv.org/abs/1712.01769
 https://arxiv.org/pdf/1808.02480.pdf
 https://arxiv.org/pdf/1807.10857.pdf
-https://arxiv.org/abs/1807.09597
 
 Transfer Learning from Speaker Verification to Multispeaker Text-To-Speech Synthesis - Google
   https://arxiv.org/pdf/1806.04558.pdf
+    v. interesting : Same embedding from speaker verification useful for TTS tasks
+
+
+
+Acoustic-to-Word Recognition with Sequence-to-Sequence Models
+  https://arxiv.org/abs/1807.09597
+    Goes from mels to a word vocabulary (not characters nor BPE)
+    Interesting, but results are not 'stand-out' better
 
 Fully Convolutional Speech Recognition - Collobert, Facebook
   https://arxiv.org/abs/1812.06864v1
   https://github.com/facebookresearch/wav2letter
-  https://github.com/facebookresearch/fairseq
+    https://github.com/facebookresearch/fairseq
+    Uses ArrayFire tensor library (= not for TPUs)
+    Reads network config :
+      https://github.com/facebookresearch/wav2letter/blob/master/recipes/librispeech/config/conv_glu/network.arch
+    Includes tutorials :
+      https://github.com/facebookresearch/wav2letter/tree/master/tutorials/1-librispeech_clean
+  Implements the audio processing via convolutions directly (output : chars)
+  Claims SOTA-match on WSJ, and SOTA on Librispeech
   prev?: 
     End-to-End Speech Recognition From the Raw Waveform  - Collobert, Facebook
       https://arxiv.org/abs/1806.07098v2

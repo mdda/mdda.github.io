@@ -59,7 +59,9 @@ Look at :
   Attention-Based Models for Speech Recognition  (Has TTS-relevant content, apparently)
     = https://arxiv.org/pdf/1506.07503.pdf
 
-https://r9y9.github.io/nnmnkwii/latest/nnmnkwii_gallery/notebooks/tts/02-Bidirectional-LSTM%20based%20RNNs%20for%20speech%20synthesis%20(en).html
+May be good as a base TTS (using WORLD vocoder) for teaching purposes (PyTorch):
+  https://r9y9.github.io/nnmnkwii/latest/nnmnkwii_gallery/notebooks/tts/02-Bidirectional-LSTM%20based%20RNNs%20for%20speech%20synthesis%20(en).html
+
 
 ------
 https://cloud.google.com/tpu/docs/tensorflow-ops#available_python_apis
