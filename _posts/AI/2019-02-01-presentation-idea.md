@@ -55,7 +55,21 @@ Other libraries
   wav2letter++
     https://arxiv.org/abs/1812.07625v1
       = wav2letter++: The Fastest Open-source Speech Recognition System
+      
   Kaldi
+
+  PyTorch-Kaldi
+    github.com/mravanelli/PyTorch-kaldi/
+    The PyTorch-Kaldi Speech Recognition Toolkit - Bengio, MILA
+      https://arxiv.org/abs/1811.07453v1
+      
+
+  ESPnet
+    https://github.com/espnet/espnet
+    https://www.merl.com/publications/docs/TR2018-036.pdf
+      ESPnet fully utilizes dynamic neural network toolkits, Chainer and PyTorch, as a main deep learning engine,
+      and extremely simplifies training and recognition of the whole ASR pipeline
+    
 
   Data
     https://github.com/juliagusak/dataloaders
@@ -63,12 +77,15 @@ Other libraries
   Datasets
     RM : DARPA 1000-words English language Resource Management = 3hrs training, 1hrs test, bigram word-pair LM
        WER is ~2.1% with 2.5hr training
-    WSJ : 78 hours of speech which are the results of spontaneous dictation.  20k word trigram LM
+    WSJ : 78 hours of speech which are the results of spontaneous dictation.  20k word trigram LM, 162k words total
        WER (dev93)  ~8% with 7 days training
        WER (eval92) ~4% with 7 days training
-    Librispeech : 100hrs clean speech
+    Librispeech : 100hrs clean speech, LM might use 200k most frequent words, BPE encoding is current SOTA
        WER ~3.5% 
     AMI : 70 hours of meeting speech transcription corpus
+    IHM (individual headset microphone) subset of the AMI meeting speech transcription corpus = 80 hrs
+       WER ~28%
+    
        
 
 LMs for ASR
@@ -79,12 +96,9 @@ LMs for ASR
       = https://arxiv.org/abs/1811.04284
     Deep context: end-to-end contextual speech recognition (refers to 1712.01769 as [13])
       = https://arxiv.org/abs/1808.02480
+      Add contextualised phrases to langauge model
     Two Efficient Lattice Rescoring Methods Using Recurrent Neural Network Language Models
       = http://mi.eng.cam.ac.uk/~xc257/papers/TASLP2016_RNNLM_Latrescore.pdf
-      
-Related       
-    https://arxiv.org/abs/1806.04558
-      = Transfer Learning from Speaker Verification to Multispeaker Text-To-Speech Synthesis
       
       
 https://github.com/zzw922cn/awesome-speech-recognition-speech-synthesis-papers      
@@ -95,8 +109,9 @@ https://arxiv.org/pdf/1808.02480.pdf
 https://arxiv.org/pdf/1807.10857.pdf
 
 Transfer Learning from Speaker Verification to Multispeaker Text-To-Speech Synthesis - Google
-  https://arxiv.org/pdf/1806.04558.pdf
+  https://arxiv.org/abs/1806.04558
     v. interesting : Same embedding from speaker verification useful for TTS tasks
+
 
 Latent Sequence Decompositions
   https://arxiv.org/abs/1610.03035 = 1_Google_LatentSequenceDecompositions_1610.03035.pdf
@@ -122,10 +137,6 @@ Fully Convolutional Speech Recognition - Collobert, Facebook
     End-to-End Speech Recognition From the Raw Waveform  - Collobert, Facebook
       https://arxiv.org/abs/1806.07098v2
 
-The PyTorch-Kaldi Speech Recognition Toolkit - Bengio, MILA
-  https://arxiv.org/abs/1811.07453v1
-    github.com/mravanelli/PyTorch-kaldi/
-
 A Comparison of Techniques for Language Model Integration in Encoder-Decoder Speech Recognition
   https://arxiv.org/abs/1807.10857v2
 
@@ -141,8 +152,18 @@ Mixed-Precision Training for NLP and Speech Recognition with OpenSeq2Seq  : Nvid
     https://nvidia.github.io/OpenSeq2Seq/  # Docs
 
 
+Amazon Lattice for LM line of research : 
+  LatticeRNN
+    https://s3-us-west-2.amazonaws.com/amazon.jobs-public-documents/Lattice_Interspeech_Final.pdf
+  Just ASK: Building an Architecture for Extensible Self-Service Spoken Language Understanding
+    https://arxiv.org/abs/1711.00549 # Foundation for Alexa Skills Kit)
+    
+  Chinese NER Using Lattice LSTM
+    https://arxiv.org/abs/1805.02023  
 
-https://arxiv.org/abs/1811.06621v1
+
+
+
 https://arxiv.org/abs/1811.04531v1
 
   
@@ -173,6 +194,16 @@ Smaller models:
   Small-footprint Deep Neural Networks with Highway Connections for Speech Recognition
     https://arxiv.org/abs/1512.04280
       
+  Streaming End-to-end Speech Recognition For Mobile Devices = Google (for Pixel phones)
+    https://arxiv.org/abs/1811.06621v1  - though lots of references are back to 2012 papers...
+      Uses Graves-based "RNN-T" + 
+        Layer normalization to stabilize training; 
+        using large batch size; 
+        using word-piece targets; 
+        using a time-reduction layer to speed up training and inference; and 
+        quantizing network parameters to reduce memory footprint and speed up computation. 
+      In order to enable contextualized recognition, we use a shallow-fusion approach to bias towards user-specific context
+
     
     
 !-->
