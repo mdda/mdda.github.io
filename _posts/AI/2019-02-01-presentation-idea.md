@@ -86,6 +86,12 @@ Other libraries
     IHM (individual headset microphone) subset of the AMI meeting speech transcription corpus = 80 hrs
        WER ~28%
     
+  Augmentation
+    common data augmentation methods are applied to increase the versatility of data, such as :
+      speed perturbation (0.9x-1.1x); and 
+      noise disturbance
+       
+  
        
 
 LMs for ASR
@@ -99,7 +105,12 @@ LMs for ASR
       Add contextualised phrases to langauge model
     Two Efficient Lattice Rescoring Methods Using Recurrent Neural Network Language Models
       = http://mi.eng.cam.ac.uk/~xc257/papers/TASLP2016_RNNLM_Latrescore.pdf
-      
+  
+  Data
+    http://openslr.org/11/    
+    14500 public domain books with more than 41 million sentences. 
+    We eliminate sentences that contains any words appear less 100 times in the corpora, 
+    and keep 39 million sentences
       
 https://github.com/zzw922cn/awesome-speech-recognition-speech-synthesis-papers      
 http://www.arxiv-sanity.com/search?q=speech+recognition
@@ -161,10 +172,9 @@ Amazon Lattice for LM line of research :
   Chinese NER Using Lattice LSTM
     https://arxiv.org/abs/1805.02023  
 
+  ? 
+    https://github.com/chahuja/lru
 
-
-
-https://arxiv.org/abs/1811.04531v1
 
   
 Cycle-consistency training for end-to-end speech recognition
@@ -172,6 +182,7 @@ Cycle-consistency training for end-to-end speech recognition
   
 Cascaded CNN-resBiLSTM-CTC: An End-to-End Acoustic Model For Speech Recognition
   https://arxiv.org/abs/1810.12001v2
+    Good ASR training details (8x1080Ti for 4.5 days for Librispeech 3.6% WER)  
 
 Densely Connected Convolutional Networks for Speech Recognition  == DenseNets
   https://arxiv.org/abs/1808.03570v1
@@ -204,8 +215,10 @@ Smaller models:
         quantizing network parameters to reduce memory footprint and speed up computation. 
       In order to enable contextualized recognition, we use a shallow-fusion approach to bias towards user-specific context
 
-    
-    
+  Dynamically Hierarchy Revolution: DirNet for Compressing Recurrent Neural Network on Mobile Devices
+    https://arxiv.org/abs/1806.01248
+      Also has hints about creating sparse codes and dictionaries quickly
+      
 !-->
 
 
