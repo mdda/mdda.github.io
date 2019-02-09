@@ -32,16 +32,17 @@ or contact me using the details given on the slides themselves.
 <!--
 
 Tensor2Tensor library
-  Notebook :
+  Notebook : (basically a UI for the pretrained model in tensor2tensor library) Has cell with webm voice recorder built-in
     https://github.com/tensorflow/tensor2tensor/blob/master/tensor2tensor/notebooks/asr_transformer.ipynb
   TPU instructions :
     https://cloud.google.com/tpu/docs/tutorials/automated-speech-recognition
+    
   Comment by dev:
     There are many difference between v1 and v2 (actually transformer_librispeech_v2 is exactly transformer_librispeech)
     https://github.com/tensorflow/tensor2tensor/issues/896#issuecomment-400975458
-  Issue : ASR Transformer performance vs. Google Speech-to-Text
+  Issue : ASR Transformer performance vs. Google Speech-to-Text (Colab notebook is for teaching only...)
     https://github.com/tensorflow/tensor2tensor/issues/1121
-  Papers
+  Papers related to notebook (which is probably missing language model)
     https://arxiv.org/abs/1712.01769  == https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/46687.pdf
       = State-of-the-art Speech Recognition With Sequence-to-Sequence Models
 
