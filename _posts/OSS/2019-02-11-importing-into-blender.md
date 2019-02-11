@@ -62,7 +62,7 @@ Maybe possible to run under ```Wine``` ...
 
 ###  MikuMikuDance - import without MMD/Windows
 
-Current 'live' branch of Blender import code : 
+Current 'active' branch of Blender import code : 
 *   https://github.com/powroupi/blender_mmd_tools   # Branch : dev_test !
 *   https://github.com/powroupi/blender_mmd_tools/wiki/Documentation
 
@@ -73,6 +73,13 @@ And updater script to make the models more 'blendery' :
 *   [Open MMD/PMX in Blender (Miku Miku Dance 3D Model Format Import Plug-In Tutorial)](https://www.youtube.com/watch?v=v-JfPYz5Nvo)
 
 *   https://www.deviantart.com/crazy4anime09/art/MMD-to-Blender-2-79-Tutorial-718326270
+
+
+Also a promising export from Blender (running on a Mac) to UnReal : 
+
+*   [MMD Unreal Engine - Cloth Physics / Toon Shader Test](https://www.youtube.com/watch?v=fbbuS7TqiX0)
+
+
 
 {% highlight bash %}
 
