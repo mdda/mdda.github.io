@@ -13,7 +13,52 @@ published: false
 {% include JB/setup %}
 
 
-here are three approaches to enhancing the sound quality (and some reasonable settings for video).
+For _whatever_ reason, I want to get some animated characters into Blender.  Here are 
+the results during my random walk through Google/Internet on the topic.
+
+
+### Free 3D models
+
+*  https://renderpeople.com/free-3d-people/ref/3/
+
+
+### Free ```blender``` models
+
+*  [Rigged young dragon](https://www.blendswap.com/blends/view/697)
+*  [Rigged man head](https://www.blendswap.com/blends/view/92838)
+
+
+### Import ```unitypackage``` 
+
+*   [Asset Store example](https://assetstore.unity.com/packages/3d/characters/humanoids/emika-127213)
+
+Even though a ```.unitypackage``` unpacks using ```tar -xzf...```, there's
+more detailed packaging information inside.  Fortunately, there's a repo that deals
+with this, to give us clean Assets and FBXs :
+
+{% highlight bash %}
+git clone https://github.com/gered/extractunitypackage
+python extractunitypackage/extractunitypackage.py Emika.unitypackage
+
+ls -l Emika/Assets/Suriyun/
+#total 400
+#drwxrwxr-x. 5 andrewsm andrewsm   4096 Feb 10 15:47 Animations
+#drwxrwxr-x. 6 andrewsm andrewsm   4096 Feb 10 15:47 Emika
+#-rw-r--r--. 1 andrewsm andrewsm 376553 Sep 14 00:19 Emika.unity
+# ...
+{% endhighlight %}
+
+That being said, still doesn't seem to be a seamless process (scaling and bone issue immediately apparent for model when imported into ```blender```).
+
+
+
+###  [MikuMikuDance](https://en.wikipedia.org/wiki/MikuMikuDance) as a starting point
+
+Maybe possible to run under ```Wine``` ...
+
+*   [MikuMikeDance Tutorial](https://sites.google.com/view/evpvp/)
+
+
 
 ###  MikuMikuDance - import without MMD/Windows
 
@@ -25,12 +70,12 @@ And updater script to make the models more 'blendery' :
 *   https://gist.github.com/powroupi/e78b71c2931a831bc9b895dca0d8ee7b
 
 
+*   [Open MMD/PMX in Blender (Miku Miku Dance 3D Model Format Import Plug-In Tutorial)](https://www.youtube.com/watch?v=v-JfPYz5Nvo)
+
+*   https://www.deviantart.com/crazy4anime09/art/MMD-to-Blender-2-79-Tutorial-718326270
+
 {% highlight bash %}
 
 {% endhighlight %}
 
 
-
-### Free models
-
-*  https://renderpeople.com/free-3d-people/ref/3/
