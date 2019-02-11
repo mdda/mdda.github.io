@@ -78,8 +78,10 @@ And updater script to make the models more 'blendery' :
 Also a promising export from Blender (running on a Mac) to UnReal : 
 
 *   [MMD Unreal Engine - Cloth Physics / Toon Shader Test](https://www.youtube.com/watch?v=fbbuS7TqiX0)
+*   [Same author - no camera moves, no flex either](https://www.youtube.com/watch?v=TLHObOy2u84)
+*   [Same author - no camera moves, has flex, and ground](https://www.youtube.com/watch?v=N1VGdqgnIO8)
 
-
+Try with : [YYB式初音ミクver1.02](https://bowlroll.net/file/52777)
 
 {% highlight bash %}
 
