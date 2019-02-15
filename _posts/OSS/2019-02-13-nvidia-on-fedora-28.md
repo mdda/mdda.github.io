@@ -9,7 +9,7 @@ tags:
 - TensorFlow
 - PyTorch
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
