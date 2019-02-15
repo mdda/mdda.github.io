@@ -97,16 +97,21 @@ And links from [mmd-downloads-galore](https://www.deviantart.com/mmd-downloads-g
 
 Or YouTube search for "MMD Motion DL".
 
-*   [Follow the Leader](https://www.youtube.com/watch?v=5_4TKRgEr9U)
+*   [Follow the Leader](https://www.youtube.com/watch?v=5_4TKRgEr9U) - by [Natsumi San](https://www.deviantart.com/natsumisempai)
+    +    [Motion](https://bowlroll.net/file/112837)
+    +    [Cats Ears](https://www.deviantart.com/o-dsv-o/art/MMD-Cat-Ears-DL-591912752)  (non-commercial, though)
 
-*  [Human Poses to MMD motions](https://github.com/peterljq/OpenMMD)
-   +    CS Undergraduate @ NTU Singapore. Statistical Learning Enthusiast : https://peterljq.github.io
+*   [Human Poses to MMD motions](https://github.com/peterljq/OpenMMD)
+    +    CS Undergraduate @ NTU Singapore. Statistical Learning Enthusiast : https://peterljq.github.io
+
+*   [Large Miku model](https://www.deviantart.com/digitrevx/art/Hatsune-Miku-V4X-Model-Digitrevx-Release-646928464) - credit to Digitrevx
 
 DeviantArt [commissioned 'trace'](https://www.deviantart.com/natsumisempai/art/MMD-Commission-WiggleWiggle-Motion-Trace-785202018) :
 
 *  [Original Song](https://www.youtube.com/watch?v=SkRSXFQerZs)
 *  [Source dancer](https://www.youtube.com/watch?v=pepBDkHsx5M)
 *  [MMD version](https://www.youtube.com/watch?v=BWW6cTXj9J4)
+*  Model DL = [South Dakota](https://bowlroll.net/file/188411) - 
 
 
 
