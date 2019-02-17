@@ -66,6 +66,57 @@ Current 'active' branch of Blender import code :
 *   https://github.com/powroupi/blender_mmd_tools   # Branch : dev_test !
 *   https://github.com/powroupi/blender_mmd_tools/wiki/Documentation
 
+
+
+{% highlight bash %}
+git clone https://github.com/powroupi/blender_mmd_tools.git
+cd blender_mmd_tools
+git branch
+# * dev_test
+zip -r mmd_tools.zip mmd_tools
+
+# In blender go to 'File -> User Preferences -> Add-ons -> Install Add-on from File', and chose the .zip
+# CLI output : 
+#   Modules Installed (mmd_tools) from '... /blender_mmd_tools/mmd_tools.zip' into '~/.config/blender/2.79/scripts/addons'
+
+# Probably better to do this via sym-link, though (since then can contribute to development) :
+ln -s `pwd`/mmd_tools ~/.config/blender/2.79/scripts/addons/
+
+#   Then need to 'refresh' in 'User Preferences -> Add-ons' to enable check-marking 'Yes' to the addon itself
+
+{% endhighlight %}
+
+No rename bones when importing PMX : 
+
+*  Vanilla (Thigh-length simple blue dress, ears and tail) + VivaHappy = 
+   +  Perfect  (AFAICT) - select bones before importing motion?
+
+*  YYB (Green/Greyish with long sleeves - low res button + sockets) + 
+   +  VivaHappy = Perfect  (AFAICT) - select bones before importing motion?
+   +  Follow-the-leader = Perfect  (AFAICT) = Faster motions
+   +  Inspiration = Perfect  (AFAICT) = Nice fairly-centered for demo.  Has slo-mo jump
+   +  MrMr = Perfect?  (AFAICT) = Has separate motion, facials, lipsync, eyes 
+      -  (and I don't understand how to apply them, or if it's possible)
+   +  HDB(LatOo) = Perfect  (AFAICT) = Nice fairly-centered for demo
+      -  includes Japanese Kawaii motions, but wierd-looking leg swings
+   
+*  "v1.00" (Bikini-ware) + VivaHappy = 
+   +  Perfect  (AFAICT) - select bones before importing motion seems reliable
+   
+
+*  Chocola (Red shoes and simple red dress, ears and tail, black hair) + VivaHappy = 
+   +  Perfect  (AFAICT) - select bones before importing motion?
+
+*  IdolM@ster (Knee-high boots, white dress with fluorenscent highlights, little jacket)
+   +  Only mouth moves if import motion on whole figure
+   +  VivaHappy = ??Sometimes has broken ankles (but otherwise ~ Ok)
+
+*  MikuV4X (Large model, grey, detailed - high res button + sockets)
+   + VivaHappy = Perfect (AFAICT) ... but only ~10fps (not 30fps as with other models)
+
+
+
+
 And updater script to make the models more 'blendery' :
 *   https://gist.github.com/powroupi/e78b71c2931a831bc9b895dca0d8ee7b
 
