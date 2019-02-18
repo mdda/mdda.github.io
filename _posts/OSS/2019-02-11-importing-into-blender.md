@@ -165,6 +165,12 @@ DeviantArt [commissioned 'trace'](https://www.deviantart.com/natsumisempai/art/M
 *  Model DL = [South Dakota](https://bowlroll.net/file/188411) - 
 
 
+Aha moment : Pressing 'SpaceBar' with an active object brings up a dialog box that allows 
+for commands to be searched : Quickest way to select 'Bake Physics' available.  Doing this makes
+the animation bar jumpable without breaking the physics.
+
+Changing the [3d view background](https://blender.stackexchange.com/questions/74445/change-background-color-of-the-3d-viewport) to black.
+
 
 {% highlight bash %}
 
