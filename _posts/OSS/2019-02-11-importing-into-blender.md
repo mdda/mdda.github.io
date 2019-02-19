@@ -169,7 +169,23 @@ Aha moment : Pressing 'SpaceBar' with an active object brings up a dialog box th
 for commands to be searched : Quickest way to select 'Bake Physics' available.  Doing this makes
 the animation bar jumpable without breaking the physics.
 
-Changing the [3d view background](https://blender.stackexchange.com/questions/74445/change-background-color-of-the-3d-viewport) to black.
+
+Changing the [3d view background](https://blender.stackexchange.com/questions/74445/change-background-color-of-the-3d-viewport) to black.  TL/DR; Set the back gradient
+main colour to non-grey.
+
+
+Zoom the camera view to be whole of current window : 'Home'.
+
+
+Animation / Timeline : 
+
+  *  Play/pause playback : 'Alt-a'
+  *  Go to start/end : 'Shift-left' / 'Shift-right'
+
+  
+Fold away extra workspace views : Need to see how it's done [on YouTube](https://www.youtube.com/watch?v=rhh513vUgME).  Too difficult 
+to describe (or discover), super simple once you know the trick.
+
 
 
 {% highlight bash %}
