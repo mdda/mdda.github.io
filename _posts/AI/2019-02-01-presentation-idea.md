@@ -219,7 +219,13 @@ Smaller models:
   Dynamically Hierarchy Revolution: DirNet for Compressing Recurrent Neural Network on Mobile Devices
     https://arxiv.org/abs/1806.01248
       Also has hints about creating sparse codes and dictionaries quickly
-      
+
+https://venturebeat.com/2019/02/21/google-ai-technique-reduces-speech-recognition-errors-by-29/
+  EdgeSpeechNets: Highly Efficient Deep Neural Networks for Speech Recognition on the Edge
+    https://arxiv.org/abs/1810.08559
+  A spelling correction model for end-to-end speech recognition
+    https://arxiv.org/abs/1902.07178
+    
 !-->
 
 
