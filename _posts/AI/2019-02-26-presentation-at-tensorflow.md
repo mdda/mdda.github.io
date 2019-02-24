@@ -31,6 +31,8 @@ Sam's talk showed the new TF tabular data interface for ```tf.data```,
 and did a demo using a cross-and-deep network for the Titanic dataset.
 
 *   NUS! SLAYER: Spike Layer Error Reassignment in Time
+    -   https://www.youtube.com/watch?v=JGdatqqci5o
+    
 *   Neural ODEs = Neural Ordinary Differential Equations
 
 *   Transfer Learning from Speaker Verification to Multispeaker Text-To-Speech Synthesis
