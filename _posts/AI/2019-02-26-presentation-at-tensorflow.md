@@ -1,6 +1,6 @@
 ---
 date: 2019-02-26
-title:  "TBA"
+title:  "NeurIPS Lightning Talks"
 tagline: Presentation
 category: AI
 tags:
@@ -18,18 +18,19 @@ published: false
 ### Presentation Link
 
 Sam Witteveen and I started the TensorFlow and Deep Learning Singapore group on MeetUp in February 2017,
-and [the twenty-second MeetUp, aka TensorFlow and Deep Learning - NeurIPS](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/259055570/),
+and [the twenty-second MeetUp, aka TensorFlow and Deep Learning : NeurIPS and the Cutting Edge](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/259055570/),
 was again hosted by Google Singapore.
 
+At the Meetup, Sam talked about "Advances in Unsupervised and Self Supervised Learning", which
+we felt was a particularly interesting trend at the conference.
+
+We were also lucky enough to get Sumit Bam Shrestha, a researcher from NUS, to present on his NeurIPS paper : "SLAYER for Deep Spiking Neural Network",
+which, surprisingly, was the first time we've discussed spiking neural networks (or really any truly biologically-inspired network) at our MeetUp.
+
+For my part, I gave a talk titled "NeurIPS Lightning Talks", which discussed three topics (two from NeurIPS) in a "Lightning Talk" style.  
 
 
-
-
-For my part, I gave a talk titled "Embed All The Things", which discussed how embeddings can be used in a wide variety of settings.  
-
-Sam's talk showed the new TF tabular data interface for ```tf.data```, 
-and did a demo using a cross-and-deep network for the Titanic dataset.
-
+<!--
 *   NUS! SLAYER: Spike Layer Error Reassignment in Time
     -   https://www.youtube.com/watch?v=JGdatqqci5o
     
@@ -61,38 +62,8 @@ and did a demo using a cross-and-deep network for the Titanic dataset.
 
 
 
-<!--
 
 
-Transfer Learning from Speaker Verification to Multispeaker Text-To-Speech Synthesis
-
-
-
-"Embed All The Things" - Martin Andrews
-
-
-
-
-Outline:
-
-  Word Embeddings
-  
-  Other Sequence Embeddings
-  
-  Other Object Embeddings
-  
-  Multi-Object Embeddings
-  
-    
-  ?Code etc
-
-  Wrap-up
-  
-Advertise 
-  Deep Learning Developer Module 1 : JumpStart
-  Deep Learning Developer Module 2+ 
-  TF&DL next == ?
-  Interns
   
 !-->
 
