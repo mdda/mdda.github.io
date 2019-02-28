@@ -27,55 +27,18 @@ which, surprisingly, was the first time we've discussed spiking neural networks 
 For my part, I gave a talk titled "NeurIPS Lightning Talks", which discussed three topics (two from NeurIPS) in a "Lightning Talk" style.  
 
 
-<!--
-*   NUS! SLAYER: Spike Layer Error Reassignment in Time
-    -   https://www.youtube.com/watch?v=JGdatqqci5o
-    
-*   Neural ODEs = Neural Ordinary Differential Equations
-
-*   Transfer Learning from Speaker Verification to Multispeaker Text-To-Speech Synthesis
-*   The challenge of realistic music generation: modelling raw audio at scale
-*   Neural Voice Cloning with a Few Samples
-
-
-*   Discovery of Latent 3D Keypoints via End-to-end Geometric Reasoning
-    -  https://keypointnet.github.io/
-        -    Results on deformed object
-    -  https://arxiv.org/abs/1807.03146
-    
-*   Neighbourhood Consensus Networks
-    -  Purely conditioned on same-image vs different-image
-    -  https://arxiv.org/abs/1810.10510
-      -  https://arxiv.org/pdf/1810.10510.pdf
-    -  https://github.com/ignacio-rocco/ncnet
-    -  https://www.di.ens.fr/willow/research/ncnet/
-    
-
-*   Adding One Neuron Can Eliminate All Bad Local Minima
-    -  https://arxiv.org/abs/1805.08671
-    
-*   PCA of high dimensional random walks with comparison to neural network training
-    -  For flavour of mathematicians / physicists arriving?
-
-
-
-
-
-  
-!-->
-
 
 The slides for my talk are here :
 
-<a href="http://redcatlabs.com/2018-12-18_TFandDL_Embeddings/" target="_blank">
-![Presentation Screenshot]({{ site.url }}/assets/img/2018-12-18_TFandDL_Embeddings_600x390.png)
+<a href="http://redcatlabs.com/2019-02-28_TFandDL-KL_RiseOfLM/" target="_blank">
+![Presentation Screenshot]({{ site.url }}/assets/img/2019-02-28_TFandDL-KL_RiseOfLM_600x390.png)
 </a>
 
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="http://redcatlabs.com/2018-12-18_TFandDL_Embeddings/#/5" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2018-12-18_TFandDL_Embeddings_5_600x390.png)
+<a href="http://redcatlabs.com/2019-02-28_TFandDL-KL_RiseOfLM/#/12" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2019-02-28_TFandDL-KL_RiseOfLM_12_600x390.png)
 </a>
 
 

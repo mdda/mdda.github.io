@@ -70,15 +70,15 @@ For my part, I gave a talk titled "NeurIPS Lightning Talks", which discussed thr
 
 The slides for my talk are here :
 
-<a href="http://redcatlabs.com/2018-12-18_TFandDL_Embeddings/" target="_blank">
-![Presentation Screenshot]({{ site.url }}/assets/img/2018-12-18_TFandDL_Embeddings_600x390.png)
+<a href="http://redcatlabs.com/2019-02-26_TFandDL_NeurIPS/" target="_blank">
+![Presentation Screenshot]({{ site.url }}/assets/img/2019-02-26_TFandDL_NeurIPS_600x390.png)
 </a>
 
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="http://redcatlabs.com/2018-12-18_TFandDL_Embeddings/#/5" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2018-12-18_TFandDL_Embeddings_5_600x390.png)
+<a href="http://redcatlabs.com/2019-02-26_TFandDL_NeurIPS/#/3/1" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2019-02-26_TFandDL_NeurIPS_3-1_600x390.png)
 </a>
 
 
