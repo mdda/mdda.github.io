@@ -9,7 +9,7 @@ tags:
 - NeurIPS
 - NIPS
 layout: post
-published: false 
+published: true
 ---
 {% include JB/setup %}
 
@@ -24,8 +24,8 @@ was again hosted by Google Singapore.
 At the Meetup, Sam talked about "Advances in Unsupervised and Self Supervised Learning", which
 we felt was a particularly interesting trend at the conference.
 
-We were also lucky enough to get Sumit Bam Shrestha, a researcher from NUS, to present on his NeurIPS paper : "SLAYER for Deep Spiking Neural Network",
-which, surprisingly, was the first time we've discussed spiking neural networks (or really any truly biologically-inspired network) at our MeetUp.
+We were also lucky enough to get Sumit Bam Shrestha, a researcher from NUS, to present on his NeurIPS paper : "SLAYER for Deep Spiking Neural Network".
+Surprisingly, this was the first time we've discussed spiking neural networks (or really any truly biologically-inspired network) at our MeetUp.
 
 For my part, I gave a talk titled "NeurIPS Lightning Talks", which discussed three topics (two from NeurIPS) in a "Lightning Talk" style.  
 
@@ -60,11 +60,6 @@ For my part, I gave a talk titled "NeurIPS Lightning Talks", which discussed thr
 *   PCA of high dimensional random walks with comparison to neural network training
     -  For flavour of mathematicians / physicists arriving?
 
-
-
-
-
-  
 !-->
 
 
