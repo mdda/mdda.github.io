@@ -5,6 +5,10 @@ tagline: Presentation
 category: AI
 tags:
 - Presentation
+- NLP
+- OpenAI
+- GPT2
+- transformers
 layout: post
 published: false 
 ---
@@ -14,14 +18,14 @@ published: false
 
 ### Presentation Link
 
-Sam Witteveen and I have been running the TensorFlow and Deep Learning Singapore group for the past two years, and were invited
-to speak at the KL (Malaysia) version by remote hookup (Google Hangouts, using screen-sharing for the slides, etc).
+Sam Witteveen and I have been running the TensorFlow and Deep Learning group in Singapore for the past two years, and 
+we were invited to speak at the KL (Malaysia) version remotely (Google Hangouts, using screen-sharing for the slides, etc).
 
-At the Meetup, Sam talked about "Advances in Unsupervised and Self Supervised Learning", which
-is the topic that he spoke about at our latest Singapore TF&amp;DL MeetUp.
+For the Meetup, Sam talked about "Advances in Unsupervised and Self Supervised Learning", which
+is the topic that he spoke about at our [latest Singapore TF&amp;DL MeetUp](/ai/2019/02/26/presentation-at-tensorflow).
 
 For my part, I gave a talk titled "The Rise of the Language Models", which 
-expanded on my summer 2018 talk with the addition of BERT and the new GPT2 model from OpenAI.
+expanded on my [summer 2018 talk](/ai/2018/06/21/presentation-at-tensorflow) with the addition of BERT and the new GPT2 model from OpenAI.
 
 The slides for my talk are here :
 
