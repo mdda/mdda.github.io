@@ -14,19 +14,14 @@ published: false
 
 ### Presentation Link
 
-Sam Witteveen and I started the TensorFlow and Deep Learning Singapore group on MeetUp in February 2017,
-and [the twenty-second MeetUp, aka TensorFlow and Deep Learning : NeurIPS and the Cutting Edge](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/259055570/),
-was again hosted by Google Singapore.
+Sam Witteveen and I have been running the TensorFlow and Deep Learning Singapore group for the past two years, and were invited
+to speak at the KL (Malaysia) version by remote hookup (Google Hangouts, using screen-sharing for the slides, etc).
 
 At the Meetup, Sam talked about "Advances in Unsupervised and Self Supervised Learning", which
-we felt was a particularly interesting trend at the conference.
+is the topic that he spoke about at our latest Singapore TF&amp;DL MeetUp.
 
-We were also lucky enough to get Sumit Bam Shrestha, a researcher from NUS, to present on his NeurIPS paper : "SLAYER for Deep Spiking Neural Network",
-which, surprisingly, was the first time we've discussed spiking neural networks (or really any truly biologically-inspired network) at our MeetUp.
-
-For my part, I gave a talk titled "NeurIPS Lightning Talks", which discussed three topics (two from NeurIPS) in a "Lightning Talk" style.  
-
-
+For my part, I gave a talk titled "The Rise of the Language Models", which 
+expanded on my summer 2018 talk with the addition of BERT and the new GPT2 model from OpenAI.
 
 The slides for my talk are here :
 
