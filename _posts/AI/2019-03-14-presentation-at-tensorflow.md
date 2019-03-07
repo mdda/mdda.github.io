@@ -35,6 +35,14 @@ For my part, I gave a talk titled "NeurIPS Lightning Talks", which discussed thr
 TF.summit notes ::
 
 
+Nice stuff at  :
+
+*  TensorFlow 2.0 now alpha.  RC in "spring"
+*  TensorFlow Lite (soon : Keras functions for sparsification and quantisation)
+*  Swift (though no SavedModel yet)
+*  TensorFlow Probability
+*  UniRoma in Codice Ratio
+
 !-->
 
 
