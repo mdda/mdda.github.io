@@ -6,8 +6,7 @@ category: AI
 tags:
 - Presentation
 - TensorFlow
-- NeurIPS
-- NIPS
+- TF.summit
 layout: post
 published: false
 ---
@@ -110,6 +109,79 @@ Estimators can do multi-node async (regular tf.keras cannot)
 Example : How is this efficiently using a dataset?
     for inputs, labels in train_data:
         train_step(inputs, labels)
+
+---------
+
+g.co/coral
+https://coral.withgoogle.com/
+
+Any Linux computer with a USB port
+*  Debian 6.0 or higher, or any derivative thereof (such as Ubuntu 10.0+)
+*  System architecture of either x86_64 or ARM64 with ARMv8 instruction set
+
+Not sure whether Fedora will work...
+
+wget http://storage.googleapis.com/cloud-iot-edge-pretrained-models/edgetpu_api.tar.gz
+tar -xzf edgetpu_api.tar.gz  # 32Mb
+cd python-tflite-source
+bash ./install.sh
+
+"""
+Recognized as Linux on x86_64!
+Warning: During normal operation, the Edge TPU Accelerator may heat up, depending
+on the computation workloads and operating frequency. Touching the metal part of the
+device after it has been operating for an extended period of time may lead to discomfort
+and/or skin burns. As such, when running at the default operating frequency, the device is
+intended to safely operate at an ambient temperature of 35C or less. Or when running at
+the maximum operating frequency, it should be operated at an ambient temperature of
+25C or less.
+
+Google does not accept any responsibility for any loss or damage if the device is operated
+outside of the recommended ambient temperature range.
+.............................................................
+Would you like to enable the maximum operating frequency? Y/NN
+Using default operating frequency.
+Install dependent libraries.
+## Wants sudo password...
+### BUUUUT : Clearly the install.sh expect Ubuntu (apt-get etc)
+"""
+
+#sudo apt-get install -y 
+#  libusb-1.0-0-dev zlib1g-dev libgoogle-glog-dev 
+#  libjpeg-dev libunwind-dev libc++-dev libc++abi-dev
+#  swig 
+#  python3-setuptools python3-numpy python3-dev 
+
+dnf install python3-setuptools python3-numpy python3-devel \
+            swig \
+            libjpeg-turbo libunwind libcxx libcxxabi \
+            libusb zlib glog
+            
+            ?libusb (installed)
+            ?libusbx (installed)
+            ?libusbx-devel (installed)
+            ?python3-libusb1
+            
+            ?zlib-devel (installed)
+            
+            ?glog-devel
+            
+            # libjpeg-turbo-devel libunwind-devel
+
+
+# Plug in the Accelerator using the provided USB 3.0 cable. 
+# (If you already plugged it in, remove it and replug it so the just-installed udev rule can take effect.)
+
+# From the python-tflite-source directory
+cd edgetpu/
+
+. env3/bin/activate
+#  tensorflow 1.13
+
+python3 demo/classify_image.py \
+--model test_data/mobilenet_v2_1.0_224_inat_bird_quant_edgetpu.tflite \
+--label test_data/inat_bird_labels.txt \
+--image test_data/parrot.jpg
 
 
 ---------
