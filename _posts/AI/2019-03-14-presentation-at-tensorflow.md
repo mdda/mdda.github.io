@@ -178,6 +178,16 @@ dnf install python3-setuptools python3-numpy python3-devel \
 
 ./install # Need to be root for some of this...
 
+# tail -f /var/log/messages # has this ominous news (see last line) :
+
+## Mar 11 02:55:49 changi kernel: usb 3-1: new SuperSpeed USB device number 2 using xhci_hcd
+## Mar 11 02:55:49 changi kernel: usb 3-1: New USB device found, idVendor=1a6e, idProduct=089a
+## Mar 11 02:55:49 changi kernel: usb 3-1: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+## Mar 11 02:55:49 changi mtp-probe[19971]: checking bus 3, device 2: "/sys/devices/pci0000:00/0000:00:14.0/usb3/3-1"
+## Mar 11 02:55:49 changi mtp-probe[19971]: bus: 3, device: 2 was not an MTP device
+## Mar 11 02:55:49 changi journal[3790]: unhandled action 'bind' on /sys/devices/pci0000:00/0000:00:14.0/usb3/3-1
+
+
 
 
 
