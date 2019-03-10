@@ -172,17 +172,27 @@ dnf install python3-setuptools python3-numpy python3-devel \
 # Plug in the Accelerator using the provided USB 3.0 cable. 
 # (If you already plugged it in, remove it and replug it so the just-installed udev rule can take effect.)
 
-# From the python-tflite-source directory
-cd edgetpu/
 
 . env3/bin/activate
 #  tensorflow 1.13
+
+./install # Need to be root for some of this...
+
+
+
+
+# From the python-tflite-source directory
+cd edgetpu/
 
 python3 demo/classify_image.py \
 --model test_data/mobilenet_v2_1.0_224_inat_bird_quant_edgetpu.tflite \
 --label test_data/inat_bird_labels.txt \
 --image test_data/parrot.jpg
 
+# After ~20sec : 
+##  Failed to retreive TPU context
+##  Node number 0 (edgetpu-custom-op) failed to prepare.
+# This is same error as when EdgeTPU device not connected at all...
 
 ---------
 
