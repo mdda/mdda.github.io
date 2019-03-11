@@ -187,7 +187,46 @@ dnf install python3-setuptools python3-numpy python3-devel \
 ## Mar 11 02:55:49 changi mtp-probe[19971]: bus: 3, device: 2 was not an MTP device
 ## Mar 11 02:55:49 changi journal[3790]: unhandled action 'bind' on /sys/devices/pci0000:00/0000:00:14.0/usb3/3-1
 
+Step 1 : Remove 'plugdev' from .rules
+Step 2 : MODE="0660", ?
 
+Without USB device :
+[root@changi python-tflite-source]# lsusb
+Bus 001 Device 002: ID 8087:8000 Intel Corp. 
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 003 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 002 Device 005: ID 046d:c534 Logitech, Inc. Unifying Receiver
+Bus 002 Device 004: ID 04f3:0021 Elan Microelectronics Corp. 
+Bus 002 Device 021: ID 04ca:3006 Lite-On Technology Corp. 
+Bus 002 Device 002: ID 04f2:b3f6 Chicony Electronics Co., Ltd HD WebCam (Acer)
+Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+
+
+With USB device :
+[root@changi python-tflite-source]# lsusb
+Bus 001 Device 002: ID 8087:8000 Intel Corp. 
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 003 Device 004: ID 1a6e:089a Global Unichip Corp. ##############  this one ############
+Bus 003 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 002 Device 005: ID 046d:c534 Logitech, Inc. Unifying Receiver
+Bus 002 Device 004: ID 04f3:0021 Elan Microelectronics Corp. 
+Bus 002 Device 021: ID 04ca:3006 Lite-On Technology Corp. 
+Bus 002 Device 002: ID 04f2:b3f6 Chicony Electronics Co., Ltd HD WebCam (Acer)
+Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+
+... appears to be on the USB3.0 hub == GOOD!
+
+ls -l /sys/devices/pci0000:00/0000:00:14.0/usb3/3-1/
+--w-------. 1 root root  4096 Mar 12 00:49 remove
+-r--r--r--. 1 root root  4096 Mar 12 00:49 speed
+lrwxrwxrwx. 1 root root     0 Mar 12 00:49 subsystem -> ../../../../../bus/usb
+-rw-r--r--. 1 root root  4096 Mar 12 00:49 uevent
+-r--r--r--. 1 root root  4096 Mar 12 00:49 urbnum
+-r--r--r--. 1 root root  4096 Mar 12 00:49 version
+
+After udev change :
+
+Doesn't appear to make any difference
 
 
 
