@@ -243,6 +243,47 @@ python3 demo/classify_image.py \
 ##  Node number 0 (edgetpu-custom-op) failed to prepare.
 # This is same error as when EdgeTPU device not connected at all...
 
+
+# After upgrade from 
+#  kernel-4.16.5-300.fc28.x86_64  to  kernel-4.20.11-100.fc28.x86_64
+# and reboot into new kernel:
+
+uname -a
+# Linux changi 4.20.11-100.fc28.x86_64 #1 SMP Wed Feb 20 15:51:24 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+
+Mar 12 21:28:17 changi kernel: usb 3-1: new SuperSpeed Gen 1 USB device number 6 using xhci_hcd
+## The following line is slightly different in the newer kernel
+Mar 12 21:28:17 changi kernel: usb 3-1: New USB device found, idVendor=1a6e, idProduct=089a, bcdDevice= 1.00
+Mar 12 21:28:17 changi kernel: usb 3-1: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+Mar 12 21:28:17 changi mtp-probe[8160]: checking bus 3, device 6: "/sys/devices/pci0000:00/0000:00:14.0/usb3/3-1"
+Mar 12 21:28:17 changi mtp-probe[8160]: bus: 3, device: 6 was not an MTP device
+Mar 12 21:28:17 changi journal[1945]: unhandled action 'bind' on /sys/devices/pci0000:00/0000:00:14.0/usb3/3-1
+
+
+# Haven't even gone into 'pip'
+
+python3 demo/classify_image.py --model test_data/mobilenet_v2_1.0_224_inat_bird_quant_edgetpu.tflite --label test_data/inat_bird_labels.txt --image test_data/parrot.jpg
+---------------------------
+Ara macao (Scarlet Macaw)
+Score :  0.61328125
+---------------------------
+Platycercus elegans (Crimson Rosella)
+Score :  0.15234375
+
+
+
+Sadly (from a debugging perspective), the previous kernel also works : 
+
+uname -a
+# Linux changi 4.16.5-300.fc28.x86_64 #1 SMP Fri Apr 27 17:38:36 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+
+---------------------------
+Ara macao (Scarlet Macaw)
+Score :  0.61328125
+---------------------------
+Platycercus elegans (Crimson Rosella)
+Score :  0.15234375
+
 ---------
 
 NetEase: Course
