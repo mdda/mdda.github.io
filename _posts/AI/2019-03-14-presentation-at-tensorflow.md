@@ -17,16 +17,16 @@ published: false
 ### Presentation Link
 
 Sam Witteveen and I started the TensorFlow and Deep Learning Singapore group on MeetUp in February 2017,
-and [the twenty-second MeetUp, aka TensorFlow and Deep Learning : NeurIPS and the Cutting Edge](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/259055570/),
+and [the twenty-third MeetUp, aka TensorFlow and Deep Learning : The latest from #TFDevSummit](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/259442585/),
 was again hosted by Google Singapore.
 
-At the Meetup, Sam talked about "Advances in Unsupervised and Self Supervised Learning", which
-we felt was a particularly interesting trend at the conference.
-
-We were also lucky enough to get Sumit Bam Shrestha, a researcher from NUS, to present on his NeurIPS paper : "SLAYER for Deep Spiking Neural Network".
-Surprisingly, this was the first time we've discussed spiking neural networks (or really any truly biologically-inspired network) at our MeetUp.
+At the Meetup, Sam talked about the upgrade path to the newly available (in alpha) TensorFlow 2.0, which 
+was follow up by Aurélien Géron, who focused on "@tf.function()".
 
 For my part, I gave a talk titled "NeurIPS Lightning Talks", which discussed three topics (two from NeurIPS) in a "Lightning Talk" style.  
+
+The evening was rounded out by Jason Zaman, who described the new TensorFlow SIG (Special Interest Group) system, 
+in which he is the lead of the TensorFlow Build SIG.
 
 
 <!--
