@@ -284,6 +284,12 @@ Score :  0.61328125
 Platycercus elegans (Crimson Rosella)
 Score :  0.15234375
 
+
+But what about a picture of a HotDog? == Background...
+
+Tell-tale sign that this MobileNet isn't trained on ImageNet, but rather on a Birds corpus.
+Data directory also appears to have a Coco-trained model.
+
 ---------
 
 NetEase: Course
