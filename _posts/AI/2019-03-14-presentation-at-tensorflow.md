@@ -18,10 +18,10 @@ published: false
 
 Sam Witteveen and I started the TensorFlow and Deep Learning Singapore group on MeetUp in February 2017,
 and [the twenty-third MeetUp, aka TensorFlow and Deep Learning : The latest from #TFDevSummit](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/259442585/),
-was again hosted by Google Singapore.
+was again hosted by Google Singapore.  
 
 At the Meetup, Sam talked about the upgrade path to the newly available (in alpha) TensorFlow 2.0, which 
-was follow up by Aurélien Géron, who focused on "@tf.function()".
+was followed up by Aurélien Géron, who focused on "@tf.function()".
 
 For my part, I gave a talk titled "NeurIPS Lightning Talks", which discussed three topics (two from NeurIPS) in a "Lightning Talk" style.  
 
@@ -293,6 +293,8 @@ Data directory also appears to have a Coco-trained model.
 ---------
 
 NetEase: Course
+
+Presentation slides (as PDF) : http://redcatlabs.com/downloads/2019-03-14_TFandDL_TFLite.pdf
 
 !-->
 
