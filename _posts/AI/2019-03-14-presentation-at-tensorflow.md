@@ -299,17 +299,17 @@ Presentation slides (as PDF) : http://redcatlabs.com/downloads/2019-03-14_TFandD
 !-->
 
 
-The slides for my talk are here :
+The slides for my talk (as a 3.8Mb PDF) are here :
 
-<a href="http://redcatlabs.com/2019-02-26_TFandDL_NeurIPS/" target="_blank">
-![Presentation Screenshot]({{ site.url }}/assets/img/2019-02-26_TFandDL_NeurIPS_600x390.png)
+<a href="http://redcatlabs.com/downloads/2019-03-14_TFandDL_TFLite.pdf" target="_blank">
+![Presentation Screenshot]({{ site.url }}/assets/img/2019-03-14_TFandDL_TFLite_1_600x390.png)
 </a>
 
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="http://redcatlabs.com/2019-02-26_TFandDL_NeurIPS/#/3/1" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2019-02-26_TFandDL_NeurIPS_3-1_600x390.png)
+<a href="http://redcatlabs.com/downloads/2019-03-14_TFandDL_TFLite.pdf" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2019-03-14_TFandDL_TFLite_55_600x390.png)
 </a>
 
 
