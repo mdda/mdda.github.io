@@ -7,8 +7,10 @@ tags:
 - Presentation
 - TensorFlow
 - TF.summit
+- EdgeTPU
+- TFLite
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
