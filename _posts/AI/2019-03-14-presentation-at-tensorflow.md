@@ -292,6 +292,20 @@ But what about a picture of a HotDog? == Background...
 Tell-tale sign that this MobileNet isn't trained on ImageNet, but rather on a Birds corpus.
 Data directory also appears to have a Coco-trained model.
 
+---------------------------
+
+Answered question (via disqus) 
+
+  Very interesting presentation indeed.
+  However, I got a question regarding the Keras Quantization API.
+  Is there any documentation regarding it? 
+  It would be useful to know how this quantization scheme works (per channel, in 2^i numbers, etc).
+
+  Thanks!
+
+    For the Keras piece, the original talk framed it as more of "this is how it will look" rather than "this is what you can do now". 
+    Here's the place it's talked about in the Summit video : https://youtu.be/DKosV_-4pdQ
+
 ---------
 
 NetEase: Course
