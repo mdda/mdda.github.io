@@ -294,6 +294,10 @@ Data directory also appears to have a Coco-trained model.
 
 ---------------------------
 
+NB:  My EdgeTPU is next appearing in a demo in Jakarta on the 22-March-2019  (Christiano)
+
+---------------------------
+
 Answered question (via disqus) 
 
   Very interesting presentation indeed.
