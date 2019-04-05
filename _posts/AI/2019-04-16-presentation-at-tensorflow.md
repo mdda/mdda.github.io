@@ -24,23 +24,26 @@ My talk was titled "First steps in Deep Learning with TensorFlow 2.0 : CNNs".
 
 
 <!--
+2019-04-16_TFandDL_TF2-CNNs
+
+
 
 
 !-->
 
 
 
-The slides for my talk (as a 3.8Mb PDF) are here :
+The slides for my talk (as a X.YMb PDF) are here :
 
-<a href="http://redcatlabs.com/downloads/2019-03-14_TFandDL_TFLite.pdf" target="_blank">
-![Presentation Screenshot]({{ site.url }}/assets/img/2019-03-14_TFandDL_TFLite_1_600x390.png)
+<a href="http://redcatlabs.com/downloads/2019-04-16_TFandDL_TF2-CNNs.pdf" target="_blank">
+![Presentation Screenshot]({{ site.url }}/assets/img/2019-04-16_TFandDL_TF2-CNNs_1_600x390.png)
 </a>
 
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="http://redcatlabs.com/downloads/2019-03-14_TFandDL_TFLite.pdf" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2019-03-14_TFandDL_TFLite_55_600x390.png)
+<a href="http://redcatlabs.com/downloads/2019-04-16_TFandDL_TF2-CNNs.pdf" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2019-04-16_TFandDL_TF2-CNNs_55_600x390.png)
 </a>
 
 
