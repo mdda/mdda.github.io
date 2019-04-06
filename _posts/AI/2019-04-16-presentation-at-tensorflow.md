@@ -26,8 +26,15 @@ My talk was titled "First steps in Deep Learning with TensorFlow 2.0 : CNNs".
 <!--
 2019-04-16_TFandDL_TF2-CNNs
 
-
-
+If we're going straight to CNNs, then perhaps :
+show a CNN model in TF2
+  explain the CNN kernel
+  explain the MLP over flat
+  explain the softmax
+explain the hierarchy of blame
+explain blame requires derivatives over generic parameterised models
+fit the model to Regular MNIST
+fit the same model to Cancer MNIST (?)
 
 !-->
 
