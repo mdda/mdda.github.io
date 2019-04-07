@@ -41,6 +41,9 @@ fit the same model to Cancer MNIST (?)
 Or NotMNIST :
   http://enakai00.hatenablog.com/entry/2016/08/02/102917
   =  http://yaroslavvb.blogspot.com/2011/09/notmnist-dataset.html
+Or to Kuzushiji-MNIST (KanjiMNIST...)
+  https://github.com/rois-codh/kmnist
+    "KMNIST Dataset" (created by CODH), adapted from "Kuzushiji Dataset" (created by NIJL and others), doi:10.20676/00000341
 
 !-->
 
