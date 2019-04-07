@@ -35,6 +35,12 @@ explain the hierarchy of blame
 explain blame requires derivatives over generic parameterised models
 fit the model to Regular MNIST
 fit the same model to Cancer MNIST (?)
+  https://www.kaggle.com/kmader/skin-cancer-mnist-ham10000
+  =  https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DBW86T
+  (but these are larger images, looking at the file sizes) 
+Or NotMNIST :
+  http://enakai00.hatenablog.com/entry/2016/08/02/102917
+  =  http://yaroslavvb.blogspot.com/2011/09/notmnist-dataset.html
 
 !-->
 
