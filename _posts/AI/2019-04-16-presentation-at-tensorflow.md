@@ -45,6 +45,39 @@ Or to Kuzushiji-MNIST (KanjiMNIST...)
   https://github.com/rois-codh/kmnist
     "KMNIST Dataset" (created by CODH), adapted from "Kuzushiji Dataset" (created by NIJL and others), doi:10.20676/00000341
 
+
+------
+
+Timothy L :
+
+
+I can base my talk around the keras.applications module to show how to use pre-trained networks.
+1. For starters, introduction on the keras.applications module (and a overview of common networks included like ResNet, Inception etc.)
+2. Code sample on using those networks for inference on ImageNet classes (no training)
+(small side-thing: introduce how keras loads and saves models into h5 files)
+3. Introduce briefly the idea of transfer learning, and show a simple demo (replacing the softmax layer)
+
+For this, I'll do up the examples in Colab with TF2.0 Alpha (assuming it all works, if not I'll fall back to whatever TF is on Colab) .
+
+---
+
+1 + 2 sound good to me (though 'overview of ResNet and Inception' seems like a whole talk...)
+
+3 is the TL for which we'll probably have a whole evening.  Touching on this next Tuesday could be Ok, but I'm wondering about time constraints...
+
+---
+
+By overview, I actually meant something like:
+
+hey there are some models included in Keras.applications, called Inception/ResNet, 
+  here are a few interesting ideas introduced by them (Inception cell, residual connections). 
+  Probably two slides on Inception, another two slides on ResNet, following by a link to the papers. 
+
+Then I’ll move on to explain that these are powerful models trained on ImageNet (small overview of that, one slide or two), which have 1000 classes. 
+
+Regarding #3, I’ll leave out the transfer learning part then. No issues there. Just thought it’d complete the story a bit better. 
+
+
 !-->
 
 
