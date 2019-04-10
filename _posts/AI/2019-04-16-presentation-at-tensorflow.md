@@ -1,6 +1,6 @@
 ---
 date: 2019-04-16
-title:  "Something for those just starting out"
+title:  "Images and CNNs"
 tagline: Presentation
 category: AI
 tags:
@@ -16,7 +16,7 @@ published: false
 ### Presentation Link
 
 Sam Witteveen and I started the TensorFlow and Deep Learning Singapore group on MeetUp in February 2017,
-and [the twenty-fourth MeetUp, aka TensorFlow and Deep Learning : Beginners](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/259442585/),
+and [the twenty-fourth MeetUp, aka TensorFlow and Deep Learning : Images and CNNs](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/260469451/),
 was again hosted by Google Singapore.  
 
 My talk was titled "First steps in Deep Learning with TensorFlow 2.0 : CNNs".
@@ -24,7 +24,18 @@ My talk was titled "First steps in Deep Learning with TensorFlow 2.0 : CNNs".
 
 
 <!--
+
+"First steps in Deep Learning with TensorFlow 2.0 : CNNs" - Martin Andrews
+This talk aims to cover the "something for beginners" part of our tagline - 
+  motivating the building blocks of CNNs, 
+  how they are trained, and 
+  how the resulting model can be applied to different datasets. 
+Code examples will be provided in Colab notebooks.
+
+
 2019-04-16_TFandDL_TF2-CNNs
+
+
 
 If we're going straight to CNNs, then perhaps :
 show a CNN model in TF2
