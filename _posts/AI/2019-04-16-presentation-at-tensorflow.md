@@ -88,6 +88,13 @@ Then I’ll move on to explain that these are powerful models trained on ImageNe
 
 Regarding #3, I’ll leave out the transfer learning part then. No issues there. Just thought it’d complete the story a bit better. 
 
+------
+
+Sam W :
+
+Progressive CNNs?
+
+https://towardsdatascience.com/boost-your-cnn-image-classifier-performance-with-progressive-resizing-in-keras-a7d96da06e20
 
 !-->
 
