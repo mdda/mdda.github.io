@@ -25,6 +25,9 @@ My talk was titled "First steps in Deep Learning with TensorFlow 2.0 : CNNs".
 
 <!--
 
+2019-04-16_TFandDL_TF2-CNNs
+
+
 "First steps in Deep Learning with TensorFlow 2.0 : CNNs" - Martin Andrews
 This talk aims to cover the "something for beginners" part of our tagline - 
   motivating the building blocks of CNNs, 
@@ -33,28 +36,30 @@ This talk aims to cover the "something for beginners" part of our tagline -
 Code examples will be provided in Colab notebooks.
 
 
-2019-04-16_TFandDL_TF2-CNNs
-
-
-
 If we're going straight to CNNs, then perhaps :
+
 show a CNN model in TF2
   explain the CNN kernel
-  explain the MLP over flat
+  explain pooling (or sneak in via striding the convolutions?)
+  explain the MLP over flat (or sneak past by narrowing to 1x1 via convolutions?)
   explain the softmax
+  explain the categorical cross-entropy loss fn
+
 explain the hierarchy of blame
-explain blame requires derivatives over generic parameterised models
+  explain blame requires derivatives over generic parameterised models
+
 fit the model to Regular MNIST
-fit the same model to Cancer MNIST (?)
-  https://www.kaggle.com/kmader/skin-cancer-mnist-ham10000
-  =  https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DBW86T
-  (but these are larger images, looking at the file sizes) 
-Or NotMNIST :
-  http://enakai00.hatenablog.com/entry/2016/08/02/102917
-  =  http://yaroslavvb.blogspot.com/2011/09/notmnist-dataset.html
-Or to Kuzushiji-MNIST (KanjiMNIST...)
-  https://github.com/rois-codh/kmnist
-    "KMNIST Dataset" (created by CODH), adapted from "Kuzushiji Dataset" (created by NIJL and others), doi:10.20676/00000341
+and then to alternative MNIST
+  eg: Cancer MNIST (?)
+    https://www.kaggle.com/kmader/skin-cancer-mnist-ham10000
+    =  https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DBW86T
+    (but these are larger images, looking at the file sizes) 
+  eg: NotMNIST :
+    http://enakai00.hatenablog.com/entry/2016/08/02/102917
+    =  http://yaroslavvb.blogspot.com/2011/09/notmnist-dataset.html
+  eg: Kuzushiji-MNIST (KanjiMNIST...)
+    https://github.com/rois-codh/kmnist
+      "KMNIST Dataset" (created by CODH), adapted from "Kuzushiji Dataset" (created by NIJL and others), doi:10.20676/00000341
 
 
 ------
