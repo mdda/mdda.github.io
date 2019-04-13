@@ -40,15 +40,15 @@ If we're going straight to CNNs, then perhaps :
 
 show a CNN model in TF2
   explain the CNN kernel
-  explain pooling (or sneak in via striding the convolutions?)
-  explain the MLP over flat (or sneak past by narrowing to 1x1 via convolutions?)
+    explain pooling (or sneak in via striding the convolutions?)
+    explain the MLP over flat (or sneak past by narrowing to 1x1 via convolutions?)
   explain the softmax
   explain the categorical cross-entropy loss fn
 
 explain the hierarchy of blame
   explain blame requires derivatives over generic parameterised models
 
-fit the model to Regular MNIST
+fit a Convolutional(only) model to Regular MNIST
 and then to alternative MNIST
   eg: Cancer MNIST (?)
     https://www.kaggle.com/kmader/skin-cancer-mnist-ham10000
