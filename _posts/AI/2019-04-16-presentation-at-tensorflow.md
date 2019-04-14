@@ -19,7 +19,10 @@ Sam Witteveen and I started the TensorFlow and Deep Learning Singapore group on 
 and [the twenty-fourth MeetUp, aka TensorFlow and Deep Learning : Images and CNNs](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/260469451/),
 was again hosted by Google Singapore.  
 
-My talk was titled "First steps in Deep Learning with TensorFlow 2.0 : CNNs".
+My talk was titled "First steps in Deep Learning with TensorFlow 2.0 : CNNs", 
+and was intended to introduce the elements of a CNN model *before* explaining 
+the intricacies of back-propagtion (i.e. in some ways it was a different approach 
+from the typical "build from the ground up" NN introductory pitch).
 
 
 
