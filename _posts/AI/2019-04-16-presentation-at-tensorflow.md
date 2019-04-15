@@ -24,7 +24,8 @@ and was intended to introduce the elements of a CNN model *before* explaining
 the intricacies of back-propagtion (i.e. in some ways it was a different approach 
 from the typical "build from the ground up" NN introductory pitch).
 
-
+Timothy Liu talked about how to use pretrained models (including from `tf.keras.applications`), 
+and Sam explored how Progressively growing training works for ResNet-50 (from scratch).
 
 <!--
 
