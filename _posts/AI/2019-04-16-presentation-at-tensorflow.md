@@ -54,13 +54,16 @@ explain the hierarchy of blame
 
 fit a Convolutional(only) model to Regular MNIST
 and then to alternative MNIST
+  eg: NotMNIST :
+    http://enakai00.hatenablog.com/entry/2016/08/02/102917
+    =  http://yaroslavvb.blogspot.com/2011/09/notmnist-dataset.html
+    =  Alphabet A...J
+
+Other Possibilities : 
   eg: Cancer MNIST (?)
     https://www.kaggle.com/kmader/skin-cancer-mnist-ham10000
     =  https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DBW86T
     (but these are larger images, looking at the file sizes) 
-  eg: NotMNIST :
-    http://enakai00.hatenablog.com/entry/2016/08/02/102917
-    =  http://yaroslavvb.blogspot.com/2011/09/notmnist-dataset.html
   eg: Kuzushiji-MNIST (KanjiMNIST...)
     https://github.com/rois-codh/kmnist
       "KMNIST Dataset" (created by CODH), adapted from "Kuzushiji Dataset" (created by NIJL and others), doi:10.20676/00000341
