@@ -69,6 +69,8 @@ Other Possibilities :
       "KMNIST Dataset" (created by CODH), adapted from "Kuzushiji Dataset" (created by NIJL and others), doi:10.20676/00000341
 
 
+Next steps : Upload pdf...  :: 2019-04-16_TFandDL_TF2-CNNs-for-Images.pdf
+
 ------
 
 Timothy L :
