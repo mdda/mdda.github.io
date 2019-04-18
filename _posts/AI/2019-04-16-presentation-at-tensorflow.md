@@ -28,9 +28,7 @@ Timothy Liu talked about how to use pretrained models (including from `tf.keras.
 and Sam explored how Progressively growing training works for ResNet-50 (from scratch).
 
 <!--
-
 2019-04-16_TFandDL_TF2-CNNs
-
 
 "First steps in Deep Learning with TensorFlow 2.0 : CNNs" - Martin Andrews
 This talk aims to cover the "something for beginners" part of our tagline - 
@@ -114,17 +112,17 @@ https://towardsdatascience.com/boost-your-cnn-image-classifier-performance-with-
 
 
 
-The slides for my talk (as a X.YMb PDF) are here :
+The slides for my talk (as a 400Kb PDF) are here :
 
-<a href="http://redcatlabs.com/downloads/2019-04-16_TFandDL_TF2-CNNs.pdf" target="_blank">
-![Presentation Screenshot]({{ site.url }}/assets/img/2019-04-16_TFandDL_TF2-CNNs_1_600x390.png)
+<a href="http://redcatlabs.com/downloads/2019-04-16_TFandDL_TF2-CNNs-for-Images.pdf" target="_blank">
+![Presentation Screenshot]({{ site.url }}/assets/img/2019-04-16_TFandDL_TF2-CNNs-for-Images_600x390.png)
 </a>
 
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="http://redcatlabs.com/downloads/2019-04-16_TFandDL_TF2-CNNs.pdf" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2019-04-16_TFandDL_TF2-CNNs_55_600x390.png)
+<a href="http://redcatlabs.com/downloads/2019-04-16_TFandDL_TF2-CNNs-for-Images.pdf" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2019-04-16_TFandDL_TF2-CNNs-for-Images_8_600x390.png)
 </a>
 
 
