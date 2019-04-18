@@ -1,13 +1,14 @@
 ---
 date: 2019-04-16
-title:  "Images and CNNs"
+title:  "TensorFlow 2.0 : CNNs for Images"
 tagline: Presentation
 category: AI
 tags:
 - Presentation
 - TensorFlow
+- CNNs
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -29,6 +30,7 @@ and Sam explored how Progressively growing training works for ResNet-50 (from sc
 
 <!--
 2019-04-16_TFandDL_TF2-CNNs
+2019-04-16_TFandDL_TF2-CNNs-for-Images
 
 "First steps in Deep Learning with TensorFlow 2.0 : CNNs" - Martin Andrews
 This talk aims to cover the "something for beginners" part of our tagline - 

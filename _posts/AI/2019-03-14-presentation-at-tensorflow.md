@@ -322,6 +322,16 @@ Presentation slides (as PDF) : http://redcatlabs.com/downloads/2019-03-14_TFandD
 
 The slides for my talk (as a 3.8Mb PDF) are here :
 
+<!--
+NB: To add black border, simplest to use Gimp to : 
+Select All
+Shrink selection by 1 px
+Invert selection
+Fill selection with forground (black) colour
+Export
+!-->
+
+
 <a href="http://redcatlabs.com/downloads/2019-03-14_TFandDL_TFLite.pdf" target="_blank">
 ![Presentation Screenshot]({{ site.url }}/assets/img/2019-03-14_TFandDL_TFLite_1_600x390.png)
 </a>
