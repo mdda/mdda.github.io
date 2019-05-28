@@ -46,6 +46,36 @@ Neural Network training, pruning and initialisation (in that order).
 
 ------
 
+Single-Path NAS: Designing Hardware-Efficient ConvNets in less than 4 Hours 
+https://arxiv.org/abs/1904.02877
+https://github.com/dstamoulis/single-path-nas
+
+Understanding Neural Architecture Search Techniques
+https://arxiv.org/abs/1904.00438
+
+
+Basics of Architecture Search
+  Pure NAS
+  ENAS
+  NAS cells - to reduce search space
+  
+Alternative approach : 
+  Single-path NAS
+
+Key idea:
+  Collapse each layers' decision paths into 1 mega-kernel
+  Parameterize mega-kernel sub-paths as sigmoid 
+    (with Gumbel?=No, apparently)
+  ... The script uses TF's EventAccumulator to parse the NAS-decision variables (indicator values); it prints the MBConv types of the ConvNet (following the MNasNet encoding)  
+  
+```
+indicator_values = parse_netarch.parse_indicators_single_path_nas(parse_lambda_dir, tf_size_guidance)
+network = parse_netarch.encode_single_path_nas_arch(indicator_values)
+```
+
+  
+
+
 
 !-->
 
