@@ -49,6 +49,8 @@ Neural Network training, pruning and initialisation (in that order).
 Single-Path NAS: Designing Hardware-Efficient ConvNets in less than 4 Hours 
 https://arxiv.org/abs/1904.02877
 https://github.com/dstamoulis/single-path-nas
+CMU / Microsoft
+
 
 Understanding Neural Architecture Search Techniques
 https://arxiv.org/abs/1904.00438
@@ -73,7 +75,54 @@ indicator_values = parse_netarch.parse_indicators_single_path_nas(parse_lambda_d
 network = parse_netarch.encode_single_path_nas_arch(indicator_values)
 ```
 
+Results
+
+Interesting resonance with Lottery Ticket Hypothesis
+  No direct relationship other than both :
+    being interesting papers
+    relying on 90% of network being prunable
+    including the masking out of irrelevant layers
+    
   
+The Lottery Ticket Hypothesis : Work from MIT
+  https://arxiv.org/abs/1803.03635
+  https://github.com/google-research/lottery-ticket-hypothesis
+  MNIST & CIFAR10
+
+Idea  
+  Train a network from scratch (random init=R)
+  Find the important weights in finished network
+  Create a mask of the layers to set other stuff to zero
+  Performance of network ~ same
+  Now start a new pre-pruned network from scratch
+    Start the weights from R/mask 
+    (i.e. same random values for just the ones that mattered *in the end*)
+    Network still trains to be good
+      Even without the rest of the network to 'smooth the gradients'
+      
+Key Quote:
+  The winning tickets we find have won the initialization lottery: 
+  their connections have initial weights that make training particularly effective.
+
+Code : 
+  https://github.com/google-research/lottery-ticket-hypothesis/blob/master/foundations/pruning.py#L24
+
+Follow-up work : 
+  Deconstructing Lottery Tickets: Zeros, Signs, and the Supermask (Uber)
+    https://arxiv.org/abs/1905.01067
+    https://eng.uber.com/deconstructing-lottery-tickets/
+
+    What's important about the final weights?
+      Magnitude?
+      Those that have changed most?
+    What's important to 'carry back' as the original mask?
+      Magnitude?
+      Sign?
+
+  The Lottery Ticket Hypothesis at Scale : 
+    https://arxiv.org/abs/1903.01611
+    ImageNet
+    late resettings (not as strong a result)
 
 
 
