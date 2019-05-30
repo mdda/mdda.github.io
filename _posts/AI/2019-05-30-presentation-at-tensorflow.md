@@ -81,17 +81,17 @@ network = parse_netarch.encode_single_path_nas_arch(indicator_values)
 
 
 
-The slides for my talk (as a 400Kb PDF) are here :
+The slides for my talk are here :
 
-<a href="http://redcatlabs.com/downloads/2019-04-16_TFandDL_TF2-CNNs-for-Images.pdf" target="_blank">
-![Presentation Screenshot]({{ site.url }}/assets/img/2019-04-16_TFandDL_TF2-CNNs-for-Images_600x390.png)
+<a href="http://redcatlabs.com/2019-05-30_TFandDL_SinglePathNAS/" target="_blank">
+![Presentation Screenshot]({{ site.url }}/assets/img/2019-05-30_TFandDL_SinglePathNAS_600x390.png)
 </a>
 
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="http://redcatlabs.com/downloads/2019-04-16_TFandDL_TF2-CNNs-for-Images.pdf" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2019-04-16_TFandDL_TF2-CNNs-for-Images_8_600x390.png)
+<a href="http://redcatlabs.com/2019-05-30_TFandDL_SinglePathNAS/" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2019-05-30_TFandDL_SinglePathNAS_8_600x390.png)
 </a>
 
 
