@@ -46,23 +46,31 @@ Neural Network training, pruning and initialisation (in that order).
 
 ------
 
-Single-Path NAS: Designing Hardware-Efficient ConvNets in less than 4 Hours 
-https://arxiv.org/abs/1904.02877
-https://github.com/dstamoulis/single-path-nas
-CMU / Microsoft
-
-
-Understanding Neural Architecture Search Techniques
-https://arxiv.org/abs/1904.00438
-
 
 Basics of Architecture Search
-  Pure NAS
-  ENAS
-  NAS cells - to reduce search space
+  Big idea
+    Picture of LeNET for complexity
+  Regular NAS (and eNAS):
+    RL for layer definitions (picture)
+      https://arxiv.org/abs/1611.01578
+      Neural Architecture Search with Reinforcement Learning
+    But random search also works...
+    Random Search and Reproducibility for Neural Architecture Search
+      https://arxiv.org/abs/1902.07638
+      Reddit quote picture
+  Reduce search space : 
+    NAS cells - to reduce search space (picture)
+  
   
 Alternative approach : 
   Single-path NAS
+
+  Single-Path NAS: Designing Hardware-Efficient ConvNets in less than 4 Hours 
+  https://arxiv.org/abs/1904.02877
+  https://github.com/dstamoulis/single-path-nas
+  CMU / Microsoft
+
+
 
 Key idea:
   Collapse each layers' decision paths into 1 mega-kernel
@@ -125,6 +133,9 @@ Follow-up work :
     late resettings (not as strong a result)
 
 
+? Understanding Neural Architecture Search Techniques
+? https://arxiv.org/abs/1904.00438
+
 
 !-->
 
@@ -139,8 +150,8 @@ The slides for my talk are here :
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="http://redcatlabs.com/2019-05-30_TFandDL_SinglePathNAS/" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2019-05-30_TFandDL_SinglePathNAS_8_600x390.png)
+<a href="http://redcatlabs.com/2019-05-30_TFandDL_SinglePathNAS/#/6/2" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2019-05-30_TFandDL_SinglePathNAS_6-2_600x390.png)
 </a>
 
 
