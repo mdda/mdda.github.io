@@ -11,7 +11,7 @@ tags:
 - Neural Architecture Search
 - Lottery Ticket Hypothesis
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
