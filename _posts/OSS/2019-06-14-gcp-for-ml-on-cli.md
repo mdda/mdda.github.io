@@ -642,9 +642,6 @@ After you create and attach a new disk to an instance, you must format and mount
 gcloud compute ssh $INSTANCE_NAME
 {% endhighlight %}
 
-It's probably a good idea to run training (etc) within a ```screen``` or a ```tmux```, so that
-if your network disconnects, the machine will keep going.
-
 
 #### Format the added persistent disk (once only!)
 
@@ -673,6 +670,16 @@ sudo chown andrewsm:andrewsm .
 {% endhighlight %}
 
 
+To unmount the persistent disk cleanly, just do :
+
+{% highlight bash %}
+#sudo umount /dev/sdb
+{% endhighlight %}
+
+But there doesn't seem to be a need - if the machine is preempted (or even deleted)
+the persistent disk remains available, and can be moounted on another machine later.
+
+
 #### Pull down repo contents
 
 {% highlight bash %}
@@ -682,8 +689,9 @@ git clone ssh://something/tts.git  # Now works!
 
 #### Download data from Google Drive...
 
+Using the helper script described on [this site](https://www.matthuisman.nz/2019/01/download-google-drive-files-wget-curl.html) :
+
 {% highlight bash %}
-# https://www.matthuisman.nz/2019/01/download-google-drive-files-wget-curl.html
 sudo wget -O /usr/sbin/gdrivedl 'https://f.mjh.nz/gdrivedl'
 sudo chmod +x /usr/sbin/gdrivedl
 
@@ -692,11 +700,10 @@ sudo chmod +x /usr/sbin/gdrivedl
 {% endhighlight %}
 
 
+#### Run sessions using `screen` or `tmux`
 
-
-sudo umount /dev/sdb
-
-!-->
+It's probably a good idea to run training (etc) within a ```screen``` or a ```tmux```, so that
+if your network disconnects, the machine will keep going.
 
 
 #### Run Jupyter locally
