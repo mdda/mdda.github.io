@@ -333,6 +333,23 @@ pip3 install https://download.pytorch.org/whl/cu100/torchvision-0.3.0-cp36-cp36m
 {% endhighlight %}
 
 
+#####  Install TensorFlow (in Python3.6)
+
+Sigh...  but the Tensorflow install for the ML VM images is in the Python3.5 `dist-packages`, 
+and getting the 'pre-optimised' version was half the idea of the ML VM images in the 
+first place.  Oh well.
+
+Let's install Tensorflow into the Python3.6 `virtualenv` :
+
+{% highlight bash %}
+# First, reclaim some space...
+rm -rf .cache/pip/
+
+# Install tensorflow from scratch
+pip3 install tf-nightly-gpu  # (1.14...)
+{% endhighlight %}
+
+
 #####  Install ```gcsfuse```
 
 The 'gcsfuse' utility, which is needed to mount storage buckets as file systems - 
@@ -392,7 +409,7 @@ The majority of the 30Gb is now used :
 
 {% highlight bash %}
 df -h | grep sda
-#/dev/sda1        30G   26G  2.8G  91% /
+#/dev/sda1        30G   26G  2.5G  92% /
 {% endhighlight %}
 
 
