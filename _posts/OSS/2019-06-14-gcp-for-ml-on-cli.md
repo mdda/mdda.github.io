@@ -504,7 +504,7 @@ rdai-awesome-image  rdai-tts  rdai-gpu-family              READY
 export INSTANCE_NAME="rdai-tts-p100-vm"
 export INSTANCE_TYPE="n1-highmem-2"
 export ZONE="us-central1-c"                # As above
-export MY_IMAGE_NAME="rdai-awesome-image"  # As above
+export MY_IMAGE_NAME="rdai-tfpy-image"     # As above
 
 gcloud compute instances create $INSTANCE_NAME \
         --machine-type=$INSTANCE_TYPE \
@@ -595,6 +595,47 @@ gcloud compute instances start $INSTANCE_NAME
 {% endhighlight %}
 
 
+#### Add a persistent disk
+
+[Using the 'console'](https://cloud.google.com/compute/docs/disks/add-persistent-disk#create_disk)
+
+or (my preference) on the command line :
+
+Create and attach a zonal persistent disk with the gcloud tool:
+
+Use the gcloud beta compute disks create command to create a new zonal persistent disk. If you need a zonal SSD persistent disk for additional throughput or IOPS, include the --type flag and specify pd-ssd. Optionally, add the --physical-block-size flag to set the physical block size.
+
+{% highlight bash %}
+export DISK_NAME="tts" 
+gcloud beta compute disks create $DISK_NAME \
+    --size 200 \
+    --type pd-standard \
+    --physical-block-size 4096
+{% endhighlight %}
+
+where:
+
+*  [DISK_NAME] is the name of the new disk.
+*  [DISK_SIZE] is the size of the new disk in GB.
+*  [DISK_TYPE] is the type of persistent disk. Either pd-standard or pd-ssd.
+*  [BLOCK_SIZE] (beta feature) is either 4096 (4 KB) or 16384 (16 KB). 4 KB is the default physical block size. 16 KB is the increased physical block size.
+
+After you create the disk, attach it to any running or stopped instance. 
+Use the gcloud compute instances attach-disk command:
+
+{% highlight bash %}
+gcloud compute instances attach-disk $INSTANCE_NAME \
+    --disk $DISK_NAME
+{% endhighlight %}
+
+where:
+
+*  [INSTANCE_NAME] is the name of the instance where you are adding the new zonal persistent disk.
+*  [DISK_NAME] is the name of the new disk that you are attaching to the instance.
+
+After you create and attach a new disk to an instance, you must format and mount the disk so that the operating system can use the available storage space.
+
+
 #### SSH into an image
 
 {% highlight bash %}
@@ -604,48 +645,12 @@ gcloud compute ssh $INSTANCE_NAME
 It's probably a good idea to run training (etc) within a ```screen``` or a ```tmux```, so that
 if your network disconnects, the machine will keep going.
 
-<!--
 
-Add a persistent disk (using the 'console')
-https://cloud.google.com/compute/docs/disks/add-persistent-disk#create_disk
+#### Format the added persistent disk (once only!)
 
-or on the command line :
+Format the persistent disk when logged into the instance : 
 
------------
-Create and attach a zonal persistent disk with the gcloud tool:
-
-Use the gcloud beta compute disks create command to create a new zonal persistent disk. If you need a zonal SSD persistent disk for additional throughput or IOPS, include the --type flag and specify pd-ssd. Optionally, add the --physical-block-size flag to set the physical block size.
-
-gcloud beta compute disks create [DISK_NAME] /
-    --size [DISK_SIZE] /
-    --type [DISK_TYPE] /
-    --physical-block-size [BLOCK_SIZE]
-where:
-
-[DISK_NAME] is the name of the new disk.
-[DISK_SIZE] is the size of the new disk in GB.
-[DISK_TYPE] is the type of persistent disk. Either pd-standard or pd-ssd.
-[BLOCK_SIZE] is either 4096 (4 KB) or 16384 (16 KB). 4 KB is the default physical block size. 16 KB is the increased physical block size.
-
-Beta
-This is a Beta release of Google Compute Engine 16 KB physical block size selection. This feature is not covered by any SLA or deprecation policy and might be subject to backward-incompatible changes.
-
-After you create the disk, attach it to any running or stopped instance. Use the gcloud compute instances attach-disk command:
-
-gcloud compute instances attach-disk [INSTANCE_NAME] /
-    --disk [DISK_NAME]
-where:
-
-[INSTANCE_NAME] is the name of the instance where you are adding the new zonal persistent disk.
-[DISK_NAME] is the name of the new disk that you are attaching to the instance.
-After you create and attach a new disk to an instance, you must format and mount the disk so that the operating system can use the available storage space.
-
-Use the gcloud beta compute disks describe command to see a description of your disk. The response includes the disk's physical block size.
------------
-
-
-Format it : 
-
+{% highlight bash %}
 sudo lsblk
 NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
 sda      8:0    0   30G  0 disk 
@@ -653,29 +658,38 @@ sda      8:0    0   30G  0 disk
 sdb      8:16   0  200G  0 disk   # << NEW ONE
 
 sudo mkfs.ext4 -m 0 -F -E lazy_itable_init=0,lazy_journal_init=0,discard /dev/sdb
+{% endhighlight %}
 
+
+#### Mount the added persistent disk
+
+{% highlight bash %}
 sudo mkdir -p ~/mnt/rdai
 
 sudo mount -o discard,defaults /dev/sdb ~/mnt/rdai
 
 cd ~/mnt/rdai
 sudo chown andrewsm:andrewsm .
+{% endhighlight %}
 
-ssh-keygen
-more ~/.ssh/id_rsa.pub 
-# Add public key to gitea user-settings:SSHKeys
+
+#### Pull down repo contents
+
+{% highlight bash %}
 git clone ssh://something/tts.git  # Now works!
+{% endhighlight %}
 
-# Download data from Google Drive...
-#  https://pypi.org/project/drive-cli/
-#pip install drive-cli
 
+#### Download data from Google Drive...
+
+{% highlight bash %}
 # https://www.matthuisman.nz/2019/01/download-google-drive-files-wget-curl.html
 sudo wget -O /usr/sbin/gdrivedl 'https://f.mjh.nz/gdrivedl'
 sudo chmod +x /usr/sbin/gdrivedl
 
 /usr/sbin/gdrivedl https://drive.google.com/open?id=16ksdjfkdfjslkdfjslkdfjsldkfsldjfkfsjlds
 # WORKS!
+{% endhighlight %}
 
 
 
