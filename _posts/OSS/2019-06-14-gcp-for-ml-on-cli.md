@@ -706,6 +706,66 @@ It's probably a good idea to run training (etc) within a ```screen``` or a ```tm
 if your network disconnects, the machine will keep going.
 
 
+#### Set up a preemption alert message
+
+Useful information found at [this website]https://haggainuchi.com/shutdown.html), and also
+[Google's Docs](https://cloud.google.com/compute/docs/shutdownscript).
+
+<!--
+Slight renaming required, since the VM is running Debian (not Ubuntu) - the 
+relevant shutdown chain is triggered via `/etc/acpi/events/powerbtn-acpi-support`  :
+
+{% highlight bash %}
+event=button[ /]power
+action=/etc/acpi/powerbtn-acpi-support.sh
+{% endhighlight %}
+!-->
+
+Set up a Slack Webhook using the [instructions provided](https://api.slack.com/incoming-webhooks).
+
+
+
+
+Add a file `/home/shutdown.bash` (with `sudo nano /home/shutdown.bash`) :
+
+{% highlight bash %}
+#!/bin/bash
+
+function post_to_slack () {
+  # format message as a code block ```${msg}```
+  SLACK_MESSAGE="\`\`\`$1\`\`\`"
+  SLACK_URL=https://hooks.slack.com/services/your-service-identifier-part-here
+ 
+  case "$2" in
+    INFO)
+      SLACK_ICON=':slack:'
+      ;;
+    WARNING)
+      SLACK_ICON=':warning:'
+      ;;
+    ERROR)
+      SLACK_ICON=':bangbang:'
+      ;;
+    *)
+      SLACK_ICON=':slack:'
+      ;;
+  esac
+ 
+  curl -X POST --data "payload={\"text\": \"${SLACK_ICON} ${SLACK_MESSAGE}\"}" ${SLACK_URL}
+}
+
+post_to_slack "Server going down..." "WARNING"
+exit 0
+{% endhighlight %}
+
+And then enable it from your local machine :
+
+{% highlight bash %}
+gcloud compute instances add-metadata $INSTANCE_NAME \
+    --metadata-from-file startup-script=path/to/file
+{% endhighlight %}
+
+
 #### Run Jupyter locally
 
 You can get access to your cloud VM's jupyter 
@@ -714,7 +774,7 @@ to the cloud machine's ```8080```
 (```localhost:8880``` was chosen to avoid conflict with 'true local' jupyter sessions) :
 
 {% highlight bash %}
-# This uses the existing 'root' jupyterlab install
+# This uses the existing jupyterlab install
 gcloud compute ssh $INSTANCE_NAME -- -L 8880:localhost:8080
 {% endhighlight %}
 
