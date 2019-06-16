@@ -723,9 +723,6 @@ action=/etc/acpi/powerbtn-acpi-support.sh
 
 Set up a Slack Webhook using the [instructions provided](https://api.slack.com/incoming-webhooks).
 
-
-
-
 Add a file `/home/shutdown.bash` (with `sudo nano /home/shutdown.bash`) :
 
 {% highlight bash %}
@@ -764,6 +761,10 @@ And then enable it from your local machine :
 gcloud compute instances add-metadata $INSTANCE_NAME \
     --metadata-from-file startup-script=path/to/file
 {% endhighlight %}
+
+Alternative : Use [Pushed](https://pushed.co/) which has an app with a free tier.  However,
+reviews of the app indicate that it may not be super-reliable, which kind
+of defeats the purpose of having it as a critical messaging system.
 
 
 #### Run Jupyter locally
