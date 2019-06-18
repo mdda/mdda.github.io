@@ -694,8 +694,12 @@ Using the helper script described on [this site](https://www.matthuisman.nz/2019
 {% highlight bash %}
 sudo wget -O /usr/sbin/gdrivedl 'https://f.mjh.nz/gdrivedl'
 sudo chmod +x /usr/sbin/gdrivedl
-
 /usr/sbin/gdrivedl https://drive.google.com/open?id=16ksdjfkdfjslkdfjslkdfjsldkfsldjfkfsjlds
+
+wget -O gdrivedl 'https://f.mjh.nz/gdrivedl'
+chmod +x gdrivedl
+./gdrivedl https://drive.google.com/open?id=16ksdjfkdfjslkdfjslkdfjsldkfsldjfkfsjlds
+
 # WORKS!
 {% endhighlight %}
 
