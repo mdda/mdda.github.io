@@ -692,13 +692,9 @@ git clone ssh://something/tts.git  # Now works!
 Using the helper script described on [this site](https://www.matthuisman.nz/2019/01/download-google-drive-files-wget-curl.html) :
 
 {% highlight bash %}
-sudo wget -O /usr/sbin/gdrivedl 'https://f.mjh.nz/gdrivedl'
-sudo chmod +x /usr/sbin/gdrivedl
-/usr/sbin/gdrivedl https://drive.google.com/open?id=16ksdjfkdfjslkdfjslkdfjsldkfsldjfkfsjlds
-
 wget -O gdrivedl 'https://f.mjh.nz/gdrivedl'
 chmod +x gdrivedl
-./gdrivedl https://drive.google.com/open?id=16ksdjfkdfjslkdfjslkdfjsldkfsldjfkfsjlds
+./gdrivedl https://drive.google.com/open?id=16ksdjfkdNONSENSEjsldkfsldjfkfsjlds
 
 # WORKS!
 {% endhighlight %}
