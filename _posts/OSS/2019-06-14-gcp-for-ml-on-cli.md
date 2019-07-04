@@ -14,7 +14,7 @@ published: true
 ---
 {% include JB/setup %}
 
-### Using the GCP VMs effectively (and cheaply)
+### Using the GCP VMs (and cost-effectively)
 
 #### Linux CLI quick guide - every line written down
 
@@ -279,6 +279,15 @@ Thu Jun 13 17:03:57 2019
 #### Install additional useful stuff for the base image
 
 #####  First steps
+
+A better editor than `nano` : 
+
+{% highlight bash %}
+sudo apt-get install -y joe
+{% endhighlight %}
+
+
+#####  Upgrade Python
 
 Python 3.5 is in the VM.  But my code is in 3.6...
 
