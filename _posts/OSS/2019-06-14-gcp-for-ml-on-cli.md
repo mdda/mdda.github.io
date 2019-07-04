@@ -792,6 +792,21 @@ fusermount -u $BUCKET_MOUNT_POINT
 {% endhighlight %}
 
 
+#### Use `rsync` for data sync
+
+First, need to get the External IP of the instance :
+
+{% highlight bash %}
+INSTANCE_IP=`gcloud compute instances list --filter="${INSTANCE_NAME}" --format "get(networkInterfaces[0].accessConfigs[0].natIP)"`
+{% endhighlight %}
+
+Then, regular `rsync` will work :
+
+{% highlight bash %}
+rsync -avz localfiles $INSTANCE_IP:remotepath/
+{% endhighlight %}
+
+
 #### Stop the VM
 
 I've included this one twice, since it's important not to let these things sit idle...
