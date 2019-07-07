@@ -10,7 +10,7 @@ tags:
 - pytorch
 - fedora
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -79,6 +79,10 @@ post_to_slack "Server '`hostname`' going down..." "WARNING"
 exit 0
 {% endhighlight %}
 
+>   Alternative : Use [Pushed](https://pushed.co/) which has an app with a free tier.  However,
+>   reviews of the app indicate that it may not be super-reliable, which kind
+>   of defeats the purpose of having it as a critical messaging system.
+
 
 #### Create a 'shutdown hook' for the GCP machine
 
@@ -89,8 +93,16 @@ gcloud compute instances add-metadata $INSTANCE_NAME \
     --metadata-from-file shutdown-script=shutdown.bash
 {% endhighlight %}
 
----
 
-Alternative : Use [Pushed](https://pushed.co/) which has an app with a free tier.  However,
-reviews of the app indicate that it may not be super-reliable, which kind
-of defeats the purpose of having it as a critical messaging system.
+
+#### Test that is works
+
+This has worked for me : 
+
+*  Running shutdown.bash on the local machine
+*  Running shutdown.bash on the VM itself
+*  Watching Slack during `instance stop`
+*  Being rudely interrupted via Slack when the VM gets preempted...
+
+... as intended.
+
