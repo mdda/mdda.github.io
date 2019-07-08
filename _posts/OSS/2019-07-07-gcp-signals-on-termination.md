@@ -106,3 +106,23 @@ This has worked for me :
 
 ... as intended.
 
+<!--
+
+# Figure out where to fix up colab...
+
+#find /usr -mtime -7
+
+sudo find /etc -mtime -7
+more /etc/default/instance_configs.cfg   # Has 
+```
+[MetadataScripts]
+default_shell = /bin/bash
+run_dir = 
+shutdown = true
+startup = true
+```
+# /etc/default/instance_configs.cfg.template instead and then run
+# /usr/bin/google_instance_setup.
+# ... https://salsa.debian.org/cloud-team/google-compute-image-packages#metadata-scripts
+
+!-->
