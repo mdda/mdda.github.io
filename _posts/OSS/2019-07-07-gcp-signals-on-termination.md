@@ -125,4 +125,23 @@ startup = true
 # /usr/bin/google_instance_setup.
 # ... https://salsa.debian.org/cloud-team/google-compute-image-packages#metadata-scripts
 
+# https://salsa.debian.org/cloud-team/google-compute-image-packages/blob/master/google_compute_engine_init/systemd/google-shutdown-scripts.service
+# /etc/systemd/system/multi-user.target.wants/google-shutdown-scripts.service
+# -> ExecStop=/usr/bin/google_metadata_script_runner --script-type shutdown
+# -> more /usr/bin/google_metadata_script_runner
+# -> load_entry_point('google-compute-engine==2.8.16', 'console_scripts', 'google_metadata_script_runner')()
+
+'''  https://cloud.google.com/compute/docs/startupscript
+Specific to Linux virtual machines, Compute Engine will wait for a connection to the metadata server 
+before attempting to get information such as a custom startup or shutdown script from the metadata server. 
+If the metadata server is not responding or the network is not yet configured, the virtual machine will not finish booting up.
+'''
+
+So maybe colab won't be able to do the metadata thing (cannot patch into it's actual metadata server).
+Need to see what colab is running (systemd?) for ACPI events...
+
+Hmmm : serveo.net seems to be down.
+
+https://www.tecmint.com/access-linux-server-using-a-jump-host/
+
 !-->
