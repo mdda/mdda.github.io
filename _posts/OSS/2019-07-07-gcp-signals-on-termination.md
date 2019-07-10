@@ -6,9 +6,7 @@ category: OSS
 tags:
 - linux
 - GoogleCloud
-- tensorflow
-- pytorch
-- fedora
+- slack
 layout: post
 published: true
 ---
