@@ -9,6 +9,7 @@ tags:
 - OpenAI
 - GPT2
 - transformers
+- Malaysia
 layout: post
 published: true 
 ---
