@@ -1,6 +1,6 @@
 ---
 date: 2019-06-16
-title:  "TensorFlow 2.0 : CNNs for Images"
+title:  "PyCon.TH : CNNs for Images in TF2.0"
 tagline: Presentation
 category: AI
 tags:
@@ -10,11 +10,9 @@ tags:
 - PyCon
 - Thailand
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
-
-
 
 ### Presentation Link
 
@@ -39,12 +37,12 @@ or contact me using the details given on the slides themselves.
 ![Presentation Content Example]({{ site.url }}/assets/img/2019-06-16_PyCon.th_TF2-CNNs-for-Images_17_600x390.png)
 </a>
 
-PS: We also did a standing-room-only 2h40 workshop for developers at the conference on the Saturday - but
+PS: We also did a standing-room-only 2h40m workshop for developers at the conference on the Saturday - but
 there are no slides for non-attendees...
 
 
 
-PS:  And if you liked the content, please 'star' my <a href="https://github.com/mdda/deep-learning-workshop" target="_blank">Deep Learning Workshop</a> repo ::
+PPS:  And if you liked the content, please 'star' my <a href="https://github.com/mdda/deep-learning-workshop" target="_blank">Deep Learning Workshop</a> repo ::
 <!-- From :: https://buttons.github.io/ -->
 <!-- Place this tag where you want the button to render. -->
 <span style="position:relative;top:5px;">

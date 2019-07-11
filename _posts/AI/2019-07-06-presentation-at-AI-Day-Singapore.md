@@ -1,6 +1,6 @@
 ---
 date: 2019-07-06
-title: Learn to Learn to Learn (Singapore)
+title: XLNet (Singapore AI Day)
 tagline: Presentation
 category: AI
 tags:
