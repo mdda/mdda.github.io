@@ -17,11 +17,10 @@ published: true
 {% include JB/setup %}
 
 
-
 ### Presentation Link
 
 This year's <strong><a href="https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/262501989/" target="_blank">Singapore AI Day</a></strong> 
-was prompted by the arrival of 3 Google Brain folk from Mountain View - and we also managed to get Sirinart Tangruamsub 
+was prompted by the arrival of 3 people from Google Brain (Mountain View, CA) - and we also managed to get Sirinart Tangruamsub 
 (a GDE based in Thailand) to come and talk about her work with Bayesian Linear Regression.
 
 Our speaker line-up for the 4-hour (standing-room only) event was : 
