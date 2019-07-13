@@ -24,19 +24,42 @@ So, in addition to mounting an extra drive, wouldn't it be nice to get some scre
 
 #### Create a startup script locally
 
-Create this script as a local file `startup.bash` (clearly, your details will be very different) :
+Create this script as a local file `startup.bash` (clearly, your details will be very different, 
+but some essential elements are included here) :
 
 {% highlight bash %}
 #!/bin/bash
 
-# https://stackoverflow.com/questions/6534386/how-can-i-script-gnu-screen-to-start-with-a-program-running-inside-of-it-so-that/6655931#6655931
-## 'stuff' is a screen-internal command here
-screen -S sdf -p 0 -X stuff ". ~/env36/bin/activate$(printf \\r)"
+username='notauser'   # Clearly this needs to be changed
+
+# This shows that the script is run as root on startup...
+echo "root=$(whoami)"
+
+mkdir -p /mnt/rdai
+mount -o discard,defaults /dev/sdb /mnt/rdai
+
+cd /mnt/rdai
+chown ${username}:${username} .
+
+# Become the user ... 
+su - ${username} <<'EOF'
+echo "username=$(whoami)"
+
+cd /useful/path/
 
 NL="$(printf \\r)"
-screen -S sdf -p 0 -X stuff "echo 'hello'${NL}echo 'world'${NL}"
+ACTIVATE_ENV=". ~/env36/bin/activate"
 
-exit 0
+# First, ensure the screen session exists, and then 'stuff' entries into it
+screen -dmS model 
+screen -S model       -p 0 -X stuff "${ACTIVATE_ENV}${NL}"
+screen -S model       -p 0 -X stuff "python train.py${NL}"
+
+screen -dmS tensorboard
+screen -S tensorboard -p 0 -X stuff "${ACTIVATE_ENV}${NL}"
+screen -S tensorboard -p 0 -X stuff "tensorboard --logdir=runs/${NL}"
+
+EOF
 {% endhighlight %}
 
 
@@ -48,8 +71,6 @@ Post that script to the VM using the `gcloud add-metadata` command from your loc
 gcloud compute instances add-metadata $INSTANCE_NAME \
     --metadata-from-file startup-script=startup.bash
 {% endhighlight %}
-
-
 
 #### Test that is works
 

@@ -670,11 +670,11 @@ sudo mkfs.ext4 -m 0 -F -E lazy_itable_init=0,lazy_journal_init=0,discard /dev/sd
 #### Mount the added persistent disk
 
 {% highlight bash %}
-sudo mkdir -p ~/mnt/rdai
+sudo mkdir -p /mnt/rdai
 
-sudo mount -o discard,defaults /dev/sdb ~/mnt/rdai
+sudo mount -o discard,defaults /dev/sdb /mnt/rdai
 
-cd ~/mnt/rdai
+cd /mnt/rdai
 sudo chown andrewsm:andrewsm .
 {% endhighlight %}
 
