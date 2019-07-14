@@ -17,15 +17,13 @@ published: false
 
 ### Presentation Link
 
+I was honoured to be chosen to give the afternoon Keynote talk at 
+the BigDataX ["Google I/O Recap 2019 Singapore: AI - From Data to Device"](https://www.meetup.com/BigDataX/events/262196916/) 
+event in Singpore on 13-July-2019.
 
-
-My talk was titled "First steps in Deep Learning with TensorFlow 2.0 : CNNs", 
-and was intended to introduce the elements of a CNN model *before* explaining 
-the intricacies of back-propagtion (i.e. in some ways it was a different approach 
-from the typical "build from the ground up" NN introductory pitch).
-
-
-
+Beyond just introducing the key ideas in TFLite (which the group did practical work on in the afternoon),
+I explained the rationale for the TFX framework that Google has now fully released, 
+so that the audience understood the bigger picture that needs to be considered when bringing Machine Learning models into production.
 
 The slides for my talk (as a 6Mb PDF) are here :
 
