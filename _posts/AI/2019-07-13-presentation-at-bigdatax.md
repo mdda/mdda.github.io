@@ -11,7 +11,7 @@ tags:
 - TensorFlow Extended
 - TensorFlow Lite
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -21,7 +21,7 @@ I was honoured to be chosen to give the afternoon Keynote talk at
 the BigDataX ["Google I/O Recap 2019 Singapore: AI - From Data to Device"](https://www.meetup.com/BigDataX/events/262196916/) 
 event in Singpore on 13-July-2019.
 
-Beyond just introducing the key ideas in TFLite (which the group did practical work on in the afternoon),
+Beyond just introducing the key ideas in TFLite (on which the group did practical work in the afternoon),
 I explained the rationale for the TFX framework that Google has now fully released, 
 so that the audience understood the bigger picture that needs to be considered when bringing Machine Learning models into production.
 
