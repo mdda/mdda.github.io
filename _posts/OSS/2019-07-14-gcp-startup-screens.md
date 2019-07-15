@@ -72,5 +72,5 @@ gcloud compute instances add-metadata $INSTANCE_NAME \
     --metadata-from-file startup-script=startup.bash
 {% endhighlight %}
 
-#### Test that is works
+#### Test that it works
 

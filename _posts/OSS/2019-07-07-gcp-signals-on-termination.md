@@ -93,7 +93,7 @@ gcloud compute instances add-metadata $INSTANCE_NAME \
 
 
 
-#### Test that is works
+#### Test that it works
 
 This has worked for me : 
 
