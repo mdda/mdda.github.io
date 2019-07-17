@@ -8,7 +8,7 @@ tags:
 - GoogleCloud
 - screen
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -73,4 +73,10 @@ gcloud compute instances add-metadata $INSTANCE_NAME \
 {% endhighlight %}
 
 #### Test that it works
+
+Go on!  Just `start` an instance and see whether it works!
+
+If you need to change the script, just make the changes locally, and redo the `add-metadata` step : It
+seems to replace what was there before.  Then, you'll have to `stop` and `start` the instance again - 
+best done during down-time, rather than when hot on the trail of the latest model...
 
