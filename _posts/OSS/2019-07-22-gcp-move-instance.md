@@ -20,7 +20,7 @@ are really pretty good (for once), so the below is mainly for my future referenc
 illustrate the steps that actually worked first time...
 
 
-### Why move zones?
+#### Why move zones?
 
 I was getting repeated (i.e. for more than 12hrs) denials for starting a 2 core VM with a P100 attached in
 `us-central1-c` - which I kind of assumed would have decent availability.
@@ -32,7 +32,7 @@ gcloud compute instances start $INSTANCE_NAME
 {% endhighlight %}
 
 
-### Choose the new zone
+#### Choose the new zone
 
 Looking at the [Google GPU zones](https://cloud.google.com/compute/docs/gpus/) to see where GPUs might be available,
 I selected something closer to Singapore ... Taiwan.  Note that the quotas page had already
@@ -53,7 +53,7 @@ is a bit of an eye-roller, since the reason that I want to move zones is because
 to start the instance..
 
 
-### Follow the manual instructions
+#### Follow the manual instructions
 
 Make sure the machine and disks can be shut down safely :
 
@@ -96,11 +96,15 @@ gcloud compute disks snapshot ${DISK_DATA} \
 {% endhighlight %}
 
 
+Having snapshotted (make sure they complete without errors!), apparently the original disks have to be deleted
+to avoid name-clashes across the zones :
 
 {% highlight bash %}
 gcloud compute disks delete ${DISK_BOOT} --zone ${ZONE_SRC}
 gcloud compute disks delete ${DISK_DATA} --zone ${ZONE_SRC}
 {% endhighlight %}
+
+Now, recreate the disks from the snapshots in the destination zone :
 
 {% highlight bash %}
 gcloud compute disks create ${DISK_BOOT} \
@@ -111,6 +115,10 @@ gcloud compute disks create ${DISK_DATA} \
     --source-snapshot ${DISK_DATA}snapshot \
     --zone ${ZONE_DST}
 {% endhighlight %}
+
+
+Now, create the instance from scratch with the disks attached (NB: after doing this, you will need 
+to reinstall the metadata, such as the startup and shutdown scripts described elsewhere in this blog) :
 
 {% highlight bash %}
 export INSTANCE_TYPE="n1-highmem-2"
@@ -125,7 +133,8 @@ gcloud compute instances create $INSTANCE_NAME \
         --zone=$ZONE_DST
 {% endhighlight %}
 
-Once it's confirmed to be working ...
+
+Finally, once the instance confirmed to be working in the new zone ...
 
 {% highlight bash %}
 gcloud compute snapshots delete ${DISK_BOOT}snapshot
@@ -134,14 +143,25 @@ gcloud compute snapshots delete ${DISK_DATA}snapshot
 
 
 -----------
-Starting of an instance was repeatedly refused in us-central1-c (no idea what the actual reason was), so I decided to move to an asian zone with P100s.  Since I couldn't start the instance in us-central1-c, the automatic tooling for moving the instance could not be used.  So I went through all the steps (bringing down carefully, snapshotting, recreating) only to find that quota needed to be assigned (a '2 day' process).  Rather disappointed at that point that it was Google's own systems that were (a) preventing me from launching an instance; (b) made it time-consuming to transfer; and then (c) refused to allow me to start the instance.
 
-Perhaps it would make sense to have some kind of 'availability' test ahead of time?
+## Leave helpful comments in the GCP survey
 
-I also see that I've got 'quota' in lots of other zones in the asia region - but there are no actual GPUs to be had there (so the quota mechanism was merely to check for demand : Very clever for Google, but rather anti-customer in the UI).
-
-Things are working now (in asia), but this was not a smooth experience.
-
+>   Starting of an instance was repeatedly refused in `us-central1-c` (no idea what the actual reason was), 
+>   so I decided to move to an asian zone with P100s.  Since I couldn't start the instance in `us-central1-c`, 
+>   the automatic tooling for moving the instance could not be used.  So I went through all the steps 
+>   (bringing down carefully, snapshotting, recreating) only to find that quota needed to be assigned 
+>   (a '2 day' process).  Rather disappointed at that point that it was Google's own systems that were
+>   (a) preventing me from launching an instance; 
+>   (b) made it time-consuming to transfer; and then 
+>   (c) refused to allow me to start the instance.
+>   
+>   Perhaps it would make sense to have some kind of 'availability' test ahead of time?
+>   
+>   I also see that I've got 'quota' in lots of other zones in the asia region - but there are 
+>   no actual GPUs to be had there (so the quota mechanism was merely to check for demand : 
+>   Very clever for Google, but rather anti-customer in the UI).
+>   
+>   Things are working now (in Asia), but this was not a smooth experience.
 
 
 {% highlight bash %}
