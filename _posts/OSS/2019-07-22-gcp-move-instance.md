@@ -1,27 +1,43 @@
 ---
 date: 2019-07-22
-title: Google Cloud Start move instance
+title: Google Cloud move instance 
 tagline: CLI set-up
 category: OSS
 tags:
 - linux
 - GoogleCloud
+- zones
 layout: post
 published: false
 ---
 {% include JB/setup %}
 
-### Initialisation script to set up VM from cold start
 
-https://cloud.google.com/compute/docs/instances/moving-instance-across-zones
-https://cloud.google.com/compute/docs/gpus/
+### Move an instance between zones
 
+The [Google docs](https://cloud.google.com/compute/docs/instances/moving-instance-across-zones) for this
+are really pretty good (for once), so the below is mainly for my future reference, and to 
+illustrate the steps that actually worked first time...
+
+
+### Why move zones?
+
+I was getting repeated (i.e. for more than 12hrs) denials for starting a 2 core VM with a P100 attached in
+`us-central1-c` - which I kind of assumed would have decent availability.
 
 {% highlight bash %}
 export INSTANCE_NAME="rdai-tts-p100-vm"  # As above
 gcloud compute instances start $INSTANCE_NAME
+# FAILS : 'lack of compute'
 {% endhighlight %}
 
+
+### Choose the new zone
+
+Looking at the [Google GPU zones](https://cloud.google.com/compute/docs/gpus/) to see where GPUs might be available,
+I selected something closer to Singapore ... Taiwan.  Note that the quotas page had already
+got me to obtain quotas for a whole bunch of places, that I now see don't even have GPUs available : Honestly, 
+it seems like GCP should be more mature than to try this kind of MVP/Lean Startup stuff.
 
 {% highlight bash %}
 ZONE_SRC='us-central1-c'
@@ -32,6 +48,14 @@ gcloud compute instances move ${INSTANCE_NAME} \
 # NO DICE
 {% endhighlight %}
 
+Crazily, the auto-move tool that GCP supplies can only move instances that are currently running.  Which 
+is a bit of an eye-roller, since the reason that I want to move zones is because GCP won't allow me
+to start the instance..
+
+
+### Follow the manual instructions
+
+Make sure the machine and disks can be shut down safely :
 
 {% highlight bash %}
 DISK_BOOT='rdai-tts-p100-vm'
@@ -46,12 +70,20 @@ gcloud compute instances set-disk-auto-delete ${INSTANCE_NAME} --zone ${ZONE_SRC
 # Unch, since this was not set for auto-delete
 {% endhighlight %}
 
+
+Check the metadata for the instance (before we delete it) ...  It may well be worth 
+saving this to a file :
+
 {% highlight bash %}
 gcloud compute instances describe ${INSTANCE_NAME} --zone ${ZONE_SRC}
 # NB: Will need to re-instate startup and shutdown scripts
 
 gcloud compute instances delete ${INSTANCE_NAME} --zone ${ZONE_SRC}
 {% endhighlight %}
+
+
+Snapshot the disks (assuming you've got one `BOOT` disk and one `DATA` disk, which seems like
+a reasonable set-up to me) :
 
 {% highlight bash %}
 gcloud compute disks snapshot ${DISK_BOOT} \
