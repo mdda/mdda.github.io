@@ -8,7 +8,7 @@ tags:
 - GoogleCloud
 - zones
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -23,10 +23,10 @@ illustrate the steps that actually worked first time...
 #### Why move zones?
 
 I was getting repeated (i.e. for more than 12hrs) denials for starting a 2 core VM with a P100 attached in
-`us-central1-c` - which I kind of assumed would have decent availability.
+`us-central1-c` (which I kind of assumed would have decent availability when I semi-randomly chose it in the first place).
 
 {% highlight bash %}
-export INSTANCE_NAME="rdai-tts-p100-vm"  # As above
+export INSTANCE_NAME="rdai-tts-p100-vm" 
 gcloud compute instances start $INSTANCE_NAME
 # FAILS : 'lack of compute'
 {% endhighlight %}
@@ -36,7 +36,7 @@ gcloud compute instances start $INSTANCE_NAME
 
 Looking at the [Google GPU zones](https://cloud.google.com/compute/docs/gpus/) to see where GPUs might be available,
 I selected something closer to Singapore ... Taiwan.  Note that the quotas page had already
-got me to obtain quotas for a whole bunch of places, that I now see don't even have GPUs available : Honestly, 
+encouraged me to obtain quota in a whole bunch of places that I *now* see don't even have GPUs available : Honestly, 
 it seems like GCP should be more mature than to try this kind of MVP/Lean Startup stuff.
 
 {% highlight bash %}
@@ -50,7 +50,7 @@ gcloud compute instances move ${INSTANCE_NAME} \
 
 Crazily, the auto-move tool that GCP supplies can only move instances that are currently running.  Which 
 is a bit of an eye-roller, since the reason that I want to move zones is because GCP won't allow me
-to start the instance..
+to start the instance...
 
 
 #### Follow the manual instructions
@@ -67,7 +67,7 @@ gcloud compute instances set-disk-auto-delete ${INSTANCE_NAME} --zone ${ZONE_SRC
 
 gcloud compute instances set-disk-auto-delete ${INSTANCE_NAME} --zone ${ZONE_SRC} \
     --disk ${DISK_DATA} --no-auto-delete
-# Unch, since this was not set for auto-delete
+# Unchanged, since this was not set for auto-delete when it was created
 {% endhighlight %}
 
 
@@ -87,11 +87,11 @@ a reasonable set-up to me) :
 
 {% highlight bash %}
 gcloud compute disks snapshot ${DISK_BOOT} \
-    --snapshot-names ${DISK_BOOT}snapshot \
+    --snapshot-names ${DISK_BOOT}_snapshot \
     --zone ${ZONE_SRC}
 
 gcloud compute disks snapshot ${DISK_DATA} \
-    --snapshot-names ${DISK_DATA}snapshot \
+    --snapshot-names ${DISK_DATA}_snapshot \
     --zone ${ZONE_SRC}
 {% endhighlight %}
 
@@ -104,21 +104,21 @@ gcloud compute disks delete ${DISK_BOOT} --zone ${ZONE_SRC}
 gcloud compute disks delete ${DISK_DATA} --zone ${ZONE_SRC}
 {% endhighlight %}
 
-Now, recreate the disks from the snapshots in the destination zone :
+Then, recreate the disks from the snapshots in the destination zone :
 
 {% highlight bash %}
 gcloud compute disks create ${DISK_BOOT} \
-    --source-snapshot ${DISK_BOOT}snapshot \
+    --source-snapshot ${DISK_BOOT}_snapshot \
     --zone ${ZONE_DST}
     
 gcloud compute disks create ${DISK_DATA} \
-    --source-snapshot ${DISK_DATA}snapshot \
+    --source-snapshot ${DISK_DATA}_snapshot \
     --zone ${ZONE_DST}
 {% endhighlight %}
 
 
-Now, create the instance from scratch with the disks attached (NB: after doing this, you will need 
-to reinstall the metadata, such as the startup and shutdown scripts described elsewhere in this blog) :
+Finally, create the instance from scratch with the disks attached (NB: after doing this, you will need 
+to reinstall the `metadata`, such as the `startup` and `shutdown` scripts described elsewhere in this blog) :
 
 {% highlight bash %}
 export INSTANCE_TYPE="n1-highmem-2"
@@ -137,14 +137,16 @@ gcloud compute instances create $INSTANCE_NAME \
 Finally, once the instance confirmed to be working in the new zone ...
 
 {% highlight bash %}
-gcloud compute snapshots delete ${DISK_BOOT}snapshot
-gcloud compute snapshots delete ${DISK_DATA}snapshot
+gcloud compute snapshots delete ${DISK_BOOT}_snapshot
+gcloud compute snapshots delete ${DISK_DATA}_snapshot
 {% endhighlight %}
 
 
 -----------
 
 ## Leave helpful comments in the GCP survey
+
+Not sure that anyone reads these, but :
 
 >   Starting of an instance was repeatedly refused in `us-central1-c` (no idea what the actual reason was), 
 >   so I decided to move to an asian zone with P100s.  Since I couldn't start the instance in `us-central1-c`, 
