@@ -42,6 +42,10 @@ TextGraphs-2019
   
     https://competitions.codalab.org/competitions/20150#learn_the_details
     
+    Another one is a tf-idf baseline implemented in Scala that uses SVMrank, 
+    which demonstrates the MAP of 0.28 on the same dataset. 
+    I think it is fine to improve even slightly over the Scala baseline.
+    
   All submission deadlines are at 11:59 p.m. PST
   Paper submission: August 19, 2019
   Notification of acceptance: September 16, 2019
