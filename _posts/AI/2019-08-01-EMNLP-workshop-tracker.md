@@ -56,6 +56,7 @@ TextGraphs-2019
     a short paper has up to 4 pages of content plus unlimited references;
     a long paper has up to 8 pages of content plus unlimited references.
 
+
 MRQA: Machine Reading for Question Answering
   https://mrqa.github.io/
   Task is essentially over
@@ -147,6 +148,34 @@ FEVER 2.0 Workshop
     Camera-ready deadline: 30 September 2019
     Workshop: 3/4 November (EMNLP-IJCNLP)
   All deadlines are calculated at 11:59pm Pacific Daylight Savings Time (UTC -7h).
+
+CoNLL
+  http://www.conll.org/
+  Paper submission: May 31, 2019 == TOO LATE
+
+WAT2019
+  http://lotus.kuee.kyoto-u.ac.jp/WAT/WAT2019/index.html
+  Asian Translation
+  
+  Research Paper Submission Deadline	August 19, 2019	
+
+  In addition to the shared tasks, the workshop will also feature scientific papers 
+  on topics related to the machine translation, especially for Asian languages. 
+  Topics of interest include, but are not limited to: 
+    analysis of the automatic/human evaluation results in the past WAT workshops
+    word-/phrase-/syntax-/semantics-/rule-based, neural and hybrid machine translation
+    Asian language processing
+    incorporating linguistic information into machine translation
+    decoding algorithms
+    system combination
+    error analysis
+    manual and automatic machine translation evaluation
+    machine translation applications
+    quality estimation
+    domain adaptation
+    machine translation for low resource languages
+    language resources  
+
 
 
 {% endhighlight %}
