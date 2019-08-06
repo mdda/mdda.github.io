@@ -186,7 +186,7 @@ COIN
   developing computational models thereof, 
   and applying commonsense inference methods in NLP tasks.
  
-  We extended the evaluation phase for the shared tasks until 19 July!
+  We extended the evaluation phase for the shared tasks until 19 July! == OVER NOW
   
   August 19, 2019: Due date for workshop and shared task papers
   All deadlines refer to 11:59pm Pacific Daylight Savings Time (UTC/GMT -7 hours).
@@ -199,7 +199,8 @@ COIN
     Survey papers that review the current state of research in a specific area
     Papers describing submissions to the shared tasks described below
 
-NewSum
+
+  NewSum
   https://summarization2019.github.io/
   
   The Workshop on New Frontiers in Summarization seeks to bring together 
