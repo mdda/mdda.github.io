@@ -33,8 +33,8 @@ TextGraphs-2019
   
   We encourage the description of novel NLP problems or applications that have emerged in recent years, 
   which can be addressed with existing and new graph-based methods. 
-  Furthermore, we also encourage research on applications of graph-based methods in the area of Semantic Web 
-  in order to link them to related NLP problems and applications.
+  Furthermore, we also encourage research on applications of graph-based methods in the area of 
+  Semantic Web in order to link them to related NLP problems and applications.
 
   SharedTask : Evaluation is over on 9-Aug...
     https://github.com/umanlp/tg2019task
@@ -45,6 +45,15 @@ TextGraphs-2019
     Another one is a tf-idf baseline implemented in Scala that uses SVMrank, 
     which demonstrates the MAP of 0.28 on the same dataset. 
     I think it is fine to improve even slightly over the Scala baseline.
+    
+    ...
+    
+    Basic understanding of .py and .scala baselines
+    Preproc now done (not much in-depth string matching at this stage)
+    
+    TODO:
+    Try basic graph messaging ideas
+    
     
   All submission deadlines are at 11:59 p.m. PST
   Paper submission: August 19, 2019
@@ -119,6 +128,7 @@ Neural Generation and Translation (WNGT 2019)
   Abstracts in this track should be anonymized, and should put "This is a submission to the extended abstract track." 
   at the end of the abstract submitted to Softconf (it does not need to be noted in the paper itself).
 
+
 FEVER 2.0 Workshop
   http://fever.ai/workshop.html
   
@@ -177,6 +187,7 @@ WAT2019
     domain adaptation
     machine translation for low resource languages
     language resources  
+
 
 COIN
   https://coinnlp.github.io/
