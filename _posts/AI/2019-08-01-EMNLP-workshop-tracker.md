@@ -53,7 +53,8 @@ TextGraphs-2019
     
     TODO:
     Try basic graph messaging ideas
-    
+    Have uploaded a 'practice submission' 
+      (uses slimmed down graphs with explanation inverse term priority)
     
   All submission deadlines are at 11:59 p.m. PST
   Paper submission: August 19, 2019
