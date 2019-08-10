@@ -71,6 +71,41 @@ TextGraphs-2019
     a long paper has up to 8 pages of content plus unlimited references.
 
 
+FEVER 2.0 Workshop
+  http://fever.ai/workshop.html
+  
+  Shared task is over (4 real contestants)
+  
+  We invite long and short papers on all topics related to fact extraction and verification, including:
+    Information Extraction
+    Semantic Parsing
+    Knowledge Base Population
+    Natural Language Inference
+    Textual Entailment Recognition
+    Argumentation Mining
+    Machine Reading and Comprehension
+    Claim Validation/Fact checking
+    Question Answering
+    Theorem Proving
+    Stance detection
+    Adversarial learning
+    Computational journalism
+    System demonstrations on the FEVER 2.0 Shared Task
+
+  Important dates
+    First call for papers: 10 May 2019
+    Second call for papers: 14 June 2019
+    Submission deadline: 19 August 2019
+    Notification: 16 September 2019
+    Camera-ready deadline: 30 September 2019
+    Workshop: 3/4 November (EMNLP-IJCNLP)
+  All deadlines are calculated at 11:59pm Pacific Daylight Savings Time (UTC -7h).
+
+  ---
+  
+  Factoids from GPT2-117?
+
+
 MRQA: Machine Reading for Question Answering
   https://mrqa.github.io/
   Task is essentially over
@@ -133,36 +168,59 @@ Neural Generation and Translation (WNGT 2019)
   Abstracts in this track should be anonymized, and should put "This is a submission to the extended abstract track." 
   at the end of the abstract submitted to Softconf (it does not need to be noted in the paper itself).
 
-
-FEVER 2.0 Workshop
-  http://fever.ai/workshop.html
+  ---
   
-  Shared task is over (4 real contestants)
-  
-  We invite long and short papers on all topics related to fact extraction and verification, including:
-    Information Extraction
-    Semantic Parsing
-    Knowledge Base Population
-    Natural Language Inference
-    Textual Entailment Recognition
-    Argumentation Mining
-    Machine Reading and Comprehension
-    Claim Validation/Fact checking
-    Question Answering
-    Theorem Proving
-    Stance detection
-    Adversarial learning
-    Computational journalism
-    System demonstrations on the FEVER 2.0 Shared Task
+  Sam's BERT re-writer :
+    Data augmentation for NLP?
 
-  Important dates
-    First call for papers: 10 May 2019
-    Second call for papers: 14 June 2019
-    Submission deadline: 19 August 2019
-    Notification: 16 September 2019
-    Camera-ready deadline: 30 September 2019
-    Workshop: 3/4 November (EMNLP-IJCNLP)
-  All deadlines are calculated at 11:59pm Pacific Daylight Savings Time (UTC -7h).
+
+NewSum
+  https://summarization2019.github.io/
+  
+  The Workshop on New Frontiers in Summarization seeks to bring together 
+  researchers from a diverse range of fields 
+  (e.g., summarization, visualization, language generation, cognitive and psycholinguistics) 
+  for discussion on key issues related to automatic summarization.
+
+  Topics
+    Abstractive and extractive summarization
+    Language generation
+    Multiple text genres (News, tweets, product reviews, meeting conversations, forums, lectures, student feedback, emails, medical records, books, research articles, etc)
+    Multimodal Input: Information integration and aggregation across multiple modalities (text, speech, image, video)
+    Multimodal Output: Summarization and visualization + interactive exploration
+    Tailoring summaries to user queries or interests
+    Semantic aspects of summarization (e.g. semantic representation, inference, validity)
+    Development of new algorithms
+    Development of new datasets and annotations
+    Development of new evaluation metrics
+    Cognitive or psycholinguistic aspects of summarization and visualization (e.g. perceived readability, usability, etc)
+  
+  Paper Submission Deadline: August 19, 2019
+  Workshop Date: November 4, 2019
+ 
+
+---
+
+COIN
+  https://coinnlp.github.io/
+  
+  COmmonsense INference in NLP is a workshop that aims at bringing together 
+  researchers that are interested in modeling commonsense knowledge, 
+  developing computational models thereof, 
+  and applying commonsense inference methods in NLP tasks.
+ 
+  We extended the evaluation phase for the shared tasks until 19 July! == OVER NOW
+  
+  August 19, 2019: Due date for workshop and shared task papers
+  All deadlines refer to 11:59pm Pacific Daylight Savings Time (UTC/GMT -7 hours).
+
+  Each submission must be anonymized, written in English, and contain a title and abstract. We especially welcome the following types of papers:
+    Technical papers that demonstrate the impact of commonsense knowledge inference in tasks and applications
+    Position papers that reflect innovative, creative and thought-provoking ideas
+    Theoretical papers that advance our understanding of commonsense inference
+    Papers that describe data collection efforts for evaluating commonsense inference
+    Survey papers that review the current state of research in a specific area
+    Papers describing submissions to the shared tasks described below
 
 
 CoNLL
@@ -193,53 +251,6 @@ WAT2019
     machine translation for low resource languages
     language resources  
 
-
-COIN
-  https://coinnlp.github.io/
-  
-  COmmonsense INference in NLP is a workshop that aims at bringing together 
-  researchers that are interested in modeling commonsense knowledge, 
-  developing computational models thereof, 
-  and applying commonsense inference methods in NLP tasks.
- 
-  We extended the evaluation phase for the shared tasks until 19 July! == OVER NOW
-  
-  August 19, 2019: Due date for workshop and shared task papers
-  All deadlines refer to 11:59pm Pacific Daylight Savings Time (UTC/GMT -7 hours).
-
-  Each submission must be anonymized, written in English, and contain a title and abstract. We especially welcome the following types of papers:
-    Technical papers that demonstrate the impact of commonsense knowledge inference in tasks and applications
-    Position papers that reflect innovative, creative and thought-provoking ideas
-    Theoretical papers that advance our understanding of commonsense inference
-    Papers that describe data collection efforts for evaluating commonsense inference
-    Survey papers that review the current state of research in a specific area
-    Papers describing submissions to the shared tasks described below
-
-
-  NewSum
-  https://summarization2019.github.io/
-  
-  The Workshop on New Frontiers in Summarization seeks to bring together 
-  researchers from a diverse range of fields 
-  (e.g., summarization, visualization, language generation, cognitive and psycholinguistics) 
-  for discussion on key issues related to automatic summarization.
-
-  Topics
-    Abstractive and extractive summarization
-    Language generation
-    Multiple text genres (News, tweets, product reviews, meeting conversations, forums, lectures, student feedback, emails, medical records, books, research articles, etc)
-    Multimodal Input: Information integration and aggregation across multiple modalities (text, speech, image, video)
-    Multimodal Output: Summarization and visualization + interactive exploration
-    Tailoring summaries to user queries or interests
-    Semantic aspects of summarization (e.g. semantic representation, inference, validity)
-    Development of new algorithms
-    Development of new datasets and annotations
-    Development of new evaluation metrics
-    Cognitive or psycholinguistic aspects of summarization and visualization (e.g. perceived readability, usability, etc)
-  
-  Paper Submission Deadline: August 19, 2019
-  Workshop Date: November 4, 2019
-  
 ...
 
 
