@@ -49,15 +49,18 @@ TextGraphs-2019
     ...
     
     Basic understanding of .py and .scala baselines
+      Notice problem with evaluate.py
     Preproc now done (not much in-depth string matching at this stage)
     
-    TODO:
     Try basic graph messaging ideas
     Have uploaded a 'practice submission' : 
       (uses slimmed down graphs with explanation inverse term priority)
       clearly the uploader is finicky (or Practice scores === 0.0)
     Ken has proven that TFIDF can be surprisingly effective 
-      Perhaps try this as an initialisation
+      Use this as an initialisation 
+    
+    Run test on MAP ordering metrics to understand number of rankings that are meaningful to MAP scoring (+/- 0.0001, say)
+      Create GitHub PR to fix evaluate.py
     
     
   All submission deadlines are at 11:59 p.m. PST
