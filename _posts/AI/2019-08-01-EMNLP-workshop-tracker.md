@@ -59,6 +59,15 @@ TextGraphs-2019
     Ken has proven that TFIDF can be surprisingly effective 
       Use this as an initialisation 
     
+    - Competition ends (we're on leaderboard)
+    
+    Do better preproc on TSV : 
+      Create list of 'must be nodeable' texts
+      Split apart alternatives = cells containing ';'
+      Annotate 'table-purpose' column somehow
+        - maybe output 'triple with extras' as separate field?
+    
+    
     Run test on MAP ordering metrics to understand number of rankings that are meaningful to MAP scoring (+/- 0.0001, say)
       Create GitHub PR to fix evaluate.py
     
