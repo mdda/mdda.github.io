@@ -64,11 +64,14 @@ TextGraphs-2019
     Do better preproc on TSV : 
       Create list of 'must be nodeable' texts == 'musthave'
       Split apart alternatives = cells containing ';'  
-        (with combinations)  DONE
+        (with combinations)  
         Add 'orig' form of text too (for debug) with extra '{}'
       Uniquify 'uid' by adding _+combo-number on end
       Annotate 'table-purpose' column somehow == 'table'
-        - output 'triple with extras' as separate field?
+      ^ DONE ^
+      v TODO v
+      Create list of musthave lemmas to ensure all node options have a node
+      Output 'triple with extras' as separate field?
     
     
     Run test on MAP ordering metrics to understand number of rankings that are meaningful to MAP scoring (+/- 0.0001, say)
