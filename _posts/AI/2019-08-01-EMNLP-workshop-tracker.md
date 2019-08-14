@@ -67,10 +67,12 @@ TextGraphs-2019
         (with combinations)  
         Add 'orig' form of text too (for debug) with extra '{}'
       Uniquify 'uid' by adding _+combo-number on end
+        And dedupe when outputting results
       Annotate 'table-purpose' column somehow == 'table'
+      Create list of musthave lemmas to ensure all node options have a node
+      Respect the '[SKIP] DEP' column having a string in it
       ^ DONE ^
       v TODO v
-      Create list of musthave lemmas to ensure all node options have a node
       Output 'triple with extras' as separate field?
     
     
