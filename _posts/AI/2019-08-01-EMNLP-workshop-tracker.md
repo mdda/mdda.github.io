@@ -71,6 +71,11 @@ TextGraphs-2019
       Annotate 'table-purpose' column somehow == 'table'
       Create list of musthave lemmas to ensure all node options have a node
       Respect the '[SKIP] DEP' column having a string in it
+        Actually, this hasn't been handled reliably in the dataset itself
+      Verbose output of single prediction (including gold data)
+        Include reason field
+        Include gold'*' status of predictions
+      Standalone function to calculate MAP of a predicted explanation set 
       ^ DONE ^
       v TODO v
       Output 'triple with extras' as separate field?
