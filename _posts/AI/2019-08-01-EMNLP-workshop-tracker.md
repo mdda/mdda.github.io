@@ -76,9 +76,15 @@ TextGraphs-2019
         Include reason field
         Include gold'*' status of predictions
       Standalone function to calculate MAP of a predicted explanation set 
+      Look at the given files for better lemmatization hints:
+        -  ./annotation/lemmatization-en.txt      
+        -  ./annotation/expl-tablestore-export-2017-08-25-230344/tables/LemmatizerAdditions.tsv
+        +  it seems that if a word on the RHS appears, then it should be translated into the LHS version
       ^ DONE ^
       v TODO v
       Output 'triple with extras' as separate field?
+      Are all explanations used at least once in the training set?
+      Are all explanations used at least once in the training + dev set?
     
     
     Run test on MAP ordering metrics to understand number of rankings that are meaningful to MAP scoring (+/- 0.0001, say)
