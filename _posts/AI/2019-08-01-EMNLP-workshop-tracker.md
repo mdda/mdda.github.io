@@ -85,7 +85,13 @@ TextGraphs-2019
       Output 'triple with extras' as separate field?
       Are all explanations used at least once in the training set?
       Are all explanations used at least once in the training + dev set?
+      Recursive TFIDF is another strong (and simple) baseline
+        -  to what extent does that depend on the combo unwrapping?
     
+    Plan for paper :  (23-08-2019: System description paper deadline)
+      https://github.com/umanlp/tg2019task/issues
+      https://competitions.codalab.org/competitions/20150#results
+      
     
     Run test on MAP ordering metrics to understand number of rankings that are meaningful to MAP scoring (+/- 0.0001, say)
       Create GitHub PR to fix evaluate.py
