@@ -81,6 +81,11 @@ TextGraphs-2019
         -  ./annotation/expl-tablestore-export-2017-08-25-230344/tables/LemmatizerAdditions.tsv
         +  it seems that if a word on the RHS appears, then it should be translated into the LHS version
       Seems like NLTK stop-words more effective than spaCy ones (!)
+      Copy preproc into public repo : world_corpus.preprocess.XYZ()
+        +  update notebooks to use it
+      Create private repo for code
+      Decide on combos vs ignore combos for paper
+        -  Ignore combos for now (over-complicates discussion - high branching factor)
       ^ DONE ^
       v TODO v
       Output 'triple with extras' as separate field?
@@ -88,9 +93,7 @@ TextGraphs-2019
       Are all explanations used at least once in the training + dev set?
       Recursive TFIDF is another strong (and simple) baseline
         -  to what extent does that depend on the combo unwrapping?
-      Create private repo for code
-        Copy preproc into public repo, along with competition entry code
-      
+      Copy competition entry code into public repo
     
     Plan for paper :  (23-08-2019: System description paper deadline)
       https://github.com/umanlp/tg2019task/issues
