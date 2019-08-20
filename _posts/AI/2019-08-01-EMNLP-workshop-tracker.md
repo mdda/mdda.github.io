@@ -86,19 +86,29 @@ TextGraphs-2019
       Create private repo for code
       Decide on combos vs ignore combos for paper
         -  Ignore combos for now (over-complicates discussion - high branching factor)
+      Recursive TFIDF is another strong (and simple) baseline
       ^ DONE ^
       v TODO v
-      Output 'triple with extras' as separate field?
+      We know that spaCy lemmatisation beats WordNet (in NLTK)
+        +  Is the worldtree_corpus provided lemmatisation competitive?
       Are all explanations used at least once in the training set?
       Are all explanations used at least once in the training + dev set?
-      Recursive TFIDF is another strong (and simple) baseline
-        -  to what extent does that depend on the combo unwrapping?
       Copy competition entry code into public repo
+      Output 'triple with extras' as separate field?
+
     
     Plan for paper :  (23-08-2019: System description paper deadline)
       https://github.com/umanlp/tg2019task/issues
       https://competitions.codalab.org/competitions/20150#results
-      
+      Talk about 3 methods :
+        Base (optimised) TFIDF
+        Recursive TFIDF
+        BERT reranking of explanations of solutions
+      Discussion points :
+        Graph is not of standard triples
+        Combos 
+        Difficulty of 'something' sentences
+        
     
     Run test on MAP ordering metrics to understand number of rankings that are meaningful to MAP scoring (+/- 0.0001, say)
       Create GitHub PR to fix evaluate.py
