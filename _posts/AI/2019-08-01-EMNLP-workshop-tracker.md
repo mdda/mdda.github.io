@@ -98,6 +98,7 @@ TextGraphs-2019
 
     
     Plan for paper :  (23-08-2019: System description paper deadline)
+      "Language Model Assisted Explanation Generation \\ TextGraphs 2019 Shared Task System Description"
       https://github.com/umanlp/tg2019task/issues
       https://competitions.codalab.org/competitions/20150#results
       Basics:
