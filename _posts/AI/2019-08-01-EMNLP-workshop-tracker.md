@@ -100,13 +100,18 @@ TextGraphs-2019
     Plan for paper :  (23-08-2019: System description paper deadline)
       https://github.com/umanlp/tg2019task/issues
       https://competitions.codalab.org/competitions/20150#results
+      Basics:
+        Fix evaluate.py to enable shorter inputs without error
+        Lemmatization using their files
+        NTLK stop-words
+        PTB Tokenisation
       Talk about 3 methods :
         Base (optimised) TFIDF
         Recursive TFIDF
         BERT reranking of explanations of solutions
       Discussion points :
         Graph is not of standard triples
-        Combos 
+        Combos (Not used above)
         Difficulty of 'something' sentences
         
     
