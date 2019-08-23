@@ -86,11 +86,13 @@ TextGraphs-2019
       Create private repo for code
       Decide on combos vs ignore combos for paper
         -  Ignore combos for now (over-complicates discussion - high branching factor)
-      Recursive TFIDF is another strong (and simple) baseline
+      Iterated TFIDF is another strong (and simple) baseline
+      We know that spaCy lemmatisation beats WordNet (in NLTK)
+        +  Is the worldtree_corpus provided lemmatisation competitive? = YES
+      Timings for 3 methods
+      Graphs of MAP vs Explanation length
       ^ DONE ^
       v TODO v
-      We know that spaCy lemmatisation beats WordNet (in NLTK)
-        +  Is the worldtree_corpus provided lemmatisation competitive?
       Are all explanations used at least once in the training set?
       Are all explanations used at least once in the training + dev set?
       Copy competition entry code into public repo
@@ -108,7 +110,7 @@ TextGraphs-2019
         PTB Tokenisation
       Talk about 3 methods :
         Base (optimised) TFIDF
-        Recursive TFIDF
+        Iterated TFIDF
         BERT reranking of explanations of solutions
       Discussion points :
         Graph is not of standard triples
@@ -121,7 +123,7 @@ TextGraphs-2019
     
     
   All submission deadlines are at 11:59 p.m. PST
-  Paper submission: August 19, 2019
+  Paper submission: August 23, 2019
   Notification of acceptance: September 16, 2019
   Camera-ready submission: September 30, 2019
   Workshop date: November 3 or 4, 2019
