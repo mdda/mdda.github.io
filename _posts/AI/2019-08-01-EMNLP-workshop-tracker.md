@@ -91,12 +91,14 @@ TextGraphs-2019
         +  Is the worldtree_corpus provided lemmatisation competitive? = YES
       Timings for 3 methods
       Graphs of MAP vs Explanation length
+      Run test on MAP ordering metrics to understand number of rankings that are meaningful to MAP scoring (+/- 0.0001, say)
       ^ DONE ^
       v TODO v
       Are all explanations used at least once in the training set?
       Are all explanations used at least once in the training + dev set?
       Copy competition entry code into public repo
       Output 'triple with extras' as separate field?
+      Create GitHub PR to fix evaluate.py
 
     
     Plan for paper :  (23-08-2019: System description paper deadline)
@@ -116,17 +118,12 @@ TextGraphs-2019
         Graph is not of standard triples
         Combos (Not used above)
         Difficulty of 'something' sentences
-        
-    
-    Run test on MAP ordering metrics to understand number of rankings that are meaningful to MAP scoring (+/- 0.0001, say)
-      Create GitHub PR to fix evaluate.py
-    
-    
-  All submission deadlines are at 11:59 p.m. PST
-  Paper submission: August 23, 2019
-  Notification of acceptance: September 16, 2019
-  Camera-ready submission: September 30, 2019
-  Workshop date: November 3 or 4, 2019
+      SUBMITTED!
+        All submission deadlines are at 11:59 p.m. PST
+        Paper submission: August 23, 2019
+        Notification of acceptance: September 16, 2019
+        Camera-ready submission: September 30, 2019
+        Workshop date: November 3 or 4, 2019
 
   TextGraphs-13 solicits both long and short paper submissions:
     a short paper has up to 4 pages of content plus unlimited references;
