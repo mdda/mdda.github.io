@@ -459,3 +459,19 @@ Load 'Terminal' from 360 store (!)
 Try 'su'  :: Magisk will offer to Grant Forever!  SUCCESS!
 
 
+Install aptoid app using Chrome
+Look for 'Google Play Services' in AptOid app
+
+>  yes exactly, I download aptoide apk from the official site, 
+>  I installed it and search in aptoide the google play services, 
+>  I press update and the google play services updated automatically without problems.
+
+Currently Google Play Store = 7.2.13
+(Kill 360 App - there was an annoying Ad)
+(Kill WPS Mail - looks like junk)
+
+Use Aptoid to install 'Google Play' v16.3.36-all
+
+install 'ssh server' (has a folder-like icon) on tablet
+
+# Do the unison thing
