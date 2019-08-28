@@ -14,27 +14,26 @@ published: false
 # dnf install android-tools
 
 
-[root@square andrewsm]# adb shell
+[root]# adb shell
 error: device unauthorized.
 This adb server's $ADB_VENDOR_KEYS is not set
 Try 'adb kill-server' if that seems wrong.
 Otherwise check for a confirmation dialog on your device.
-[root@square andrewsm]# adb devices 
+[root]# adb devices 
 List of devices attached
 0123456789ABCDEF	unauthorized
 
-[root@square andrewsm]# adb devices -l
+[root]# adb devices -l
 List of devices attached
 0123456789ABCDEF       unauthorized usb:3-1 transport_id:3
 
-[root@square andrewsm]# adb devices -l
+[root]# adb devices -l
 List of devices attached
 0123456789ABCDEF       device usb:3-1 product:ONDA model:V10_Pro device:V10_Pro transport_id:3
 
 
 
 https://forum.xda-developers.com/apps/magisk/official-magisk-v7-universal-systemless-t3473445):
-
 
 https://topjohnwu.github.io/Magisk/install.html#boot-image-patching
 
@@ -70,51 +69,8 @@ adb pull  /storage/emulated/0/Download/magisk_install_log_2019-08-26T02\:54\:30Z
 
 adb pull /sdcard/Download/magisk_patched.img
 
-adb reboot bootloader
 
-# Tiny little prompt "=> FASTBOOT mode..." in bottom of Onda screen
-
-fastboot devices
-$ If user # no permissions; see [http://developer.android.com/tools/device.html]	fastboot
-# If root # 0123456789ABCDEF	fastboot
-
-fastboot flash boot magisk_patched.img 
-# Sending 'boot' (9393 KB)                           OKAY [  0.502s]
-# Writing 'boot'                                     FAILED (remote: 'download for partition 'boot' is not allowed
-
-# Tiny little prompt "USB Transferring..."\
-# Tiny little prompt "USB Transmission OK  Time:429mn Vel:22421KB/s"
-
-
-fastboot oem unlock
-#(bootloader) Start unlock flow
-#
-#FAILED ()
-#Finished. Total time: 91.766s
-
-## Didn't notice the 'FAILED ()' - since the tablet seemed to be Ok with proceeding
-
-# Little prompts warns about voiding warrantee ! 
-# VolUp = Unlock (may void)
-# VolDn = Abort
-
-Pressed vol towards corner of tablet (not closest to power button) : Apparently this is Unlock
-
-=> Fastboot mode... Again
-
-# DID NOT DO ... #fastboot erase boot 
-
-astboot flash boot magisk_patched.img 
-Sending 'boot' (9393 KB)                           OKAY [  0.500s]
-Writing 'boot'                                     OKAY [  0.005s]
-Finished. Total time: 0.508s
-
-fastboot reboot
-
-Android person with cogs whirring
-Reboots again (long wait...)
-
-
+# FASTBOOT approach merely/nearly bricked my device...
 
 
 
@@ -243,52 +199,45 @@ Connecting to BROM...
 Scanning USB port...
 Search usb, timeout set as 3600000 ms
 add@/devices/pci0000:00/0000:00:14.0/usb3/3-1
-
 add@/devices/pci0000:00/0000:00:14.0/usb3/3-1/3-1:1.0
-
 add@/devices/pci0000:00/0000:00:14.0/usb3/3-1/3-1:1.1
-
 bind@/devices/pci0000:00/0000:00:14.0/usb3/3-1/3-1:1.0
-
 add@/devices/pci0000:00/0000:00:14.0/usb3/3-1/3-1:1.1/tty/ttyACM0
 
 vid is 0e8d
-
 device vid = 0e8d
-
 pid is 2000
-
 device pid = 2000
 
 com portName is: /dev/ttyACM0
-
 Total wait time = -1566833481.000000
+
 USB port is obtained. path name(/dev/ttyACM0), port name(/dev/ttyACM0)
 USB port detected: /dev/ttyACM0
 
 
 
-[root@square OndaV10Pro]# ll /dev/ttyACM0
+[root]# ll /dev/ttyACM0
 ls: cannot access '/dev/ttyACM0': No such file or directory
-[root@square OndaV10Pro]# ll /dev/ttyACM0
+[root]# ll /dev/ttyACM0
 ls: cannot access '/dev/ttyACM0': No such file or directory
-[root@square OndaV10Pro]# ll /dev/ttyACM0
+[root]# ll /dev/ttyACM0
 ls: cannot access '/dev/ttyACM0': No such file or directory
-[root@square OndaV10Pro]# ll /dev/ttyACM0
+[root]# ll /dev/ttyACM0
 crw-rw----. 1 root dialout 166, 0 Aug 26 23:39 /dev/ttyACM0
-[root@square OndaV10Pro]# ll /dev/ttyACM0
+[root]# ll /dev/ttyACM0
 crw-rw----. 1 root dialout 166, 0 Aug 26 23:39 /dev/ttyACM0
-[root@square OndaV10Pro]# ll /dev/ttyACM0
+[root]# ll /dev/ttyACM0
 crw-rw----. 1 root dialout 166, 0 Aug 26 23:39 /dev/ttyACM0
-[root@square OndaV10Pro]# ll /dev/ttyACM0
+[root]# ll /dev/ttyACM0
 crw-rw----. 1 root dialout 166, 0 Aug 26 23:39 /dev/ttyACM0
-[root@square OndaV10Pro]# ll /dev/ttyACM0
+[root]# ll /dev/ttyACM0
 crw-rw----. 1 root dialout 166, 0 Aug 26 23:39 /dev/ttyACM0
-[root@square OndaV10Pro]# ll /dev/ttyACM0
+[root]# ll /dev/ttyACM0
 ls: cannot access '/dev/ttyACM0': No such file or directory
-[root@square OndaV10Pro]# ll /dev/ttyACM0
+[root]# ll /dev/ttyACM0
 ls: cannot access '/dev/ttyACM0': No such file or directory
-[root@square OndaV10Pro]# ll /dev/ttyACM0
+[root]# ll /dev/ttyACM0
 ls: cannot access '/dev/ttyACM0': No such file or directory
 
 
