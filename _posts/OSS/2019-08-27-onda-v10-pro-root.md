@@ -11,8 +11,10 @@ published: false
 ---
 {% include JB/setup %}
 
-# dnf install android-tools
 
+{% highlight bash %}
+
+# dnf install android-tools
 
 [root]# adb shell
 error: device unauthorized.
@@ -31,6 +33,8 @@ List of devices attached
 List of devices attached
 0123456789ABCDEF       device usb:3-1 product:ONDA model:V10_Pro device:V10_Pro transport_id:3
 
+{% endhighlight %}
+{% highlight bash %}
 
 
 https://forum.xda-developers.com/apps/magisk/official-magisk-v7-universal-systemless-t3473445):
@@ -47,8 +51,14 @@ https://4pda.ru/pages/go/?u=https%3A%2F%2Fwww.dropbox.com%2Fs%2Fhp4zfla1j8qvbdk%
 https://www.dropbox.com/s/hp4zfla1j8qvbdk/V10%20Pro_V1.0.1_V7.rar?dl=0
 # Download 818Mb file
 
+{% endhighlight %}
+
+
+
+
+{% highlight bash %}
 mkdir OndaV10Pro
-[andrewsm@square Downloads]$ cd OndaV10Pro/
+[user]$ cd OndaV10Pro/
 mv ../V10\ Pro_V1.0.1_V7.rar .
 
 dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
@@ -59,8 +69,7 @@ unrar e V10\ Pro_V1.0.1_V7.rar *boot-verified.img
 ll
 # -rw-rw-r--. 1 andrewsm andrewsm   9388288 Jan  2  2018  boot-verified.img
 
-adb push boot-verified.img /sdcard/
-
+[user]$ adb push boot-verified.img /sdcard/
 Saved a log in /storage/emulated/0/Download/magick_install... .log
 
 adb pull  /storage/emulated/0/Download/magisk_install_log_2019-08-26T02\:54\:30Z.log
@@ -68,52 +77,62 @@ adb pull  /storage/emulated/0/Download/magisk_install_log_2019-08-26T02\:54\:30Z
 /storage/emulated/0/Download/magick_patched.img
 
 adb pull /sdcard/Download/magisk_patched.img
+{% endhighlight %}
 
 
 # FASTBOOT approach merely/nearly bricked my device...
-
 
 
 https://spflashtool.com/
 
 https://forum.xda-developers.com/general/rooting-roms/tutorial-how-to-setup-spflashtoollinux-t3160802
 
-
 Download SPFlashTool for Linux - 64 Bit
 https://spflashtool.com/download/SP_Flash_Tool_exe_Linux_64Bit_v5.1520.00.100.zip
-unzip SP_Flash_Tool_exe_Linux_64Bit_v5.1520.00.100.zip 
 
+{% highlight bash %}
+[user]$ unzip SP_Flash_Tool_exe_Linux_64Bit_v5.1520.00.100.zip 
 # This is a 2015 version...
+{% endhighlight %}
 
 
-cd SP_Flash_Tool_exe_Linux_64Bit_v5.1520.00.100
-./flash_tool
-./flash_tool: error while loading shared libraries: libQtWebKit.so.4: cannot open shared object file: No such file or directory
-dnf install qtwebkit
+{% highlight bash %}
+[user]$ cd SP_Flash_Tool_exe_Linux_64Bit_v5.1520.00.100
+[user]$ ./flash_tool
+[user]$ ./flash_tool: error while loading shared libraries: libQtWebKit.so.4: cannot open shared object file: No such file or directory
 
-unrar x V10\ Pro_V1.0.1_V7.rar 
-./flash_tool
+[root]# dnf install qtwebkit
+
+[user]$ unrar x V10\ Pro_V1.0.1_V7.rar 
+[user]$ ./flash_tool
+{% endhighlight %}
 
 Scatter File is in :
-V10 Pro_V1.0.1_V7/SP_Flash_Tool_exe_Windows_v5.1640.00.000/Firemware/
+`V10 Pro_V1.0.1_V7/SP_Flash_Tool_exe_Windows_v5.1640.00.000/Firemware/`
 
 Select just 'logo' for testing...
 
 Hit 'Download' and plug in device (which was turned off)
 
+{% highlight bash %}
 BROM ERROR : S_COM_PORT_OPEN_FAIL (1013)
 [COM] Failed to open COM port.
 [HINT]:
+{% endhighlight %}
 
-So we blacklist it for the two MTK vendor IDs the flash tool uses:
-Create : /etc/udev/rules.d/20-mm-blacklist-mtk.rules containing :
+So we blacklist it for the two MTK vendor IDs the flash tool uses...
+
+As `root`, create : /etc/udev/rules.d/20-mm-blacklist-mtk.rules containing :
+
+{% highlight bash %}
 ATTRS{idVendor}=="0e8d", ENV{ID_MM_DEVICE_IGNORE}="1"
 ATTRS{idVendor}=="6000", ENV{ID_MM_DEVICE_IGNORE}="1"
+{% endhighlight %}
 
-udevadm control --reload
 
-
-udevadm info --export-db | joe
+{% highlight bash %}
+[root]# udevadm control --reload
+[root]# udevadm info --export-db | joe
 
 P: /devices/pci0000:00/0000:00:14.0/usb3/3-1
 N: bus/usb/003/052
@@ -169,31 +188,35 @@ E: MODALIAS=usb:v0E8Dp2008dFFFFdc00dsc00dp00icFFiscFFip00in00
 E: USEC_INITIALIZED=57614811887
 E: ID_MM_DEVICE_IGNORE=1  ######### WORKS
 E: ID_VENDOR_FROM_DATABASE=MediaTek Inc.
-
+{% endhighlight %}
 
 https://askubuntu.com/questions/399263/udev-rules-seem-ignored-can-not-prevent-modem-manager-from-grabbing-device
 
-mmcli -G DEBUG;
-journalctl -f | grep "ModemManager.*\[filter\]"
+{% highlight bash %}
+[root]# mmcli -G DEBUG;
+
+[root]# journalctl -f | grep "ModemManager.*\[filter\]"
 Aug 26 23:10:53 square.herald ModemManager[1161]: <debug> [filter] (tty/ttyACM0): port filtered: device is blacklisted
 
 ---
 # Device allowed with strict filter policy
 [filter] (tty/...): port allowed:... 
-
 # Device filtered with default filter policy and udev tags
 [filter] (tty/...): port filtered: device is blacklisted     ### << This one seems to apply
-
 # Device filtered with strict filter policy and environment variables
 [filter] (tty/...) port filtered: forbidden
 ---
 
-mmcli -G ERR;
+[root]# mmcli -G ERR;
+{% endhighlight %}
 
 
 
 
 https://android.googlesource.com/kernel/mediatek/+/android-6.0.0_r0.6/Documentation/usb/acm.txt
+
+{% highlight bash %}
+[user]$ ./flash_tool
 
 Connecting to BROM...
 Scanning USB port...
@@ -214,9 +237,10 @@ Total wait time = -1566833481.000000
 
 USB port is obtained. path name(/dev/ttyACM0), port name(/dev/ttyACM0)
 USB port detected: /dev/ttyACM0
+{% endhighlight %}
 
 
-
+{% highlight bash %}
 [root]# ll /dev/ttyACM0
 ls: cannot access '/dev/ttyACM0': No such file or directory
 [root]# ll /dev/ttyACM0
@@ -239,19 +263,26 @@ ls: cannot access '/dev/ttyACM0': No such file or directory
 ls: cannot access '/dev/ttyACM0': No such file or directory
 [root]# ll /dev/ttyACM0
 ls: cannot access '/dev/ttyACM0': No such file or directory
+{% endhighlight %}
 
 
-# getent group dialout
+
+{% highlight bash %}
+[root]# getent group dialout
 dialout:x:18:
 
-# usermod -aG dialout andrewsm
+[root]# usermod -aG dialout andrewsm
 
 # Log out, log back in...
-$ id -a
-uid=1000(andrewsm) gid=1000(andrewsm) groups=1000(andrewsm),18(dialout),980(vboxusers),992(pulse-rt),994(jackuser) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
+[user]$ id -a
+uid=1000(user) gid=1000(user) groups=1000(user),18(dialout),980(vboxusers),992(pulse-rt),994(jackuser) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
+{% endhighlight %}
 
 
 # DIFFERENT OUTPUT RESULTS!!
+
+
+{% highlight bash %}
 
 com portName is: /dev/ttyACM0
 Total wait time = -1566834592.000000
@@ -273,7 +304,11 @@ There is file not loaded yet!!
                 2. Please check if all the ROM files exist.
                 3. Please check if the scatter file description is sync with the exist ROM files.)((exec,../../../qt_flash_tool/Cmd/DADownloadAll.cpp,84))
 
+{% endhighlight %}
 
+
+
+{% highlight bash %}
 
 Downloading & Connecting to DA...
 COM port is open. Trying to sync with the target...
@@ -289,10 +324,12 @@ BROM Exception! ( BROM ERROR : S_FTHND_FILE_IS_NOT_LOADED_YET (5007)
 
 There is file not loaded yet!!
 
-
 App Exception! (proinfo: Failed to get PMT info.
+{% endhighlight %}
 
 
+
+{% highlight bash %}
 ## Just Format All :
 USB port is obtained. path name(/dev/ttyACM0), port name(/dev/ttyACM0)
 DA high speed USB port detected: /dev/ttyACM0
@@ -302,12 +339,15 @@ Format Succeeded.
 Format Succeeded.
 Format Succeeded.
 Disconnect!
+{% endhighlight %}
 
 # With a Big Tick output
 
 
+
 ## Try to Download everything
 
+{% highlight bash %}
 BROM ERROR : S_FTHND_FILE_IS_NOT_LOADED_YET (5007)
 
 There is file not loaded yet!!
@@ -318,23 +358,24 @@ There is file not loaded yet!!
                 3. Please check if the scatter file description is sync with the exist ROM files.
 
 # In Firemware : 
-[andrewsm@square Firemware]$ ls -l | grep verified
--rw-r--r--. 1 andrewsm andrewsm    9388288 Jan  2  2018 boot-verified.img
--rw-r--r--. 1 andrewsm andrewsm     311552 Jan  2  2018 lk-verified.bin
--rw-r--r--. 1 andrewsm andrewsm    2715904 Jan  2  2018 logo-verified.bin
--rw-r--r--. 1 andrewsm andrewsm   10289408 Jan  2  2018 recovery-verified.img
--rw-r--r--. 1 andrewsm andrewsm     135424 Jan  2  2018 secro-verified.img
+[user]$ ls -l | grep verified
+-rw-r--r--. 1 user user     9388288 Jan  2  2018 boot-verified.img
+-rw-r--r--. 1 user user      311552 Jan  2  2018 lk-verified.bin
+-rw-r--r--. 1 user user     2715904 Jan  2  2018 logo-verified.bin
+-rw-r--r--. 1 user user    10289408 Jan  2  2018 recovery-verified.img
+-rw-r--r--. 1 user user      135424 Jan  2  2018 secro-verified.img
 
-[andrewsm@square Firemware]$ cp boot-verified.img boot.img 
-[andrewsm@square Firemware]$ cp lk-verified.bin lk.bin 
-[andrewsm@square Firemware]$ cp logo-verified.bin logo.bin 
-[andrewsm@square Firemware]$ cp recovery-verified.img recovery.img 
-[andrewsm@square Firemware]$ cp secro-verified.img secro.img 
+[user]$ cp boot-verified.img boot.img 
+[user]$ cp lk-verified.bin lk.bin 
+[user]$ cp logo-verified.bin logo.bin 
+[user]$ cp recovery-verified.img recovery.img 
+[user]$ cp secro-verified.img secro.img 
 
 ## Ahah - now all entries on the RHS in SP Tool have Location listed...
 ## And then some kind of downloading seems to be occurring!  at ~10MB/s
 
 # YES : When a green circle with a white checkmark appears, you are done. 
+{% endhighlight %}
 
 Reset button
 Power button (hold 3 seconds)
@@ -374,17 +415,20 @@ Install Magisk 7.3.2 (224) direct from GitHub releases
 
 Connect USB, and AllowDebugging
 
+{% endhighlight %}
+
+{% highlight bash %}
 adb devices -l
 List of devices attached
 0123456789ABCDEF       device usb:3-1 product:ONDA model:V10_Pro device:V10_Pro transport_id:4
 
-adb push V10\ Pro_V1.0.1_V7/SP_Flash_Tool_exe_Windows_v5.1640.00.000/Firemware/boot-verified.img /sdcard/
+[user]$ adb push V10\ Pro_V1.0.1_V7/SP_Flash_Tool_exe_Windows_v5.1640.00.000/Firemware/boot-verified.img /sdcard/
+{% endhighlight %}
 
 In Magisk, do 'install v19....'  by just 'patch .img file'  Choose /sdcard/boot-verified.img
 
 
-
-
+{% highlight bash %}
 [root]# adb shell
 shell@V10_Pro:/ $ ls -l /storage/emulated/0/Download/
 -rw-rw---- root     sdcard_rw  2840501 2019-08-27 01:25 MagiskManager-v7.3.2.apk
@@ -398,6 +442,7 @@ shell@V10_Pro:/ $ exit
 
 # Put the patched file where the boot.img file *was* in the V10\ Pro_V1.0.1_V7 image
 cp magisk_patched.img V10\ Pro_V1.0.1_V7/SP_Flash_Tool_exe_Windows_v5.1640.00.000/Firemware/boot.img 
+{% endhighlight %}
 
 # So, now we can reflash using the same SP Tool again (need only select the boot.img file, I guess)
 
