@@ -92,15 +92,17 @@ TextGraphs-2019
       Timings for 3 methods
       Graphs of MAP vs Explanation length
       Run test on MAP ordering metrics to understand number of rankings that are meaningful to MAP scoring (+/- 0.0001, say)
+      Are all explanations used at least once in the training set?
+        - Nope  (only 3200 of 5000)
+      Copy competition entry code into public repo
+        +  Add to 'supplemental_materials.txt'
       ^ DONE ^
       v TODO v
-      Copy competition entry code into public repo
-      Output 'triple with extras' as separate field?
-      Create GitHub PR to fix evaluate.py
-      Are all explanations used at least once in the training set?
       Are all explanations used at least once in the training + dev set?
       For the training set, to what extend does our lemmetization, etc produce a 'viable' winning entry?
         +  i.e.  Would the Gold explanation set give us an objectively good score on our 'real-time' metrics?
+      Output 'triple with extras' as separate field?
+      Create GitHub PR to fix evaluate.py
 
     
     Plan for paper :  (23-08-2019: System description paper deadline)
