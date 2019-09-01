@@ -94,13 +94,19 @@ TextGraphs-2019
       Run test on MAP ordering metrics to understand number of rankings that are meaningful to MAP scoring (+/- 0.0001, say)
       Are all explanations used at least once in the training set?
         - Nope  (only 3200 of 5000)
-      Copy competition entry code into public repo
-        +  Add to 'supplemental_materials.txt'
+      Copy competition entry code into public repo (actually, a 'textgraphs' branch of the repo)
+        +  Add 'supplemental_materials.txt' with a link to the public repo
       ^ DONE ^
       v TODO v
       Are all explanations used at least once in the training + dev set?
       For the training set, to what extend does our lemmetization, etc produce a 'viable' winning entry?
         +  i.e.  Would the Gold explanation set give us an objectively good score on our 'real-time' metrics?
+        +  Need to define some evaluation metrics with which we can hill-climb
+           -  and check whether they actually 'love' the correct explanations from the training set
+      For the combos case, use some evaluation metrics to figure out which combo is actually intended
+        +  First, let's figure out what is the approximate mean 'combo factor' of each set of combos
+        +  Have to decide whether to enumerate or hill-climb
+           -  Once decided, need to store correct answer in a 'combos-unravelled' format for reloading
       Output 'triple with extras' as separate field?
       Create GitHub PR to fix evaluate.py
 
