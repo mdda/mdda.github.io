@@ -12,6 +12,29 @@ published: false
 {% include JB/setup %}
 
 
+## Obtaining `root` on the Onda V10 Pro
+
+First off, let me say that I picked this Android tablet up on BangGood - so 
+it's basically a no-frills Chinese tablet (at a really attractive price).
+
+My criteria for buying it were a little non-standard, since all I am going to use it for is reading PDFs of papers,
+of which I have a huge backlog 'organised' in a folder structure on my various machines.  The Onda V10 Pro
+has 4Gb RAM, high resolution display, and good speed statistics.  One shortcoming was the Android 6.0 OS - but
+I decided that I didn't need some more modern features given the specs.
+
+One thing I should have checked more thoroughly, though, is how easy it would be to obtain `root` access...
+
+Why did I want that?
+
+*  The file-syncing set-up I have (based on my own servers and `unison`) probably needs `root` to operate 'Free'
+
+*  I have `root` on all my devices (desctops, servers, laptops, phones, tablets, TV, etc.) - it's a bit of a compulsion.
+
+
+The following are step-by-step instructions about how to do it - and is the result of reading multiple Russian-based
+forums, lots of dead-ends, and lots of trial-and-error.  Hope this makes it easier for you too!
+
+
 {% highlight bash %}
 
 # dnf install android-tools
