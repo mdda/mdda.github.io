@@ -34,6 +34,9 @@ Why did I want that?
 The following are step-by-step instructions about how to do it - and is the result of reading multiple Russian-based
 forums, lots of dead-ends, and lots of trial-and-error.  Hope this makes it easier for you too!
 
+### Check that `adb` works
+
+You'll need this later for redoing the firmware :
 
 {% highlight bash %}
 
@@ -57,7 +60,10 @@ List of devices attached
 0123456789ABCDEF       device usb:3-1 product:ONDA model:V10_Pro device:V10_Pro transport_id:3
 
 {% endhighlight %}
-{% highlight bash %}
+
+
+### Get suitable firmware for this tablet
+
 
 
 https://forum.xda-developers.com/apps/magisk/official-magisk-v7-universal-systemless-t3473445):
@@ -73,8 +79,6 @@ Current firmware, reported System-Settings-AboutTablet-DeviceFirmwareVersion = v
 https://4pda.ru/pages/go/?u=https%3A%2F%2Fwww.dropbox.com%2Fs%2Fhp4zfla1j8qvbdk%2FV10%2520Pro_V1.0.1_V7.rar%3Fdl%3D0&e=77513633
 https://www.dropbox.com/s/hp4zfla1j8qvbdk/V10%20Pro_V1.0.1_V7.rar?dl=0
 # Download 818Mb file
-
-{% endhighlight %}
 
 
 
