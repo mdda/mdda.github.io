@@ -329,9 +329,10 @@ arxiv hunt
     -  Almost did this for 1 'recently' (find out which one)
        -   Actually, it was 2018-11-25 for CDNNRIA - but never heard back
   Send out initial email to CLVR 2017 ViGIL committee member 
+  Check RDAI email domain has correct DNS-TXT entries (or whatever)
+    +  Seems pretty Ok
   ^ DONE ^
   v TODO v
-  Check RDAI email domain has correct DNS-TXT entries (or whatever)
   Send out more initial emails 
     - ViGIL committee looks like it's well aligned
   
