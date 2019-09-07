@@ -333,6 +333,9 @@ arxiv hunt
   Send out initial email to : 
     +  CLVR 2017 ViGIL committee member 1 (previous work in CLVR)
     +  CLVR 2017 ViGIL committee member 2 (now a startup founder too)
+       -  Received email ~instantly from requestee (and then from arXiv) :
+          *   You have just been endorsed to submit papers to the arXiv subject class cs.CL (Computation and Language). 
+          *   To continue the submission process visit: https://arxiv.org/submit/
   ^ DONE ^
   v TODO v
   Send out more initial emails 
