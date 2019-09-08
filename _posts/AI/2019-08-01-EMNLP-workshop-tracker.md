@@ -340,7 +340,9 @@ arxiv hunt
   v TODO v
   Send out more initial emails 
     - ViGIL committee looks like it's well aligned
-  
+  System seems to have allowed me to submit CDNNRIA to cs.LG (cs.AI and cs.CL as secondaries) directly
+
+
 
 {% endhighlight %}
 
