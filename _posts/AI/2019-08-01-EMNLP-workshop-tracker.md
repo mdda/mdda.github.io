@@ -336,11 +336,12 @@ arxiv hunt
        -  Received email ~instantly from requestee (and then from arXiv) :
           *   You have just been endorsed to submit papers to the arXiv subject class cs.CL (Computation and Language). 
           *   To continue the submission process visit: https://arxiv.org/submit/
+  System seems to have allowed me to submit CDNNRIA to cs.LG (cs.AI and cs.CL as secondaries) directly
+    +  Two acceptances! : Now an endorser for cs.CL and cs.LG
   ^ DONE ^
   v TODO v
   Send out more initial emails 
     - ViGIL committee looks like it's well aligned
-  System seems to have allowed me to submit CDNNRIA to cs.LG (cs.AI and cs.CL as secondaries) directly
 
 
 
