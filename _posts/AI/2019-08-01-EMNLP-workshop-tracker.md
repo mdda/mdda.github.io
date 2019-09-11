@@ -96,6 +96,7 @@ TextGraphs-2019
         - Nope  (only 3200 of 5000)
       Copy competition entry code into public repo (actually, a 'textgraphs' branch of the repo)
         +  Add 'supplemental_materials.txt' with a link to the public repo
+      Review 2 papers of other competitors
       ^ DONE ^
       v TODO v
       Are all explanations used at least once in the training + dev set?
@@ -109,6 +110,7 @@ TextGraphs-2019
            -  Once decided, need to store correct answer in a 'combos-unravelled' format for reloading
       Output 'triple with extras' as separate field?
       Create GitHub PR to fix evaluate.py
+      
 
     
     Plan for paper :  (23-08-2019: System description paper deadline)
