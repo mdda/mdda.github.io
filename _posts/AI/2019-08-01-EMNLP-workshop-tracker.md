@@ -97,6 +97,7 @@ TextGraphs-2019
       Copy competition entry code into public repo (actually, a 'textgraphs' branch of the repo)
         +  Add 'supplemental_materials.txt' with a link to the public repo
       Review 2 papers of other competitors
+      See whether we can 'submit' a new entry to leaderboard (now that reviews are in)
       ^ DONE ^
       v TODO v
       Are all explanations used at least once in the training + dev set?
