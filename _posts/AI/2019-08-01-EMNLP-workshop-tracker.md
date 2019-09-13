@@ -341,10 +341,12 @@ arxiv hunt
           *   To continue the submission process visit: https://arxiv.org/submit/
   System seems to have allowed me to submit CDNNRIA to cs.LG (cs.AI and cs.CL as secondaries) directly
     +  Two acceptances! : Now an endorser for cs.CL and cs.LG
+    -  ViGIL 2018 in process : out at 8am Monday
   ^ DONE ^
   v TODO v
-  Send out more initial emails 
-    - ViGIL committee looks like it's well aligned
+  ?Send out more initial emails 
+    -  ViGIL committee looks like it's well aligned 
+       + (but may not be necessary now - since self-endorsement seems to be available)
 
 
 
