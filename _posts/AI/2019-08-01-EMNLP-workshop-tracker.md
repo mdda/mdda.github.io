@@ -348,7 +348,9 @@ arxiv hunt
     -  ViGIL committee looks like it's well aligned 
        + (but may not be necessary now - since self-endorsement seems to be available)
 
-
+  Fever : Notification: 16 September 2019
+  WNGT  : Notification of acceptance: September 16, 2019 (+4w after submission)
+  TextGraphs : Monday, September 16 = Shared Task: Author notifications
 
 {% endhighlight %}
 
