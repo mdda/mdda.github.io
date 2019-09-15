@@ -111,7 +111,10 @@ TextGraphs-2019
            -  Once decided, need to store correct answer in a 'combos-unravelled' format for reloading
       Output 'triple with extras' as separate field?
       Create GitHub PR to fix evaluate.py
-      
+      Create a 'next' explanation driven actor based on leave-n-out of original explanation set
+        And then train on lots of examples from training set
+      Given a Central explanation - how much better would the 'fill-in' explanations be?
+        And can we tell the difference between a good set and a bad set?
 
     
     Plan for paper :  (23-08-2019: System description paper deadline)
