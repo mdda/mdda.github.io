@@ -98,9 +98,12 @@ TextGraphs-2019
         +  Add 'supplemental_materials.txt' with a link to the public repo
       Review 2 papers of other competitors
       See whether we can 'submit' a new entry to leaderboard (now that reviews are in)
+        Yes : And done (at 0.49+)
+      Are all explanations used at least once in the training + dev set?
+        Definitely no : 20-30% are unused in either
       ^ DONE ^
       v TODO v
-      Are all explanations used at least once in the training + dev set?
+      Create GitHub PR to fix evaluate.py
       For the training set, to what extend does our lemmetization, etc produce a 'viable' winning entry?
         +  i.e.  Would the Gold explanation set give us an objectively good score on our 'real-time' metrics?
         +  Need to define some evaluation metrics with which we can hill-climb
@@ -110,7 +113,6 @@ TextGraphs-2019
         +  Have to decide whether to enumerate or hill-climb
            -  Once decided, need to store correct answer in a 'combos-unravelled' format for reloading
       Output 'triple with extras' as separate field?
-      Create GitHub PR to fix evaluate.py
       Create a 'next' explanation driven actor based on leave-n-out of original explanation set
         And then train on lots of examples from training set
       Given a Central explanation - how much better would the 'fill-in' explanations be?
