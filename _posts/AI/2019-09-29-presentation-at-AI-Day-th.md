@@ -23,24 +23,22 @@ published: false
 Sam Witteveen and I have been running the TensorFlow and Deep Learning group in Singapore for over two years now, and 
 we were once again invited to speak at the AI Day Thailand in Bangkok.
 
-My talk was titled "Transformers and Unicorns", 
+My talk was titled "Transformers and Unicorns", and outlined:
+*  The principles of operation of Transformer-based models
+*  The succession of Language Models (eg: GPT-2) and Fill-in-the-Blanks models (eg: BERT, up to ALBERT)
+*  A bunch of 1-minute reviews of Transformer-related research
 
+The slides for my talk are here :
 
-and was intended to introduce the elements of a CNN model *before* explaining 
-the intricacies of back-propagtion (i.e. in some ways it was a different approach 
-from the typical "build from the ground up" NN introductory pitch).
-
-The slides for my talk (as a 400Kb PDF) are here :
-
-<a href="http://redcatlabs.com/downloads/2019-06-16_PyCon.th_TF2-CNNs-for-Images.pdf" target="_blank">
-![Presentation Screenshot]({{ site.url }}/assets/img/2019-06-16_PyCon.th_TF2-CNNs-for-Images_600x390.png)
+<a href="http://redcatlabs.com/2019-09-29_AI-Day.th_Transformers-and-Unicorns/" target="_blank">
+![Presentation Screenshot]({{ site.url }}/assets/img/2019-09-29_AI-Day.th_Transformers-and-Unicorns_600x390.png)
 </a>
 
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="http://redcatlabs.com/downloads/2019-06-16_PyCon.th_TF2-CNNs-for-Images.pdf" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2019-06-16_PyCon.th_TF2-CNNs-for-Images_17_600x390.png)
+<a href="http://redcatlabs.com/2019-09-29_AI-Day.th_Transformers-and-Unicorns/#/16/2" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2019-09-29_AI-Day.th_Transformers-and-Unicorns_16-2_600x390.png)
 </a>
 
 
