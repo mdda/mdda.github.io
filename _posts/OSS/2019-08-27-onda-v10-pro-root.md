@@ -407,7 +407,10 @@ There is file not loaded yet!!
 Reset button
 Power button (hold 3 seconds)
 Onda logo
+
+{% highlight bash %}
 System initlaizting, please wait...
+
 # ( PHONENIX OS... )  NOOO!
 
 There's an 'OS Switch' in the start menu folder's second page
@@ -432,6 +435,7 @@ To find the version number of your device, please see the ninth, 10th position o
 
 
 https://topjohnwu.github.io/Magisk/install.html#boot-image-patching
+{% endhighlight %}
 
 
 Hmm : Now that we've got a completely consistent boot+loader etc image, perhaps the Magisk thing will work...
@@ -442,7 +446,6 @@ Install Magisk 7.3.2 (224) direct from GitHub releases
 
 Connect USB, and AllowDebugging
 
-{% endhighlight %}
 
 {% highlight bash %}
 adb devices -l
