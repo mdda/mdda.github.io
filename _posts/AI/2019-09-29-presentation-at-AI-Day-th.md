@@ -21,7 +21,7 @@ published: true
 ### Presentation Link
 
 Sam Witteveen and I have been running the TensorFlow and Deep Learning group in Singapore for over two years now, and 
-we were once again invited to speak at the AI Day Thailand in Bangkok.
+we were once again invited to speak at the [AI Day Thailand](https://dev.wi.th/event/aiday2019) in Bangkok, run by GDG Thailand.
 
 My talk was titled "Transformers and Unicorns", and outlined:
 *  The principles of operation of Transformer-based models

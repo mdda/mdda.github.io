@@ -33,15 +33,15 @@ and Olzhas described the RL methods behind OpenAI's recente DOTA success.
 
 The slides for my talk are here :
 
-<a href="http://redcatlabs.com/2019-05-30_TFandDL_SinglePathNAS/" target="_blank">
-![Presentation Screenshot]({{ site.url }}/assets/img/2019-05-30_TFandDL_SinglePathNAS_600x390.png)
+<a href="http://redcatlabs.com/2019-10-10_TFandDL_TF.probability/" target="_blank">
+![Presentation Screenshot]({{ site.url }}/assets/img/2019-10-10_TFandDL_TF.probability_600x390.png)
 </a>
 
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="http://redcatlabs.com/2019-05-30_TFandDL_SinglePathNAS/#/6/2" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2019-05-30_TFandDL_SinglePathNAS_6-2_600x390.png)
+<a href="http://redcatlabs.com/2019-10-10_TFandDL_TF.probability/#/5/1" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2019-10-10_TFandDL_TF.probability_NB2_600x390.png)
 </a>
 
 
