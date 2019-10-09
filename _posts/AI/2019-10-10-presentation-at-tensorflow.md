@@ -21,6 +21,17 @@ Sam Witteveen and I started the TensorFlow and Deep Learning Singapore group on 
 and [the twenty-seventh MeetUp, aka TensorFlow 4K](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/265374455/),
 was hosted by Google Singapore, and celebrated the TensorFlow Group acheiving over 4000 members!  
 
+My talk was touted as being about Hyperparameter Optimisation (using TF.probability), but
+it seemed natural to me to introduce the ideas of TF.probability by way of regression in stages : 
+
+*  Regular L2 linear regression
+*  N(mx+c, sigma=1) regression on max-loglikelihood
+*  N(mx+c, sigma=ax+d) regression on max-loglikelihood
+*  Gaussian Processes for regression
+
+That was then followed up by using Gaussian Processes to determine where to sample good Learning Rates 
+for SGD trainings of a CIFAR10 model.  Hopefully, it made sense to the audience...
+
 
 The slides for my talk are here :
 
