@@ -1,6 +1,6 @@
 ---
 date: 2019-10-10
-title:  "Single-Path NAS and the Lottery Ticket Hypothesis"
+title:  "TensorFlow . Probability"
 tagline: Presentation
 category: AI
 tags:
@@ -18,17 +18,8 @@ published: false
 ### Presentation Link
 
 Sam Witteveen and I started the TensorFlow and Deep Learning Singapore group on MeetUp in February 2017,
-and [the twenty-fifth MeetUp, aka TensorFlow and Deep Learning : AutoML](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/261638882/),
-was again hosted by Google Singapore.  
-
-My talk was titled "Single Path NAS and the Lottery Ticket Hypothesis", 
-and was intended to introduce a few pieces of research - starting with the 
-Single Path NAS paper, and touching on the Lottery Ticket Hypothesis work
-(winner of best paper at ICLR 2019, and follow-on work by Uber).
-
-Timothy Liu talked about the Keras AutoML module; 
-Sam talked about hyperparameter search algorithms; 
-and Olzhas described the RL methods behind OpenAI's recente DOTA success.
+and [the twenty-seventh MeetUp, aka TensorFlow 4K](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/265374455/),
+was hosted by Google Singapore, and celebrated the TensorFlow Group acheiving over 4000 members!  
 
 
 The slides for my talk are here :
