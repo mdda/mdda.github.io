@@ -59,7 +59,8 @@ author :
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
 #production_url : http://mdda.github.io
-production_url : http://blog.mdda.net
+#production_url : http://blog.mdda.net
+production_url : https://blog.mdda.net
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
