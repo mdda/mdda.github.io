@@ -40,7 +40,7 @@ You'll need this later for redoing the firmware :
 
 {% highlight bash %}
 
-# dnf install android-tools
+[root]# dnf install android-tools
 
 [root]# adb shell
 error: device unauthorized.
@@ -55,6 +55,8 @@ List of devices attached
 List of devices attached
 0123456789ABCDEF       unauthorized usb:3-1 transport_id:3
 
+## Authorize the USB connection for developers (on the tablet itself)
+
 [root]# adb devices -l
 List of devices attached
 0123456789ABCDEF       device usb:3-1 product:ONDA model:V10_Pro device:V10_Pro transport_id:3
@@ -62,23 +64,42 @@ List of devices attached
 {% endhighlight %}
 
 
+
+### Install Magisk on the tablet itself
+
+*  https://topjohnwu.github.io/Magisk/install.html#boot-image-patching
+
+*  https://forum.xda-developers.com/apps/magisk/official-magisk-v7-universal-systemless-t3473445):
+
+{% highlight bash %}
+
+# download from : https://github.com/topjohnwu/Magisk/releases/tag/manager-v7.3.2
+# Download 818Mb file
+
+[root]# apk install
+
+{% endhighlight %}
+
+
+
 ### Get suitable firmware for this tablet
 
+I looked through a lot of sources, all of which advocated different firmwares, etc.  But I didn't understand how
+it would be used.   Eventually, I picked the most recent official-looking one, and installed it (as below), 
+only to discover that I had just completely overwritten what was there before...
 
+But, no matter : Since I now had the firmware that matched the (overwritten) tablet, 
+I could now do the tricks required on the firmware itself.
 
-https://forum.xda-developers.com/apps/magisk/official-magisk-v7-universal-systemless-t3473445):
+Here are some of the sources that I looked over : 
 
-https://topjohnwu.github.io/Magisk/install.html#boot-image-patching
-
-https://github.com/topjohnwu/Magisk/releases/tag/manager-v7.3.2
-apk install
 
 you are required to obtain a copy of the stock boot image, which can be found by extracting OEM provided factory images or extracting from OTA update zip
 
 Current firmware, reported System-Settings-AboutTablet-DeviceFirmwareVersion = v1.0.1_V7
-https://4pda.ru/pages/go/?u=https%3A%2F%2Fwww.dropbox.com%2Fs%2Fhp4zfla1j8qvbdk%2FV10%2520Pro_V1.0.1_V7.rar%3Fdl%3D0&e=77513633
-https://www.dropbox.com/s/hp4zfla1j8qvbdk/V10%20Pro_V1.0.1_V7.rar?dl=0
-# Download 818Mb file
+
+*  https://4pda.ru/pages/go/?u=https%3A%2F%2Fwww.dropbox.com%2Fs%2Fhp4zfla1j8qvbdk%2FV10%2520Pro_V1.0.1_V7.rar%3Fdl%3D0&e=77513633
+*  Link to firmware I installed : https://www.dropbox.com/s/hp4zfla1j8qvbdk/V10%20Pro_V1.0.1_V7.rar?dl=0
 
 
 
