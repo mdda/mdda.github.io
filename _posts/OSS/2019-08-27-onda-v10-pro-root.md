@@ -96,40 +96,44 @@ Here are some of the sources that I looked over :
 
 you are required to obtain a copy of the stock boot image, which can be found by extracting OEM provided factory images or extracting from OTA update zip
 
-Current firmware, reported System-Settings-AboutTablet-DeviceFirmwareVersion = v1.0.1_V7
+Current firmware, reported by `System-Settings-AboutTablet-DeviceFirmwareVersion` = `v1.0.1_V7`
 
 *  https://4pda.ru/pages/go/?u=https%3A%2F%2Fwww.dropbox.com%2Fs%2Fhp4zfla1j8qvbdk%2FV10%2520Pro_V1.0.1_V7.rar%3Fdl%3D0&e=77513633
-*  Link to firmware I installed : https://www.dropbox.com/s/hp4zfla1j8qvbdk/V10%20Pro_V1.0.1_V7.rar?dl=0
-
-
+*  [Link to firmware actually installed here](https://www.dropbox.com/s/hp4zfla1j8qvbdk/V10%20Pro_V1.0.1_V7.rar?dl=0)
 
 
 {% highlight bash %}
-mkdir OndaV10Pro
+[root]# dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+[root]# dnf install unrar
+
+[user]$ mkdir OndaV10Pro
 [user]$ cd OndaV10Pro/
-mv ../V10\ Pro_V1.0.1_V7.rar .
+[user]$ mv ../V10\ Pro_V1.0.1_V7.rar .
 
-dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-dnf install unrar
-
-unrar l V10\ Pro_V1.0.1_V7.rar | grep boot-verified.img
-unrar e V10\ Pro_V1.0.1_V7.rar *boot-verified.img
-ll
+[user]$ unrar l V10\ Pro_V1.0.1_V7.rar | grep boot-verified.img
+[user]$ unrar e V10\ Pro_V1.0.1_V7.rar *boot-verified.img
+[user]$ ll
 # -rw-rw-r--. 1 andrewsm andrewsm   9388288 Jan  2  2018  boot-verified.img
 
 [user]$ adb push boot-verified.img /sdcard/
-Saved a log in /storage/emulated/0/Download/magick_install... .log
+#Saved a log in /storage/emulated/0/Download/magick_install... .log
 
-adb pull  /storage/emulated/0/Download/magisk_install_log_2019-08-26T02\:54\:30Z.log
-
-/storage/emulated/0/Download/magick_patched.img
-
-adb pull /sdcard/Download/magisk_patched.img
+[user]$ adb pull  /storage/emulated/0/Download/magisk_install_log_2019-08-26T02\:54\:30Z.log
 {% endhighlight %}
 
+# Now go into magick, and patch the saved image at :
+/storage/emulated/0/Download/magick_patched.img
 
-# FASTBOOT approach merely/nearly bricked my device...
+And retrieve it : 
 
+{% highlight bash %}
+[user]$ adb pull /sdcard/Download/magisk_patched.img
+{% endhighlight %}
+
+Problem :: FASTBOOT approach merely/nearly bricked my device...
+
+
+### Install the SP Flash tool
 
 https://spflashtool.com/
 
