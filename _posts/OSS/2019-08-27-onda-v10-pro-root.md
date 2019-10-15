@@ -499,28 +499,37 @@ shell@V10_Pro:/ $ exit
 cp magisk_patched.img V10\ Pro_V1.0.1_V7/SP_Flash_Tool_exe_Windows_v5.1640.00.000/Firemware/boot.img 
 {% endhighlight %}
 
-# So, now we can reflash using the same SP Tool again (need only select the boot.img file, I guess)
 
-Press reset
-PowerButton 3 secs
-Boots with PhoenixOS logo - but straight back into Android desktop unchanged
-Load 'Terminal' from 360 store (!)
-Try 'su'  :: Magisk will offer to Grant Forever!  SUCCESS!
+### Reflash using the SP Tool (again)
+
+So, now we can reflash using the same SP Tool again (need only select the boot.img file, I guess)
+
+*  Press reset
+*  PowerButton 3 secs
+*  Boots with PhoenixOS logo - but straight back into Android desktop unchanged
+*  Load `Terminal` from 360 store (!)
+*  Try 'su'  :: Magisk will offer to Grant Forever!  *SUCCESS!*
 
 
-Install aptoid app using Chrome
-Look for 'Google Play Services' in AptOid app
+### All Done!
+
+Next steps : 
+
+*  Install aptoid app using Chrome - this is an off-brand app store.
+*  Look for 'Google Play Services' in Aptoid app.  It ought to be possible, since I see :
 
 >  yes exactly, I download aptoide apk from the official site, 
 >  I installed it and search in aptoide the google play services, 
 >  I press update and the google play services updated automatically without problems.
 
-Currently Google Play Store = 7.2.13
-(Kill 360 App - there was an annoying Ad)
-(Kill WPS Mail - looks like junk)
+*  Current version of Google Play Store = 7.2.13 = Old, but it's a start...
 
-Use Aptoid to install 'Google Play' v16.3.36-all
+*  (Kill 360 App - there was an annoying Ad)
+*  (Kill WPS Mail - looks like junk)
 
-install 'ssh server' (has a folder-like icon) on tablet
+*  After a reboot (or simply giving the machine some time to 'orient itself') can now use Aptoid to install 'Google Play' v16.3.36-all = Modern
 
-# Do the unison thing
+*  Install 'ssh server' (has a folder-like icon) on tablet
+
+*  Install `unison` (potentially another post)
+
