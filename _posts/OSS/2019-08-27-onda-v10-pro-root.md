@@ -429,9 +429,9 @@ There is file not loaded yet!!
 # YES : When a green circle with a white checkmark appears, you are done. 
 {% endhighlight %}
 
-Reset button
-Power button (hold 3 seconds)
-Onda logo
+*  Reset button
+*  Power button (hold 3 seconds)
+*  Onda logo
 
 {% highlight bash %}
 System initlaizting, please wait...
@@ -444,36 +444,32 @@ Device firmware = V1.0.1_V7
 Patch level March 5. 2017
 Kernel 3.18.19+
 tUE jAN 2 22:33:04 CST 2018 (!)
+{% endhighlight %}
 
 Again, go for 'OEM unlocking'=Enabled.  'USB Debugging'=Enabled
 
 Helpful people : 
 https://techtablets.com/forum/topic/onda-v10-pro-google-play-services-update-error/page/3/
 
-V1.0.4_V5 (with Phoenix)
-V10 Pro_V1.0.1_V7  (with Phoenix)
-
-http://onda.cn/Search.aspx?keyword=V10 Pro&ch=0
+*  V1.0.4_V5 (with Phoenix)
+*  V10 Pro_V1.0.1_V7  (with Phoenix)
+*  http://onda.cn/Search.aspx?keyword=V10 Pro&ch=0
 
 To find the version number of your device, please see the ninth, 10th position of the SN code on the back of the case 'V7'
 
+#### Bootable image installed...
 
+Now that we've got a completely consistent boot+loader etc image, perhaps the Magisk thing will work...
 
-https://topjohnwu.github.io/Magisk/install.html#boot-image-patching
-{% endhighlight %}
+*   https://topjohnwu.github.io/Magisk/install.html#boot-image-patching
 
-
-Hmm : Now that we've got a completely consistent boot+loader etc image, perhaps the Magisk thing will work...
-
-https://forum.xda-developers.com/showpost.php?s=f5a26bcd5d381487feee16f999f4fadf&p=77196170&postcount=8
-
-Install Magisk 7.3.2 (224) direct from GitHub releases
-
-Connect USB, and AllowDebugging
+*   https://forum.xda-developers.com/showpost.php?s=f5a26bcd5d381487feee16f999f4fadf&p=77196170&postcount=8
+*   Install Magisk 7.3.2 (224) direct from GitHub releases
+*   Connect USB, and AllowDebugging
 
 
 {% highlight bash %}
-adb devices -l
+[user]$ adb devices -l
 List of devices attached
 0123456789ABCDEF       device usb:3-1 product:ONDA model:V10_Pro device:V10_Pro transport_id:4
 
@@ -496,7 +492,7 @@ shell@V10_Pro:/ $ exit
 /storage/emulated/0/Download/magisk_patched.img: 1 file pulled. 7.9 MB/s (9618899 bytes in 1.155s)
 
 # Put the patched file where the boot.img file *was* in the V10\ Pro_V1.0.1_V7 image
-cp magisk_patched.img V10\ Pro_V1.0.1_V7/SP_Flash_Tool_exe_Windows_v5.1640.00.000/Firemware/boot.img 
+[root]# cp magisk_patched.img V10\ Pro_V1.0.1_V7/SP_Flash_Tool_exe_Windows_v5.1640.00.000/Firemware/boot.img 
 {% endhighlight %}
 
 
