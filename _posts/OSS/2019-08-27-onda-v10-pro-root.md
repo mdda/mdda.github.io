@@ -101,6 +101,15 @@ Current firmware, reported by `System-Settings-AboutTablet-DeviceFirmwareVersion
 *  https://4pda.ru/pages/go/?u=https%3A%2F%2Fwww.dropbox.com%2Fs%2Fhp4zfla1j8qvbdk%2FV10%2520Pro_V1.0.1_V7.rar%3Fdl%3D0&e=77513633
 *  [Link to firmware actually installed here](https://www.dropbox.com/s/hp4zfla1j8qvbdk/V10%20Pro_V1.0.1_V7.rar?dl=0)
 
+Helpful people : 
+https://techtablets.com/forum/topic/onda-v10-pro-google-play-services-update-error/page/3/
+
+*  V1.0.4_V5 (with Phoenix)
+*  V10 Pro_V1.0.1_V7  (with Phoenix)
+*  http://onda.cn/Search.aspx?keyword=V10 Pro&ch=0
+
+To find the version number of your device, please see the ninth, 10th position of the SN code on the back of the case 'V7'
+
 
 {% highlight bash %}
 [root]# dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
@@ -330,9 +339,7 @@ dialout:x:18:
 uid=1000(user) gid=1000(user) groups=1000(user),18(dialout),980(vboxusers),992(pulse-rt),994(jackuser) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
 {% endhighlight %}
 
-
-# DIFFERENT OUTPUT RESULTS!!
-
+*DIFFERENT OUTPUT RESULTS!!*
 
 {% highlight bash %}
 
@@ -359,9 +366,7 @@ There is file not loaded yet!!
 {% endhighlight %}
 
 
-
 {% highlight bash %}
-
 Downloading & Connecting to DA...
 COM port is open. Trying to sync with the target...
 DA Connected
@@ -393,11 +398,14 @@ Format Succeeded.
 Disconnect!
 {% endhighlight %}
 
-# With a Big Tick output
+*With a Big Tick output*
+
+So : The format thing works!  At least there's an action that can be performed using the SP Tool.
 
 
+## Next : Try to Put Image onto Tablet
 
-## Try to Download everything
+Try to load the image into the tablet... Problem :
 
 {% highlight bash %}
 BROM ERROR : S_FTHND_FILE_IS_NOT_LOADED_YET (5007)
@@ -408,8 +416,13 @@ There is file not loaded yet!!
                 1. Please check if the DA path is correct.
                 2. Please check if all the ROM files exist.
                 3. Please check if the scatter file description is sync with the exist ROM files.
+{% endhighlight %}
 
-# In Firemware : 
+The issue seems to be that the files are not all listed on the right-hand-side in the file listing area.  Idea : 
+Move them over from their `-verified` names to just plain names.
+
+{% highlight bash %}
+# In Firmware : 
 [user]$ ls -l | grep verified
 -rw-r--r--. 1 user user     9388288 Jan  2  2018 boot-verified.img
 -rw-r--r--. 1 user user      311552 Jan  2  2018 lk-verified.bin
@@ -434,9 +447,10 @@ There is file not loaded yet!!
 *  Onda logo
 
 {% highlight bash %}
-System initlaizting, please wait...
+System initializing, please wait...
 
-# ( PHONENIX OS... )  NOOO!
+# ( PHONENIX OS... )  
+##   NOOO!
 
 There's an 'OS Switch' in the start menu folder's second page
 The Android 6 there shows :
@@ -448,14 +462,6 @@ tUE jAN 2 22:33:04 CST 2018 (!)
 
 Again, go for 'OEM unlocking'=Enabled.  'USB Debugging'=Enabled
 
-Helpful people : 
-https://techtablets.com/forum/topic/onda-v10-pro-google-play-services-update-error/page/3/
-
-*  V1.0.4_V5 (with Phoenix)
-*  V10 Pro_V1.0.1_V7  (with Phoenix)
-*  http://onda.cn/Search.aspx?keyword=V10 Pro&ch=0
-
-To find the version number of your device, please see the ninth, 10th position of the SN code on the back of the case 'V7'
 
 #### Bootable image installed...
 
