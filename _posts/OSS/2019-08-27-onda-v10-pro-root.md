@@ -34,6 +34,8 @@ Why did I want that?
 The following are step-by-step instructions about how to do it - and is the result of reading multiple Russian-based
 forums, lots of dead-ends, and lots of trial-and-error.  Hope this makes it easier for you too!
 
+
+
 ### Check that `adb` works
 
 You'll need this later for redoing the firmware :
@@ -73,8 +75,7 @@ List of devices attached
 
 {% highlight bash %}
 
-# download from : https://github.com/topjohnwu/Magisk/releases/tag/manager-v7.3.2
-# Download 818Mb file
+# download from : https://github.com/topjohnwu/Magisk/releases/tag/manager-v7.3.2  # 818Mb file ??
 
 [root]# apk install
 
@@ -93,22 +94,22 @@ I could now do the tricks required on the firmware itself.
 
 Here are some of the sources that I looked over : 
 
-
-you are required to obtain a copy of the stock boot image, which can be found by extracting OEM provided factory images or extracting from OTA update zip
-
-Current firmware, reported by `System-Settings-AboutTablet-DeviceFirmwareVersion` = `v1.0.1_V7`
-
-*  https://4pda.ru/pages/go/?u=https%3A%2F%2Fwww.dropbox.com%2Fs%2Fhp4zfla1j8qvbdk%2FV10%2520Pro_V1.0.1_V7.rar%3Fdl%3D0&e=77513633
-*  [Link to firmware actually installed here](https://www.dropbox.com/s/hp4zfla1j8qvbdk/V10%20Pro_V1.0.1_V7.rar?dl=0)
-
-Helpful people : 
-https://techtablets.com/forum/topic/onda-v10-pro-google-play-services-update-error/page/3/
-
 *  V1.0.4_V5 (with Phoenix)
 *  V10 Pro_V1.0.1_V7  (with Phoenix)
 *  http://onda.cn/Search.aspx?keyword=V10 Pro&ch=0
 
+It seems that you are required to obtain a copy of the stock boot image, 
+which can be found by extracting OEM provided factory images or extracting from OTA update zip
+
 To find the version number of your device, please see the ninth, 10th position of the SN code on the back of the case 'V7'
+
+Current firmware, reported by `System-Settings-AboutTablet-DeviceFirmwareVersion` = `v1.0.1_V7`.
+
+So, the following was the best bet :
+
+*  https://4pda.ru/pages/go/?u=https%3A%2F%2Fwww.dropbox.com%2Fs%2Fhp4zfla1j8qvbdk%2FV10%2520Pro_V1.0.1_V7.rar%3Fdl%3D0&e=77513633
+*  [Link to firmware actually installed here](https://www.dropbox.com/s/hp4zfla1j8qvbdk/V10%20Pro_V1.0.1_V7.rar?dl=0)
+*  This is a `rar` file of 857,321,855 bytes
 
 
 {% highlight bash %}
@@ -118,7 +119,14 @@ To find the version number of your device, please see the ninth, 10th position o
 [user]$ mkdir OndaV10Pro
 [user]$ cd OndaV10Pro/
 [user]$ mv ../V10\ Pro_V1.0.1_V7.rar .
+[user]$ unrar x V10\ Pro_V1.0.1_V7.rar 
 
+{% endhighlight %}
+
+I then tried to use a combination of Magisk and FASTBOOT.
+
+
+<!--
 [user]$ unrar l V10\ Pro_V1.0.1_V7.rar | grep boot-verified.img
 [user]$ unrar e V10\ Pro_V1.0.1_V7.rar *boot-verified.img
 [user]$ ll
@@ -138,8 +146,9 @@ And retrieve it :
 {% highlight bash %}
 [user]$ adb pull /sdcard/Download/magisk_patched.img
 {% endhighlight %}
+!-->
 
-Problem :: FASTBOOT approach merely/nearly bricked my device...
+Problem :: FASTBOOT approach merely/nearly bricked my device...  So : I then went on a different tack, and used the 'SP Flash tool'
 
 
 ### Install the SP Flash tool
@@ -148,30 +157,28 @@ https://spflashtool.com/
 
 https://forum.xda-developers.com/general/rooting-roms/tutorial-how-to-setup-spflashtoollinux-t3160802
 
-Download SPFlashTool for Linux - 64 Bit
-https://spflashtool.com/download/SP_Flash_Tool_exe_Linux_64Bit_v5.1520.00.100.zip
+Download [SPFlashTool for Linux - 64 Bit](https://spflashtool.com/download/SP_Flash_Tool_exe_Linux_64Bit_v5.1520.00.100.zip)
+
+And install it (along with dependencies to make it run on Fedora) :
 
 {% highlight bash %}
 [user]$ unzip SP_Flash_Tool_exe_Linux_64Bit_v5.1520.00.100.zip 
 # This is a 2015 version...
-{% endhighlight %}
 
-
-{% highlight bash %}
 [user]$ cd SP_Flash_Tool_exe_Linux_64Bit_v5.1520.00.100
 [user]$ ./flash_tool
 [user]$ ./flash_tool: error while loading shared libraries: libQtWebKit.so.4: cannot open shared object file: No such file or directory
 
 [root]# dnf install qtwebkit
 
-[user]$ unrar x V10\ Pro_V1.0.1_V7.rar 
 [user]$ ./flash_tool
 {% endhighlight %}
 
-Scatter File is in :
+Scatter File is in the data from the image downloaded (and expanded using `unrar` above) :
+
 `V10 Pro_V1.0.1_V7/SP_Flash_Tool_exe_Windows_v5.1640.00.000/Firemware/`
 
-Select just 'logo' for testing...
+Select just the 'logo' file for testing...
 
 Hit 'Download' and plug in device (which was turned off)
 
@@ -181,7 +188,10 @@ BROM ERROR : S_COM_PORT_OPEN_FAIL (1013)
 [HINT]:
 {% endhighlight %}
 
-So we blacklist it for the two MTK vendor IDs the flash tool uses...
+
+#### Fixing the COM port so that it works
+
+So, as suggested online, we blacklist the COM port device for the two MTK vendor IDs the flash tool uses...
 
 As `root`, create : /etc/udev/rules.d/20-mm-blacklist-mtk.rules containing :
 
@@ -189,7 +199,6 @@ As `root`, create : /etc/udev/rules.d/20-mm-blacklist-mtk.rules containing :
 ATTRS{idVendor}=="0e8d", ENV{ID_MM_DEVICE_IGNORE}="1"
 ATTRS{idVendor}=="6000", ENV{ID_MM_DEVICE_IGNORE}="1"
 {% endhighlight %}
-
 
 {% highlight bash %}
 [root]# udevadm control --reload
@@ -271,8 +280,10 @@ Aug 26 23:10:53 square.herald ModemManager[1161]: <debug> [filter] (tty/ttyACM0)
 [root]# mmcli -G ERR;
 {% endhighlight %}
 
+But that seems like a relatively dead end...
 
 
+### What's going on?
 
 https://android.googlesource.com/kernel/mediatek/+/android-6.0.0_r0.6/Documentation/usb/acm.txt
 
@@ -300,6 +311,8 @@ USB port is obtained. path name(/dev/ttyACM0), port name(/dev/ttyACM0)
 USB port detected: /dev/ttyACM0
 {% endhighlight %}
 
+
+Investigate the sequence of things that occur as the device is plugged in :
 
 {% highlight bash %}
 [root]# ll /dev/ttyACM0
@@ -514,6 +527,9 @@ So, now we can reflash using the same SP Tool again (need only select the boot.i
 
 
 ### All Done!
+
+Helpful people : 
+https://techtablets.com/forum/topic/onda-v10-pro-google-play-services-update-error/page/3/
 
 Next steps : 
 
