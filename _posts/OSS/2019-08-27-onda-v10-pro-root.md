@@ -191,14 +191,16 @@ BROM ERROR : S_COM_PORT_OPEN_FAIL (1013)
 
 #### Fixing the COM port so that it works
 
-So, as suggested online, we blacklist the COM port device for the two MTK vendor IDs the flash tool uses...
+So, as suggested online, blacklist the COM port device for the two MTK vendor IDs the flash tool uses...
 
-As `root`, create : /etc/udev/rules.d/20-mm-blacklist-mtk.rules containing :
+As `root`, create : `/etc/udev/rules.d/20-mm-blacklist-mtk.rules` containing :
 
 {% highlight bash %}
 ATTRS{idVendor}=="0e8d", ENV{ID_MM_DEVICE_IGNORE}="1"
 ATTRS{idVendor}=="6000", ENV{ID_MM_DEVICE_IGNORE}="1"
 {% endhighlight %}
+
+And reload the `udev` configuration with :
 
 {% highlight bash %}
 [root]# udevadm control --reload
@@ -280,10 +282,10 @@ Aug 26 23:10:53 square.herald ModemManager[1161]: <debug> [filter] (tty/ttyACM0)
 [root]# mmcli -G ERR;
 {% endhighlight %}
 
-But that seems like a relatively dead end...
+But that seems like a relatively dead end...  Since it doesn't change the messages.
 
 
-### What's going on?
+### What's going on during plug-in of the device?
 
 https://android.googlesource.com/kernel/mediatek/+/android-6.0.0_r0.6/Documentation/usb/acm.txt
 
@@ -339,7 +341,13 @@ ls: cannot access '/dev/ttyACM0': No such file or directory
 ls: cannot access '/dev/ttyACM0': No such file or directory
 {% endhighlight %}
 
+Hypothesis : The device is tested for being a COM port for a few seconds upon plugin, 
+but if it doesn't respond as a modem quickly enough, it falls back to being a standard USB storage device.
 
+So : Why isn't this modem working?
+
+
+### Change the ownership of the modem device...
 
 {% highlight bash %}
 [root]# getent group dialout
@@ -347,15 +355,14 @@ dialout:x:18:
 
 [root]# usermod -aG dialout andrewsm
 
-# Log out, log back in...
+# (Linux sucks a bit here...) : Log out, log back in...
 [user]$ id -a
 uid=1000(user) gid=1000(user) groups=1000(user),18(dialout),980(vboxusers),992(pulse-rt),994(jackuser) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
 {% endhighlight %}
 
-*DIFFERENT OUTPUT RESULTS!!*
+Now : *DIFFERENT OUTPUT RESULTS!!* in the below:
 
 {% highlight bash %}
-
 com portName is: /dev/ttyACM0
 Total wait time = -1566834592.000000
 USB port is obtained. path name(/dev/ttyACM0), port name(/dev/ttyACM0)
@@ -371,7 +378,6 @@ BROM Exception! ( BROM ERROR : S_FTHND_FILE_IS_NOT_LOADED_YET (5007)
 
 There is file not loaded yet!!
 [HINT]:
-
                 1. Please check if the DA path is correct.
                 2. Please check if all the ROM files exist.
                 3. Please check if the scatter file description is sync with the exist ROM files.)((exec,../../../qt_flash_tool/Cmd/DADownloadAll.cpp,84))
@@ -394,10 +400,11 @@ BROM Exception! ( BROM ERROR : S_FTHND_FILE_IS_NOT_LOADED_YET (5007)
 
 There is file not loaded yet!!
 
-App Exception! (proinfo: Failed to get PMT info.
+App Exception! (proinfo: Failed to get PMT info.)
 {% endhighlight %}
 
 
+Different permissions : 
 
 {% highlight bash %}
 ## Just Format All :
