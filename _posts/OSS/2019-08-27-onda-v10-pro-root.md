@@ -7,7 +7,7 @@ tags:
 - linux
 - android
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -20,7 +20,7 @@ it's basically a no-frills Chinese tablet (at a really attractive price).
 My criteria for buying it were a little non-standard, since all I am going to use it for is reading PDFs of papers,
 of which I have a huge backlog 'organised' in a folder structure on my various machines.  The Onda V10 Pro
 has 4Gb RAM, high resolution display, and good speed statistics.  One shortcoming was the Android 6.0 OS - but
-I decided that I didn't need some more modern features given the specs.
+I decided that I didn't need the more modern OS features given the specs.
 
 One thing I should have checked more thoroughly, though, is how easy it would be to obtain `root` access...
 
@@ -28,12 +28,10 @@ Why did I want that?
 
 *  The file-syncing set-up I have (based on my own servers and `unison`) probably needs `root` to operate 'Free'
 
-*  I have `root` on all my devices (desctops, servers, laptops, phones, tablets, TV, etc.) - it's a bit of a compulsion.
-
+*  I have `root` on all my devices (desktops, servers, laptops, phones, tablets, TV, etc.) - it's a bit of a compulsion.
 
 The following are step-by-step instructions about how to do it - and is the result of reading multiple Russian-based
 forums, lots of dead-ends, and lots of trial-and-error.  Hope this makes it easier for you too!
-
 
 
 ### Check that `adb` works
@@ -75,7 +73,7 @@ List of devices attached
 
 {% highlight bash %}
 
-# download from : https://github.com/topjohnwu/Magisk/releases/tag/manager-v7.3.2  # 818Mb file ??
+# download from : https://github.com/topjohnwu/Magisk/releases/tag/manager-v7.3.2  # 5.3Mb file (?)
 
 [root]# apk install
 
@@ -127,6 +125,7 @@ I then tried to use a combination of Magisk and FASTBOOT.
 
 
 <!--
+{% highlight bash %}
 [user]$ unrar l V10\ Pro_V1.0.1_V7.rar | grep boot-verified.img
 [user]$ unrar e V10\ Pro_V1.0.1_V7.rar *boot-verified.img
 [user]$ ll
@@ -174,13 +173,12 @@ And install it (along with dependencies to make it run on Fedora) :
 [user]$ ./flash_tool
 {% endhighlight %}
 
-Scatter File is in the data from the image downloaded (and expanded using `unrar` above) :
+The "Scatter File" is in the data from the image downloaded (and expanded using `unrar` above) :
 
 `V10 Pro_V1.0.1_V7/SP_Flash_Tool_exe_Windows_v5.1640.00.000/Firemware/`
 
-Select just the 'logo' file for testing...
-
-Hit 'Download' and plug in device (which was turned off)
+*  Select just the 'logo' file for testing...
+*  Hit 'Download' and plug in device (which was turned off) :
 
 {% highlight bash %}
 BROM ERROR : S_COM_PORT_OPEN_FAIL (1013)
