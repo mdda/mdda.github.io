@@ -189,6 +189,55 @@ BROM ERROR : S_COM_PORT_OPEN_FAIL (1013)
 {% endhighlight %}
 
 
+#### Curious error messages
+
+Something just isn't connecting...
+
+{% highlight bash %}
+com portName is: /dev/ttyACM0
+Total wait time = -1566834592.000000
+USB port is obtained. path name(/dev/ttyACM0), port name(/dev/ttyACM0)
+USB port detected: /dev/ttyACM0
+BROM connected
+Downloading & Connecting to DA...
+COM port is open. Trying to sync with the target...
+DA Connected
+executing DADownloadAll...
+Download failed.
+Disconnect!
+BROM Exception! ( BROM ERROR : S_FTHND_FILE_IS_NOT_LOADED_YET (5007)
+
+There is file not loaded yet!!
+[HINT]:
+                1. Please check if the DA path is correct.
+                2. Please check if all the ROM files exist.
+                3. Please check if the scatter file description is sync with the exist ROM files.)((exec,../../../qt_flash_tool/Cmd/DADownloadAll.cpp,84))
+
+{% endhighlight %}
+
+
+Something else just isn't connecting...
+
+{% highlight bash %}
+Downloading & Connecting to DA...
+COM port is open. Trying to sync with the target...
+DA Connected
+Format Succeeded.
+Format Succeeded.
+Format Succeeded.
+Format Succeeded.
+executing DADownloadAll...
+Download failed.
+Disconnect!
+BROM Exception! ( BROM ERROR : S_FTHND_FILE_IS_NOT_LOADED_YET (5007)
+
+There is file not loaded yet!!
+
+App Exception! (proinfo: Failed to get PMT info.)
+{% endhighlight %}
+
+
+
 #### Fixing the COM port so that it works
 
 So, as suggested online, blacklist the COM port device for the two MTK vendor IDs the flash tool uses...
@@ -287,7 +336,7 @@ But that seems like a relatively dead end...  Since it doesn't change the messag
 
 ### What's going on during plug-in of the device?
 
-https://android.googlesource.com/kernel/mediatek/+/android-6.0.0_r0.6/Documentation/usb/acm.txt
+[Potentially relevant docs](https://android.googlesource.com/kernel/mediatek/+/android-6.0.0_r0.6/Documentation/usb/acm.txt)
 
 {% highlight bash %}
 [user]$ ./flash_tool
@@ -360,51 +409,7 @@ dialout:x:18:
 uid=1000(user) gid=1000(user) groups=1000(user),18(dialout),980(vboxusers),992(pulse-rt),994(jackuser) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
 {% endhighlight %}
 
-Now : *DIFFERENT OUTPUT RESULTS!!* in the below:
-
-{% highlight bash %}
-com portName is: /dev/ttyACM0
-Total wait time = -1566834592.000000
-USB port is obtained. path name(/dev/ttyACM0), port name(/dev/ttyACM0)
-USB port detected: /dev/ttyACM0
-BROM connected
-Downloading & Connecting to DA...
-COM port is open. Trying to sync with the target...
-DA Connected
-executing DADownloadAll...
-Download failed.
-Disconnect!
-BROM Exception! ( BROM ERROR : S_FTHND_FILE_IS_NOT_LOADED_YET (5007)
-
-There is file not loaded yet!!
-[HINT]:
-                1. Please check if the DA path is correct.
-                2. Please check if all the ROM files exist.
-                3. Please check if the scatter file description is sync with the exist ROM files.)((exec,../../../qt_flash_tool/Cmd/DADownloadAll.cpp,84))
-
-{% endhighlight %}
-
-
-{% highlight bash %}
-Downloading & Connecting to DA...
-COM port is open. Trying to sync with the target...
-DA Connected
-Format Succeeded.
-Format Succeeded.
-Format Succeeded.
-Format Succeeded.
-executing DADownloadAll...
-Download failed.
-Disconnect!
-BROM Exception! ( BROM ERROR : S_FTHND_FILE_IS_NOT_LOADED_YET (5007)
-
-There is file not loaded yet!!
-
-App Exception! (proinfo: Failed to get PMT info.)
-{% endhighlight %}
-
-
-Different permissions : 
+Now : *DIFFERENT OUTPUT RESULTS!!* :
 
 {% highlight bash %}
 ## Just Format All :
@@ -421,6 +426,8 @@ Disconnect!
 *With a Big Tick output*
 
 So : The format thing works!  At least there's an action that can be performed using the SP Tool.
+
+
 
 
 ## Next : Try to Put Image onto Tablet
@@ -459,8 +466,11 @@ Move them over from their `-verified` names to just plain names.
 ## Ahah - now all entries on the RHS in SP Tool have Location listed...
 ## And then some kind of downloading seems to be occurring!  at ~10MB/s
 
-# YES : When a green circle with a white checkmark appears, you are done. 
+# !YES! : When a green circle with a white checkmark appears, you are done. 
 {% endhighlight %}
+
+
+Finally, after the image seems to have uploaded : 
 
 *  Reset button
 *  Power button (hold 3 seconds)
@@ -524,7 +534,7 @@ shell@V10_Pro:/ $ exit
 
 ### Reflash using the SP Tool (again)
 
-So, now we can reflash using the same SP Tool again (need only select the boot.img file, I guess)
+So, now we can reflash using the same SP Tool again (need only select the updated `boot.img` file, I guess)
 
 *  Press reset
 *  PowerButton 3 secs
@@ -557,4 +567,5 @@ Next steps :
 *  Install 'ssh server' (has a folder-like icon) on tablet
 
 *  Install `unison` (potentially another post)
+
 
