@@ -52,6 +52,11 @@ or contact me using the details given on the slides themselves.
 <img src="/assets/img/2019-10-10_TFandDL_TF.probability_NB2_600x390.png" alt="Presentation Content Example" style="border:1px solid #000000" />
 </a>
 
+and the notebooks are here :
+
+*  [Notebook with Various Regressions](https://drive.google.com/open?id=1D3YHoacvCa6So7xEDOkADwFVYs1IqdMU)
+*  [Notebook with Gaussian Process Hyperparameter Optimisation](https://drive.google.com/open?id=1BlCURGZ-UUqtn4M1TK5o18mNh0gEYZNX)
+
 
 PS:  And if you liked the content, please 'star' my <a href="https://github.com/mdda/deep-learning-workshop" target="_blank">Deep Learning Workshop</a> repo ::
 <!-- From :: https://buttons.github.io/ -->
