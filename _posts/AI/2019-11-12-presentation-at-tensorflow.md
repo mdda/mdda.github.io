@@ -21,9 +21,14 @@ Sam Witteveen and I started the TensorFlow and Deep Learning Singapore group on 
 and [the twenty-eighth MeetUp, aka TensorFlow 4K](),
 was hosted by Google Singapore, and recapped the TensorFlow World event we attended in Silicon Valley at the end of October.  
 
+<!--
 
 
 
+
+
+
+!-->
 
 We were also delighted to welcome Yew Ken Chia as a new speaker at the TF&amp;DL MeetUp : He
 gave a presentation describing the research that he did on the TextGraphs-19 Shared Task, 
