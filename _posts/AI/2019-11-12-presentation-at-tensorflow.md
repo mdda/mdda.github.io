@@ -23,7 +23,13 @@ was hosted by Google Singapore, and recapped the TensorFlow World event we atten
 
 <!--
 
-
+Need to read : 
+  Text to text transfer transformer from Google  (potential for Sam at next TF&DL)
+    https://github.com/google-research/text-to-text-transfer-transformer
+Potential topic :
+  MelGAN 
+    http://swpark.me/melgan/
+  
 
 
 
