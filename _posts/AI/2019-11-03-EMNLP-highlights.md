@@ -36,19 +36,22 @@ FEVER
     Overall loss is a combination of :
       Minimize classification loss
       Maximum Mean Discrepancy (MMD) regularization as an additional loss
-    Very nice diagram of effect of adding MMD regularization
+    Very nice diagram of effect of adding MMD regularization on page 8 of PDF above
     
-      
-    
-    
-    
-
-
-
-
-
-
-
+  -Lunch-
+  
+  Invited Talk: Fact Verification with Semi-Structured Knowledge = Semi-structured facts support
+    + Introduced table-based-fact dataset
+      =  https://github.com/wenhuchen/Table-Fact-Checking
+    "TabFact: A Large-scale Dataset for Table-based Fact Verification" 
+      = https://arxiv.org/abs/1909.02164
+    - LPA : Create DB scheme sequence to generate results
+      +  Rank program's relationship to query
+      +  Use result
+      +  Should be more interpretable, but actual programs not checked for plausibility
+    - BERT-table : Convert table to text using templates
+      +  Need to look at paper for details (see page 7 of PDF for results)
+      +  Works on-a-par with LPA method above
 
 
 
