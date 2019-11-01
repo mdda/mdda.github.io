@@ -53,7 +53,55 @@ FEVER
       +  Need to look at paper for details (see page 7 of PDF for results)
       +  Works on-a-par with LPA method above
 
+  Fact Extraction and Verification for Precision Medicine
+    Hoifung Poon
+    *Want slides* 
+    *Want business use-case*  (see below to acquisition...)
+  Project Hanover
+    Probabalistic Logic
+      Markov logic --> Horrible blowup due to huge state-space
+      Factor - Variable - Probability
+    Deep Learning 
+      Variational EM : Marginal ~P(z1,z2,z3) -> Probablistic Labels
+      Efficient Approximate Inference
+      Virtual evidence -> variables
+    Multiscale Representations Learning
+      Input Text
+        Mention-lelvel representations
+          Entity-level representations
+            Final Prediction
+    Graph LSTM
+      Exploit rich linguistic structures
+      Distant suppervision : GDKD+CIVIC
+      Cross-sentence triples extraction yiled
+      Distant Supervision + Data Programming + Joint Interence
+        Precision : +10% ...
+      Jia et al "Document-Level n-ary relation extraction with multisclae representation leaarning" NAACL-19
+    JAX lab (Hanover Collaboration)
+      Curation KB
+      Drug/Gene/Mutation + Cancer type  (80/20 choices for curation)
+      Trust-worthiness : Not explored
+      Different institutions => Different acronyms/terms
+    EMR: 60-80% in unstructured text
+      Only 3% of cancer patients enroll in clinical trials  
+    Scenario : Drug Development
+      $2.5bn-10bn per drug with ~50 FDA approved per year
+      Phase-3 trial : New Drug (thousands of patients) 
+        vs Existing standard-of-care (already exist, though)
+        ...  Potential to cut cost of new drug in half
+      =  Synthetic control
+        Flatiron (acquired by Roche?)
+    PDF cleansing
+      Engineering problem for text
+      Other modalities (graphs, tables, etc)
+        Tables are "joyful" source of recall
+        Problems due to these isses affect recall ~10%
 
+  FEVER3 -> F3VER in 2020
+    No new shared task 
+      1+2 will continue
+      
+  
 
 
 
