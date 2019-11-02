@@ -54,7 +54,7 @@ FEVER
       +  Works on-a-par with LPA method above
 
   Fact Extraction and Verification for Precision Medicine
-    Hoifung Poon
+    Hoifung Poon = Microsoft
     *Want slides* 
     *Want business use-case*  (see below to acquisition...)
   Project Hanover
@@ -77,6 +77,7 @@ FEVER
       Distant Supervision + Data Programming + Joint Interence
         Precision : +10% ...
       Jia et al "Document-Level n-ary relation extraction with multisclae representation leaarning" NAACL-19
+        https://arxiv.org/abs/1904.02347
     JAX lab (Hanover Collaboration)
       Curation KB
       Drug/Gene/Mutation + Cancer type  (80/20 choices for curation)
@@ -100,7 +101,26 @@ FEVER
   FEVER3 -> F3VER in 2020
     No new shared task 
       1+2 will continue
+
+
+Tutorial : Discreteness in Neural Natural Language Processing. 
+  Presenters : Lili Mou, Hao Zhou and Lei Li. 
+  9:00-12:30 :: AWE Hall 2B - Part. 2
+
+
+Tutorial : Graph-based Deep Learning in Natural Language Processing. 
+  Presenters : Shikhar Vashishth, Naganand Yadati and Partha Talukdar.
+  14:00-17:30 :: AWE Hall 2B – Part. 2
+
       
+WNGT 2019
+  https://sites.google.com/view/wngt19/schedule
+  Posters = 10:40-11:40
+  
+
+TextGraphs 2019
+  https://sites.google.com/view/textgraphs2019/program
+  Posters = 16:00–17:20
   
 
 
