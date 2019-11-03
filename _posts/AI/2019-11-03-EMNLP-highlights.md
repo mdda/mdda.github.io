@@ -118,9 +118,86 @@ WNGT 2019
   Posters = 10:40-11:40
   
 
-TextGraphs 2019
+TextGraphs 2019 (13th edition = oldest workshop series at EMNLP)
   https://sites.google.com/view/textgraphs2019/program
-  Posters = 16:00–17:20
+  Acceptance rate:
+    31 papers (17 long, 14 short)
+    18 accepted (9 long, 9 short)
+  Timetable
+    Session 1 : 9:00-10:25
+    Session 2 : 11:00-12:10
+    Session 3 : 14:00-15:30 (Peter Jansen, Shared Task)
+    Posters   = 16:00–17:20
+  
+  "Transfer in Deep Reinforcement Learning using Knowledge Graphs" - Prithviraj Ammanabrolu (Raj, Georgia Tech)
+    RL for agents acquiring language
+      Training with humans is costly
+    Text Adventure games ~ Zork
+      Partial observability
+      Commonsense reasoning = FOCUS
+      Combinatorial state-action space
+    OpenIE to extract relations (can be a bit crazy)
+    Commonsense and Thematic Reasoning
+      Affordances : "open mailbox" vs " eat mailbox"
+      Genre tropes : Garlic can be used to kill vampires
+      
+    "Playing Text Adventure Games with GRaph-Based Deep RL"  
+      KG-DQN Architecture
+        State Network : Graph embeddings and an SB-LSTM to model state
+        Action Network : LSTM based encoder for each action
+        Action pruning : Reject actions that are clearly low value
+    Game Playing as Question-Answering
+      What action is best to take next given current state?
+      Training based on Oracle playing the game through
+    Much better to train on another game, then fine-tuning on target
+      Rather than learning from scratch on target alone
+    
+  "Relation Prediction for Unseen-Entities Using Entity-Word Graphs" - Yuki Tagawa (REMOTE)
+    Knowledge Graph Prediction
+    Out-Of-KG (OOKG) Problem
+      Previous work : DKRL (Xie et a 2016)
+        Uses description fields of entities to create embeddings of each
+      Current work
+        Connects description to lots of words also in a graph
+        TF-IDF adjacency matrix
+        PMI adjacency matrix
+        Encoder-Decoder model
+
+  "Scalable graph-based method for individual named entity identification" - Sammy Khalife
+    New method for entity identification for text date
+    Named Entity Discovery (NED) is a step on from NER (include images, etc)
+    Named Entity Identification is a classification problem?  YES, but...
+    NAmed Entity Linking (NEL)
+    Related work
+      Collective Linking (not done here)
+      Probabalistic Graphical Models - too many states (quadratic linkage)
+      Embeddings, Neural Architectures
+    Graph-based named entity identification
+      Need entity filtering
+        Nut this is not enough
+      Ontology " tree of entity types
+        Originally just PER, ORG, LOC
+        Now 250 ontologies available now
+      Mention to entity/name (same performance)
+        Jaccard scores of N-grams 
+        Levensthein distance
+      Have limited number of candidates
+      Choice of scoring function
+        Graph of words : Rousseau and Vazigaris? 2013
+        Measure of similariteis - Cordella et al 2004
+          Includes TF-IDF
+      Train regressor to classify good entities from bad one
+    Results
+      Other method (DL) : Rahmann and Rahmann 2018
+      Their results show that size of the ontology is important (~20 is a turning point)
+      
+    
+    
+    
+  
+  "Controllable Language Generation" - Minlie Huang (Tsinghau University)
+  
+    
   
 
 
