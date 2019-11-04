@@ -173,11 +173,14 @@ TextGraphs 2019 (13th edition = oldest workshop series at EMNLP)
       Probabalistic Graphical Models - too many states (quadratic linkage)
       Embeddings, Neural Architectures
     Graph-based named entity identification
-      Need entity filtering
-        Nut this is not enough
-      Ontology " tree of entity types
-        Originally just PER, ORG, LOC
-        Now 250 ontologies available now
+      Entity filtering 
+        Lexical (But this is not enough)
+          Acronym expansion
+          Context-awareness
+          Has a 99.5% recall @20         
+        Ontology " tree of entity types
+          Originally just PER, ORG, LOC
+          Now 250 ontologies available now
       Mention to entity/name (same performance)
         Jaccard scores of N-grams 
         Levensthein distance
@@ -191,8 +194,23 @@ TextGraphs 2019 (13th edition = oldest workshop series at EMNLP)
       Other method (DL) : Rahmann and Rahmann 2018
       Their results show that size of the ontology is important (~20 is a turning point)
       
-    
-    
+  "Neural Speech Translation using Lattice Transformations and Graph Networks" - Daniel Beck (Melboune)
+    Speech utterance -> Text in a different language
+    Other work
+      End2End : less error-prone but also less flexible
+      Pipeling = ASR+MT : Easier to incorporate additional information / dictionaries
+        Speech lattices + LM 
+    Speech translation is a graph-to-sequence model
+      Use g2s model of Beck eta al 2018 : Gated Graph NN (Li et a 2015 GGNN) as the encoder
+    Line graph transformation
+      Edges becomes a node (and vice versa)
+      Add subword information (eg: BPE)  
+      Minimisation (to combine duplicate branches)  Standard automata : Hopcroft 2007
+      GGNN encoder takes lattice with shared parameters across layers (~8 used here)
+    Decent results : Improvements as complexity added
+      Lattice weights seemed to hurt rather than help...
+
+      
     
   
   "Controllable Language Generation" - Minlie Huang (Tsinghau University)
