@@ -210,12 +210,114 @@ TextGraphs 2019 (13th edition = oldest workshop series at EMNLP)
     Decent results : Improvements as complexity added
       Lattice weights seemed to hurt rather than help...
 
+  - Coffee - 
+
+  "Using Graphs for Word Embedding with Enhanced Semantic Relations" - Matan Zuckerman      
+    Missed due to posters (including WGNT) over coffee
+    
+  "Identifying Supporting Facts for Multi-hop Question Answering with Document Graph Networks" - Marco Valentino
+    Supporting fact identification
+    Text/GloVe search for 30 most likely sentences (recall = 0.94) maximises F1
+    Graph NNs with 3 hops to classify which sentences are supporting (linear classifier)
+    Seems to work fairly well  
+  
+  "Essentia: Mining Domain-specific Paraphrases with Word-Alignment Graphs" - Danni Ma (short paper)
+    Paraphrase extraction current methods:
+      Require large annotated data
+      Extract general-purpose paraphrases
+      Paraphrase Databases : PPDB
+    Domain-specific paraphrases with limited labelled data = their system
+      The world economy has fullt recovered from the crisis
+      The global economy has shrugged off the crisis completely
+      The global economy has gotten rid of the crisis already
+    Construct a lattice, grouping similar meanings
+      Using word aligner...  (Sultan et al 2014)
+      The {world,global} economy has {fully recovered from, shruggeed off, gotten rid of} the crisis {already, completely}.
+      Now can generate paraphrases automatically
+        Graph structures imply semantic relationships
+    Datasets (small)
+      Hotel QA
+      Snips Couce et al 2018
+    Baseline method (Pang et al 2017?)
+      Finite state automata (= very similar to this method, frankly)
+    Results
+      460% increase for Snips  :-)
+    Problems
+      Need to reduce false positives
+      Not robust to typos
+    Demo
+      https://github.com/chenrit/Essentia
+
       
+  "Layerwise Relevance Visualization in Convolutional Text Graph Classifiers" - Robert Schwarzenberg (short paper)
+    Visualise / Interpret Graph-Convolutional Networks
+    Layerwise Relevance Propagation (better : Backpropagation)
+    This works Ok for Feedforward networks
+      but graph networks' adjacency matrix might 'drain relevance'
+      Paper's technique fixes up this problem
+    Output seems to make sense   
     
+  - Lunch -
   
-  "Controllable Language Generation" - Minlie Huang (Tsinghau University)
+  OLD : "Controllable Language Generation" - Minlie Huang (Tsinghau University)
+  NEW : "Knowledge-Enhanced Language Generation" - Minlie Huang (Tsinghau University)
+    NLP = NLU + NLG
+    Types:
+      Text-to-text
+        Summarization, Simplification, Paraphreasing
+        Translation, Dialog, Long text generation
+      Data-to-text
+      Meaning-to-text
+      Image/video-to-text
+    Information perspective
+      Perfect Information
+        Summarization, Translation
+      Imperfect Information
+        Less-to-more : data-to-text, zero-to-textx 
+          Open-ended NLG 
+          More creativity
+    Open-ended NLG 
+      One-to-many mapping problem
+      Observed samples very limited in training data
+    HERE : Dialog generation and/or story/essay generation
+    Issues in NLG
+      Repetition, Fluency
+      Specificity, Informativeness, Diversity  (++ with Knowledge)
+      Consistency, Coherence, Conflict
+      Fidelity, Relevance
+    Knowledge can add implicit planning for (for instance) stories
+    Dialog Generation
+      Commonsense  knowledge
+        If you don't know about something : Machine should ask 
+        "Commonsense Knowledge Aware Conversation Genereation with Graph Attention" IJCAI-ECAI 2018
+        Attend to graph at each step of dialog sentence construction
+    Story Ending Generation
+      Multi-source attention : 
+        Context from previous sentence / word
+        Context from Knowledge Graph
+    Commonsense Story Generation
+      "A Knowledge-Enhanced Pretraining Model for Commonsense Story Generation" - TACL 2019
+      Generate GPT2 pretraining using templates to convert Knowledgebase to sentences
+      Story classification task
+        True ending
+        Random Shuffle of sentences
+        Replace sentence
+        Repeated sentences
+      Works pretty well in including logical progressions, without repetition  
+    CoTK Conversational Toolkits
+      Conversational toolkit
+      http://coai.cs.tsinghua.edu.cn/hml
+    Welcome to TaTK
+      Task-oriented dialog system
+      http://coai.cs.tsinghua.edu.cn/dialtk
   
     
+  "TextGraphs 2019 Shared Task on Multi-Hop Inference for Explanation Regeneration" - Peter Jansen 
+  
+  
+  - Coffee and Posters -
+  
+  
   
 
 

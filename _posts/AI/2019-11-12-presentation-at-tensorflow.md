@@ -29,8 +29,16 @@ Need to read :
 Potential topic :
   MelGAN 
     http://swpark.me/melgan/
-  
+  Neural Structured Learning (NSL): Training with Structured Signals
+    https://www.tensorflow.org/neural_structured_learning
+    Looks v. promising
+    
+    
+Aurelien to talk "Intro to Apache Beam" and 
+  might give a couple TensorFlow examples including TF Datasets and TF Transform
+  == "Preprocessing large datasets with Apache Beam and TF Transform"
 
+Sam talk on T5 + BART (maybe) or "Hey GPT2"
 
 
 
