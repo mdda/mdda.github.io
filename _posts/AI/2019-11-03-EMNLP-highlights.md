@@ -377,8 +377,67 @@ Main Conference Day 1
   - Lunch until 13:30 -
   
     Session 2D : Information Extraction I
-      Fine-Grained Evaluation for Entity Linking
+      -Fine-Grained Evaluation for Entity Linking
         Focusses on evaluation (rather than doing the task of Entity Linking well itself)
+        Tiny datasets
+      -Supervising Unsupervised Open Information Extraction Models
+        Video playback of first author 
+        OpenIE : Open relatonship types
+      -A Little Annotation does a Lot of Good: A Study in Bootstrapping Low-resource Named Entity Recognizers
+        Enabling easier NER labelling for low-resource languages
+      +KnowledgeNet: A Benchmark Dataset for Knowledge Base Population
+        DiffBot is the company that's doing this
+        New dataset with automated evaluation : Should help accelerate research
+        Takeaway : Pipeline accumulated losses kill you 
+      .Effective Use of Transformer Networks for Entity Tracking
+        Different ways to put stuff through BERT
+      
+    Session 3W : Posters
+      +Unsupervised Labeled Parsing with Deep Inside-Outside Recursive Autoencoders.
+        DIORE
+      +Sampling Matters! An Empirical Study of Negative Sampling Strategies for Learning of Matching Models in Retrieval-based Dialogue Systems. 
+        'semi hard' margin maximisation works best
+      
+    Session 3A : Machine Learning II
+      +Commonsense Knowledge Mining from Pretrained Models
+        Mask words in BERT and see whether they 'make sense' based on a PMI measure
+      .RNN Architecture Learning with Sparse Regularization
+        Rational RNNs
+          QRNNs, Simple Recurrent units
+          Hidden layer within rational RNN has internal structure
+            Hidden state update can be written as the forward calculation of a set of Finite State Automata
+        Sparsifing regularisation
+          Group Lasso : Can eliminate entire blocks in RNN processing
+
+    Session 4W : Posters+Demos
+      ?Towards Knowledge-Based Recommender Dialog System. 
+        Didn't find
+      ?Graph Convolutional Network with Sequential Attention for Goal-Oriented Dialogue Systems
+        Didn't find
+      .Chameleon: A Language Model Adaptation Toolkit for Automatic Speech Recognition of Conversational Speech. 
+        All examples in Chinese
+          Need to look at source (being released 'soon')
+      .PyOpenDial: A Python-based Domain-Independent Toolkit for Developing Spoken Dialogue Systems with Probabilistic Rules.
+        XML-based
+      .PolyResponse: A Rank-based Approach to Task-Oriented Dialogue with Application in Restaurant Search and Booking.
+        In-production != cool techniques
+      +Entity resolution for noisy ASR transcripts (Cisco)
+        Audio front end produces (probably) text output
+        They convert all to phonemes
+        Search in phoneme space (using eg: elastic search) for contacts
+        Working for customer installations of up to 100k people's names
+      +Knowledge Aware Conversation Generation with Explainable Reasoning over Augmented Graphs
+        Baidu
+        Looks interesting
+      *Gunrock: A Social Bot for Complex and Engaging Long Conversation
+        Amazon Alexa prize winner/competitor
+      *Compositional Generalization for Primitive Substitutions 
+        Baidu
+        Compositionality idea that gets better-than-human in zero-shot environment...
+
+Main Conference Day 2
+  Keynote : KAIST - Computational Social Science
+  
 
 
 
