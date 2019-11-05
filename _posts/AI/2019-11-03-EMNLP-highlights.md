@@ -318,8 +318,67 @@ TextGraphs 2019 (13th edition = oldest workshop series at EMNLP)
   - Coffee and Posters -
   
   
-  
+Main Conference Day 1
+  Keynote : IBM's Project Debater
 
+  Session 1C: Dialog & Interactive Systems I
+    +Guided Dialog Policy Learning: Reward Estimation for Multi-Domain Task-Oriented Dialog. Ryuichi Takanobu, Hanlin Zhu and Minlie Huang    
+      Adversarial Inverse RL (AIRL) to learn how to do dialogues
+      Can augment system with NLU + NLG modules
+      *Good setup*
+    -Multi-hop Selector Network for Multi-turn Response Selection in Retrieval-based Chatbots.
+      Over-complicated
+    *MoEL: Mixture of Empathetic Listeners.
+      Style of response
+        Happy : Share feeling
+        Angry : Calm you down
+        Disappointed : Cheer you up
+      Structure
+        Emotion tracker (Standard transformer encoder)
+        A panel of separately trained emotional-response experts
+        Meta-listener to meta-supervise the response
+          Initial training done using explicit emotion labels
+            gradually 
+      Benchmark : Empathietic dialogue Benchmark (Rashkin 2019)
+        25k emotion pre-classified contexts 
+        32 classes of emotional content (~80% recognition accuracy)
+    +Entity-Consistent End-to-end Task-Oriented Dialogue System with KB Retriever. 
+      Video playback of first author (questions answered on stage)
+      When doing KB row attention, fix on what you're talking about, rather than searching repeatedly
+      Two methods to cope with training discrete decisions
+        Distant supervision based on text-match counts
+        Gumbel-Softmax : But this was difficult to train from scratch
+          Bootstrap with the distant supervion method
+      Datasets
+        InCar Dataset Eric et al SIGDIAL 2017
+        Camrest ...
+      Metrics
+        BLEU + "Micro Entity F1"
+        Good results
+      Single row coverage
+        90% of navigation domain
+        80% for Camrest578
+        75% for weather domain
+    .Building Task-Oriented Visual Dialog Systems Through Alternative Optimization Between Dialog Policy and Language Generation.
+      Image guessing game : Ask questions in several round to select which image was 
+      Dataset : GuessWhich 
+        (simliar to Visual Dialog - Das et al 2017)
+      Word-Level RL difficult (used by Das et al 2017, though)
+        Huge action space (of sentences)
+        Difficult to balance 'question strategy' vs 'grammar output' objectives
+      Contribution
+        Plan for two actions : 
+          Output next dialogue step
+          Reward based on current classification estimate score
+    +Demo : Applying BERT to Document Retrieval with Birch
+      Use BM25 scores to aggregate BERT embeddings of sections of documents
+      Interesting
+    
+  - Lunch until 13:30 -
+  
+    Session 2D : Information Extraction I
+      Fine-Grained Evaluation for Entity Linking
+        Focusses on evaluation (rather than doing the task of Entity Linking well itself)
 
 
 
