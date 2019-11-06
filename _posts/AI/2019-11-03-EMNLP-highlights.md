@@ -438,7 +438,20 @@ Main Conference Day 1
 Main Conference Day 2
   Keynote : KAIST - Computational Social Science
   
-
+  Session 5 : Poster & Demo: Question Answering, Textual Inference & Other Areas of Semantics 
+    +Adaptively Sparse Transformers. 
+      EntMax : Alpha parameter lets each head choose how sparse it wants to be
+      Includes analysis of which transformer layers choose which values of alpha
+    .Show Your Work: Improved Reporting of Experimental Results
+      Illustrates problems of using results from previous papers (ignorant of budget/hyperarameters)
+    
+  - Lunch until 13:30 -
+    Designing and Interpreting Probes with Control Tasks. 
+      
+    Specializing Word Embeddings (for Parsing) by Information Bottleneck.
+    Deep Contextualized Word Embeddings in Transition-Based and Graph-Based Dependency Parsing - A Tale of Two Parsers Revisited.
+    Semantic graph parsing with recurrent neural network DAG grammars
+    75 Languages, 1 Model: Parsing Universal Dependencies Universally.   
 
 
 {% endhighlight %}
