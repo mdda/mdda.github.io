@@ -446,14 +446,119 @@ Main Conference Day 2
       Illustrates problems of using results from previous papers (ignorant of budget/hyperarameters)
     
   - Lunch until 13:30 -
-    Designing and Interpreting Probes with Control Tasks. 
+  
+  Session 6A : Tagging, Chunking, Syntax & Parsing
+    +Designing and Interpreting Probes with Control Tasks. 
+      Create probe tasks that are random, to see the gap that has been learned (or not) by model
+    *Specializing Word Embeddings (for Parsing) by Information Bottleneck.
+      Try to remove 'useless' information in word embeddings
+      'Thresher' can be trained very quickly to disentangle useful and useless information
+      Actually manages to isolate useful components coming out of ELMo
+    .Deep Contextualized Word Embeddings in Transition-Based and Graph-Based Dependency Parsing - A Tale of Two Parsers Revisited.
+      History of dependency parsing
+      Middle 4 layer outputs of BERT were most useful for dependency parse task
+    -Semantic graph parsing with recurrent neural network DAG grammars
+    +75 Languages, 1 Model: Parsing Universal Dependencies Universally.   
+      Train on all different dependency tree types, on all languages, simultaneously
+      Learn a softmax-ed distribution with which to combine layers of BERT
+      25 days on a 1080Ti in someone's bedroom
+      Nice results accross languages (even low-resource ones)
       
-    Specializing Word Embeddings (for Parsing) by Information Bottleneck.
-    Deep Contextualized Word Embeddings in Transition-Based and Graph-Based Dependency Parsing - A Tale of Two Parsers Revisited.
-    Semantic graph parsing with recurrent neural network DAG grammars
-    75 Languages, 1 Model: Parsing Universal Dependencies Universally.   
-
-
+  Session 7B : Reasoning & Question Answering
+    .`Going on a vacation` takes longer than `Going for a walk`: A Study of Temporal Commonsense Understanding.    
+    +QAInfomax: Learning Robust Question Answering System by Mutual Information Maximization.
+      Adversarial-SQuAD shows that models may be overfitting SQuAD datasets
+      Apply MutualInformation as a regularizer for NLP representation
+        Add : Local Constraint and Global Contraint
+      Maximise MI by :
+        Sample +ve from P(X,Y) and -ve examples from P(X)P(Y)
+        Train a classifier to tell between a true context and a fake one
+    .Adapting Meta Knowledge Graph Information for Multi-Hop Reasoning over Few-Shot Relations. 
+      Few-shot relations are rare - but, like words, rare relationships are common overall
+    +How Reasonable are Common-Sense Reasoning Tasks: A Case-Study on the Winograd Schema Challenge and SWAG. (Microsoft)
+      Transformer models lack common sense (defined loosely)
+        Background knowledge : World knowledge; points of reference; what is plausible and realistic
+      Winograd Schema challenge task all have flipped version
+      Other CSR Tasks : SWAG (continuations)
+      Limitations :
+        Often statments are templates
+        Limited size (Winograd is 273 questions only)
+      Idea:
+        Switching protocol - can switch, for instance, named entities
+        For continuatioins, do the task with and without the premise
+      Results
+        Much less clear that BERT does know much about commonsense reasoning
+        
+  Session 8C : Information Extraction II
+    *Improving Distantly-Supervised Relation Extraction with Joint Label Embedding. 
+      Distant supervision assumes that every sentence containing two entities 
+        has the relationship of edge in Knowledge Graph
+      Learn label embeddings jointly from KGs and entity descriptions
+      Model parts
+        Entity description embedding
+        Label Embedding with Gating mechanism
+        Label Embedding-attending relation classifier
+      Loss function (evenly weighted, after trying different weights)
+        Label classifier
+        Relation classifier  
+      Experiments
+        Their model works well vs 7 baselines on 2 datasets
+    +Leverage Lexical Knowledge for Chinese Named Entity Recognition via Collaborative Graph Network. 
+      Chinese NER based on LSTM has problems
+      Collaborative Graph Network
+        Graph layer in NN
+          C-graph : Character-Word connecting graph
+          T-graph : Transition graph - to do with word-cutting / segmentation
+          L-graph : Lattice graph - proposed by someone...
+      Experiments
+        Weibo NER - beat SOTA, 72% F1 overall
+        OntoNotes : beat SOTA 74% F1
+      Method also quite a bit faster to train : 6-15x speedup
+    +Looking Beyond Label Noise: Shifted Label Distribution Matters in Distantly Supervised Relation Extraction. 
+      Distance supervision of relations 
+        But this is noisy or missing
+        Selective attention; denoising; adversarial discrimiative denoising; soft-lable; cooperative denoising
+        Shifted Label Distribution :: New problem found
+          Bias adaptation technique : simple but effective
+      Datasets : Testing across these showed up a problem across datasets
+       KBP, NYT : Distantly supervised annotations: huge, but with problems
+       TACRED : Human ennotated
+      Heuristic threshold
+        Classify relationship type
+        Reject "ambiguous" predictions : Label them as NonType
+        Based on max score, or entropy of distribution
+        This works well on distantly-supervised datasets - but no effect on human-annotated TACRED
+      Bias Adaptation
+        Add a bias vector term to the logits prior to the softmax
+    ."Easy First" Relation Extraction with Information Redundancy. 
+      Simplify Integer Linear Programming task
+        done for global relationship extraction
+      By taking high-confidence local relationships out of the set of variables
+      
+    *Dependency-Guided LSTM-CRF for Named Entity Recognition. (SUTD, Singapore)
+      statnlp.org
+      Use dependency trees (mayne from Spacy) to figure out where entities are
+        This is an important/surprising observation
+      Model
+        Do BERT or something to get embeddings
+        BiLSTM 
+        Add dependency-tree derived info
+        interaction function g()
+        Another BiLSTM
+        CRF
+      If g() is an MLP, then this is like a GCN
+      Good results over baselines 
+        Significantly better for lower-resource languages
+        Major advantage is in longer NER
+      But using predicted dependencies erode some of the performance
+      
+Main Conference Day 3
+  Keynote : 
+  
+  Session
+  
+  
+  
 {% endhighlight %}
 
 
