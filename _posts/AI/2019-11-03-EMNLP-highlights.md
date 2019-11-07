@@ -643,7 +643,137 @@ Main Conference Day 3
       Results
         Works (!), but somewhat incremental 
         Interesting to compare vs Interpretable multi-hop reasoning above
+
+  Session 10C : Information Extraction III
+    +CrossWeigh: Training Named Entity Tagger from Imperfect Annotations.
+      CoNNL03 NER SoTA ~93%
+      Annotation mistakes bias model evaluation
+        They identified actual mistakes in CoNNL03 annotations
+        5.38% of test set has annotation mistakes
+        Revised dataset released in GitHub repo
+          https://github.com/ZihanWangKi/CrossWeigh
+      Trick : 
+        Train in k-folds
+        Reannotate left out fold and see whether there are potential mistakes
+        Repeat process T times
+        Finally, rewieght training set
+          So that model doesn't focus on uncertain labels
+      How to partition?
+        Random isn't great : Better to use Entity Disjoint Filtering
+          Don't repeat entities across train/test split in initial phase
+            This does make a difference
+      Results
+        Decent uplift (particularly against corrected CoNLL03)
+        Can also identify 80% of annotation mistakes
+        T=3 and k=5,10 work fine
+
+    +Phrase Grounding by Soft-Label Chain Conditional Random Field. (Session 10B)
+      Ground here is identifying regions in image that correspond to words
+        Existing methods work on each word independently
+        Here, make this a sequential task
+          Labels for words <-> regions in image
+      But : labels here are not consistent between images
+        Model transitiona and emission probabilities using a neural network
+      Another issue : multiple bounding boxes are 'correct' for each phrase
+        Often many decent boxes - found to be essential for good training
+      Soft-label CRFs
+        Multiple boxes can be judged vs ground truth on an IoU() basis
+        Leads to looking at KL divergence loss between soft-labels (rather than hard-label loss)
+      Decoding (test/predict)
+        Need to use Viterbi to figure out which candidate bounding box to use
+      Retults
+        Visually, the soft-label CRF fixes up the grounding nicely
+        https://github.com/liujch1998/SoftLabelCRF
+    
+    .Open Domain Web Keyphrase Extraction Beyond Language Modeling. (Microsoft/Bing)
+      Keyphrase Extraction
+        Useful for search and news-story clustering
+        Different from topics (pre-defined, may not occur in text)
+        Different from NER (more ambiguous, doesn't capture main intent)
+      Created dataset for Keyphrase Extraction
+        150k web documents, humanly annotated
+        1-3 key phrases per doc
+        66% human agreement rate on keyphrase@1
+        Includes visual features (from rendering)
+        Includes annotations for header/footer/clean body etc
+        URL : https://github.com/microsoft/OpenKP
+        Test set : 
+          DUC-2001 (what 8 keyphrases per article)
+          Only 309 documents
+      Next steps : BERT
+    
+    *TuckER: Tensor Factorization for Knowledge Graph Completion.(re-read)
+      Problem is cast as trying to predict values in sparse entity-relationship-entity graph
+      Score function phi(es,r,eo) for each triple
+        Linear models:
+          RESCAL, overfiits
+          DistMult, symmetric only
+          ComplEx, extends DistMult to complex domain
+          SimplE extends DistMlt with inverse relations
+          TuckER (phi=W0 . es. Wr . eo) : enables multi-task learning
+          ... previous ones are special cases of TuckER
+      TuckER wins on lots of different tasks over other methods
+        Beats both linear models and more complicated ones
+      Also : 1909.11611 (downloaded)
+    
+    *Weakly Supervised Domain Detection. 
+      Learn aggregation function across sentence multi-class classification scores
+        Nice idea to learn the attention function driven by classifier errors
+      Model named : DetNet and DetNet*
+      Decent results
+      Can also be applied in ranking/summarization tasks
+      URL:
+        https://github.com/yumoxu/detnet - code and data
+
+  (Poster): 
+    QuaRTz: An Open-Domain Dataset of Qualitative Relationship Questions. 
+      Oyvind Tafjord, Matt Gardner, Kevin Lin and Peter Clark  
         
+  Session 11D : Information Extraction IV
+    -Coverage of Information Extraction from Sentences and Paragraphs
+      Understand whether sentence states information exhaustively 
+        (or there is extra stuff omitted)
+      Grice maxims of cooperative communication (Logic and Conversation, 1975)
+        Guide using : Maxim of quantity vs Maxim of relevance
+      N-grams have informative features (SVM)
+      LSTM over embedding results very similar to N-grams (with SVM)
+      
+    .HMEAE: Hierarchical Modular Event Argument Extraction. 
+      Previous work was on Event Detection (75% F1)
+      Event Argument extraction worse (59% F1)
+      Improve by using concept hierarchy
+        {PER/ORG}->{Seller, Buyer};  vs Time->TimeWithin
+      Neural Module Networks : Hierarchical Modular Attention
+        Imitating the concetpt hierarchical structure
+          Superordinate Concept Module
+          Argument Role Classifier
+        Logic Union here was just average (but could be learned)
+      HMEAE with a BERT initial encoder gives SOTA on 
+        ACE 2005 task;
+        TAC KBP 2016 
+      Code and paper released
+      
+    *Entity, Relation, and Event Extraction with Contextualized Span Representations.
+      Information extraction from unstructured -> structured
+      Simple, general, span-based
+      Pipeline :
+        Input - contextualization - span enumeration - graph propagation - {Relations, Entities, Events}
+      Modelling challenges
+        Nested spans
+        Long-range dependencies
+      DyGIE++ (extension of Luan et al NAACL 2019)
+      Window : Sentence +/- 1 sentence
+        Graph propagation for 
+          Coref
+          Relations
+          Events
+      SOTA results for science articles on NER and Relationships
+      Has BERT solved the IE pipeline : 
+        Not yet...
+        Coreference links offer valuable supervision
+      
+        
+      
     
 {% endhighlight %}
 
