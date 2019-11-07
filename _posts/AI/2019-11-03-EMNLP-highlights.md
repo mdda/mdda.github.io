@@ -555,10 +555,96 @@ Main Conference Day 2
 Main Conference Day 3
   Keynote : 
   
-  Session
-  
-  
-  
+  Session 9C : Dialog & Interactive Systems II
+    +Taskmaster-1: Toward a Realistic and Diverse Dialog Dataset. 
+      New Dataset : 13k taskbased dialogs, in 6 domains
+        Their research is focussed on end-to-end approach
+      Approaches:
+        Wizard of Oz : Crowdworker talks to call-center typist with TTS
+        Self-dialog : Both sides created by one worker (tends to have higher perplexity)
+      Annotations
+        Label just the slot values [name.movie, name.theater]
+        Also some .accept, .reject annotations
+      Want realistic machine-human discourse
+        Perhaps self-dialog is more interesting
+        Include errors, repair and other common phenomena
+      Also : Taskmaster I, and MultiWOZ
+      Ratings : PPL, BLEU, LIKERT, ...
+      Next (like WOZ...) : 20k 'soon', with competition (ideally)
+      Links
+        https://ai.google.com/tools/datsets/taskmaster-1
+        taskmaster-datasets@googlegroups.com
+        
+    *Self-Assembling Modular Networks for Interpretable Multi-Hop Reasoning. (Session 9B)
+      +Look at the different types of question
+        "What the father of Kasper voted to be by the IFFHS in 1992?"               
+          Linear chain reasoning
+        "Were Scott Derrickson and Ed Wood of the same nationality?
+          Parallel reasoning
+      Decompose multihop into a strategy
+        Like Neural Modular Netowkr (originally from VQA and CLEVR settings)
+      Controller RNN 
+        At each timestep, attention for words, and module probability
+        "Find" : Scott Derrickson Nationality
+        "Find" : Ed Wood Nationality
+        "Compare" : ...
+      Modules
+        Find
+        Relocate
+        Compare
+      Coordinated via a stack of attentions
+      Extra logic to incentivise Find things during training
+        Bridge-Entity supervision - this is extra data that had to be added (?)
+      Doing this with BERT increases F1 from 70->71
+      Acknowledgement : DARPA (YFA17-D17AP00022), Google, Bloomberg, NVidia, Salesforce, Amazon AWS
+        ... faculty awards from Google, Facebook, and Salesforce
+      
+    *Build it Break it Fix it for Dialogue Safety: Robustness from Adversarial Human Attack. (Facebook)
+      Protect system from unsafe dialog
+        Useful : Wikipedia Toxic Comments dataset
+        Nice stuff : ConvAI2 dataset
+      BuildIt-BreakIt-FixIt : Repeatedly
+        Best to optimise F1 on offensive examples (rather than overall F1)
+        Annotators allowed to retry if system does catch them
+      Test vs just having more data
+        NO model in-the-loop
+        Annotator score = number of times they can trick model out of 5 turns
+        By round 3 - much more difficult to trick 
+          4.5->1.5 scores
+        Works well
+      Try for multiple round convos
+        Annotators found it easier to trick 'in context'
+        Works - but needs BERT to tease out the contextualised abuse
+      New related work : "Adversarial NLI : A new benchark" (on arxiv)
+      URL :
+        https://parl.ai/projects/dialogue_safety
+    
+    +GECOR: An End-to-End Generative Ellipsis and Co-reference Resolution Model for Task-Oriented Dialogue.
+      Copy mechanism to fill in implicit coreferences
+        Attention over context
+        Then score based on completed dialog
+      Also have a loss from NAME_SLOT genericised dialog 
+      Created a new dataset based on existing dialog data
+        Available online
+      Results
+        Good uplift in scores
+        Copy mechanism particularly important
+        End-to-end : Showed that ellipsis phenomena is significant
+        
+    *Task-Oriented Conversation Generation Using Heterogeneous Memory Networks. (Alibaba)
+      Pipeline approach makes models brittle
+      Related
+        "A knowldege-grounded Neural Converstation Model" Ghazininejad AAAI 2018 
+        Mem2seq ... for task-oriented dialog sstems
+      Task
+        Generate from History+KBtriples -> Response
+      Combination of multiple memory stacks with a planning RNN (single-layer GRU)
+        With copy mechanism
+      Results
+        Works (!), but somewhat incremental 
+        Interesting to compare vs Interpretable multi-hop reasoning above
+        
+    
 {% endhighlight %}
 
 
