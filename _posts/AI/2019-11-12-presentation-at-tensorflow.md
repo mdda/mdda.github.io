@@ -37,6 +37,10 @@ Potential topic :
 Aurelien to talk "Intro to Apache Beam" and 
   might give a couple TensorFlow examples including TF Datasets and TF Transform
   == "Preprocessing large datasets with Apache Beam and TF Transform"
+  => "Processing Large Datasets with Apache Beam, Cloud Dataflow and TF Transform"  v2
+    -  If it's too long I can either chop off the DataFlow part, or the TFT part, or shorten the Beam tutorial. 
+
+
 
 Sam talk on T5 + BART (maybe) or "Hey GPT2"
 
