@@ -18,7 +18,7 @@ published: false
 ### Presentation Link
 
 Sam Witteveen and I started the TensorFlow and Deep Learning Singapore group on MeetUp in February 2017,
-and [the twenty-eighth MeetUp, aka TensorFlow 4K](),
+and [the twenty-eighth MeetUp - which was a TensorFlow World Extended event - ](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/266224621/),
 was hosted by Google Singapore, and recapped the TensorFlow World event we attended in Silicon Valley at the end of October.  
 
 <!--
@@ -44,23 +44,11 @@ Sam talk on T5 + BART (maybe) or "Hey GPT2"
 
 !-->
 
-We were also delighted to welcome Yew Ken Chia as a new speaker at the TF&amp;DL MeetUp : He
-gave a presentation describing the research that he did on the TextGraphs-19 Shared Task, 
-successfully submitted to the upcoming EMNLP-2019 Textgraphs workshop in HongKong : "Explanations for School Science Questions".
+Sam's talk gave an overview of the latest research into TensorFlow models  : "T5 and ... ".
 
-Sam's talk was a preview of the talk that he'll be giving at the 2019 TensorFlow World summit in 
-California at the end of October : "Training Models at Scale with TPUs: Donuts, Pods and Slices".
+Aurelien Geron ... "Preprocessing large datasets with Apache Beam and TF Transform"
 
-My talk was touted as being about Hyperparameter Optimisation (using TF.probability), but
-it seemed natural to me to introduce the ideas of TF.probability by way of regression in stages : 
-
-*  Regular L2 linear regression
-*  N(mx+c, sigma=1) regression on max-loglikelihood
-*  N(mx+c, sigma=ax+d) regression on max-loglikelihood
-*  Gaussian Processes for regression
-
-That was then followed up by using Gaussian Processes to determine where to sample good Learning Rates 
-for SGD trainings of a CIFAR10 model.  Hopefully, it made sense to the audience...
+My talk was "Neural Structured Learning (NSL): Training with Structured Signals"
 
 The slides for my talk are here :
 
