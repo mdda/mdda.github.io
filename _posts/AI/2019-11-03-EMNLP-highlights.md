@@ -1,5 +1,5 @@
 ---
-date: 2019-08-01
+date: 2019-11-03
 title:  "EMNLP highlights"
 tagline: Conference Takeaways
 category: AI
@@ -11,6 +11,15 @@ published: false
 {% include JB/setup %}
 
 ##  EMNLP Highlights
+
+###  Workshops
+
+Red Dragon had papers/posters to present at three of the workshops at EMNLP : 
+
+*  FEVER
+*  WGNT
+*  TextGraphs
+
 
 {% highlight none %}
 https://www.emnlp-ijcnlp2019.org/
@@ -317,7 +326,14 @@ TextGraphs 2019 (13th edition = oldest workshop series at EMNLP)
   
   - Coffee and Posters -
   
-  
+{% endhighlight %}
+
+
+
+### Main conference
+
+{% highlight none %}
+
 Main Conference Day 1
   Keynote : IBM's Project Debater
 
