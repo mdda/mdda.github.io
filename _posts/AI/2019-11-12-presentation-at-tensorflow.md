@@ -42,11 +42,17 @@ NSL :
     Neural Graph Learning 
     Adversarial Learning
   Examples : 
-    3 : Graph regularization for sentiment classification using synthesized graphs
+    ??3 : Graph regularization for sentiment classification using synthesized graphs
       https://www.tensorflow.org/neural_structured_learning/tutorials/graph_keras_lstm_imdb
-      Easy to motivate / set up
+      Easy to motivate 
+      But set-up include lots of TFRecords details 
+        Like the Cora one below, but done explicitly here, which is better
+          - but not much, given the amount of code
+      Gains in performance not awesome
+        Except in cherry-picked 10% labelled data example
+      May be better to explain how the code flows, rather than show it in its entirity
       
-    4 : Adversarial regularization for image classification
+    YES4 : Adversarial regularization for image classification
       https://www.tensorflow.org/neural_structured_learning/tutorials/adversarial_keras_cnn_mnist
       This is essentially the same as the main site one, but with CNN layers.
       Example should be in a different order : 
