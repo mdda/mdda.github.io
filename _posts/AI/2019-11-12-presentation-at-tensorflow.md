@@ -32,7 +32,39 @@ Potential topic :
   Neural Structured Learning (NSL): Training with Structured Signals
     https://www.tensorflow.org/neural_structured_learning
     Looks v. promising
-    
+
+NSL : 
+  Main Site : https://www.tensorflow.org/neural_structured_learning
+  Medium Post : https://medium.com/tensorflow/introducing-neural-structured-learning-in-tensorflow-5a802efd7afd
+  Framework decription :
+    https://www.tensorflow.org/neural_structured_learning/framework
+  NSL generalizes to :
+    Neural Graph Learning 
+    Adversarial Learning
+  Examples : 
+    3 : Graph regularization for sentiment classification using synthesized graphs
+      https://www.tensorflow.org/neural_structured_learning/tutorials/graph_keras_lstm_imdb
+      Easy to motivate / set up
+      
+    4 : Adversarial regularization for image classification
+      https://www.tensorflow.org/neural_structured_learning/tutorials/adversarial_keras_cnn_mnist
+      This is essentially the same as the main site one, but with CNN layers.
+      Example should be in a different order : 
+        Interesting to see adversarial examples of digits early on...
+          Also provides motivation for being interested in library in the first place (generation of adversarial examples)
+      ==1 : MNIST with Adversarial Regularization
+      Main Site
+        nsl.keras.AdversarialRegularization
+        Not motivated at all about why/what it's doing
+
+    NO2 : Graph regularization for document classification using natural graphs (Cora citations dataset)
+      https://www.tensorflow.org/neural_structured_learning/tutorials/graph_keras_mlp_cora
+      Using external graphs difficult to demo effectively
+        Lots of preprocessing (magical preprocess_cora_dataset.py)
+        TFRecord format
+        justification / etc
+          After a ton of work : The graph-regularized model's accuracy is about 2-3% higher than that of the base model (base_model).
+
     
 Aurelien to talk "Intro to Apache Beam" and 
   might give a couple TensorFlow examples including TF Datasets and TF Transform
