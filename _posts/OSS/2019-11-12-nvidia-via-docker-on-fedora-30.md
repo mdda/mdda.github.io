@@ -26,26 +26,40 @@ Key points being :
 *  Fedora's version of docker is too old : You need to use the official docker repos (for CentOS...)
 
 
-
-### Clean out previous installations
+### Install the docker repo, and test
 
 {% highlight bash %}
 dnf -y install dnf-plugins-core
-  533  dnf config-manager     --add-repo     https://download.docker.com/linux/fedora/docker-ce.repo
-dnf remove docker
-  534  dnf install docker-ce docker-ce-cli containerd.io
-  535  systemctl start docker
-  536  docker run hello-world
-  538  su ethan
-grep dock /etc/group
-docker:x:991:
-dockerroot:x:990:
-[root@sandbox-nikkei pdftodoc]# usermod -aG docker ethan
-id -a # Make sure user is in docker group
 
+dnf remove docker
+dnf config-manager     --add-repo     https://download.docker.com/linux/fedora/docker-ce.repo
+dnf install docker-ce docker-ce-cli containerd.io
+
+systemctl start docker
+docker run hello-world
+{% endhighlight %}
+
+
+### Set up user permissions for docker
+
+{% highlight bash %}
+grep dock /etc/group
+#docker:x:991:
+#dockerroot:x:990:
+
+[root]# usermod -aG docker user
+[user]$ id -a # Make sure user is in docker group
+{% endhighlight %}
+
+{% highlight bash %}
 sudo -k # reset sudo timeout
 exec sudo -i -u $(whoami) # no password necessary
+{% endhighlight %}
 
+
+### Install the nvidia repo, and test
+
+{% highlight bash %}
   543  dnf config-manager --add-repo https://nvidia.github.io/nvidia-docker/centos7/nvidia-docker.repo
   545  dnf install nvidia-container-toolkit
   546  systemctl restart docker
