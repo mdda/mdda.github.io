@@ -32,7 +32,8 @@ Key points being :
 dnf -y install dnf-plugins-core
 
 dnf remove docker
-dnf config-manager     --add-repo     https://download.docker.com/linux/fedora/docker-ce.repo
+
+dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
 dnf install docker-ce docker-ce-cli containerd.io
 
 systemctl start docker
@@ -42,14 +43,19 @@ docker run hello-world
 
 ### Set up user permissions for docker
 
+We need to add each user that requires access to the docker system to the `docker` group :
+
 {% highlight bash %}
 grep dock /etc/group
 #docker:x:991:
 #dockerroot:x:990:
 
 [root]# usermod -aG docker user
+[root]# su - user
 [user]$ id -a # Make sure user is in docker group
 {% endhighlight %}
+
+If you're already logged in as an individual user, you can 'revitalise' your group membership without re-logging in, by :
 
 {% highlight bash %}
 sudo -k # reset sudo timeout
@@ -59,28 +65,17 @@ exec sudo -i -u $(whoami) # no password necessary
 
 ### Install the nvidia repo, and test
 
-{% highlight bash %}
-  543  dnf config-manager --add-repo https://nvidia.github.io/nvidia-docker/centos7/nvidia-docker.repo
-  545  dnf install nvidia-container-toolkit
-  546  systemctl restart docker
-  548  docker run -it --rm --gpus all fedora nvidia-smi -L
-{% endhighlight %}
-
-
-### Check that you've got a GPU
-
-Running :
+Now on to the crucial Nvidia piece :
 
 {% highlight bash %}
-sudo lspci | grep -i NVIDIA
+dnf config-manager --add-repo https://nvidia.github.io/nvidia-docker/centos7/nvidia-docker.repo
+dnf install nvidia-container-toolkit
+
+systemctl restart docker
+
+docker run -it --rm --gpus all fedora nvidia-smi -L
+# GPU 0: GeForce GTX 1060 6GB (UUID: GPU-b69d6083-PIIa-PIIa-PIIf-a33c1fa106c2)
 {% endhighlight %}
-
-should result in a line that mentions your VGA adapter.
-
-
-
-
-
 
 All done.
 
