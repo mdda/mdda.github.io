@@ -8,7 +8,7 @@ tags:
 - Nvidia
 - docker
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -31,19 +31,24 @@ Key points being :
 {% highlight bash %}
 dnf -y install dnf-plugins-core
 
-dnf remove docker
+dnf remove docker   # Just to make sure that we're not on the Fedora official one
 
 dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
 dnf install docker-ce docker-ce-cli containerd.io
 
 systemctl start docker
 docker run hello-world
+#
+# Hello from Docker!
+# This message shows that your installation appears to be working correctly.
+#
+# ...
 {% endhighlight %}
 
 
 ### Set up user permissions for docker
 
-We need to add each user that requires access to the docker system to the `docker` group :
+We need to add each `user` that requires access to the docker system to the `docker` group :
 
 {% highlight bash %}
 grep dock /etc/group
@@ -55,7 +60,7 @@ grep dock /etc/group
 [user]$ id -a # Make sure user is in docker group
 {% endhighlight %}
 
-If you're already logged in as an individual user, you can 'revitalise' your group membership without re-logging in, by :
+If you're already logged in as an individual `user`, you can 'revitalise' your group membership without re-logging in, by :
 
 {% highlight bash %}
 sudo -k # reset sudo timeout
