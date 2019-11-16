@@ -78,31 +78,31 @@ Aurelien to talk "Intro to Apache Beam" and
   => "Processing Large Datasets with Apache Beam, Cloud Dataflow and TF Transform"  v2
     -  If it's too long I can either chop off the DataFlow part, or the TFT part, or shorten the Beam tutorial. 
 
-
-
 Sam talk on T5 + BART (maybe) or "Hey GPT2"
-
-
 
 !-->
 
-Sam's talk gave an overview of the latest research into TensorFlow models  : "T5 and ... ".
+Sam's talk was an overview of the latest research into Transformer-based models  : "The latest in Transformers : T5 and more".
 
-Aurelien Geron ... "Preprocessing large datasets with Apache Beam and TF Transform"
+Aurélien Géron showed us how we should be "Preprocessing large datasets with Apache Beam and TF Transform" - With lots of 
+code examples, and a specific use-case with DataFlow on Google Cloud.
 
-My talk was "Neural Structured Learning (NSL): Training with Structured Signals"
+My talk was "Neural Structured Learning (NSL): Training with Structured Signals".  In the talk, I
+briefly discussed the kinds of problems that NSL can tackle, and briefly showed the blog/code 
+for a supervised learning example.  For a simpler-to-read example, I then went through 
+my updated version of Google adversarial learning example notebook for robustifying MNIST digit recognition.
 
 The slides for my talk are here :
 
 <a href="http://redcatlabs.com/2019-10-10_TFandDL_TF.probability/" target="_blank">
-![Presentation Screenshot]({{ site.url }}/assets/img/2019-10-10_TFandDL_TF.probability_600x390.png)
+![Presentation Screenshot]({{ site.url }}/assets/img/2019-11-12_TFandDL_NSL_600x390.png)
 </a>
 
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
 <a href="http://redcatlabs.com/2019-10-10_TFandDL_TF.probability/#/5/1" target="_blank">
-<img src="/assets/img/2019-10-10_TFandDL_TF.probability_NB2_600x390.png" alt="Presentation Content Example" style="border:1px solid #000000" />
+![Presentation Content Example]({{ site.url }}/assets/img/2019-11-12_TFandDL_NSL__600x390.png)
 </a>
 
 
