@@ -9,7 +9,7 @@ tags:
 - Probability
 - Hyperparameters
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -18,7 +18,7 @@ published: false
 ### Presentation Link
 
 Sam Witteveen and I started the TensorFlow and Deep Learning Singapore group on MeetUp in February 2017,
-and [the twenty-eighth MeetUp - which was a TensorFlow World Extended event - ](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/266224621/),
+and [the twenty-eighth MeetUp](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/266224621/)  - which was a TensorFlow World Extended event - 
 was hosted by Google Singapore, and recapped the TensorFlow World event we attended in Silicon Valley at the end of October.  
 
 <!--
@@ -88,7 +88,7 @@ Aurélien Géron showed us how we should be "Preprocessing large datasets with A
 code examples, and a specific use-case with DataFlow on Google Cloud.
 
 My talk was "Neural Structured Learning (NSL): Training with Structured Signals".  In the talk, I
-briefly discussed the kinds of problems that NSL can tackle, and briefly showed the blog/code 
+briefly discussed the kinds of problems that NSL can tackle, and quickly showed the blog/code 
 for a supervised learning example.  For a simpler-to-read example, I then went through 
 my updated version of Google adversarial learning example notebook for robustifying MNIST digit recognition.
 
@@ -102,7 +102,7 @@ If there are any questions about the presentation please ask below,
 or contact me using the details given on the slides themselves.
 
 <a href="http://redcatlabs.com/2019-10-10_TFandDL_TF.probability/#/5/1" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2019-11-12_TFandDL_NSL__600x390.png)
+![Presentation Content Example]({{ site.url }}/assets/img/2019-11-12_TFandDL_NSL_3-2_600x390.png)
 </a>
 
 
