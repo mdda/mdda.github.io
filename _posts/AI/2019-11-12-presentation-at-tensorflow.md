@@ -101,7 +101,7 @@ The slides for my talk are here :
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="http://redcatlabs.com/2019-10-10_TFandDL_TF.probability/#/5/1" target="_blank">
+<a href="http://redcatlabs.com/2019-10-10_TFandDL_TF.probability/#/3/2" target="_blank">
 ![Presentation Content Example]({{ site.url }}/assets/img/2019-11-12_TFandDL_NSL_3-2_600x390.png)
 </a>
 
