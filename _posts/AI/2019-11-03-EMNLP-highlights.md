@@ -16,9 +16,9 @@ published: false
 
 Red Dragon had papers/posters to present at three of the workshops at EMNLP : 
 
-*  FEVER
-*  WGNT
-*  TextGraphs
+*  FEVER :        arXiv : SUBMITTED
+*  WGNT  :        arXiv : 
+*  TextGraphs  :  arXiv : 
 
 
 {% highlight none %}
@@ -110,6 +110,8 @@ FEVER
   FEVER3 -> F3VER in 2020
     No new shared task 
       1+2 will continue
+
+    
 
 
 Tutorial : Discreteness in Neural Natural Language Processing. 
