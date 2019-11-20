@@ -16,9 +16,9 @@ published: false
 
 Red Dragon had papers/posters to present at three of the workshops at EMNLP : 
 
-*  FEVER :        arXiv : SUBMITTED
-*  WGNT  :        arXiv : 
-*  TextGraphs  :  arXiv : 
+*  FEVER :        arXiv : http://arxiv.org/abs/1911.08340
+*  WNGT  :        arXiv : ... wait on Sam ...
+*  TextGraphs  :  arXiv : SUBMITTED
 
 
 {% highlight none %}
