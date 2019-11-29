@@ -15,13 +15,14 @@ published: false
 ### Presentation Link
 
 I was honoured to be chosen to give talk in the Machine Learning track at 
-the  [Google DevFest]( ) 
-event in Singpore on 30-November-2019.
+the  [Google DevFest](https://events.withgoogle.com/devfest-singapore-2019/) event in Singpore on 30-November-2019.
 
+My talk, titled "Faces in the Browser using TensorFlow.js", went through 
+the various 'levels' of code in TensorFlow.js, described the tasks involved in 
+manipulating faces in the browser (using the attached webcam, or the phone's own camera in the case of mobile),
+and also how these models are trained (broadly).  
 
-
-
-The slides for my talk (as a 6Mb PDF) are here :
+The slides for my talk are here :
 
 <a href="http://redcatlabs.com/downloads/2019-07-13_BigDataX_TFX-and-TFLite.pdf" target="_blank">
 ![Presentation Screenshot]({{ site.url }}/assets/img/2019-07-13_BigDataX_TFX-and-TFLite_600x390.png)
