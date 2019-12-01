@@ -32,14 +32,14 @@ you can examine the (trashy) code just by doing an 'inspect'.
 
 The slides for my talk (which include a link to the operating demo) are here :
 
-<a href="http://redcatlabs.com/2019-11-30_DevFest.sg_TF.js/" target="_blank">
+<a href="http://redcatlabs.com/2019-11-30_DevFest.sg_TF.js-Faces/" target="_blank">
 ![Presentation Screenshot]({{ site.url }}/assets/img/2019-11-30_DevFest.sg_TF.js-Faces_600x390.png)
 </a>
 
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="http://redcatlabs.com/2019-11-30_DevFest.sg_TF.js/#/5/3" target="_blank">
+<a href="http://redcatlabs.com/2019-11-30_DevFest.sg_TF.js-Faces/#/5/3" target="_blank">
 ![Presentation Content Example]({{ site.url }}/assets/img/2019-11-30_DevFest.sg_TF.js-Faces_5-3_600x390.png)
 </a>
 
