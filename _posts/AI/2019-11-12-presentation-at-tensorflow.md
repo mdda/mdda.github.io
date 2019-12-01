@@ -1,6 +1,6 @@
 ---
 date: 2019-11-12
-title:  "TensorFlow World Highlights"
+title:  "Neural Structured Learning"
 tagline: Presentation
 category: AI
 tags:
