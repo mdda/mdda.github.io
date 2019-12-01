@@ -36,8 +36,8 @@ The slides for my talk are here :
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="http://redcatlabs.com/2019-11-30_DevFest.sg_TF.js/#/5/1" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2019-11-30_DevFest.sg_TF.js-Faces_28_600x390.png)
+<a href="http://redcatlabs.com/2019-11-30_DevFest.sg_TF.js/#/5/3" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2019-11-30_DevFest.sg_TF.js-Faces_5-3_600x390.png)
 </a>
 
 
