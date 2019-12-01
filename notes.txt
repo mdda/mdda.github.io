@@ -17,8 +17,12 @@ bundle update
 ## Problems : nokogiri, posix_spawn_ext
 
 bundle exec jekyll serve --watch --unpublished --future
-bundle exec jekyll serve --watch --unpublished --future --incremental
+#bundle exec jekyll serve --watch --unpublished --future --incremental
 
+## Helpful : 
+myfile=_posts/AI/ETC
+touch --date '1 minute ago' ${myfile}
+git commit --date="`stat -c %y ${myfile}`" ${myfile} -m "Last minute update"
 
 
 git config user.name "Martin Andrews"
@@ -93,11 +97,6 @@ Make MathJax work (??)
 
   http://getbootstrap.com/css/
   https://github.com/Shopify/liquid/wiki/Liquid-for-Designers
-
-
-## Helpful : myfile=_posts/AI/ETC
-## Helpful : touch --date '1 minute ago' ${myfile}
-## Helpful : git commit --date="`stat -c %y ${myfile}`" ${myfile} -m "Last minute update"
 
 
 

@@ -8,26 +8,29 @@ tags:
 - TensorFlow
 - TensorFlow.js
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
 ### Presentation Link
 
-I was honoured to be chosen to give talk in the Machine Learning track at 
+I was honoured to be chosen to give the last talk of the day for the Machine Learning track at 
 the  [Google DevFest](https://events.withgoogle.com/devfest-singapore-2019/) event in Singpore on 30-November-2019.
 
 My talk, titled "Faces in the Browser using TensorFlow.js", went through 
-the various 'levels' of code in TensorFlow.js, described the tasks involved in 
-manipulating faces in the browser (using the attached webcam, or the phone's own camera in the case of mobile),
+the various levels of code in TensorFlow.js; described the tasks involved in 
+manipulating faces in the browser (using the attached webcam, or the phone's own camera in the case of mobile);
 and also how these models are trained (broadly).  
 
 To avoid the talk getting too theoretical, 
 I put together a demo that everyone in the room could try for themselves : I even
-had two helpers onstage to show how the embeddings (aka 'QR codes') for each of our faces
+had two helpers on stage to show how the embeddings (aka 'QR codes') for each of our faces
 could be clustered so that the machine could recognise the individuals later.
 
-The slides for my talk are here :
+Because the demo is in Javascript, executed entirely in the user's browser, 
+you can examine the (trashy) code just by doing an 'inspect'.
+
+The slides for my talk (which include a link to the operating demo) are here :
 
 <a href="http://redcatlabs.com/2019-11-30_DevFest.sg_TF.js/" target="_blank">
 ![Presentation Screenshot]({{ site.url }}/assets/img/2019-11-30_DevFest.sg_TF.js-Faces_600x390.png)
