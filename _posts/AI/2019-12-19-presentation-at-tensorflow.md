@@ -24,6 +24,19 @@ was again hosted by Google Singapore.
 <!--
 !-->
 
+Sam's talk was a quick round-up of several interesting TensorFlow-related projects at Google  : "Jax, Trax and stax of new stuff".
+
+We were glad to have Rachel Lim visiting us from Google Brain and talking about "TF2.0 performance".
+
+My talk was originally intended to be "Porting PyTorch Models to the TensorFlow ecosystem".  However,
+in doing background research into the subject, I came accross blog posts written by Singaporean Yu Xuan Lee, and
+he generously agreed to give a talk about his work with ONNX at the MeetUp.
+
+So, I "pivoted' : I had spent the previous weekend working on a TensorFlow Lite module, which 
+would allow flexible and programmable graphing of metrics from TensorFlow (and PyTorch) modules within notebooks.
+This became my new topic, with an extra twist of ...
+
+...
 
 
 In the talk, I
