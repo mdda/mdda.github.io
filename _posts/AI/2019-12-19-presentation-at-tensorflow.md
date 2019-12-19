@@ -45,8 +45,8 @@ The slides for my talk are here :
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="http://redcatlabs.com/2019-12-19_TFandDL_TBlite/#/3/2" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2019-12-19_TFandDL_TBlite_xxx_600x390.png)
+<a href="http://redcatlabs.com/2019-12-19_TFandDL_TBlite/#/5" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2019-12-19_TFandDL_TBlite_5_600x390.png)
 </a>
 
 
