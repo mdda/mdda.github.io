@@ -17,8 +17,8 @@ published: false
 
 ### Presentation Link
 
-Sam Witteveen and I started the TensorFlow and Deep Learning Singapore group on MeetUp in February 2017,
-and [the twenty-nineth MeetUp](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/267156109/) 
+Sam Witteveen and I started the TensorFlow and Deep Learning Singapore group on MeetUp 
+in February 2017, and [the twenty-nineth MeetUp](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/267156109/) 
 was again hosted by Google Singapore.
 
 <!--
@@ -50,11 +50,11 @@ or contact me using the details given on the slides themselves.
 </a>
 
 
-PS:  And if you liked the content, please 'star' my <a href="https://github.com/mdda/deep-learning-workshop" target="_blank">Deep Learning Workshop</a> repo ::
+PS:  And if you liked the content, please 'star' my <a href="https://github.com/mdda/colab_helper" target="_blank">Colab Helper</a> repo ::
 <!-- From :: https://buttons.github.io/ -->
 <!-- Place this tag where you want the button to render. -->
 <span style="position:relative;top:5px;">
-<a aria-label="Star mdda/deep-learning-workshop on GitHub" data-count-aria-label="# stargazers on GitHub" data-count-api="/repos/mdda/deep-learning-workshop#stargazers_count" data-count-href="/mdda/deep-learning-workshop/stargazers" data-icon="octicon-star" href="https://github.com/mdda/deep-learning-workshop" class="github-button">Star</a>
+<a aria-label="Star mdda/deep-learning-workshop on GitHub" data-count-aria-label="# stargazers on GitHub" data-count-api="/repos/mdda/colab_helper#stargazers_count" data-count-href="/mdda/colab_helper/stargazers" data-icon="octicon-star" href="https://github.com/mdda/colab_helper" class="github-button">Star</a>
 <!-- Place this tag right after the last button or just before your close body tag. -->
 <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
 </span>
