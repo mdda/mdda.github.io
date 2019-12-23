@@ -33,25 +33,6 @@ dnf install blas-devel
 
 
 
-# https://github.com/tensorflow/tensorflow/issues/7542#issue-207940753
-export PYTHON_BIN_PATH=`which python`
-export PYTHON_LIB_PATH=`dirname \`which python\``/../lib/python3.7/site-packages
-export TF_ENABLE_XLA=1
-export TF_NEED_CUDA=1
-export TF_NEED_TENSORRT=0
-export TF_NEED_OPENCL=0
-export TF_NEED_OPENCL_SYCL=0
-export TF_NEED_ROCM=0
-export TF_NEED_HDFS=0
-#https://en.wikipedia.org/wiki/CUDA
-#5.2	Titan X (Maxwell)
-#6.1 1060
-#7.5 2070Sexport TF_CUDA_COMPUTE_CAPABILITIES=5.2,6.1,7.5  # TitanX, 1060 and 2070
-export TF_CUDA_CLANG=0
-export GCC_HOST_COMPILER_PATH=`which gcc`
-export CC_OPT_FLAGS="-march=native -Wno-sign-compare"
-export TF_SET_ANDROID_WORKSPACE=0
-./configure
 ....  /usr/include/cuda/,/usr/lib64/,/usr/bin/  NOPE
 dnf install cuda-cudnn-devel
 ....  /usr/  # defaults work (move away cuda-10.0 and cuda-9.x from search path)
@@ -65,6 +46,24 @@ pip install -U ~/tmp/tensorflow_pkg/tensorflow-2.1.0rc0-cp37-cp37m-linux_x86_64.
 
 
 ### Prepare user-land set-up
+
+Building `TensorFlow` needs several preparatory steps  :
+
+*  Create a ```virtualenv``` so that Python knows which version it's building for
+*  Set up the defaults correctly (some CLI interaction)
+*  Build a ```pip``` package with ```bazel``` (iterate to fix the problems...)
+*  Install the ```pip``` package
+
+
+#### Set up Python : ```python-3.7 virtualenv```
+
+NB: Do this outside the eventual `tensorflow` souce tree:
+
+{% highlight bash %}
+virtualenv-3.7 --system-site-packages ~/env37
+. ~/env37/bin/activate
+{% endhighlight %}
+
 
 #### ```virtualenv``` set-up
 
@@ -82,13 +81,14 @@ As a regular user :
 
 {% highlight bash %}
 # https://github.com/bazelbuild/bazelisk
-USE_BAZEL_VERSION=0.29.1 bazel
-export USE_BAZEL_VERSION
 wget https://github.com/bazelbuild/bazelisk/releases/download/v1.1.0/bazelisk-linux-amd64
 mv bazelisk-linux-amd64 ~/env37/bin/bazel
 chmod 754 ~/env37/bin/bazel
 
 # Seems to unpack stuff..
+
+USE_BAZEL_VERSION=0.29.1
+export USE_BAZEL_VERSION
 
 bazel version
 
@@ -111,115 +111,42 @@ git checkout v2.1.0-rc0
 {% endhighlight %}
 
 
-### Build ```tensorflow```
-
-This needs several preparatory steps  :
-
-*  Create a ```virtualenv``` so that Python knows which version it's building for
-*  Set up the defaults correctly (some CLI interaction)
-*  Build a ```pip``` package with ```bazel``` (iterate to fix the problems...)
-*  Install the ```pip``` package
-
-
-#### Set up Python : ```python-3.6 virtualenv```
-
-I did this in the repo base directory itself.  That may have been an unhelpful choice,
-since (later) I found that I couldn't use ```import tensorflow``` there, since
-the repo itself has a ```tensorflow/__init__.py``` which seems to take priority.  OTOH,
-this doesn't stop me using the newly built ```tensorflow``` anywhere else...
-
-{% highlight bash %}
-virtualenv-3.6 --system-site-packages env3
-. ./env3/bin/activate
-{% endhighlight %}
-
-
 #### ```./configure``` machine compilation defaults
 
-(All default options apart from adding XLA support) :
+The following is the commandline configuration equivalent to 
+answering a lot of in-line questions (which cannot be automated) :
 
 {% highlight bash %}
+# https://github.com/tensorflow/tensorflow/issues/7542#issue-207940753
+export PYTHON_BIN_PATH=`which python`
+export PYTHON_LIB_PATH=`dirname \`which python\``/../lib/python3.7/site-packages
+
+export TF_ENABLE_XLA=1
+export TF_NEED_CUDA=1
+export TF_NEED_TENSORRT=0
+export TF_NEED_OPENCL=0
+export TF_NEED_OPENCL_SYCL=0
+export TF_NEED_ROCM=0
+export TF_NEED_HDFS=0
+
+#https://en.wikipedia.org/wiki/CUDA
+#5.2	Titan X (Maxwell)
+#6.1 1060
+#7.5 2070S
+export TF_CUDA_COMPUTE_CAPABILITIES=5.2,6.1,7.5  # TitanX, 1060 and 2070
+
+export TF_CUDA_CLANG=0
+export GCC_HOST_COMPILER_PATH=`which gcc`
+export CC_OPT_FLAGS="-march=native -Wno-sign-compare"
+export TF_SET_ANDROID_WORKSPACE=0
+
 ./configure
-
-You have bazel 0.5.4 installed.
-Please specify the location of python. 
-[Default is /home/andrewsm/OpenSource/tensorflow/env3/bin/python]: 
-
-Traceback (most recent call last):
-  File "<string>", line 1, in <module>
-AttributeError: module 'site' has no attribute 'getsitepackages'
-Found possible Python library paths:
-  /home/andrewsm/OpenSource/tensorflow/env3/lib/python3.6/site-packages
-
-Please input the desired Python library path to use.  
-Default is [/home/andrewsm/OpenSource/tensorflow/env3/lib/python3.6/site-packages]
-
-Do you wish to build TensorFlow with jemalloc as malloc support? [Y/n]: 
-jemalloc as malloc support will be enabled for TensorFlow.
-
-Do you wish to build TensorFlow with Google Cloud Platform support? [y/N]: 
-No Google Cloud Platform support will be enabled for TensorFlow.
-
-Do you wish to build TensorFlow with Hadoop File System support? [y/N]: 
-No Hadoop File System support will be enabled for TensorFlow.
-
-Do you wish to build TensorFlow with XLA JIT support? [y/N]: Y
-XLA JIT support will be enabled for TensorFlow.
-
-Do you wish to build TensorFlow with GDR support? [y/N]: 
-No GDR support will be enabled for TensorFlow.
-
-Do you wish to build TensorFlow with VERBS support? [y/N]: 
-No VERBS support will be enabled for TensorFlow.
-
-Do you wish to build TensorFlow with OpenCL support? [y/N]: 
-No OpenCL support will be enabled for TensorFlow.
-
-Do you wish to build TensorFlow with CUDA support? [y/N]: 
-No CUDA support will be enabled for TensorFlow.
-
-Do you wish to build TensorFlow with MPI support? [y/N]: 
-No MPI support will be enabled for TensorFlow.
-
-Please specify optimization flags to use during compilation 
-when bazel option "--config=opt" is specified [Default is -march=native]: 
-
-Add "--config=mkl" to your bazel command to build with MKL support.
-Please note that MKL on MacOS or windows is still not supported.
-If you would like to use a local MKL instead of downloading, 
-please set the environment variable "TF_MKL_ROOT" every time before build.
-
-Configuration finished
 {% endhighlight %}
 
 
-<!--
-Please specify the location where CUDA 8.0 toolkit is installed. Refer to README.md for more details. [Default is /usr/local/cuda]: /usr
-#... But this then barfs during the build ::
-#Cuda Configuration Error: Cannot find cudnn.h under /usr
-
-Please specify the location where CUDA 8.0 toolkit is installed. Refer to README.md for more details. [Default is /usr/local/cuda]:  /usr/include/cuda
-#... Problem is that fedora does /usr/XYZ/{include,lib64,...)/
-#... Whereas this expects /usr/{include,lib64,...)/XYZ/
-
-# How about faking the default install?
-cd /usr/local/
-mkdir cuda
-cd cuda
-ln -s /usr/include/cuda include
-ln -s /usr/lib64 .
-ln -s /usr/bin .
-
-# find: ‘/usr/local/cuda/nvvm’: No such file or directory
-#  but we don't have nvvm anyway...
-
-scite /home/andrewsm/OpenSource/tensorflow/third_party/gpus/cuda_configure.bzl  # ~ line 917
-
-# See : https://en.wikipedia.org/wiki/CUDA
-Please note that each additional compute capability significantly increases your build time and binary size. [Default is: 3.5,5.2]5.2
 
 
-!-->
+
 
 #### ```bazel``` build the ```pip``` package (builds ```tensorflow``` too)
 

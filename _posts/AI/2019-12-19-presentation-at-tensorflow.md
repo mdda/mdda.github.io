@@ -1,6 +1,6 @@
 ---
 date: 2019-12-19
-title:  "PyTorch + TensorFlow"
+title:  "TensorBoard Lite"
 tagline: Presentation
 category: AI
 tags:
