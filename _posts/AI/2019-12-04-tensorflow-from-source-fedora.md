@@ -29,20 +29,17 @@ cuda-cudnn-devel-7.6.4.38-2.fc30.x86_64
 
 # Install this - will be made use of
 dnf install blas-devel
+
+# The need for these became apparent during compilation...
+
+#....  /usr/include/cuda/,/usr/lib64/,/usr/bin/  NOPE
+dnf install cuda-cudnn-devel
+
+#....  /usr/  # defaults work (move away cuda-10.0 and cuda-9.x from search path)
+dnf install nvidia-driver-devel
 {% endhighlight %}
 
 
-
-....  /usr/include/cuda/,/usr/lib64/,/usr/bin/  NOPE
-dnf install cuda-cudnn-devel
-....  /usr/  # defaults work (move away cuda-10.0 and cuda-9.x from search path)
-dnf install nvidia-driver-devel-440.31-3
-scite ./third_party/gpus/cuda_configure.bzl  L621 :: stub="" # always
-scite /usr/include/cuda/crt/host_config.h  L138 ::  >8 -> >18
-# 29.0k actions + extra
-bazel build //tensorflow/tools/pip_package:build_pip_package
-./bazel-bin/tensorflow/tools/pip_package/build_pip_package ~/tmp/tensorflow_pkg
-pip install -U ~/tmp/tensorflow_pkg/tensorflow-2.1.0rc0-cp37-cp37m-linux_x86_64.whl
 
 
 ### Prepare user-land set-up
@@ -144,115 +141,52 @@ export TF_SET_ANDROID_WORKSPACE=0
 {% endhighlight %}
 
 
-
-
-
-
 #### ```bazel``` build the ```pip``` package (builds ```tensorflow``` too)
 
 This took over an hour (even when it worked cleanly) : 
 
 {% highlight bash %}
-#bazel build --config=opt --config=cuda //tensorflow/tools/pip_package:build_pip_package
-bazel build --config=opt //tensorflow/tools/pip_package:build_pip_package
-# Lots of downloads...
-# including protobuf, llvm, ...
+# 29.0k actions + extra
+bazel build //tensorflow/tools/pip_package:build_pip_package
 {% endhighlight %}
+
+
+#### Fixes required to successfully compile
+
+Fix an apparent mistake (surely not??) in the `bazel` configuration :
 
 {% highlight bash %}
-ERROR: /home/andrewsm/.cache/bazel/_bazel_andrewsm/9351d4e112bea0cfc5cadba941a18293/external/boringssl/BUILD:116:1: 
-   C++ compilation of rule '@boringssl//:crypto' failed (Exit 1).
-
-In file included from /usr/include/string.h:639:0,
-                 from external/boringssl/src/crypto/asn1/a_bitstr.c:59:
-In function 'memcpy',
-    inlined from 'i2c_ASN1_BIT_STRING' at external/boringssl/src/crypto/asn1/a_bitstr.c:118:5:
-/usr/include/bits/string3.h:53:10: error: '__builtin_memcpy': specified size between 18446744071562067968 and 18446744073709551615 exceeds maximum object size 9223372036854775807 [-Werror=stringop-overflow=]
-
+joe ./third_party/gpus/cuda_configure.bzl  L621 :: stub="" # always
 {% endhighlight %}
 
+Fix the `gcc` version detection inside the `cuda` headers :
 
-Magic fix hints: 
-
-  *  [stackoverflow](https://stackoverflow.com/questions/40373686/freeze-graph-py-throws-an-error-during-build/40374431#40374431)
-  *  [TF serving](https://github.com/tensorflow/serving/issues/6)
-  *  [grpc](https://github.com/grpc/grpc/issues/10843)
-
-Finally iterate to the following (working) command line : 
- 
 {% highlight bash %}
-bazel build -c 0 --config=opt //tensorflow/tools/pip_package:build_pip_package
-# 23:40 ... 01:10 
-# INFO: Elapsed time: 5218.471s, Critical Path: 86.01s
+joe /usr/include/cuda/crt/host_config.h  L138 ::  >8 -> >18
 {% endhighlight %}
 
-
-A second ```bazel build``` takes 9 seconds to figure out that nothing needs to be recompiled.
-
-A third ```bazel build``` takes 0.5 seconds to figure out that nothing needs to be recompiled.
 
 
 
 #### Build the ```pip whl``` package itself
 
-This creates the 'wheel' in ```/tmp/tensorflow_pkg```, and then installs it into the ```env3``` :
+This creates the 'wheel' in ```/tmp/tensorflow_pkg```, and then installs it into the ```env37``` :
 
 {% highlight bash %}
-bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
+./bazel-bin/tensorflow/tools/pip_package/build_pip_package ~/tmp/tensorflow_pkg
 
-pip install /tmp/tensorflow_pkg/tensorflow-*.whl
+pip install -U ~/tmp/tensorflow_pkg/tensorflow-2.1.0rc0-cp37-cp37m-linux_x86_64.whl
 {% endhighlight %}
 
-
-
-### Size of built code
-
-{% highlight bash %}
-du -bh --exclude='env3/*'
-# 194Mb  (including all the git history)
-
-du -bh --exclude='.git/*' --exclude='env3/*'
-# 69Mb
-{% endhighlight %}
 
 
 ### Test the install
 
-You need to use the ```env3``` with the freshly built tensorflow inside it, 
-but then move to a directory other than the base repo, since that includes a 'distracting'
-```tensorflow/__init__.py``` file.  Then, run ```python``` to get a python prompt, and :
+Run ```python``` within the `env37` environment to get a python prompt, and :
 
 {% highlight python %}
-import tensorflow as tf
-
-a = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[2, 3], name='a')
-b = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[3, 2], name='b')
-c = tf.matmul(a, b)
-
-sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
-
-print(sess.run(c))
+...
 {% endhighlight %}
-
-should give you results (slightly reformatted) :
-
-{% highlight python %}
-MatMul: (MatMul): /job:localhost/replica:0/task:0/cpu:0
-2017-08-31 01:23:54.678983: I tensorflow/core/common_runtime/simple_placer.cc:875] 
-  MatMul: (MatMul)/job:localhost/replica:0/task:0/cpu:0
-
-b: (Const): /job:localhost/replica:0/task:0/cpu:0
-2017-08-31 01:23:54.679009: I tensorflow/core/common_runtime/simple_placer.cc:875] 
-  b: (Const)/job:localhost/replica:0/task:0/cpu:0
-
-a: (Const): /job:localhost/replica:0/task:0/cpu:0
-2017-08-31 01:23:54.679021: I tensorflow/core/common_runtime/simple_placer.cc:875] 
-  a: (Const)/job:localhost/replica:0/task:0/cpu:0
-
-[[ 22.  28.]
- [ 49.  64.]]
-{% endhighlight %}
-
 
 
 All Done!
