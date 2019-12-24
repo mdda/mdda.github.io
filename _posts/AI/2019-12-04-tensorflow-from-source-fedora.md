@@ -14,8 +14,10 @@ published: false
 
 ### Check the nvidia packages
 
-The drive for building from source was that Negativo (my preferred Nvidia driver repo)
-had moved its `cuda` version on from 10.0 to 10.1
+The drive for building from source was that `Negativo` (my preferred Nvidia driver repo)
+had moved its `cuda` version on from 10.0 to 10.1.
+
+The following `rpm`s are required (your versions may differ, but the packages should be there) :
 
 As ```root``` :
 {% highlight bash %}
@@ -27,16 +29,8 @@ cuda-devel-10.1.243-1.fc30.x86_64
 rpm -qa | grep cuda-cudnn-devel
 cuda-cudnn-devel-7.6.4.38-2.fc30.x86_64
 
-# Install this - will be made use of
+# Install this - will be made use of if detected
 dnf install blas-devel
-
-# The need for these became apparent during compilation...
-
-#....  /usr/include/cuda/,/usr/lib64/,/usr/bin/  NOPE
-dnf install cuda-cudnn-devel
-
-#....  /usr/  # defaults work (move away cuda-10.0 and cuda-9.x from search path)
-dnf install nvidia-driver-devel
 {% endhighlight %}
 
 
@@ -110,8 +104,8 @@ git checkout v2.1.0-rc0
 
 #### ```./configure``` machine compilation defaults
 
-The following is the commandline configuration equivalent to 
-answering a lot of in-line questions (which cannot be automated) :
+The following is the command-line configuration equivalent to 
+answering a lot of in-line questions (which resist being automated otherwise) :
 
 {% highlight bash %}
 # https://github.com/tensorflow/tensorflow/issues/7542#issue-207940753
@@ -185,9 +179,21 @@ pip install -U ~/tmp/tensorflow_pkg/tensorflow-2.1.0rc0-cp37-cp37m-linux_x86_64.
 Run ```python``` within the `env37` environment to get a python prompt, and :
 
 {% highlight python %}
-...
-{% endhighlight %}
 
+# See : https://www.tensorflow.org/beta/guide/using_gpu
+import tensorflow as tf
+
+tf.debugging.set_log_device_placement(True)
+
+a = tf.constant([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]], shape=[2, 3], name='a')
+b = tf.constant([[1.0, 2.0], [3.0, 4.0], [5.0, 6.0]], shape=[3, 2], name='b')
+c = tf.matmul(a, b)
+
+# Eager mode FTW!
+print(c)
+
+print(c.device)  # Hope for : /job:localhost/replica:0/task:0/device:GPU:0
+{% endhighlight %}
 
 All Done!
 
