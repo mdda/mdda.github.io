@@ -5,7 +5,7 @@ title: TensorFlow 2.1 from source on Fedora 30
 tagline: Actually worked
 date: 2019-12-04
 tags: [TensorFlow,Fedora,Python]
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -17,9 +17,9 @@ published: false
 The drive for building from source was that `Negativo` (my preferred Nvidia driver repo)
 had moved its `cuda` version on from 10.0 to 10.1.
 
-The following `rpm`s are required (your versions may differ, but the packages should be there) :
+The following `rpm` packages are required (your versions may differ, 
+but the packages should be there).  As ```root``` :
 
-As ```root``` :
 {% highlight bash %}
 # https://github.com/negativo17/cuda
 rpm -qa | grep nvidia-driver-devel
@@ -68,7 +68,7 @@ pip install -U keras_preprocessing --no-deps
 
 #### ```bazel``` installation via ```bazelisk```
 
-As a regular user :
+As a regular user, make `bazelisk` available and invocable as `bazel` :
 
 {% highlight bash %}
 # https://github.com/bazelbuild/bazelisk
@@ -121,9 +121,9 @@ export TF_NEED_ROCM=0
 export TF_NEED_HDFS=0
 
 #https://en.wikipedia.org/wiki/CUDA
-#5.2	Titan X (Maxwell)
-#6.1 1060
-#7.5 2070S
+#  5.2 ~ Titan X (Maxwell)
+#  6.1 ~ 1060
+#  7.5 ~ 2070S
 export TF_CUDA_COMPUTE_CAPABILITIES=5.2,6.1,7.5  # TitanX, 1060 and 2070
 
 export TF_CUDA_CLANG=0
@@ -145,7 +145,7 @@ bazel build //tensorflow/tools/pip_package:build_pip_package
 {% endhighlight %}
 
 
-#### Fixes required to successfully compile
+#### ( Fixes required to successfully compile )
 
 Fix an apparent mistake (surely not??) in the `bazel` configuration :
 
