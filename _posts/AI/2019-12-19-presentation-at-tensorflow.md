@@ -6,10 +6,10 @@ category: AI
 tags:
 - Presentation
 - TensorFlow
-- Probability
-- Hyperparameters
+- PyTorch
+- TensorBoard
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
