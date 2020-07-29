@@ -213,15 +213,16 @@ popd
 #### ```bazel``` build the ```pip``` package (builds ```tensorflow``` too)
 
 
-This took over an hour (when it worked cleanly) on an 8-thread i7 machine : 
+This took over 4 hours (when it worked cleanly) on an 8-thread i7 machine 
+(with 16GB memory and codebase on SSD): 
 
 {% highlight bash %}
-# 32.3...k actions
-# 22:40 - 2:15...
 bazel build //tensorflow/tools/pip_package:build_pip_package
+#INFO: Elapsed time: 15012.545s, Critical Path: 358.50s
+#INFO: 24110 processes: 24110 local.
+#INFO: Build completed successfully, 35202 total actions
+## 15012sec ~= 4h10m
 {% endhighlight %}
-
-
 
 
 
@@ -230,9 +231,10 @@ bazel build //tensorflow/tools/pip_package:build_pip_package
 This creates the 'wheel' in ```/tmp/tensorflow_pkg```, and then installs it into the ```env37``` :
 
 {% highlight bash %}
-./bazel-bin/tensorflow/tools/pip_package/build_pip_package ~/tmp/tensorflow_pkg
+./bazel-bin/tensorflow/tools/pip_package/build_pip_package ./tensorflow_pkg
+# Takes ~1 minute, creates a 205MB whl file in ./tensorflow_pkg
 
-pip install -U ~/tmp/tensorflow_pkg/tensorflow-2.1.0rc0-cp37-cp37m-linux_x86_64.whl
+pip install -U ./tensorflow_pkg/tensorflow-*.whl  
 {% endhighlight %}
 
 
