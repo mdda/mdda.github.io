@@ -48,7 +48,7 @@ Building `TensorFlow` needs several preparatory steps  :
 
 #### Set up Python : ```python-3.7 virtualenv```
 
-NB: Do this outside the eventual `tensorflow` souce tree:
+NB: Do this outside the eventual `tensorflow` source tree:
 
 {% highlight bash %}
 virtualenv-3.7 --system-site-packages ~/env37

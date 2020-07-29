@@ -5,41 +5,45 @@ title: TensorFlow 2.3 from source on Fedora 32
 tagline: Actually worked
 date: 2020-07-29
 tags: [TensorFlow,Fedora,Python]
-published: false
+published: true
 ---
 {% include JB/setup %}
 
 
 ## ```TensorFlow 2.3``` from source
 
-### Check the nvidia packages
-
 The drive for building from source was that : 
 
-* my Nvidia Titan X (Maxwell) GPU has a Compute Capability of 5.2, which is no longer supported by prebuilt TensorFlow.
-* `Negativo` (my preferred Nvidia driver repo) had moved its `cuda` version on from 10.0 to 10.2.
+* my Nvidia Titan X (Maxwell) GPU has a Compute Capability of 5.2, which is no longer supported by prebuilt TensorFlow;
+* `Negativo` (my preferred Nvidia driver repo) had moved its `cuda` version on from 10.0 to 10.2
+
+
+### Install / Check the nvidia packages
 
 The following `rpm` packages are required (your versions may differ, 
 but the packages should be there).  As ```root``` :
 
 {% highlight bash %}
 dnf config-manager --add-repo=https://negativo17.org/repos/fedora-nvidia.repo
+# Get the cuda drivers
 dnf install cuda cuda-devel cuda-cudnn-devel nvidia-driver-cuda
+# Get the appropriate gcc version (eg: ~gcc 8.3)
 dnf install cuda-gcc cuda-gcc-c++ cuda-gcc-gfortran
 # Install this - will be made use of if detected
 dnf install blas-devel
+{% endhighlight %}
 
 
+Check on the installed versions  :
 
-
+{% highlight bash %}
 # https://github.com/negativo17/cuda
 rpm -qa | grep nvidia-driver-devel
-nvidia-driver-devel-440.31-3.fc30.x86_64
+# "" == Not present, since I don't need use the Nvidia card to drive the display 
 rpm -qa | grep cuda-devel
-cuda-devel-10.1.243-1.fc30.x86_64
+# cuda-devel-10.2.89-2.fc32.x86_64
 rpm -qa | grep cuda-cudnn-devel
-cuda-cudnn-devel-7.6.4.38-2.fc30.x86_64
-
+# cuda-cudnn-devel-7.6.5.32-1.fc32.x86_64
 {% endhighlight %}
 
 
@@ -50,18 +54,18 @@ cuda-cudnn-devel-7.6.4.38-2.fc30.x86_64
 Building `TensorFlow` needs several preparatory steps  :
 
 *  Create a ```virtualenv``` so that Python knows which version it's building for
-*  Set up the defaults correctly (some CLI interaction)
+*  Set up the defaults correctly (using `export` rather than tedious CLI interaction)
 *  Build a ```pip``` package with ```bazel``` (iterate to fix the problems...)
 *  Install the ```pip``` package
 
 
 #### Set up Python : ```python-3.8 virtualenv```
 
-NB: Do this outside the eventual `tensorflow` souce tree:
+NB: Do this outside the eventual `tensorflow` source tree:
 
 {% highlight bash %}
-virtualenv-3.7 --system-site-packages ~/env37
-. ~/env37/bin/activate
+virtualenv-3.8 --system-site-packages ~/env38
+. ~/env38/bin/activate
 {% endhighlight %}
 
 
@@ -69,7 +73,6 @@ virtualenv-3.7 --system-site-packages ~/env37
 
 {% highlight bash %}
 # https://www.tensorflow.org/install/source 
-##pip install -U pip six numpy wheel setuptools mock 'future>=0.17.1'
 pip install -U pip six 'numpy<1.19.0' wheel setuptools mock 'future>=0.17.1'
 pip install -U keras_applications --no-deps
 pip install -U keras_preprocessing --no-deps
@@ -105,12 +108,11 @@ chmod 754 ~/env38/bin/bazel
 # Check the version required:
 grep _BAZEL_VERSION tensorflow/configure.py
 
-#USE_BAZEL_VERSION=0.29.1
+#USE_BAZEL_VERSION=0.29.1  # Used for TFv2.1
 USE_BAZEL_VERSION=3.4.1
 export USE_BAZEL_VERSION
 
 bazel version
-
 #Build label: 3.4.1
 #Build target: bazel-out/k8-opt/bin/src/main/java/com/google/devtools/build/lib/bazel/BazelServer_deploy.jar
 #Build time: Tue Jul 14 06:27:53 2020 (1594708073)
@@ -162,10 +164,11 @@ export TF_SET_ANDROID_WORKSPACE=0
 
 #### ( Fixes required to successfully compile )
 
+Fix an apparent mistake (surely not??) in the `bazel` configuration
+ documented here : 
 
-
-
-Fix an apparent mistake (surely not??) in the `bazel` configuration :
+*   [No library found under: `/usr/lib64/stubs/libcuda.so`](https://github.com/negativo17/cuda/issues/18)
+    +   [TensorFlow issues strikes out](https://github.com/tensorflow/tensorflow/issues/29797)
 
 {% highlight bash %}
 ## Manual method :
@@ -175,39 +178,24 @@ Fix an apparent mistake (surely not??) in the `bazel` configuration :
 mkdir -p /usr/lib64/stubs/
 ln -s /usr/lib64/libcuda.so /usr/lib64/stubs/libcuda.so
 ls -l  /usr/lib64/stubs/
-
 {% endhighlight %}
 
->  No library found under: /usr/lib64/stubs/libcuda.so
->    https://github.com/negativo17/cuda/issues/18
->      https://github.com/tensorflow/tensorflow/issues/29797
-    
 
-
-
-
-Fix the `gcc` version to make it compatible with `cuda` :
+Also, fix the `gcc` version to make it compatible with `cuda` :
 
 {% highlight bash %}
 ## Bad method :
 #joe /usr/include/cuda/crt/host_config.h  L138 ::  >8 -> >18
 
-## Better methods (requires `dnf install cuda-gcc ...` from above
+## Better methods (requires `dnf install cuda-gcc ...` from above)
 pushd /usr/local/bin/
 ln -s /usr/bin/cuda-gcc gcc
 ln -s /usr/bin/cuda-g++ g++
 ln -s /usr/bin/cuda-gcc-gfortran gcc-gfortran
 popd 
-
-
-AFTER: 
-
-pushd /usr/local/bin/
-rm gcc g++ gcc-gfortran
-popd 
-
 {% endhighlight %}
 
+The latter version needs to be 'undone' after a successful build.
 
 
 #### ```bazel``` build the ```pip``` package (builds ```tensorflow``` too)
@@ -228,7 +216,7 @@ bazel build //tensorflow/tools/pip_package:build_pip_package
 
 #### Build the ```pip whl``` package itself
 
-This creates the 'wheel' in ```/tmp/tensorflow_pkg```, and then installs it into the ```env37``` :
+This creates the 'wheel' in ```/tmp/tensorflow_pkg```, and then installs it into the ```env38``` :
 
 {% highlight bash %}
 ./bazel-bin/tensorflow/tools/pip_package/build_pip_package ./tensorflow_pkg
@@ -241,7 +229,7 @@ pip install -U ./tensorflow_pkg/tensorflow-*.whl
 
 ### Test the install
 
-Run ```python``` within the `env37` environment to get a python prompt, and :
+Run ```python``` within the `env38` environment to get a python prompt, and :
 
 {% highlight python %}
 
@@ -260,8 +248,20 @@ print(c)
 print(c.device)  # Hope for : /job:localhost/replica:0/task:0/device:GPU:0
 {% endhighlight %}
 
-All Done!
 
+### Post-install cool-down
+
+Un-fix the `gcc` version that made it compatible with `cuda` 
+(unless you've got other stuff that also needs to be linked with `cuda` to compile):
+
+{% highlight bash %}
+pushd /usr/local/bin/
+rm gcc g++ gcc-gfortran
+popd 
+{% endhighlight %}
+
+
+All Done!
 
 
 
