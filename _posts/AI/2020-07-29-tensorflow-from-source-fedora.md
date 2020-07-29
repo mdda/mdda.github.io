@@ -262,3 +262,18 @@ print(c.device)  # Hope for : /job:localhost/replica:0/task:0/device:GPU:0
 
 All Done!
 
+
+
+
+<!--
+# https://discuss.pytorch.org/t/gpu-compute-capability-support-for-each-pytorch-version/62434/2
+#  torch 1.5.1 installed, and also same list for 1.6.0 : 
+cuobjdump /home/andrewsm/env38/lib/python3.8/site-packages/torch/lib/libtorch_cuda.so | grep arch | sort | uniq
+arch = sm_35
+arch = sm_37
+arch = sm_50
+arch = sm_60
+arch = sm_61
+arch = sm_70
+arch = sm_75
+!-->
