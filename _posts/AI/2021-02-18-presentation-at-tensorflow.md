@@ -38,19 +38,19 @@ My talk addressed several new features in TensorFlow, including some of the Goog
 The slides for my talk (as a 6Mb PDF) are here :
 
 <!--
-cp ~/sketchpad/redcatlabs/2021-02-18_TFandDL_TensorFlow-Everywhere/2021-02-18_TF-Everywhere.pdf ./assets/img/
+cp ~/sketchpad/redcatlabs/2021-02-18_TFandDL_TensorFlow-Everywhere/2021-02-18_TFandDL_TF-Everywhere.pdf ./assets/img/
 # And add to blog git
 !-->
 
-<a href="http://redcatlabs.com/downloads/2021-02-18_TF-Everywhere.pdf" target="_blank">
-<img src="/assets/img/2021-02-18_TF-Everywhere_600x390.png" alt="Presentation Screenshot" style="border:1px solid #000000" />
+<a href="http://redcatlabs.com/downloads/2021-02-18_TFandDL_TF-Everywhere.pdf" target="_blank">
+<img src="/assets/img/2021-02-18_TFandDL_TF-Everywhere_600x390.png" alt="Presentation Screenshot" style="border:1px solid #000000" />
 </a>
 
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="http://redcatlabs.com/downloads/2021-02-18_TF-Everywhere.pdf" target="_blank">
-<img src="/assets/img/2021-02-18_TF-Everywhere_38_600x390.png" alt="Presentation Content Example" style="border:1px solid #000000" />
+<a href="http://redcatlabs.com/downloads/2021-02-18_TFandDL_TF-Everywhere.pdf" target="_blank">
+<img src="/assets/img/2021-02-18_TFandDL_TF-Everywhere_38_600x390.png" alt="Presentation Content Example" style="border:1px solid #000000" />
 </a>
 
 
