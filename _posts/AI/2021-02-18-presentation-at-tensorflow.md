@@ -19,8 +19,9 @@ Sam Witteveen and I started the TensorFlow and Deep Learning Singapore group on 
 and [the thirtieth MeetUp](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/276147395/) 
 was the first one that we've done online in the post-COVID new world.  It was hosted as a live YouTube event 
 by Google's DevSpace Singapore using StreamYard, and was our contribution to the 
-Google global initiative "TensorFlow Everywhere".  If you'd like to watch it, it's still available on
-YouTube (use the link of the MeetUp page).
+Google global initiative "TensorFlow Everywhere".  
+
+If you'd like to watch the event, it's available on YouTube (use the link which is on the MeetUp page).
 
 <!--
 !-->
