@@ -8,7 +8,7 @@ tags:
 - TensorFlow
 - Research
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
