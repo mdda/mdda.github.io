@@ -36,8 +36,8 @@ My 45 minute talk was part of a dedicated AI track at the event "NEW FRONTIER : 
 The keynote address was given by Mr S Iswaran, Singapore's Minister for Communications and 
 Information.  
 
-Importantly, Red Dragon AI (the company co-founded by me and Sam) has been partnering with SGInnovate since 2017 
-to deliver public Deep learning courses, and our students receive funding through a government-approved process.
+Importantly, Red Dragon AI (the company co-founded by me and Sam) has been partnering with SGInnovate 
+since 2017 to deliver public Deep learning courses, and our students receive funding through a government-approved process.
 
 
 My talk outlined some of the key areas addressed by "AI", but also : 
