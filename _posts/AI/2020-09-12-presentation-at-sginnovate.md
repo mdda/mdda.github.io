@@ -9,7 +9,7 @@ tags:
 - Singapore
 - NewFrontier
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -42,8 +42,8 @@ to deliver public Deep learning courses, and our students receive funding throug
 
 My talk outlined some of the key areas addressed by "AI", but also : 
 
-*  The wide variety of jobs available in "AI"; and that 
-*  'Regular developers' could pick up the skills to take advantage of these new opportunities
+*  The wide variety of jobs available in "AI"
+*  That Regular Developers could pick up the skills to take advantage of these new opportunities
 
 
 The slides for my talk (as a 824Kb PDF) are here :
