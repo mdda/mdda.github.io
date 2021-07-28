@@ -6,6 +6,7 @@ tags:
 - fedora
 - linux
 - android
+- tablet
 layout: post
 published: true
 ---

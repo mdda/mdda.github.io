@@ -18,11 +18,7 @@ GoogleSlides :
   2020-09-12: 
     From-AI-Basics-to-Jobs
     https://www.sginnovate.com/newfrontier/nf2020/
-    
-  
-  2021-04-10: 
-    Positioning Yourself for the Future: AI from the Backend
-
+      = 206 attendees
 !-->
 
 
