@@ -1,6 +1,6 @@
 ---
 date: 2021-08-26
-title:  "Back to Basics 03"
+title:  "PerceiverIO"
 tagline: Presentation
 category: AI
 tags:
@@ -9,9 +9,10 @@ tags:
 - Transformers
 - BERT
 - Perceiver
+- PerceiverIO
 - PonderNet
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -38,15 +39,15 @@ Our presentation "Back to the cutting edge - How Transformers are being applied 
 
 The slides for my talk are here :
 
-<a href="https://redcatlabs.com/2021-07-20_MLSG_Basics-BERT/" target="_blank">
-![Presentation Screenshot]({{ site.url }}/assets/img/2021-08-26_MLSG_Perceiving-and-Pondering_600x390.png)
+<a href="https://redcatlabs.com/2021-08-26_MLSG_PerceiverIO/" target="_blank">
+![Presentation Screenshot]({{ site.url }}/assets/img/2021-08-26_MLSG_PerceiverIO_600x390.png)
 </a>
 
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="https://redcatlabs.com/2021-07-20_MLSG_Basics-BERT/#/10/3" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2021-08-26_MLSG_Perceiving-and-Pondering_10_600x390.png)
+<a href="https://redcatlabs.com/2021-08-26_MLSG_PerceiverIO/#/8/2" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2021-08-26_MLSG_PerceiverIO_8-2_600x390.png)
 </a>
 
 
