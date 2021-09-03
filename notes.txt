@@ -1,23 +1,49 @@
 ## See for helpful jekyll stuff : http://jekyllrb.com/docs/templates/
 ## https://github.com/dbtek/jekyll-bootstrap-3/
 
-sudo dnf install ruby-devel
 
-## Instead : Add a Gemfile... and ::
+# Problem is : https://talk.jekyllrb.com/t/error-no-implicit-conversion-of-hash-into-integer/5890/2
+"""
+Github-Pages uses Jekyll 3.9, which isn’t compatible with Ruby 3. Downgrading to Ruby 2.7 should avoid the problem.
+"""
+
+
+As 'andrewsm' :
+
+# install 'rvm' (the ruby version manager):
+command curl -sSL https://rvm.io/mpapis.asc | gpg2 --import -
+command curl -sSL https://rvm.io/pkuczynski.asc | gpg2 --import -
+\curl -sSL https://get.rvm.io | bash -s stable
+
+# """ To start using RVM you need to run `source /home/andrewsm/.rvm/scripts/rvm` """
+
+source /home/andrewsm/.rvm/scripts/rvm
+
+rvm list known
+# Loads of different versions of ruby
+
+# Get one for Jekyll : 2.7
+rvm install 2.7  # This attempts to compile ruby from scratch...
+
+# Required installation of some packages::
+dnf install -y libyaml-devel readline-devel
+
+rvm install 2.7  # This compiles ruby from scratch...
+# extracting ruby-2.7.2 to /home/andrewsm/.rvm/src/ruby-2.7.2
+
+
+# See : https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll
+
+## Instead : Using the Gemfile included (move Gemfile.lock away)  and ::
 gem install bundler
-# bundle install  # Pre FC28 ruby
-bundle install --path ~/.bundle
+bundle install
 
-#if Ruby upgraded, simplest to ```rm -rf ~/.gem``` otherwise endless search through updates...
-#And then : 
-bundle update
-
-## Painful route :
-#bundle update 
-## Problems : nokogiri, posix_spawn_ext
 
 bundle exec jekyll serve --watch --unpublished --future
 #bundle exec jekyll serve --watch --unpublished --future --incremental
+
+
+
 
 ## Helpful : 
 myfile=_posts/AI/ETC
