@@ -296,3 +296,12 @@ $154.71 monthly estimate - That's about $0.212 hourly
 
 All done!
 
+<!--
+
+Next posts :
+
+`get_config.py` for BASH to get access to `omegaconf`
+
+Using `screen` as a poor-persons `systemctl` processes
+
+!-->
