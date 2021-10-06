@@ -39,6 +39,7 @@ gem install bundler
 bundle install
 
 
+source /home/andrewsm/.rvm/scripts/rvm
 bundle exec jekyll serve --watch --unpublished --future
 #bundle exec jekyll serve --watch --unpublished --future --incremental
 
