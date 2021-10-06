@@ -369,10 +369,41 @@ All done!
 
 Next posts :
 
-`get_config.py` for BASH to get access to `omegaconf`
-
 Enabling multiple people to start/stop instances
+  https://stackoverflow.com/questions/49445950/allow-external-user-to-start-stop-google-compute-engine-vm-instance
+  https://cloud.google.com/iam/docs/creating-custom-roles
+  https://cloud.google.com/iam/docs/granting-changing-revoking-access
+
+
+`get_config.py` for BASH to get access to `omegaconf`
 
 Using `screen` as a poor-persons `systemctl` processes
 
+Enabling jupyter to run on a GCP VM
+ https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#running-a-public-notebook-server
+   pip install jupyter
+   jupyter notebook --generate-config
+   #  `/home/USERNAME/.jupyter/jupyter_notebook_config.py`
+   openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ./.jupyter/mykey.key -out ./.jupyter/mycert.pem \
+     -subj "/C=SG/ST=Singapore/L=Singapore/O=RedDragonAI /OU=AI Department/CN=reddragon.ai"
+
+   USER=`whoami` && echo "
+c.NotebookApp.certfile = u'/home/${USER}/.jupyter/mycert.pem'
+c.NotebookApp.keyfile  = u'/home/${USER}/.jupyter/mykey.key'
+c.NotebookApp.ip = '*'
+c.NotebookApp.open_browser = False
+c.NotebookApp.port = 8888
+   " >> /home/${USER}/.jupyter/jupyter_notebook_config.py
+  
+ ##https://cloud.google.com/compute/docs/tutorials/ml-inference-t4#enable_firewall
+ 
+ https://cloud.google.com/sdk/gcloud/reference/compute/firewall-rules/create
+   gcloud compute firewall-rules list
+   
+   # Applies rule to all instances in project :
+   gcloud compute firewall-rules create jupyter-service --allow=tcp:8888 --direction=INGRESS --description="Jupyter access"
+   # --source-tags=${INSTANCE_NAME} 
+   
+   gcloud compute firewall-rules delete jupyter-service
 !-->
+
