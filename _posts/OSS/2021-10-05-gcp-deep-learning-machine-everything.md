@@ -367,19 +367,6 @@ All done!
 
 <!--
 
-Next posts :
-
-Enabling multiple people to start/stop instances
-  https://stackoverflow.com/questions/49445950/allow-external-user-to-start-stop-google-compute-engine-vm-instance
-  https://cloud.google.com/iam/docs/creating-custom-roles
-  https://cloud.google.com/iam/docs/granting-changing-revoking-access
-
-
-`get_config.py` for BASH to get access to `omegaconf`
-
-Using `screen` as a poor-persons `systemctl` processes
-
-Enabling jupyter to run on a GCP VM
  https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#running-a-public-notebook-server
    pip install jupyter
    jupyter notebook --generate-config
