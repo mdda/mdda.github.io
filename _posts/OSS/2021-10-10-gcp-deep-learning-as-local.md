@@ -345,7 +345,6 @@ https://gist.github.com/mollymerp/26ef43f8f72577e7133c95f9c9f893c8
 
 Open two tabs locally, and in each, run :
 
-#### Tab 1
 {% highlight bash %}
 export PROJECT_NAME="my-special-project"
 gcloud config set project ${PROJECT_NAME}
@@ -353,8 +352,17 @@ export INSTANCE_NAME="deep-learning-vm1"
 
 gcloud compute instances start ${INSTANCE_NAME}
 
-GCP_ADDR=`grep "Host ${INSTANCE_NAME}" ~/.ssh/config | tail --bytes=+6`
+export GCP_ADDR=`grep "Host ${INSTANCE_NAME}" ~/.ssh/config | tail --bytes=+6`
 echo ${GCP_ADDR}
+{% endhighlight %}
+
+
+#### Tab 1
+
+This tab will run the server side of the interface:
+
+{% highlight bash %}
+gcloud compute instances start ${INSTANCE_NAME}
 
 ssh ${GCP_ADDR} -L 8585:localhost:8585 -L 8586:localhost:8586 # ... etc
 
@@ -362,19 +370,14 @@ ssh ${GCP_ADDR} -L 8585:localhost:8585 -L 8586:localhost:8586 # ... etc
 #    And leave it running
 {% endhighlight %}
 
+
 #### Tab 2
 
+This tab will run the local side of the interface:
+
 {% highlight bash %}
-export PROJECT_NAME="my-special-project"
-gcloud config set project ${PROJECT_NAME}
-export INSTANCE_NAME="deep-learning-vm1"
-
-GCP_ADDR=`grep "Host ${INSTANCE_NAME}" ~/.ssh/config | tail --bytes=+6`
-echo ${GCP_ADDR}
-
 mkdir -p ./gcp-home
 fuser-mount ${GCP_ADDR} ...
-
 
 {% endhighlight %}
 
