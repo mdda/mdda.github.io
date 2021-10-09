@@ -109,7 +109,18 @@ python3.8 -m venv env38
 . env38/bin/activate
 
 pip install --upgrade pip
-pip install torch==1.9.0 torchvision==0.10.0 torchaudio==0.9.0
+
+
+# Install torch...
+
+#pip install torch==1.9.0 torchvision==0.10.0 torchaudio==0.9.0
+
+# Agrees better with the CUDA version installed above:
+pip install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
+
+# An example of a pytorch module with specific CUDA code included:
+#pip install pytorch3d -f https://dl.fbaipublicfiles.com/pytorch3d/packaging/wheels/py38_cu111_pyt190/download.html
+
 
 date
 
@@ -363,34 +374,4 @@ NB: The first time this is run, there won't be a startup-script present.  So the
 
 All done!
 
-
-
-<!--
-
- https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#running-a-public-notebook-server
-   pip install jupyter
-   jupyter notebook --generate-config
-   #  `/home/USERNAME/.jupyter/jupyter_notebook_config.py`
-   openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ./.jupyter/mykey.key -out ./.jupyter/mycert.pem \
-     -subj "/C=SG/ST=Singapore/L=Singapore/O=RedDragonAI /OU=AI Department/CN=reddragon.ai"
-
-   USER=`whoami` && echo "
-c.NotebookApp.certfile = u'/home/${USER}/.jupyter/mycert.pem'
-c.NotebookApp.keyfile  = u'/home/${USER}/.jupyter/mykey.key'
-c.NotebookApp.ip = '*'
-c.NotebookApp.open_browser = False
-c.NotebookApp.port = 8888
-   " >> /home/${USER}/.jupyter/jupyter_notebook_config.py
-  
- ##https://cloud.google.com/compute/docs/tutorials/ml-inference-t4#enable_firewall
- 
- https://cloud.google.com/sdk/gcloud/reference/compute/firewall-rules/create
-   gcloud compute firewall-rules list
-   
-   # Applies rule to all instances in project :
-   gcloud compute firewall-rules create jupyter-service --allow=tcp:8888 --direction=INGRESS --description="Jupyter access"
-   # --source-tags=${INSTANCE_NAME} 
-   
-   gcloud compute firewall-rules delete jupyter-service
-!-->
 

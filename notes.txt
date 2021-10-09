@@ -39,9 +39,11 @@ gem install bundler
 bundle install
 
 
+
+# Now run the whole thing!
+
 source /home/andrewsm/.rvm/scripts/rvm
-bundle exec jekyll serve --watch --unpublished --future
-#bundle exec jekyll serve --watch --unpublished --future --incremental
+bundle exec jekyll serve --watch --unpublished --future --incremental
 
 
 
@@ -488,6 +490,9 @@ exclude=geany*
 
 Next posts :
 
+Using a GCP VM like a 'local' Deep Learning machine
+
+
 Enabling multiple people to start/stop instances
   https://stackoverflow.com/questions/49445950/allow-external-user-to-start-stop-google-compute-engine-vm-instance
   https://cloud.google.com/iam/docs/creating-custom-roles
@@ -498,8 +503,5 @@ Enabling multiple people to start/stop instances
 
 Using `screen` as a poor-persons `systemctl` processes
 
-Enabling jupyter to run on a GCP VM
-
-
-
+Setting up jekyll for Github pages
 
