@@ -25,7 +25,7 @@ also didn't want to have to mess with the Console UI.
 The Jupyter set-up below is scriptable.
 
 >   If you don't need the `jupyter` instance to be available to anyone else (i.e. access from your local
->   machine is all you need), please see my follow-up post about doing this _behind the firewall_.  This
+>   machine is all you need), please see my [follow-up post](/oss/2021/10/10/gcp-deep-learning-as-local) about doing this _behind the firewall_.  This
 >   method will also allow you to run `tensorboard` safely, and mount your VM drives locally too (useful
 >   for editing files directly in a local IDE).
 
