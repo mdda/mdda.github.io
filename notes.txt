@@ -492,7 +492,6 @@ Next posts :
 
 Using a GCP VM like a 'local' Deep Learning machine
 
-
 Enabling multiple people to start/stop instances
   https://stackoverflow.com/questions/49445950/allow-external-user-to-start-stop-google-compute-engine-vm-instance
   https://cloud.google.com/iam/docs/creating-custom-roles

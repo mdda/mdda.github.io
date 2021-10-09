@@ -93,7 +93,7 @@ USER=`whoami` && openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
 {% endhighlight %}
 
 
-### Set up SSL certificates for extra security
+### Update the `jupyter` defaults
 
 Add default configuration to `~/.jupyter/jupyter_notebook_config.py` :
 

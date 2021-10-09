@@ -289,7 +289,7 @@ gcloud config set project ${PROJECT_NAME}
 export INSTANCE_NAME="deep-learning-vm1"
 {% endhighlight %}
 
-And then run these to actually create the instance
+And then run these to actually create the instance:
 
 {% highlight bash %}
 export ZONE="asia-southeast1-b"  # This is good for where I am located (Singapore)
