@@ -10,7 +10,7 @@ tags:
 - gcp
 - deeplearning
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -27,20 +27,20 @@ These are the steps that this involves, and leaves the final machine pretty quic
 * Create a preemptible GPU-enabled GCP machine
 * Set up `ssh` so that it can be used easily
   + Include 'tunnels' that enable `jupyter` or `tensorboard` to be accessed securely _through `ssh`_
-* Install software on the GCP machine
-  + Install the Nvidia drivers with `cuda`
-  + Install frameworks like `tensorflow` and `pytorch` that match the `cuda` version
-  + Install other 'essentials' like `jupyter`
+* Install software on the GCP machine:
+  + the Nvidia drivers with `cuda`
+  + frameworks like `tensorflow` and `pytorch` that match the `cuda` version
+  + other 'essentials' like `jupyter`
 * Run things like `jupyter` 
   + As a test
   + In a `screen` for longer-lived sessions
-* Mount the filesystem locally
+* Mount the GCP machine's files as if they were local
   + This allows us to use an IDE seamlessly
 
 All-in-all, the below enables us to use GCP as a replacement for a local Deep Learning machine - 
 and this may be:
 
-* a better economic choice (given current GPU pricing, plus the cost of electricity in Singapore)
+* a better economic choice (given current GPU pricing, plus the cost of electricity where you live)
 * more convenient/reliable than Colab 
 
 ... for more serious Deep Learning development.
@@ -49,7 +49,8 @@ and this may be:
 ### Create a suitable Google Cloud VM
 
 ( To see how to do this for a machine that will also auto-launch services and servers, see my
-[Building a reusable Deep Learning VM on Google Cloud](/oss/2021/10/05/gcp-deep-learning-machine-everything) post ).
+[Building a reusable Deep Learning VM on Google Cloud](/oss/2021/10/05/gcp-deep-learning-machine-everything) post.
+The two posts are 'compatible', and can be combined into one production + experimentation machine. ).
 
 {% highlight bash %}
 export PROJECT_NAME="my-special-project"
@@ -58,7 +59,7 @@ export INSTANCE_NAME="deep-learning-vm1"
 {% endhighlight %}
 
 
-And then run these to actually create the instance:
+And then run this to actually create the instance:
 
 {% highlight bash %}
 export ZONE="asia-southeast1-b"  # This is good for where I am located (Singapore)
@@ -205,7 +206,7 @@ NB: Since the hard disk we've chosen is Persistent, all of this installation onl
 
 ### Create a local `venv` for python
 
-This is good `python` hygene :
+This is good `python` hygiene :
 
 {% highlight bash %}
 sudo apt install -y python3.8-venv
@@ -220,7 +221,11 @@ pip install --upgrade pip
 
 ### Install Deep Learning frameworks
 
+Once you have a `venv` installed (assumed to be named as above):
+
 {% highlight bash %}
+. env38/bin/activate
+
 pip install tensorflow tensorboard
 
 # Agrees with the CUDA version installed above:
@@ -233,7 +238,7 @@ pip install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f ht
 
 ### Install `jupyter`, etc
 
-Once you have a `venv` installed (assumed to be named as above).
+Once you have a `venv` installed (assumed to be named as above):
 
 *  See the [Jupyter Docs](https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#running-a-public-notebook-server) for reference:
 
@@ -261,14 +266,14 @@ c.NotebookApp.password=''
    " >> /home/${USER}/.jupyter/jupyter_notebook_config.py
 {% endhighlight %}
 
->    NB: This is **very unsafe** if you open port 8585 to the internet 
->    (although it is set to only bind to `localhost` as a precaution)!  
+>    NB: This is _very unsafe_ *if* you open port 8585 to the internet 
+>    (here it is set to bind to `localhost`, rather than '*', as a precaution)! .
 >    But we're not going to do that: 
->    We're only going to access it via an ssh tunnel to the server's port 8585.  
->    And that's all secure within what is essentially our own little VPN.
+>    We're only going to access it via an ssh tunnel to the server's port 8585.  And 
+>    that's all secure within what is essentially our own little VPN.
 
 
-### Launch Jupyter on the server
+#### Launch Jupyter on the server
 
 Since we've set up the default `notebook-dir` and other command-line options in the configuration, 
 `jupyter` should work from whereever you launch it:
@@ -284,7 +289,7 @@ something like : `token=437abd35ddXXXXd9579f5bd6bc16596acYYYYe180b60e3e9`
 that you should 'grab' somehow (to paste into the browser later).
 
 
-### Launch Jupyter in the browser
+#### Launch Jupyter in the browser
 
 Now you can get to the running instance : 
 
@@ -298,7 +303,9 @@ This was a proof-of-concept.  We can deal with `tensorboard` (and any other serv
 ### Launch Multiple services in the backend
 
 We can use `screen` to run several different services on the server via this one `ssh` session 
-(you will probably want to update the paths) :
+(you will probably want to update the paths).  
+
+The following can be run on the GCP server using the `ssh` session created above :
 
 {% highlight bash %}
 NL="$(printf \\r)"
@@ -330,15 +337,45 @@ This should enable:
 
 
 ### Use `sshfs` to remotely access the VM filesystem
-#### as if it was a local one
+#### ... so that it appears to be local storage
 
-https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh
-https://askubuntu.com/questions/1046816/how-to-umount-non-sudo-sshfs-created-directory
-https://gist.github.com/mollymerp/26ef43f8f72577e7133c95f9c9f893c8
-  https://stackabuse.com/how-to-fix-warning-remote-host-identification-has-changed-on-mac-and-linux/
+<!--
+
+* [Digital Ocean's notes](https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh)
+* [A helpful gist for root sshfs](https://gist.github.com/mollymerp/26ef43f8f72577e7133c95f9c9f893c8)
+  + [And fixing some warnings](https://stackabuse.com/how-to-fix-warning-remote-host-identification-has-changed-on-mac-and-linux/)
+
+* [`sshfs` as a non-root user](https://askubuntu.com/questions/1046816/how-to-umount-non-sudo-sshfs-created-directory)
+!-->
+
+First, ensure that you have the `fuse` filesystem `sshfs` installed on your local machine:
+
+* [Fedora details](https://www.redhat.com/sysadmin/sshfs)
+  +  Fedora local installation requires `dnf install fuse-sshfs`
+
+
+The following mounts the GCP home directory on `gcp_base` locally - of course
+the remote path (and name of the local mount point) are totally up to you:
   
-...
+{% highlight bash %}
+mkdir -p gcp_base
 
+sshfs ${GCP_ADDR}:. gcp_base -o reconnect
+{% endhighlight %}
+
+
+Once finished :
+
+{% highlight bash %}
+fusermount -u ./gcp_base
+{% endhighlight %}
+
+Note that if you have files open within the mount point, `fusermount` will refuse to unmount 
+the directory.  This can also be caused by anything that might `watch` within the directory too (e.g.
+a source control manager looking for changed files, or a web server auto-refresh).  Just stop these
+things running locally,
+and `fusermount` will then dismount properly 
+(you may have to find out which process has open files within the mountpoint using `lsof ./gcp`).
 
 
 ### Normal Operation!
@@ -349,11 +386,8 @@ Open two tabs locally, and in each, run :
 export PROJECT_NAME="my-special-project"
 gcloud config set project ${PROJECT_NAME}
 export INSTANCE_NAME="deep-learning-vm1"
-
-gcloud compute instances start ${INSTANCE_NAME}
-
 export GCP_ADDR=`grep "Host ${INSTANCE_NAME}" ~/.ssh/config | tail --bytes=+6`
-echo ${GCP_ADDR}
+echo ${GCP_ADDR}  # Just to check that it's found
 {% endhighlight %}
 
 
@@ -367,7 +401,8 @@ gcloud compute instances start ${INSTANCE_NAME}
 ssh ${GCP_ADDR} -L 8585:localhost:8585 -L 8586:localhost:8586 # ... etc
 
 # Inside the `ssh` session, run the 'screen script' above
-#    And leave it running
+#   And leave the ssh session running ...
+#     (even if you don't need the terminal, you may want the tunnels open)
 {% endhighlight %}
 
 
@@ -376,16 +411,19 @@ ssh ${GCP_ADDR} -L 8585:localhost:8585 -L 8586:localhost:8586 # ... etc
 This tab will run the local side of the interface:
 
 {% highlight bash %}
-mkdir -p ./gcp-home
-fuser-mount ${GCP_ADDR} ...
-
+sshfs ${GCP_ADDR}:. gcp_base -o reconnect
 {% endhighlight %}
+
+Load editors, etc, to operate on these files 'locally'.
 
 
 
 ### Terminate the GCP VM when done...
 
 {% highlight bash %}
+# if needed:
+fusermount -u ./gcp_base
+
 gcloud compute instances stop ${INSTANCE_NAME}
 {% endhighlight %}
 
