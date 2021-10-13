@@ -284,10 +284,6 @@ Since we've set up the default `notebook-dir` and other command-line options in 
 jupyter notebook
 {% endhighlight %}
 
-This will (until you _optionally_ add a password using the Jupyter browser GUI) give you
-something like : `token=437abd35ddXXXXd9579f5bd6bc16596acYYYYe180b60e3e9` 
-that you should 'grab' somehow (to paste into the browser later).
-
 
 #### Launch Jupyter in the browser
 
