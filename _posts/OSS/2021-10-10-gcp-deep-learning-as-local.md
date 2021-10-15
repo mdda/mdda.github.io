@@ -393,7 +393,7 @@ This tab will run the server side of the interface:
 
 {% highlight bash %}
 gcloud compute instances start ${INSTANCE_NAME}
-
+gcloud compute config-ssh
 ssh ${GCP_ADDR} -L 8585:localhost:8585 -L 8586:localhost:8586 # ... etc
 
 # Inside the `ssh` session, run the 'screen script' above
