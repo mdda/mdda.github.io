@@ -12,7 +12,7 @@ tags:
 - top_k
 - top_p
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
