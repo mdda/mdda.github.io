@@ -1,7 +1,7 @@
 ---
 date: 2021-12-09
 title:  "Back to Basics 02"
-tagline: Presentation
+tagline: Series
 category: AI
 tags:
 - Presentation

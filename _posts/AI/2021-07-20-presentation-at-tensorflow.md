@@ -1,7 +1,7 @@
 ---
 date: 2021-07-20
 title:  "Back to Basics 03"
-tagline: Presentation
+tagline: Series
 category: AI
 tags:
 - Presentation

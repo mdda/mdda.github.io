@@ -429,4 +429,19 @@ gcloud compute instances stop ${INSTANCE_NAME}
 All done!
 
 
+### Footnote
+
+The above process for 'GCP machine as local GPU' works so well 
+that I recently sold my local GPU (Nvidia Titan X 12Gb, Maxwell), 
+and migrated onto GCP for 'real-time' development.  One benefit 
+(apart from all-in cost) has also been the ability 
+to seamlessly upgrade to a larger GPU set-up once the code works, 
+without having to make an infrastructure changes 
+(i.e. disk can be brought up on a larger machine near instantly).  
+
+I should also give a shout-out to Google for helping this process 
+by generously providing Cloud Credits to help get this all implemented.
+
+
+
 
