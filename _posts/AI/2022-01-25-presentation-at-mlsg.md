@@ -44,7 +44,7 @@ The meetup was titled "NeurIPS and the State of Deep Learning", and was in two p
 
 The slides for my talk are here :
 
-<a href="https://redcatlabs.com/2022-01-25_MLSG_RETRO-vs-LaMDA/" target="_blank">
+<a href="https://redcatlabs.com/2022-01-25_MLSG_RETRO-vs-LaMDA/#/lamda-talk" target="_blank">
 ![Presentation Screenshot]({{ site.url }}/assets/img/2022-01-25_MLSG_RETRO-vs-LaMDA_600x390.png)
 </a>
 
