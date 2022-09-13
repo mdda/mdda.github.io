@@ -138,14 +138,45 @@ aicrowd@549f95a04499:~$ exit
 Once we exit, though, the container *evaporates* : There's nothing left - any changes are gone!
 
 
-### Building a container for development
+### Building a container for development : `minerl-basalt-dev`
+
+These are just suggestions, that illustrate how we can now build on to of `minerl-basalt-base`...
+
+Contents of `Dockerfile-dev` : 
+
+{% highlight bash %}
+{% endhighlight %}
+
+
+Contents of `apt-dev.txt` : 
+
+{% highlight bash %}
+{% endhighlight %}
+
+
+Contents of `environment-dev.txt` : 
+
+{% highlight bash %}
+{% endhighlight %}
+
+
+Finally, build the new *development container* with :
+
+{% highlight bash %}
+podman build --file Dockerfile-dev --tag minerl-basalt-dev --format docker 
+{% endhighlight %}
+
+The simplest way to run it is (though we're going to get more fancy soon) :
+
+{% highlight bash %}
+podman run -it minerl-basalt-dev
+{% endhighlight %}
 
 
 
+### Using port forwarding to the host
 
-
-
-The following container run command also makes (say) `jupyter-lab` available on the local machine (via two passthroughs : container-podman-host and host-ssh-localhost):
+The following container run command also makes (say) `jupyter-lab` available in your browser:
 
 {% highlight bash %}
 podman run -p 8585:8585 -it minerl-basalt-base
@@ -154,6 +185,27 @@ podman run -p 8585:8585 -it minerl-basalt-base
 # jupyter-lab --ip=0.0.0.0 --port=8585 --no-browser
 {% endhighlight %}
 
+
+Note that if your host is not your desktop machine (i.e. you are doing a `ssh` into your host), then if you 
+also portforward your host to your local machine (e.g.: `ssh -L 8585:localhost:8585`) then the whole chain 
+from container to your desktop localhost should work.
+
+
+### Using host folder mounting
+
+In order to have some persistent state stored by the container, 
+we'll mount host directories so that they're available inside the container for read/write.
+Care has to be taken if we're using [rootless volumes](https://www.tutorialworks.com/podman-rootless-volumes/) : 
+
+{% highlight bash %}
+cd ../basalt-dev/..  # Make sure that current folder is parent of 'basalt-dev' on the host
+podman unshare chown 1001:1001 -R `pwd`/basalt-dev
+
+podman run --mount=type=bind,source=`pwd`/basalt-dev,destination=/home/aicrowd/basalt-dev -it minerl-basalt-dev
+{% endhighlight %}
+
+
+> These ideas can be combined (i.e. port forwarding and directory sharing)
 
 
 ### Terminate the GCP VM when done...
