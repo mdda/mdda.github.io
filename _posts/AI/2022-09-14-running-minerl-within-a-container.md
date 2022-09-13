@@ -1,6 +1,7 @@
 ---
 date: 2022-09-14
 title: Running `minerl` within a Container
+tagline: MineRL
 category: AI
 tags:
 - podman
@@ -57,7 +58,7 @@ Run the following to check that the `docker.io` registry is enabled
 (since that's where the `aicrowd` docker definition files are stored) :
 
 {% highlight bash %}
-podman info
+podman info  # look under the 'registries:' entry
 {% endhighlight %}
 
 Other useful commands for `podman`:
@@ -142,21 +143,69 @@ Once we exit, though, the container *evaporates* : There's nothing left - any ch
 
 These are just suggestions, that illustrate how we can now build on to of `minerl-basalt-base`...
 
-Contents of `Dockerfile-dev` : 
-
+We're going to add 3 new files into the `basalt-2022-behavioural-cloning-baseline` directory: 
 {% highlight bash %}
+# Make sure we're in the right directory:
+cd ../basalt-2022-behavioural-cloning-baseline
+
+# Here are the files we're adding : 
+ls -l | grep dev | grep -v '~'
+#-rw-rw-r-- 1 andrewsm andrewsm   706 Sep 10 08:04 Dockerfile-dev
+#-rw-rw-r-- 1 andrewsm andrewsm     0 Sep 10 08:04 apt-dev.txt
+#-rw-rw-r-- 1 andrewsm andrewsm   334 Sep 10 08:05 environment-dev.yml
 {% endhighlight %}
 
 
-Contents of `apt-dev.txt` : 
+Contents of `Dockerfile-dev` (this is very similar in style to the original Dockerfile, 
+except that it builds on `minerl-basalt-base` - so is quick to iterate with): 
 
 {% highlight bash %}
+FROM minerl-basalt-base
+
+# Install needed apt packages
+ARG DEBIAN_FRONTEND=noninteractive
+USER root
+COPY apt-dev.txt apt-dev.txt
+RUN apt -qq update && xargs -a apt-dev.txt apt -qq install -y --no-install-recommends \
+ && rm -rf /var/cache/*
+
+# Set the user and conda environment paths
+USER aicrowd
+ENV HOME_DIR /home/$USER
+ENV CONDA_DEFAULT_ENV="minerl"
+ENV PATH /home/aicrowd/.conda/envs/minerl/bin:$PATH
+ENV FORCE_CUDA="1"
+
+# Use MineRL environment
+SHELL ["conda", "run", "-n", "minerl", "/bin/bash", "-c"]
+
+# Conda environment update
+COPY environment-dev.yml environment-dev.yml
+RUN conda env update --name minerl -f environment-dev.yml --prune
+
+## Copy the files
+#COPY --chown=1001:1001 . /home/aicrowd
 {% endhighlight %}
 
 
-Contents of `environment-dev.txt` : 
+Contents of `apt-dev.txt` (this includes additional packages, over-and-above those already installed) : 
 
 {% highlight bash %}
+# Nothing here yet - but if you needed OS packages installed... list them here
+{% endhighlight %}
+
+
+Contents of `environment-dev.txt` (this includes additional dependencies, over-and-above those already installed) : 
+
+{% highlight bash %}
+name: minerl
+channels:
+  - conda-forge
+  - defaults
+  - pytorch
+dependencies:
+  - pip:
+    - jupyterlab
 {% endhighlight %}
 
 
@@ -199,8 +248,13 @@ Care has to be taken if we're using [rootless volumes](https://www.tutorialworks
 
 {% highlight bash %}
 cd ../basalt-dev/..  # Make sure that current folder is parent of 'basalt-dev' on the host
-podman unshare chown 1001:1001 -R `pwd`/basalt-dev
 
+# The '1001' number is the default `uid` (user id) of the `aicrowd` user inside the container
+# But we'll leave the `gid` (group id) alone, so that our host user can also access seamlessly from the host side
+podman unshare chown 1001 -R ./basalt-dev
+podman unshare chmod ug+rw -R ./basalt-dev
+
+# Now run the container, with the shared folder mounted inside
 podman run --mount=type=bind,source=`pwd`/basalt-dev,destination=/home/aicrowd/basalt-dev -it minerl-basalt-dev
 {% endhighlight %}
 
