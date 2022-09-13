@@ -1,6 +1,6 @@
 ---
 date: 2022-09-13
-title: Containers within a GCP host server, with Nvidia pass-through
+title: "Containers within a GCP host server, with Nvidia pass-through"
 category: OSS
 tags:
 - tensorflow
