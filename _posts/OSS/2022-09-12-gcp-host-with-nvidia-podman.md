@@ -1,5 +1,5 @@
 ---
-date: 2022-09-13
+date: 2022-09-12
 title: "Containers within a GCP host server, with Nvidia pass-through"
 category: OSS
 tags:

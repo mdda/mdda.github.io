@@ -1,5 +1,5 @@
 ---
-date: 2022-09-14
+date: 2022-09-13
 title: "Running MineRL within a Container"
 tagline: MineRL
 category: AI
@@ -41,7 +41,7 @@ These are the steps that this involves, and leaves the final machine pretty quic
   + If you already have a decent desktop machine, this is a NOOP
   
 * Enable the host to run `podman` (which is almost identical to `docker`) including the *Nvidia pass-through into containers* that we need
-  + I have published a [blog post](/oss/2022/09/13/gcp-host-with-nvidia-podman) about how to do this for an Ubuntu (Linux) machine, 
+  + I have published a [blog post](/oss/2022/09/12/gcp-host-with-nvidia-podman) about how to do this for an Ubuntu (Linux) machine, 
     so if that's your preference, then the instructions are right there
   + If you're Windows-based, then I'd be glad to point to point to good `docker` / `podman` and Nvidia resources to link too...
 
