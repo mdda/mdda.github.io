@@ -24,7 +24,7 @@ There are several benefits to running this way:
 * The `minerl` environment and OpenAI `VPT` models are tricky to set up
   + The containerised version has all the correct versions and paths set up in 1 command
   + This is particularly helpful for Windows users, who seem to experience most pain
-* Submissions to the competition require a container version
+* Submission to the competition requires a container version
   + Developing in the right environment ensures that this is practically seamless
 * Getting familiar with containers is a useful side-effect
 
@@ -206,6 +206,7 @@ channels:
 dependencies:
   - pip:
     - jupyterlab
+    - pyvirtualdisplay
 {% endhighlight %}
 
 
@@ -228,7 +229,7 @@ podman run -it minerl-basalt-dev
 The following container run command also makes (say) `jupyter-lab` available in your browser:
 
 {% highlight bash %}
-podman run -p 8585:8585 -it minerl-basalt-base
+podman run -p 8585:8585 -it minerl-basalt-dev
 
 # Assuming that jupyter-lab is run inside the container as:
 # jupyter-lab --ip=0.0.0.0 --port=8585 --no-browser
@@ -259,7 +260,17 @@ podman run --mount=type=bind,source=`pwd`/basalt-dev,destination=/home/aicrowd/b
 {% endhighlight %}
 
 
-> These ideas can be combined (i.e. port forwarding and directory sharing)
+
+### Complete commandline for `minerl-basalt-dev`
+
+These ideas can be combined (i.e. port forwarding and directory sharing) : 
+
+{% highlight bash %}
+cd ../basalt-dev/..  # Make sure that current folder is parent of 'basalt-dev' on the host
+
+podman run -p 8585:8585 --mount=type=bind,source=`pwd`/basalt-dev,destination=/home/aicrowd/basalt-dev -it minerl-basalt-dev
+{% endhighlight %}
+
 
 
 ### Terminate the GCP VM when done...
