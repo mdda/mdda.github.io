@@ -1,6 +1,6 @@
 ---
 date: 2022-09-14
-title: Running `minerl` within a Container
+title: "Running MineRL within a Container"
 tagline: MineRL
 category: AI
 tags:
