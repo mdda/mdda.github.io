@@ -41,6 +41,8 @@ The meetup was titled "NeurIPS and the State of Deep Learning", and was in two p
          + The focus on safety and groundedness
          + The 'tricks' used to enable fine-tuning data to significantly improve its performance
 
+There's a [video of me doing the talk on YouTube](https://youtu.be/gwlI7J54Ng0).  Please Like and Subscribe! 
+
 
 The slides for my talk are here :
 

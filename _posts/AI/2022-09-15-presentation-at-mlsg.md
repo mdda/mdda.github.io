@@ -47,7 +47,7 @@ The meetup was titled "World of Diffusion", and was in two parts:
 
 
 There's a [video of me doing the talk on YouTube](https://youtu.be/hVk7Py1c24Q) (this is a slightly longer version than the one at the MeetUp,
-likely due to more asides, etc).
+likely due to more asides, etc).  Please Like and Subscribe! 
 
 
 The slides for my talk, which contain links to all of the reference materials and sources, are here :
