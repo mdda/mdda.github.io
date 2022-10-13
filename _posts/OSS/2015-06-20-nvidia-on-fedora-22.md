@@ -122,7 +122,7 @@ sudo make install
 This will likely complain about not finding ``clBLAS``, which isn't a problem here.
 Although, if you know you will require ``clBLAS`` in the future 
 (and this is for advanced/experimental users only),
-see my [OpenCL post](http://blog.mdda.net/oss/2014/11/02/building-clblas/), 
+see my [OpenCL post](/oss/2014/11/02/building-clblas/), 
 since you need to install this before running ``cmake`` above).
 
 
