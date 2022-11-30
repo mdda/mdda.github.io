@@ -32,18 +32,18 @@ in using them yourself to generate and manipulate images.
 The meetup was titled "World of Diffusion", and was in two parts:
 
 1. How Diffusion Works - My talk
-    Although the mathematical foundations of diffusion can be a little daunting, 
-    This talk will also highlight the practical techniques that practitioners 
-    are using to enable these models to achieve results more quickly, 
-    and with higher controllability. It also turns out that the 'diffusion idea' 
-    can be extended way beyond the standard settings.
+  +  Although the mathematical foundations of diffusion can be a little daunting, 
+     This talk will also highlight the practical techniques that practitioners 
+     are using to enable these models to achieve results more quickly, 
+     and with higher controllability.  It also turns out that the 'diffusion idea' 
+     can be extended way beyond the standard settings.
 
 
 2. Investigating Prompt Engineering on Diffusion Models - Sam Witteveen
-    Stable Diffusion is taking off across the internet and it is amazing the results 
-    you can get. But what prompts and words can you use to get even better images 
-    and in styles you want. Sam will walk you through techniques and code for getting 
-    the best prompts to generate high quality images - Code Notebooks will be shared.
+  +  Stable Diffusion is taking off across the internet and it is amazing the results 
+     you can get.  But what prompts and words can you use to get even better images 
+     and in styles you want?  Sam also walked through techniques and code for getting 
+     the best prompts to generate high quality images - and shared his Colab Notebooks.
 
 
 There's a [video of me doing the talk on YouTube](https://youtu.be/hVk7Py1c24Q) (this is a slightly longer version than the one at the MeetUp,
