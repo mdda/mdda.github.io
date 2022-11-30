@@ -35,14 +35,14 @@ swag for the early arrivers!
 This month's event is covering some of the recent advances in the field of Large Language Models (LLMs):
 
 1. Instructive Prompting -  Sam Witteveen
-     Prompting LLMs has opened up a whole new world in NLP. In this talk Sam will go through some of 
+  +  Prompting LLMs has opened up a whole new world in NLP. In this talk Sam will go through some of 
      the history of prompting in LLMs and how instructive prompting is being used in some of 
      the latest models such as FLAN and BloomZ to massively improve results and how you can use them in your own project.
 
 2. Tomorrow's World - My talk
-     Following on the current advances that Sam will talk about, this talk will highlight new research directions 
+  +  Following on the current advances that Sam will talk about, this talk will highlight new research directions 
      that may point a way forwards (other than "just train bigger models for longer"). 
-     This will include : 
+     This included : 
         * Having models learn from human preference; 
         * create their own data; and 
         * create their own prompts.
