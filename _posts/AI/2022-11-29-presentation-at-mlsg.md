@@ -47,10 +47,9 @@ This month's event is covering some of the recent advances in the field of Large
         * create their own data; and 
         * create their own prompts.
 
-<!--
-TODO : There's a [video of me doing the talk on YouTube](https://youtu.be/hVk7Py1c24Q) (this is a slightly longer version than the one at the MeetUp,
-likely due to more asides, etc).  Please Like and Subscribe! 
-!-->
+
+>  There's a [video of me doing the talk on YouTube](https://youtu.be/ameLkzDaLX4) (this is a slightly longer version than the one at the MeetUp,
+>  partly due to the release of ChatGPT within days following the MeetUp...).  Please Like and Subscribe! 
 
 The slides for my talk, which contain links to all of the reference materials and sources, are here :
 
