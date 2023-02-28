@@ -1,6 +1,6 @@
 ---
 date: 2023-02-23
-title:  "New You Can Use - Practical Stuff"
+title:  "News You Can Use - Practical Stuff"
 tagline: Presentation
 category: AI
 tags:
