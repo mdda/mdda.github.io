@@ -60,7 +60,7 @@ likely due to more asides, etc).  Please Like and Subscribe!
 
 The slides for my talk, which contain links to all of the reference materials and sources, are here :
 
-<a href="https://redcatlabs.com/2023-01-19_MLSG_ASR-and-TTS/#/llm-news-talk" target="_blank">
+<a href="https://redcatlabs.com/2023-01-19_MLSG_ASR-and-TTS/#/tts-talk" target="_blank">
 ![Presentation Screenshot]({{ site.url }}/assets/img/2023-01-19_MLSG_ASR-and-TTS_600x390.png)
 </a>
 
