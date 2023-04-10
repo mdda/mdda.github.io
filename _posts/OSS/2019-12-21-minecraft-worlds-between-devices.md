@@ -86,3 +86,30 @@ adb pull /storage/emulated/0/games/com.mojang/minecraftWorlds/ygf7XcCoAQA= .
 adb push Ho3+XQ+nAAA= /storage/emulated/0/games/com.mojang/minecraftWorlds/ 
 adb push ygf7XcCoAQA= /storage/emulated/0/games/com.mojang/minecraftWorlds/
 
+
+#OLD# On Samsung Tab A7 (2020) : 
+#OLD#   /sdcard/games/com.mojang/minecraftWorlds/    
+
+# On Samsung Tab A7 (2020) : 
+#   /sdcard/Android/data/com.mojang.minecraftpe/files/games/com.mojang/minecraftWorlds/
+# On square:
+#   /home/andrewsm/Downloads/Minecraft/2023-04-11_Tab9-2020/
+
+drwxrwx--x 3 u0_a200 sdcard_rw 3488 2023-04-06 20:35 2YNsXh+VAAA=
+drwxrwx--x 3 u0_a200 sdcard_rw 3488 2023-03-25 10:09 QZAEXkp2AwA=
+drwxrwx--x 3 u0_a200 sdcard_rw 3488 2022-11-06 17:29 LKgQXr07AQA=
+
+drwxrwx--x 3 u0_a200 sdcard_rw 3488 2022-09-04 18:29 ygf7XcCoAQA=
+drwxrwx--x 5 u0_a200 sdcard_rw 3488 2022-09-04 17:52 hCXqYkpOAQA=
+drwxrwx--x 5 u0_a200 sdcard_rw 3488 2022-08-03 15:15 bcTSYjWXNgA=
+drwxrwx--x 3 u0_a200 sdcard_rw 3488 2022-03-19 16:35 LQ6rYaJ3AgA=
+drwxrwx--x 3 u0_a200 sdcard_rw 3488 2021-12-27 16:49 DX7JYcH2AgA=
+drwxrwx--x 3 u0_a200 sdcard_rw 3488 2021-12-05 18:03 aI6sYRcmFwA=
+drwxrwx--x 3 u0_a200 sdcard_rw 3488 2021-12-05 17:43 wYmsYQz2BAA=
+drwxrwx--x 3 u0_a200 sdcard_rw 3488 2021-12-04 14:40 8YQJX69OmAA=
+drwxrwx--x 3 u0_a200 sdcard_rw 3488 2021-12-04 14:40 iI5sXiBTKgA=
+drwxrwx--x 3 u0_a200 sdcard_rw 3488 2021-12-04 14:40 0jgSXipLGwA=
+drwxrwx--x 3 u0_a200 sdcard_rw 3488 2021-12-04 14:40 Ho3+XQ+nAAA=
+
+adb pull /sdcard/Android/data/com.mojang.minecraftpe/files/games/com.mojang/minecraftWorlds .
+
