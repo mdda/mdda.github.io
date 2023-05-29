@@ -1,36 +1,30 @@
 ---
-date: 2022-08-18
+date: 2023-05-28
 title:  "What’s New in AI & Machine Learning"
 tagline: Presentation
 category: AI
 tags:
 - Presentation
 - Machine Learning
-- Transformers
-- LaMDA
-- JAX
+- MediaPipe
+- TFLite
 layout: post
-published: true
+published: false
 ---
 {% include JB/setup %}
 
 
 ### Presentation Link
 
-I was asked to give the Machine Learning keynote at the [Singapore Google I/O Extended 2022](https://gdg.community.dev/events/details/google-gdg-singapore-presents-google-io-extended-singapore-2022/)
-event held in the Singapore Google Developer Space.  While the event was held (finally) in-person,
-it was also recorded - and this post is just to point to the video and slide deck.
+I was asked to give the Machine Learning keynote at the [Singapore Google I/O Extended 2023](https://sites.google.com/view/ioe23-sg/home)
+event held in the Singapore Google Developer Space. 
 
-I discussed 3 key topics that came up during the main I/O event:
+The meetup was titled "MediaPipe with a bit of Bard", and included 4 different demos of MediaPipe functionality:
 
-* Coral Micro Dev board
-* Language / Vision Models at Google (including LaMDA and Imagen)
-* JAX/Flax : A New ML Stack
-
-
-
-The [video from the event](https://www.youtube.com/watch?v=Kj9q6DVU8_M) is located in the [Google Developer Space YouTube Channel](https://www.youtube.com/channel/UCiwz4_tbGyDYE64TuKe5-0g).
-
+* Audio classification (showing the Google instant demo page)
+* Facial landmarks (using the Javascript version via Codepen)
+* Interactive Segmentation (using the Python notebook, migrated to Colab, and using Bard to fix the foreground/background mistake in Google's code)
+* Text Classification (showing how TFLite could be used to ~minify MobileBERT, and Bard could be used to generate sample data)
 
 <!--
 
