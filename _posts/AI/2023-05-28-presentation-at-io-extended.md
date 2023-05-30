@@ -1,6 +1,6 @@
 ---
 date: 2023-05-28
-title:  "What’s New in AI & Machine Learning"
+title:  "MediaPipe with a bit of Bard"
 tagline: Presentation
 category: AI
 tags:
@@ -8,8 +8,10 @@ tags:
 - Machine Learning
 - MediaPipe
 - TFLite
+- Bard
+- Colab
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -28,24 +30,23 @@ The meetup was titled "MediaPipe with a bit of Bard", and included 4 different d
 
 <!--
 
-DIR=2022-07-23_GDG_Whats-New-in-ML
+DIR=2023-05-28_GDG-SG_IO-Extended
 gimp Screenshot_2022-09-01_02-18-54.png 
-echo ${DIR}_600x390.png # && rm tmp.png
-# -> 2022-07-23_GDG_Whats-New-in-ML_600x390.png
+# -> 2023-05-28_GDG-SG_IO-Extended_600x390.png
 
 !-->
 
 And the slides for my talk are here :
 
-<a href="https://docs.google.com/presentation/d/1SVg79tS1W71XZcoLsUr-crRfXgN17jGAEo3TOl09Ghk/edit?usp=sharing&resourcekey=0-l9OY1pkbijAWSjj-87k2rQ" target="_blank">
-<img src="/assets/img/2022-07-23_GDG_Whats-New-in-ML_600x390.png" alt="Presentation Screenshot" style="border:1px solid #000000" />
+<a href="https://docs.google.com/presentation/d/129Ihx7IcHIyb4-84kXfPlkWLS5nFUb3_masDxb2M4vA/edit?usp=sharing" target="_blank">
+<img src="/assets/img/2023-05-28_GDG-SG_IO-Extended_600x390.png" alt="Presentation Screenshot" style="border:1px solid #000000" />
 </a>
 
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="https://docs.google.com/presentation/d/1SVg79tS1W71XZcoLsUr-crRfXgN17jGAEo3TOl09Ghk/edit?usp=sharing&resourcekey=0-l9OY1pkbijAWSjj-87k2rQ" target="_blank">
-<img src="/assets/img/2022-07-23_GDG_Whats-New-in-ML_38_600x390.png" alt="Presentation Screenshot" style="border:1px solid #000000" />
+<a href="https://docs.google.com/presentation/d/129Ihx7IcHIyb4-84kXfPlkWLS5nFUb3_masDxb2M4vA/edit?usp=sharing" target="_blank">
+<img src="/assets/img/2023-05-28_GDG-SG_IO-Extended_16_600x390.png" alt="Presentation Screenshot" style="border:1px solid #000000" />
 </a>
 
 

@@ -16,7 +16,7 @@ tags:
 - InstructBLIP
 - BLIP-Diffusion
 layout: post
-published: false
+published: true
 ---
 {% include JB/setup %}
 
@@ -28,15 +28,11 @@ on MeetUp in February 2017 (it was previously named "TensorFlow and Deep Learnin
 and [the forty-third MeetUp](https://www.meetup.com/machine-learning-singapore/events/293568384/) 
 was our sixth 'in-person' event since the COVID era.
 
-For this event, we planned on having more in-depth talks on LLM techniques, but
-were also lucky enough to be able to host a speaker from a previous event : Rachel Lim!
+My talk covered the research fundamentals for MultiModal models,
+from ViT &amp; CLIP, to InstructBLIP, via the previous BLP modals from Salesforce Singapore.
+I was also able to squeeze in BLIP-Diffusion.
 
-After my own talk, which covered recent techniques that are showing promise in the prompt-engineering / fine-tuning area of LLMs,
-Sam talked about more advanced usecases of `langchain`, along with demonstration Colabs.
-
-Finally, instead of giving a formal talk, which might require many approvals from her current employer (Open AI),
-we invited Rachel to talk about her experience as a Singaporean moving into the Silicon Valley tech world,
-first via Stanford, then to Google, and most recently at Open AI.
+Sam talked about HuggingFace Transformer 'Agents' and a comparable implementation in `langchain`.
 
 Many thanks to the Google team, who not only allowed us to use Google's Developer Space, 
 and put out the extra chairs required for our larger-than-expected attendence,
@@ -50,15 +46,15 @@ likely due to more asides, etc).  Please Like and Subscribe!
 
 The slides for my talk, which contain links to all of the reference materials and sources, are here :
 
-<a href="https://redcatlabs.com/2023-04-20_MLSG_AugmentingLLMs/#/AugmentingLLMs-talk" target="_blank">
-![Presentation Screenshot]({{ site.url }}/assets/img/2023-04-20_MLSG_AugmentingLLMs_600x390.png)
+<a href="https://redcatlabs.com/2023-05-25_MLSG_Multimodal/#/multimodal-talk" target="_blank">
+![Presentation Screenshot]({{ site.url }}/assets/img/2023-05-25_MLSG_Multimodal_600x390.png)
 </a>
 
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
-<a href="https://redcatlabs.com/2023-04-20_MLSG_AugmentingLLMs/#/13/2" target="_blank">
-![Presentation Content Example]({{ site.url }}/assets/img/2023-04-20_MLSG_AugmentingLLMs_13-2_600x390.png)
+<a href="https://redcatlabs.com/2023-05-25_MLSG_Multimodal/#/9/2" target="_blank">
+![Presentation Content Example]({{ site.url }}/assets/img/2023-05-25_MLSG_Multimodal_9-2_600x390.png)
 </a>
 
 
