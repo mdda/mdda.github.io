@@ -18,10 +18,11 @@ published: true
 
 ### Presentation Link
 
-I was asked to give the Machine Learning keynote at the [Singapore Google I/O Extended 2023](https://sites.google.com/view/ioe23-sg/home)
+I was asked to give one of the Machine Learning talks at 
+the [Singapore Google I/O Extended 2023](https://sites.google.com/view/ioe23-sg/home)
 event held in the Singapore Google Developer Space. 
 
-The meetup was titled "MediaPipe with a bit of Bard", and included 4 different demos of MediaPipe functionality:
+My talk was titled "MediaPipe with a bit of Bard", and included 4 different demos of MediaPipe functionality:
 
 * Audio classification (showing the Google instant demo page)
 * Facial landmarks (using the Javascript version via Codepen)
