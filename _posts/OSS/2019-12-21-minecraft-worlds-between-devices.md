@@ -113,3 +113,16 @@ drwxrwx--x 3 u0_a200 sdcard_rw 3488 2021-12-04 14:40 Ho3+XQ+nAAA=
 
 adb pull /sdcard/Android/data/com.mojang.minecraftpe/files/games/com.mojang/minecraftWorlds .
 
+# From Onda in /data/data/com.mojang.minecraftpe/games/com.mojang/minecraftWorlds 
+drwxrwx--x root     sdcard_rw          2020-01-02 11:47 +34jAEKTCAA=  # mddaMain!
+drwxrwx--x root     sdcard_rw          2019-12-27 00:46 HvfDXFqZAAA=  # OurCreative
+drwxrwx--x root     sdcard_rw          2019-12-22 06:27 clbjXYOfAAA=  # Survival3000
+ 
+adb pull '/storage/emulated/0/games/com.mojang/minecraftWorlds/+34jAEKTCAA='
+adb pull '/storage/emulated/0/games/com.mojang/minecraftWorlds/HvfDXFqZAAA='
+adb pull '/storage/emulated/0/games/com.mojang/minecraftWorlds/clbjXYOfAAA='
+ 
+scp -r -P 2222 clbjXYOfAAA\= user@192.168.1.19:/storage/emulated/0/games/com.mojang/minecraftWorlds/
+scp -r -P 2222 \+34jAEKTCAA\=/ user@192.168.1.19:/storage/emulated/0/games/com.mojang/minecraftWorlds/
+scp -r -P 2222 HvfDXFqZAAA\=/ user@192.168.1.19:/storage/emulated/0/games/com.mojang/minecraftWorlds/
+
