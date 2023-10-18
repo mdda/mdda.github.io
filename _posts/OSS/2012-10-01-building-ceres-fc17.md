@@ -22,7 +22,7 @@ yum install gflags-devel
 
 {% endhighlight %}
 
-The Fedora rpm package for 'glog' is older than required (i.e. it is <3.1), so it has to be built manually.  So, as a precursor to the main build, one requires :
+The Fedora rpm package for 'glog' is older than required (i.e. it is &lt;3.1), so it has to be built manually.  So, as a precursor to the main build, one requires :
 
 
 {% highlight bash %}
@@ -33,14 +33,12 @@ cd glog-0.3.2
 make
 sudo make install
 # This puts it in /usr/local/ by default
-
 {% endhighlight %}
 
 Now pull in all the other required packages :
 
 {% highlight bash %}
 yum install eigen3-devel suitesparse-devel blas-devel lapack-devel protobuf-devel
-
 {% endhighlight %}
 
 and then follow the instructions in the PDF (or the steps below...) :
@@ -53,7 +51,7 @@ cd release
 cmake -DGLOG_LIB=/usr/local/lib/libglog.so ..
 make
 make test
-
 {% endhighlight %}
 
-FWIW, all the tests pass quickly (<0.1sec) apart from "schur_eliminator_test" (60sec) and "system_test" (300sec).
+FWIW, all the tests pass quickly (&lt;0.1sec) apart from "schur_eliminator_test" (60sec) and "system_test" (300sec).
+

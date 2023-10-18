@@ -258,7 +258,7 @@ b: (Const): /job:localhost/replica:0/task:0/device:GPU:0
  [49. 64.]]
 {% endhighlight %}
 
-NB: ```tensorflow``` has to be [compiled from source to work with compute capability of <3.5](https://github.com/tensorflow/tensorflow/issues/17445#issuecomment-378459655). Unfortunately, 
+NB: `tensorflow` has to be [compiled from source to work with compute capability of &lt;3.5](https://github.com/tensorflow/tensorflow/issues/17445#issuecomment-378459655). Unfortunately, 
 my [GTX 760 has a compute capability of 3.0](https://www.myzhar.com/blog/tutorials/tutorial-nvidia-gpu-cuda-compute-capability/).  There 
 are [some indications](https://stackoverflow.com/questions/39023581/tensorflow-cuda-compute-capability-3-0-the-minimum-required-cuda-capability-is) that 
 installing from source would help - but that is untested as-yet.
@@ -291,7 +291,7 @@ b = torch.Tensor( [[1.0, 2.0], [3.0, 4.0], [5.0, 6.0]]).type(dtype)
 print(a.mm(b))  # matrix-multiply (should state : 'cuda' to prove it's on the GPU)
 {% endhighlight %}
 
-NB: ```PyTorch``` has to be [compiled from source to work with compute capability of <5.5](https://discuss.pytorch.org/t/pytorch-no-longer-supports-this-gpu-because-it-is-too-old/13803).  There 
+NB: ```PyTorch``` has to be [compiled from source to work with compute capability of &lt;5.5](https://discuss.pytorch.org/t/pytorch-no-longer-supports-this-gpu-because-it-is-too-old/13803).  There 
 are some claims that installing from source would help - but that is untested as-yet.
 
 All done.

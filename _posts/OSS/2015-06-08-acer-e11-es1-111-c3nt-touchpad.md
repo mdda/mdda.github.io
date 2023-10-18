@@ -22,9 +22,9 @@ This is a nice little notebook I picked up recently at a Singapore Expo (NB: Pri
   
 ### Problem : Touchpad sometimes goes 'Berserk'
 
-  *  If the touchpad has 'gone away' again : Try the ```Fn-F7``` is 'touchpad on/off' key
+  *  If the touchpad has 'gone away' again : Try the `Fn-F7` is 'touchpad on/off' key
   
-  *  Sometimes the touchpad goes 'berzerk', this can sometimes be cured (best method so far) by doing ```Fn-F7``` twice.
+  *  Sometimes the touchpad goes 'berzerk', this can sometimes be cured (best method so far) by doing `Fn-F7` twice.
   
     * If anyone has any clues about how to fix this properly, then please leave a comment below
     

@@ -69,7 +69,7 @@ gcloud compute --project=${PROJECT_NAME} instances create ${INSTANCE_NAME} \
       su --login --command=/home/${GCP_USER}/3-on-start.bash ${GCP_USER}"
 {% endhighlight %}
 
-This complains about Disk <200Gb, but finally declares ...
+This complains about Disk &lt;200Gb, but finally declares ...
 >   NAME            ZONE               MACHINE_TYPE   PREEMPTIBLE  INTERNAL_IP  EXTERNAL_IP    STATUS
 >   minerl-vm-host  asia-southeast1-b  n1-standard-8  true         10.148.0.8   34.XX.XX.XX    RUNNING
   

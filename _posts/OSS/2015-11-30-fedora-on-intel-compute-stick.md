@@ -16,7 +16,9 @@ I recently won an [Intel Compute Stick](http://www.intel.com/content/www/us/en/c
 (aka the Fintechathon).  The Windows version has 2Gb of RAM, and 32Gb of ~SSD 
 (compared that to the version with Ubuntu 14.04 LTS 64-bit installed, which only comes with 1Gb and 8Gb respectively - go figure).
 
+```
 ~ssd = emmc
+```
 
 Of course, booting into Windows was not an option.  
 However, my distribution preference is Fedora 
@@ -117,10 +119,9 @@ wlan0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         RX errors 0  dropped 18  overruns 0  frame 0
         TX packets 41  bytes 6535 (6.3 KiB)
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+{% endhighlight %}
 
 ### WOOHOO !
-
-{% endhighlight %}
 
 
 #### Worth watching : 
@@ -167,6 +168,7 @@ The following issue on the rtl8723bs github page makes more sense, after delving
 
 http://kodi.wiki/view/HOW-TO:Install_Kodi_on_Fedora_22_using_RPMFusion_packages
 
+{% highlight bash %}
 systemctl stop firewalld
 dnf remove firewalld
 
@@ -179,6 +181,7 @@ dnf install --nogpgcheck \
 systemctl poweroff
 
 systemctl reboot
+{% endhighlight %}
 
 
 
@@ -236,17 +239,18 @@ Changes :
 
 Need ```update-grub2``` : No, it is ```grub2-mkconfig``` in Fedora
 
+```bash
 ##ln -sf /boot/efi/EFI/fedora/grub.cfg /etc/grub2-efi.cfg
 ##grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
 
 grub2-mkconfig -o /boot/grub2/grub.cfg
+```
 
-
-And change ```\${libdir}/grub/grub-mkconfig_lib``` to ??  /usr/share/grub instead of /usr/lib/grub
+And change `\${libdir}/grub/grub-mkconfig_lib` to ??  `/usr/share/grub` instead of `/usr/lib/grub`
 
 is the solution.
 
-/etc/grub2.cfg -> ../boot/grub2/grub.cfg
+`/etc/grub2.cfg` &rarr; `../boot/grub2/grub.cfg`
 
 is a bad link.
 
@@ -327,11 +331,13 @@ echo "$0: Finished."
 
 After rebooting, check which DSDT we're running :
 
+{% highlight bash %}
 cat /sys/firmware/acpi/tables/DSDT > dsdt.dat
 iasl -d dsdt.dat
 more dsdt.dsl
 >> /HAD
 # "Intel(R) HDMI Audio Driver - HAD"
+{% endhighlight %}
 
 Sound
 
@@ -349,7 +355,9 @@ https://www.happyassassin.net/fedlet/repo/SRPMS/
 
 
 
+```bash
 diff --git a/drivers/mfd/intel_soc_pmic_core.c b/drivers/mfd/intel_soc_pmic_core.c
+```
 
 A backport of Rawhide’s linux-firmware package, which contains the firmware needed for the sound adapter
 
@@ -359,12 +367,14 @@ shutdown/reboot should work on Venue 8 Pro, T100 and Miix 2
 
 
 DONE ::
+```
 dnf install libva-driver-intel  # from rpmfusion
-
+```
 
 ## tried : 
+```
 modprobe -v snd-soc-sst-baytrail-pcm
-
+```
 Complaints : 
 [    7.545573] sst-acpi 80860F28:00: No matching ASoC machine driver found
 [    7.805593] intel_sst_acpi 80860F28:00: No matching machine driver found
@@ -377,6 +387,7 @@ I wonder what's the driver, snd-soc-sst-byt-rt5640-mach, or snd-soc-rt5640?
 I modprobe both of them. But it doesn't work.
 
 
+```
 modprobe -v snd-soc-sst-byt-rt5640-mach
 modprobe -v snd-soc-sst-bytcr-rt5640 
 
@@ -390,7 +401,9 @@ cat /sys/bus/acpi/devices/10EC5640\:00/status
 ./linuxium-dsdt-patch.sh 
 # and reboot...
 shutdown -r now
+```
 
+```
 cat /sys/bus/acpi/devices/10EC5640\:00/status
 >> 0
 
@@ -402,7 +415,9 @@ more  /sys/bus/acpi/devices/HAD0F28:00/status
 
 more  /sys/bus/acpi/devices/HAD0F28:00/path
 >> \_SB_.HAD_
+```
 
+```bash
 grep CONFIG_SND_SOC /boot/config-4.2.6-301.fc23.x86_64 
 
 CONFIG_SND_SOC=m
@@ -426,8 +441,9 @@ CONFIG_SND_SOC_INTEL_BYTCR_RT5640_MACH=m
 CONFIG_SND_SOC_INTEL_CHT_BSW_RT5672_MACH=m
 CONFIG_SND_SOC_INTEL_CHT_BSW_RT5645_MACH=m
 CONFIG_SND_SOC_INTEL_CHT_BSW_MAX98090_TI_MACH=m
+```
 
-
+```bash
 modprobe -v snd-soc-sst-byt-rt5640-mach
 modprobe -v snd-soc-sst-bytcr-rt5640
  
@@ -442,7 +458,7 @@ grep DSP /proc/interrupts
 
 dmesg | grep -i bay
 >>[    7.585877] iTCO_wdt: Found a Bay Trail SoC TCO device (Version=3, TCOBASE=0x0460)
-
+```
 
 I've got the patch working on the meegopad. 
 It seems that the ACPI device HAD0F28 was marked as not ready. 
@@ -472,7 +488,7 @@ Aug 18, 2015
 https://github.com/01org/baytrailaudio
 
 
-
+```bash
 Package: oem-audio-i915-baytrail-dkms
 Priority: optional
 Section: misc
@@ -561,7 +577,7 @@ i915-baytrail issues ::
         http://mailman.alsa-project.org/pipermail/alsa-devel/2015-July/094663.html
           Ah, sorry, the info from that bug report is outdated, for the snd-intel-sst-acpi you have to change
             sound/soc/intel/atom/sst/sst_acpi.c:
-            
+```            
             
         
 Restarting sound system after update:
@@ -576,6 +592,7 @@ Freezes? ::  https://github.com/hadess/rtl8723bs/issues/33
 
 
 Download from https://www.happyassassin.net/fedlet/repo/SRPMS/  ::
+```bash
   mv ~/Downloads/kernel-4.2.0-0.rc6.git0.1.1awb.src.rpm .
   mv ~/Downloads/baytrail-firmware-1.2-1awb.src.rpm .
 
@@ -631,7 +648,9 @@ Download from https://www.happyassassin.net/fedlet/repo/SRPMS/  ::
     more anaconda-21.25-baytrail.patch  # Net comment is :
       # Baytrail patch: force 800x1280 resolution and bypass shim
       Patch0: anaconda-21.25-baytrail.patch
+```
 
+```
 Intel's Open Source source code site : 
   https://01.org/ubuntu-hdmi
     https://github.com/01org/baytrailaudio
@@ -654,17 +673,17 @@ Intel's Open Source source code site :
       Once I did this the audio came to life.
 
       Do you know if there's a proper way of controlling the OSSL flag?
-
+```
 
 
 
 http://netbook-remix.archive.canonical.com/updates/pool/public/o/oem-audio-i915-baytrail-dkms/oem-audio-i915-baytrail-dkms_0.20150605.tar.gz
 
-
+```bash
 dnf remove midori* claws* pidgin* transmission*
 dnf remove abiword* gnumeric* orage* 
 dnf install joe screen
-
+```
 
 Bluetooth comment :
   http://sparkylinux.org/forum/index.php?topic=3269.0

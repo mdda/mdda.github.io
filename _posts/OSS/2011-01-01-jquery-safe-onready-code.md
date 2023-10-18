@@ -15,7 +15,7 @@ from_mdda_blog: true
 {% include JB/setup %}
 
 
-Just a quickie that combines the _$(fn)_ method of calling a function when the DOM is ready, with an anonymous function that ensures that _$_ refers to jQuery :
+Just a quickie that combines the `$(fn)` method of calling a function when the DOM is ready, with an anonymous function that ensures that `$` refers to jQuery :
 
 
 {% highlight javascript %}
@@ -25,3 +25,4 @@ Just a quickie that combines the _$(fn)_ method of calling a function when the D
   });
 })(jQuery);
 {% endhighlight %}
+

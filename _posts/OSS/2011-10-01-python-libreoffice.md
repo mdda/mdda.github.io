@@ -41,10 +41,9 @@ zip:
 install:
 	unopkg add mdda_fns.oxt
 {% endhighlight %}
+
+
 The essential files for anything to work are : 
-
-
-
 	
   * `description.xml` : Contains overall information about the extension : names, descriptions, licensing, help information, upgrading, etc.  The filename for this file is FIXED;
 
@@ -68,8 +67,7 @@ Here is the contents of those files :
 
 **_description.xml_**
 
-{% highlight bash %}
-xml
+{% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
 <description xmlns="http://openoffice.org/extensions/description/2006" 
 xmlns:d="http://openoffice.org/extensions/description/2006"
@@ -126,8 +124,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
 
 **_META-INF/manifest.xml_**
 
-{% highlight bash %}
-xml
+{% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE manifest:manifest PUBLIC "-//OpenOffice.org//DTD Manifest 1.0//EN" "Manifest.dtd">
 <manifest:manifest xmlns:manifest="http://openoffice.org/2001/manifest">
@@ -152,8 +149,7 @@ Also, see the _vnd.sun.star.script:_ entry?  That's what's required if you want 
 Note that the menu is defined to work for spreadsheets (search for 'Context'), so that it won't appear if one is loading up a wordprocessing document.
 
 
-{% highlight bash %}
-xml
+{% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
 <oor:component-data xmlns:oor="http://openoffice.org/2001/registry"
                    xmlns:xs="http://www.w3.org/2001/XMLSchema" oor:name="Addons"
@@ -252,8 +248,7 @@ xml
 
 **_src/Interface.py_** : Also noteworthy is the interface definition code half-way down the script, and also the '__main__' code that allows one to test the extension quickly (in this case, it loads up a test workbook, and presses the button in the python file for inspection).  To retest, you'll need to close up oocalc and relaunch.  print comments go to stdout (the command line terminal, usually).
 
-{% highlight bash %}
-python
+{% highlight python %}
 import uno
 import unohelper
 from com.sun.star.task import XJobExecutor

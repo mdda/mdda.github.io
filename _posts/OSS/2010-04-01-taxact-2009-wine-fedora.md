@@ -20,90 +20,81 @@ Having to dual-boot into WinXP or Vista to run a tax program once a year is real
 
 I'd used TaxAct before (business and personal), so it was natural to want to see whether it would work in wine.
 
+
 Install wine from scratch
 
 {% highlight bash %}
 yum install wine cabextract
-<./code>`
+{% endhighlight %}
+
 
 Install winetricks to streamline the process :
 
-{% endhighlight %}
+{% highlight bash %}
 cd ~/.wine
 wget http://www.kegel.com/wine/winetricks
 chmod 755 winetricks
+{% endhighlight %}
 
-{% highlight bash %}
+
 Fix winetricks so that the i686 vs. 86x64 dual installations don't confuse it :
 
-{% endhighlight %}
-scite winetricks
-
 {% highlight bash %}
+scite winetricks
+{% endhighlight %}
+
 Change :
 
-{% endhighlight %}
-*)
-WINE=${WINE:-wine}
-
 {% highlight bash %}
+WINE=${WINE:-wine}
+{% endhighlight %}
+
 To :
 
-{% endhighlight %}
-*)
-WINE=${WINE:-wine32}
-
 {% highlight bash %}
+WINE=${WINE:-wine32}
+{% endhighlight %}
+
 Use winetricks to install some prerequisites :
 
-{% endhighlight %}
+{% highlight bash %}
 ./winetricks winxp
 ./winetricks ie6
+{% endhighlight %}
 
-{% highlight bash %}
 Installation :
 
-{% endhighlight %}
-wine path_to_downloaded_installer/ta09dxdw.exe
-
 {% highlight bash %}
+wine path_to_downloaded_installer/ta09dxdw.exe
+{% endhighlight %}
+
 Running :
 
-{% endhighlight %}
+{% highlight bash %}
 wine32  drive_c/2nd\ Story\ Software/TaxACT\ 2009/TaxACT09.exe
+{% endhighlight %}
 
-```
 
 What doesn't work : 
 
-
-
-	
   * Help text area at the bottom of screen has major issues with scrolling (apparently because the authors are trying to do some bit-blitting to speed up scrolling).
-
 	
   * Upload of final filing didn't immediately work, though that may be due to servers at the other end.
 
 
 
 What works :
-
 	
   * Basically the whole tax preparation appears to work just fine, even the pop-up calculator/worksheets.  Overall, this was a much better experience than expected.
-
 	
   * The program automatically downloads and installs the state tax module as required : this worked fine
-
 	
   * The program checked for updates too, but, since I had installed the most recent version, no updates were required, so the update mechanism is untested.
 
 	
   * Doing the state submission requires entering credit card information into the program - that seemed to work without a hitch
-
 	
   * Since submitting the filing electronically didn't go through as expected, TaxAct offered a 'manual upload' system so that they would be the ones submitting the filing.  The file to be uploaded is (like) : `~/.wine/drive_c/windows/profiles/andrewsm/My\ Documents/TaxACT\ 2009/EFiles/mvnlmyhlXXXXjokyat_9.efr`
-
 	
   * Now there's no real need for dual booting ...
-
 
