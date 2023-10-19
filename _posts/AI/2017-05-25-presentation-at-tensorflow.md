@@ -21,12 +21,10 @@ and [the forth MeetUp](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singa
 was again hosted by Google.
 
 This 1 hour talk (which was intended to last 45 minutes) included a 
-<a href="https://github.com/mdda/deep-learning-workshop/blob/master/notebooks/5-RNN/6-RNN-Tagger-keras.ipynb" target="_blank">
-TensorFlow version of the Upper Case NER notebook</a> that was already in the 
+<a href="https://github.com/mdda/deep-learning-workshop/blob/master/notebooks/5-RNN/6-RNN-Tagger-keras.ipynb" target="_blank">TensorFlow version of the Upper Case NER notebook</a> that was already in the 
 deep-learning-workshop repo - and I have to admit, the overall example is again better in the TF version,
 because I teased out some details along the way, including adding a 
-<a href="https://github.com/mdda/deep-learning-workshop/blob/master/notebooks/5-RNN/5-Text-Corpus-and-Embeddings.ipynb" target="_blank">
-full data downloader notebook</a> that enables the models to be used stand-alone.
+<a href="https://github.com/mdda/deep-learning-workshop/blob/master/notebooks/5-RNN/5-Text-Corpus-and-Embeddings.ipynb" target="_blank">full data downloader notebook</a> that enables the models to be used stand-alone.
 
 The presentation also includes links to the relevant code at suitable points.
 
@@ -56,6 +54,8 @@ the assembled-into-a-VM still works with everything pre-loaded.
 That means that downloading an individual notebook and stepping through it should *just work*.  If it doesn't 
 please let me know, and I'll prioritorize fixing it.
 
+
+
 PS:  And if you liked the Workshop, please 'star' the <a href="https://github.com/mdda/deep-learning-workshop" target="_blank">Deep Learning Workshop</a> repo ::
 <!-- From :: https://buttons.github.io/ -->
 <!-- Place this tag where you want the button to render. -->
@@ -64,5 +64,3 @@ PS:  And if you liked the Workshop, please 'star' the <a href="https://github.co
 <!-- Place this tag right after the last button or just before your close body tag. -->
 <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
 </span>
-
-

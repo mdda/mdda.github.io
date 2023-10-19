@@ -19,11 +19,9 @@ published: true
 
 ### Link to Paper
 
-<a href="/assets/papers/IES-2015_v3_camera.pdf" target="_blank">
-Direct link to PDF on this website
-</a> - as allowed by Springer copyright rules.
+[Direct link to PDF on this website](/assets/papers/IES-2015_v3_camera.pdf) - as allowed by Springer copyright rules.
 
-And the Springer ```BiBTeX``` entry:
+And the Springer `BiBTeX` entry:
 
 {% highlight tex %}
 @incollection{andrews2016named,
@@ -52,5 +50,3 @@ or contact me using the details given on the slides themselves.
 <a href="http://redcatlabs.com/2015-11-24_IES-2015_NER-from-Experts/#/4/2" target="_blank">
 ![Presentation Content Example]({{ site.url }}/assets/img/2015-11-24_IES-2015-Presentation_4-2_600x390.png)
 </a>
-
-

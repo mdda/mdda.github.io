@@ -36,65 +36,62 @@ on Saturday without messing up too much.  We'll see how critical it turns out.  
 
 *  From the email : 
 
-
-    "Thanks for volunteering to teach the ['Baby-weight prediction'](https://google.piqwiklabs.com/focuses/607) 
-    tutorial in Qwiklabs on Sat, July 8th. 
-    For you to prepare, please use the following access code : ```bd35-dead-beef-2015```"
+>    "Thanks for volunteering to teach the ['Baby-weight prediction'](https://google.piqwiklabs.com/focuses/607) 
+>    tutorial in Qwiklabs on Sat, July 8th. 
+>    For you to prepare, please use the following access code : ```bd35-dead-beef-2015```"
 
 
 *  Following the email link :
-
-
-   *  New browser window : "Sorry, access denied to this resource."
-   *  Sign into Qwiklabs : Wants an email or a Google Login  (chose Google)
-   *  Must accept the 4000+ word "Qwiklabs Terms of Service" (I Accept)
+  *  New browser window : "Sorry, access denied to this resource."
+  *  Sign into Qwiklabs : Wants an email or a Google Login  (chose Google)
+  *  Must accept the 4000+ word "Qwiklabs Terms of Service" (I Accept)
 
    
-   *  "You don't have any history yet! Enroll in an instructor-led course, get started on a self-paced course, or take a short lab to get started."
-   *  My Account - Credits & Subscriptions - "Buy Credits or Subscriptions" button
-   *  Tiny link near bottom : "Have Promo Code?" (enter 'access' code given - hopefully it's a 'promo' code)
-   *  FAILURE
+  *  "You don't have any history yet! Enroll in an instructor-led course, get started on a self-paced course, or take a short lab to get started."
+  *  My Account - Credits & Subscriptions - "Buy Credits or Subscriptions" button
+  *  Tiny link near bottom : "Have Promo Code?" (enter 'access' code given - hopefully it's a 'promo' code)
+  *  FAILURE
 
 
-   *  Look at [See how to apply a Qwiklab access code](https://docs.google.com/presentation/d/1pDE_LOj2-0HWWxWzLD_fY_TcF1DOQ0is49ocXYJFojQ/edit?usp=sharing) : 1 Page Presentation
-   *  "go to the Course or the codelab you wish to use" : (Search for "baby" in the Search Bar)
-   *  Pick third link shown (only one with "baby" in the title)
-   *  "Start Lab"-button -> "Enter Lab Access Code" (Cannot copy-paste code)
-      *  Type in code from email : Press button
-      *  Button didn't seem to work, press it again
-   *  QwikLab counter seems to start to go down, but there's a big red box at the top of the page :
-      *  "Sorry, this token was already used by Martin on Wed, 04 Jul 2018 11:05:33 -0400" = Sigh, pressing on..?
+  *  Look at [See how to apply a Qwiklab access code](https://docs.google.com/presentation/d/1pDE_LOj2-0HWWxWzLD_fY_TcF1DOQ0is49ocXYJFojQ/edit?usp=sharing) : 1 Page Presentation
+  *  "go to the Course or the codelab you wish to use" : (Search for "baby" in the Search Bar)
+  *  Pick third link shown (only one with "baby" in the title)
+  *  "Start Lab"-button -> "Enter Lab Access Code" (Cannot copy-paste code)
+    *  Type in code from email : Press button
+    *  Button didn't seem to work, press it again
+  *  QwikLab counter seems to start to go down, but there's a big red box at the top of the page :
+    *  "Sorry, this token was already used by Martin on Wed, 04 Jul 2018 11:05:33 -0400" = Sigh, pressing on..?
 
 
 *  Presentation now says : "Qwiklabs generates a new temporary Google Account for you"
-   *  Is this the stuff on the Left Hand side?
-   *  As instructed, open a new Incognito Window, and go to the [Google Cloud Console](http://console.cloud.google.com/) there
-   *  Agree to the terms of Service
-   *  But it already chose one of my existing accounts, not the new, temporary. one
-      *  Sign Out (?)
+  *  Is this the stuff on the Left Hand side?
+  *  As instructed, open a new Incognito Window, and go to the [Google Cloud Console](http://console.cloud.google.com/) there
+  *  Agree to the terms of Service
+  *  But it already chose one of my existing accounts, not the new, temporary. one
+    *  Sign Out (?)
 
 
-   *  Account = Pull-down to "Use another account"
-      *  Use (randomised) username and password : "Welcome to your new account"
-      *  Accept large T&amp;Cs paragraph
-      *  "Protect your account" : nope, don't need.  "Done"
-   *  Agree to the terms of Service (for temporary account) : "Agree and Continue"
-   *  New account creation process took 10mins of the QwikLabs time
+  *  Account = Pull-down to "Use another account"
+    *  Use (randomised) username and password : "Welcome to your new account"
+    *  Accept large T&amp;Cs paragraph
+    *  "Protect your account" : nope, don't need.  "Done"
+  *  Agree to the terms of Service (for temporary account) : "Agree and Continue"
+  *  New account creation process took 10mins of the QwikLabs time
 
 
 *  Now seem to be signed in :    
-   *  Use the Hamburger in Top Left to shrink 'Catalog' sidebar
-   *  Use little arrow on Bottom Left to shrink 'Connection Details' sidebar
-   *  AHAH!  Now the QwikLabs thing fits on my laptop screen at regular 100% size
+  *  Use the Hamburger in Top Left to shrink 'Catalog' sidebar
+  *  Use little arrow on Bottom Left to shrink 'Connection Details' sidebar
+  *  AHAH!  Now the QwikLabs thing fits on my laptop screen at regular 100% size
 
 
-   *  Finally, on to the Lab itself...
-      *  Why does the Lab timer keep jumping down?  My machine is not under any load
+  *  Finally, on to the Lab itself...
+    *  Why does the Lab timer keep jumping down?  My machine is not under any load
 
 
-   *  Instructions now state : 
-      *  "If you already have your own GCP account, make sure you do not use it for this lab."
-   *  Ohhh : Now I see that the instructions are actually on *this page*, just several page-downs away
+  *  Instructions now state : 
+    *  "If you already have your own GCP account, make sure you do not use it for this lab."
+  *  Ohhh : Now I see that the instructions are actually on *this page*, just several page-downs away
 
 
 ### Launch Cloud Datalab
@@ -129,8 +126,8 @@ or to unset it, run:
 
 Hmmm : so this seems to be untrue : 
 
-    "Once connected to the cloud shell, you'll see that you are already authenticated 
-    and the project is set to your PROJECT_ID:"
+>    "Once connected to the cloud shell, you'll see that you are already authenticated 
+>    and the project is set to your PROJECT_ID:"
 
 
 Attempt to fix it (using the project id in the sidepane that the instructions told me to hide)
@@ -151,11 +148,11 @@ This looks better.
 
 #### Enable Dataflow API
 
-    "On the Console, enable the Dataflow API by selecting APIs &amp; Services > Library from the left menu"
+>    "On the Console, enable the Dataflow API by selecting APIs &amp; Services > Library from the left menu"
 
 So this does not refer to the Console terminal.  But apparently the whole cloud webpage is the Console.
 
-    "On the dashboard search  for 'dataflow'."
+>    "On the dashboard search  for 'dataflow'."
 
 Means type 'dataflow' into the search box.  One panel called "DataFlow API - Google" comes up, 
 mostly hidden by the Terminal Console.
@@ -167,11 +164,11 @@ Click "ENABLE" per the instructions (though "trying" sounds appealing)
 
 Now at "Library" page which says : 
 
-    APIs &amp; Services
-    Library
-    To view this page, select a project.
+* APIs &amp; Services
+* Library
+* To view this page, select a project.
     
-    CREATE-button
+* CREATE-button
 
 This isn't mentioned in the instructions, and doing "CREATE" seems to suggest 
 the wrong project id.  So don't follow that route.

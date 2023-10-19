@@ -4,7 +4,7 @@ category: AI
 tags: [Philosophy, Fundamentals, Concepts]
 title: How to Create a Map of Concepts
 subtitle: There's no need to think too hard
-img: concept-map
+#img: concept-map
 layout: post
 from_mdda_blog: true
 ---

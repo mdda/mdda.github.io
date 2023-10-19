@@ -24,8 +24,7 @@ hosted by Microsoft in Seoul, Korea.
 
 In addition to a short talk I gave at the 'Community Bootcamp' on the Friday, I also gave
 a talk at the main summit.  This 45 minute talk included a 
-<a href="https://github.com/mdda/deep-learning-workshop/blob/master/notebooks/7-Reinforcement-Learning/3-BubbleBreaker.ipynb" target="_blank">
-TensorFlow/Keras version of the Reinforcement Learning example for 'Bubble Breaker'</a>.
+<a href="https://github.com/mdda/deep-learning-workshop/blob/master/notebooks/7-Reinforcement-Learning/3-BubbleBreaker.ipynb" target="_blank">TensorFlow/Keras version of the Reinforcement Learning example for 'Bubble Breaker'</a>.
 
 The updated workbook now includes both Theano/Lasagne and TensorFlow/Keras versions of the code, 
 each of which builds identical models (and have been adapted to provide the same functional interface).  Moreover, 

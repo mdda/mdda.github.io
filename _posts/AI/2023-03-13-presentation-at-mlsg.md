@@ -1,12 +1,12 @@
 ---
 date: 2023-03-13
-title:  "Cloud Platforms &amp; Other Super Fun Stuff"
+title:  "Cloud Platforms & Other Super Fun Stuff"
 tagline: Presentation
 category: AI
 tags:
 - Presentation
 - Machine Learning
-- ControlNet
+#- ControlNet
 - Minecraft
 - MineRL
 - MineDojo

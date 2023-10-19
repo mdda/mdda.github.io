@@ -35,7 +35,7 @@ Instead of going for the full distribution, however, a number of simplifying ste
 
 *  Although the NCE is claimed to be constant time, there is a twist.  The simple act of picking ```k``` weighted noise samples (each from a vocabulary of size ```V```) could easily be an ```O(log(V))``` operation.  One way around this is to pick words sequentially (or with a stride, etc), from the corpus itself (since that would have the right statistics, by construction).
 
-*  Experimental detail : Thinned out words by rejecting any with <10 occurrences
+*  Experimental detail : Thinned out words by rejecting any with &lt;10 occurrences
 
 
 ### Ideas to Follow-Up

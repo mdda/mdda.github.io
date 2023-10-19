@@ -33,14 +33,14 @@ likely due to more asides, etc).  Please Like and Subscribe!
 The slides for my talk, which contain links to all of the reference materials and sources, are here :
 
 <a href="https://docs.google.com/presentation/d/1V7W7CbNlQJwWp6UgSUo5mneVnr9xGmUVsFPiktyHVsU/edit?usp=sharing" target="_blank">
-<img src="/assets/img/2023-09-09_ManilaGDG_KerasCore_600x390.png" alt="Presentation Screenshot" style="border:1px solid #000000" />
+<img src="{{ site.url }}/assets/img/2023-09-09_ManilaGDG_KerasCore_600x390.png" alt="Presentation Screenshot" style={{border:'1px solid #000000'}} />
 </a>
 
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
 <a href="https://docs.google.com/presentation/d/1V7W7CbNlQJwWp6UgSUo5mneVnr9xGmUVsFPiktyHVsU/edit?usp=sharing#slide=id.g24253f94d2b_0_135" target="_blank">
-<img src="/assets/img/2023-09-09_ManilaGDG_KerasCore_29_600x390.png" alt="Presentation Screenshot" style="border:1px solid #000000" />
+<img src="{{ site.url }}/assets/img/2023-09-09_ManilaGDG_KerasCore_29_600x390.png" alt="Presentation Screenshot" style={{border:'1px solid #000000'}} />
 </a>
 
 

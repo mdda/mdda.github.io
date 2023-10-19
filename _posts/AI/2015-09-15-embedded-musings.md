@@ -11,30 +11,28 @@ published: false
 
 
 
-Musings : Idea for Sparse Embeddings Paper
-------------------------------------------------
+## Musings : Idea for Sparse Embeddings Paper
 
-*  Refactoring a complex model into a simpler/sparser one seems likely to have generalization benefits,
+* Refactoring a complex model into a simpler/sparser one seems likely to have generalization benefits,
    since Occam's razor can be cleanly applied.  Can the information content be used to impute the factorization?
 
-*  Wouldn't it be nice to impute a descriptive sparse (e.g. 2-3% of ~10k of activations) version of the 
+* Wouldn't it be nice to impute a descriptive sparse (e.g. 2-3% of ~10k of activations) version of the 
     (say) 500 reals embedding vectors, in such a way that sense-dependencies could lead to improvements
     among mutually-related concepts?  
-   +  (so embed &rarr; factorize &rarr; re-embed (with factorised structure to boost senses of all words) &rarr; factorize, etc)
+  + (so embed &rarr; factorize &rarr; re-embed (with factorised structure to boost senses of all words) &rarr; factorize, etc)
 
 But :
 
-*  What would a factorization scheme look like?
-
-*  How could the effectiveness of the factorization be measured?
+* What would a factorization scheme look like?
+* How could the effectiveness of the factorization be measured?
 
 Looking at the cosine similarity of the (English Wikipedia-derived) embeddings was a bit of a let-down : 
 
-*  the ranking wasn't too bad within a cluster near a particular word
-*  but the absolute value of the first result didn't bear much relationship 
+* the ranking wasn't too bad within a cluster near a particular word
+* but the absolute value of the first result didn't bear much relationship 
    to the 'actual similarity' of the cluster.
 
-Perhaps the \\( l_0 \\) ideas in the recent paper [Learning Deep \\(l_0\\) Encoders](http://arxiv.org/pdf/1509.00153v1.pdf) could be helpful - 
+Perhaps the $$l_0$$ ideas in the recent paper [Learning Deep $$l_0$$ Encoders](http://arxiv.org/pdf/1509.00153v1.pdf) could be helpful - 
 except that it is really talking about finding the best encoding against a learned dictionary.  
 It seems like there is an iterative scheme by which encoders (and their respective weights) can be trained
 to converge to the 'ideal' input-to-output dictionary scheme.  
@@ -50,17 +48,18 @@ imputed by the learning itself (getting deeper as more structure is identified)?
 There's also a Google paper on efficiently learning large target output spaces, 
 but that seems to involve hashing functions, which don't seem to be adaptive to the space being learned.
 
-[Complete Dictionary Recovery over the Sphere - Sun, Qu &amp; Wright2015](http://arxiv.org/abs/1504.06785) seems like it has relevant results,
-as does [Sparse Matrix Factorization - 2014](http://arxiv.org/pdf/1311.3315v3.pdf), where they 
-state that, when factorizing \\( Y = X_1 X_2 X_3 X_4 \dotsb \\) with \\( Y \\) dense and \\( X_{i} \\) sparse : 
+[Complete Dictionary Recovery over the Sphere - Sun, Qu &amp; Wright2015](http://arxiv.org/abs/1504.06785) seems 
+like it has relevant results,
+as does [Sparse Matrix Factorization - 2014](http://arxiv.org/pdf/1311.3315v3.pdf), 
+where they state that, when factorizing $$Y = X_1 X_2 X_3 X_4 \dotsb$$ with $$Y$$ dense and $$X_\{i\}$$ sparse : 
 
-> Our main observation is that one can compute \\( X_1 X_1^⊤ \\) by looking at \\( Y Y^⊤ \\) and
-> rounding it to an integer. From \\( X_1 X_1^⊤ \\) one can recover \\( X_1 \\). 
-> If \\( X_1 \\) has a bounded condition number, it can be inverted and one can solve for 
-> \\( X_2 X_3 \dotsb \\) and continue like this iteratively to find the rest.
+> Our main observation is that one can compute $$X_1 X_1^\intercal$$ by looking at $$Y Y^\intercal$$ and
+> rounding it to an integer. From $$X_1 X_1^\intercal$$ one can recover $$X_1$$ . 
+> If $$X_1$$ has a bounded condition number, it can be inverted and one can solve for 
+> $$X_2 X_3 \dotsb$$ and continue like this iteratively to find the rest.
 
 
-Measurement of the quality of word vectors : The "Google Analogy Task" (```./demo-word-accuracy.sh```).
+Measurement of the quality of word vectors : The "Google Analogy Task" (`./demo-word-accuracy.sh`).
   In GloVe's dictionary (400k words, Wikipedia) required for google analogy task: 
   
 | word      | 6Bn GloVe corpus rank  |   Levy 1-billion rank |   1-billion 'levy count' |   GloVe 1-billion rank |   GloVe 1-billion 'count' | 
@@ -86,48 +85,52 @@ Measurement of the quality of word vectors : The "Google Analogy Task" (```./dem
 | hryvnia             |    142,260 |   98,777 |   636 |  |  |
 | belmopan            |    155,000 |  223,631 |   133 |  215,232 |    17 | 
 | uninformative       |    177,894 |  148,755 |   284 |  150,338 |    34 |
-| denar               |    394,434 |      n/a |   <20 |      n/a |   <12 |
+| denar               |    394,434 |      n/a |  &lt;20 |      n/a |   &lt;12 |
     
-  The problem with this is that 1-billion-word benchmark corpus only has 302k words with a frequency > 20
-    ```grep -n '^rial ' counts.words.vocab```
-    ```grep -n '^lats ' ../../data/1-glove-1-billion/vocab.txt```
+The problem with this is that 1-billion-word benchmark corpus only has 302k words with a frequency > 20
+```bash
+grep -n '^rial ' counts.words.vocab
+grep -n '^lats ' ../../data/1-glove-1-billion/vocab.txt
+```
 
 
-  But, practically, 2^18 (=262,144 words) as a vocabulary works for all-but-1 words in the test, 
-  and there, in the 1-billion-word corpus, we're right at the 100-instances level (according to the Levy counts).
-  Interestingly, using the GloVe code produces different counts, and ```VOCAB_MIN_COUNT``` needs to be set to ```12```
-  in order to have a vocabulary of more the 2^18 in size.
+But, practically, 2^18 (=262,144 words) as a vocabulary works for all-but-1 words in the test, 
+and there, in the 1-billion-word corpus, we're right at the 100-instances level (according to the Levy counts).
+Interestingly, using the GloVe code produces different counts, and ```VOCAB_MIN_COUNT``` needs to be set to ```12```
+in order to have a vocabulary of more the 2^18 in size.
 
-
+```bash
   2^18 = 262,144
   2^17 = 131,072
   2^16 =  65,536
+```
+  
+* Wikipedia 2014 + Gigaword 5 (6B tokens, 400K vocab, uncased, 50d, 100d, 200d, & 300d vectors, 822 MB download): glove.6B.zip
+  * http://dumps.wikimedia.org/enwiki/20140102/   ## (has now disappeared)
+    * https://dumps.wikimedia.org/enwiki/20160407/
+  * https://catalog.ldc.upenn.edu/LDC2011T07
+    * English Gigaword Fifth Edition : 4,032,686k words  (fees: $3k+)
+  
+* Alternative source of sentences (wikipedia):
+  + http://www.drmaciver.com/2009/12/i-want-one-meelyun-sentences/
 
-  
-  *  Wikipedia 2014 + Gigaword 5 (6B tokens, 400K vocab, uncased, 50d, 100d, 200d, & 300d vectors, 822 MB download): glove.6B.zip
-    
-    *  http://dumps.wikimedia.org/enwiki/20140102/   ## (has now disappeared)
-       *  https://dumps.wikimedia.org/enwiki/20160407/
-    *  https://catalog.ldc.upenn.edu/LDC2011T07
-       *  English Gigaword Fifth Edition : 4,032,686k words  (fees: $3k+)
-  
-  Alternative source of sentences (wikipedia):
-    http://www.drmaciver.com/2009/12/i-want-one-meelyun-sentences/
-      wget http://d3t3fd87rd28b5.cloudfront.net/one_meelyun_sentences.bz2
-      bunzip2 one_meelyun_sentences.bz2
-      wc one_meelyun_sentences  # == 22MM words (i.e. SMALL)
-      # 1,000,000  22,554,383 139,738,765 one_meelyun_sentences
+```bash
+wget http://d3t3fd87rd28b5.cloudfront.net/one_meelyun_sentences.bz2
+bunzip2 one_meelyun_sentences.bz2
+wc one_meelyun_sentences  # == 22MM words (i.e. SMALL)
+# 1,000,000  22,554,383 139,738,765 one_meelyun_sentences
+```
 
-  
-  Wikipedia snapshot (cleaned)
+  + Wikipedia snapshot (cleaned)
+```bash
     wc wikipedia_utf8_filtered_20pageviews.txt 
     # 463,819  607,722,567 3,309,022,822 wikipedia_utf8_filtered_20pageviews.txt
+```
+    - Adding this to 1-billion-words produces a decent-sized (1.5bn actual words) corpus, that scores OK on google sem/syn measure
 
-    Adding this to 1-billion-words produces a decent-sized (1.5bn actual words) corpus, that scores OK on google sem/syn measure
 
-
-  Ontonotes 5.0
-    https://catalog.ldc.upenn.edu/LDC2013T19
+  + Ontonotes 5.0
+    - https://catalog.ldc.upenn.edu/LDC2013T19
   
 
 Pretrained vector models available via [Google's project page]( https://code.google.com/p/word2vec/ ).
@@ -141,18 +144,15 @@ Microsoft's Multi-sense paper was trained on [April 2010 snap-shot of the Wikipe
 
 
 Dig into :
-
-*   https://levyomer.wordpress.com/2015/03/30/improving-distributional-similarity-with-lessons-learned-from-word-embeddings/
-
-*   https://bitbucket.org/omerlevy/hyperwords
+* https://levyomer.wordpress.com/2015/03/30/improving-distributional-similarity-with-lessons-learned-from-word-embeddings/
+* https://bitbucket.org/omerlevy/hyperwords
 
 
-Practicalities
-===========================
+### Practicalities
 
-*  To 'factorize' the raw matrices, need some measure of how well the factorization is doing
-   +  [This Montreal paper](http://arxiv.org/pdf/1412.6448v4.pdf) mentions some word similarity rating methods
-   +  [Embedding blog post](http://www.marekrei.com/blog/linguistic-regularities-word-representations/) has links to 3 methods : 
+* To 'factorize' the raw matrices, need some measure of how well the factorization is doing
+   + [This Montreal paper](http://arxiv.org/pdf/1412.6448v4.pdf) mentions some word similarity rating methods
+   + [Embedding blog post](http://www.marekrei.com/blog/linguistic-regularities-word-representations/) has links to 3 methods : 
       - The [MSR dataset](http://research.microsoft.com/en-us/projects/rnn/) containing 8,000 analogy questions (this is tough for pure counting methods)
       - The [GOOGLE dataset](https://code.google.com/p/word2vec/source/browse/trunk/questions-words.txt) with 19,544 analogy questions.
       - The [SEMEVAL dataset](https://sites.google.com/site/semeval2012task2/download), covering 79 distinct relation types.
@@ -162,124 +162,117 @@ Practicalities
    
 
 
-*  Thinking about 'variance reduction' as an approach to isolating word-factors, probably need a way to retrain a given set of vectors, to see whether new factors improve some quantitative measure of fit or predictive power.
+* Thinking about 'variance reduction' as an approach to isolating word-factors, probably need a way to retrain a given set of vectors, to see whether new factors improve some quantitative measure of fit or predictive power.
 
-*  If it's going to be GPU-learned, then need a GPU implementation of word2vec or similar
-   +  [Overview](http://files.meetup.com/12426342/5_An_overview_of_word2vec.pdf)
-   +  [GPU, GloVE, but not words](https://github.com/allentran/graph2vec)
-   +  [GloVE, but Non-GPU](https://github.com/hans/glove.py/blob/master/glove.py)
-      - but with [an excellent write-up](http://www.foldl.me/2014/glove-python/)
+* If it's going to be GPU-learned, then need a GPU implementation of word2vec or similar
+  + [Overview](http://files.meetup.com/12426342/5_An_overview_of_word2vec.pdf)
+  + [GPU, GloVE, but not words](https://github.com/allentran/graph2vec)
+  + [GloVE, but Non-GPU](https://github.com/hans/glove.py/blob/master/glove.py)
+    - but with [an excellent write-up](http://www.foldl.me/2014/glove-python/)
 
-   +  Relevant Theano snippet on how to [update a subset of weights](http://deeplearning.net/software/theano/tutorial/faq_tutorial.html)
-   
-   +  Pouring some cold water on [newer embedding techniques](https://levyomer.wordpress.com/2015/03/30/improving-distributional-similarity-with-lessons-learned-from-word-embeddings/)
+  + Relevant Theano snippet on how to [update a subset of weights](http://deeplearning.net/software/theano/tutorial/faq_tutorial.html)
+  + Pouring some cold water on [newer embedding techniques](https://levyomer.wordpress.com/2015/03/30/improving-distributional-similarity-with-lessons-learned-from-word-embeddings/)
 
 
-GPU Implementation
----------------------
+### GPU Implementation
+
 For the base GloVe computation, which is mostly vector products, this appears to be memory-bandwidth bound.
 Perhaps more compute-heavy versions could allow better uses of 'closer' memory buffers.
 
+```bash
     Memory Bandwith (Dual) :  21 GB/s
     Memory Bandwith (Quad) :  37 GB/s
     PCI v3.0 x16           :  15.754 GB/s
     Titan X Bandwidth      : 336 GB/s   (GigaBytes/sec)
-
+```
 
 But if we're memory-bandwidth bound, then how practical is it to store the whole of the training data on the GPU?
 
 Sizing of the vocabulary sparse matrix entries :
+* For vocab size of less than 1,000,000 words, then 20bits is sufficient to store the index
+* So two indices can fit in 5 bytes
+* Is 3 bytes sufficient resolution to store the Xij (in some suitable format) ?
+  - because, if so, the data can be compressed into a 64-bit word
+  - half the size of int32+int32+float64, as is currently the format
+* What actual type / range does the Xij element have / need?
+  + Xij is the sum of the inverse distances between the words
+    - up to a distance of (default) 15 words  (a/2 + b/3 + c/4 + ... + n/15) for large a,b,c, ..., n
+    - reciprocal-distance is pretty arbitrary (rather than having a theoretical foundation)
+  + Interested in ln(Xij) and Xij itself when &lt;x_max (default = 100.0)
+    - modify glove.c to spit out max(Xij) over whole cooccurrence file...
 
-*  For vocab size of less than 1,000,000 words, then 20bits is sufficient to store the index
+  + On sample `text8` file : 
+    - lines read :  60,666,466, word_max :  71,290 71,290
+    - val.min, val.max, val.max2 : 0.0667, 409,566.0413, 339,164.6820
 
-*  So two indices can fit in 5 bytes
- 
-*  Is 3 bytes sufficient resolution to store the Xij (in some suitable format) ?
-   - because, if so, the data can be compressed into a 64-bit word
-   - half the size of int32+int32+float64, as is currently the format
-   
-*  What actual type / range does the Xij element have / need?
-   + Xij is the sum of the inverse distances between the words
-      - up to a distance of (default) 15 words  (a/2 + b/3 + c/4 + ... + n/15) for large a,b,c, ..., n
-      - reciprocal-distance is pretty arbitrary (rather than having a theoretical foundation)
-   + Interested in ln(Xij) and Xij itself when &lt;x_max (default = 100.0)
-      - modify glove.c to spit out max(Xij) over whole cooccurrence file...
-
-   + On sample ```text8``` file : 
-     - lines read :  60,666,466, word_max :  71,290 71,290
-     - val.min, val.max, val.max2 : 0.0667, 409,566.0413, 339,164.6820
-
-   + On ```kaggle_words``` file : 
-     - 100w : lines read : 481,276,158, word_max :  99,561  99,561, val.min, val.max : 0.0667, 9,133,361.6994, 8,707,079.0381
-     -  25w : lines read : 568,037,902, word_max : 208,350 208,350, val.min, val.max : 0.0667, 9,069,331.6206, 8,674,834.5595
-     -   5w : lines read : 645,639,963, word_max : 552,402 552,402, val.min, val.max : 0.0667, 9,028,503.0483, 8,655,790.3236
-
-   + So, full dynamic range = 9,133,361.6994 / 0.0667 = ~1,370,003,570 which (as integer) needs 31 bits
-     - but : ln(9,133,361.) = 16.027444388459088, ln(8707079.) = 15.979646935304869, and ln(0.0667) = -2.70805020105221
-     - this looks a lot more tractable...  1st place - 2nd place = 0.04, (1/14-1/15) = 0.0047619
-     - So, what dynamic range is required in ln() terms? : (16.0274+2.7080)/0.0047619 = 3934.4379
-     - Therefore, can give headroom up to 65k, and with 8 bits fixed binary places in 3 bytes
+  + On `kaggle_words` file : 
+    - `100w : lines read : 481,276,158, word_max :  99,561  99,561, val.min, val.max : 0.0667, 9,133,361.6994, 8,707,079.0381`
+    - ` 25w : lines read : 568,037,902, word_max : 208,350 208,350, val.min, val.max : 0.0667, 9,069,331.6206, 8,674,834.5595`
+    - `  5w : lines read : 645,639,963, word_max : 552,402 552,402, val.min, val.max : 0.0667, 9,028,503.0483, 8,655,790.3236`
+  + So, full dynamic range = 9,133,361.6994 / 0.0667 = ~1,370,003,570 which (as integer) needs 31 bits
+    - but : ln(9,133,361.) = 16.027444388459088, ln(8707079.) = 15.979646935304869, and ln(0.0667) = -2.70805020105221
+    - this looks a lot more tractable...  1st place - 2nd place = 0.04, (1/14-1/15) = 0.0047619
+    - So, what dynamic range is required in ln() terms? : (16.0274+2.7080)/0.0047619 = 3934.4379
+    - Therefore, can give headroom up to 65k, and with 8 bits fixed binary places in 3 bytes
     
-   + Test using ```stats.c```:
-     - Using ln(Xij)+3.0 and ```16.8``` representation : Largest decompression error ~ 0.39%
-     - Using ln(Xij)+3.0 and ```14.10``` representation : Largest decompression error ~ 0.098%
-     - Using ln(Xij)+3.0 and ```12.12``` representation : Largest decompression error ~ 0.024%
+  + Test using ```stats.c```:
+    - Using ln(Xij)+3.0 and ```16.8``` representation : Largest decompression error ~ 0.39%
+    - Using ln(Xij)+3.0 and ```14.10``` representation : Largest decompression error ~ 0.098%
+    - Using ln(Xij)+3.0 and ```12.12``` representation : Largest decompression error ~ 0.024%
   
    + *Conclusion : can safely encode the Xij values in 3 bytes, and therefore each 16-byte CREC in 8-bytes*
 
 
 
 Also, sizing the number of co-occurrence entries :
-
-*  Dependency on size of vocabulary (equivalently, the minimum number of occurrences of each word)
-
-*  Dependency on the number of cooccurrences to be considered worth learning
-
-*  Looking at GloVe :
-   +  Embeddings [don't ignore punctuation](http://stackoverflow.com/questions/31710061/stanford-gloves-lack-of-punctuation)
-   +  GloVe obeys newlines (so that window doesn't go from one line to the next)
-   +  embedding vector file size == vocab.size * (embedding.size+1) * 8 * 2 (i.e. stored at 2 64-bit numbers)
-   +  their ```text8``` sample stats, using the default parameters : 
-      -  Text contains 17,005,207 tokens with 253,854 unique words
-      -  Truncating vocabulary at min-count 5 gives a vocabulary of size 71,290
-      -  Cooccurrence file : 970,663,456 bytes, 60,666,466 elements (i.e. 16 bytes per line)
-      -  Using x_max: 10.000000, alpha: 0.750000
+* Dependency on size of vocabulary (equivalently, the minimum number of occurrences of each word)
+* Dependency on the number of cooccurrences to be considered worth learning
+* Looking at GloVe :
+  + Embeddings [don't ignore punctuation](http://stackoverflow.com/questions/31710061/stanford-gloves-lack-of-punctuation)
+  + GloVe obeys newlines (so that window doesn't go from one line to the next)
+  + embedding vector file size == vocab.size * (embedding.size+1) * 8 * 2 (i.e. stored at 2 64-bit numbers)
+  + their ```text8``` sample stats, using the default parameters : 
+    - Text contains 17,005,207 tokens with 253,854 unique words
+    - Truncating vocabulary at min-count 5 gives a vocabulary of size 71,290
+    - Cooccurrence file : 970,663,456 bytes, 60,666,466 elements (i.e. 16 bytes per line)
+    - Using x_max: 10.000000, alpha: 0.750000
       
-   +  applying it to ``kaggle words`` dataset :
-      -  Text contains 768,648,884 tokens with 2,425,337 unique words (numbers not unified)
-   +  Truncating vocabulary at min-count 5 gives a vocabulary of size 552,402
-      -  Cooccurrence file : 10,330,239,408 bytes, 645,639,963 elements (i.e. 16 bytes per line)
-   +  Truncating vocabulary at min-count 25 gives a vocabulary of size 208,350
-      -  Cooccurrence file :  9,088,606,432 bytes, 568,037,902 elements (i.e. 16 bytes per line)
-   +  Truncating vocabulary at min-count 100 gives a vocabulary of size 99,561
-      -  Cooccurrence file :  7,700,418,528 bytes, 481,276,158 elements (i.e. 16 bytes per line)
+  + applying it to ``kaggle words`` dataset :
+    - Text contains 768,648,884 tokens with 2,425,337 unique words (numbers not unified)
+  + Truncating vocabulary at min-count 5 gives a vocabulary of size 552,402
+    - Cooccurrence file : 10,330,239,408 bytes, 645,639,963 elements (i.e. 16 bytes per line)
+  + Truncating vocabulary at min-count 25 gives a vocabulary of size 208,350
+    - Cooccurrence file :  9,088,606,432 bytes, 568,037,902 elements (i.e. 16 bytes per line)
+  + Truncating vocabulary at min-count 100 gives a vocabulary of size 99,561
+    - Cooccurrence file :  7,700,418,528 bytes, 481,276,158 elements (i.e. 16 bytes per line)
  
-
-
 Pretrained vectors : 
-  https://github.com/3Top/word2vec-api#where-to-get-a-pretrained-models
+* https://github.com/3Top/word2vec-api#where-to-get-a-pretrained-models
   
-  Socher / GloVe :
-    http://www.socher.org/index.php/Main/ImprovingWordRepresentationsViaGlobalContextAndMultipleWordPrototypes
-    Training corpus :
-      http://nlp.stanford.edu/data/WestburyLab.wikicorp.201004.txt.bz2
-         Download started 00:33...
+* Socher / GloVe :
+  + http://www.socher.org/index.php/Main/ImprovingWordRepresentationsViaGlobalContextAndMultipleWordPrototypes
+  + Training corpus :
+    - http://nlp.stanford.edu/data/WestburyLab.wikicorp.201004.txt.bz2
+      * Download started 00:33...
          
-  Levy :
-    https://levyomer.wordpress.com/2014/04/25/dependency-based-word-embeddings/
-    paper :
-      https://levyomer.files.wordpress.com/2014/04/dependency-based-word-embeddings-acl-2014.pdf
-    demo :
-      http://irsrv2.cs.biu.ac.il:9998/?word=hogwarts
-    data = vectors(?) :
+  + Levy :
+    - https://levyomer.wordpress.com/2014/04/25/dependency-based-word-embeddings/
+    - paper :
+      * https://levyomer.files.wordpress.com/2014/04/dependency-based-word-embeddings-acl-2014.pdf
+    - demo :
+      * http://irsrv2.cs.biu.ac.il:9998/?word=hogwarts
+    - data = vectors(?) :
+```bash
       wget http://u.cs.biu.ac.il/~yogo/data/syntemb/deps.words.bz2
       # -rw-rw-r--. 1 andrewsm andrewsm 320870380 Apr 26  2014 deps.words.bz2
       bunzip2 deps.words.bz2 
       # -rw-rw-r--. 1 andrewsm andrewsm 860005638 Apr 26  2014 deps.words
       wc deps.words 
       # 174015  52378515 860005638 deps.words
+```
+   - Testing :
 
-    Testing :
+```bash
       python test.py --embedding /mnt/data/home/andrewsm/OpenSource/Corpuses/Levy/deps.words.hkl
       # Final  semantic stats: count=, 8599, score=, 16.73%, diff=,-63.14%
       # Final syntactic stats: count=,10609, score=, 52.92%, diff=,-14.50%
@@ -296,7 +289,7 @@ Pretrained vectors :
       #         Overall stats: count=,19258, score=, 59.29%, diff=,-13.51% <<
 
       == Disappointing
-      
+```      
       http://www.aclweb.org/anthology/Q15-1016
         This is the compare/contrast paper  
 
@@ -321,34 +314,32 @@ Pretrained vectors :
 
 
 
-Interesting Compression Papers
---------------------------------
+#### Interesting Compression Papers
 
 The following recent (Sep &amp; Oct 2015) papers are also relevant, even though they
 are directed at compression for power-saving, rather than the idea that minimum length descriptions
 imply knowledge discovery :
 
-*   [Neural Networks with Few Multiplications](http://arxiv.org/abs/1510.03009)
-*   [A Deep Neural Network Compression Pipeline: Pruning, Quantization, Huffman Encoding](http://arxiv.org/abs/1510.00149)
+* [Neural Networks with Few Multiplications](http://arxiv.org/abs/1510.03009)
+* [A Deep Neural Network Compression Pipeline: Pruning, Quantization, Huffman Encoding](http://arxiv.org/abs/1510.00149)
 
 
-Early Results
---------------------------------
+#### Early Results
 
-*  Exactly agree with paper for Syntactic &amp; Semantic Word Analogy tests (Table 2)
-   +  Simple numpy version
-   +  15x faster Theano version
+* Exactly agree with paper for Syntactic &amp; Semantic Word Analogy tests (Table 2)
+  + Simple numpy version
+  + 15x faster Theano version
    
-*  Intentional damage on 300D embedding (generated from the 6bn word corpus):
-   +  ```abs()``` all entries   : -40.61%
-   +  ```zero (33% binomial)``` : -28.29%
-   +  ```zero (50% binomial)``` : -54.50%
-   +  ```zero (last 33%)```     :  -2.47%
-   +  ```zero (last 50%)```     :  -4.99%
-   +  ```zero (last 67%)```     : -11.36%
+* Intentional damage on 300D embedding (generated from the 6bn word corpus):
+  + ```abs()``` all entries   : -40.61%
+  + ```zero (33% binomial)``` : -28.29%
+  + ```zero (50% binomial)``` : -54.50%
+  + ```zero (last 33%)```     :  -2.47%
+  + ```zero (last 50%)```     :  -4.99%
+  + ```zero (last 67%)```     : -11.36%
 
-*  Comparison to 100D embedding (generated from same 6bn word corpus):
-   + ```raw 100d (no zeros)```  :  -8.63%  (instead of -11.36% above)
+* Comparison to 100D embedding (generated from same 6bn word corpus):
+  + ```raw 100d (no zeros)```  :  -8.63%  (instead of -11.36% above)
 
 The 100D version is better than the 300D version with 200 dimensions zeroed out, which 
 suggests that the information content is distributed 'fairly' through all the dimensions 
@@ -364,7 +355,7 @@ Quantising the elements of the vectors is an easy win, though.
 
 All the way down to 1+3 (for an 8x space saving), particularly with a non-linearity applied before/after.
 
-Also tried near-linear scale, with \( x^\alpha \) factor, settling on \( \alpha = 0.30 \).
+Also tried near-linear scale, with $$x^\alpha$$ factor, settling on $$\alpha = 0.30$$ .
 
 
 
@@ -374,9 +365,9 @@ Quantisation with Trainable Levels
 Try with 16 levels, chosen from a 'trainable palette' of levels, and use Theano to fix it all up...
 
 This works surprisingly well, quantising the embedding with : 
-*  4-bits per element at only 0.20% loss of overall score
-*  3-bits per element at only 0.73% loss of overall score
-*  2-bits per element at only 3.67% loss of overall score
+* 4-bits per element at only 0.20% loss of overall score
+* 3-bits per element at only 0.73% loss of overall score
+* 2-bits per element at only 3.67% loss of overall score
 
 
 
@@ -385,11 +376,11 @@ Space-Folding
 ------------------------------------------------------------------
 
 Theano version of max(2x.a-a.a,0) optimisation :
-  square CPU (batchsize 4)  : 274ms
-  square CPU (batchsize 64) : 258ms
-  simlim CPU (batchsize 4)  :  76ms
-  simlim GPU (batchsize 4)  :  24ms
-  simlim GPU (batchsize 64) :   4ms
+* square CPU (batchsize 4)  : 274ms
+* square CPU (batchsize 64) : 258ms
+* simlim CPU (batchsize 4)  :  76ms
+* simlim GPU (batchsize 4)  :  24ms
+* simlim GPU (batchsize 64) :   4ms
 
 
 Sparse Coding
@@ -773,8 +764,8 @@ http://arxiv.org/pdf/1509.05472.pdf
           - Angular Quantization similarity (Based Hashing)
 
 
-Also: Did I test the central representation as {0,1} or {-1,1} vectors?
-  binary_to_embedding is a plain casting : So {0,1} is used, rather than {-1,1}
+Also: Did I test the central representation as \{0,1\} or \{-1,1\} vectors?
+  binary_to_embedding is a plain casting : So \{0,1\} is used, rather than \{-1,1\}
 
 Also: Some idiot (i.e. me) coded the 0/1-ness as (linear-01) rather than (logistic-01)
   v16 : Rerun with hard01 applied in middle (and compare to sigmoid version)
@@ -798,7 +789,7 @@ Just a mo : What's this ? ::
     Brian Murphy, Partha Pratim Talukdar, Tom Mitchell
       Machine Learning Department
       Carnegie Mellon University
-      {bmurphy,ppt,tom}@cs.cmu.edu
+      \{bmurphy,ppt,tom\}\@cs.cmu.edu
     In Proc. of COLING
     http://www.cs.cmu.edu/~bmurphy/NNSE/nnse_coling12.pdf
 
@@ -809,8 +800,8 @@ Just a mo : What's this ? ::
     
   Sparse Overcomplete Word Vector Representations  
     Manaal Faruqui, Yulia Tsvetkov, Dani Yogatama, Chris Dyer, Noah Smith
-      Manaal Faruqui <mfaruqui@cs.cmu.edu>
-      {mfaruqui,ytsvetko,dyogatama,cdyer,nasmith}@cs.cmu.edu
+      Manaal Faruqui \<mfaruqui\@cs.cmu.edu\>
+      \{mfaruqui,ytsvetko,dyogatama,cdyer,nasmith\}\@cs.cmu.edu
     Proceedings of ACL 2015
     http://arxiv.org/abs/1506.02004
     http://arxiv.org/pdf/1506.02004v1.pdf
@@ -846,7 +837,7 @@ Just a mo : What's this ? ::
 
   Winner-Take-All Autoencoders
     Alireza Makhzani, Brendan Frey (University of Toronto)
-      makhzani, frey@psi.toronto.edu
+      makhzani, frey\@psi.toronto.edu
 
     Nice idea for enforcing sparseness :
       Choose highest k% from 'hidden layer' (the sparse binary layer) to be 'on' (others zero)
@@ -892,12 +883,12 @@ Just a mo : What's this ? ::
           
         Problem : Initial values/tests prove that calculations work
           BUT :  gradients immediately reduce the values going into middle 'sparse' layer
-                 which means that many of them are <0
+                 which means that many of them are &lt;0
           Solution?  Attempt to batch-normalize the input to the layer, so that mean(:, each column) is zero
             -- appears to have stabilised the training sufficiently for learning to occur...
             
         Problem : Solution doesn't want to improve beyond '30' l2 error for sparsity=5%
-          Idea1 : Use a sparsity parameter that asymptotically approaches sparsity=5% when l2 error <'10'
+          Idea1 : Use a sparsity parameter that asymptotically approaches sparsity=5% when l2 error &lt;'10'
           Idea2 : Add additional fully-connected layers in the pre- and post- processing, to see whether limit is there
         
 
@@ -951,7 +942,7 @@ Just a mo : What's this ? ::
 
   A Generative Word Embedding Model and its Low Rank Positive Semidefinite Solution
     Shaohua Li, Jun Zhu, Chunyan Miao
-      lish0018@ntu.edu.sg, dcszj@tsinghua.edu.cn, ascymiao@ntu.edu.s
+      lish0018\@ntu.edu.sg, dcszj\@tsinghua.edu.cn, ascymiao\@ntu.edu.s
     http://arxiv.org/pdf/1508.03826v1.pdf
   
     == has review of previous work
@@ -959,7 +950,7 @@ Just a mo : What's this ? ::
 
   Documents and Dependencies: an Exploration of Vector Space Models for Semantic Composition.
     Alona Fyshe, Partha Talukdar, Brian Murphy and Tom Mitchell
-      {afyshe|ppt|bmurphy|tom.mitchell}@cs.cmu.edu
+      \{afyshe|ppt|bmurphy|tom.mitchell\}\@cs.cmu.edu
     CoNLL, 2013 - aclweb.org
     http://www.cs.cmu.edu/~afyshe/papers/conll2013/deps_and_docs.pdf
     

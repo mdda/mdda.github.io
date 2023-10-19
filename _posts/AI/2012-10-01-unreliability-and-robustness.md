@@ -3,7 +3,7 @@ date: 2012-10-14
 category: AI
 tags: [Fundamentals, NeuralNetworks, Dropouts]
 title: Unreliability & Robustness
-subtitle: What "dropouts" mean for learning
+subtitle: What 'dropouts' mean for learning
 layout: post
 from_mdda_blog: true
 ---

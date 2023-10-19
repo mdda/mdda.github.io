@@ -63,7 +63,7 @@ or contact me using the details given on the slides themselves.
 
 In the discussion / Q&amp;A session after the two talks, one topic that arose was how to 
 migrate from the somewhat quirky Colab plaform, to something based on GCP - 
-so I pointed to [my blog post to do exactly that]({{ site.url }}/oss/2021/10/10/gcp-deep-learning-as-local), 
+so I pointed to [my blog post to do exactly that](/oss/2021/10/10/gcp-deep-learning-as-local), 
 and explained that this 'GCP machine as local GPU' worked so well that I had recently sold my
 local GPU (Nvidia Titan X 12Gb, Maxwell), and migrated onto GCP.  One benefit 
 (apart from all-in cost) has also been the ability to seamlessly upgrade to a larger GPU set-up

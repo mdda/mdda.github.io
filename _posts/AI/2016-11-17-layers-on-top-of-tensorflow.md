@@ -519,7 +519,7 @@ This jumped out because of the same author used it to reimplement [Speech-to-Tex
 
 Documentation is very limited (mainly read-the-code), but the [code is in GitHub](https://github.com/buriburisuri/sugartensor), 
 and makes the interesting choice of putting itself on the TensorFlow tensor variable structure itself, with the prefix ```sg_```
-to avoid polluting the namespace.  This is somewhere in between {clever, ingenious, convenient} and nasty (TBD).  And it 
+to avoid polluting the namespace.  This is somewhere in between \{clever, ingenious, convenient\} and nasty (TBD).  And it 
 also means that these sugar methods can be chained (like ```prettytensor```, without requiring special wrapping).
 
 Code from [main repository README](https://github.com/buriburisuri/sugartensor) :

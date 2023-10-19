@@ -73,7 +73,7 @@ Outline:
         Network ignores many question words, relying largely on the image to produce answers
           Model retains  more than 50% of its original accuracy even when every word that is not “color” is deleted from all questions in the validation set.
           Even when empty questions are passed as input to the network, its accuracy remains at about 44.3% of its original accuracy.  
-          The top 6 words in the isolated set are {color, many, what, is, there, how}. 
+          The top 6 words in the isolated set are \{color, many, what, is, there, how\}. 
           Model under-relies on important question words (e.g. nouns) 
         Add distractor text to change answers
           in not a lot of words,  | what is the answer to, | in not many words, 

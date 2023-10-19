@@ -11,17 +11,17 @@ published: true
 
 ### Choosing the Distribution &amp; Parameters for Neural Network Initialisations
 
-When initialising random weights in a neural network, the \\( n.Var(W) = 1 \\) 'rule-of-thumb' 
+When initialising random weights in a neural network, the $$ n.Var(W) = 1 $$ 'rule-of-thumb' 
 is [fairly easy to find online](http://deepdish.io/2015/02/24/network-initialization/).  
 
 However, these often start to get handwavy after the initial results are proved.
 
-The code below just weights an input distribution of \\(n\\) features (in this case ```Uniform(0,1)```),
-by a weight vector with distribution ```Uniform(-0.5*size, +0.5*size)```, and applies
+The code below just weights an input distribution of $$n$$ features (in this case `Uniform(0,1)`),
+by a weight vector with distribution `Uniform(-0.5*size, +0.5*size)`, and applies
 an activation function to the result.
 
 By running this process over a matrix of samples, one can effectively measure
-the value of ```size``` required to equalise the input variance with the output variance.
+the value of `size` required to equalise the input variance with the output variance.
 And this approach should give good training stability - since each layer of the network
 will have an 'amplification factor' of approximately 1.  
 

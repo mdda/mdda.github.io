@@ -40,14 +40,14 @@ gimp Screenshot_2022-09-01_02-18-54.png
 And the slides for my talk are here :
 
 <a href="https://docs.google.com/presentation/d/129Ihx7IcHIyb4-84kXfPlkWLS5nFUb3_masDxb2M4vA/edit?usp=sharing" target="_blank">
-<img src="/assets/img/2023-05-28_GDG-SG_IO-Extended_600x390.png" alt="Presentation Screenshot" style="border:1px solid #000000" />
+<img src="{{ site.url }}/assets/img/2023-05-28_GDG-SG_IO-Extended_600x390.png" alt="Presentation Screenshot" style={{border:'1px solid #000000'}} />
 </a>
 
 If there are any questions about the presentation please ask below, 
 or contact me using the details given on the slides themselves.
 
 <a href="https://docs.google.com/presentation/d/129Ihx7IcHIyb4-84kXfPlkWLS5nFUb3_masDxb2M4vA/edit?usp=sharing" target="_blank">
-<img src="/assets/img/2023-05-28_GDG-SG_IO-Extended_16_600x390.png" alt="Presentation Screenshot" style="border:1px solid #000000" />
+<img src="{{ site.url }}/assets/img/2023-05-28_GDG-SG_IO-Extended_16_600x390.png" alt="Presentation Screenshot" style={{border:'1px solid #000000'}} />
 </a>
 
 

@@ -22,9 +22,8 @@ Sam Witteveen and I started the TensorFlow and Deep Learning Singapore group on 
 and [the fifth MeetUp, aka 'Advanced Text'](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/240386386/),
 was again hosted by Google.
 
-This 30 minute talk (which was intended to last between 45 minutes and 1 hour, but was cut short due to others running long) included a 
-<a href="https://github.com/mdda/deep-learning-workshop/blob/master/notebooks/2-CNN/7-Captioning/4-run-captioning.ipynb" target="_blank">
-Keras version of a number of Captioning models</a>  :
+This 30 minute talk (which was intended to last between 45 minutes and 1 hour, but was cut short due to others running long) 
+included a [Keras version of a number of Captioning models](https://github.com/mdda/deep-learning-workshop/blob/master/notebooks/2-CNN/7-Captioning/4-run-captioning.ipynb")  :
 
 *  Standard LSTM 
 *  Dilated CNN (&aacute; la DeepMind)
@@ -46,8 +45,7 @@ or contact me using the details given on the slides themselves.
 
 ### Video Link
 
-The presentation was kindly 
-<a href="https://engineers.sg/video/advanced-text-language-captioning-tensorflow-and-deep-learning-singapore--1861" target="_blank">recorded by Engineers.sg</a>.
+The presentation was kindly [recorded by Engineers.sg](https://engineers.sg/video/advanced-text-language-captioning-tensorflow-and-deep-learning-singapore--1861).
 
 ### Data set
 
