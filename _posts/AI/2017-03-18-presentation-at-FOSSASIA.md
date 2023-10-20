@@ -18,17 +18,16 @@ published: true
 
 ### Presentation Link
 
-I recently lead a <strong><a href="http://redcatlabs.com/2017-03-18_FOSSASIA-Workshop/" target="_blank">
-1 hour workshop</a></strong> at [FOSSASIA 2017](http://2017.fossasia.org/) in Singapore.
+I recently lead a <strong><a href="http://redcatlabs.com/2017-03-18_FOSSASIA-Workshop/" target="_blank">1 hour workshop</a></strong> 
+at [FOSSASIA 2017](http://2017.fossasia.org/) in Singapore.
 
 Similarly to the previous year, this workshop was hands-on : After a brief background on deep learning, 
 participants started quickly, getting an understanding of features (and feature creation) 
 by a 'blame assignment' algorithm (aka Backprop).  
 
 For this FOSSASIA workshop, I also created a 
-<a href="http://redcatlabs.com/2017-03-20_TFandDL_IntroToCNNs/CNN-demo.html" target="_blank">
-stand-alone CNN filter demo</a>, so that people could get an intuitive understanding of what
-a single 3x3 CNN filter can do.
+<a href="http://redcatlabs.com/2017-03-20_TFandDL_IntroToCNNs/CNN-demo.html" target="_blank">stand-alone CNN filter demo</a>, 
+so that people could get an intuitive understanding of what a single 3x3 CNN filter can do.
 
 Then, using the VirtualBox VM-on-a-stick, we had a quick look at a working GoogLeNet model.  And then went
 on to a longer segment on how the CNN mechanism can be applied to Speech Recognition - 
