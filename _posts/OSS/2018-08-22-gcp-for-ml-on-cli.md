@@ -56,7 +56,7 @@ We need to install ```gcloud``` (which wasn't needed for just the bucket operati
 As ```root```, update the ```yum/dnf``` repos (my local machine is Fedora, so your process may vary on this one part) 
 to include the Google Cloud SDK repo (NB: The indentation for the 2nd line of gpgkey is important) :
 
-{% highlight bash %}
+```bash
 tee -a /etc/yum.repos.d/google-cloud-sdk.repo << EOM
 [google-cloud-sdk]
 name=Google Cloud SDK
@@ -70,7 +70,7 @@ EOM
 
 # Install the Cloud SDK (need to agree to 3 separate Signing Keys)
 dnf install google-cloud-sdk  # Installed size 127Mb
-{% endhighlight %}
+```
 
 
 Check that the installation has worked (the commands should show some status-like information) :
@@ -147,9 +147,9 @@ super-difficult to do yourself), whereas the PyTorch install is easier to DIY la
       *  europe-west1 ; europe-west3 ; europe-west4
 
    *  But actually existing ["GPUs for compute workloads"](https://cloud.google.com/compute/docs/gpus/) : 
-      *  us-central1-{a,c} ; us-east1-{c,d} ; us-west1-{b}
-      *  europe-west1-{b,d}
-      *  asia-east1-{a,b}
+      *  us-central1-\{a,c\} ; us-east1-\{c,d\} ; us-west1-\{b\}
+      *  europe-west1-\{b,d\}
+      *  asia-east1-\{a,b\}
 
 
 *  Regions with P100s :
@@ -157,9 +157,9 @@ super-difficult to do yourself), whereas the PyTorch install is easier to DIY la
       *  us-central1 ; us-east1
 
    *  But actually existing ["GPUs for compute workloads"](https://cloud.google.com/compute/docs/gpus/) : 
-      *  us-central1-{c,f} ; us-west1-{a,b} ; us-east1-{b,c}
-      *  europe-west1-{b,d} ; europe-west4-{a}
-      *  asia-east1-{a,c}
+      *  us-central1-\{c,f\} ; us-west1-\{a,b\} ; us-east1-\{b,c\}
+      *  europe-west1-\{b,d\} ; europe-west4-\{a\}
+      *  asia-east1-\{a,c\}
 
 
 *  Regions with V100s : 
@@ -167,9 +167,9 @@ super-difficult to do yourself), whereas the PyTorch install is easier to DIY la
       *  us-central1 ; us-east1
    
    *  But actually existing ["GPUs for compute workloads"](https://cloud.google.com/compute/docs/gpus/) : 
-      *  us-central1-{a,f} ; us-west1-{a,b}
-      *  europe-west4-{a}
-      *  asia-east1-{c}
+      *  us-central1-\{a,f\} ; us-west1-\{a,b\}
+      *  europe-west4-\{a\}
+      *  asia-east1-\{c\}
 
 
 So, despite me having got quota in a variety of places, it really comes down to having to choose ```us-central1``` (say), 

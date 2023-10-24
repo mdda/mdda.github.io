@@ -7,7 +7,7 @@ tags:
 - Presentation
 - TensorFlow
 - Keras
-- CNNs
+- CNN
 - ImageNet
 layout: post
 published: true

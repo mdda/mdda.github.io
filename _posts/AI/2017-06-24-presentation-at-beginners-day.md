@@ -8,8 +8,8 @@ tags:
 - Training
 - TensorFlow
 - Keras
-- Dense
-- CNNs
+- MLP
+- CNN
 layout: post
 published: true
 ---

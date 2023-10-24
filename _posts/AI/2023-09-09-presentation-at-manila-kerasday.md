@@ -6,7 +6,11 @@ category: AI
 tags:
 - Presentation
 - Machine Learning
-- KerasCore
+- Keras
+- TensorFlow
+- PyTorch
+- JAX
+- TPU
 layout: post
 published: true
 ---

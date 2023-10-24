@@ -176,7 +176,7 @@ the wrong project id.  So don't follow that route.
 
 ### Launch Cloud Datalab (for real this time?)
 
-{% highlight bash %}
+```bash
 $ gcloud compute zones list
 NAME                       REGION                   STATUS  NEXT_MAINTENANCE  TURNDOWN_DATE
 us-east1-b                 us-east1                 UP
@@ -228,7 +228,7 @@ europe-north1-c            europe-north1            UP
 northamerica-northeast1-a  northamerica-northeast1  UP
 northamerica-northeast1-b  northamerica-northeast1  UP
 northamerica-northeast1-c  northamerica-northeast1  UP
-{% endhighlight %}
+```
 
 
 Wowza, that's a long list that scrolls off the page quickly.
@@ -248,7 +248,7 @@ so it's not just me.
 Let's try the first one that looks good "asia-east1" (for 'Training', 
 but it's not ticked for 'Online Prediction', which is worrying).
 
-{% highlight bash %}
+```bash
 $ datalab create babyweight --zone asia-east1
 Creating the network datalab-network
 #  Awkward pause 
@@ -258,13 +258,13 @@ Creating the disk babyweight-pd
 ERROR: (gcloud.compute.disks.create) Could not fetch resource:
  - Invalid value for field 'zone': 'asia-east1'. Unknown zone.
 A nested call to gcloud failed, use --verbosity=debug for more info.
-{% endhighlight %}
+```
 
 
 Ahhh - perhaps I should look up something in the first column that matches the Region 
 given as a column heading in the Available Regions table: 'asia-east1-b' fits the bill.
 
-{% highlight bash %}
+```bash
 $ datalab create babyweight --zone asia-east1
 Creating the disk babyweight-pd
 Creating the repository datalab-notebooks
@@ -277,14 +277,14 @@ Waiting for Datalab to be reachable at http://localhost:8081/
 This tool needs to create the directory
 [/home/google646468_student/.ssh] before being able to generate SSH keys.
 Do you want to continue (Y/n)?
-{% endhighlight %}
+```
 
 
 This looks a lot more promising.  
 
   "You will get a SSH warning. Click Y to continue, and Enter through the passphrase questions. Datalab is ready when you see a message prompting you to use Web Preview to start using Datalab."
 
-{% highlight bash %}
+```bash
 Generating public/private rsa key pair.
 Enter passphrase (empty for no passphrase):
 Enter same passphrase again:
@@ -312,14 +312,13 @@ Waiting for SSH key to propagate.
 #  Eventually this appears (while trying to do the next steps):
 The connection to Datalab is now open and will remain until this command is killed.
 Click on the *Web Preview* (square button at top-right), select *Change port > Port 8081*, and start using Datalab.
-{% endhighlight %}
+```
 
-
-   "Datalab will take about 5 minutes to start."
+>   "Datalab will take about 5 minutes to start."
 
 Ok. so let's keep going
 
-   "In the Console, go to Products & services > Storage. Create a bucket that is regional, and match the Location to region as the VM you just made. "
+>   "In the Console, go to Products & services > Storage. Create a bucket that is regional, and match the Location to region as the VM you just made. "
    
    
 Hmmm.  Doesn't seem to be anything called that in the Left Hand Side panel.
@@ -342,7 +341,7 @@ Next attempt : "Storage-Browser"
 
 Code template to enter the bucket name wraps...
 
-{% highlight bash %}
+```bash
 # gsutil cp gs://cloud-training-demos/babyweight/preproc/* gs://<BUCKET>/babyweight/preproc/
 $ gsutil cp gs://cloud-training-demos/babyweight/preproc/* gs://random-bucket-name-please/babyweight/preproc/
 
@@ -366,7 +365,7 @@ run significantly faster if you instead use gsutil -m -o ... Please
 see the -m section under "gsutil help options" for further information
 about when gsutil -m can be advantageous.
 Operation completed over 55 objects/5.7 GiB.
-{% endhighlight %}
+```
 
 
 That looks like a warning that I'm doing something wrong - but the instructions don't mention
@@ -404,24 +403,23 @@ Back in the DataLab file page : "Jump to File" : "training-data-analyst/blogs/ba
 
 Set up the Bucket, Project and Region ids.
 
-{% highlight bash %}
+```bash
 BUCKET = 'random-bucket-name-please'
 PROJECT = 'qwiklabs-gcp-84f8f1c4f27f96a8'
 REGION = 'asia-east1'
-{% endhighlight %}
+```
 
 
-But doesn't the cell "gsutil -m cp -R gs://cloud-training-demos/babyweight gs://${BUCKET}" 
+But doesn't the cell `gsutil -m cp -R gs://cloud-training-demos/babyweight gs://${BUCKET}`
 essentially re-do what I did on the command line (which took *ages*)?
 
-{% highlight bash %}
+```bash
 # ... long wait ...
 Copying gs://cloud-training-demos/babyweight/trained_model_tuned/model.ckpt-571432.index...
 Copying gs://cloud-training-demos/babyweight/trained_model_tuned/model.ckpt-571432.meta...
 - [609/609 files][  6.1 GiB/  6.1 GiB] 100% Done  12.6 MiB/s ETA 00:00:00       
 Operation completed over 609 objects/6.1 GiB.    
-{% endhighlight %}
-
+```
 
 How am I meant to get through this notebook in 15 minutes?
 
@@ -430,9 +428,9 @@ How am I meant to get through this notebook in 15 minutes?
 Just pressing Ctrl-Enter repeatedly now, since there's no time to read the cells...
 
 
-```import tensorflow``` cell : 
+`import tensorflow` cell : 
 
-{% highlight bash %}
+```bash
 /usr/local/envs/py2env/lib/python2.7/site-packages/h5py/__init__.py:36: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
   from ._conv import register_converters as _register_converters
 /usr/local/envs/py2env/lib/python2.7/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
@@ -443,12 +441,12 @@ Just pressing Ctrl-Enter repeatedly now, since there's no time to read the cells
   from . import _ni_label
 /usr/local/envs/py2env/lib/python2.7/site-packages/simplejson/encoder.py:286: DeprecationWarning: Interpreting naive datetime as local 2018-07-04 16:30:35.570388. Please add timezone info to timestamps.
   chunks = self.iterencode(o, _one_shot=True)
-{% endhighlight %}
+```
 
 
 At the training step : 
 
-{% highlight bash %}
+```bash
 /usr/local/envs/py2env/lib/python2.7/site-packages/sklearn/utils/__init__.py:10: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
   from .murmurhash import murmurhash3_32
 /usr/local/envs/py2env/lib/python2.7/site-packages/sklearn/utils/extmath.py:24: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
@@ -457,12 +455,12 @@ At the training step :
   from .expected_mutual_info_fast import expected_mutual_information
 /usr/local/envs/py2env/lib/python2.7/site-packages/sklearn/metrics/pairwise.py:30: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
   from .pairwise_fast import _chi2_kernel_fast, _sparse_manhattan
-{% endhighlight %}
+```
 
 
 Looks like something happened :
 
-{% highlight bash %}
+```bash
 !ls babyweight_trained
 checkpoint				     model.ckpt-1000.index
 eval					     model.ckpt-1000.meta
@@ -470,7 +468,7 @@ events.out.tfevents.1530721891.7286677d5bcc  model.ckpt-1.data-00000-of-00001
 export					     model.ckpt-1.index
 graph.pbtxt				     model.ckpt-1.meta
 model.ckpt-1000.data-00000-of-00001
-{% endhighlight %}
+```
 
 
 
@@ -478,7 +476,7 @@ model.ckpt-1000.data-00000-of-00001
 
 Is that's what's happening here?  :
 
-{% highlight bash %}
+```bash
 Removing gs://random-bucket-name-please/babyweight/trained_model/model.ckpt-390628.meta#1530721709406785...
 / [58/58 objects] 100% Done                                                     
 Operation completed over 58 objects.                                             
@@ -492,8 +490,7 @@ or continue streaming the logs with the command
   $ gcloud ml-engine jobs stream-logs babyweight_180704_163436
 /usr/local/envs/py2env/lib/python2.7/site-packages/simplejson/encoder.py:286: DeprecationWarning: Interpreting naive datetime as local 2018-07-04 16:34:36.878487. Please add timezone info to timestamps.
   chunks = self.iterencode(o, _one_shot=True)
-{% endhighlight %}
-
+```
 
 ... No idea, the connection just timed out.
 

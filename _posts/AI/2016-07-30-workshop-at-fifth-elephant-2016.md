@@ -154,15 +154,6 @@ The source for the Deep Learning Workshop's VirtualMachine 'construction toolkit
 on <a href="https://github.com/mdda/deep-learning-workshop" target="_blank">GitHub</a> - 
 if you have questions on the software, please leave an 'issue' there.
 
-PS:  And if you like the Workshop, please 'star' the <a href="https://github.com/mdda/deep-learning-workshop" target="_blank">Deep Learning Workshop</a> repo ::
-<!-- From :: https://buttons.github.io/ -->
-<!-- Place this tag where you want the button to render. -->
-<span style="position:relative;top:5px;">
-<a aria-label="Star mdda/deep-learning-workshop on GitHub" data-count-aria-label="# stargazers on GitHub" data-count-api="/repos/mdda/deep-learning-workshop#stargazers_count" data-count-href="/mdda/deep-learning-workshop/stargazers" data-icon="octicon-star" href="https://github.com/mdda/deep-learning-workshop" class="github-button">Star</a>
-<!-- Place this tag right after the last button or just before your close body tag. -->
-<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
-</span>
-
 
 ### Presentation Link
 
@@ -182,3 +173,13 @@ or contact me using the details given on the slides themselves.
 ![Presentation Content Example]({{ site.url }}/assets/img/2016-07-30_FifthElephant-DeepLearning-Workshop_1-1_600x390.png)
 </a>
 
+
+
+PS:  And if you like the Workshop, please 'star' the <a href="https://github.com/mdda/deep-learning-workshop" target="_blank">Deep Learning Workshop</a> repo ::
+<!-- From :: https://buttons.github.io/ -->
+<!-- Place this tag where you want the button to render. -->
+<span style="position:relative;top:5px;">
+<a aria-label="Star mdda/deep-learning-workshop on GitHub" data-count-aria-label="# stargazers on GitHub" data-count-api="/repos/mdda/deep-learning-workshop#stargazers_count" data-count-href="/mdda/deep-learning-workshop/stargazers" data-icon="octicon-star" href="https://github.com/mdda/deep-learning-workshop" class="github-button">Star</a>
+<!-- Place this tag right after the last button or just before your close body tag. -->
+<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+</span>

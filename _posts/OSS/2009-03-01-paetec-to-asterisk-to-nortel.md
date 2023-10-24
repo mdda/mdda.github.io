@@ -29,25 +29,17 @@ Solution : Talk to Paetec, armed with the /etc/dahdi/system.conf man page (and t
 
 Unfortunately our telephone provider (while helpful) doesn't speak 'Asterisk' - but they were prepared to acknowledge that the T1 coming in was not PRI : it carried two types of 'analog' circuit :
 
+* A Paetec TecPath (which, after a lot of experimentation with dahdi_tool) proves to speak 'E&M;_Wink).  They described it as a "TecPath Trunk Group with Wink Dial Tone".
+* A number of Loopstart lines.  They described this as "Business Lines, i.e. Terminal Lines, Incoming only, Loopstart, with Clocking from Paetec.
+
+Interfacing Asterisk to Paetec was pretty straight-forward, using the (straight-through) cable that the Nortel was already using :
 
 
-	
-  * A Paetec TecPath (which, after a lot of experimentation with dahdi_tool) proves to speak 'E&M;_Wink).  They described it as a "TecPath Trunk Group with Wink Dial Tone".
-
-	
-  * A number of Loopstart lines.  They described this as "Business Lines, i.e. Terminal Lines, Incoming only, Loopstart, with Clocking from Paetec.
-
-
-Interfacing Asterisk to Paetec was pretty straight-forward, using the (straight-through) cable that the Nortel was already using.  Plus the following /etc/dahdi/system.conf :
-
-
-{% highlight bash %}
+```bash:/etc/dahdi/system.conf
 span=1,1,0,esf,b8zs
 span=2,0,0,esf,b8zs,yellow
 #span=2,0,0,esf,b8zs`
 
-
-{% endhighlight %}
 # Loopback testing :
 #clear=1-24
 #clear=25-48
@@ -67,14 +59,13 @@ e&m;=25-38
 
 # Simulation of 212-xxx-yyyy incoming (outgoing) group
 fxols=39-48
+```
 
-{% highlight bash %}
 Interfacing Asterisk to the Nortel was more tricky, since it seems to require a T1 Crossover (not a 568A/568B patch panel crossover).  Somehow, I guess, Paetec must detect what the recipient requires, since a straight cable (but not a patch panel crossover) worked to Asterisk...  Very strange (I didn't test the T1 crossover between Paetec and Asterisk).
 
-For Asterisk, the _/etc/asterisk/chan_dahdi.conf_ looked like this :
+For Asterisk :
 
-
-{% endhighlight %}
+```bash:/etc/asterisk/chan_dahdi.conf
 rxgain=0.0
 txgain=0.0
 busydetect=yes
@@ -108,12 +99,12 @@ context=from-nortel-main
 group=4
 signalling=fxo_ls
 channel=>39-48
+```
 
-{% highlight bash %}
-FYI, the E&M; signalling seems to be able to provide the last 4 digits of the number called in to, whereas the Loopstart doesn't.  This explains why my test dial plan (in /etc/asterisk/extensions.conf) from Paetec looks like this  :
+FYI, the E&amp;M; signalling seems to be able to provide the last 4 digits of the number called in to, whereas the Loopstart doesn't.  This explains why my test dial plan from Paetec looks like this  :
 
 
-{% endhighlight %}
+```bash:/etc/asterisk/extensions.conf
 [from-paetec-tecpath]
 
 exten => _X.,1,Verbose("NEW CALL FROM:[${CALLERID(number)}] FOR:[${EXTEN}]")
@@ -124,7 +115,6 @@ exten => _X.,n,Hangup
 exten => s,1,Verbose("Business Line Group CALL FROM:[${CALLERID(number)}] FOR:[${EXTEN}]")
 exten => s,n,Dial(SIP/2101,60,r)
 exten => s,n,Hangup
-
 ```
 
 where in the Business Line Group, no CALLERID or EXTEN information is available.

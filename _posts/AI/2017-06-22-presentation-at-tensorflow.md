@@ -7,11 +7,10 @@ tags:
 - Presentation
 - TensorFlow
 - Keras
-- RNNs
-- CNNs
-- Attention
-- AIAYN
+- RNN
+- CNN
 - NLP
+- Transformers
 layout: post
 published: true
 ---
